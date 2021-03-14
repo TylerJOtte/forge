@@ -71,6 +71,17 @@ public class Deck: Cards {
         return cards.count == maxCards
     }
     
+    /// Determines if a key exists for the given`Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card` to find key for.
+    /// - Returns: True if a key exists for the  given `Card`, else false.
+    private func containsKey(_ card: Card) -> Bool {
+        
+        return cards.keys.contains(card.title)
+    }
+    
     /// Determines if the given `Card` exists.
     ///
     /// - Precondition: None.
@@ -79,7 +90,7 @@ public class Deck: Cards {
     /// - Returns: True if the given `Card` exists, else false.
     public func contains(_ card: Card) -> Bool {
         
-        return cards.keys.contains(card.title) && cards[card.title]!.count > 0
+        return containsKey(card) && cards[card.title]!.count > 0
     }
     
     /// Adds the given `Card` to the collection.
@@ -87,9 +98,22 @@ public class Deck: Cards {
     /// - Precondition: The collection cannot be full.
     /// - Postcondition: The collection contains the given `Card`.
     /// - Parameter card: The `Card` to add to the collection.
-    public func add(_ card: Card) {
+    /// - Throws: `ElementsError.isFull` if the collection is full.
+    public func add(_ card: Card) throws {
         
-        // TDOO: implement stub
+        guard (isFull()) else {
+            
+            throw ElementsError.isFull
+        }
+        
+        if (containsKey(card)) {
+            
+            cards[card.title]!.append(card)
+            
+        } else {
+            
+            cards[card.title]! = [card]
+        }
     }
     
     /// Removes the first istance of the given `Card` from the collection.

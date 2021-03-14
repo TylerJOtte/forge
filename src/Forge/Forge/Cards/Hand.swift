@@ -87,7 +87,8 @@ public class Hand: Cards {
     /// - Precondition: The collection cannot be full.
     /// - Postcondition: The collection contains the given `Card`.
     /// - Parameter card: The `Card` to add to the collection.
-    public func add(_ card: Card) {
+    /// - Throws: `ElementsError.isFull` if the collection is full.
+    public func add(_ card: Card) throws {
         
         // TDOO: implement stub
     }

@@ -49,7 +49,8 @@ public protocol Elements {
     /// - Precondition: The collection cannot be full.
     /// - Postcondition: The collection contains the given `T`.
     /// - Parameter t: The `T` to add to the collection.
-    func add(_ t: T)
+    /// - Throws: `ElementsError.isFull` if the collection is full.
+    func add(_ t: T) throws
     
     /// Removes the first istance of the given `T` from the collection.
     ///
