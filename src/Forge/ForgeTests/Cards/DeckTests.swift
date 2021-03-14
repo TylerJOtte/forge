@@ -44,7 +44,7 @@ class DeckTests: XCTestCase {
         let isEmpty = deck.isEmpty()
         let actual = deck.count
         
-        // When/Then
+        // Then
         XCTAssertTrue(isEmpty && expected == actual)
     }
 }

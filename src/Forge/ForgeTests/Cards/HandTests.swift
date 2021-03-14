@@ -32,4 +32,19 @@ class HandTests: XCTestCase {
         // When/Then
         XCTAssert(hand.isEmpty())
     }
+    
+    /// Tests that an empty `Hand`'s count is zero.
+    func testEmptyHandCountIsZero() {
+        
+        // Given
+        let hand: Hand = Hand()
+        let expected = 0
+        
+        // When
+        let isEmpty = hand.isEmpty()
+        let actual = hand.count
+        
+        // Then
+        XCTAssertTrue(isEmpty && expected == actual)
+    }
 }
