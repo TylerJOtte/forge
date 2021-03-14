@@ -13,6 +13,7 @@
 		B597384325FEA93000367598 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597384225FEA93000367598 /* Deck.swift */; };
 		B597384925FEAD4100367598 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597384825FEAD4100367598 /* Hand.swift */; };
 		B597384E25FEB07900367598 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597384D25FEB07900367598 /* DeckTests.swift */; };
+		B597385625FEB76E00367598 /* HandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597385525FEB76E00367598 /* HandTests.swift */; };
 		B59A44AF25FE934200857EB5 /* Forge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A44A525FE934100857EB5 /* Forge.framework */; };
 		B59A44B425FE934200857EB5 /* ForgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59A44B325FE934200857EB5 /* ForgeTests.swift */; };
 		B59A44B625FE934200857EB5 /* Forge.h in Headers */ = {isa = PBXBuildFile; fileRef = B59A44A825FE934200857EB5 /* Forge.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +36,7 @@
 		B597384225FEA93000367598 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		B597384825FEAD4100367598 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		B597384D25FEB07900367598 /* DeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
+		B597385525FEB76E00367598 /* HandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandTests.swift; sourceTree = "<group>"; };
 		B59A44A525FE934100857EB5 /* Forge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Forge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59A44A825FE934200857EB5 /* Forge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Forge.h; sourceTree = "<group>"; };
 		B59A44A925FE934200857EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B597384D25FEB07900367598 /* DeckTests.swift */,
+				B597385525FEB76E00367598 /* HandTests.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
 				B597384E25FEB07900367598 /* DeckTests.swift in Sources */,
 				B59A44B425FE934200857EB5 /* ForgeTests.swift in Sources */,
 			);
