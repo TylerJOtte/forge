@@ -40,6 +40,23 @@
 									"target": {
 										"$ref": "AAAAAAF4MWWBilEtfbQ="
 									}
+								},
+								{
+									"_type": "UMLConstraint",
+									"_id": "AAAAAAF4MkXz8HrDEx4=",
+									"_parent": {
+										"$ref": "AAAAAAF4MaAreVLY/mo="
+									},
+									"name": "Quantity",
+									"specification": "\n    - minCards >= 0\n    - maxCards >= 1\n    - maxCards >= minCards\n",
+									"constrainedElements": [
+										{
+											"$ref": "AAAAAAF4MaCnAFMHThA="
+										},
+										{
+											"$ref": "AAAAAAF4MaC9O1MOtIE="
+										}
+									]
 								}
 							],
 							"documentation": "A collection of `Card`s.",
@@ -51,7 +68,7 @@
 										"$ref": "AAAAAAF4MaAreVLY/mo="
 									},
 									"name": "minCards",
-									"documentation": "The minimum # of `Card`s allowed in the collection.",
+									"documentation": "The minimum # of `Card`s allowed.\n\n- Precondition: Must be >= 0.",
 									"type": "Int"
 								},
 								{
@@ -61,7 +78,7 @@
 										"$ref": "AAAAAAF4MaAreVLY/mo="
 									},
 									"name": "maxCards",
-									"documentation": "The maximum # of `Card`s allowed in the collection.",
+									"documentation": "The maximum # of `Card`s allowed.\n\n- Precondition: \n  - Must be >= 1.\n  - Must be >= `minCards`.",
 									"type": "Int"
 								}
 							],
@@ -2184,6 +2201,41 @@
 									"headQualifiersCompartment": {
 										"$ref": "AAAAAAF4Mgss7XWKe7U="
 									}
+								},
+								{
+									"_type": "UMLConstraintView",
+									"_id": "AAAAAAF4MkX9WnrTEIk=",
+									"_parent": {
+										"$ref": "AAAAAAF4MbswQFalzd8="
+									},
+									"model": {
+										"$ref": "AAAAAAF4MkXz8HrDEx4="
+									},
+									"fillColor": "#006600",
+									"fontColor": "#d2dfe7",
+									"font": "Arial;13;0",
+									"left": 592,
+									"top": 304,
+									"width": 193,
+									"height": 85,
+									"text": "{\n    - minCards >= 0\n    - maxCards >= 1\n    - maxCards >= minCards\n}"
+								},
+								{
+									"_type": "UMLConstraintLinkView",
+									"_id": "AAAAAAF4MkX9WnrU2v4=",
+									"_parent": {
+										"$ref": "AAAAAAF4MbswQFalzd8="
+									},
+									"fillColor": "#00202a",
+									"fontColor": "#d2dfe7",
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF4MbswQFbBFvM="
+									},
+									"tail": {
+										"$ref": "AAAAAAF4MkX9WnrTEIk="
+									},
+									"points": "592:341;537:341"
 								}
 							]
 						},

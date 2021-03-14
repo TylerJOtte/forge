@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B597383325FE958700367598 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597383225FE958700367598 /* Elements.swift */; };
 		B597383825FE9D5000367598 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597383725FE9D5000367598 /* Card.swift */; };
+		B597383F25FE9E6D00367598 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597383E25FE9E6D00367598 /* Cards.swift */; };
 		B59A44AF25FE934200857EB5 /* Forge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A44A525FE934100857EB5 /* Forge.framework */; };
 		B59A44B425FE934200857EB5 /* ForgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59A44B325FE934200857EB5 /* ForgeTests.swift */; };
 		B59A44B625FE934200857EB5 /* Forge.h in Headers */ = {isa = PBXBuildFile; fileRef = B59A44A825FE934200857EB5 /* Forge.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		B597383225FE958700367598 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 		B597383725FE9D5000367598 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B597383E25FE9E6D00367598 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		B59A44A525FE934100857EB5 /* Forge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Forge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59A44A825FE934200857EB5 /* Forge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Forge.h; sourceTree = "<group>"; };
 		B59A44A925FE934200857EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 			path = Card;
 			sourceTree = "<group>";
 		};
+		B597383D25FE9E5A00367598 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				B597383E25FE9E6D00367598 /* Cards.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		B59A449B25FE934100857EB5 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		B59A44A725FE934100857EB5 /* Forge */ = {
 			isa = PBXGroup;
 			children = (
+				B597383D25FE9E5A00367598 /* Cards */,
 				B597383625FE9CF300367598 /* Card */,
 				B59A44A825FE934200857EB5 /* Forge.h */,
 				B59A44A925FE934200857EB5 /* Info.plist */,
@@ -209,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B597383F25FE9E6D00367598 /* Cards.swift in Sources */,
 				B597383325FE958700367598 /* Elements.swift in Sources */,
 				B597383825FE9D5000367598 /* Card.swift in Sources */,
 			);
