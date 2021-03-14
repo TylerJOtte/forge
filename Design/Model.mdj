@@ -80,6 +80,16 @@
 									"name": "maxCards",
 									"documentation": "The maximum # of `Card`s allowed.\n\n- Precondition: \n  - Must be >= 1.\n  - Must be >= `minCards`.",
 									"type": "Int"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAF4MovCk30Xb/M=",
+									"_parent": {
+										"$ref": "AAAAAAF4MaAreVLY/mo="
+									},
+									"name": "count",
+									"documentation": "The total # of `Card`s.",
+									"type": "Int"
 								}
 							],
 							"isAbstract": true
@@ -787,6 +797,24 @@
 													"height": 13,
 													"text": "+maxCards: Int",
 													"horizontalAlignment": 0
+												},
+												{
+													"_type": "UMLAttributeView",
+													"_id": "AAAAAAF4MovCrH0as6s=",
+													"_parent": {
+														"$ref": "AAAAAAF4MbswQFbHXiI="
+													},
+													"model": {
+														"$ref": "AAAAAAF4MovCk30Xb/M="
+													},
+													"fillColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 444,
+													"top": 371,
+													"width": 88.50537109375,
+													"height": 13,
+													"text": "+count: Int",
+													"horizontalAlignment": 0
 												}
 											],
 											"fillColor": "#d2dfe7",
@@ -794,7 +822,7 @@
 											"left": 439,
 											"top": 336,
 											"width": 98.50537109375,
-											"height": 38
+											"height": 53
 										},
 										{
 											"_type": "UMLOperationCompartmentView",
@@ -851,7 +879,7 @@
 									"left": 439,
 									"top": 311,
 									"width": 98.50537109375,
-									"height": 63,
+									"height": 78,
 									"autoResize": true,
 									"showProperty": false,
 									"nameCompartment": {
@@ -1473,7 +1501,7 @@
 									"tail": {
 										"$ref": "AAAAAAF4McK1NFmxiX0="
 									},
-									"points": "288:464;288:440;488:440;488:373",
+									"points": "288:464;288:440;488:440;488:388",
 									"showVisibility": true,
 									"showProperty": false,
 									"nameLabel": {
@@ -1897,7 +1925,7 @@
 									"tail": {
 										"$ref": "AAAAAAF4Mex/mG2mE4w="
 									},
-									"points": "704:464;704:440;488:440;488:373",
+									"points": "704:464;704:440;488:440;488:388",
 									"showVisibility": true,
 									"showProperty": false,
 									"nameLabel": {

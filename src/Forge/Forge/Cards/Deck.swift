@@ -29,6 +29,9 @@ public class Deck: Cards {
     /// The maximum # of `Card`s allowed.
     public let maxCards: Int
     
+    /// The total # of `Card`s.
+    public var count: Int { return cards.count }
+    
     /// The `Card`s.
     private var cards: [String : [Card]]
     

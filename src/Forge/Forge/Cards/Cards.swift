@@ -30,4 +30,7 @@ public protocol Cards: Elements where T == Card {
     ///   - Must be >= 1.
     ///   - Must be >= `minCards`.
     var maxCards: Int { get }
+    
+    /// The total # of `Card`s.
+    var count: Int { get }
 }
