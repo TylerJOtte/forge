@@ -51,6 +51,10 @@ public class Deck: Cards {
     //                                 METHODS                                 //
     //=========================================================================//
     
+    //-------------------------------------------------------------------------//
+    //                                 Testers                                 //
+    //-------------------------------------------------------------------------//
+    
     /// Determines if the collection is empty.
     ///
     /// - Precondition: None.
@@ -93,6 +97,11 @@ public class Deck: Cards {
         return containsKey(card) && cards[card.title]!.count > 0
     }
     
+    //-------------------------------------------------------------------------//
+    //                                  Adders                                 //
+    //-------------------------------------------------------------------------//
+    
+    
     /// Adds the given `Card` to the collection.
     ///
     /// - Precondition: The collection cannot be full.
@@ -101,7 +110,7 @@ public class Deck: Cards {
     /// - Throws: `ElementsError.isFull` if the collection is full.
     public func add(_ card: Card) throws {
         
-        guard (isFull()) else {
+        guard (!isFull()) else {
             
             throw ElementsError.isFull
         }
@@ -116,6 +125,10 @@ public class Deck: Cards {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                                 Removers                                //
+    //-------------------------------------------------------------------------//
+    
     /// Removes the first istance of the given `Card` from the collection.
     ///
     /// - Precondition:
@@ -123,9 +136,21 @@ public class Deck: Cards {
     ///   - The collection must contain the given `Card`.
     /// - Postcondition: The collection contains one less instance of the given `Card`.
     /// - Parameter card: The `Card` to remove from the collection.
-    public func remove(_ card: Card) -> Card {
+    /// - Throws:
+    ///   - `ElementsError.isEmpty` if the collection is empty.
+    ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
+    public func remove(_ card: Card) throws -> Card {
         
-        // TDOO: implement stub
-        return card
+        guard (!isEmpty()) else {
+            
+            throw ElementsError.isEmpty
+        }
+        
+        guard (contains(card)) else {
+            
+            throw ElementsError.notFound
+        }
+        
+        return cards[card.title]!.removeLast()
     }
 }

@@ -105,7 +105,10 @@ public class Hand: Cards {
     ///   - The collection must contain the given `Card`.
     /// - Postcondition: The collection contains one less instance of the given `Card`.
     /// - Parameter card: The `Card` to remove from the collection.
-    public func remove(_ card: Card) -> Card {
+    /// - Throws:
+    ///   - `ElementsError.isEmpty` if the collection is empty.
+    ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
+    public func remove(_ card: Card) throws -> Card {
         
         // TDOO: implement stub
         return card

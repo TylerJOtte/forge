@@ -21,4 +21,5 @@ public enum ElementsError: Error {
     
     case isEmpty
     case isFull
+    case notFound
 }

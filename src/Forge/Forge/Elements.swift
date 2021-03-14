@@ -59,5 +59,8 @@ public protocol Elements {
     ///   - The collection must contain the given `T`.
     /// - Postcondition: The collection contains one less instance of the given `T`.
     /// - Parameter t: The `T` to remove from the collection.
-    func remove(_ t: T) -> T
+    /// - Throws:
+    ///   - `ElementsError.isEmpty` if the collection is empty.
+    ///   - `ElementsError.notFound` if the collection doesn't contain the given `T`.
+    func remove(_ t: T) throws -> T
 }
