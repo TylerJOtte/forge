@@ -2300,7 +2300,7 @@
 									}
 								}
 							],
-							"documentation": "A `Deck` of `Card`s.",
+							"documentation": "A `Deck` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty()\n\n1. Return cards.count = 0\n\n#### isFull()\n\n1. Return cards.count = maxCards",
 							"attributes": [
 								{
 									"_type": "UMLAttribute",

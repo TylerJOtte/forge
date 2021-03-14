@@ -55,8 +55,7 @@ public class Deck: Cards {
     /// - Returns: True if the collection is empty, else false.
     public func isEmpty() -> Bool {
         
-        // TDOO: implement stub
-        return false
+        return cards.count == 0
     }
     
     /// Determines if the collection is full.
@@ -66,8 +65,7 @@ public class Deck: Cards {
     /// - Returns: True if the collection is full else false.
     public func isFull() -> Bool {
         
-        // TDOO: implement stub
-        return false
+        return cards.count == maxCards
     }
     
     /// Determines if the given `Card` exists.
