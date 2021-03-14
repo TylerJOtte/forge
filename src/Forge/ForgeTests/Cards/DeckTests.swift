@@ -20,13 +20,31 @@ import XCTest
 /// Unit tests for the `Deck` class.
 class DeckTests: XCTestCase {
     
-    /// Tests that a default deck is empty.
-    func testDefaultDeckIsEmpty() {
+    // TODO: Add is not empty test
+    // TODO: Add non-empty deck count > 0 test
+    
+    /// Tests that a`Deck` is empty.
+    func testIsEmpty() {
         
         // Given
         let deck: Deck = Deck()
         
         // When/Then
         XCTAssert(deck.isEmpty())
+    }
+    
+    /// Tests that an empty `Deck`'s count is zero.
+    func testEmptyDeckCountIsZero() {
+        
+        // Given
+        let deck: Deck = Deck()
+        let expected = 0
+        
+        // When
+        let isEmpty = deck.isEmpty()
+        let actual = deck.count
+        
+        // When/Then
+        XCTAssertTrue(isEmpty && expected == actual)
     }
 }
