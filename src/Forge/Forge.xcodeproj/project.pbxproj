@@ -15,6 +15,7 @@
 		B597384E25FEB07900367598 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597384D25FEB07900367598 /* DeckTests.swift */; };
 		B597385625FEB76E00367598 /* HandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597385525FEB76E00367598 /* HandTests.swift */; };
 		B597385A25FEC1CE00367598 /* ElementsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597385925FEC1CE00367598 /* ElementsError.swift */; };
+		B597386125FED1B900367598 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597386025FED1B900367598 /* CardTests.swift */; };
 		B59A44AF25FE934200857EB5 /* Forge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A44A525FE934100857EB5 /* Forge.framework */; };
 		B59A44B425FE934200857EB5 /* ForgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59A44B325FE934200857EB5 /* ForgeTests.swift */; };
 		B59A44B625FE934200857EB5 /* Forge.h in Headers */ = {isa = PBXBuildFile; fileRef = B59A44A825FE934200857EB5 /* Forge.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +40,7 @@
 		B597384D25FEB07900367598 /* DeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
 		B597385525FEB76E00367598 /* HandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandTests.swift; sourceTree = "<group>"; };
 		B597385925FEC1CE00367598 /* ElementsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsError.swift; sourceTree = "<group>"; };
+		B597386025FED1B900367598 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		B59A44A525FE934100857EB5 /* Forge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Forge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59A44A825FE934200857EB5 /* Forge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Forge.h; sourceTree = "<group>"; };
 		B59A44A925FE934200857EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 			path = Cards;
 			sourceTree = "<group>";
 		};
+		B597385F25FED1AB00367598 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				B597386025FED1B900367598 /* CardTests.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 		B59A449B25FE934100857EB5 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		B59A44B225FE934200857EB5 /* ForgeTests */ = {
 			isa = PBXGroup;
 			children = (
+				B597385F25FED1AB00367598 /* Card */,
 				B597384C25FEB05B00367598 /* Cards */,
 				B59A44B325FE934200857EB5 /* ForgeTests.swift */,
 				B59A44B525FE934200857EB5 /* Info.plist */,
@@ -259,6 +270,7 @@
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
 				B597384E25FEB07900367598 /* DeckTests.swift in Sources */,
 				B59A44B425FE934200857EB5 /* ForgeTests.swift in Sources */,
+				B597386125FED1B900367598 /* CardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

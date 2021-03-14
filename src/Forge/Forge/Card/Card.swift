@@ -33,7 +33,7 @@ public class Card: Equatable {
     /// Creates a `Card` with the given title.
     ///
     /// - Parameter title: The primary name.
-    public init(title: String) {
+    public init(_ title: String) {
         
         self.title = title
     }
