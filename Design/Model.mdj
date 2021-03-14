@@ -1407,7 +1407,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": 176,
-											"top": 514,
+											"top": 506,
 											"width": 220.2470703125,
 											"height": 10
 										},
@@ -1425,7 +1425,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": -272,
-											"top": -56,
+											"top": -64,
 											"width": 10,
 											"height": 10
 										}
@@ -1691,7 +1691,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": -96,
-													"top": -128,
+													"top": -144,
 													"height": 13
 												},
 												{
@@ -1704,7 +1704,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;1",
 													"left": 605,
-													"top": 471,
+													"top": 463,
 													"width": 210.2470703125,
 													"height": 13,
 													"text": "Hand"
@@ -1720,7 +1720,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": -96,
-													"top": -128,
+													"top": -144,
 													"width": 72.947265625,
 													"height": 13,
 													"text": "(from Cards)"
@@ -1736,7 +1736,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": -96,
-													"top": -128,
+													"top": -144,
 													"height": 13,
 													"horizontalAlignment": 1
 												}
@@ -1745,7 +1745,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": 600,
-											"top": 464,
+											"top": 456,
 											"width": 220.2470703125,
 											"height": 25,
 											"stereotypeLabel": {
@@ -1784,7 +1784,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 605,
-													"top": 494,
+													"top": 486,
 													"width": 210.2470703125,
 													"height": 13,
 													"text": "-cards: Card[0..*]",
@@ -1795,7 +1795,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": 600,
-											"top": 489,
+											"top": 481,
 											"width": 220.2470703125,
 											"height": 23
 										},
@@ -1813,7 +1813,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": -48,
-											"top": -64,
+											"top": -72,
 											"width": 10,
 											"height": 10
 										},
@@ -1831,7 +1831,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": -48,
-											"top": -64,
+											"top": -72,
 											"width": 10,
 											"height": 10
 										},
@@ -1849,7 +1849,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": -48,
-											"top": -64,
+											"top": -72,
 											"width": 10,
 											"height": 10
 										}
@@ -1859,7 +1859,7 @@
 									"font": "Arial;13;0",
 									"containerChangeable": true,
 									"left": 600,
-									"top": 464,
+									"top": 456,
 									"width": 220.2470703125,
 									"height": 48,
 									"showProperty": false,
@@ -1969,7 +1969,7 @@
 									"tail": {
 										"$ref": "AAAAAAF4Mex/mG2mE4w="
 									},
-									"points": "704:464;704:440;488:440;488:388",
+									"points": "704:456;704:440;488:440;488:388",
 									"showVisibility": true,
 									"showProperty": false,
 									"nameLabel": {
@@ -2442,7 +2442,7 @@
 									}
 								}
 							],
-							"documentation": "A `Hand` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Define local variables\n  - var containsCard = false\n  - var index = 0\n2. while (!containsCard && index < cards.count)\n  - Get the next card\n  - containsCard = next card = card\n  - index++\n3. Return containsCard\n\n#### add(card: Card): void\n\n1. If isFull(), throw ElementsError.isFull\n2. Add the card to the end of the cards array\n",
+							"documentation": "A `Hand` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Define local variables\n  - var containsCard = false\n  - var index = 0\n2. while (!containsCard && index < cards.count)\n  - Get the next card\n  - containsCard = next card = card\n  - index++\n3. Return containsCard\n\n#### add(card: Card): void\n\n1. If isFull(), throw ElementsError.isFull\n2. Add the card to the end of the cards array\n\n### remove(card: Card): Card\n\n1. If !isEmpty(), throw ElementsError.isEmpty\n2. If !contains(card), throw ElementsError.notFound\n3. Return the first instance of the given card in the cards array\n",
 							"attributes": [
 								{
 									"_type": "UMLAttribute",

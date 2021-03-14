@@ -51,6 +51,10 @@ public class Hand: Cards {
     //                                 METHODS                                 //
     //=========================================================================//
     
+    //-------------------------------------------------------------------------//
+    //                                 Testers                                 //
+    //-------------------------------------------------------------------------//
+    
     /// Determines if the collection is empty.
     ///
     /// - Precondition: None.
@@ -82,6 +86,10 @@ public class Hand: Cards {
         return cards.contains(card)
     }
     
+    //-------------------------------------------------------------------------//
+    //                                  Adders                                 //
+    //-------------------------------------------------------------------------//
+    
     /// Adds the given `Card` to the collection.
     ///
     /// - Precondition: The collection cannot be full.
@@ -98,6 +106,10 @@ public class Hand: Cards {
         cards.append(card)
     }
     
+    //-------------------------------------------------------------------------//
+    //                                 Removers                                //
+    //-------------------------------------------------------------------------//
+    
     /// Removes the first istance of the given `Card` from the collection.
     ///
     /// - Precondition:
@@ -110,7 +122,18 @@ public class Hand: Cards {
     ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
     public func remove(_ card: Card) throws -> Card {
         
-        // TDOO: implement stub
-        return card
+        guard (!isEmpty()) else {
+            
+            throw ElementsError.isEmpty
+        }
+        
+        guard (contains(card)) else {
+            
+            throw ElementsError.notFound
+        }
+        
+        let index = cards.firstIndex(where: {$0 == card})!
+        
+        return cards.remove(at: index)
     }
 }
