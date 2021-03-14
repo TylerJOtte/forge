@@ -536,7 +536,7 @@
 													"top": 170,
 													"width": 156.93798828125,
 													"height": 13,
-													"text": "+add(t: T): void",
+													"text": "+add(_ t: T): void",
 													"horizontalAlignment": 0
 												},
 												{
@@ -2328,7 +2328,7 @@
 									}
 								}
 							],
-							"documentation": "A `Deck` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty()\n\n1. Return cards.count = 0\n\n#### isFull()\n\n1. Return cards.count = maxCards",
+							"documentation": "A `Deck` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. var title = \n2. var containsKey = cards.contains(",
 							"attributes": [
 								{
 									"_type": "UMLAttribute",
@@ -2505,7 +2505,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF4MZiTtlJ9Qco="
 									},
-									"name": "t",
+									"name": "_ t",
 									"type": "T"
 								},
 								{
