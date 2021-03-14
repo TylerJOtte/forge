@@ -133,7 +133,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": -592,
+													"left": -736,
 													"top": 304,
 													"height": 13
 												},
@@ -146,9 +146,9 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;1",
-													"left": 181,
+													"left": 109,
 													"top": 326,
-													"width": 66.83447265625,
+													"width": 154.2734375,
 													"height": 13,
 													"text": "Card"
 												},
@@ -162,7 +162,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": -592,
+													"left": -736,
 													"top": 304,
 													"width": 72.947265625,
 													"height": 13,
@@ -178,7 +178,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": -592,
+													"left": -736,
 													"top": 304,
 													"height": 13,
 													"horizontalAlignment": 1
@@ -187,9 +187,9 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 176,
+											"left": 104,
 											"top": 319,
-											"width": 76.83447265625,
+											"width": 164.2734375,
 											"height": 25,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAF4MbswQFao+3o="
@@ -226,9 +226,9 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 181,
+													"left": 109,
 													"top": 349,
-													"width": 66.83447265625,
+													"width": 154.2734375,
 													"height": 13,
 													"text": "+title: string",
 													"horizontalAlignment": 0
@@ -237,9 +237,9 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 176,
+											"left": 104,
 											"top": 344,
-											"width": 76.83447265625,
+											"width": 164.2734375,
 											"height": 23
 										},
 										{
@@ -251,14 +251,35 @@
 											"model": {
 												"$ref": "AAAAAAF4MWAYTlCLI6k="
 											},
-											"visible": false,
+											"subViews": [
+												{
+													"_type": "UMLOperationView",
+													"_id": "AAAAAAF4Mr0h1YAeYE4=",
+													"_parent": {
+														"$ref": "AAAAAAF4MbswQFauors="
+													},
+													"model": {
+														"$ref": "AAAAAAF4Mr0hxIAbgeg="
+													},
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 109,
+													"top": 372,
+													"width": 154.2734375,
+													"height": 13,
+													"underline": true,
+													"text": "+==(card: Card): boolean()",
+													"horizontalAlignment": 0
+												}
+											],
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": -296,
-											"top": 152,
-											"width": 10,
-											"height": 10
+											"left": 104,
+											"top": 367,
+											"width": 164.2734375,
+											"height": 23
 										},
 										{
 											"_type": "UMLReceptionCompartmentView",
@@ -273,7 +294,7 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": -296,
+											"left": -368,
 											"top": 152,
 											"width": 10,
 											"height": 10
@@ -291,7 +312,7 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": -296,
+											"left": -368,
 											"top": 152,
 											"width": 10,
 											"height": 10
@@ -301,15 +322,14 @@
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
 									"containerChangeable": true,
-									"left": 176,
+									"left": 104,
 									"top": 319,
-									"width": 76.83447265625,
-									"height": 48,
+									"width": 164.2734375,
+									"height": 71,
 									"showProperty": false,
 									"nameCompartment": {
 										"$ref": "AAAAAAF4MbswQFanh+U="
 									},
-									"suppressOperations": true,
 									"attributeCompartment": {
 										"$ref": "AAAAAAF4MbswQFas+oI="
 									},
@@ -536,7 +556,7 @@
 													"top": 170,
 													"width": 156.93798828125,
 													"height": 13,
-													"text": "+add(_ t: T): void",
+													"text": "+add(t: T): void",
 													"horizontalAlignment": 0
 												},
 												{
@@ -686,7 +706,7 @@
 													"visible": false,
 													"fillColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 437,
+													"left": 423,
 													"top": 317,
 													"width": 88.50537109375,
 													"height": 13
@@ -699,7 +719,7 @@
 													},
 													"fillColor": "#d2dfe7",
 													"font": "Arial;13;3",
-													"left": 444,
+													"left": 437,
 													"top": 318,
 													"width": 88.50537109375,
 													"height": 13,
@@ -714,6 +734,7 @@
 													"visible": false,
 													"fillColor": "#d2dfe7",
 													"font": "Arial;13;0",
+													"left": -14,
 													"top": -96,
 													"width": 72.947265625,
 													"height": 13,
@@ -728,6 +749,7 @@
 													"visible": false,
 													"fillColor": "#d2dfe7",
 													"font": "Arial;13;0",
+													"left": -14,
 													"top": -96,
 													"height": 13,
 													"horizontalAlignment": 1
@@ -735,7 +757,7 @@
 											],
 											"fillColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 439,
+											"left": 432,
 											"top": 311,
 											"width": 98.50537109375,
 											"height": 25,
@@ -773,7 +795,7 @@
 													},
 													"fillColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 444,
+													"left": 437,
 													"top": 341,
 													"width": 88.50537109375,
 													"height": 13,
@@ -791,7 +813,7 @@
 													},
 													"fillColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 444,
+													"left": 437,
 													"top": 356,
 													"width": 88.50537109375,
 													"height": 13,
@@ -809,7 +831,7 @@
 													},
 													"fillColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 444,
+													"left": 437,
 													"top": 371,
 													"width": 88.50537109375,
 													"height": 13,
@@ -819,7 +841,7 @@
 											],
 											"fillColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 439,
+											"left": 432,
 											"top": 336,
 											"width": 98.50537109375,
 											"height": 53
@@ -836,8 +858,9 @@
 											"visible": false,
 											"fillColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"top": -48,
-											"width": 10,
+											"left": 432,
+											"top": 389,
+											"width": 98.50537109375,
 											"height": 10
 										},
 										{
@@ -852,7 +875,8 @@
 											"visible": false,
 											"fillColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"top": -48,
+											"left": -46,
+											"top": -55,
 											"width": 10,
 											"height": 10
 										},
@@ -868,7 +892,8 @@
 											"visible": false,
 											"fillColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"top": -48,
+											"left": -46,
+											"top": -55,
 											"width": 10,
 											"height": 10
 										}
@@ -876,7 +901,7 @@
 									"fillColor": "#d2dfe7",
 									"font": "Arial;13;0",
 									"containerChangeable": true,
-									"left": 439,
+									"left": 432,
 									"top": 311,
 									"width": 98.50537109375,
 									"height": 78,
@@ -922,7 +947,7 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 345,
+											"left": 349,
 											"top": 322,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -945,7 +970,7 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 345,
+											"left": 349,
 											"top": 307,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -968,7 +993,7 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 345,
+											"left": 349,
 											"top": 352,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -989,7 +1014,7 @@
 											},
 											"fillColor": "#00202a",
 											"font": "Arial;13;0",
-											"left": 264,
+											"left": 279,
 											"top": 328,
 											"width": 53.1298828125,
 											"height": 13,
@@ -1014,7 +1039,7 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 280,
+											"left": 295,
 											"top": 308,
 											"height": 13,
 											"alpha": 0.7853981633974483,
@@ -1035,7 +1060,7 @@
 											},
 											"fillColor": "#00202a",
 											"font": "Arial;13;0",
-											"left": 280,
+											"left": 295,
 											"top": 349,
 											"width": 19.5126953125,
 											"height": 13,
@@ -1058,7 +1083,7 @@
 											},
 											"fillColor": "#00202a",
 											"font": "Arial;13;0",
-											"left": 373,
+											"left": 366,
 											"top": 327,
 											"width": 40.091796875,
 											"height": 13,
@@ -1082,7 +1107,7 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 410,
+											"left": 403,
 											"top": 308,
 											"height": 13,
 											"alpha": -0.7853981633974483,
@@ -1102,7 +1127,7 @@
 											},
 											"fillColor": "#00202a",
 											"font": "Arial;13;0",
-											"left": 383,
+											"left": 376,
 											"top": 352,
 											"width": 19.5126953125,
 											"height": 13,
@@ -1155,7 +1180,7 @@
 									"tail": {
 										"$ref": "AAAAAAF4MbswQFam/8g="
 									},
-									"points": "252:343;439:343",
+									"points": "267:343;432:343",
 									"showProperty": false,
 									"nameLabel": {
 										"$ref": "AAAAAAF4MbswQFbStTg="
@@ -2263,7 +2288,7 @@
 									"tail": {
 										"$ref": "AAAAAAF4MkX9WnrTEIk="
 									},
-									"points": "592:341;537:341"
+									"points": "592:352;530:352"
 								}
 							]
 						},
@@ -2328,7 +2353,7 @@
 									}
 								}
 							],
-							"documentation": "A `Deck` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. var title = \n2. var containsKey = cards.contains(",
+							"documentation": "A `Deck` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Define local variables\n  - var containsCard = false\n  - var key = card.title\n  - var keys = cards.keys\n2. If keys.contains(key)\n  - containsCard = keys[key].count > 0\n3. Return containsCard\n",
 							"attributes": [
 								{
 									"_type": "UMLAttribute",
@@ -2505,7 +2530,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF4MZiTtlJ9Qco="
 									},
-									"name": "_ t",
+									"name": "t",
 									"type": "T"
 								},
 								{
@@ -3300,6 +3325,18 @@
 									"documentation": "The primary name.",
 									"type": "string",
 									"isReadOnly": true
+								}
+							],
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAF4Mr0hxIAbgeg=",
+									"_parent": {
+										"$ref": "AAAAAAF4MWAYTlCLI6k="
+									},
+									"name": "==(card: Card): boolean",
+									"documentation": "Determines if the `Card` is equal to the given `Card`.\n\n- Precondition: None.\n- Postocndition: None.\n- Returns: True if the `Card` is equal to the given `Card`, else false.",
+									"isStatic": true
 								}
 							]
 						}

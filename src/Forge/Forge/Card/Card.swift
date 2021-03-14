@@ -17,7 +17,7 @@
 import Foundation
 
 /// A game `Card`.
-public class Card {
+public class Card: Equatable {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -36,5 +36,19 @@ public class Card {
     public init(title: String) {
         
         self.title = title
+    }
+    
+    //=========================================================================//
+    //                                 METHODS                                 //
+    //=========================================================================//
+    
+    /// Determines if the given `Card`s are equal.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the given `Card`s are equal, else false.
+    public static func == (lhs: Card, rhs: Card) -> Bool {
+        
+        return lhs.title == rhs.title
     }
 }
