@@ -21,7 +21,7 @@ import XCTest
 class CardTests: XCTestCase {
     
     /// Tests that two `Card`s with the same titles are equal.
-    func testAreEqual_SameTitle_True() {
+    func testAreEqual_SameTitles_True() {
         
         // Given
         let title = "Card"
@@ -30,5 +30,18 @@ class CardTests: XCTestCase {
         
         // When/Then
         XCTAssertEqual(card1, card2)
+    }
+    
+    /// Tests that two `Card`s with different titlte are not equal.
+    func testAreNotEqual_DifferentTitles_True() {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        
+        // When/Then
+        XCTAssertNotEqual(card1, card2)
     }
 }
