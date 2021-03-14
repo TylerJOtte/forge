@@ -2390,7 +2390,7 @@
 									}
 								}
 							],
-							"documentation": "A `Hand` of `Card`s.",
+							"documentation": "A `Hand` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Define local variables\n  - var containsCard = false\n  - var index = 0\n2. while (!containsCard && index < cards.count)\n  - Get the next card\n  - containsCard = next card = card\n  - index++\n3. Return containsCard\n",
 							"attributes": [
 								{
 									"_type": "UMLAttribute",
@@ -3313,7 +3313,7 @@
 									}
 								}
 							],
-							"documentation": "A game `Card`.",
+							"documentation": "A game `Card`.\n\n---\n### Algorithms\n---\n\n#### ==(card: Card): boolean\n\n1. return this.card.title = card.title\n",
 							"attributes": [
 								{
 									"_type": "UMLAttribute",

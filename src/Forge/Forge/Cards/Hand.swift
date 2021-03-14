@@ -79,8 +79,7 @@ public class Hand: Cards {
     /// - Returns: True if the given `Card` exists, else false.
     public func contains(_ card: Card) -> Bool {
         
-        // TDOO: implement stub
-        return false
+        return cards.contains(card)
     }
     
     /// Adds the given `Card` to the collection.
