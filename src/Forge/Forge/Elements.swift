@@ -42,14 +42,14 @@ public protocol Elements {
     /// - Postcondition: None.
     /// - Parameter t: The `T` to find.
     /// - Returns: True if the given `T` exists, else false.
-    func contains(t: T) -> Bool
+    func contains(_ t: T) -> Bool
     
     /// Adds the given `T` to the collection.
     ///
     /// - Precondition: The collection cannot be full.
     /// - Postcondition: The collection contains the given `T`.
     /// - Parameter t: The `T` to add to the collection.
-    func add(t: T)
+    func add(_ t: T)
     
     /// Removes the first istance of the given `T` from the collection.
     ///
@@ -58,5 +58,5 @@ public protocol Elements {
     ///   - The collection must contain the given `T`.
     /// - Postcondition: The collection contains one less instance of the given `T`.
     /// - Parameter t: The `T` to remove from the collection.
-    func remove(t: T) -> T
+    func remove(_ t: T) -> T
 }
