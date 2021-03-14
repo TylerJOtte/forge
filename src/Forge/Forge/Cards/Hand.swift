@@ -90,7 +90,12 @@ public class Hand: Cards {
     /// - Throws: `ElementsError.isFull` if the collection is full.
     public func add(_ card: Card) throws {
         
-        // TDOO: implement stub
+        guard (isFull()) else {
+            
+            throw ElementsError.isFull
+        }
+        
+        cards.append(card)
     }
     
     /// Removes the first istance of the given `Card` from the collection.

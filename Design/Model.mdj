@@ -2372,7 +2372,7 @@
 									}
 								}
 							],
-							"documentation": "A `Deck` of `Card`s.\n\n---\n### Elements Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Define local variables\n  - var containsCard = false\n  - var key = card.title\n  - var keys = cards.keys\n2. If keys.contains(key)\n  - containsCard = keys[key].count > 0\n3. Return containsCard\n\n#### add(card: Card): boolean\n\n1. If isFull(), throw ElementsError.isFull\n2. Define local variables\n  - var containsCard = false\n  - var key = card.title\n  - var keys = cards.keys\n2. If keys.contains(key)\n  - containsCard = keys[key].count > 0\n3. Return containsCard\n",
+							"documentation": "A `Deck` of `Card`s.\n\n---\n### Elements Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Define local variables\n  - var containsCard = false\n  - var containsKey = containsKey(card)\n2. If containsKey\n  - containsCard = keys[key].count > 0\n3. Return containsCard\n\n### add(card: Card): void\n\n1. If isFull(), throw ElementsError.isFull\n2. If containsKey(card)\n  - Add a key with the card's title to cards dictionary\n  - Initialize a new array for the key's value\n  - Add the card to the array\n3. Else\n  - Get the card array for the key with the card's title from the cards dictionary\n  - Add the card to the end of the array",
 							"attributes": [
 								{
 									"_type": "UMLAttribute",
@@ -2442,7 +2442,7 @@
 									}
 								}
 							],
-							"documentation": "A `Hand` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Define local variables\n  - var containsCard = false\n  - var index = 0\n2. while (!containsCard && index < cards.count)\n  - Get the next card\n  - containsCard = next card = card\n  - index++\n3. Return containsCard\n",
+							"documentation": "A `Hand` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Define local variables\n  - var containsCard = false\n  - var index = 0\n2. while (!containsCard && index < cards.count)\n  - Get the next card\n  - containsCard = next card = card\n  - index++\n3. Return containsCard\n\n#### add(card: Card): void\n\n1. If isFull(), throw ElementsError.isFull\n2. Add the card to the end of the cards array\n",
 							"attributes": [
 								{
 									"_type": "UMLAttribute",
