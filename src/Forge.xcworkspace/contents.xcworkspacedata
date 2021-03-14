@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Simulation/Simulation.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Forge/Forge.xcodeproj">
    </FileRef>
 </Workspace>
