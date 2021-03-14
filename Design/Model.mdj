@@ -2335,6 +2335,7 @@
 								"$ref": "AAAAAAF4MWWBilEtfbQ="
 							},
 							"name": "t",
+							"documentation": "The type of `Element` tha that collection contains.",
 							"parameterType": "T",
 							"defaultValue": ""
 						}
@@ -2445,7 +2446,7 @@
 								"$ref": "AAAAAAF4MWWBilEtfbQ="
 							},
 							"name": "remove",
-							"documentation": "Removes the given `T` from the collection.\n\n- **Precondition**: \n  - The collection cannot be empty.\n  - The collection must contain the given `T`.\n- **Postcondition**: The collection does not contain the given `T`.\n- **Parameter _t_**: The `T` to remove from the collection.",
+							"documentation": "Removes the first instance of the given `T` from the collection.\n\n- **Precondition**: \n  - The collection cannot be empty.\n  - The collection must contain the given `T`.\n- **Postcondition**: The collection contains one less instance of the given `T`.\n- **Parameter _t_**: The `T` to remove from the collection.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
