@@ -20,6 +20,10 @@ import XCTest
 /// Unit tests for the `Deck` class.
 class DeckTests: XCTestCase {
     
+    //-------------------------------------------------------------------------//
+    //                                 Testers                                 //
+    //-------------------------------------------------------------------------//
+    
     // TODO: Add is not empty test
     // TODO: Add non-empty deck count > 0 test
     
@@ -46,5 +50,24 @@ class DeckTests: XCTestCase {
         
         // Then
         XCTAssertTrue(isEmpty && expected == actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  Adders                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Deck` contains a `Card` that was added to it.
+    func testAddCard_ContainsCard_True() throws {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let deck = Deck()
+        
+        // When
+        try deck.add(card)
+        
+        // Then
+        XCTAssertTrue(deck.contains(card))
     }
 }

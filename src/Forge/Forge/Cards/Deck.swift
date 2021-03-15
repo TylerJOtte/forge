@@ -121,7 +121,7 @@ public class Deck: Cards {
             
         } else {
             
-            cards[card.title]! = [card]
+            cards[card.title] = [card]
         }
     }
     
