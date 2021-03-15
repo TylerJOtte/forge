@@ -19,6 +19,10 @@ import XCTest
 
 /// Unit tests for the `Hand` class.
 class HandTests: XCTestCase {
+   
+    //-------------------------------------------------------------------------//
+    //                                 Testers                                 //
+    //-------------------------------------------------------------------------//
     
     // TODO: Add is not empty test
     // TODO: Add non-empty hand count > 0 test
@@ -46,5 +50,24 @@ class HandTests: XCTestCase {
         
         // Then
         XCTAssertTrue(isEmpty && expected == actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  Adders                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Hand` contains a `Card` that was added to it.
+    func testAddCard_ContainsCard_True() throws {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let hand = Hand()
+        
+        // When
+        try hand.add(card)
+        
+        // Then
+        XCTAssertTrue(hand.contains(card))
     }
 }

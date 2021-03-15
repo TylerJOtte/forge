@@ -98,7 +98,7 @@ public class Hand: Cards {
     /// - Throws: `ElementsError.isFull` if the collection is full.
     public func add(_ card: Card) throws {
         
-        guard (isFull()) else {
+        guard (!isFull()) else {
             
             throw ElementsError.isFull
         }
