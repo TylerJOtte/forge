@@ -143,6 +143,26 @@ class HandTests: XCTestCase {
         XCTAssert(hand.count < hand.maxCards)
     }
     
+    /// Tests that the count of a`Hand` with`Card`s increments by one after adding a `Card` to it.
+    func test_count_withAddedCard_IncrementsByOne() throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let cards = [card1]
+        let hand = Hand(of: cards)!
+        let expected = 2
+        
+        // When
+        try hand.add(card2)
+        let actual = hand.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                                 Full Hand                               //
     //-------------------------------------------------------------------------//
