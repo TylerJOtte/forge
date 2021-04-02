@@ -425,4 +425,32 @@ class HandTests: XCTestCase {
             XCTAssertEqual(expected, error as? ElementsError)
         }
     }
+    
+    /// Tests that adding `Card`s to a `Hand`greater than its capacity throws an
+    /// `ElementsError.insufficientCapacity` error.
+    func test_throwsInsufficientCapacityError_addMoreCardsThanCapacity_true()
+        throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let title4 = "Card 4"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let card3 = Card(title3)
+        let card4 = Card(title4)
+        let cards1 = [card1, card2]
+        let cards2 = [card3, card4]
+        let max = 3
+        let hand = Hand(of: cards1, with: max)!
+        let expected = ElementsError.insufficientCapacity
+        
+        // When
+        XCTAssertThrowsError(try hand.add(cards2)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
 }
