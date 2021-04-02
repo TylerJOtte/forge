@@ -52,55 +52,23 @@ class DeckTests: XCTestCase {
         XCTAssertFalse(deck.isEmpty())
     }
     
-    /// Tests that the count of an empty`Deck` equals the min # of `Card`s  allowed.
-    func test_count_ofEmptyDeck_equalsMinCards() {
+    //-------------------------------------------------------------------------//
+    //                                 Is Full                                 //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a`Deck` without `Card`s is not full.
+    func test_isFull_withoutCards_False() {
         
         // Given
         let cards: [Card] = []
-        let deck = Deck(of: cards)!
-        let expected = deck.minCards
-        
-        // When
-        let actual = deck.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the count of an empty `Deck` is zero.
-    func test_count_ofEmptyDeck_isZero() {
-        
-        // Given
-        let cards: [Card] = []
-        let deck = Deck(of: cards)!
-        let expected = 0
-        
-        // When
-        let actual = deck.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                          Paritally Filled Deck                          //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the count of a `Deck` with `Card`s  is > zero.
-    func test_count_ofDeckWithCards_isGreaterThanZero() {
-        
-        // Given
-        let title = "Card"
-        let card = Card(title)
-        let cards = [card]
         let deck = Deck(of: cards)!
         
         // When/Then
-        XCTAssert(deck.count > 0)
+        XCTAssertFalse(deck.isFull())
     }
     
     /// Tests that a`Deck`with `Card`s  less than the max allowed  is not full.
-    func test_deck_withCardsLessThanMax_isNotFull() {
+    func test_isFull_withCardsLessThanMax_false() {
         
         // Given
         let title = "Card"
@@ -108,21 +76,6 @@ class DeckTests: XCTestCase {
         let cards = [card]
         let max = 2
         let deck = Deck(of: cards, with: max)!
-        
-        // When/Then
-        XCTAssertFalse(deck.isFull())
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                 Is Full                                 //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that a`Deck` without cards  is not full.
-    func test_isFull_withoutCards_False() {
-        
-        // Given
-        let cards: [Card] = []
-        let deck = Deck(of: cards)!
         
         // When/Then
         XCTAssertFalse(deck.isFull())
@@ -140,6 +93,67 @@ class DeckTests: XCTestCase {
         
         // When/Then
         XCTAssert(deck.isFull())
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  Count                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the count of an empty `Deck` is zero.
+    func test_count_ofEmptyDeck_isZero() {
+        
+        // Given
+        let cards: [Card] = []
+        let deck = Deck(of: cards)!
+        let expected = 0
+        
+        // When
+        let actual = deck.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the count of an empty`Deck` equals the min # of `Card`s  allowed.
+    func test_count_ofEmptyDeck_equalsMinCards() {
+        
+        // Given
+        let cards: [Card] = []
+        let deck = Deck(of: cards)!
+        let expected = deck.minCards
+        
+        // When
+        let actual = deck.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the count of a `Deck` with `Card`s  is > zero.
+    func test_count_WithCards_isGreaterThanZero() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let deck = Deck(of: cards)!
+        
+        // When/Then
+        XCTAssert(deck.count > 0)
+    }
+    
+    /// Tests that the count of a `Deck` with `Card`s  is less than the max # of `Card`s allowed.
+    func test_count_WithCards_isLessThanMaxCards() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let max = 2
+        let deck = Deck(of: cards, with: max)!
+        
+        // When/Then
+        XCTAssert(deck.count < deck.maxCards)
     }
     
     /// Tests that the count of a full `Deck` equals the max # of `Card`s  allowed.
