@@ -356,6 +356,27 @@ class HandTests: XCTestCase {
         XCTAssert(hand.contains(card))
     }
     
+    /// Tests that a `Hand` does not contains a `Card` that was removed from it.
+    func test_contains_removedCard_false() throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let card3 = Card(title3)
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)!
+        let expected = card2
+        
+        // When
+        let actual = try hand.remove(expected)
+        
+        // Then
+        XCTAssertFalse(hand.contains(actual))
+    }
+    
     //=========================================================================//
     //                                 REMOVERS                                //
     //=========================================================================//
