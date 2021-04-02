@@ -303,8 +303,26 @@ class HandTests: XCTestCase {
     //                                Contains                                 //
     //-------------------------------------------------------------------------//
     
+    /// Tests that a `Hand` contains an expected`Card`.
+    func test_contains_expectedCard_true() throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let card3 = Card(title3)
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)!
+        let expected = card2
+
+        // When/Then
+        XCTAssert(hand.contains(expected))
+    }
+    
     /// Tests that a `Hand` contains a `Card` that was added to it.
-    func test_contains_addedCard_True() throws {
+    func test_contains_addedCard_true() throws {
         
         // Given
         let title = "Card"
@@ -315,6 +333,6 @@ class HandTests: XCTestCase {
         try hand.add(card)
         
         // Then
-        XCTAssertTrue(hand.contains(card))
+        XCTAssert(hand.contains(card))
     }
 }

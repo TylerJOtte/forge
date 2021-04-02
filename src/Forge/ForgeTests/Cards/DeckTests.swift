@@ -305,7 +305,7 @@ class DeckTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that a `Deck` contains an expected`Card`.
-    func test_contains_expectedCard_True() throws {
+    func test_contains_expectedCard_true() throws {
         
         // Given
         let title1 = "Card 1"
@@ -323,7 +323,7 @@ class DeckTests: XCTestCase {
     }
     
     /// Tests that a `Deck` contains a `Card` that was added to it.
-    func test_contains_AddedCard_True() throws {
+    func test_contains_AddedCard_true() throws {
         
         // Given
         let title = "Card"
