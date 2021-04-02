@@ -360,8 +360,25 @@ class HandTests: XCTestCase {
     //                                Throwers                                 //
     //=========================================================================//
     
+    /// Tests that removing  a `Card` from an empty `Hand` throws an `ElementsError.iEmpty` error.
+    func test_throwsIsEmptyError_removeFromEmptyHand_true() throws {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let hand = Hand()
+        let expected = ElementsError.isEmpty
+        
+        // When
+        XCTAssertThrowsError(try hand.remove(card)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
     /// Tests that adding a `Card` to a full `Hand` throws an `ElementsError.isFull` error.
-    func test_throwsIsFullError_addCardToFullHand_true() throws {
+    func test_throwsIsFullError_addToFullHand_true() throws {
         
         // Given
         let title1 = "Card 1"

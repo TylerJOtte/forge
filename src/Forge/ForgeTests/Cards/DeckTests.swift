@@ -362,7 +362,7 @@ class DeckTests: XCTestCase {
     //=========================================================================//
     
     /// Tests that removing  a `Card` from an empty `Deck` throws an `ElementsError.iEmpty` error.
-    func test_throwsIsEmptyError_removeCardFromEmptyDeck_true() throws {
+    func test_throwsIsEmptyError_removeFromEmptyDeck_true() throws {
         
         // Given
         let title = "Card"
@@ -379,7 +379,7 @@ class DeckTests: XCTestCase {
     }
     
     /// Tests that adding a `Card` to a full `Deck` throws an `ElementsError.isFull` error.
-    func test_throwsIsFullError_addCardToFullDeck_true() throws {
+    func test_throwsIsFullError_addToFullDeck_true() throws {
         
         // Given
         let title1 = "Card 1"
