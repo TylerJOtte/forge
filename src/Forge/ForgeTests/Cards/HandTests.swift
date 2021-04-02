@@ -423,6 +423,31 @@ class HandTests: XCTestCase {
         }
     }
     
+    /// Tests that removing `Card`s from a `Hand`that does not contain it throws an
+    /// `ElementsError.notFound` error.
+    func test_throwsNotFoundError_removeNonExistentCard_true() throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let title4 = "Card 4"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let card3 = Card(title3)
+        let card4 = Card(title4)
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)!
+        let expected = ElementsError.notFound
+        
+        // When
+        XCTAssertThrowsError(try hand.remove(card4)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
     /// Tests that adding a `Card` to a full `Hand` throws an `ElementsError.isFull` error.
     func test_throwsIsFullError_addCardToFullHand_true() throws {
         
