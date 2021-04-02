@@ -58,6 +58,23 @@ class DeckTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that the count of an empty`Deck` with an added `Card` equals one.
+    func test_emptyDeckCount_withAddedCard_equalsOne() throws {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let deck = Deck()
+        let expected = 1
+        
+        // When
+        try deck.add(card)
+        let actual = deck.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                           Partially Filled Deck                         //
     //-------------------------------------------------------------------------//
