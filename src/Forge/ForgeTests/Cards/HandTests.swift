@@ -304,7 +304,7 @@ class HandTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that a `Hand` contains an expected`Card`.
-    func test_contains_card_true() throws {
+    func test_contains_card_true() {
         
         // Given
         let title1 = "Card 1"
@@ -322,7 +322,7 @@ class HandTests: XCTestCase {
     }
     
     /// Tests that a `Hand` does not contain a given`Card`.
-    func test_contains_card_false() throws {
+    func test_contains_card_false() {
         
         // Given
         let title1 = "Card 1"
@@ -354,5 +354,32 @@ class HandTests: XCTestCase {
         
         // Then
         XCTAssert(hand.contains(card))
+    }
+    
+    //=========================================================================//
+    //                                Throwers                                 //
+    //=========================================================================//
+    
+    /// Tests that adding a `Card` to a full `Hand` throws an `ElementsError.isFull` error.
+    func test_throwsIsFullError_addCardToFullHand_true() throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let card3 = Card(title3)
+        let cards = [card1, card2]
+        let max = 2
+        let hand = Hand(of: cards, with: max)!
+        let expected = ElementsError.isFull
+        
+        // When
+        XCTAssertThrowsError(try hand.add(card3)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
     }
 }
