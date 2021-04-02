@@ -304,6 +304,24 @@ class DeckTests: XCTestCase {
     //                                Contains                                 //
     //-------------------------------------------------------------------------//
     
+    /// Tests that a `Deck` contains an expected`Card`.
+    func test_contains_expectedCard_True() throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let card3 = Card(title3)
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)!
+        let expected = card2
+
+        // When/Then
+        XCTAssert(deck.contains(expected))
+    }
+    
     /// Tests that a `Deck` contains a `Card` that was added to it.
     func test_contains_AddedCard_True() throws {
         
@@ -316,6 +334,6 @@ class DeckTests: XCTestCase {
         try deck.add(card)
         
         // Then
-        XCTAssertTrue(deck.contains(card))
+        XCTAssert(deck.contains(card))
     }
 }
