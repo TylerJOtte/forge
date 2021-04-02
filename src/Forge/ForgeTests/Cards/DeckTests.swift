@@ -39,6 +39,10 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isEmpty())
     }
     
+    //-------------------------------------------------------------------------//
+    //                          Paritally Filled Deck                          //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that a`Deck`with cards  is not empty.
     func test_deck_withCards_isNotEmpty() {
         
@@ -50,6 +54,20 @@ class DeckTests: XCTestCase {
         
         // When/Then
         XCTAssertFalse(deck.isEmpty())
+    }
+    
+    /// Tests that a`Deck`with cards less than the max allowed  is not full.
+    func test_deck_withCardsLessThanMax_isNotFull() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let max = 2
+        let deck = Deck(of: cards, with: max)!
+        
+        // When/Then
+        XCTAssertFalse(deck.isFull())
     }
     
     //-------------------------------------------------------------------------//

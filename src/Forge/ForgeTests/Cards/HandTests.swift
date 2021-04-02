@@ -39,6 +39,11 @@ class HandTests: XCTestCase {
         XCTAssert(hand.isEmpty())
     }
     
+    //-------------------------------------------------------------------------//
+    //                          Paritally Filled Hand                          //
+    //-------------------------------------------------------------------------//
+    
+    
     /// Tests that a`Hand`with cards  is not empty.
     func test_deck_withCards_isNotEmpty() {
         
@@ -52,8 +57,23 @@ class HandTests: XCTestCase {
         XCTAssertFalse(hand.isEmpty())
     }
     
+    
+    /// Tests that a`Hand`with cards less than the max allowed  is not full.
+    func test_hand_withCardsLessThanMax_isNotFull() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let max = 2
+        let hand = Hand(of: cards, with: max)!
+        
+        // When/Then
+        XCTAssertFalse(hand.isFull())
+    }
+    
     //-------------------------------------------------------------------------//
-    //                                 Full Deck                               //
+    //                                 Full Hand                               //
     //-------------------------------------------------------------------------//
     
     /// Tests that an empty `Hand`'s count is zero.
