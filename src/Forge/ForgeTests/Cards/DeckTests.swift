@@ -39,6 +39,21 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isEmpty())
     }
     
+    /// Tests that the count of an empty `Deck` is zero.
+    func test_count_ofEmptyDeck_isZero() {
+        
+        // Given
+        let cards: [Card] = []
+        let deck = Deck(of: cards)!
+        let expected = 0
+        
+        // When
+        let actual = deck.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                          Paritally Filled Deck                          //
     //-------------------------------------------------------------------------//
@@ -88,19 +103,22 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isFull())
     }
     
-    /// Tests that an empty `Deck`'s count is zero.
-    func testEmptyDeckCountIsZero() {
+    /// Tests that the count of a full `Deck` equals the max # of carrds allowed.
+    func test_count_ofFullDeck_equalsMaxCards() {
         
         // Given
-        let deck: Deck = Deck()
-        let expected = 0
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let max = 1
+        let deck = Deck(of: cards, with: max)!
+        let expected = deck.maxCards
         
         // When
-        let isEmpty = deck.isEmpty()
         let actual = deck.count
         
         // Then
-        XCTAssertTrue(isEmpty && expected == actual)
+        XCTAssertEqual(expected, actual)
     }
     
     //-------------------------------------------------------------------------//
