@@ -357,6 +357,31 @@ class HandTests: XCTestCase {
     }
     
     //=========================================================================//
+    //                                 REMOVERS                                //
+    //=========================================================================//
+    
+    /// Tests that removing a `Card` from a `Hand` returns the expected `Card`.
+    func test_remove_card_true() throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let card3 = Card(title3)
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)!
+        let expected = card2
+        
+        // When
+        let actual = try hand.remove(expected)
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //=========================================================================//
     //                                Throwers                                 //
     //=========================================================================//
     
