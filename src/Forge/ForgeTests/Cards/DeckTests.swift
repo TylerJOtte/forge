@@ -379,7 +379,7 @@ class DeckTests: XCTestCase {
     }
     
     /// Tests that adding a `Card` to a full `Deck` throws an `ElementsError.isFull` error.
-    func test_throwsIsFullError_addToFullDeck_true() throws {
+    func test_throwsIsFullError_addCardToFullDeck_true() throws {
         
         // Given
         let title1 = "Card 1"
@@ -395,6 +395,32 @@ class DeckTests: XCTestCase {
         
         // When
         XCTAssertThrowsError(try deck.add(card3)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    /// Tests that adding `Card`s to a full `Deck` throws an `ElementsError.isFull` error.
+    func test_throwsIsFullError_addCardsToFullDeck_true() throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let title4 = "Card 4"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let card3 = Card(title3)
+        let card4 = Card(title4)
+        let cards1 = [card1, card2]
+        let cards2 = [card3, card4]
+        let max = 2
+        let deck = Deck(of: cards1, with: max)!
+        let expected = ElementsError.isFull
+        
+        // When
+        XCTAssertThrowsError(try deck.add(cards2)) { (error) in
             
             // Then
             XCTAssertEqual(expected, error as? ElementsError)
