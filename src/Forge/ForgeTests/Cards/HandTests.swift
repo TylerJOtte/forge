@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  HandTests.swift                                                                 //
+//  HandTests.swift                                                            //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 3/14/21.                                       //
@@ -27,11 +27,12 @@ class HandTests: XCTestCase {
     // TODO: Add is not empty test
     // TODO: Add non-empty hand count > 0 test
     
-    /// Tests that a`Hand` is empty.
-    func testIsEmpty() {
+    /// Tests that a`Hand`with zero cards  is empty.
+    func test_hand_withZeroCards_IsEmpty() {
         
         // Given
-        let hand: Hand = Hand()
+        let cards: [Card] = []
+        let hand: Hand = Hand(of: cards)
         
         // When/Then
         XCTAssert(hand.isEmpty())

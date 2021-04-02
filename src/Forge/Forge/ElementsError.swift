@@ -19,6 +19,7 @@ import Foundation
 /// An throwable `Elements Error`
 public enum ElementsError: Error {
     
+    case insufficientCapacity
     case isEmpty
     case isFull
     case notFound

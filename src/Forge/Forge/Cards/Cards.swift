@@ -34,3 +34,49 @@ public protocol Cards: Elements where T == Card {
     /// The total # of `Card`s.
     var count: Int { get }
 }
+
+extension Cards {
+    
+    /// The total # of `Card`s that can be added to the collection.
+    var capacity: Int { return maxCards - count }
+    
+    
+    /// Determines if the collection has capacity to add all of the given `Card`s.
+    ///
+    /// - Parameter cards: The `Card`s to add to the collection.
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the collection can add all of the given `Card`s, else false.
+    public func hasCapacity(for cards: [Card]) -> Bool {
+        
+        return cards.count <= capacity
+    }
+    
+    /// Adds the given `Card`s to the collection.
+    ///
+    /// - Precondition:
+    ///   - The collection cannot be full.
+    ///   - The collection must have capacity to add all of the given `Card`s.
+    /// - Postcondition: The collection contains the given `Card`s.
+    /// - Parameter cards: The `Card`s to add to the collection.
+    /// - Throws:
+    ///   - `ElementsError.isFull` if the collection is full.
+    ///   - `ElementsError.insufficientCapacity` if all of the given `Card`s cannot be added.
+    public func add(_ cards: [Card]) throws {
+        
+        guard (!isFull()) else {
+            
+            throw ElementsError.isFull
+        }
+        
+        guard (hasCapacity(for: cards)) else {
+            
+            throw ElementsError.insufficientCapacity
+        }
+        
+        for card in cards {
+            
+            try add(card)
+        }
+    }
+}

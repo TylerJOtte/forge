@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  DeckTests.swift                                                                 //
+//  DeckTests.swift                                                            //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 3/14/21.                                       //
@@ -27,11 +27,12 @@ class DeckTests: XCTestCase {
     // TODO: Add is not empty test
     // TODO: Add non-empty deck count > 0 test
     
-    /// Tests that a`Deck` is empty.
-    func testIsEmpty() {
+    /// Tests that a`Deck`with zero cards  is empty.
+    func test_deck_withZeroCards_isEmpty() {
         
         // Given
-        let deck: Deck = Deck()
+        let cards: [Card] = []
+        let deck: Deck = Deck(of: cards)
         
         // When/Then
         XCTAssert(deck.isEmpty())

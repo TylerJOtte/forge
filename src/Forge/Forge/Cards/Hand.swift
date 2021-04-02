@@ -40,11 +40,31 @@ public class Hand: Cards {
     //=========================================================================//
     
     /// Creates a default `Hand` of `Card`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Hand` can hold zero - Int.max `Card`s.
+    ///   - The `Hand` is empty.
     public init() {
         
-        minCards = 0
-        maxCards = Int.max
-        cards = []
+        self.minCards = 0
+        self.maxCards = Int.max
+        self.cards = []
+    }
+    
+    /// Creates a`Hand`with the given `Card`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Hand` can hold zero - Int.max `Card`s.
+    ///   - The `Hand` contains the given `Card`s.
+    public init(of cards: [Card]) {
+        
+        self.minCards = 0
+        self.maxCards = Int.max
+        self.cards = []
+        
+        try! add(cards)
     }
     
     //=========================================================================//

@@ -40,11 +40,31 @@ public class Deck: Cards {
     //=========================================================================//
     
     /// Creates a default `Deck` of `Card`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Deck` can hold zero - Int.max `Card`s.
+    ///   - The `Deck` is empty.
     public init() {
         
-        minCards = 0
-        maxCards = Int.max
-        cards = [:]
+        self.minCards = 0
+        self.maxCards = Int.max
+        self.cards = [:]
+    }
+    
+    /// Creates a`Deck`with the given `Card`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Deck` can hold zero - Int.max `Card`s.
+    ///   - The `Deck` contains the given `Card`s.
+    public init(of cards: [Card]) {
+        
+        self.minCards = 0
+        self.maxCards = Int.max
+        self.cards = [:]
+        
+        try! add(cards)
     }
     
     //=========================================================================//
@@ -100,7 +120,6 @@ public class Deck: Cards {
     //-------------------------------------------------------------------------//
     //                                  Adders                                 //
     //-------------------------------------------------------------------------//
-    
     
     /// Adds the given `Card` to the collection.
     ///
