@@ -32,10 +32,23 @@ class DeckTests: XCTestCase {
         
         // Given
         let cards: [Card] = []
-        let deck: Deck = Deck(of: cards)
+        let deck = Deck(of: cards)
         
         // When/Then
         XCTAssert(deck.isEmpty())
+    }
+    
+    /// Tests that a`Deck`with cards  is not empty.
+    func test_deck_withCards_isNotEmpty() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let deck = Deck(of: cards)
+        
+        // When/Then
+        XCTAssertFalse(deck.isEmpty())
     }
     
     /// Tests that an empty `Deck`'s count is zero.
