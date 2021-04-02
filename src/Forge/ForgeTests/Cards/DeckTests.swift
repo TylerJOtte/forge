@@ -142,6 +142,23 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.count > 0)
     }
     
+    /// Tests that the count of a `Deck` with a given #`Card`s  equals the expected # of `Card`s.
+    func test_count_WithGivenCards_equalsExpected() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let deck = Deck(of: cards)!
+        let expected = 1
+        
+        // When
+        let actual = deck.count
+        
+        // When/Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that the count of a `Deck` with `Card`s  is less than the max # of `Card`s allowed.
     func test_count_WithCards_isLessThanMaxCards() {
         
