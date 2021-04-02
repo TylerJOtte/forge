@@ -361,6 +361,23 @@ class DeckTests: XCTestCase {
     //                                Throwers                                 //
     //=========================================================================//
     
+    /// Tests that removing  a `Card` from an empty `Deck` throws an `ElementsError.iEmpty` error.
+    func test_throwsIsEmptyError_removeCardFromEmptyDeck_true() throws {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let deck = Deck()
+        let expected = ElementsError.isEmpty
+        
+        // When
+        XCTAssertThrowsError(try deck.remove(card)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
     /// Tests that adding a `Card` to a full `Deck` throws an `ElementsError.isFull` error.
     func test_throwsIsFullError_addCardToFullDeck_true() throws {
         
