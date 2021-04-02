@@ -130,7 +130,7 @@ class HandTests: XCTestCase {
     }
     
     /// Tests that the count of a `Hand` with `Card`s  is > zero.
-    func test_count_ofHandWithCards_isGreaterThanZero() {
+    func test_count_WithCards_isGreaterThanZero() {
         
         // Given
         let title = "Card"
@@ -140,6 +140,20 @@ class HandTests: XCTestCase {
         
         // When/Then
         XCTAssert(hand.count > 0)
+    }
+    
+    /// Tests that the count of a `Hand` with `Card`s  is less than the max # of `Card`s allowed.
+    func test_count_WithCards_isLessThanMaxCards() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let max = 2
+        let hand = Hand(of: cards, with: max)!
+        
+        // When/Then
+        XCTAssert(hand.count < hand.maxCards)
     }
     
     /// Tests that the count of a full `Hand` equals the max # of `Card`s  allowed.
