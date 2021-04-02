@@ -20,12 +20,13 @@ import XCTest
 /// Unit tests for the `Hand` class.
 class HandTests: XCTestCase {
    
-    //-------------------------------------------------------------------------//
-    //                                 Testers                                 //
-    //-------------------------------------------------------------------------//
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
     
-    // TODO: Add is not empty test
-    // TODO: Add non-empty hand count > 0 test
+    //-------------------------------------------------------------------------//
+    //                                Empty Hand                               //
+    //-------------------------------------------------------------------------//
     
     /// Tests that a`Hand`with zero cards  is empty.
     func test_hand_withZeroCards_IsEmpty() {
@@ -51,6 +52,10 @@ class HandTests: XCTestCase {
         XCTAssertFalse(hand.isEmpty())
     }
     
+    //-------------------------------------------------------------------------//
+    //                                 Full Deck                               //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that an empty `Hand`'s count is zero.
     func testEmptyHandCountIsZero() {
         
@@ -64,6 +69,20 @@ class HandTests: XCTestCase {
         
         // Then
         XCTAssertTrue(isEmpty && expected == actual)
+    }
+    
+    /// Tests that a`Hand`with the max # of cards  is full.
+    func test_hand_withMaxCards_isFull() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let max = 1
+        let hand = Hand(of: cards, with: max)!
+        
+        // When/Then
+        XCTAssert(hand.isFull())
     }
     
     //-------------------------------------------------------------------------//
