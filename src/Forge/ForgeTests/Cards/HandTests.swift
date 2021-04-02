@@ -159,6 +159,21 @@ class HandTests: XCTestCase {
         XCTAssertFalse(hand.isEmpty())
     }
     
+    /// Tests that adding a `Card` to an empty` Hand`with is not empty.
+    func test_isEmpty_addCardToEmptyHand_False() throws {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let hand = Hand()
+        
+        // When
+        try hand.add(card)
+        
+        // Then
+        XCTAssertFalse(hand.isEmpty())
+    }
+    
     //-------------------------------------------------------------------------//
     //                                 Is Full                                 //
     //-------------------------------------------------------------------------//
