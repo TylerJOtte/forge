@@ -20,19 +20,20 @@ import XCTest
 /// Unit tests for the `Deck` class.
 class DeckTests: XCTestCase {
     
-    //-------------------------------------------------------------------------//
-    //                                 Testers                                 //
-    //-------------------------------------------------------------------------//
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
     
-    // TODO: Add is not empty test
-    // TODO: Add non-empty deck count > 0 test
-    
+    //-------------------------------------------------------------------------//
+    //                                Empty Deck                               //
+    //-------------------------------------------------------------------------//
+
     /// Tests that a`Deck`with zero cards  is empty.
     func test_deck_withZeroCards_isEmpty() {
         
         // Given
         let cards: [Card] = []
-        let deck = Deck(of: cards)
+        let deck = Deck(of: cards)!
         
         // When/Then
         XCTAssert(deck.isEmpty())
@@ -45,10 +46,28 @@ class DeckTests: XCTestCase {
         let title = "Card"
         let card = Card(title)
         let cards = [card]
-        let deck = Deck(of: cards)
+        let deck = Deck(of: cards)!
         
         // When/Then
         XCTAssertFalse(deck.isEmpty())
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                 Full Deck                               //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a`Deck`with the max # of cards  is full.
+    func test_deck_withMaxCards_isFull() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let max = 1
+        let deck = Deck(of: cards, with: max)!
+        
+        // When/Then
+        XCTAssert(deck.isFull())
     }
     
     /// Tests that an empty `Deck`'s count is zero.

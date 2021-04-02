@@ -32,7 +32,7 @@ class HandTests: XCTestCase {
         
         // Given
         let cards: [Card] = []
-        let hand = Hand(of: cards)
+        let hand = Hand(of: cards)!
         
         // When/Then
         XCTAssert(hand.isEmpty())
@@ -45,7 +45,7 @@ class HandTests: XCTestCase {
         let title = "Card"
         let card = Card(title)
         let cards = [card]
-        let hand = Hand(of: cards)
+        let hand = Hand(of: cards)!
         
         // When/Then
         XCTAssertFalse(hand.isEmpty())
