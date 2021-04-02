@@ -39,6 +39,21 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isEmpty())
     }
     
+    /// Tests that the count of an empty`Deck` equals the min # of `Card`s  allowed.
+    func test_count_ofEmptyDeck_equalsMinCards() {
+        
+        // Given
+        let cards: [Card] = []
+        let deck = Deck(of: cards)!
+        let expected = deck.minCards
+        
+        // When
+        let actual = deck.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that the count of an empty `Deck` is zero.
     func test_count_ofEmptyDeck_isZero() {
         
