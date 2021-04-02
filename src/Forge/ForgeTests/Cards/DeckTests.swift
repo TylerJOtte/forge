@@ -71,6 +71,19 @@ class DeckTests: XCTestCase {
         XCTAssertFalse(deck.isEmpty())
     }
     
+    /// Tests that the count of a `Deck` with `Card`s  is > zero.
+    func test_count_ofDeckWithCards_isGreaterThanZero() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let deck = Deck(of: cards)!
+        
+        // When/Then
+        XCTAssert(deck.count > 0)
+    }
+    
     /// Tests that a`Deck`with `Card`s  less than the max allowed  is not full.
     func test_deck_withCardsLessThanMax_isNotFull() {
         
