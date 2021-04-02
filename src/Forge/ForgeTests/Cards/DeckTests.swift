@@ -305,7 +305,7 @@ class DeckTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that a `Deck` contains an expected`Card`.
-    func test_contains_Card_true() throws {
+    func test_contains_Card_true() {
         
         // Given
         let title1 = "Card 1"
@@ -323,7 +323,7 @@ class DeckTests: XCTestCase {
     }
     
     /// Tests that a `Deck` does not contain a given`Card`.
-    func test_contains_card_false() throws {
+    func test_contains_card_false() {
         
         // Given
         let title1 = "Card 1"
@@ -355,5 +355,32 @@ class DeckTests: XCTestCase {
         
         // Then
         XCTAssert(deck.contains(card))
+    }
+    
+    //=========================================================================//
+    //                                Throwers                                 //
+    //=========================================================================//
+    
+    /// Tests that adding a `Card` to a full `Deck` throws an `ElementsError.isFull` error.
+    func test_throwsIsFullError_addCardToFullDeck_true() throws {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        let card3 = Card(title3)
+        let cards = [card1, card2]
+        let max = 2
+        let deck = Deck(of: cards, with: max)!
+        let expected = ElementsError.isFull
+        
+        // When
+        XCTAssertThrowsError(try deck.add(card3)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
     }
 }
