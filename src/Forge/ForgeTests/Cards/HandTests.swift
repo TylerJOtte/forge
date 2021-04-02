@@ -58,6 +58,23 @@ class HandTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that the count of an empty`Hand` with an added `Card` equals one.
+    func test_emptyHandCount_withAddedCard_equalsOne() throws {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let hand = Hand()
+        let expected = 1
+        
+        // When
+        try hand.add(card)
+        let actual = hand.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                           Partially Filled Hand                         //
     //-------------------------------------------------------------------------//
