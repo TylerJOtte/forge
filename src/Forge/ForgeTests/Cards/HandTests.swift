@@ -39,6 +39,21 @@ class HandTests: XCTestCase {
         XCTAssert(hand.isEmpty())
     }
     
+    /// Tests that the count of an empty`Hand` equals the min # of `Card`s  allowed.
+    func test_count_ofEmptyHand_equalsMinCards() {
+        
+        // Given
+        let cards: [Card] = []
+        let hand = Hand(of: cards)!
+        let expected = hand.minCards
+        
+        // When
+        let actual = hand.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that the count of an empty `Hand` is zero.
     func test_count_ofEmptyHand_isZero() {
         
