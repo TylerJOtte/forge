@@ -28,7 +28,7 @@ class HandTests: XCTestCase {
     //                                Empty Hand                               //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a`Hand`with zero cards  is empty.
+    /// Tests that a`Hand`with zero `Card`s   is empty.
     func test_hand_withZeroCards_IsEmpty() {
         
         // Given
@@ -58,7 +58,7 @@ class HandTests: XCTestCase {
     //                          Paritally Filled Hand                          //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a`Hand`with cards  is not empty.
+    /// Tests that a`Hand`with `Card`s is not empty.
     func test_hand_withCards_isNotEmpty() {
         
         // Given
@@ -71,7 +71,20 @@ class HandTests: XCTestCase {
         XCTAssertFalse(hand.isEmpty())
     }
     
-    /// Tests that a`Hand`with cards less than the max allowed  is not full.
+    /// Tests that the count of a `Hand` with `Card`s  is > zero.
+    func test_count_ofHandWithCards_isGreaterThanZero() {
+        
+        // Given
+        let title = "Card"
+        let card = Card(title)
+        let cards = [card]
+        let hand = Hand(of: cards)!
+        
+        // When/Then
+        XCTAssert(hand.count > 0)
+    }
+    
+    /// Tests that a`Hand`with `Card`s less than the max allowed  is not full.
     func test_hand_withCardsLessThanMax_isNotFull() {
         
         // Given
@@ -89,7 +102,7 @@ class HandTests: XCTestCase {
     //                                 Full Hand                               //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a`Hand`with the max # of cards  is full.
+    /// Tests that a`Hand`with the max # of `Card`s  is full.
     func test_hand_withMaxCards_isFull() {
         
         // Given
@@ -103,7 +116,7 @@ class HandTests: XCTestCase {
         XCTAssert(hand.isFull())
     }
     
-    /// Tests that the count of a full `Hand` equals the max # of carrds allowed.
+    /// Tests that the count of a full `Hand` equals the max # of `Card`s  allowed.
     func test_count_ofFullHand_equalsMaxCards() {
         
         // Given
