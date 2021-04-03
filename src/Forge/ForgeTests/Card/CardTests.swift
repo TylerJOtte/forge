@@ -33,7 +33,7 @@ class CardTests: XCTestCase {
     }
     
     /// Tests that two `Card`s with different titlte are not equal.
-    func testAreNotEqual_DifferentTitles_True() {
+    func test_areNotEqual_differentTitles_true() {
         
         // Given
         let title1 = "Card 1"

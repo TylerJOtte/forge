@@ -51,7 +51,7 @@ extension Rank {
     /// - Returns: True if the `Rank` is a standard French-suited`PlayingCard Rank`, else false.
     func isStandard() -> Bool {
         
-        return isNumeric() || isFaceCardRank()
+        return isNumericRank() || isFaceCardRank()
     }
     
     /// Determines if the `Rank` is a standard `PlayingCard Rank`, and the given `Suit` is a
