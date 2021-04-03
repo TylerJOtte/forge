@@ -32,6 +32,8 @@ public class Card: Equatable {
     
     /// Creates a `Card` with the given title.
     ///
+    /// - Precondition: None.
+    /// - Postcondition: The `Card`s title is set to the given title.
     /// - Parameter title: The primary name.
     public init(_ title: String) {
         
@@ -46,6 +48,9 @@ public class Card: Equatable {
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The value to compare against.
+    ///   - rhs: The value to compare to.
     /// - Returns: True if the given `Card`s are equal, else false.
     public static func == (lhs: Card, rhs: Card) -> Bool {
         
