@@ -750,6 +750,281 @@ class PlayingCardTests: XCTestCase {
     }
     
     //=========================================================================//
+    //                               ATTRIBUTES                                //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                 Points                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the default points of a`PlayingCard` with an `ace Rank` equal one.
+    func test_defaultPoints_ofAce_equalOne() {
+        
+        // Given
+        let rank = Rank.ace
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 1
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `one Rank` equal one.
+    func test_defaultPoints_ofOne_equalOne() {
+        
+        // Given
+        let rank = Rank.one
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 1
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `two Rank` equal two.
+    func test_defaultPoints_ofTwo_equalTwo(){
+        
+        // Given
+        let rank = Rank.two
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 2
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `three Rank` equal three..
+    func test_defaultPoints_ofThree_equalThree() {
+        
+        // Given
+        let rank = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 3
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `four Rank` equal four.
+    func test_defaultPoints_ofFour_equalFour() {
+        
+        // Given
+        let rank = Rank.four
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 4
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `five Rank` equal five.
+    func test_defaultPoints_ofFive_equalFive() {
+        
+        // Given
+        let rank = Rank.five
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 5
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `six Rank` equal six.
+    func test_defaultPoints_ofSix_equalSix() {
+        
+        // Given
+        let rank = Rank.six
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 6
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `seven Rank` equal seven.
+    func test_defaultPoints_ofSeven_equalSeven() {
+        
+        // Given
+        let rank = Rank.seven
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 7
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with an `eight Rank` equal eight.
+    func test_defaultPoints_ofEight_equalEight() {
+        
+        // Given
+        let rank = Rank.eight
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 8
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `nine Rank` equal nine.
+    func test_defaultPoints_ofNine_equalNine() {
+        
+        // Given
+        let rank = Rank.nine
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 9
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `ten Rank` equal ten.
+    func test_defaultPoints_ofTen_equalTen() {
+        
+        // Given
+        let rank = Rank.ten
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 10
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `jack Rank` equal ten.
+    func test_defaultPoints_ofJack_equalTen() {
+        
+        // Given
+        let rank = Rank.jack
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 10
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `queen Rank` equal ten.
+    func test_defaultPoints_ofQueen_equalTen() {
+        
+        // Given
+        let rank = Rank.queen
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 10
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `king Rank` equal ten.
+    func test_defaultPoints_ofKing_equalTen() {
+        
+        // Given
+        let rank = Rank.king
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let expected = 10
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the default points of a`PlayingCard` with a `joker Rank` equal zero.
+    func test_defaultPoints_ofJoker_equalZero() {
+        
+        // Given
+        let rank = Rank.joker
+        let card = PlayingCard(rank, of: nil)!
+        let expected = 0
+        
+        // When
+        let actual = card.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//
     
