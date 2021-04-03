@@ -285,7 +285,7 @@ class PlayingCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that creating a`PlayingCard` with a `joker Rank` & `PlayingCard Suit`fails.
-    func test_init_withJokerAndValidSuit_false() {
+    func test_init_withJokerAndInvalidSuit_false() {
         
         // Given
         let rank = Rank.joker
@@ -300,8 +300,251 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
+                                //              //
+                                // Invalid Suit //
+                                //              //
+    
+    /// Tests that creating a`PlayingCard` with an `ace Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_witAceRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.ace
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `one Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withOneRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.one
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `two Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withTwoRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.two
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `three Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withThreeRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.three
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `four Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withFourRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.four
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `five Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withFiveRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.five
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `six Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withSixRankAndInValidSuit_false(){
+        
+        // Given
+        let rank = Rank.six
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `seven Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withSevenRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.seven
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with an `eight Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withEightRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.eight
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `nine Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withNineRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.nine
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `ten Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withTenRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.ten
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `jack Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withJackRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.jack
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `queen Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withQueenRankAndInValidSuit_false() {
+        
+        // Given
+        let rank = Rank.queen
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `king Rank` & a non-standard `PlayingCard Suit`
+    /// succeeds.
+    func test_init_withKingRankAndInValidSuit_false(){
+        
+        // Given
+        let rank = Rank.king
+        let color = Color.black
+        let symbol = Symbol.star
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    
     /// Tests that creating a`PlayingCard` with a `joker Rank` & a non-`PlayingCard Suit`fails.
-    func test_init_withJokerAndInvalidSuit_false() {
+    func test_init_withJokerAndInValidSuit_false(){
         
         // Given
         let rank = Rank.joker
