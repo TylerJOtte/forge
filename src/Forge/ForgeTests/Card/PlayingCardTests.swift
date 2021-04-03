@@ -39,12 +39,28 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that creating a`PlayingCard` with a `joker Rank` & `PlayingCard Suit`fails.
-    func test_init_jokerAndSuit_false() {
+    func test_init_jokerAndValidSuit_false() {
         
         // Given
         let rank = Rank.joker
         let color = Color.black
         let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `joker Rank` & a non-`PlayingCard Suit`fails.
+    func test_init_jokerAndInvalidSuit_false() {
+        
+        // Given
+        let rank = Rank.joker
+        let color = Color.black
+        let symbol = Symbol.star
         let suit = Suit(color, symbol)
         
         // When

@@ -23,4 +23,5 @@ public enum Symbol {
     case diamond
     case heart
     case spade
+    case star
 }
