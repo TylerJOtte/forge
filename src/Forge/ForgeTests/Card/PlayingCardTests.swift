@@ -22,11 +22,28 @@ import SwiftUI
 class PlayingCardTests: XCTestCase {
     
     //=========================================================================//
+    //                             Initialization                              //
+    //=========================================================================//
+    
+    /// Tests that a`PlayingCard` with a `joker Rank` & nil `Suit` is succesfully created.
+    func test_init_jokerAndNilSuit_true() {
+        
+        // Given
+        let rank = Rank.joker
+        
+        // When
+        let actual = PlayingCard(rank, of: nil)
+        
+        // Then
+        XCTAssert(actual != nil)
+    }
+    
+    //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                 Is Empty                                //
+    //                                 Are Equal                               //
     //-------------------------------------------------------------------------//
     
     /// Tests that two standard`PlayingCard`s with the same `Rank` & `Suit` are equal.
@@ -80,6 +97,10 @@ class PlayingCardTests: XCTestCase {
         // When/Then
         XCTAssertEqual(card1, card2)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                               Are Not Equal                             //
+    //-------------------------------------------------------------------------//
     
     /// Tests that two standard`PlayingCard`s with the same `Rank` &  different `Suit`s are not equal.
     func test_areNotEqual_sameRankAndDifferntSuit_true() {
