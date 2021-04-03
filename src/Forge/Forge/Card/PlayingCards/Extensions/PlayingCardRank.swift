@@ -136,6 +136,8 @@ extension Rank {
     func getTitle(for suit: Suit?, _ color: Color) -> String {
         
         var title: String
+        let suitTitle = suit != nil ?
+            suit!.symbol == .clover ? "Clubs" : "\(suit!.symbol)s" : ""
         
         if (self == .joker) {
             
@@ -143,13 +145,13 @@ extension Rank {
         
         } else if (self == .ace || self == .one) {
             
-            title = "Ace of \(suit!.symbol)s"
+            title = "Ace Of \(suitTitle)"
         
         } else {
             
-           title = "\(self) of \(suit!.symbol)s"
+           title = "\(self) Of \(suitTitle)"
         }
         
-        return title
+        return title.capitalized
     }
 }
