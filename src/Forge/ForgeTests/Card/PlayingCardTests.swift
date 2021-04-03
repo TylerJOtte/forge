@@ -25,7 +25,7 @@ class PlayingCardTests: XCTestCase {
     //                             Initialization                              //
     //=========================================================================//
     
-    /// Tests that a`PlayingCard` with a `joker Rank` & nil `Suit` is succesfully created.
+    /// Tests that creating a`PlayingCard` with a `joker Rank` & nil `Suit`succeeds.
     func test_init_jokerAndNilSuit_true() {
         
         // Given
@@ -36,6 +36,22 @@ class PlayingCardTests: XCTestCase {
         
         // Then
         XCTAssert(actual != nil)
+    }
+    
+    /// Tests that creating a`PlayingCard` with a `joker Rank` & `PlayingCard Suit`fails.
+    func test_init_jokerAndSuit_false() {
+        
+        // Given
+        let rank = Rank.joker
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        
+        // When
+        let actual = PlayingCard(rank, of: suit)
+        
+        // Then
+        XCTAssert(actual == nil)
     }
     
     //=========================================================================//
@@ -51,8 +67,8 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let symbol = Symbol.clover
         let color = Color.black
+        let symbol = Symbol.clover
         let suit1 = Suit(color, symbol)
         let suit2 = Suit(color, symbol)
         let card1 = PlayingCard(rank, of: suit1)
@@ -69,8 +85,8 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.one
-        let symbol = Symbol.clover
         let color = Color.black
+        let symbol = Symbol.clover
         let suit1 = Suit(color, symbol)
         let suit2 = Suit(color, symbol)
         let card1 = PlayingCard(rank1, of: suit1)
@@ -87,8 +103,8 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.one
         let rank2 = Rank.ace
-        let symbol = Symbol.clover
         let color = Color.black
+        let symbol = Symbol.clover
         let suit1 = Suit(color, symbol)
         let suit2 = Suit(color, symbol)
         let card1 = PlayingCard(rank1, of: suit1)
@@ -107,9 +123,9 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
+        let color = Color.black
         let symbol1 = Symbol.clover
         let symbol2 = Symbol.spade
-        let color = Color.black
         let suit1 = Suit(color, symbol1)
         let suit2 = Suit(color, symbol2)
         let card1 = PlayingCard(rank, of: suit1)
@@ -125,8 +141,8 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.king
-        let symbol = Symbol.clover
         let color = Color.black
+        let symbol = Symbol.clover
         let suit1 = Suit(color, symbol)
         let suit2 = Suit(color, symbol)
         let card1 = PlayingCard(rank1, of: suit1)
@@ -142,9 +158,9 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.king
+        let color = Color.black
         let symbol1 = Symbol.clover
         let symbol2 = Symbol.spade
-        let color = Color.black
         let suit1 = Suit(color, symbol1)
         let suit2 = Suit(color, symbol2)
         let card1 = PlayingCard(rank1, of: suit1)
