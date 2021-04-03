@@ -3546,7 +3546,7 @@
 											"top": 166,
 											"width": 83.08447265625,
 											"height": 13,
-											"text": "(from Cards)"
+											"text": "(from Card)"
 										},
 										{
 											"_type": "LabelView",
