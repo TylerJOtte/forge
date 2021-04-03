@@ -87,7 +87,8 @@ extension Rank {
     /// - Returns: True if the `Rank` is a valid `PlayingCard Rank` for the given `Suit`, else false.
     func isValid(for suit: Suit?) -> Bool {
         
-        return (self == .joker && suit == nil) || isStandard(for: suit!)
+        return (self == .joker && suit == nil) ||
+            (suit != nil && isStandard(for: suit!))
     }
     
     //=========================================================================//

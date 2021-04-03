@@ -284,6 +284,10 @@ class PlayingCardTests: XCTestCase {
     //                                Failure                                  //
     //-------------------------------------------------------------------------//
     
+                                //             //
+                                //  Valid Suit //
+                                //             //
+                                
     /// Tests that creating a`PlayingCard` with a `joker Rank` & `PlayingCard Suit`fails.
     func test_init_withJokerAndInvalidSuit_false() {
         
@@ -300,12 +304,198 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
+                                //           //
+                                //  Nil Suit //
+                                //           //
+
+    /// Tests that creating a`PlayingCard` with an `ace Rank` & a nil `Suit` fails.
+    func test_init_witAceRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.ace
+        
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `one Rank` & a nil `Suit` fails.
+    func test_init_withOneRankAnddNilSuit_false() {
+
+        // Given
+        let rank = Rank.one
+        
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `two Rank` & a nil `Suit` fails.
+    func test_init_withTwoRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.two
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `three Rank` & a nil `Suit` fails.
+    func test_init_withThreeRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.three
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `four Rank` & a nil `Suit` fails.
+    func test_init_withFourRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.four
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `five Rank` & a nil `Suit` fails.
+    func test_init_withFiveRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.five
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `six Rank` & a nil `Suit` fails.
+    func test_init_withSixRankAndNilSuit_false(){
+
+        // Given
+        let rank = Rank.six
+        
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `seven Rank` & a nil `Suit` fails.
+    func test_init_withSevenRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.seven
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with an `eight Rank` & a nil `Suit` fails.
+    func test_init_withEightRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.eight
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `nine Rank` & a nil `Suit` fails.
+    func test_init_withNineRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.nine
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `ten Rank` & a nil `Suit` fails.
+    func test_init_withTenRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.ten
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `jack Rank` & a nil `Suit` fails.
+    func test_init_withJackRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.jack
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `queen Rank` & a nil `Suit` fails.
+    func test_init_withQueenRankAndNilSuit_false() {
+
+        // Given
+        let rank = Rank.queen
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+
+    /// Tests that creating a`PlayingCard` with a `king Rank` & a nil `Suit` fails.
+    func test_init_withKingRankAndNilSuit_false(){
+
+        // Given
+        let rank = Rank.king
+
+        // When
+        let actual = PlayingCard(rank, of: nil)
+
+        // Then
+        XCTAssert(actual == nil)
+    }
+    
                                 //              //
                                 // Invalid Suit //
                                 //              //
     
-    /// Tests that creating a`PlayingCard` with an `ace Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with an `ace Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_witAceRankAndInValidSuit_false() {
         
         // Given
@@ -321,8 +511,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `one Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `one Rank` & a non-standard
+    ///  `PlayingCard Suit` fails.
     func test_init_withOneRankAndInValidSuit_false() {
         
         // Given
@@ -338,8 +528,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `two Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `two Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withTwoRankAndInValidSuit_false() {
         
         // Given
@@ -355,8 +545,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `three Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `three Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withThreeRankAndInValidSuit_false() {
         
         // Given
@@ -372,8 +562,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `four Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `four Rank` & a non-standard
+    ///  `PlayingCard Suit` fails.
     func test_init_withFourRankAndInValidSuit_false() {
         
         // Given
@@ -389,8 +579,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `five Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `five Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withFiveRankAndInValidSuit_false() {
         
         // Given
@@ -406,8 +596,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `six Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `six Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withSixRankAndInValidSuit_false(){
         
         // Given
@@ -423,8 +613,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `seven Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `seven Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withSevenRankAndInValidSuit_false() {
         
         // Given
@@ -440,8 +630,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with an `eight Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with an `eight Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withEightRankAndInValidSuit_false() {
         
         // Given
@@ -457,8 +647,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `nine Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `nine Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withNineRankAndInValidSuit_false() {
         
         // Given
@@ -474,8 +664,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `ten Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `ten Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withTenRankAndInValidSuit_false() {
         
         // Given
@@ -491,8 +681,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `jack Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `jack Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withJackRankAndInValidSuit_false() {
         
         // Given
@@ -508,8 +698,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `queen Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `queen Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withQueenRankAndInValidSuit_false() {
         
         // Given
@@ -525,8 +715,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    /// Tests that creating a`PlayingCard` with a `king Rank` & a non-standard `PlayingCard Suit`
-    /// succeeds.
+    /// Tests that creating a`PlayingCard` with a `king Rank` & a non-standard
+    /// `PlayingCard Suit` fails.
     func test_init_withKingRankAndInValidSuit_false(){
         
         // Given
@@ -542,8 +732,8 @@ class PlayingCardTests: XCTestCase {
         XCTAssert(actual == nil)
     }
     
-    
-    /// Tests that creating a`PlayingCard` with a `joker Rank` & a non-`PlayingCard Suit`fails.
+    /// Tests that creating a`PlayingCard` with a `joker Rank` & a non-standard
+    /// `PlayingCard Suit`fails.
     func test_init_withJokerAndInValidSuit_false(){
         
         // Given
