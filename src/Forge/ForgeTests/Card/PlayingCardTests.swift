@@ -53,4 +53,21 @@ class PlayingCardTests: XCTestCase {
         // When/Then
         XCTAssertNotEqual(card1, card2)
     }
+    
+    /// Tests that two standard`PlayingCard`s with differrnt `Rank`s & the same`Suit` are not equal.
+    func test_areNotEqual_differentRankAndSameSuit_true() {
+        
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.king
+        let symbol = Symbol.clover
+        let color = Color.black
+        let suit1 = Suit(color, symbol)
+        let suit2 = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit1)
+        let card2 = PlayingCard(rank2, of: suit2)
+        
+        // When/Then
+        XCTAssertNotEqual(card1, card2)
+    }
 }
