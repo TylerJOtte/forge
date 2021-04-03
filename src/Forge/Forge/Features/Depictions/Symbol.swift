@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  Suit.swift                                                                 //
+//  Symbol.swift                                                               //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/02/21.                                       //
@@ -16,11 +16,11 @@
 
 import Foundation
 
-/// A standard French-suited `PlayingCard` suit.
-public enum suit {
+/// An illustrative icon.
+public enum Symbol {
     
-    case clubs
-    case diamonds
-    case hearts
-    case spades
+    case clover
+    case diamond
+    case heart
+    case spade
 }
