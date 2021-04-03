@@ -20,6 +20,10 @@ import XCTest
 /// Unit tests for the `Card` class.
 class CardTests: XCTestCase {
     
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+    
     /// Tests that two `Card`s with the same titles are equal.
     func test_areEqual_sameTitles_true() {
         

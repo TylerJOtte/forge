@@ -21,6 +21,14 @@ import SwiftUI
 /// Unit tests for the `PlayingCard` class.
 class PlayingCardTests: XCTestCase {
     
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                 Is Empty                                //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that two standard`PlayingCard`s with the same `Rank` & `Suit` are equal.
     func test_areEqual_sameRankAndSuit_true() {
         
@@ -90,7 +98,7 @@ class PlayingCardTests: XCTestCase {
         XCTAssertNotEqual(card1, card2)
     }
     
-    /// Tests that two standard`PlayingCard`s with differrnt `Rank`s & the same`Suit` are not equal.
+    /// Tests that two standard`PlayingCard`s with different `Rank`s & the same`Suit` are not equal.
     func test_areNotEqual_differentRankAndSameSuit_true() {
         
         // Given
@@ -100,6 +108,24 @@ class PlayingCardTests: XCTestCase {
         let color = Color.black
         let suit1 = Suit(color, symbol)
         let suit2 = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit1)
+        let card2 = PlayingCard(rank2, of: suit2)
+        
+        // When/Then
+        XCTAssertNotEqual(card1, card2)
+    }
+    
+    /// Tests that two standard`PlayingCard`s with different `Rank`s`Suit`s are not equal.
+    func test_areNotEqual_differentRankAndSuit_true() {
+        
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.king
+        let symbol1 = Symbol.clover
+        let symbol2 = Symbol.spade
+        let color = Color.black
+        let suit1 = Suit(color, symbol1)
+        let suit2 = Suit(color, symbol2)
         let card1 = PlayingCard(rank1, of: suit1)
         let card2 = PlayingCard(rank2, of: suit2)
         
