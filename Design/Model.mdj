@@ -7212,6 +7212,25 @@
 											"subViews": [
 												{
 													"_type": "UMLOperationView",
+													"_id": "AAAAAAF4mSXq2ThX8eE=",
+													"_parent": {
+														"$ref": "AAAAAAF4mPSYCDCLUao="
+													},
+													"model": {
+														"$ref": "AAAAAAF4mSXqtjhOGeg="
+													},
+													"fillColor": "#657b83",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 77,
+													"top": 614,
+													"width": 200.52880859375,
+													"height": 13,
+													"text": "~equals(rank: Rank): boolean",
+													"horizontalAlignment": 0
+												},
+												{
+													"_type": "UMLOperationView",
 													"_id": "AAAAAAF4mPWchzFZQMM=",
 													"_parent": {
 														"$ref": "AAAAAAF4mPSYCDCLUao="
@@ -7223,7 +7242,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 614,
+													"top": 629,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isNumeric(): boolean",
@@ -7242,7 +7261,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 629,
+													"top": 644,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isFaceCardRank(): boolean",
@@ -7261,7 +7280,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 644,
+													"top": 659,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isStandard(): boolean",
@@ -7280,7 +7299,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 659,
+													"top": 674,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isStandard(suit: Suit): boolean",
@@ -7299,7 +7318,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 674,
+													"top": 689,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isValid(suit: Suit): boolean",
@@ -7318,7 +7337,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 689,
+													"top": 704,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~getPoints(): int",
@@ -7337,7 +7356,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 704,
+													"top": 719,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~getTitle(suit: Suit): String",
@@ -7350,7 +7369,7 @@
 											"left": 72,
 											"top": 609,
 											"width": 210.52880859375,
-											"height": 113
+											"height": 128
 										},
 										{
 											"_type": "UMLReceptionCompartmentView",
@@ -7394,7 +7413,7 @@
 									"left": 72,
 									"top": 584,
 									"width": 210.52880859375,
-									"height": 138,
+									"height": 153,
 									"showProperty": false,
 									"nameCompartment": {
 										"$ref": "AAAAAAF4mPSYCDCF9qI="
@@ -7608,6 +7627,38 @@
 											"operations": [
 												{
 													"_type": "UMLOperation",
+													"_id": "AAAAAAF4mSXqtjhOGeg=",
+													"_parent": {
+														"$ref": "AAAAAAF4mPSYBzCCZt8="
+													},
+													"name": "equals",
+													"documentation": "Determines if the `Rank` is equal to the given `Rank`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter rank: The `Rank` to compare to.\n- Returns: True if the `Rank` is equal to the given `Rank`, else false.\n\n---\n### Algorithm\n---\n\n1. Return this == rank || (this == ace && rank == one) || (this == one && rank == ace)",
+													"visibility": "package",
+													"parameters": [
+														{
+															"_type": "UMLParameter",
+															"_id": "AAAAAAF4mSYRujhnMhw=",
+															"_parent": {
+																"$ref": "AAAAAAF4mSXqtjhOGeg="
+															},
+															"name": "rank",
+															"type": {
+																"$ref": "AAAAAAF4lP2aixV+yyQ="
+															}
+														},
+														{
+															"_type": "UMLParameter",
+															"_id": "AAAAAAF4mSYRuzhoozc=",
+															"_parent": {
+																"$ref": "AAAAAAF4mSXqtjhOGeg="
+															},
+															"type": "boolean",
+															"direction": "return"
+														}
+													]
+												},
+												{
+													"_type": "UMLOperation",
 													"_id": "AAAAAAF4mPWcbTFQyRU=",
 													"_parent": {
 														"$ref": "AAAAAAF4mPSYBzCCZt8="
@@ -7761,7 +7812,7 @@
 														"$ref": "AAAAAAF4mPSYBzCCZt8="
 													},
 													"name": "getTitle",
-													"documentation": "Retrieves the standard French-suited `PlayingCard` title for the`Rank`,  given`Suit` & `Color`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameters:\n  - suit: The color-coded `Symbol`.\n  - color: The primary `Color`.\n- Returns: The standard French-suited `PlayingCard` title for the`Rank`,  given`Suit` & `Color`.\n\n---\n### Algorithm\n---\n\n1. Return this == joker ? \"color this\" : \"this of suit.symbol\"",
+													"documentation": "Retrieves the standard French-suited `PlayingCard` title for the`Rank`,  given`Suit` & `Color`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameters:\n  - suit: The color-coded `Symbol`.\n  - color: The primary `Color`.\n- Returns: The standard French-suited `PlayingCard` title for the`Rank`,  given`Suit` & `Color`.\n\n---\n### Algorithm\n---\n\n1. var title: String\n        \n2. if (this == joker)\n\t2.1 title =  \"color this\"\n    \n3. Else if (this == ace || this == .ne)\n\t3.1 title = \"Ace of {suit.symbol}s\"\n        \n4. Else title = \"this of {suit.symbol}s\"\n\n5. Return title",
 													"visibility": "package",
 													"parameters": [
 														{

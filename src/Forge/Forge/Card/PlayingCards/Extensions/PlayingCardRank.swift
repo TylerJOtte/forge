@@ -24,6 +24,18 @@ extension Rank {
     //                                 TESTERS                                 //
     //=========================================================================//
     
+    /// Determines if the `Rank` is equal to the given `Rank`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter rank: The `Rank` to compare to.
+    /// - Returns: True if the `Rank` is equal to the given `Rank`, else false.
+    func equals(_ rank: Rank) -> Bool {
+        
+        return self == rank || (self == .ace && rank == .one) ||
+            (self == .one && rank == .ace)
+    }
+    
     /// Determines if the `Rank` is a numeric `PlayingCard Rank`.
     ///
     /// - Precondition: None.
@@ -94,16 +106,16 @@ extension Rank {
         if (self == .ace) {
             
             points = 1
-        }
-        else if (self.isNumeric()) {
+        
+        } else if (self.isNumeric()) {
             
             points = self.rawValue
-        }
-        else if (self.isFaceCardRank()) {
+        
+        } else if (self.isFaceCardRank()) {
             
             points = 10
-        }
-        else {
+        
+        } else {
             
             points = 0
         }
@@ -122,6 +134,21 @@ extension Rank {
     ///  `Color`.
     func getTitle(for suit: Suit?, _ color: Color) -> String {
         
-       return self == .joker ? "\(color) \(self)" : "\(self) of \(suit!.symbol)"
+        var title: String
+        
+        if (self == .joker) {
+            
+            title =  "\(color) \(self)"
+        
+        } else if (self == .ace || self == .one) {
+            
+            title = "Ace of \(suit!.symbol)s"
+        
+        } else {
+            
+           title = "\(self) of \(suit!.symbol)s"
+        }
+        
+        return title
     }
 }

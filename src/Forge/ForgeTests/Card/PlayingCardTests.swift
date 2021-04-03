@@ -37,6 +37,42 @@ class PlayingCardTests: XCTestCase {
         XCTAssertEqual(card1, card2)
     }
     
+    /// Tests that a`PlayingCard` with an `ace` `Rank` is equal to a `PlayingCard` with a `one`
+    /// `Rank` of the same  `Suit`.
+    func test_areEqual_aceAndOneOfSameSuit_true() {
+        
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.one
+        let symbol = Symbol.clover
+        let color = Color.black
+        let suit1 = Suit(color, symbol)
+        let suit2 = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit1)
+        let card2 = PlayingCard(rank2, of: suit2)
+        
+        // When/Then
+        XCTAssertEqual(card1, card2)
+    }
+    
+    /// Tests that a`PlayingCard` with a `one` `Rank` is equal to a `PlayingCard` with a `ace`
+    /// `Rank` of the same  `Suit`.
+    func test_areEqual_oneAndAceOfSameSuit_true() {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.ace
+        let symbol = Symbol.clover
+        let color = Color.black
+        let suit1 = Suit(color, symbol)
+        let suit2 = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit1)
+        let card2 = PlayingCard(rank2, of: suit2)
+        
+        // When/Then
+        XCTAssertEqual(card1, card2)
+    }
+    
     /// Tests that two standard`PlayingCard`s with the same `Rank` &  different `Suit`s are not equal.
     func test_areNotEqual_sameRankAndDifferntSuit_true() {
         
