@@ -28,6 +28,19 @@ class PlayingDeckTests: XCTestCase {
     //                                Success                                  //
     //-------------------------------------------------------------------------//
     
+    /// Tests that creating a`PlayingCardDeck` with `joker`s succeeds.
+    func test_init_withJokers_true() {
+        
+        // Given
+        let jokers = true
+        
+        // When
+        let actual = PlayingCardDeck(with: jokers)
+        
+        // Then
+        XCTAssert(actual != nil)
+    }
+    
     /// Tests that creating a`PlayingCardDeck` without `joker`s succeeds.
     func test_init_withoutJokers_true() {
         
@@ -41,16 +54,41 @@ class PlayingDeckTests: XCTestCase {
         XCTAssert(actual != nil)
     }
     
-    /// Tests that creating a`PlayingCardDeck` with `joker`s succeeds.
-    func test_init_withJokers_true() {
+    //=========================================================================//
+    //                               ATTRIBUTES                                //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                 Count                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the count of a new`PlayingCardDeck` with `joker`s is 54.
+    func test_count_withJokers_equals54() {
         
         // Given
         let jokers = true
+        let deck = PlayingCardDeck(with: jokers)!
+        let expected = 54
         
         // When
-        let actual = PlayingCardDeck(with: jokers)
+        let actual = deck.count
         
         // Then
-        XCTAssert(actual != nil)
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the count of a new`PlayingCardDeck` without `joker`s is 52.
+    func test_count_withoutJokers_equals52() {
+        
+        // Given
+        let jokers = false
+        let deck = PlayingCardDeck(with: jokers)!
+        let expected = 52
+        
+        // When
+        let actual = deck.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
 }
