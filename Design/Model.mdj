@@ -6373,7 +6373,7 @@
 															},
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
-															"font": "Arial;13;1",
+															"font": "Arial;13;3",
 															"left": 645,
 															"top": 591,
 															"width": 131.87890625,
@@ -6458,7 +6458,7 @@
 															"top": 614,
 															"width": 131.87890625,
 															"height": 13,
-															"text": "+title: string {readOnly}",
+															"text": "+title: String",
 															"horizontalAlignment": 0
 														},
 														{
@@ -6477,7 +6477,7 @@
 															"top": 629,
 															"width": 131.87890625,
 															"height": 13,
-															"text": "+points: int {readOnly}",
+															"text": "+points: int",
 															"horizontalAlignment": 0
 														}
 													],
@@ -6551,6 +6551,7 @@
 											"top": 584,
 											"width": 141.87890625,
 											"height": 73,
+											"showProperty": false,
 											"nameCompartment": {
 												"$ref": "AAAAAAF4nZM2p0noBKc="
 											},
@@ -6699,6 +6700,8 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
+															"left": 80,
+															"top": 18,
 															"height": 13
 														},
 														{
@@ -6710,9 +6713,9 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;1",
-															"left": 645,
-															"top": 718,
-															"width": 41.919921875,
+															"left": 685,
+															"top": 727,
+															"width": 28.8818359375,
 															"height": 13,
 															"text": "Kind"
 														},
@@ -6726,6 +6729,8 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
+															"left": 80,
+															"top": 18,
 															"width": 75.84814453125,
 															"height": 13,
 															"text": "(from Ranks)"
@@ -6740,6 +6745,8 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
+															"left": 80,
+															"top": 18,
 															"height": 13,
 															"horizontalAlignment": 1
 														}
@@ -6747,9 +6754,9 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 640,
-													"top": 711,
-													"width": 51.919921875,
+													"left": 680,
+													"top": 720,
+													"width": 38.8818359375,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF4nZX3T0w3g6Q="
@@ -6773,11 +6780,12 @@
 													"model": {
 														"$ref": "AAAAAAF4nZX3TkwzcqI="
 													},
+													"visible": false,
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 640,
-													"top": 736,
+													"left": 680,
+													"top": 745,
 													"width": 51.919921875,
 													"height": 10
 												},
@@ -6790,11 +6798,12 @@
 													"model": {
 														"$ref": "AAAAAAF4nZX3TkwzcqI="
 													},
+													"visible": false,
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 640,
-													"top": 746,
+													"left": 680,
+													"top": 755,
 													"width": 51.919921875,
 													"height": 10
 												},
@@ -6811,7 +6820,9 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"width": 10,
+													"left": 680,
+													"top": 765,
+													"width": 51.919921875,
 													"height": 10
 												},
 												{
@@ -6827,6 +6838,8 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
+													"left": 40,
+													"top": 9,
 													"width": 10,
 													"height": 10
 												}
@@ -6835,14 +6848,17 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"containerChangeable": true,
-											"left": 640,
-											"top": 711,
-											"width": 51.919921875,
-											"height": 45,
+											"left": 680,
+											"top": 720,
+											"width": 38.8818359375,
+											"height": 25,
+											"autoResize": true,
 											"showProperty": false,
 											"nameCompartment": {
 												"$ref": "AAAAAAF4nZX3T0w20Kw="
 											},
+											"suppressAttributes": true,
+											"suppressOperations": true,
 											"attributeCompartment": {
 												"$ref": "AAAAAAF4nZX3T0w7NmY="
 											},
@@ -6880,7 +6896,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 683,
-													"top": 704,
+													"top": 681,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 15,
@@ -6903,7 +6919,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 668,
-													"top": 704,
+													"top": 681,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 30,
@@ -6926,7 +6942,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 712,
-													"top": 705,
+													"top": 682,
 													"height": 13,
 													"alpha": -1.5707963267948966,
 													"distance": 15,
@@ -6945,7 +6961,7 @@
 											"tail": {
 												"$ref": "AAAAAAF4nZX3Tkw1tzg="
 											},
-											"points": "691:711;698:711;698:656",
+											"points": "698:720;698:656",
 											"showVisibility": true,
 											"showProperty": false,
 											"nameLabel": {
@@ -6957,6 +6973,41 @@
 											"propertyLabel": {
 												"$ref": "AAAAAAF4nZX3uExzD5M="
 											}
+										},
+										{
+											"_type": "UMLConstraintView",
+											"_id": "AAAAAAF4ncqqtk7J8Tk=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"model": {
+												"$ref": "AAAAAAF4ncqfZU6587M="
+											},
+											"fillColor": "#006600",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 232,
+											"top": 696,
+											"width": 347,
+											"height": 70,
+											"text": "{\n    - The given `Card`'s count  must be >= 2.\n    - All `Card`s in the given collection must be the same.\n}"
+										},
+										{
+											"_type": "UMLConstraintLinkView",
+											"_id": "AAAAAAF4ncqqt07KMf4=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"fillColor": "#00202a",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF4nZX3Tkw1tzg="
+											},
+											"tail": {
+												"$ref": "AAAAAAF4ncqqtk7J8Tk="
+											},
+											"points": "578:736;680:736"
 										}
 									]
 								},
@@ -7000,7 +7051,7 @@
 													},
 													"name": "title",
 													"documentation": "The primary name.",
-													"type": "string",
+													"type": "String",
 													"isReadOnly": true
 												},
 												{
@@ -7014,7 +7065,8 @@
 													"type": "int",
 													"isReadOnly": true
 												}
-											]
+											],
+											"isAbstract": true
 										},
 										{
 											"_type": "UMLClass",
@@ -7036,8 +7088,18 @@
 													"target": {
 														"$ref": "AAAAAAF4nZM2p0nl7nI="
 													}
+												},
+												{
+													"_type": "UMLConstraint",
+													"_id": "AAAAAAF4ncqfZU6587M=",
+													"_parent": {
+														"$ref": "AAAAAAF4nZX3TkwzcqI="
+													},
+													"name": "KindConstraint",
+													"specification": "\n    - The given `Card`'s count  must be >= 2.\n    - All `Card`s in the given collection must be the same.\n"
 												}
-											]
+											],
+											"documentation": "A `HandRank` of equal `Card`s.\n\n---\n### Attribute Algorithms\n---\n\n#### title: String\n\n1. Return \"{count} Of A Kind\"\n\n#### points: int\n\n1. Return count"
 										}
 									]
 								}

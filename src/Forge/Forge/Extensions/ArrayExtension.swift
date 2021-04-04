@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  HandRank.swift                                                             //
+//  ArrayExtension.swift                                                       //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/04/21.                                       //
@@ -14,14 +14,11 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-import Foundation
-
-/// A `Hand` of `Card`'s hiearchical position.
-public protocol HandRank: Hand {
+/// An extension for common `Array` operations.
+extension Array where Element: Equatable {
     
-    // The primary name.
-    var title: String { get }
-    
-    // The total # of points
-    var points: Int { get }
+    func areUnique() -> Bool {
+        
+        return !self.contains(where: {$0 != self.first})
+    }
 }
