@@ -52,6 +52,52 @@ public class Hand: Cards {
         self.cards = []
     }
     
+    /// Creates a`Hand`with the given `Card`s and specified `min` & `max`.
+    ///
+    /// - Precondition:
+    ///   - `min` must be >= 0.
+    ///   - `max` must be  >= 1.
+    ///   - `max` must be >= `minCards`.
+    ///   - The # of given `Card`s must be &lt;= `max`.
+    /// - Postcondition:
+    ///   - The `Hand` can hold zero to given max `Card`s.
+    ///   - The `Hand` contains the given `Card`s.
+    /// - Parameters:
+    ///   - min: The minimum # of `Card`s allowed in the `Hand`.
+    ///   - max: The maximum # of `Card`s allowed in the `Hand`.
+    ///   - cards: The `Card`s to create `Hand` with.
+    public init?(of min: Int, to max: Int, _ cards: [Card]) {
+        
+        guard (min >= 0) else {
+            
+            print("Min must be >= 0.")
+            return nil
+        }
+        
+        guard (max >= 1) else {
+            
+            print("Max must be >= 1.")
+            return nil
+        }
+        
+        guard (max >= min) else {
+            
+            print("Max must be >= min.")
+            return nil
+        }
+        
+        guard (cards.count <= max) else {
+            
+            print("The # of given Cards must be <= to the specified max.")
+            return nil
+        }
+        
+        self.minCards = min
+        self.maxCards = max
+        self.cards = []
+        try! add(cards)
+    }
+    
     /// Creates a`Hand`with the given `Card`s and specified `max`.
     ///
     /// - Precondition:
