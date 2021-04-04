@@ -38,7 +38,7 @@ public class Deck: Cards {
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
-    
+
     /// Creates a default `Deck` of `Card`s.
     ///
     /// - Precondition: None.
@@ -50,6 +50,38 @@ public class Deck: Cards {
         self.minCards = 0
         self.maxCards = Int.max
         self.cards = [:]
+    }
+    
+    /// Creates a`Deck`with the given `Card`s and specified `max`.
+    ///
+    /// - Precondition:
+    ///   - The # of given `Card`s must be &lt;= `max`.
+    ///   - `max` must be  >= 1.
+    /// - Postcondition:
+    ///   - The `Deck` can hold zero to given max `Card`s.
+    ///   - The `Deck` contains the given `Card`s.
+    /// - Parameters:
+    ///   - cards: The `Card`s to create `Deck` with.
+    ///   - max: The maximum # of `Card`s allowed in the `Deck.`
+    public init?(of min: Int, to max: Int, _ cards: [Card]) {
+        
+        guard (cards.count <= max) else {
+            
+            print("The # of given Cards must be <= to the specified max.")
+            return nil
+        }
+        
+        guard (max >= 1) else {
+            
+            print("Max must be >= 1")
+            return nil
+        }
+        
+        self.minCards = 0
+        self.maxCards = max
+        self.cards = [:]
+        
+        try! add(cards)
     }
     
     /// Creates a`Deck`with the given `Card`s and specified `max`.

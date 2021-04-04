@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  Suit.swift                                                                 //
+//  PlayingCardDeck.swift                                                      //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/03/21.                                       //
@@ -17,56 +17,44 @@
 import Foundation
 import SwiftUI
 
-/// A color-coded symbol.
-public class Suit: Hashable {
+/// A standard French-suited `Deck` of `PlayingCard`s.
+public class PlayingCardDeck: Deck {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
     //=========================================================================//
     
-    /// The `Symbol`'s hue.
-    public let color: Color
-    
-    /// The  icon.
-    public let symbol: Symbol
-    
-    public func hash(into hasher: inout Hasher) {
-             hasher.combine(ObjectIdentifier(self).hashValue)
-        }
+    /// True if incldues `joker PlayingCard`s, else false.
+    public let includesJokers: Bool
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a `Suit` with the given `Color` and specified `Symbol`.
+    /// Creates a standard French-suited`PlayingCardDeck`with a `PlayingCard` for each
+    /// `PlayingCard Rank` & `Suit`, along with `joker Card`s if specified.
     ///
     /// - Precondition: None.
     /// - Postcondition:
-    ///   - The `Suit`'s `Color` is set to the given `Color`.
-    ///   - The `Suit`'s `Symbol` is set to the given `Symbol`.
+    ///   - The `Deck` can hold zero to 54 `PlayingCard`s if `jokers` included, else zero to 52.
+    ///   - The `Deck` contains a `PlayingCard` for each standard `PlayingCard Rank` &
+    ///    `Suit`, along with `joker Card`s if specified.
     /// - Parameters:
-    ///   - color: The `Symbol`'s hue.
-    ///   - symbol: The icon.
-    public init(_ color: Color, _ symbol: Symbol) {
+    ///   - cards: The `Card`s to create `Deck` with.
+    ///   - max: The maximum # of `Card`s allowed in the `Deck.`
+    public init?(with jokers: Bool = false) {
         
-        self.color = color
-        self.symbol = symbol
-    }
-    
-    //=========================================================================//
-    //                                 METHODS                                 //
-    //=========================================================================//
-    
-    /// Determines if the given `Suit`s are equal.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The value to compare against.
-    ///   - rhs: The value to compare to.
-    /// - Returns: True if the given `Suit`s are equal, else false.
-    public static func == (lhs: Suit, rhs: Suit) -> Bool {
+        let min = 0
+        let max = jokers ? 54 : 52
+        let cards = PlayingCards.getCards(with: jokers)
         
-        return lhs.color == rhs.color && lhs.symbol == rhs.symbol
+        if (cards == nil) {
+            
+            print("Error. Failed to fill Deck with PlayingCards.")
+            return nil
+        }
+        
+        self.includesJokers = jokers
+        super.init(of: min, to: max, cards!)
     }
 }
