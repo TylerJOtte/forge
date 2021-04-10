@@ -1379,7 +1379,7 @@
 													"top": 509,
 													"width": 210.2470703125,
 													"height": 13,
-													"text": "+containsKey(card: Card): boolean",
+													"text": "-containsKey(card: Card): boolean",
 													"horizontalAlignment": 0
 												}
 											],
@@ -9577,9 +9577,9 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 552.16162109375,
+											"left": 552.5234375,
 											"top": 69,
-											"width": 18.7763671875,
+											"width": 18.41455078125,
 											"height": 13,
 											"text": "t: T",
 											"horizontalAlignment": 0
@@ -9589,9 +9589,9 @@
 									"fillColor": "#00202a",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 547.16162109375,
+									"left": 547.5234375,
 									"top": 64,
-									"width": 28.7763671875,
+									"width": 28.41455078125,
 									"height": 23
 								}
 							],
@@ -10355,7 +10355,7 @@
 													"font": "Arial;13;1",
 													"left": 429,
 													"top": 343,
-													"width": 135.4970703125,
+													"width": 143.43798828125,
 													"height": 13,
 													"text": "PlayingCard"
 												},
@@ -10396,7 +10396,7 @@
 											"font": "Arial;13;0",
 											"left": 424,
 											"top": 336,
-											"width": 145.4970703125,
+											"width": 153.43798828125,
 											"height": 25,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAF4lPlkNhRARus="
@@ -10435,9 +10435,9 @@
 													"font": "Arial;13;0",
 													"left": 429,
 													"top": 366,
-													"width": 135.4970703125,
+													"width": 143.43798828125,
 													"height": 13,
-													"text": "+rank: Rank {readOnly}",
+													"text": "+rank: Rank",
 													"horizontalAlignment": 0
 												},
 												{
@@ -10454,9 +10454,9 @@
 													"font": "Arial;13;0",
 													"left": 429,
 													"top": 381,
-													"width": 135.4970703125,
+													"width": 143.43798828125,
 													"height": 13,
-													"text": "+suit: Suit {readOnly}",
+													"text": "+suit: Symbol",
 													"horizontalAlignment": 0
 												},
 												{
@@ -10473,9 +10473,9 @@
 													"font": "Arial;13;0",
 													"left": 429,
 													"top": 396,
-													"width": 135.4970703125,
+													"width": 143.43798828125,
 													"height": 13,
-													"text": "+points: int {readOnly}",
+													"text": "+points: int",
 													"horizontalAlignment": 0
 												}
 											],
@@ -10484,7 +10484,7 @@
 											"font": "Arial;13;0",
 											"left": 424,
 											"top": 361,
-											"width": 145.4970703125,
+											"width": 153.43798828125,
 											"height": 53
 										},
 										{
@@ -10501,7 +10501,7 @@
 											"font": "Arial;13;0",
 											"left": 424,
 											"top": 414,
-											"width": 145.4970703125,
+											"width": 153.43798828125,
 											"height": 10
 										},
 										{
@@ -10547,8 +10547,9 @@
 									"containerChangeable": true,
 									"left": 424,
 									"top": 336,
-									"width": 145.4970703125,
+									"width": 153.43798828125,
 									"height": 105,
+									"showProperty": false,
 									"nameCompartment": {
 										"$ref": "AAAAAAF4lPlkNhQ/8To="
 									},
@@ -11715,7 +11716,7 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 667,
+											"left": 671,
 											"top": 432,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -11738,7 +11739,7 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 667,
+											"left": 671,
 											"top": 447,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -11761,7 +11762,7 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 668,
+											"left": 672,
 											"top": 402,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -11851,7 +11852,7 @@
 											},
 											"fillColor": "#00202a",
 											"font": "Arial;13;0",
-											"left": 599,
+											"left": 607,
 											"top": 407,
 											"width": 74.07080078125,
 											"height": 13,
@@ -11875,7 +11876,7 @@
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 596,
+											"left": 604,
 											"top": 445,
 											"height": 13,
 											"alpha": -0.7853981633974483,
@@ -11895,7 +11896,7 @@
 											},
 											"fillColor": "#00202a",
 											"font": "Arial;13;0",
-											"left": 624,
+											"left": 632,
 											"top": 430,
 											"width": 7.22998046875,
 											"height": 13,
@@ -11950,7 +11951,7 @@
 									"tail": {
 										"$ref": "AAAAAAF4mCWcqh/BE20="
 									},
-									"points": "768:423;568:423",
+									"points": "768:423;576:423",
 									"showProperty": false,
 									"nameLabel": {
 										"$ref": "AAAAAAF4lQHdLha4BSI="
@@ -12291,7 +12292,7 @@
 									"tail": {
 										"$ref": "AAAAAAF4mC2LuSVc/AU="
 									},
-									"points": "648:306;592:306;592:392;568:392"
+									"points": "648:306;592:306;592:392;576:392"
 								},
 								{
 									"_type": "UMLClassView",
@@ -12722,14 +12723,34 @@
 											"model": {
 												"$ref": "AAAAAAF4mPSYBzCCZt8="
 											},
-											"visible": false,
+											"subViews": [
+												{
+													"_type": "UMLAttributeView",
+													"_id": "AAAAAAF4vS4dY71VaRg=",
+													"_parent": {
+														"$ref": "AAAAAAF4mPSYCDCKtyA="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vS4dS71MaOM="
+													},
+													"fillColor": "#657b83",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 77,
+													"top": 614,
+													"width": 200.52880859375,
+													"height": 13,
+													"text": "~/next: Rank",
+													"horizontalAlignment": 0
+												}
+											],
 											"fillColor": "#657b83",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": 72,
 											"top": 609,
 											"width": 210.52880859375,
-											"height": 10
+											"height": 23
 										},
 										{
 											"_type": "UMLOperationCompartmentView",
@@ -12754,7 +12775,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 614,
+													"top": 637,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~equals(rank: Rank): boolean",
@@ -12773,7 +12794,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 629,
+													"top": 652,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isNumeric(): boolean",
@@ -12792,7 +12813,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 644,
+													"top": 667,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isFaceCardRank(): boolean",
@@ -12811,7 +12832,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 659,
+													"top": 682,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isStandard(): boolean",
@@ -12830,7 +12851,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 674,
+													"top": 697,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isStandard(suit: Suit): boolean",
@@ -12849,7 +12870,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 689,
+													"top": 712,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~isValid(suit: Suit): boolean",
@@ -12868,7 +12889,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 704,
+													"top": 727,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~getPoints(): int",
@@ -12887,7 +12908,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 77,
-													"top": 719,
+													"top": 742,
 													"width": 200.52880859375,
 													"height": 13,
 													"text": "~getTitle(suit: Suit): String",
@@ -12898,7 +12919,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": 72,
-											"top": 609,
+											"top": 632,
 											"width": 210.52880859375,
 											"height": 128
 										},
@@ -12944,12 +12965,11 @@
 									"left": 72,
 									"top": 584,
 									"width": 210.52880859375,
-									"height": 153,
+									"height": 176,
 									"showProperty": false,
 									"nameCompartment": {
 										"$ref": "AAAAAAF4mPSYCDCF9qI="
 									},
-									"suppressAttributes": true,
 									"attributeCompartment": {
 										"$ref": "AAAAAAF4mPSYCDCKtyA="
 									},
@@ -13155,6 +13175,22 @@
 											],
 											"documentation": "A `PlayingCard Rank` extension.",
 											"visibility": "package",
+											"attributes": [
+												{
+													"_type": "UMLAttribute",
+													"_id": "AAAAAAF4vS4dS71MaOM=",
+													"_parent": {
+														"$ref": "AAAAAAF4mPSYBzCCZt8="
+													},
+													"name": "next",
+													"documentation": "---\n### Specification\n---\n\nThe next `Rank` in the standard French-suited `PlayingCard` hierarchy.\n\n---\n### Algorithm\n---\n\n1. var nextRank: Rank\n2. if (this == king || joker)\n\t2.1 nextRank = null\n3. else\n\t3.1 Find the index of this in PlayingCards.ranks\n    3.2. nextIndex = index += 1\n    3.3. nextRank = PlayingCards.ranks[nextIndex]\n4. Return nextRank",
+													"visibility": "package",
+													"type": {
+														"$ref": "AAAAAAF4lP2aixV+yyQ="
+													},
+													"isDerived": true
+												}
+											],
 											"operations": [
 												{
 													"_type": "UMLOperation",

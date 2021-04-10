@@ -20,6 +20,13 @@ import SwiftUI
 /// A `PlayingCard Rank` extension.
 extension Rank {
     
+    /// The next `Rank` in the standard French-suited `PlayingCard` hierarchy.
+    var next: Rank? {
+        
+        return (self == .king || self == .joker) ? nil :
+            PlayingCards.ranks[PlayingCards.ranks.firstIndex(of: self)! + 1]
+    }
+    
     //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//
