@@ -2193,7 +2193,7 @@ class PlayingCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
     //                                 Are Equal                               //
     //-------------------------------------------------------------------------//
-    
+
     /// Tests that two standard`PlayingCard`s with the same `Rank` & `Suit` are equal.
     func test_areEqual_sameRankAndSuit_true() {
         
@@ -2300,5 +2300,217 @@ class PlayingCardTests: XCTestCase {
         
         // When/Then
         XCTAssertNotEqual(card1, card2)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                               Is Less Than                              //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a`joker PlayingCard` is less than an `ace PlayingCard`.
+    func test_isLessThan_withJokerAndAce_true() {
+        
+        // Given
+        let rank1 = Rank.joker
+        let rank2 = Rank.ace
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: nil)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that an`ace PlayingCard` is less than an `two PlayingCard`.
+    func test_isLessThan_withAceAndTwo_true() {
+        
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.two
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that a`two PlayingCard` is less than a`three PlayingCard`.
+    func test_isLessThan_withTwoAndThree_true() {
+        
+        // Given
+        let rank1 = Rank.two
+        let rank2 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+
+    /// Tests that a`three PlayingCard` is less than a`four PlayingCard`.
+    func test_isLessThan_withThreeAndFour_true() {
+        
+        // Given
+        let rank1 = Rank.three
+        let rank2 = Rank.four
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that a`four PlayingCard` is less than a`five PlayingCard`.
+    func test_isLessThan_withFourAndFive_true() {
+        
+        // Given
+        let rank1 = Rank.four
+        let rank2 = Rank.five
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that a`five PlayingCard` is less than a`six PlayingCard`.
+    func test_isLessThan_withFiveAndSix_true() {
+        
+        // Given
+        let rank1 = Rank.five
+        let rank2 = Rank.six
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that a`six PlayingCard` is less than a`seven PlayingCard`.
+    func test_isLessThan_withSixAndSeven_true() {
+        
+        // Given
+        let rank1 = Rank.six
+        let rank2 = Rank.seven
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that a`seven PlayingCard` is less than an`eight PlayingCard`.
+    func test_isLessThan_withSevenAndEight_true() {
+        
+        // Given
+        let rank1 = Rank.seven
+        let rank2 = Rank.eight
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that an`eight PlayingCard` is less than a`nine PlayingCard`.
+    func test_isLessThan_withEightAndNine_true() {
+        
+        // Given
+        let rank1 = Rank.eight
+        let rank2 = Rank.nine
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that a`nine PlayingCard` is less than a`ten PlayingCard`.
+    func test_isLessThan_withNineAndTen_true() {
+        
+        // Given
+        let rank1 = Rank.nine
+        let rank2 = Rank.ten
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that a`ten PlayingCard` is less than a`jack PlayingCard`.
+    func test_isLessThan_withTenAndJack_true() {
+        
+        // Given
+        let rank1 = Rank.ten
+        let rank2 = Rank.jack
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that a`jack PlayingCard` is less than a`queen PlayingCard`.
+    func test_isLessThan_withJackAndQueen_true() {
+        
+        // Given
+        let rank1 = Rank.jack
+        let rank2 = Rank.queen
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
+    }
+    
+    /// Tests that a`queen PlayingCard` is less than a`king PlayingCard`.
+    func test_isLessThan_withQueenAndKing_true() {
+        
+        // Given
+        let rank1 = Rank.queen
+        let rank2 = Rank.king
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        
+        // When/Then
+        XCTAssert(card1 < card2)
     }
 }
