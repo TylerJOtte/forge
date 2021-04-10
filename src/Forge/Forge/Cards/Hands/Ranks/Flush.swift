@@ -19,7 +19,7 @@ import Foundation
 /// A `HandRank` of equally `Suit`ed `Card`s.
 public class Flush: Hand, HandRank {
     
-    // The primary name.
+    /// The primary name.
     public var title: String { return "\(count)-Card Flush" }
     
     //=========================================================================//

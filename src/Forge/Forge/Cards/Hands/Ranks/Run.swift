@@ -19,7 +19,7 @@ import Foundation
 /// A `HandRank` of sequential `Card`s.
 public class Run: Hand, HandRank {
     
-    // The primary name.
+    /// The primary name.
     public var title: String { return "Run of \(count)" }
     
     //=========================================================================//

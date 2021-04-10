@@ -23,6 +23,10 @@ extension Array where Element: Comparable {
 /// An extension for common `PlayingCard Array` operations.
 extension Array where Element: PlayingCard  {
 
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+
     /// Determines if all `Card`s in the collection have the same `Rank`.
     ///
     /// - Precondition: None.
@@ -65,5 +69,20 @@ extension Array where Element: PlayingCard  {
         
         return areSequential
     }
+    
+    //=========================================================================//
+    //                               CALCULATORS                               //
+    //=========================================================================//
+    
+    /// Retrieves the sum total of points from all the `Card`s in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The sum total of points from all the `Card`s in the collection.
+    func sum() -> Int {
+        
+        return self.map{$0.points}.reduce(0, +)
+    }
+    
 }
 

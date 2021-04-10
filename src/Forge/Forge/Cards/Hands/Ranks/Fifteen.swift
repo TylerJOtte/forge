@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  Kind.swift                                                                 //
+//  Fifteen.swift                                                              //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/04/21.                                       //
@@ -16,41 +16,44 @@
 
 import Foundation
 
-/// A `HandRank` of equally `Rank`ed `PlayingCard`s.
-public class Kind: Hand, HandRank {
+/// A `HandRank` of`PlayingCard`s with points that sum to 15.
+public class Fifteen: Hand, HandRank {
+    
+    /// The total # of points.
+    public let points: Int = 15
     
     /// The primary name.
-    public var title: String { return "\(count) Of A Kind" }
+    public let title: String = "Fifteen"
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Kind`with the given terms.
+    /// Creates a`Fifteen`with the given terms.
     ///
     /// - Precondition:
-    ///   - The given `Card`'s count  must be >= 2.
-    ///   - All `Card`s in the given collection must have the same `Rank`.
+    ///   - The given `Card`'s count  must be >= 2 and &lte; 5.
+    ///   - The given `Card`'s points must sum to 15.
     /// - Postcondition:
-    ///   - The `Kind` can hold two  to Int.max `Card`s.
-    ///   - The `Kind` contains the given `Card`s.
-    ///   - The `Kind`s title is set according to the # of `Card`s it holds.
-    ///   - The `Kind`s points is set according to the # of `Card`s it holds.
+    ///   - The `Fifteen` can hold two  to five `Card`s.
+    ///   - The `Fifteen` contains the given `Card`s.
+    ///   - The `Fifteen`s title is set to `Fifteen`.
+    ///   - The `Fifeen`s points are set to two.
     /// - Parameter cards: The `Card`s to create `Kind` with.
     public init?(of cards: [PlayingCard]) {
         
-        guard (cards.count >= 2) else {
+        guard (cards.count >= 2 && cards.count <= 5) else {
             
-            print("The given Card collection must contain two or more Cards.")
+            print("The given Card collection must contain two to five Cards.")
             return nil
         }
         
-        guard (cards.areEquallySuited()) else {
+        guard (cards.sum() == 15) else {
             
-            print("The given Cards must all have the same Rank.")
+            print("The given Card's points must sum to 15.")
             return nil
         }
         
-        super.init(of: 2, to: Int.max, cards)
+        super.init(of: 2, to: 5, cards)
     }
 }

@@ -19,16 +19,16 @@ import Foundation
 /// A `Hand` of `Card`'s hiearchical position.
 public protocol HandRank: Hand {
     
-    // The primary name.
+    /// The primary name.
     var title: String { get }
     
-    // The total # of points
+    /// The total # of points.
     var points: Int { get }
 }
 
 /// Default implementations for a `HandRank`
 extension HandRank {
     
-    // The total # of points
+    /// The total # of points.
     public var points: Int { return count }
 }
