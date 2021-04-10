@@ -63,7 +63,6 @@ public class PlayingCard: Card {
         self.rank = rank
         self.suit = suit
         self.points = rank.getPoints()
-        
         super.init(rank.getTitle(for: suit, color))
     }
     
@@ -83,5 +82,34 @@ public class PlayingCard: Card {
         
         return lhs.rank.equals(rhs.rank) && lhs.suit == rhs.suit &&
             lhs.points == rhs.points && lhs.title == rhs.title
+    }
+    
+    /// Determines if the given left-handside`Card` is less than the specified right-handside `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The value to compare against.
+    ///   - rhs: The value to compare to.
+    /// - Returns: True if given left-handside`Card` is less than the specified right-handside `Card`.
+    public static func < (lhs: PlayingCard, rhs: PlayingCard) -> Bool {
+        
+        var isLessThan: Bool
+        let aces = lhs.rank == .ace || rhs.rank == .ace
+        let jokers = lhs.rank == .joker || rhs.rank == .joker
+        
+        if (aces || jokers) { // Account for ace being high & variable joker
+            
+            isLessThan = lhs.points < rhs.points
+        
+        } else { // Get the natural hierarchy
+            
+            let index1 = PlayingCards.ranks.firstIndex(of: lhs.rank)!
+            let index2 = PlayingCards.ranks.firstIndex(of: rhs.rank)!
+            
+            isLessThan = index1 < index2
+        }
+        
+        return isLessThan
     }
 }

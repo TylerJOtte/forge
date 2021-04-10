@@ -13458,7 +13458,7 @@
 											}
 										}
 									],
-									"documentation": "A standard French-suited playing `Card`.\n\n---\n### Algorithms\n---\n\n#### ==(card: PlayingCard): boolean\n\n1. return card.rank == this.rank && card.suit == this.suit && card.points == this.points && card.title == this.title",
+									"documentation": "A standard French-suited playing `Card`.\n\n---\n### Algorithms\n---\n\n#### ==(card: PlayingCard): boolean\n\n1. return card.rank == this.rank && card.suit == this.suit && card.points == this.points && card.title == this.title\n\n#### <(card: PlayingCard): boolean\n\n1. var isLessThan: Bool\n2. var aces = this.rank == ace || card.rank == ace\n3. var jokers = this.rank == joker || card.rank == joker\n4. if (aces || jokers)\n\t4.1. isLessThan = this.points < card.points\n5. else\n\t5.1. var index1 = PlayingCards.ranks.indexOf(this.rank)\n    5.2. var index2 = PlayingCards.ranks.indexOf(card.rank)\n    5.3. isLessThan = index1 < index2\n6. Return isLessThan",
 									"attributes": [
 										{
 											"_type": "UMLAttribute",
