@@ -17,21 +17,32 @@
 /// An extension for common `Array` operations.
 extension Array where Element: Comparable {
     
-    /// Determines if all items in the collection are equal.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if all items in the collection are equal, else false.
-    func areEqual() -> Bool {
-        
-        return !self.contains(where: {$0 != self.first})
-    }
-    
+
 }
 
 /// An extension for common `PlayingCard Array` operations.
 extension Array where Element: PlayingCard  {
 
+    /// Determines if all `Card`s in the collection have the same `Rank`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if all `Card`s in the collection have the same `Rank`, else false.
+    func areEquallyRanked() -> Bool {
+        
+        return !self.contains(where: {$0.rank != self.first?.rank})
+    }
+    
+    /// Determines if all `Card`s in the collection have the same `Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if all `Card`s in the collection have the same `Suit`, else false.
+    func areEquallySuited() -> Bool {
+        
+        return !self.contains(where: {$0.suit != self.first?.suit})
+    }
+    
     /// Determines if all `Card`s are in sequential order.
     ///
     /// - Precondition: None.

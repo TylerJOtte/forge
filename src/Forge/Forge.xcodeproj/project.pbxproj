@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5566812262238350045AC2B /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5566811262238350045AC2B /* Flush.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D332617D3730022B805 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D322617D3730022B805 /* Symbol.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5566811262238350045AC2B /* Flush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D322617D3730022B805 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				B5817D96261A19DA0022B805 /* HandRank.swift */,
 				B5817D9C261A1F7B0022B805 /* Kind.swift */,
 				B5817DA7261A3E0E0022B805 /* Run.swift */,
+				B5566811262238350045AC2B /* Flush.swift */,
 			);
 			path = Ranks;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				B5817D722619482C0022B805 /* PlayingCardDeck.swift in Sources */,
 				B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */,
 				B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */,
+				B5566812262238350045AC2B /* Flush.swift in Sources */,
 				B5817D552618DE800022B805 /* PlayingCardSuit.swift in Sources */,
 				B5817DA8261A3E0E0022B805 /* Run.swift in Sources */,
 				B597383825FE9D5000367598 /* Card.swift in Sources */,

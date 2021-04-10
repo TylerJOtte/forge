@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  Kind.swift                                                                 //
+//  Flush.swift                                                                //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/04/21.                                       //
+//  Created by Tyler J. Otte on 4/10/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -16,41 +16,41 @@
 
 import Foundation
 
-/// A `HandRank` of equally `Rank`ed `PlayingCard`s.
-public class Kind: Hand, HandRank {
+/// A `HandRank` of equally `Suit`ed `Card`s.
+public class Flush: Hand, HandRank {
     
     // The primary name.
-    public var title: String { return "\(count) Of A Kind" }
+    public var title: String { return "\(count)-Card Flush" }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Kind`with the given terms.
+    /// Creates a`Flush`with the given terms.
     ///
     /// - Precondition:
-    ///   - The given `Card`'s count  must be >= 2.
-    ///   - All `Card`s in the given collection must have the same `Rank`.
+    ///   - The given `Card`'s count  must be >= 4 and &lte; 5.
+    ///   - All `Card`s in the given collection must have the same `Suit`.
     /// - Postcondition:
-    ///   - The `Kind` can hold two  to Int.max `Card`s.
-    ///   - The `Kind` contains the given `Card`s.
-    ///   - The `Kind`s title is set according to the # of `Card`s it holds.
-    ///   - The `Kind`s points is set according to the # of `Card`s it holds.
+    ///   - The `Flush` can hold four to five `Card`s.
+    ///   - The `Flush` contains the given `Card`s.
+    ///   - The `Flush`s title is set according to the # of `Card`s it holds.
+    ///   - The `Flush`s points is set according to the # of `Card`s it holds.
     /// - Parameter cards: The `Card`s to create `Kind` with.
     public init?(of cards: [PlayingCard]) {
         
-        guard (cards.count >= 2) else {
+        guard (cards.count >= 4 && cards.count <= 5) else {
             
-            print("The given Card collection must contain two or more Cards.")
+            print("The given Card collection must contain four or five Cards.")
             return nil
         }
         
         guard (cards.areEquallySuited()) else {
             
-            print("The given Cards must all have the same Rank.")
+            print("The given Cards must all have the same Suit.")
             return nil
         }
         
-        super.init(of: 2, to: Int.max, cards)
+        super.init(of: 4, to: 5, cards)
     }
 }

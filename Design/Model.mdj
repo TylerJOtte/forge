@@ -6475,6 +6475,7 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
+															"left": -64,
 															"top": 18,
 															"height": 13
 														},
@@ -6487,9 +6488,9 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;1",
-															"left": 645,
+															"left": 613,
 															"top": 727,
-															"width": 28.8818359375,
+															"width": 34.66455078125,
 															"height": 13,
 															"text": "Kind"
 														},
@@ -6503,6 +6504,7 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
+															"left": -64,
 															"top": 18,
 															"width": 75.84814453125,
 															"height": 13,
@@ -6518,6 +6520,7 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
+															"left": -64,
 															"top": 18,
 															"height": 13,
 															"horizontalAlignment": 1
@@ -6526,9 +6529,9 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 640,
+													"left": 608,
 													"top": 720,
-													"width": 38.8818359375,
+													"width": 44.66455078125,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF4nZX3T0w3g6Q="
@@ -6556,7 +6559,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 640,
+													"left": 608,
 													"top": 745,
 													"width": 51.919921875,
 													"height": 10
@@ -6574,7 +6577,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 640,
+													"left": 608,
 													"top": 755,
 													"width": 51.919921875,
 													"height": 10
@@ -6592,7 +6595,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 640,
+													"left": 608,
 													"top": 765,
 													"width": 51.919921875,
 													"height": 10
@@ -6610,6 +6613,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
+													"left": -32,
 													"top": 9,
 													"width": 10,
 													"height": 10
@@ -6619,11 +6623,10 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"containerChangeable": true,
-											"left": 640,
+											"left": 608,
 											"top": 720,
-											"width": 38.8818359375,
+											"width": 44.66455078125,
 											"height": 25,
-											"autoResize": true,
 											"showProperty": false,
 											"nameCompartment": {
 												"$ref": "AAAAAAF4nZX3T0w20Kw="
@@ -6666,7 +6669,7 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 684,
+													"left": 670,
 													"top": 675,
 													"height": 13,
 													"alpha": 1.5707963267948966,
@@ -6689,7 +6692,7 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 684,
+													"left": 670,
 													"top": 660,
 													"height": 13,
 													"alpha": 1.5707963267948966,
@@ -6712,7 +6715,7 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 684,
+													"left": 670,
 													"top": 705,
 													"height": 13,
 													"alpha": -1.5707963267948966,
@@ -6732,7 +6735,7 @@
 											"tail": {
 												"$ref": "AAAAAAF4nZX3Tkw1tzg="
 											},
-											"points": "658:720;658:696;710:696;710:656",
+											"points": "629:720;629:696;712:696;712:656",
 											"showVisibility": true,
 											"showProperty": false,
 											"nameLabel": {
@@ -6757,11 +6760,11 @@
 											"fillColor": "#006600",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 232,
+											"left": 168,
 											"top": 696,
-											"width": 347,
+											"width": 393,
 											"height": 70,
-											"text": "{\n    - The given `Card`'s count  must be >= 2.\n    - All `Card`s in the given collection must be the same.\n}"
+											"text": "{\n    - The given Card's count  must be >= 2.\n    - All Card`s in the given collection must have the same Rank.\n}"
 										},
 										{
 											"_type": "UMLConstraintLinkView",
@@ -6778,7 +6781,7 @@
 											"tail": {
 												"$ref": "AAAAAAF4ncqqtk7J8Tk="
 											},
-											"points": "578:736;640:736"
+											"points": "560:736;608:736"
 										},
 										{
 											"_type": "UMLClassView",
@@ -6810,7 +6813,7 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
-															"left": 48.236328125,
+															"left": -79.763671875,
 															"height": 13
 														},
 														{
@@ -6822,9 +6825,9 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;1",
-															"left": 757,
+															"left": 693,
 															"top": 727,
-															"width": 25.27001953125,
+															"width": 34.66455078125,
 															"height": 13,
 															"text": "Run"
 														},
@@ -6838,7 +6841,7 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
-															"left": 48.236328125,
+															"left": -79.763671875,
 															"width": 75.84814453125,
 															"height": 13,
 															"text": "(from Ranks)"
@@ -6853,7 +6856,7 @@
 															"fillColor": "#045a6d",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
-															"left": 48.236328125,
+															"left": -79.763671875,
 															"height": 13,
 															"horizontalAlignment": 1
 														}
@@ -6861,9 +6864,9 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 752,
+													"left": 688,
 													"top": 720,
-													"width": 35.27001953125,
+													"width": 44.66455078125,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF4vUsmsr+T7tM="
@@ -6891,7 +6894,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 752,
+													"left": 688,
 													"top": 745,
 													"width": 51.919921875,
 													"height": 10
@@ -6909,7 +6912,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 752,
+													"left": 688,
 													"top": 755,
 													"width": 51.919921875,
 													"height": 10
@@ -6927,7 +6930,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 24.1181640625,
+													"left": -39.8818359375,
 													"width": 10,
 													"height": 10
 												},
@@ -6944,7 +6947,7 @@
 													"fillColor": "#045a6d",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 24.1181640625,
+													"left": -39.8818359375,
 													"width": 10,
 													"height": 10
 												}
@@ -6953,11 +6956,10 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"containerChangeable": true,
-											"left": 752,
+											"left": 688,
 											"top": 720,
-											"width": 35.27001953125,
+											"width": 44.66455078125,
 											"height": 25,
-											"autoResize": true,
 											"showProperty": false,
 											"nameCompartment": {
 												"$ref": "AAAAAAF4vUsmsb+SZW8="
@@ -7000,8 +7002,8 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 738,
-													"top": 705,
+													"left": 697,
+													"top": 681,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 15,
@@ -7023,8 +7025,8 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 738,
-													"top": 720,
+													"left": 682,
+													"top": 681,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 30,
@@ -7046,8 +7048,8 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 739,
-													"top": 675,
+													"left": 726,
+													"top": 682,
 													"height": 13,
 													"alpha": -1.5707963267948966,
 													"distance": 15,
@@ -7066,7 +7068,7 @@
 											"tail": {
 												"$ref": "AAAAAAF4vUsmsb+R+bo="
 											},
-											"points": "769:720;769:696;710:696;710:656",
+											"points": "712:720;712:656",
 											"showVisibility": true,
 											"showProperty": false,
 											"nameLabel": {
@@ -7091,11 +7093,11 @@
 											"fillColor": "#006600",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 873,
-											"top": 696,
+											"left": 496,
+											"top": 816,
 											"width": 472,
 											"height": 73,
-											"text": "{\n    - The given `Card`'s count  must be >= 3.\n    - All `Card`s in the given collection must be in sequential order when sorted.\n}"
+											"text": "{\n    - The given Card's count  must be >= 3.\n    - All Card's in the given collection must be in sequential order when sorted.\n}"
 										},
 										{
 											"_type": "UMLConstraintLinkView",
@@ -7112,7 +7114,345 @@
 											"tail": {
 												"$ref": "AAAAAAF4vUxSc8Fp6Hc="
 											},
-											"points": "873:736;786:736"
+											"points": "712:816;712:744"
+										},
+										{
+											"_type": "UMLClassView",
+											"_id": "AAAAAAF4vV8NQsNkomY=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"model": {
+												"$ref": "AAAAAAF4vV8NQsNiiww="
+											},
+											"subViews": [
+												{
+													"_type": "UMLNameCompartmentView",
+													"_id": "AAAAAAF4vV8NQ8NlMfc=",
+													"_parent": {
+														"$ref": "AAAAAAF4vV8NQsNkomY="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vV8NQsNiiww="
+													},
+													"subViews": [
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAF4vV8NQ8NmaM8=",
+															"_parent": {
+																"$ref": "AAAAAAF4vV8NQ8NlMfc="
+															},
+															"visible": false,
+															"fillColor": "#045a6d",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": -90.494140625,
+															"top": 528,
+															"height": 13
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAF4vV8NQ8Nnd4s=",
+															"_parent": {
+																"$ref": "AAAAAAF4vV8NQ8NlMfc="
+															},
+															"fillColor": "#045a6d",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;1",
+															"left": 781,
+															"top": 727,
+															"width": 34.66455078125,
+															"height": 13,
+															"text": "Flush"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAF4vV8NQ8NoVqE=",
+															"_parent": {
+																"$ref": "AAAAAAF4vV8NQ8NlMfc="
+															},
+															"visible": false,
+															"fillColor": "#045a6d",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": -90.494140625,
+															"top": 528,
+															"width": 75.84814453125,
+															"height": 13,
+															"text": "(from Ranks)"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAF4vV8NQ8Npxsw=",
+															"_parent": {
+																"$ref": "AAAAAAF4vV8NQ8NlMfc="
+															},
+															"visible": false,
+															"fillColor": "#045a6d",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": -90.494140625,
+															"top": 528,
+															"height": 13,
+															"horizontalAlignment": 1
+														}
+													],
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 776,
+													"top": 720,
+													"width": 44.66455078125,
+													"height": 25,
+													"stereotypeLabel": {
+														"$ref": "AAAAAAF4vV8NQ8NmaM8="
+													},
+													"nameLabel": {
+														"$ref": "AAAAAAF4vV8NQ8Nnd4s="
+													},
+													"namespaceLabel": {
+														"$ref": "AAAAAAF4vV8NQ8NoVqE="
+													},
+													"propertyLabel": {
+														"$ref": "AAAAAAF4vV8NQ8Npxsw="
+													}
+												},
+												{
+													"_type": "UMLAttributeCompartmentView",
+													"_id": "AAAAAAF4vV8NQ8Nq7ZU=",
+													"_parent": {
+														"$ref": "AAAAAAF4vV8NQsNkomY="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vV8NQsNiiww="
+													},
+													"visible": false,
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 776,
+													"top": 745,
+													"width": 51.919921875,
+													"height": 10
+												},
+												{
+													"_type": "UMLOperationCompartmentView",
+													"_id": "AAAAAAF4vV8NQ8Nrmk0=",
+													"_parent": {
+														"$ref": "AAAAAAF4vV8NQsNkomY="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vV8NQsNiiww="
+													},
+													"visible": false,
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 776,
+													"top": 755,
+													"width": 51.919921875,
+													"height": 10
+												},
+												{
+													"_type": "UMLReceptionCompartmentView",
+													"_id": "AAAAAAF4vV8NQ8NsVcM=",
+													"_parent": {
+														"$ref": "AAAAAAF4vV8NQsNkomY="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vV8NQsNiiww="
+													},
+													"visible": false,
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": -45.2470703125,
+													"top": 264,
+													"width": 10,
+													"height": 10
+												},
+												{
+													"_type": "UMLTemplateParameterCompartmentView",
+													"_id": "AAAAAAF4vV8NQ8NtnhA=",
+													"_parent": {
+														"$ref": "AAAAAAF4vV8NQsNkomY="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vV8NQsNiiww="
+													},
+													"visible": false,
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": -45.2470703125,
+													"top": 264,
+													"width": 10,
+													"height": 10
+												}
+											],
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"containerChangeable": true,
+											"left": 776,
+											"top": 720,
+											"width": 44.66455078125,
+											"height": 25,
+											"showProperty": false,
+											"nameCompartment": {
+												"$ref": "AAAAAAF4vV8NQ8NlMfc="
+											},
+											"suppressAttributes": true,
+											"suppressOperations": true,
+											"attributeCompartment": {
+												"$ref": "AAAAAAF4vV8NQ8Nq7ZU="
+											},
+											"operationCompartment": {
+												"$ref": "AAAAAAF4vV8NQ8Nrmk0="
+											},
+											"receptionCompartment": {
+												"$ref": "AAAAAAF4vV8NQ8NsVcM="
+											},
+											"templateParameterCompartment": {
+												"$ref": "AAAAAAF4vV8NQ8NtnhA="
+											}
+										},
+										{
+											"_type": "UMLGeneralizationView",
+											"_id": "AAAAAAF4vWAKKcXzze4=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"model": {
+												"$ref": "AAAAAAF4vWAKKcXxmpU="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF4vWAKKcX0EvI=",
+													"_parent": {
+														"$ref": "AAAAAAF4vWAKKcXzze4="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vWAKKcXxmpU="
+													},
+													"visible": false,
+													"fillColor": "#00202a",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 753,
+													"top": 705,
+													"height": 13,
+													"alpha": 1.5707963267948966,
+													"distance": 15,
+													"hostEdge": {
+														"$ref": "AAAAAAF4vWAKKcXzze4="
+													},
+													"edgePosition": 1
+												},
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF4vWAKKcX12sY=",
+													"_parent": {
+														"$ref": "AAAAAAF4vWAKKcXzze4="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vWAKKcXxmpU="
+													},
+													"visible": null,
+													"fillColor": "#00202a",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 753,
+													"top": 720,
+													"height": 13,
+													"alpha": 1.5707963267948966,
+													"distance": 30,
+													"hostEdge": {
+														"$ref": "AAAAAAF4vWAKKcXzze4="
+													},
+													"edgePosition": 1
+												},
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF4vWAKKcX29/M=",
+													"_parent": {
+														"$ref": "AAAAAAF4vWAKKcXzze4="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vWAKKcXxmpU="
+													},
+													"visible": false,
+													"fillColor": "#00202a",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 754,
+													"top": 675,
+													"height": 13,
+													"alpha": -1.5707963267948966,
+													"distance": 15,
+													"hostEdge": {
+														"$ref": "AAAAAAF4vWAKKcXzze4="
+													},
+													"edgePosition": 1
+												}
+											],
+											"fillColor": "#00202a",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF4nZM2p0nn8aY="
+											},
+											"tail": {
+												"$ref": "AAAAAAF4vV8NQsNkomY="
+											},
+											"points": "797:720;797:696;712:696;712:656",
+											"showVisibility": true,
+											"showProperty": false,
+											"nameLabel": {
+												"$ref": "AAAAAAF4vWAKKcX0EvI="
+											},
+											"stereotypeLabel": {
+												"$ref": "AAAAAAF4vWAKKcX12sY="
+											},
+											"propertyLabel": {
+												"$ref": "AAAAAAF4vWAKKcX29/M="
+											}
+										},
+										{
+											"_type": "UMLConstraintView",
+											"_id": "AAAAAAF4vWHHnMgh97Y=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"model": {
+												"$ref": "AAAAAAF4vWEc0sfNO5c="
+											},
+											"fillColor": "#006600",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 960,
+											"top": 688,
+											"width": 388,
+											"height": 70,
+											"text": "{\n    - The given Card's count  must be >= 4 & <= 5.\n    - All Card's in the given collection must have the same Suit.\n}"
+										},
+										{
+											"_type": "UMLConstraintLinkView",
+											"_id": "AAAAAAF4vWHHncgi/Qk=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"fillColor": "#00202a",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF4vV8NQsNkomY="
+											},
+											"tail": {
+												"$ref": "AAAAAAF4vWHHnMgh97Y="
+											},
+											"points": "960:728;820:728"
 										}
 									]
 								},
@@ -7166,7 +7506,7 @@
 														"$ref": "AAAAAAF4nZM2p0nl7nI="
 													},
 													"name": "points",
-													"documentation": "The total # of points",
+													"documentation": "The total # of points\n\n---\n### Attribute Algorithms\n---\n\n#### points: int\n\n1. Return count",
 													"type": "int",
 													"isReadOnly": true,
 													"defaultValue": "count"
@@ -7202,10 +7542,10 @@
 														"$ref": "AAAAAAF4nZX3TkwzcqI="
 													},
 													"name": "KindConstraint",
-													"specification": "\n    - The given `Card`'s count  must be >= 2.\n    - All `Card`s in the given collection must be the same.\n"
+													"specification": "\n    - The given Card's count  must be >= 2.\n    - All Card`s in the given collection must have the same Rank.\n"
 												}
 											],
-											"documentation": "A `HandRank` of equal `Card`s.\n\n---\n### Attribute Algorithms\n---\n\n#### title: String\n\n1. Return \"{count} Of A Kind\"\n\n#### points: int\n\n1. Return count"
+											"documentation": "A `HandRank` of equally `Rank`ed `PlayingCard`s.\n\n---\n### Attribute Algorithms\n---\n\n#### title: String\n\n1. Return \"{count} Of A Kind\""
 										},
 										{
 											"_type": "UMLClass",
@@ -7235,10 +7575,43 @@
 														"$ref": "AAAAAAF4vUsmsb+PgB4="
 													},
 													"name": "RunConstraint",
-													"specification": "\n    - The given `Card`'s count  must be >= 3.\n    - All `Card`s in the given collection must be in sequential order when sorted.\n"
+													"specification": "\n    - The given Card's count  must be >= 3.\n    - All Card's in the given collection must be in sequential order when sorted.\n"
 												}
 											],
-											"documentation": "A `HandRank` of sequential `Card`s.\n\n---\n### Attribute Algorithms\n---\n\n#### title: String\n\n1. Return \"Run of {count}\"\n\n#### points: int\n\n1. Return count"
+											"documentation": "A `HandRank` of sequential `Card`s.\n\n---\n### Attribute Algorithms\n---\n\n#### title: String\n\n1. Return \"Run of {count}\"\n\n"
+										},
+										{
+											"_type": "UMLClass",
+											"_id": "AAAAAAF4vV8NQsNiiww=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZtNOE3gTgo="
+											},
+											"name": "Flush",
+											"ownedElements": [
+												{
+													"_type": "UMLGeneralization",
+													"_id": "AAAAAAF4vWAKKcXxmpU=",
+													"_parent": {
+														"$ref": "AAAAAAF4vV8NQsNiiww="
+													},
+													"source": {
+														"$ref": "AAAAAAF4vV8NQsNiiww="
+													},
+													"target": {
+														"$ref": "AAAAAAF4nZM2p0nl7nI="
+													}
+												},
+												{
+													"_type": "UMLConstraint",
+													"_id": "AAAAAAF4vWEc0sfNO5c=",
+													"_parent": {
+														"$ref": "AAAAAAF4vV8NQsNiiww="
+													},
+													"name": "FlushConstraint",
+													"specification": "\n    - The given Card's count  must be >= 4 & <= 5.\n    - All Card's in the given collection must have the same Suit.\n"
+												}
+											],
+											"documentation": "A `HandRank` of equally `Suit`ed `PlayingCard`s.\n\n---\n### Attribute Algorithms\n---\n\n#### title: String\n\n1. Return \"{count}-Card Flush\""
 										}
 									]
 								}
