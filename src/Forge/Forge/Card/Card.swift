@@ -17,7 +17,7 @@
 import Foundation
 
 /// A game `Card`.
-public class Card: Equatable {
+public class Card: Comparable {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -55,5 +55,18 @@ public class Card: Equatable {
     public static func == (lhs: Card, rhs: Card) -> Bool {
         
         return lhs.title == rhs.title
+    }
+    
+    /// Determines if the given left-handside`Card` is less than the specified right-handside `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The value to compare against.
+    ///   - rhs: The value to compare to.
+    /// - Returns: True if given left-handside`Card` is less than the specified right-handside `Card`.
+    public static func < (lhs: Card, rhs: Card) -> Bool {
+        
+        return lhs.title < rhs.title
     }
 }

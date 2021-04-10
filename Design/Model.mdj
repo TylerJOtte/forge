@@ -10283,8 +10283,17 @@
 										"$ref": "AAAAAAF4MWAYTlCLI6k="
 									},
 									"name": "==(card: Card): boolean",
-									"documentation": "Determines if the `Card` is equal to the given `Card`.\n\n- Precondition: None.\n- Postocndition: None.\n- Returns: True if the `Card` is equal to the given `Card`, else false.\n\n---\n### Algorithm\n---\n\n1. return card.title == this.title",
+									"documentation": "---\n### Specification\n---\n\nDetermines if the `Card` is equal to the given `Card`.\n\n- Precondition: None.\n- Postocndition: None.\n- Returns: True if the `Card` is equal to the given `Card`, else false.\n\n---\n### Algorithm\n---\n\n1. return card.title == this.title",
 									"isStatic": true
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAF4vTe8yL6RoPg=",
+									"_parent": {
+										"$ref": "AAAAAAF4MWAYTlCLI6k="
+									},
+									"name": "<(card: Card): boolean()",
+									"documentation": "---\n### Specification\n---\n\nDetermines if the given left-handside`Card` is less than the specified right-handside `Card`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameters:\n  - lhs: The value to compare against.\n  - rhs: The value to compare to.\n  - Returns: True if given left-handside`Card` is less than the specified right-handside `Card`.\n\n---\n### Algorithm\n---\n\n1. Return this.title < card.title\n\n"
 								}
 							]
 						},
@@ -10611,7 +10620,7 @@
 													"font": "Arial;13;1",
 													"left": 421,
 													"top": 207,
-													"width": 154.2734375,
+													"width": 155.33984375,
 													"height": 13,
 													"text": "Card"
 												},
@@ -10652,7 +10661,7 @@
 											"font": "Arial;13;0",
 											"left": 416,
 											"top": 200,
-											"width": 164.2734375,
+											"width": 165.33984375,
 											"height": 25,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAF4lPmE7RRpNLQ="
@@ -10691,7 +10700,7 @@
 													"font": "Arial;13;0",
 													"left": 421,
 													"top": 230,
-													"width": 154.2734375,
+													"width": 155.33984375,
 													"height": 13,
 													"text": "+title: string {readOnly}",
 													"horizontalAlignment": 0
@@ -10702,7 +10711,7 @@
 											"font": "Arial;13;0",
 											"left": 416,
 											"top": 225,
-											"width": 164.2734375,
+											"width": 165.33984375,
 											"height": 23
 										},
 										{
@@ -10729,10 +10738,29 @@
 													"font": "Arial;13;0",
 													"left": 421,
 													"top": 253,
-													"width": 154.2734375,
+													"width": 155.33984375,
 													"height": 13,
 													"underline": true,
 													"text": "+==(card: Card): boolean()",
+													"horizontalAlignment": 0
+												},
+												{
+													"_type": "UMLOperationView",
+													"_id": "AAAAAAF4vTe84r6UYeY=",
+													"_parent": {
+														"$ref": "AAAAAAF4lPmE7RRuN30="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vTe8yL6RoPg="
+													},
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 421,
+													"top": 268,
+													"width": 155.33984375,
+													"height": 13,
+													"text": "+<(card: Card): boolean()()",
 													"horizontalAlignment": 0
 												}
 											],
@@ -10741,8 +10769,8 @@
 											"font": "Arial;13;0",
 											"left": 416,
 											"top": 248,
-											"width": 164.2734375,
-											"height": 23
+											"width": 165.33984375,
+											"height": 38
 										},
 										{
 											"_type": "UMLReceptionCompartmentView",
@@ -10787,8 +10815,8 @@
 									"containerChangeable": true,
 									"left": 416,
 									"top": 200,
-									"width": 164.2734375,
-									"height": 71,
+									"width": 165.33984375,
+									"height": 86,
 									"nameCompartment": {
 										"$ref": "AAAAAAF4lPmE7RRohYk="
 									},
@@ -10829,7 +10857,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": 482,
-											"top": 296,
+											"top": 303,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -10852,7 +10880,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": 467,
-											"top": 296,
+											"top": 303,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -10875,7 +10903,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": 511,
-											"top": 297,
+											"top": 304,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -10894,7 +10922,7 @@
 									"tail": {
 										"$ref": "AAAAAAF4lPlkNhQ+Z6Y="
 									},
-									"points": "497:336;497:270",
+									"points": "497:336;497:285",
 									"showVisibility": true,
 									"showProperty": false,
 									"nameLabel": {
