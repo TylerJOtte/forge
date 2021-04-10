@@ -25,3 +25,10 @@ public protocol HandRank: Hand {
     // The total # of points
     var points: Int { get }
 }
+
+/// Default implementations for a `HandRank`
+extension HandRank {
+    
+    // The total # of points
+    public var points: Int { return count }
+}

@@ -21,6 +21,7 @@
 		B5817D97261A19DA0022B805 /* HandRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D96261A19DA0022B805 /* HandRank.swift */; };
 		B5817D9D261A1F7B0022B805 /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D9C261A1F7B0022B805 /* Kind.swift */; };
 		B5817DA2261A27600022B805 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817DA1261A27600022B805 /* ArrayExtension.swift */; };
+		B5817DA8261A3E0E0022B805 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817DA7261A3E0E0022B805 /* Run.swift */; };
 		B597383325FE958700367598 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597383225FE958700367598 /* Elements.swift */; };
 		B597383825FE9D5000367598 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597383725FE9D5000367598 /* Card.swift */; };
 		B597383F25FE9E6D00367598 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597383E25FE9E6D00367598 /* Cards.swift */; };
@@ -59,6 +60,7 @@
 		B5817D96261A19DA0022B805 /* HandRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRank.swift; sourceTree = "<group>"; };
 		B5817D9C261A1F7B0022B805 /* Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
 		B5817DA1261A27600022B805 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		B5817DA7261A3E0E0022B805 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		B597383225FE958700367598 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 		B597383725FE9D5000367598 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		B597383E25FE9E6D00367598 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				B5817D96261A19DA0022B805 /* HandRank.swift */,
 				B5817D9C261A1F7B0022B805 /* Kind.swift */,
+				B5817DA7261A3E0E0022B805 /* Run.swift */,
 			);
 			path = Ranks;
 			sourceTree = "<group>";
@@ -210,8 +213,8 @@
 		B597383625FE9CF300367598 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				B5817D4D2618DE180022B805 /* PlayingCards */,
 				B597383725FE9D5000367598 /* Card.swift */,
+				B5817D4D2618DE180022B805 /* PlayingCards */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */,
 				B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */,
 				B5817D552618DE800022B805 /* PlayingCardSuit.swift in Sources */,
+				B5817DA8261A3E0E0022B805 /* Run.swift in Sources */,
 				B597383825FE9D5000367598 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
