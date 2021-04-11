@@ -6849,7 +6849,7 @@
 															"top": 128,
 															"width": 75.84814453125,
 															"height": 13,
-															"text": "(from Ranks)"
+															"text": "(from Runs)"
 														},
 														{
 															"_type": "LabelView",
@@ -7101,7 +7101,7 @@
 											"fillColor": "#006600",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 112,
+											"left": 80,
 											"top": 744,
 											"width": 472,
 											"height": 73,
@@ -7122,7 +7122,7 @@
 											"tail": {
 												"$ref": "AAAAAAF4vUxSc8Fp6Hc="
 											},
-											"points": "583:792;608:792"
+											"points": "551:792;608:792"
 										},
 										{
 											"_type": "UMLClassView",
@@ -7155,7 +7155,7 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": -426.494140625,
-															"top": 768,
+															"top": 1008,
 															"height": 13
 														},
 														{
@@ -7168,7 +7168,7 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;1",
 															"left": 613,
-															"top": 847,
+															"top": 967,
 															"width": 34.66455078125,
 															"height": 13,
 															"text": "Flush"
@@ -7184,7 +7184,7 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": -426.494140625,
-															"top": 768,
+															"top": 1008,
 															"width": 75.84814453125,
 															"height": 13,
 															"text": "(from Ranks)"
@@ -7200,7 +7200,7 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": -426.494140625,
-															"top": 768,
+															"top": 1008,
 															"height": 13,
 															"horizontalAlignment": 1
 														}
@@ -7209,7 +7209,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 608,
-													"top": 840,
+													"top": 960,
 													"width": 44.66455078125,
 													"height": 25,
 													"stereotypeLabel": {
@@ -7239,7 +7239,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 608,
-													"top": 865,
+													"top": 985,
 													"width": 51.919921875,
 													"height": 10
 												},
@@ -7257,7 +7257,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 608,
-													"top": 875,
+													"top": 995,
 													"width": 51.919921875,
 													"height": 10
 												},
@@ -7275,7 +7275,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": -213.2470703125,
-													"top": 384,
+													"top": 504,
 													"width": 10,
 													"height": 10
 												},
@@ -7293,7 +7293,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": -213.2470703125,
-													"top": 384,
+													"top": 504,
 													"width": 10,
 													"height": 10
 												}
@@ -7303,7 +7303,7 @@
 											"font": "Arial;13;0",
 											"containerChangeable": true,
 											"left": 608,
-											"top": 840,
+											"top": 960,
 											"width": 44.66455078125,
 											"height": 25,
 											"showProperty": false,
@@ -7349,7 +7349,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 705,
-													"top": 849,
+													"top": 965,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 15,
@@ -7372,7 +7372,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 690,
-													"top": 849,
+													"top": 965,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 30,
@@ -7395,7 +7395,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 735,
-													"top": 850,
+													"top": 966,
 													"height": 13,
 													"alpha": -1.5707963267948966,
 													"distance": 15,
@@ -7414,7 +7414,7 @@
 											"tail": {
 												"$ref": "AAAAAAF4vV8NQsNkomY="
 											},
-											"points": "652:856;720:856;720:646",
+											"points": "652:972;720:972;720:646",
 											"showVisibility": true,
 											"showProperty": false,
 											"nameLabel": {
@@ -7440,7 +7440,7 @@
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"left": 160,
-											"top": 840,
+											"top": 944,
 											"width": 388,
 											"height": 70,
 											"text": "{\n    - The given Card's count  must be >= 4 & <= 5.\n    - All Card's in the given collection must have the same Suit.\n}"
@@ -7460,7 +7460,7 @@
 											"tail": {
 												"$ref": "AAAAAAF4vWHHnMgh97Y="
 											},
-											"points": "547:856;608:856"
+											"points": "547:968;608:968"
 										},
 										{
 											"_type": "UMLClassView",
@@ -7795,6 +7795,345 @@
 												"$ref": "AAAAAAF4vXp8WM/yYKU="
 											},
 											"points": "928:728;852:728"
+										},
+										{
+											"_type": "UMLClassView",
+											"_id": "AAAAAAF4vY+JzNGLHFQ=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"model": {
+												"$ref": "AAAAAAF4vY+Jy9GJlgw="
+											},
+											"subViews": [
+												{
+													"_type": "UMLNameCompartmentView",
+													"_id": "AAAAAAF4vY+JzNGM9xM=",
+													"_parent": {
+														"$ref": "AAAAAAF4vY+JzNGLHFQ="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vY+Jy9GJlgw="
+													},
+													"subViews": [
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAF4vY+JzNGNA2o=",
+															"_parent": {
+																"$ref": "AAAAAAF4vY+JzNGM9xM="
+															},
+															"visible": false,
+															"fillColor": "#045a6d",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": -32,
+															"top": -28,
+															"height": 13
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAF4vY+JzNGOHIU=",
+															"_parent": {
+																"$ref": "AAAAAAF4vY+JzNGM9xM="
+															},
+															"fillColor": "#045a6d",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;1",
+															"left": 597,
+															"top": 871,
+															"width": 69.32275390625,
+															"height": 13,
+															"text": "DoubleRun"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAF4vY+JzNGP6+Y=",
+															"_parent": {
+																"$ref": "AAAAAAF4vY+JzNGM9xM="
+															},
+															"visible": false,
+															"fillColor": "#045a6d",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": -32,
+															"top": -28,
+															"width": 75.84814453125,
+															"height": 13,
+															"text": "(from Runs)"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAF4vY+JzNGQk4E=",
+															"_parent": {
+																"$ref": "AAAAAAF4vY+JzNGM9xM="
+															},
+															"visible": false,
+															"fillColor": "#045a6d",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": -32,
+															"top": -28,
+															"height": 13,
+															"horizontalAlignment": 1
+														}
+													],
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 592,
+													"top": 864,
+													"width": 79.32275390625,
+													"height": 25,
+													"stereotypeLabel": {
+														"$ref": "AAAAAAF4vY+JzNGNA2o="
+													},
+													"nameLabel": {
+														"$ref": "AAAAAAF4vY+JzNGOHIU="
+													},
+													"namespaceLabel": {
+														"$ref": "AAAAAAF4vY+JzNGP6+Y="
+													},
+													"propertyLabel": {
+														"$ref": "AAAAAAF4vY+JzNGQk4E="
+													}
+												},
+												{
+													"_type": "UMLAttributeCompartmentView",
+													"_id": "AAAAAAF4vY+JzdGRxJE=",
+													"_parent": {
+														"$ref": "AAAAAAF4vY+JzNGLHFQ="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vY+Jy9GJlgw="
+													},
+													"visible": false,
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 592,
+													"top": 889,
+													"width": 79.32275390625,
+													"height": 10
+												},
+												{
+													"_type": "UMLOperationCompartmentView",
+													"_id": "AAAAAAF4vY+JzdGSV88=",
+													"_parent": {
+														"$ref": "AAAAAAF4vY+JzNGLHFQ="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vY+Jy9GJlgw="
+													},
+													"visible": false,
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 592,
+													"top": 899,
+													"width": 79.32275390625,
+													"height": 10
+												},
+												{
+													"_type": "UMLReceptionCompartmentView",
+													"_id": "AAAAAAF4vY+JzdGTLEI=",
+													"_parent": {
+														"$ref": "AAAAAAF4vY+JzNGLHFQ="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vY+Jy9GJlgw="
+													},
+													"visible": false,
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": -16,
+													"top": -14,
+													"width": 10,
+													"height": 10
+												},
+												{
+													"_type": "UMLTemplateParameterCompartmentView",
+													"_id": "AAAAAAF4vY+JzdGUyaI=",
+													"_parent": {
+														"$ref": "AAAAAAF4vY+JzNGLHFQ="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vY+Jy9GJlgw="
+													},
+													"visible": false,
+													"fillColor": "#045a6d",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": -16,
+													"top": -14,
+													"width": 10,
+													"height": 10
+												}
+											],
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"containerChangeable": true,
+											"left": 592,
+											"top": 864,
+											"width": 79.32275390625,
+											"height": 25,
+											"autoResize": true,
+											"showProperty": false,
+											"nameCompartment": {
+												"$ref": "AAAAAAF4vY+JzNGM9xM="
+											},
+											"suppressAttributes": true,
+											"suppressOperations": true,
+											"attributeCompartment": {
+												"$ref": "AAAAAAF4vY+JzdGRxJE="
+											},
+											"operationCompartment": {
+												"$ref": "AAAAAAF4vY+JzdGSV88="
+											},
+											"receptionCompartment": {
+												"$ref": "AAAAAAF4vY+JzdGTLEI="
+											},
+											"templateParameterCompartment": {
+												"$ref": "AAAAAAF4vY+JzdGUyaI="
+											}
+										},
+										{
+											"_type": "UMLGeneralizationView",
+											"_id": "AAAAAAF4vY+KHNHGxHE=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"model": {
+												"$ref": "AAAAAAF4vY+KHNHEAyI="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF4vY+KHNHHZlU=",
+													"_parent": {
+														"$ref": "AAAAAAF4vY+KHNHGxHE="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vY+KHNHEAyI="
+													},
+													"visible": false,
+													"fillColor": "#00202a",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 614,
+													"top": 829,
+													"height": 13,
+													"alpha": 1.5707963267948966,
+													"distance": 15,
+													"hostEdge": {
+														"$ref": "AAAAAAF4vY+KHNHGxHE="
+													},
+													"edgePosition": 1
+												},
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF4vY+KHNHIyaI=",
+													"_parent": {
+														"$ref": "AAAAAAF4vY+KHNHGxHE="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vY+KHNHEAyI="
+													},
+													"visible": null,
+													"fillColor": "#00202a",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 599,
+													"top": 829,
+													"height": 13,
+													"alpha": 1.5707963267948966,
+													"distance": 30,
+													"hostEdge": {
+														"$ref": "AAAAAAF4vY+KHNHGxHE="
+													},
+													"edgePosition": 1
+												},
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF4vY+KHNHJoJ8=",
+													"_parent": {
+														"$ref": "AAAAAAF4vY+KHNHGxHE="
+													},
+													"model": {
+														"$ref": "AAAAAAF4vY+KHNHEAyI="
+													},
+													"visible": false,
+													"fillColor": "#00202a",
+													"fontColor": "#d2dfe7",
+													"font": "Arial;13;0",
+													"left": 643,
+													"top": 830,
+													"height": 13,
+													"alpha": -1.5707963267948966,
+													"distance": 15,
+													"hostEdge": {
+														"$ref": "AAAAAAF4vY+KHNHGxHE="
+													},
+													"edgePosition": 1
+												}
+											],
+											"fillColor": "#00202a",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF4vUsmsb+R+bo="
+											},
+											"tail": {
+												"$ref": "AAAAAAF4vY+JzNGLHFQ="
+											},
+											"points": "629:864;629:808",
+											"showVisibility": true,
+											"showProperty": false,
+											"nameLabel": {
+												"$ref": "AAAAAAF4vY+KHNHHZlU="
+											},
+											"stereotypeLabel": {
+												"$ref": "AAAAAAF4vY+KHNHIyaI="
+											},
+											"propertyLabel": {
+												"$ref": "AAAAAAF4vY+KHNHJoJ8="
+											}
+										},
+										{
+											"_type": "UMLConstraintView",
+											"_id": "AAAAAAF4vurtqNNkRE4=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"model": {
+												"$ref": "AAAAAAF4vZLeS9MtVhc="
+											},
+											"fillColor": "#006600",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 88,
+											"top": 840,
+											"width": 465,
+											"height": 100,
+											"text": "{\n    - The given Card's count  must be >= 4 & <= 5.\n    - The Cards must contain one and only one '2 Of A Kind'.\n    - The Cards must contain two Runs.\n    - All Card's in the given collection must be in sequential order when sorted.\n}"
+										},
+										{
+											"_type": "UMLConstraintLinkView",
+											"_id": "AAAAAAF4vurtqNNlDkY=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZLL/kcG6LI="
+											},
+											"fillColor": "#00202a",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF4vY+JzNGLHFQ="
+											},
+											"tail": {
+												"$ref": "AAAAAAF4vurtqNNkRE4="
+											},
+											"points": "552:872;592:872"
 										}
 									]
 								},
@@ -7891,39 +8230,6 @@
 										},
 										{
 											"_type": "UMLClass",
-											"_id": "AAAAAAF4vUsmsb+PgB4=",
-											"_parent": {
-												"$ref": "AAAAAAF4nZtNOE3gTgo="
-											},
-											"name": "Run",
-											"ownedElements": [
-												{
-													"_type": "UMLGeneralization",
-													"_id": "AAAAAAF4vUsm9r/K/6I=",
-													"_parent": {
-														"$ref": "AAAAAAF4vUsmsb+PgB4="
-													},
-													"source": {
-														"$ref": "AAAAAAF4vUsmsb+PgB4="
-													},
-													"target": {
-														"$ref": "AAAAAAF4nZM2p0nl7nI="
-													}
-												},
-												{
-													"_type": "UMLConstraint",
-													"_id": "AAAAAAF4vUwum8FSua0=",
-													"_parent": {
-														"$ref": "AAAAAAF4vUsmsb+PgB4="
-													},
-													"name": "RunConstraint",
-													"specification": "\n    - The given Card's count  must be >= 3.\n    - All Card's in the given collection must be in sequential order when sorted.\n"
-												}
-											],
-											"documentation": "A `HandRank` of sequential `Card`s.\n\n---\n### Attribute Algorithms\n---\n\n#### title: String\n\n1. Return \"Run of {count}\"\n\n"
-										},
-										{
-											"_type": "UMLClass",
 											"_id": "AAAAAAF4vV8NQsNiiww=",
 											"_parent": {
 												"$ref": "AAAAAAF4nZtNOE3gTgo="
@@ -7987,6 +8293,82 @@
 												}
 											],
 											"documentation": "A `HandRank` of`PlayingCard`s with points that sum to 15."
+										},
+										{
+											"_type": "UMLPackage",
+											"_id": "AAAAAAF4vZB76dK/MIc=",
+											"_parent": {
+												"$ref": "AAAAAAF4nZtNOE3gTgo="
+											},
+											"name": "Runs",
+											"ownedElements": [
+												{
+													"_type": "UMLClass",
+													"_id": "AAAAAAF4vUsmsb+PgB4=",
+													"_parent": {
+														"$ref": "AAAAAAF4vZB76dK/MIc="
+													},
+													"name": "Run",
+													"ownedElements": [
+														{
+															"_type": "UMLGeneralization",
+															"_id": "AAAAAAF4vUsm9r/K/6I=",
+															"_parent": {
+																"$ref": "AAAAAAF4vUsmsb+PgB4="
+															},
+															"source": {
+																"$ref": "AAAAAAF4vUsmsb+PgB4="
+															},
+															"target": {
+																"$ref": "AAAAAAF4nZM2p0nl7nI="
+															}
+														},
+														{
+															"_type": "UMLConstraint",
+															"_id": "AAAAAAF4vUwum8FSua0=",
+															"_parent": {
+																"$ref": "AAAAAAF4vUsmsb+PgB4="
+															},
+															"name": "RunConstraint",
+															"specification": "\n    - The given Card's count  must be >= 3.\n    - All Card's in the given collection must be in sequential order when sorted.\n"
+														}
+													],
+													"documentation": "A `HandRank` of sequential `Card`s.\n\n---\n### Attribute Algorithms\n---\n\n#### title: String\n\n1. Return \"Run of {count}\"\n\n"
+												},
+												{
+													"_type": "UMLClass",
+													"_id": "AAAAAAF4vY+Jy9GJlgw=",
+													"_parent": {
+														"$ref": "AAAAAAF4vZB76dK/MIc="
+													},
+													"name": "DoubleRun",
+													"ownedElements": [
+														{
+															"_type": "UMLGeneralization",
+															"_id": "AAAAAAF4vY+KHNHEAyI=",
+															"_parent": {
+																"$ref": "AAAAAAF4vY+Jy9GJlgw="
+															},
+															"source": {
+																"$ref": "AAAAAAF4vY+Jy9GJlgw="
+															},
+															"target": {
+																"$ref": "AAAAAAF4vUsmsb+PgB4="
+															}
+														},
+														{
+															"_type": "UMLConstraint",
+															"_id": "AAAAAAF4vZLeS9MtVhc=",
+															"_parent": {
+																"$ref": "AAAAAAF4vY+Jy9GJlgw="
+															},
+															"name": "DoubleRunConstraint",
+															"specification": "\n    - The given Card's count  must be >= 4 & <= 5.\n    - The Cards must contain one and only one '2 Of A Kind'.\n    - The Cards must contain two Runs.\n    - All Card's in the given collection must be in sequential order when sorted.\n"
+														}
+													],
+													"documentation": " A `HandRank` of two sequential `Run`s.\n \n ---\n### Attribute Algorithms\n---\n\n#### title: String\n\n1. Return \"Double Run of {count}\"\n\n#### points: int\n\n1. Return cards.count == 4 ? 8 : 10\n\n"
+												}
+											]
 										}
 									]
 								}

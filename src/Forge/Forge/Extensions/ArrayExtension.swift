@@ -15,9 +15,21 @@
 //=============================================================================//
 
 /// An extension for common `Array` operations.
-extension Array where Element: Comparable {
+extension Array where Element: Hashable {
     
-
+    //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+    
+    /// Retrieves the duplicate items in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The duplicate items in the collection.
+    func getDuplicates() -> [Element] {
+        
+        return Array(Dictionary(grouping: self, by: {$0}).keys)
+    }
 }
 
 /// An extension for common `PlayingCard Array` operations.
@@ -51,23 +63,39 @@ extension Array where Element: PlayingCard  {
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
+    /// - Parameter duplicates: True if allow duplicates in sequntial order, else false.
     /// - Returns: True if all `Card`s in the collection are in sequantial order else false.
-    func areSequential() -> Bool {
+    func areSequential(duplicates: Bool = false) -> Bool {
         
         let lastCard = self.count - 1
         var areSequential = true
         var card = 0
+        var sequence = 0
         
         while (areSequential && card < lastCard) {
             
+            let rank = self[card].rank
             let cardNextRank = self[card].rank.next
             let nextCardRank = self[card + 1].rank
             
-            areSequential = cardNextRank == nextCardRank
+            if (cardNextRank == nextCardRank) {
+                
+                sequence += 1
+                
+            } else if ((!duplicates && rank == nextCardRank) ||
+                cardNextRank != nextCardRank){
+                
+                areSequential = false
+                
+            } else {
+                
+                // TODO: Add error handling
+            }
+            
             card += 1
         }
         
-        return areSequential
+        return areSequential && sequence >= 3
     }
     
     //=========================================================================//

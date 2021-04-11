@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  Fifteen.swift                                                              //
+//  DoubleRun.swift                                                            //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/10/21.                                       //
@@ -16,44 +16,46 @@
 
 import Foundation
 
-/// A `HandRank` of`PlayingCard`s with points that sum to 15.
-public class Fifteen: Hand, HandRank {
+/// A `HandRank` of two sequential `Run`s.
+public class DoubleRun: Run {
     
     /// The primary name.
-    public let title: String = "Fifteen"
+    public override var title: String { return "Double Run of \(count)" }
     
     /// The total # of points.
-    public let points: Int = 15
+    public var points: Int { return count == 4 ? 8 : 10 }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Fifteen`with the given terms.
+    /// Creates a`DoubleRun`with the given terms.
     ///
     /// - Precondition:
-    ///   - The given `Card`'s count  must be >= 2 and &lt;= 5.
-    ///   - The given `Card`'s points must sum to 15.
+    ///   - The given `Card`'s count  must be >= 4 & &lt;= 5.
+    ///   - The given `Card`s must contain one and only one '2 Of A `Kind`'.
+    ///   - The given `Card`s must contain two `Run`s.
+    ///   - All `Card`s in the given collection must be in sequential order when sorted.
     /// - Postcondition:
-    ///   - The `Fifteen` can hold two  to five `Card`s.
-    ///   - The `Fifteen` contains the given `Card`s.
-    ///   - The `Fifteen`s title is set to `Fifteen`.
-    ///   - The `Fifeen`s points are set to two.
-    /// - Parameter cards: The `Card`s to create `Kind` with.
-    public init?(of cards: [PlayingCard]) {
+    ///   - The `DoubleRun` can hold four to five `Card`s.
+    ///   - The `DoubleRun` contains the given `Card`s.
+    ///   - The `DoubleRun`s title is set according to the # of `Card`s it holds.
+    ///   - The `DoubleRun`s points are set to eight if `Cards`'s count equals four, else ten.
+    /// - Parameter cards: The `Card`s to create `Run` with.
+    public override init?(of cards: [PlayingCard]) {
         
-        guard (cards.count >= 2 && cards.count <= 5) else {
+        guard (cards.count >= 4 && cards.count <= 5) else {
             
-            print("The given Card collection must contain two to five Cards.")
+            print("The given Card collection must contain four or five Cards.")
             return nil
         }
         
-        guard (cards.sum() == 15) else {
+        guard (cards.getDuplicates().count == 1) else {
             
-            print("The given Card's points must sum to 15.")
+            print("The given Cards must contain one and only one '2 Of A Kind'.")
             return nil
         }
         
-        super.init(of: 2, to: 5, cards)
+        super.init(of: 4, to: 5, cards, duplicates: true)
     }
 }

@@ -29,7 +29,7 @@ public class Flush: Hand, HandRank {
     /// Creates a`Flush`with the given terms.
     ///
     /// - Precondition:
-    ///   - The given `Card`'s count  must be >= 4 and &lte; 5.
+    ///   - The given `Card`'s count  must be >= 4 and &lt;= 5.
     ///   - All `Card`s in the given collection must have the same `Suit`.
     /// - Postcondition:
     ///   - The `Flush` can hold four to five `Card`s.
