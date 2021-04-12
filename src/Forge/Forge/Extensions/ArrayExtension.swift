@@ -26,9 +26,29 @@ extension Array where Element: Hashable {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: The duplicate items in the collection.
-    func getDuplicates() -> [Element] {
+    func getDuplicates() -> [Element:[Element]] {
         
-        return Array(Dictionary(grouping: self, by: {$0}).keys)
+        return Dictionary(grouping: self, by: {$0}).filter({$0.value.count > 1})
+    }
+    
+    /// Retrieves the count of each duplicate in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The count of each duplicate in the collection.
+    func getDuplicateCounts() -> [Element:Int] {
+        
+        return getDuplicates().mapValues{ ($0.count * ($0.count - 1)) / 2 }
+    }
+    
+    /// Retrieves the total duplicate count in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The total duplicate count in the collection.
+    func getDuplicateCount() -> Int {
+        
+        return getDuplicateCounts().values.reduce(0, +)
     }
 }
 
@@ -63,39 +83,37 @@ extension Array where Element: PlayingCard  {
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter duplicates: True if allow duplicates in sequntial order, else false.
-    /// - Returns: True if all `Card`s in the collection are in sequantial order else false.
-    func areSequential(duplicates: Bool = false) -> Bool {
+    /// - Parameter pairs: The # of pairs allowed  in sequential order, else false.
+    /// - Returns: True if all `Card`s in the collection are in sequential order, with duplicates, else false.
+    func areSequential(with pairs: Int = 0) -> Bool {
         
-        let lastCard = self.count - 1
-        var areSequential = true
-        var card = 0
-        var sequence = 0
+        var areSequential = false
         
-        while (areSequential && card < lastCard) {
+        if (getDuplicateCount() == pairs) {
             
-            let rank = self[card].rank
-            let cardNextRank = self[card].rank.next
-            let nextCardRank = self[card + 1].rank
+            let lastCard = self.count - 1
+            var card = 0
             
-            if (cardNextRank == nextCardRank) {
+            areSequential = true
+
+            while (areSequential && card < lastCard) {
                 
-                sequence += 1
+                let nextRank = self[card].rank.next
+                let nextCardRank = self[card + 1].rank
+                let comparison = nextCardRank == nextRank
+
+                areSequential = pairs == 0 ? comparison :
+                    comparison || nextCardRank == self[card].rank
                 
-            } else if ((!duplicates && rank == nextCardRank) ||
-                cardNextRank != nextCardRank){
-                
-                areSequential = false
-                
-            } else {
-                
-                // TODO: Add error handling
+                card += 1
             }
+                
+        } else {
             
-            card += 1
+            print("The collection contains more pairs than allowed.")
         }
         
-        return areSequential && sequence >= 3
+        return areSequential
     }
     
     //=========================================================================//

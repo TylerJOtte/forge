@@ -130,7 +130,9 @@ public class PlayingCard: Card, Hashable {
     ///   of this instance.
     public func hash(into hasher: inout Hasher) {
         
-        return hasher.combine(ObjectIdentifier(self))
-        
+        hasher.combine(title)
+        hasher.combine(rank)
+        hasher.combine(suit)
+        hasher.combine(points)
     }
 }

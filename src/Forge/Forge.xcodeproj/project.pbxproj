@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B5566812262238350045AC2B /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5566811262238350045AC2B /* Flush.swift */; };
 		B556681626223DB90045AC2B /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556681526223DB90045AC2B /* Fifteen.swift */; };
-		B556681B262243460045AC2B /* DoubleRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556681A262243460045AC2B /* DoubleRun.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D332617D3730022B805 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D322617D3730022B805 /* Symbol.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -51,7 +50,6 @@
 /* Begin PBXFileReference section */
 		B5566811262238350045AC2B /* Flush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
 		B556681526223DB90045AC2B /* Fifteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fifteen.swift; sourceTree = "<group>"; };
-		B556681A262243460045AC2B /* DoubleRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRun.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D322617D3730022B805 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -102,15 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B5566819262243350045AC2B /* Runs */ = {
-			isa = PBXGroup;
-			children = (
-				B5817DA7261A3E0E0022B805 /* Run.swift */,
-				B556681A262243460045AC2B /* DoubleRun.swift */,
-			);
-			path = Runs;
-			sourceTree = "<group>";
-		};
 		B5817D422618B1150022B805 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				B597384825FEAD4100367598 /* Hand.swift */,
-				B5817D95261A19BD0022B805 /* Ranks */,
+				B5817D95261A19BD0022B805 /* HandRanks */,
 			);
 			path = Hands;
 			sourceTree = "<group>";
@@ -207,16 +196,16 @@
 			path = Hands;
 			sourceTree = "<group>";
 		};
-		B5817D95261A19BD0022B805 /* Ranks */ = {
+		B5817D95261A19BD0022B805 /* HandRanks */ = {
 			isa = PBXGroup;
 			children = (
 				B5817D96261A19DA0022B805 /* HandRank.swift */,
-				B5566819262243350045AC2B /* Runs */,
+				B5817DA7261A3E0E0022B805 /* Run.swift */,
 				B5817D9C261A1F7B0022B805 /* Kind.swift */,
 				B5566811262238350045AC2B /* Flush.swift */,
 				B556681526223DB90045AC2B /* Fifteen.swift */,
 			);
-			path = Ranks;
+			path = HandRanks;
 			sourceTree = "<group>";
 		};
 		B5817DA0261A27500022B805 /* Extensions */ = {
@@ -437,7 +426,6 @@
 				B5566812262238350045AC2B /* Flush.swift in Sources */,
 				B5817D552618DE800022B805 /* PlayingCardSuit.swift in Sources */,
 				B5817DA8261A3E0E0022B805 /* Run.swift in Sources */,
-				B556681B262243460045AC2B /* DoubleRun.swift in Sources */,
 				B597383825FE9D5000367598 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
