@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B5566812262238350045AC2B /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5566811262238350045AC2B /* Flush.swift */; };
 		B556681626223DB90045AC2B /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556681526223DB90045AC2B /* Fifteen.swift */; };
+		B55668352623D29E0045AC2B /* Nobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668342623D29E0045AC2B /* Nobs.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D332617D3730022B805 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D322617D3730022B805 /* Symbol.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		B5566811262238350045AC2B /* Flush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
 		B556681526223DB90045AC2B /* Fifteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fifteen.swift; sourceTree = "<group>"; };
+		B55668342623D29E0045AC2B /* Nobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nobs.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D322617D3730022B805 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				B5817D9C261A1F7B0022B805 /* Kind.swift */,
 				B5566811262238350045AC2B /* Flush.swift */,
 				B556681526223DB90045AC2B /* Fifteen.swift */,
+				B55668342623D29E0045AC2B /* Nobs.swift */,
 			);
 			path = HandRanks;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				B556681626223DB90045AC2B /* Fifteen.swift in Sources */,
 				B5817D862619FFD50022B805 /* FeatureError.swift in Sources */,
 				B5817D332617D3730022B805 /* Symbol.swift in Sources */,
+				B55668352623D29E0045AC2B /* Nobs.swift in Sources */,
 				B597384925FEAD4100367598 /* Hand.swift in Sources */,
 				B597383F25FE9E6D00367598 /* Cards.swift in Sources */,
 				B597383325FE958700367598 /* Elements.swift in Sources */,
