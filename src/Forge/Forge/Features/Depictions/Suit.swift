@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A color-coded symbol.
-public class Suit: Hashable {
+public class Suit: Depiction, Hashable {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //

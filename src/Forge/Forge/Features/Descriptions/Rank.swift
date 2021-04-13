@@ -17,7 +17,7 @@
 import Foundation
 
 /// A hierarchical position.
-public enum Rank: Int {
+public enum Rank: Int, Description {
     
     //=========================================================================//
     //                                 ATTRIBUTES                              //

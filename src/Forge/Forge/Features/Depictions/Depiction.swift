@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  Symbol.swift                                                               //
+//  Depiction.swift                                                            //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/02/21.                                       //
+//  Created by Tyler J. Otte on 4/12/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -16,12 +16,7 @@
 
 import Foundation
 
-/// An illustrative icon.
-public enum Symbol: Depiction {
+/// An illustrative `Feature`.
+public protocol Depiction: Feature {
     
-    case clover
-    case diamond
-    case heart
-    case spade
-    case star
 }
