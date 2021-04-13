@@ -21,6 +21,7 @@
 		B55668702625297E0045AC2B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556686F2625297E0045AC2B /* Environment.swift */; };
 		B556687D26252B0B0045AC2B /* Mechanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556687C26252B0B0045AC2B /* Mechanic.swift */; };
 		B556688326252BEC0045AC2B /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556688226252BEC0045AC2B /* Rule.swift */; };
+		B556689226252E030045AC2B /* NobsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556689126252E030045AC2B /* NobsTests.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D332617D3730022B805 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D322617D3730022B805 /* Symbol.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -74,6 +75,7 @@
 		B556686F2625297E0045AC2B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		B556687C26252B0B0045AC2B /* Mechanic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mechanic.swift; sourceTree = "<group>"; };
 		B556688226252BEC0045AC2B /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		B556689126252E030045AC2B /* NobsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NobsTests.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D322617D3730022B805 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -212,6 +214,47 @@
 			path = System;
 			sourceTree = "<group>";
 		};
+		B556688B26252DAE0045AC2B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B556688C26252DB40045AC2B /* Technologies */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B556688C26252DB40045AC2B /* Technologies */ = {
+			isa = PBXGroup;
+			children = (
+				B556688D26252DB90045AC2B /* Tools */,
+			);
+			path = Technologies;
+			sourceTree = "<group>";
+		};
+		B556688D26252DB90045AC2B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B597384C25FEB05B00367598 /* Cards */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		B556688E26252DCC0045AC2B /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				B5817D8D261A129C0022B805 /* Decks */,
+				B5817D8E261A12A70022B805 /* Hands */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		B556688F26252DDA0045AC2B /* HandRanks */ = {
+			isa = PBXGroup;
+			children = (
+				B556689126252E030045AC2B /* NobsTests.swift */,
+			);
+			path = HandRanks;
+			sourceTree = "<group>";
+		};
 		B5817D422618B1150022B805 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				B597385525FEB76E00367598 /* HandTests.swift */,
+				B556688F26252DDA0045AC2B /* HandRanks */,
 			);
 			path = Hands;
 			sourceTree = "<group>";
@@ -355,8 +399,8 @@
 		B597384C25FEB05B00367598 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				B5817D8D261A129C0022B805 /* Decks */,
-				B5817D8E261A12A70022B805 /* Hands */,
+				B597385F25FED1AB00367598 /* Card */,
+				B556688E26252DCC0045AC2B /* Collections */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -406,8 +450,7 @@
 		B59A44B225FE934200857EB5 /* ForgeTests */ = {
 			isa = PBXGroup;
 			children = (
-				B597385F25FED1AB00367598 /* Card */,
-				B597384C25FEB05B00367598 /* Cards */,
+				B556688B26252DAE0045AC2B /* Components */,
 				B59A44B525FE934200857EB5 /* Info.plist */,
 			);
 			path = ForgeTests;
@@ -563,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
+				B556689226252E030045AC2B /* NobsTests.swift in Sources */,
 				B597384E25FEB07900367598 /* DeckTests.swift in Sources */,
 				B5817D642618EE9E0022B805 /* PlayingCardTests.swift in Sources */,
 				B5817D90261A12CD0022B805 /* PlayingCardDeckTests.swift in Sources */,
