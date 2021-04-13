@@ -49,5 +49,26 @@ class NobsTests: XCTestCase {
         // Then
         XCTAssert(nobs != nil)
     }
-
+    
+    //-------------------------------------------------------------------------//
+    //                               Failure                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that creating a `Nobs HandRank` with less than two `PlayingCards` returns nil.
+    func test_init_withOneCard_returnsNil() {
+        
+        // Given
+        let rank = Rank.jack
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let cards = [card]
+        
+        // When
+        let nobs = Nobs(of: cards)
+        
+        // Then
+        XCTAssert(nobs == nil)
+    }
 }
