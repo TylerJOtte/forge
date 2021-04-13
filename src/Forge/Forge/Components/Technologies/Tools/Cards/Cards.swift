@@ -17,7 +17,7 @@
 import Foundation
 
 /// A collection of `Card`s.
-public protocol Cards: Elements where T == Card {
+public protocol Cards: Tool, Elements where T == Card {
     
     /// The minimum # of `Card`s allowed.
     ///

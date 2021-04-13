@@ -17,7 +17,7 @@
 import Foundation
 
 /// A game `Card`.
-public class Card: Comparable {
+public class Card: Tool, Comparable {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //

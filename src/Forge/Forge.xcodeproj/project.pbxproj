@@ -10,6 +10,11 @@
 		B5566812262238350045AC2B /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5566811262238350045AC2B /* Flush.swift */; };
 		B556681626223DB90045AC2B /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556681526223DB90045AC2B /* Fifteen.swift */; };
 		B55668352623D29E0045AC2B /* Nobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668342623D29E0045AC2B /* Nobs.swift */; };
+		B55668432623EA130045AC2B /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668422623EA130045AC2B /* Tool.swift */; };
+		B55668472623EAC20045AC2B /* Technology.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668462623EAC20045AC2B /* Technology.swift */; };
+		B556684D2623EB150045AC2B /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556684C2623EB150045AC2B /* Component.swift */; };
+		B55668532623EB690045AC2B /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668522623EB690045AC2B /* Resource.swift */; };
+		B55668592623EC430045AC2B /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668582623EC430045AC2B /* Reward.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D332617D3730022B805 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D322617D3730022B805 /* Symbol.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -52,6 +57,11 @@
 		B5566811262238350045AC2B /* Flush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
 		B556681526223DB90045AC2B /* Fifteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fifteen.swift; sourceTree = "<group>"; };
 		B55668342623D29E0045AC2B /* Nobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nobs.swift; sourceTree = "<group>"; };
+		B55668422623EA130045AC2B /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		B55668462623EAC20045AC2B /* Technology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technology.swift; sourceTree = "<group>"; };
+		B556684C2623EB150045AC2B /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		B55668522623EB690045AC2B /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		B55668582623EC430045AC2B /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D322617D3730022B805 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -102,6 +112,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B556683A2623D8FF0045AC2B /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				B5817D6E261947DB0022B805 /* Decks */,
+				B5817D6F261948090022B805 /* Hands */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		B556683B2623E9680045AC2B /* Technologies */ = {
+			isa = PBXGroup;
+			children = (
+				B55668462623EAC20045AC2B /* Technology.swift */,
+				B556683D2623E9770045AC2B /* Tools */,
+				B556683C2623E9700045AC2B /* Resources */,
+			);
+			path = Technologies;
+			sourceTree = "<group>";
+		};
+		B556683C2623E9700045AC2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B55668522623EB690045AC2B /* Resource.swift */,
+				B556683E2623E9A30045AC2B /* Rewards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B556683D2623E9770045AC2B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B55668422623EA130045AC2B /* Tool.swift */,
+				B597383D25FE9E5A00367598 /* Cards */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		B556683E2623E9A30045AC2B /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				B55668582623EC430045AC2B /* Reward.swift */,
+			);
+			path = Rewards;
+			sourceTree = "<group>";
+		};
+		B556683F2623E9B70045AC2B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B556684C2623EB150045AC2B /* Component.swift */,
+				B556683B2623E9680045AC2B /* Technologies */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B5817D422618B1150022B805 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,9 +296,9 @@
 			isa = PBXGroup;
 			children = (
 				B597383E25FE9E6D00367598 /* Cards.swift */,
-				B5817D6E261947DB0022B805 /* Decks */,
-				B5817D6F261948090022B805 /* Hands */,
 				B5817D77261953990022B805 /* Helpers */,
+				B597383625FE9CF300367598 /* Card */,
+				B556683A2623D8FF0045AC2B /* Collections */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -278,12 +342,11 @@
 		B59A44A725FE934100857EB5 /* Forge */ = {
 			isa = PBXGroup;
 			children = (
-				B5817DA0261A27500022B805 /* Extensions */,
 				B597383225FE958700367598 /* Elements.swift */,
+				B5817DA0261A27500022B805 /* Extensions */,
 				B5817D842619FFA90022B805 /* Errors */,
+				B556683F2623E9B70045AC2B /* Components */,
 				B5817D422618B1150022B805 /* Features */,
-				B597383D25FE9E5A00367598 /* Cards */,
-				B597383625FE9CF300367598 /* Card */,
 				B59A44A825FE934200857EB5 /* Forge.h */,
 				B59A44A925FE934200857EB5 /* Info.plist */,
 			);
@@ -416,14 +479,19 @@
 				B597384325FEA93000367598 /* Deck.swift in Sources */,
 				B597385A25FEC1CE00367598 /* ElementsError.swift in Sources */,
 				B556681626223DB90045AC2B /* Fifteen.swift in Sources */,
+				B55668472623EAC20045AC2B /* Technology.swift in Sources */,
 				B5817D862619FFD50022B805 /* FeatureError.swift in Sources */,
+				B556684D2623EB150045AC2B /* Component.swift in Sources */,
 				B5817D332617D3730022B805 /* Symbol.swift in Sources */,
 				B55668352623D29E0045AC2B /* Nobs.swift in Sources */,
 				B597384925FEAD4100367598 /* Hand.swift in Sources */,
+				B55668532623EB690045AC2B /* Resource.swift in Sources */,
 				B597383F25FE9E6D00367598 /* Cards.swift in Sources */,
 				B597383325FE958700367598 /* Elements.swift in Sources */,
 				B5817D392617E24B0022B805 /* Rank.swift in Sources */,
 				B5817D9D261A1F7B0022B805 /* Kind.swift in Sources */,
+				B55668432623EA130045AC2B /* Tool.swift in Sources */,
+				B55668592623EC430045AC2B /* Reward.swift in Sources */,
 				B5817D722619482C0022B805 /* PlayingCardDeck.swift in Sources */,
 				B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */,
 				B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */,
