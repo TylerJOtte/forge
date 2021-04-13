@@ -237,4 +237,26 @@ class NobsTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that the max cards  of a `Nobs HandRank` equals two.
+    func test_maxCards_ofNobs_equalsTwo() {
+        
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.jack
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let cards = [card1, card2]
+        let nobs = Nobs(of: cards)!
+        let expected = 2
+        
+        // When
+        let actual = nobs.maxCards
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
