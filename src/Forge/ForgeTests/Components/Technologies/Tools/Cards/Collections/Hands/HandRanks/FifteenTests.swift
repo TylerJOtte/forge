@@ -179,4 +179,30 @@ class FifteenTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the points of a `Fifteen HandRank` equals 15.
+    func test_points_ofFifteen_equalsFifteen() {
+        
+        // Given
+        let rank1 = Rank.ten
+        let rank2 = Rank.five
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let cards = [card1, card2]
+        let fifteen = Fifteen(of: cards)!
+        let expected = 15
+        
+        // When
+        let actual = fifteen.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
