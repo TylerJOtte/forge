@@ -18,7 +18,7 @@ import XCTest
 import SwiftUI
 @testable import Forge
 
-/// Unit tests for the `Hand` class.
+/// Unit tests for the `Nobs` class.
 class NobsTests: XCTestCase {
    
     //=========================================================================//

@@ -22,6 +22,7 @@
 		B556687D26252B0B0045AC2B /* Mechanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556687C26252B0B0045AC2B /* Mechanic.swift */; };
 		B556688326252BEC0045AC2B /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556688226252BEC0045AC2B /* Rule.swift */; };
 		B556689226252E030045AC2B /* NobsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556689126252E030045AC2B /* NobsTests.swift */; };
+		B556689826253AEA0045AC2B /* FifteenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556689726253AEA0045AC2B /* FifteenTests.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D332617D3730022B805 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D322617D3730022B805 /* Symbol.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -76,6 +77,7 @@
 		B556687C26252B0B0045AC2B /* Mechanic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mechanic.swift; sourceTree = "<group>"; };
 		B556688226252BEC0045AC2B /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		B556689126252E030045AC2B /* NobsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NobsTests.swift; sourceTree = "<group>"; };
+		B556689726253AEA0045AC2B /* FifteenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifteenTests.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D322617D3730022B805 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				B556689126252E030045AC2B /* NobsTests.swift */,
+				B556689726253AEA0045AC2B /* FifteenTests.swift */,
 			);
 			path = HandRanks;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 			files = (
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
 				B556689226252E030045AC2B /* NobsTests.swift in Sources */,
+				B556689826253AEA0045AC2B /* FifteenTests.swift in Sources */,
 				B597384E25FEB07900367598 /* DeckTests.swift in Sources */,
 				B5817D642618EE9E0022B805 /* PlayingCardTests.swift in Sources */,
 				B5817D90261A12CD0022B805 /* PlayingCardDeckTests.swift in Sources */,
