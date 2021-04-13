@@ -168,4 +168,31 @@ class NobsTests: XCTestCase {
         XCTAssert(nobs == nil)
     }
     
+    //=========================================================================//
+    //                              PROPERTIES                                 //
+    //=========================================================================//
+    
+    /// Tests that a `Nobs HandRank` has the expected title.
+    func test_title_withNewNobs_isExpected() {
+        
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.jack
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let cards = [card1, card2]
+        let nobs = Nobs(of: cards)!
+        let expected = "Nobs"
+        
+        // When
+        let actual = nobs.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    
 }
