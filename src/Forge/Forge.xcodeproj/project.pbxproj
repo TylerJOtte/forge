@@ -18,6 +18,7 @@
 		B556685D2625268D0045AC2B /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556685C2625268D0045AC2B /* Feature.swift */; };
 		B5566861262527AC0045AC2B /* Depiction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5566860262527AC0045AC2B /* Depiction.swift */; };
 		B5566869262527FE0045AC2B /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5566868262527FE0045AC2B /* Description.swift */; };
+		B55668702625297E0045AC2B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556686F2625297E0045AC2B /* Environment.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D332617D3730022B805 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D322617D3730022B805 /* Symbol.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -68,6 +69,7 @@
 		B556685C2625268D0045AC2B /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		B5566860262527AC0045AC2B /* Depiction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Depiction.swift; sourceTree = "<group>"; };
 		B5566868262527FE0045AC2B /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
+		B556686F2625297E0045AC2B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D322617D3730022B805 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 				B556683B2623E9680045AC2B /* Technologies */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B556686E2625296F0045AC2B /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				B556686F2625297E0045AC2B /* Environment.swift */,
+			);
+			path = Environments;
 			sourceTree = "<group>";
 		};
 		B5817D422618B1150022B805 /* Features */ = {
@@ -351,6 +361,7 @@
 		B59A44A725FE934100857EB5 /* Forge */ = {
 			isa = PBXGroup;
 			children = (
+				B556686E2625296F0045AC2B /* Environments */,
 				B597383225FE958700367598 /* Elements.swift */,
 				B5817DA0261A27500022B805 /* Extensions */,
 				B5817D842619FFA90022B805 /* Errors */,
@@ -505,6 +516,7 @@
 				B55668432623EA130045AC2B /* Tool.swift in Sources */,
 				B55668592623EC430045AC2B /* Reward.swift in Sources */,
 				B5817D722619482C0022B805 /* PlayingCardDeck.swift in Sources */,
+				B55668702625297E0045AC2B /* Environment.swift in Sources */,
 				B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */,
 				B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */,
 				B5566812262238350045AC2B /* Flush.swift in Sources */,
