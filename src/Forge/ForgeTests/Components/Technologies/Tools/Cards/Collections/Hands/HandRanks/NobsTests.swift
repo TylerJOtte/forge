@@ -49,7 +49,7 @@ class NobsTests: XCTestCase {
         // Then
         XCTAssert(nobs != nil)
     }
-    
+
     //-------------------------------------------------------------------------//
     //                               Failure                                   //
     //-------------------------------------------------------------------------//
@@ -172,6 +172,10 @@ class NobsTests: XCTestCase {
     //                              PROPERTIES                                 //
     //=========================================================================//
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that the title of a`Nobs HandRank` equals "Nobs".
     func test_title_ofNobs_equalsNobs() {
         
@@ -194,6 +198,10 @@ class NobsTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that the points of a `Nobs HandRank` equals one.
     func test_points_ofNobs_equalsOne() {
         
@@ -215,6 +223,10 @@ class NobsTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             Min/Max Cards                               //
+    //-------------------------------------------------------------------------//
     
     /// Tests that the min cards  of a `Nobs HandRank` equals two.
     func test_minCards_ofNobs_equalsTwo() {
@@ -259,4 +271,31 @@ class NobsTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                 Count                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the count of a `Nobs HandRank` equals two.
+    func test_count_ofNobs_equalsTwo() {
+        
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.jack
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let cards = [card1, card2]
+        let nobs = Nobs(of: cards)!
+        let expected = 2
+        
+        // When
+        let actual = nobs.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
 }
