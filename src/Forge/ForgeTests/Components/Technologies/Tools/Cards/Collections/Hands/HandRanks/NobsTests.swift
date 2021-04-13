@@ -172,8 +172,8 @@ class NobsTests: XCTestCase {
     //                              PROPERTIES                                 //
     //=========================================================================//
     
-    /// Tests that a `Nobs HandRank` has the expected title.
-    func test_title_withNewNobs_isExpected() {
+    /// Tests that the title of a`Nobs HandRank` equals "Nobs".
+    func test_title_ofNobs_equalsNobs() {
         
         // Given
         let rank1 = Rank.ace
@@ -194,8 +194,8 @@ class NobsTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that a `Nobs HandRank` has the expected points.
-    func test_points_withNewNobs_isExpected() {
+    /// Tests that the points of a `Nobs HandRank` equals one.
+    func test_points_ofNobs_equalsOne() {
         
         // Given
         let rank1 = Rank.ace
@@ -211,6 +211,28 @@ class NobsTests: XCTestCase {
         
         // When
         let actual = nobs.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the min cards  of a `Nobs HandRank` equals two.
+    func test_minCards_ofNobs_equalsTwo() {
+        
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.jack
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let cards = [card1, card2]
+        let nobs = Nobs(of: cards)!
+        let expected = 2
+        
+        // When
+        let actual = nobs.minCards
         
         // Then
         XCTAssertEqual(expected, actual)
