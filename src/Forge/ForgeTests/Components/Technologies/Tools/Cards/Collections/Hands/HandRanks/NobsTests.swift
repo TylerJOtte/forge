@@ -54,6 +54,10 @@ class NobsTests: XCTestCase {
     //                               Failure                                   //
     //-------------------------------------------------------------------------//
     
+                                  //       //
+                                  // Count //
+                                  //       //
+    
     /// Tests that creating a `Nobs HandRank` with less than two `PlayingCards` returns nil.
     func test_init_withInsufficientCards_returnsNil() {
         
@@ -94,6 +98,10 @@ class NobsTests: XCTestCase {
         XCTAssert(nobs == nil)
     }
     
+                                  //       //
+                                  // Cards //
+                                  //       //
+    
     /// Tests that creating a `Nobs HandRank` without a `jack PlayingCard` returns nil.
     func test_init_withoutJack_returnsNil() {
         
@@ -132,4 +140,32 @@ class NobsTests: XCTestCase {
         // Then
         XCTAssert(nobs == nil)
     }
+
+                                  //       //
+                                  // Suits //
+                                  //       //
+    
+    /// Tests that creating a `Nobs HandRank` with non-`jack PlayingCard` and a `jack`
+    /// `PlayingCard` of a different `Suit` returns nil.
+    func test_init_withDifferentSuits_returnsNil() {
+        
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.jack
+        let color = Color.black
+        let symbol1 = Symbol.clover
+        let symbol2 = Symbol.spade
+        let suit1 = Suit(color, symbol1)
+        let suit2 = Suit(color, symbol2)
+        let card1 = PlayingCard(rank1, of: suit1)!
+        let card2 = PlayingCard(rank2, of: suit2)!
+        let cards = [card1, card2]
+        
+        // When
+        let nobs = Nobs(of: cards)
+        
+        // Then
+        XCTAssert(nobs == nil)
+    }
+    
 }
