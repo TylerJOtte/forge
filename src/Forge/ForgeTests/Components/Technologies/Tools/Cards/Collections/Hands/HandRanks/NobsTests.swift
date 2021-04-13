@@ -297,5 +297,4 @@ class NobsTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
-    
 }
