@@ -54,6 +54,28 @@ class FifteenTests: XCTestCase {
     //                               Failure                                   //
     //-------------------------------------------------------------------------//
     
+                                   //       //
+                                   // Count //
+                                   //       //
+
+    /// Tests that creating a `Fifteen HandRank` with less than two `PlayingCards` returns nil.
+    func test_init_withInsufficientCards_returnsNil() {
+
+        // Given
+        let rank = Rank.ten
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card = PlayingCard(rank, of: suit)!
+        let cards = [card]
+        
+        // When
+        let fifteen = Fifteen(of: cards)
+        
+        // Then
+        XCTAssert(fifteen == nil)
+    }
+
                                //            //
                                // Points Sum //
                                //            //
