@@ -19,6 +19,8 @@
 		B5566861262527AC0045AC2B /* Depiction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5566860262527AC0045AC2B /* Depiction.swift */; };
 		B5566869262527FE0045AC2B /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5566868262527FE0045AC2B /* Description.swift */; };
 		B55668702625297E0045AC2B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556686F2625297E0045AC2B /* Environment.swift */; };
+		B556687D26252B0B0045AC2B /* Mechanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556687C26252B0B0045AC2B /* Mechanic.swift */; };
+		B556688326252BEC0045AC2B /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556688226252BEC0045AC2B /* Rule.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D332617D3730022B805 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D322617D3730022B805 /* Symbol.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -70,6 +72,8 @@
 		B5566860262527AC0045AC2B /* Depiction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Depiction.swift; sourceTree = "<group>"; };
 		B5566868262527FE0045AC2B /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
 		B556686F2625297E0045AC2B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		B556687C26252B0B0045AC2B /* Mechanic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mechanic.swift; sourceTree = "<group>"; };
+		B556688226252BEC0045AC2B /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D322617D3730022B805 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -180,6 +184,23 @@
 				B556686F2625297E0045AC2B /* Environment.swift */,
 			);
 			path = Environments;
+			sourceTree = "<group>";
+		};
+		B556687926252AC10045AC2B /* Mechanics */ = {
+			isa = PBXGroup;
+			children = (
+				B556687C26252B0B0045AC2B /* Mechanic.swift */,
+				B556687A26252AC50045AC2B /* Rules */,
+			);
+			path = Mechanics;
+			sourceTree = "<group>";
+		};
+		B556687A26252AC50045AC2B /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				B556688226252BEC0045AC2B /* Rule.swift */,
+			);
+			path = Rules;
 			sourceTree = "<group>";
 		};
 		B5817D422618B1150022B805 /* Features */ = {
@@ -361,12 +382,13 @@
 		B59A44A725FE934100857EB5 /* Forge */ = {
 			isa = PBXGroup;
 			children = (
-				B556686E2625296F0045AC2B /* Environments */,
 				B597383225FE958700367598 /* Elements.swift */,
-				B5817DA0261A27500022B805 /* Extensions */,
-				B5817D842619FFA90022B805 /* Errors */,
+				B556686E2625296F0045AC2B /* Environments */,
 				B556683F2623E9B70045AC2B /* Components */,
 				B5817D422618B1150022B805 /* Features */,
+				B556687926252AC10045AC2B /* Mechanics */,
+				B5817DA0261A27500022B805 /* Extensions */,
+				B5817D842619FFA90022B805 /* Errors */,
 				B59A44A825FE934200857EB5 /* Forge.h */,
 				B59A44A925FE934200857EB5 /* Info.plist */,
 			);
@@ -493,7 +515,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5817D97261A19DA0022B805 /* HandRank.swift in Sources */,
+				B556687D26252B0B0045AC2B /* Mechanic.swift in Sources */,
 				B5817D482618BC7D0022B805 /* Suit.swift in Sources */,
+				B556688326252BEC0045AC2B /* Rule.swift in Sources */,
 				B5817D4F2618DE4D0022B805 /* PlayingCardRank.swift in Sources */,
 				B5817DA2261A27600022B805 /* ArrayExtension.swift in Sources */,
 				B597384325FEA93000367598 /* Deck.swift in Sources */,
