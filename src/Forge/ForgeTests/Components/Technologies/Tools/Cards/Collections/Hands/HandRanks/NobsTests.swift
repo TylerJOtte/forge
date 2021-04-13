@@ -113,4 +113,23 @@ class NobsTests: XCTestCase {
         // Then
         XCTAssert(nobs == nil)
     }
+    
+    /// Tests that creating a `Nobs HandRank` without a non-`jack PlayingCard` returns nil.
+    func test_init_withoutNonJack_returnsNil() {
+        
+        // Given
+        let rank = Rank.jack
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank, of: suit)!
+        let card2 = PlayingCard(rank, of: suit)!
+        let cards = [card1, card2]
+        
+        // When
+        let nobs = Nobs(of: cards)
+        
+        // Then
+        XCTAssert(nobs == nil)
+    }
 }
