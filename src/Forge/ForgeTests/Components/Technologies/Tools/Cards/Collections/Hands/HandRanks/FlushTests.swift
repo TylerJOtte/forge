@@ -122,7 +122,6 @@ class FlushTests: XCTestCase {
     func test_init_withMultipleSuits_returnsNil() {
 
         // Given
-        // Given
         let rank1 = Rank.one
         let rank2 = Rank.two
         let rank3 = Rank.three
@@ -145,5 +144,40 @@ class FlushTests: XCTestCase {
         
         // Then
         XCTAssert(flush == nil)
+    }
+    
+    //=========================================================================//
+    //                              PROPERTIES                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a`Flush HandRank` equals "N-Card Flush"
+    func test_title_ofFlush_equalsNCardFlush() {
+        
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.four
+        let rank5 = Rank.five
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let card5 = PlayingCard(rank5, of: suit)!
+        let cards = [card1, card2, card3, card4, card5]
+        let flush = Flush(of: cards)!
+        let expected = "5-Card Flush"
+        
+        // When
+        let actual = flush.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
 }
