@@ -72,4 +72,32 @@ class RunTests: XCTestCase {
         // Then
         XCTAssert(run != nil)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                               Failure                                   //
+    //-------------------------------------------------------------------------//
+    
+                                   //       //
+                                   // Count //
+                                   //       //
+
+    /// Tests that creating a `Run HandRank` with less than three `PlayingCards` returns nil.
+    func test_init_withInsufficientCards_returnsNil() {
+
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.two
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let cards = [card1, card2]
+        
+        // When
+        let run = Run(of: cards)
+        
+        // Then
+        XCTAssert(run == nil)
+    }
 }
