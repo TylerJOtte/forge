@@ -100,4 +100,27 @@ class RunTests: XCTestCase {
         // Then
         XCTAssert(run == nil)
     }
+    
+    /// Tests that creating a double `Run HandRank` with less than four `PlayingCards` returns nil.
+    func test_init_doubleRunWithInsufficientCards_returnsNil() {
+
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let cards = [card1, card2, card3]
+        let pairs = 1
+        
+        // When
+        let run = Run(of: cards, with: pairs)
+        
+        // Then
+        XCTAssert(run == nil)
+    }
 }
