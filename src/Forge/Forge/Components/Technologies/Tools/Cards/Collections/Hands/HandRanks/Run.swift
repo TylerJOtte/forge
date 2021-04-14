@@ -35,7 +35,7 @@ public class Run: Hand, HandRank {
     ///   - The given `Card`'s count  must be >= 3 with 0 specified pairs, or
     ///   - The given `Card`'s count must be 4 or 5 with 1 specified pair, or
     ///   - The given `Card`'s count must be 5 with 2 or 3 specified pairs.
-    ///   - All `Card`s in the given collection must be in sequential order when sorted.
+    ///   - All `Card`s in the given collection must be in sequential order.
     /// - Postcondition:
     ///   - The `Run` can hold three to Int.max `Card`s with 0 specified paris, or
     ///   - The `Run` can hold 4-5  `Card`s with 1 specified pair, or
@@ -69,9 +69,9 @@ public class Run: Hand, HandRank {
             return nil
         }
         
-        guard (cards.sorted().areSequential()) else {
+        guard (cards.areSequential()) else {
             
-            print("The given Cards must be in sequential order when sorted.")
+            print("The given Cards must be in sequential order.")
             return nil
         }
         

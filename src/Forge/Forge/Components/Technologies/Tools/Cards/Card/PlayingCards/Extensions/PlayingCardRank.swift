@@ -23,7 +23,7 @@ extension Rank {
     /// The previous `Rank` in the standard French-suited `PlayingCard` hierarchy.
     var previous: Rank? {
         
-        return (self == .ace || self == .joker) ? nil :
+        return (self == .ace || self == .one || self == .joker) ? nil :
             PlayingCards.ranks[PlayingCards.ranks.firstIndex(of: self)! - 1]
     }
     
@@ -31,7 +31,10 @@ extension Rank {
     var next: Rank? {
         
         return (self == .king || self == .joker) ? nil :
-            PlayingCards.ranks[PlayingCards.ranks.firstIndex(of: self)! + 1]
+            PlayingCards.ranks[
+                PlayingCards.ranks.firstIndex(
+                    of: self == .one ? .ace : self)! + 1
+            ]
     }
     
     //=========================================================================//
