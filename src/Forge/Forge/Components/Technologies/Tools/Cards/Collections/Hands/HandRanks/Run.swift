@@ -79,12 +79,12 @@ public class Run: Hand, HandRank {
         //       more cards in combinations (e.g., double run with 6..* Cards).
         if (isSequence) {
             
-            self.title = "Run of \(count)"
+            self.title = "Run Of \(count)"
             self.points = count
         
         } else if (isDoubleRun) {
             
-            self.title = "Double Run of \(count - 1)"
+            self.title = "Double Run Of \(count - 1)"
             self.points = count == 4 ? 8 : 10
         
         } else if (isDoubleDoubleRun) {

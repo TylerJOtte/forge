@@ -266,4 +266,35 @@ class RunTests: XCTestCase {
         // Then
         XCTAssert(run == nil)
     }
+    
+    //=========================================================================//
+    //                              PROPERTIES                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a  standard n-`Card Run HandRank` equals "`Run` of n"
+    func test_title_ofRun_equalsRunOfN() {
+        
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let cards = [card1, card2, card3]
+        let run = Run(of: cards)!
+        let expected = "Run Of 3"
+        
+        // When
+        let actual = run.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
