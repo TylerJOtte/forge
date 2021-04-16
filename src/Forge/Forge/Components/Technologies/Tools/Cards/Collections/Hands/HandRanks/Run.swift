@@ -69,7 +69,7 @@ public class Run: Hand, HandRank {
             return nil
         }
         
-        guard (cards.areSequential()) else {
+        guard (cards.areSequential(with: pairs)) else {
             
             print("The given Cards must be in sequential order.")
             return nil
@@ -84,7 +84,7 @@ public class Run: Hand, HandRank {
         
         } else if (isDoubleRun) {
             
-            self.title = "Double Run Of \(count - 1)"
+            self.title = "Double Run Of \(count)"
             self.points = count == 4 ? 8 : 10
         
         } else if (isDoubleDoubleRun) {

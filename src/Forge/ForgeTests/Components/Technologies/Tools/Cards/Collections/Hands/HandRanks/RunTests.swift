@@ -275,7 +275,7 @@ class RunTests: XCTestCase {
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the title of a  standard n-`Card Run HandRank` equals "`Run` of n"
+    /// Tests that the title of a  standard n-`Card Run HandRank` equals "`Run` of n".
     func test_title_ofRun_equalsRunOfN() {
         
         let rank1 = Rank.one
@@ -293,6 +293,32 @@ class RunTests: XCTestCase {
         
         // When
         let actual = run.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a double n-`Card Run HandRank` equals "`Run` of n".
+    func test_title_ofDoubleRun_equalsDoubleRunOfN() {
+        
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let pairs = 1
+        let doubleRun = Run(of: cards, with: pairs)!
+        let expected = "Double Run Of 4"
+        
+        // When
+        let actual = doubleRun.title
         
         // Then
         XCTAssertEqual(expected, actual)
