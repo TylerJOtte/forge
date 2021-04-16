@@ -237,4 +237,33 @@ class RunTests: XCTestCase {
         // Then
         XCTAssert(run == nil)
     }
+    
+    /// Tests that creating a triple`Run HandRank` with more than five `PlayingCards` returns nil.
+    func test_init_tripleRunWithExcessiveCards_returnsNil() {
+
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let rank5 = Rank.three
+        let rank6 = Rank.four
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let card5 = PlayingCard(rank5, of: suit)!
+        let card6 = PlayingCard(rank6, of: suit)!
+        let cards = [card1, card2, card3, card4, card5, card6]
+        let pairs = 3
+        
+        // When
+        let run = Run(of: cards, with: pairs)
+        
+        // Then
+        XCTAssert(run == nil)
+    }
 }
