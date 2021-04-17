@@ -37,7 +37,7 @@ public class Kind: Hand, HandRank {
     ///   - The `Kind`s title is set according to the # of `Card`s it holds.
     ///   - The `Kind`s points is set according to the # of `Card`s it holds.
     /// - Parameter cards: The `Card`s to create `Kind` with.
-    public init?(of cards: [PlayingCard]) {
+    public init?(of cards: [PlayingCard]) throws {
         
         guard (cards.count >= 2) else {
             
@@ -51,6 +51,6 @@ public class Kind: Hand, HandRank {
             return nil
         }
         
-        super.init(of: 2, to: Int.max, cards)
+        try super.init(of: 2, to: Int.max, cards)
     }
 }

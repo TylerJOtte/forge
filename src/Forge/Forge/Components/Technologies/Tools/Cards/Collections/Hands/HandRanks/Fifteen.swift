@@ -40,7 +40,7 @@ public class Fifteen: Hand, HandRank {
     ///   - The `Fifteen`s title is set to `Fifteen`.
     ///   - The `Fifeen`s points are set to two.
     /// - Parameter cards: The `Card`s to create `Kind` with.
-    public init?(of cards: [PlayingCard]) {
+    public init?(of cards: [PlayingCard]) throws {
         
         guard (cards.count >= 2 && cards.count <= 5) else {
             
@@ -54,6 +54,6 @@ public class Fifteen: Hand, HandRank {
             return nil
         }
         
-        super.init(of: 2, to: 5, cards)
+        try super.init(of: 2, to: 5, cards)
     }
 }

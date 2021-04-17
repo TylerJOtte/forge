@@ -41,7 +41,7 @@ public class Nobs: Hand, HandRank {
     ///   - The `HandRank`s title is set to `Nobs`.
     ///   - The `HandRank`s points are set to 1.
     /// - Parameter cards: The `Card`s to create `Kind` with.
-    public init?(of cards: [PlayingCard]) {
+    public init?(of cards: [PlayingCard]) throws {
         
         let nonJack = cards.filter{$0.rank != .jack}.first
         let jack = cards.filter{$0.rank == .jack}.first
@@ -72,6 +72,6 @@ public class Nobs: Hand, HandRank {
         }
 
         
-        super.init(of: 2, to: 2, cards)
+        try super.init(of: 2, to: 2, cards)
     }
 }

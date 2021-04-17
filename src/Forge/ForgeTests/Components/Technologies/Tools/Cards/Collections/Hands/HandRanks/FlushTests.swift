@@ -31,7 +31,7 @@ class FlushTests: XCTestCase {
     
     /// Tests that creating a `Flush HandRank` with `PlayingCard`s that all have the same `Suit`
     /// succeeds.
-    func test_init_withSameSuit_succeeds() {
+    func test_init_withSameSuit_succeeds() throws {
         
         // Given
         let rank1 = Rank.one
@@ -50,7 +50,7 @@ class FlushTests: XCTestCase {
         let cards = [card1, card2, card3, card4, card5]
         
         // When
-        let flush = Flush(of: cards)
+        let flush = try Flush(of: cards)
         
         // Then
         XCTAssert(flush != nil)
@@ -65,7 +65,7 @@ class FlushTests: XCTestCase {
                                    //       //
 
     /// Tests that creating a `Flush HandRank` with less than four `PlayingCards` returns nil.
-    func test_init_withInsufficientCards_returnsNil() {
+    func test_init_withInsufficientCards_returnsNil() throws {
 
         // Given
         let rank1 = Rank.one
@@ -80,14 +80,14 @@ class FlushTests: XCTestCase {
         let cards = [card1, card2, card3]
         
         // When
-        let flush = Flush(of: cards)
+        let flush = try Flush(of: cards)
         
         // Then
         XCTAssert(flush == nil)
     }
     
     /// Tests that creating a `Flush HandRank` with more than five `PlayingCards` returns nil.
-    func test_init_withExcessiveCards_returnsNil() {
+    func test_init_withExcessiveCards_returnsNil() throws {
 
         // Given
         let rank1 = Rank.one
@@ -108,7 +108,7 @@ class FlushTests: XCTestCase {
         let cards = [card1, card2, card3, card4, card5, card6]
         
         // When
-        let flush = Flush(of: cards)
+        let flush = try Flush(of: cards)
         
         // Then
         XCTAssert(flush == nil)
@@ -119,7 +119,7 @@ class FlushTests: XCTestCase {
                                    //       //
 
     /// Tests that creating a `Flush HandRank` with more than one `Suit`  returns nil.
-    func test_init_withMultipleSuits_returnsNil() {
+    func test_init_withMultipleSuits_returnsNil() throws {
 
         // Given
         let rank1 = Rank.one
@@ -140,7 +140,7 @@ class FlushTests: XCTestCase {
         let cards = [card1, card2, card3, card4, card5]
         
         // When
-        let flush = Flush(of: cards)
+        let flush = try Flush(of: cards)
         
         // Then
         XCTAssert(flush == nil)
@@ -155,7 +155,7 @@ class FlushTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the title of a`Flush HandRank` equals "N-Card Flush"
-    func test_title_ofFlush_equalsNCardFlush() {
+    func test_title_ofFlush_equalsNCardFlush() throws {
         
         let rank1 = Rank.one
         let rank2 = Rank.two
@@ -171,7 +171,7 @@ class FlushTests: XCTestCase {
         let card4 = PlayingCard(rank4, of: suit)!
         let card5 = PlayingCard(rank5, of: suit)!
         let cards = [card1, card2, card3, card4, card5]
-        let flush = Flush(of: cards)!
+        let flush = try Flush(of: cards)!
         let expected = "5-Card Flush"
         
         // When
@@ -186,7 +186,7 @@ class FlushTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the points of a`Flush HandRank` equals N `Card`s given.
-    func test_points_ofFlush_equalsNCards() {
+    func test_points_ofFlush_equalsNCards() throws {
         
         let rank1 = Rank.one
         let rank2 = Rank.two
@@ -202,7 +202,7 @@ class FlushTests: XCTestCase {
         let card4 = PlayingCard(rank4, of: suit)!
         let card5 = PlayingCard(rank5, of: suit)!
         let cards = [card1, card2, card3, card4, card5]
-        let flush = Flush(of: cards)!
+        let flush = try Flush(of: cards)!
         let expected = 5
         
         // When
@@ -217,7 +217,7 @@ class FlushTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the min cards  of a `Flush HandRank` equals four.
-    func test_minCards_ofFlush_equalsFour() {
+    func test_minCards_ofFlush_equalsFour() throws {
         
         let rank1 = Rank.one
         let rank2 = Rank.two
@@ -233,7 +233,7 @@ class FlushTests: XCTestCase {
         let card4 = PlayingCard(rank4, of: suit)!
         let card5 = PlayingCard(rank5, of: suit)!
         let cards = [card1, card2, card3, card4, card5]
-        let flush = Flush(of: cards)!
+        let flush = try Flush(of: cards)!
         let expected = 4
         
         // When
@@ -244,7 +244,7 @@ class FlushTests: XCTestCase {
     }
     
     /// Tests that the max cards  of a `Flush HandRank` equals five.
-    func test_minCards_ofFlush_equalsFive() {
+    func test_minCards_ofFlush_equalsFive() throws {
         
         let rank1 = Rank.one
         let rank2 = Rank.two
@@ -260,7 +260,7 @@ class FlushTests: XCTestCase {
         let card4 = PlayingCard(rank4, of: suit)!
         let card5 = PlayingCard(rank5, of: suit)!
         let cards = [card1, card2, card3, card4, card5]
-        let flush = Flush(of: cards)!
+        let flush = try Flush(of: cards)!
         let expected = 5
         
         // When

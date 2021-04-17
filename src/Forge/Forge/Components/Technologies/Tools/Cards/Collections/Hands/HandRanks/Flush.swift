@@ -37,7 +37,7 @@ public class Flush: Hand, HandRank {
     ///   - The `Flush`s title is set according to the # of `Card`s it holds.
     ///   - The `Flush`s points is set according to the # of `Card`s it holds.
     /// - Parameter cards: The `Card`s to create `Kind` with.
-    public init?(of cards: [PlayingCard]) {
+    public init?(of cards: [PlayingCard]) throws {
         
         guard (cards.count >= 4 && cards.count <= 5) else {
             
@@ -51,6 +51,6 @@ public class Flush: Hand, HandRank {
             return nil
         }
         
-        super.init(of: 4, to: 5, cards)
+        try super.init(of: 4, to: 5, cards)
     }
 }
