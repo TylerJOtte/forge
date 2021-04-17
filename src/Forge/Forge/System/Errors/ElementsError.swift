@@ -19,7 +19,10 @@ import Foundation
 /// An throwable `Elements Error`
 public enum ElementsError: Error {
     
+    case areNotSequential
+    case excessiveElements
     case insufficientCapacity
+    case insufficientElements
     case isEmpty
     case isFull
     case notFound
