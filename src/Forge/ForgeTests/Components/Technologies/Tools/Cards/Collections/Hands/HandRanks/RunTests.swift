@@ -379,4 +379,31 @@ class RunTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the points of a`Run` equals the # of  `Csrd`s it holds.
+    func test_points_ofRun_equalsNCards() {
+        
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let cards = [card1, card2, card3]
+        let run = Run(of: cards)!
+        let expected = 3
+        
+        // When
+        let actual = run.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
