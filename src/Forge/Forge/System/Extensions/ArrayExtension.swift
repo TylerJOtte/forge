@@ -81,36 +81,88 @@ extension Array where Element: PlayingCard  {
     
     /// Determines if all `Card`s are in sequential order.
     ///
-    /// - Precondition: None.
+    /// - Precondition: `count` >= 2.
     /// - Postcondition: None.
-    /// - Parameter pairs: The # of pairs allowed  in sequential order, else false.
-    /// - Returns: True if all `Card`s in the collection are in sequential order, with duplicates, else false.
-    func areSequential(with pairs: Int = 0) -> Bool {
+    /// - Returns: True if all `Card`s are in sequential order, else false.
+    /// - Throws: `ElementsError.insufficientElements` if count &lt; 2.
+    func areSequential() throws -> Bool {
         
-        var areSequential = false
+        let min = 2
         
-        if (getDuplicateCount() == pairs) {
+        guard (count >= min) else {
             
-            let lastCard = self.count - 1
-            var card = 0
+            print("The collection must contain at least \(min) Cards.")
+            throw ElementsError.insufficientElements
+        }
+        
+        let lastCard = count - 1
+        var areSequential = true
+        var card = 0
+        
+        while (areSequential && card < lastCard) {
             
-            areSequential = true
-
-            while (areSequential && card < lastCard) {
-                
-                let nextRank = self[card].rank.next
-                let nextCardRank = self[card + 1].rank
-                let comparison = nextCardRank == nextRank
-
-                areSequential = pairs == 0 ? comparison :
-                    comparison || nextCardRank == self[card].rank
-                
-                card += 1
-            }
-                
-        } else {
+            let nextRank = self[card].rank.next
+            let nextCardRank = self[card + 1].rank
             
-            print("The collection contains more pairs than allowed.")
+            areSequential = nextRank == nextCardRank
+            card += 1
+        }
+        
+        return areSequential
+    }
+    
+    /// Determines if all `Card`s are in sequential order with the given # of pairs.
+    ///
+    /// - Precondition:
+    ///    - `count` >= three.
+    ///    - The # of given pairs must be >= one.
+    ///    - Must contain the specified # of pairs.
+    /// - Postcondition: None.
+    /// - Returns: True if all `Card`s are in sequential order with the given # of pairs, else false.
+    /// - Throws:
+    ///    - `ElementsError.insufficientElements` if the `Card`s
+    ///       - Contain less than three `Card`s, or
+    ///       - Do contain the # of specified pairs.
+    ///    - `RangeError.invalidMin` if the # of specified pairs &lt;= zero.
+    func areSequential(with pairs: Int) throws -> Bool {
+        
+        let min = 3
+        let pairMin = 1
+        let pairCount = getDuplicateCount()
+        let s = pairs > 1 ? "s" : ""
+        
+        guard (count >= min) else {
+            
+            print("The collection must contain at least \(min) Cards.")
+            throw ElementsError.insufficientElements
+        }
+        
+        guard (pairs >= pairMin) else {
+            
+            print("The # of given pairs must be >= \(pairMin).")
+            throw RangeError.invalidMin
+        }
+        
+        guard (pairCount == pairs) else {
+            
+            print("The collection must contain \(pairCount) pair\(s).")
+            throw ElementsError.insufficientElements
+        }
+        
+        let lastCard = count - 1
+        var areSequential = true
+        var card = 0
+        
+        while (areSequential && card < lastCard) {
+            
+            let rank = self[card].rank
+            let nextRank = self[card].rank.next
+            let nextCardRank = self[card + 1].rank
+            let isSequential = nextCardRank == nextRank
+            let isPair = nextCardRank == rank
+            
+            areSequential = isSequential || isPair
+            card += 1
         }
         
         return areSequential
