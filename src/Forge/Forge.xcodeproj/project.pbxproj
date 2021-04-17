@@ -25,6 +25,13 @@
 		B556689826253AEA0045AC2B /* FifteenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556689726253AEA0045AC2B /* FifteenTests.swift */; };
 		B556689C262659030045AC2B /* FlushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556689B262659030045AC2B /* FlushTests.swift */; };
 		B55668A026265E160045AC2B /* RunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556689F26265E160045AC2B /* RunTests.swift */; };
+		B55668A4262A70250045AC2B /* DoubleRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668A3262A70250045AC2B /* DoubleRun.swift */; };
+		B55668AB262A78390045AC2B /* DoubleDoubleRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668AA262A78390045AC2B /* DoubleDoubleRun.swift */; };
+		B55668AF262A7A350045AC2B /* TripleRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668AE262A7A350045AC2B /* TripleRun.swift */; };
+		B55668B3262B57470045AC2B /* RangeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668B2262B57470045AC2B /* RangeError.swift */; };
+		B55668BE262B92920045AC2B /* DoubleRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668BD262B92920045AC2B /* DoubleRunTests.swift */; };
+		B55668C4262B929C0045AC2B /* DoubleDoubleRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668C3262B929C0045AC2B /* DoubleDoubleRunTests.swift */; };
+		B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668C7262B92A30045AC2B /* TripleRunTests.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D332617D3730022B805 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D322617D3730022B805 /* Symbol.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -82,6 +89,13 @@
 		B556689726253AEA0045AC2B /* FifteenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifteenTests.swift; sourceTree = "<group>"; };
 		B556689B262659030045AC2B /* FlushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushTests.swift; sourceTree = "<group>"; };
 		B556689F26265E160045AC2B /* RunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTests.swift; sourceTree = "<group>"; };
+		B55668A3262A70250045AC2B /* DoubleRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRun.swift; sourceTree = "<group>"; };
+		B55668AA262A78390045AC2B /* DoubleDoubleRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleDoubleRun.swift; sourceTree = "<group>"; };
+		B55668AE262A7A350045AC2B /* TripleRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleRun.swift; sourceTree = "<group>"; };
+		B55668B2262B57470045AC2B /* RangeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeError.swift; sourceTree = "<group>"; };
+		B55668BD262B92920045AC2B /* DoubleRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRunTests.swift; sourceTree = "<group>"; };
+		B55668C3262B929C0045AC2B /* DoubleDoubleRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleDoubleRunTests.swift; sourceTree = "<group>"; };
+		B55668C7262B92A30045AC2B /* TripleRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleRunTests.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D322617D3730022B805 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -256,12 +270,34 @@
 		B556688F26252DDA0045AC2B /* HandRanks */ = {
 			isa = PBXGroup;
 			children = (
+				B55668BC262B92820045AC2B /* Runs */,
 				B556689126252E030045AC2B /* NobsTests.swift */,
 				B556689726253AEA0045AC2B /* FifteenTests.swift */,
 				B556689B262659030045AC2B /* FlushTests.swift */,
-				B556689F26265E160045AC2B /* RunTests.swift */,
 			);
 			path = HandRanks;
+			sourceTree = "<group>";
+		};
+		B55668A7262A763C0045AC2B /* Runs */ = {
+			isa = PBXGroup;
+			children = (
+				B5817DA7261A3E0E0022B805 /* Run.swift */,
+				B55668A3262A70250045AC2B /* DoubleRun.swift */,
+				B55668AA262A78390045AC2B /* DoubleDoubleRun.swift */,
+				B55668AE262A7A350045AC2B /* TripleRun.swift */,
+			);
+			path = Runs;
+			sourceTree = "<group>";
+		};
+		B55668BC262B92820045AC2B /* Runs */ = {
+			isa = PBXGroup;
+			children = (
+				B556689F26265E160045AC2B /* RunTests.swift */,
+				B55668BD262B92920045AC2B /* DoubleRunTests.swift */,
+				B55668C3262B929C0045AC2B /* DoubleDoubleRunTests.swift */,
+				B55668C7262B92A30045AC2B /* TripleRunTests.swift */,
+			);
+			path = Runs;
 			sourceTree = "<group>";
 		};
 		B5817D422618B1150022B805 /* Features */ = {
@@ -342,6 +378,7 @@
 			children = (
 				B597385925FEC1CE00367598 /* ElementsError.swift */,
 				B5817D852619FFD50022B805 /* FeatureError.swift */,
+				B55668B2262B57470045AC2B /* RangeError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -368,7 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				B5817D96261A19DA0022B805 /* HandRank.swift */,
-				B5817DA7261A3E0E0022B805 /* Run.swift */,
+				B55668A7262A763C0045AC2B /* Runs */,
 				B5817D9C261A1F7B0022B805 /* Kind.swift */,
 				B5566811262238350045AC2B /* Flush.swift */,
 				B556681526223DB90045AC2B /* Fifteen.swift */,
@@ -576,6 +613,7 @@
 			files = (
 				B5817D97261A19DA0022B805 /* HandRank.swift in Sources */,
 				B556687D26252B0B0045AC2B /* Mechanic.swift in Sources */,
+				B55668A4262A70250045AC2B /* DoubleRun.swift in Sources */,
 				B5817D482618BC7D0022B805 /* Suit.swift in Sources */,
 				B556688326252BEC0045AC2B /* Rule.swift in Sources */,
 				B5817D4F2618DE4D0022B805 /* PlayingCardRank.swift in Sources */,
@@ -584,6 +622,8 @@
 				B597385A25FEC1CE00367598 /* ElementsError.swift in Sources */,
 				B556681626223DB90045AC2B /* Fifteen.swift in Sources */,
 				B55668472623EAC20045AC2B /* Technology.swift in Sources */,
+				B55668AF262A7A350045AC2B /* TripleRun.swift in Sources */,
+				B55668AB262A78390045AC2B /* DoubleDoubleRun.swift in Sources */,
 				B556685D2625268D0045AC2B /* Feature.swift in Sources */,
 				B5817D862619FFD50022B805 /* FeatureError.swift in Sources */,
 				B556684D2623EB150045AC2B /* Component.swift in Sources */,
@@ -600,6 +640,7 @@
 				B55668432623EA130045AC2B /* Tool.swift in Sources */,
 				B55668592623EC430045AC2B /* Reward.swift in Sources */,
 				B5817D722619482C0022B805 /* PlayingCardDeck.swift in Sources */,
+				B55668B3262B57470045AC2B /* RangeError.swift in Sources */,
 				B55668702625297E0045AC2B /* Environment.swift in Sources */,
 				B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */,
 				B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */,
@@ -615,11 +656,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B556689C262659030045AC2B /* FlushTests.swift in Sources */,
+				B55668C4262B929C0045AC2B /* DoubleDoubleRunTests.swift in Sources */,
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
+				B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */,
 				B556689226252E030045AC2B /* NobsTests.swift in Sources */,
 				B556689826253AEA0045AC2B /* FifteenTests.swift in Sources */,
 				B55668A026265E160045AC2B /* RunTests.swift in Sources */,
 				B597384E25FEB07900367598 /* DeckTests.swift in Sources */,
+				B55668BE262B92920045AC2B /* DoubleRunTests.swift in Sources */,
 				B5817D642618EE9E0022B805 /* PlayingCardTests.swift in Sources */,
 				B5817D90261A12CD0022B805 /* PlayingCardDeckTests.swift in Sources */,
 				B597386125FED1B900367598 /* CardTests.swift in Sources */,
