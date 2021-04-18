@@ -22,6 +22,9 @@ public class Kind: Hand, HandRank {
     /// The primary name.
     public var title: String { count == 2 ? "Pair" : "\(count) Of A Kind" }
     
+    /// The total # of points.
+    public var points: Int { count * (count - 1) }
+    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//

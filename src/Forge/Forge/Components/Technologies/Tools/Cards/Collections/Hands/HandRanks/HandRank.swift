@@ -30,5 +30,5 @@ public protocol HandRank: Hand {
 extension HandRank {
     
     /// The total # of points.
-    public var points: Int { return count }
+    public var points: Int { count }
 }
