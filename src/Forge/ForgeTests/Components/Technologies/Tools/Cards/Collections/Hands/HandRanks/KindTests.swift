@@ -289,4 +289,33 @@ class KindTests: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that the points of  a`Kind`with the four `PlayingCard`s equals 12.
+    func test_points_withFourCards_equals12() throws {
+        
+        // Given
+        let rank = Rank.ace
+        let color1 = Color.black
+        let color2 = Color.red
+        let symbol1 = Symbol.clover
+        let symbol2 = Symbol.spade
+        let symbol3 = Symbol.diamond
+        let symbol4 = Symbol.heart
+        let suit1 = Suit(color1, symbol1)
+        let suit2 = Suit(color1, symbol2)
+        let suit3 = Suit(color2, symbol3)
+        let suit4 = Suit(color2, symbol4)
+        let card1 = PlayingCard(rank, of: suit1)!
+        let card2 = PlayingCard(rank, of: suit2)!
+        let card3 = PlayingCard(rank, of: suit3)!
+        let card4 = PlayingCard(rank, of: suit4)!
+        let cards = [card1, card2, card3, card4]
+        let kind = try Kind(of: cards)
+        let expected = 12
+        
+        // When
+        let actual = kind.points
+        
+        XCTAssertEqual(expected, actual)
+    }
 }
