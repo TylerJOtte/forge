@@ -350,7 +350,7 @@ class DoubleDoubleRunTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the run points of  a`DoubleDoubleRun`with the six `PlayingCard`s equals sixteen..
+    /// Tests that the run points of  a`DoubleDoubleRun`with the six `PlayingCard`s equals sixteen.
     func test_runPoints_withSixCards_equalsSixteen() throws {
         
         // Given
