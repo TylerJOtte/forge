@@ -26,12 +26,8 @@ class TripleRunTests: XCTestCase {
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
-    //                               Failure                                   //
+    //                            Insufficient Cards                           //
     //-------------------------------------------------------------------------//
-    
-                             //                   //
-                             // Insuffcient Cards //
-                             //                   //
 
     /// Tests that creating a `TripleRun` with less than five `PlayingCards` throws an
     /// `ElementsError.insufficientElements Error`.
@@ -52,6 +48,39 @@ class TripleRunTests: XCTestCase {
         let cards = [card1, card2, card3, card4]
         let expected = ElementsError.insufficientElements
 
+        // When
+        XCTAssertThrowsError(try TripleRun(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                           Incorrect Pair Count                          //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that creating a `TripleRun` with two pairs throws an
+    /// `ElementsError.insufficientElements Error`.
+    func test_init_withZeroPairs_throwsError() throws {
+
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.two
+        let rank4 = Rank.three
+        let rank5 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let card5 = PlayingCard(rank5, of: suit)!
+        let cards = [card1, card2, card3, card4, card5]
+        let expected = ElementsError.invalidDuplicateCount
+        
         // When
         XCTAssertThrowsError(try TripleRun(of: cards)) { error in
             

@@ -26,13 +26,9 @@ class DoubleRunTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                               Failure                                   //
+    //                            Insufficient Cards                           //
     //-------------------------------------------------------------------------//
     
-                             //                   //
-                             // Insuffcient Cards //
-                             //                   //
-
     /// Tests that creating a `DoubleRun` with less than four `PlayingCards` throws an
     /// `ElementsError.insufficientElements Error`.
     func test_init_withInsufficientCards_throwsError() throws {
@@ -58,9 +54,9 @@ class DoubleRunTests: XCTestCase {
         }
     }
     
-                           //                      //
-                           // Incorrect Pair Count //
-                           //                      //
+    //-------------------------------------------------------------------------//
+    //                           Incorrect Pair Count                          //
+    //-------------------------------------------------------------------------//
     
     /// Tests that creating a `DoubleRun` with zero pairs throws an
     /// `ElementsError.insufficientElements Error`.
