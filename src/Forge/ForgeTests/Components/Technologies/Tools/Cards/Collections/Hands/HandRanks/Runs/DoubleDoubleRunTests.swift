@@ -68,7 +68,7 @@ class DoubleDoubleRunTests: XCTestCase {
     //                             Min/Max Cards                               //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the min cards  of a `DoublDoubleeRun` equals five.
+    /// Tests that the min cards  of a `DoublDoubleRun` equals five.
     func test_minCards_ofDoubleRun_equalsFour() throws {
         
         // Given
@@ -95,7 +95,6 @@ class DoubleDoubleRunTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
-    
     
     //-------------------------------------------------------------------------//
     //                                Title                                    //

@@ -18,30 +18,23 @@ import XCTest
 import SwiftUI
 @testable import Forge
 
-/// Unit tests for a `Run HandRank`.
+/// Unit tests for a `TripleRun HandRank`.
 class TripleRunTests: XCTestCase {
     
     //=========================================================================//
     //                             Initialization                              //
     //=========================================================================//
-    
-    //-------------------------------------------------------------------------//
-    //                                Success                                  //
-    //-------------------------------------------------------------------------//
-    
 
-    
     //-------------------------------------------------------------------------//
     //                               Failure                                   //
     //-------------------------------------------------------------------------//
     
-                            //                   //
-                            // Insuffcient Cards //
-                            //                   //
+                             //                   //
+                             // Insuffcient Cards //
+                             //                   //
 
-
-    
-    /// Tests that creating a tirple `Run HandRank` with less than five `PlayingCards` returns nil.
+    /// Tests that creating a `TripleRun` with less than five `PlayingCards` throws an
+    /// `ElementsError.insufficientElements Error`.
     func test_init_tripleRunWithInsufficientCards_returnsNil() throws {
 
         // Given
@@ -57,29 +50,33 @@ class TripleRunTests: XCTestCase {
         let card3 = PlayingCard(rank3, of: suit)!
         let card4 = PlayingCard(rank4, of: suit)!
         let cards = [card1, card2, card3, card4]
+        let expected = ElementsError.insufficientElements
 
         // When
-        let run = try TripleRun(of: cards)
-        
-        // Then
-        XCTAssert(run == nil)
+        XCTAssertThrowsError(try TripleRun(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
     }
     
-                             //                 //
-                             // Excessive Cards //
-                             //                 //
-
-
-    /// Tests that creating a triple`Run HandRank` with more than five `PlayingCards` returns nil.
-    func test_init_tripleRunWithExcessiveCards_returnsNil() throws {
-
+    //=========================================================================//
+    //                              PROPERTIES                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                             Min/Max Cards                               //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the min cards  of a `TripleRun` equals five.
+    func test_minCards_ofDoubleRun_equalsFour() throws {
+        
         // Given
-        let rank1 = Rank.ace
+        let rank1 = Rank.one
         let rank2 = Rank.two
         let rank3 = Rank.three
         let rank4 = Rank.three
         let rank5 = Rank.three
-        let rank6 = Rank.four
         let color = Color.black
         let symbol = Symbol.clover
         let suit = Suit(color, symbol)
@@ -88,29 +85,22 @@ class TripleRunTests: XCTestCase {
         let card3 = PlayingCard(rank3, of: suit)!
         let card4 = PlayingCard(rank4, of: suit)!
         let card5 = PlayingCard(rank5, of: suit)!
-        let card6 = PlayingCard(rank6, of: suit)!
-        let cards = [card1, card2, card3, card4, card5, card6]
+        let cards = [card1, card2, card3, card4, card5]
+        let tripleRun = try TripleRun(of: cards)
+        let expected = 5
         
         // When
-        let tripleRun = try TripleRun(of: cards)
+        let actual = tripleRun.minCards
         
         // Then
-//        XCTAssert(run == nil)
+        XCTAssertEqual(expected, actual)
     }
-    
-    //=========================================================================//
-    //                              PROPERTIES                                 //
-    //=========================================================================//
     
     //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    
-
-
-    
-    /// Tests that the title of a triple `Run HandRank` equals "Triple `Run`".
+    /// Tests that the title of a `TripleRun` equals "Triple Run".
     func test_title_ofTripleRun_equalsTripleRun() throws {
         
         let rank1 = Rank.one
