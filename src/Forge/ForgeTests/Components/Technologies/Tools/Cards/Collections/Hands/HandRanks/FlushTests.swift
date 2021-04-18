@@ -142,6 +142,35 @@ class FlushTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                                 Count                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the count of a `Flush` equals the # of `PlayingCards` given.
+    func test_count_ofFlush_equalsNCardsGiven() throws {
+        
+        // Given
+        let rank1 = Rank.jack
+        let rank2 = Rank.queen
+        let rank3 = Rank.king
+        let rank4 = Rank.ace
+        let color = Color.red
+        let symbol = Symbol.heart
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let flush = try Flush(of: cards)
+        let expected = 4
+        
+        // When
+        let actual = flush.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
