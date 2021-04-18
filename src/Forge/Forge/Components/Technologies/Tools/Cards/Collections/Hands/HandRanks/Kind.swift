@@ -20,7 +20,7 @@ import Foundation
 public class Kind: Hand, HandRank {
     
     /// The primary name.
-    public var title: String { return "\(count) Of A Kind" }
+    public var title: String { count == 2 ? "Pair" : "\(count) Of A Kind" }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
