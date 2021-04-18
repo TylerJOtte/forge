@@ -62,7 +62,7 @@ class DoubleDoubleRunTests: XCTestCase {
     
     /// Tests that creating a `DoubleDoubleRun` with one pair throws an
     /// `ElementsError.insufficientElements Error`.
-    func test_init_withZeroPairs_throwsError() throws {
+    func test_init_withInsuficcientPairs_throwsError() throws {
 
         // Given
         let rank1 = Rank.one
@@ -79,6 +79,37 @@ class DoubleDoubleRunTests: XCTestCase {
         let card4 = PlayingCard(rank4, of: suit)!
         let card5 = PlayingCard(rank5, of: suit)!
         let cards = [card1, card2, card3, card4, card5]
+        let expected = ElementsError.invalidDuplicateCount
+        
+        // When
+        XCTAssertThrowsError(try DoubleDoubleRun(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    /// Tests that creating a `DoubleDoubleRun` with more than two pairs throws an
+    /// `ElementsError.excessiveElements Error`.
+    func test_init_withExcessivePairs_throwsError() throws {
+
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.one
+        let rank3 = Rank.two
+        let rank4 = Rank.two
+        let rank5 = Rank.three
+        let rank6 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let card5 = PlayingCard(rank5, of: suit)!
+        let card6 = PlayingCard(rank6, of: suit)!
+        let cards = [card1, card2, card3, card4, card5, card6]
         let expected = ElementsError.invalidDuplicateCount
         
         // When

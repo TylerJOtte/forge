@@ -146,7 +146,8 @@ extension Array where Element: PlayingCard  {
         
         guard (pairCount == pairs) else {
             
-            print("The collection must contain \(pairs) pair\(s).")
+            let tenet = pairCount < pairs ? "" : "only "
+            print("The collection must contain \(tenet)\(pairs) pair\(s).")
             throw ElementsError.invalidDuplicateCount
         }
         
