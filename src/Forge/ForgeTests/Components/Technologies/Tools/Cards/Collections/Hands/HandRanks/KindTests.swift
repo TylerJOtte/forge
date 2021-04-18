@@ -182,4 +182,59 @@ class KindTests: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that the title of a `Kind` with three`Card`s equals "3 Of A Kind".
+    func test_title_withThreeCards_equalsThreeOfAKind() throws {
+        
+        // Given
+        let rank = Rank.ace
+        let color1 = Color.black
+        let color2 = Color.red
+        let symbol1 = Symbol.clover
+        let symbol2 = Symbol.spade
+        let symbol3 = Symbol.diamond
+        let suit1 = Suit(color1, symbol1)
+        let suit2 = Suit(color1, symbol2)
+        let suit3 = Suit(color2, symbol3)
+        let card1 = PlayingCard(rank, of: suit1)!
+        let card2 = PlayingCard(rank, of: suit2)!
+        let card3 = PlayingCard(rank, of: suit3)!
+        let cards = [card1, card2, card3]
+        let kind = try Kind(of: cards)
+        let expected = "3 Of A Kind"
+        
+        // When
+        let actual = kind.title
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a `Kind` with four`Card`s equals "4 Of A Kind".
+    func test_title_withFourCards_equalsFourOfAKind() throws {
+        
+        // Given
+        let rank = Rank.ace
+        let color1 = Color.black
+        let color2 = Color.red
+        let symbol1 = Symbol.clover
+        let symbol2 = Symbol.spade
+        let symbol3 = Symbol.diamond
+        let symbol4 = Symbol.heart
+        let suit1 = Suit(color1, symbol1)
+        let suit2 = Suit(color1, symbol2)
+        let suit3 = Suit(color2, symbol3)
+        let suit4 = Suit(color2, symbol4)
+        let card1 = PlayingCard(rank, of: suit1)!
+        let card2 = PlayingCard(rank, of: suit2)!
+        let card3 = PlayingCard(rank, of: suit3)!
+        let card4 = PlayingCard(rank, of: suit4)!
+        let cards = [card1, card2, card3, card4]
+        let kind = try Kind(of: cards)
+        let expected = "4 Of A Kind"
+        
+        // When
+        let actual = kind.title
+        
+        XCTAssertEqual(expected, actual)
+    }
 }
