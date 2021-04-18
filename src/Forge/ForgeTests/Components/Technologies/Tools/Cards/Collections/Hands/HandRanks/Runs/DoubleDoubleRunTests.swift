@@ -192,6 +192,34 @@ class DoubleDoubleRunTests: XCTestCase {
     //                                Points                                   //
     //-------------------------------------------------------------------------//
     
+    /// Tests that the total points of  a`DoubleDoubleRun`with the min `PlayingCard`s equals sixteen.
+    func test_points_withMinCards_equalsTwelve() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.two
+        let rank4 = Rank.three
+        let rank5 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let card5 = PlayingCard(rank5, of: suit)!
+        let cards = [card1, card2, card3, card4, card5]
+        let doubleDoubleRun = try DoubleDoubleRun(of: cards)
+        let expected = 16
+        
+        // When
+        let actual = doubleDoubleRun.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                                Runs                                     //
     //-------------------------------------------------------------------------//

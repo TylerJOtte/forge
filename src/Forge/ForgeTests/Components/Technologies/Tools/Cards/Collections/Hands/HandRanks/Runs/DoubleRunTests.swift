@@ -152,6 +152,180 @@ class DoubleRunTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
+    //                             Min/Max Cards                               //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the min cards  of a `DoubleRun` equals four.
+    func test_minCards_ofDoubleRun_equalsFour() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = 4
+        
+        // When
+        let actual = doubleRun.minCards
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the max cards  of a `DoubleRun` equals the system max.
+    func test_maxCards_ofDoubleRun_equalsSystemMax() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = Int.max
+        
+        // When
+        let actual = doubleRun.maxCards
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                 Count                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the count of a `DoubleRun` equals the # of `PlayingCards` given.
+    func test_count_ofDoubleRun_equalsNCardsGiven() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = 4
+        
+        // When
+        let actual = doubleRun.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a `DoubleRun` equals "Double Run".
+    func test_title_ofDoubleRun_equalsDoubleRun() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = "Double Run"
+        
+        // When
+        let actual = doubleRun.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the total points of  a`DoubleRun`with the min `PlayingCard`s equals eight.
+    func test_points_withMinCards_equalsEight() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = 8
+        
+        // When
+        let actual = doubleRun.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the total points of  a`DoubleRun`with five `PlayingCard`s equals ten.
+    func test_points_withFiveCards_equalsTen() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let rank5 = Rank.four
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let card5 = PlayingCard(rank5, of: suit)!
+        let cards = [card1, card2, card3, card4, card5]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = 10
+        
+        // When
+        let actual = doubleRun.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Runs                                     //
     //-------------------------------------------------------------------------//
     
@@ -353,180 +527,6 @@ class DoubleRunTests: XCTestCase {
         // When
         let actual = doubleRun.pairPoints
 
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-                                   //       //
-                                   // Total //
-                                   //       //
-    
-    /// Tests that the total points of  a`DoubleRun`with four `PlayingCard`s equals eight.
-    func test_points_withFourCards_equalsEight() throws {
-        
-        // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let cards = [card1, card2, card3, card4]
-        let doubleRun = try DoubleRun(of: cards)
-        let expected = 8
-        
-        // When
-        let actual = doubleRun.points
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the total points of  a`DoubleRun`with five `PlayingCard`s equals ten.
-    func test_points_withFiveCards_equalsTen() throws {
-        
-        // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.three
-        let rank5 = Rank.four
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let card5 = PlayingCard(rank5, of: suit)!
-        let cards = [card1, card2, card3, card4, card5]
-        let doubleRun = try DoubleRun(of: cards)
-        let expected = 10
-        
-        // When
-        let actual = doubleRun.points
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                             Min/Max Cards                               //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the min cards  of a `DoubleRun` equals four.
-    func test_minCards_ofDoubleRun_equalsFour() throws {
-        
-        // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let cards = [card1, card2, card3, card4]
-        let doubleRun = try DoubleRun(of: cards)
-        let expected = 4
-        
-        // When
-        let actual = doubleRun.minCards
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the max cards  of a `DoubleRun` equals the system max.
-    func test_maxCards_ofDoubleRun_equalsSystemMax() throws {
-        
-        // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let cards = [card1, card2, card3, card4]
-        let doubleRun = try DoubleRun(of: cards)
-        let expected = Int.max
-        
-        // When
-        let actual = doubleRun.maxCards
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                 Count                                   //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the count of a `DoubleRun` equals the # of `PlayingCards` given.
-    func test_count_ofDoubleRun_equalsNCardsGiven() throws {
-        
-        // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let cards = [card1, card2, card3, card4]
-        let doubleRun = try DoubleRun(of: cards)
-        let expected = 4
-        
-        // When
-        let actual = doubleRun.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that the title of a `DoubleRun` equals "Double Run".
-    func test_title_ofDoubleRun_equalsDoubleRun() throws {
-        
-        // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let cards = [card1, card2, card3, card4]
-        let doubleRun = try DoubleRun(of: cards)
-        let expected = "Double Run"
-        
-        // When
-        let actual = doubleRun.title
-        
         // Then
         XCTAssertEqual(expected, actual)
     }
