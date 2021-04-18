@@ -120,9 +120,10 @@ extension Array where Element: PlayingCard  {
     /// - Postcondition: None.
     /// - Returns: True if all `Card`s are in sequential order with the given # of pairs, else false.
     /// - Throws:
-    ///    - `ElementsError.insufficientElements` if the `Card`s
-    ///       - Contain less than three `Card`s, or
-    ///       - Do contain the # of specified pairs.
+    ///    - `ElementsError.insufficientElements` if the given `Card`s ontain less than four
+    ///      `Card`s.
+    ///    - `ElementsError.invalidDuplicateCount` if the given `Card`s doesn't contain the
+    ///       specified # of pairs.
     ///    - `RangeError.invalidMin` if the # of specified pairs &lt;= zero.
     func areSequential(with pairs: Int) throws -> Bool {
         
@@ -145,8 +146,8 @@ extension Array where Element: PlayingCard  {
         
         guard (pairCount == pairs) else {
             
-            print("The collection must contain \(pairCount) pair\(s).")
-            throw ElementsError.insufficientElements
+            print("The collection must contain \(pairs) pair\(s).")
+            throw ElementsError.invalidDuplicateCount
         }
         
         let lastCard = count - 1

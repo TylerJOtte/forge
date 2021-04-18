@@ -54,10 +54,10 @@ public class DoubleRun: Run {
     ///    - The `HandRank`s points are set to according to the sequence length in the given `Card`s.
     /// - Parameter cards: The `Card`s to create the `HandRank` with.
     /// - Throws:
-    ///    - `ElementsError.insufficientElements` if the given `Card`s
-    ///       - Contain less than four `Card`s, or
-    ///       - Contain less than one pair.
-    ///    - `ElementsError.excessiveElements` if the given `Card`s contain more than one pair.
+    ///    - `ElementsError.insufficientElements` if the given `Card`s ontain less than four
+    ///      `Card`s.
+    ///    - `ElementsError.invalidDuplicateCount` if the given `Card`s doesn't contain one
+    ///       and only pair.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
     public override init(of cards: [PlayingCard]) throws {
         
@@ -66,6 +66,12 @@ public class DoubleRun: Run {
         let pairs = 1
         let title = "Double Run"
   
+        guard (cards.count >= min) else {
+            
+            print("The collection must contain at least \(min) Cards.")
+            throw ElementsError.insufficientElements
+        }
+        
         self.runs = runs
         self.pairs = pairs
         

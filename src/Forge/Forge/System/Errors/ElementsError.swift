@@ -23,6 +23,7 @@ public enum ElementsError: Error {
     case excessiveElements
     case insufficientCapacity
     case insufficientElements
+    case invalidDuplicateCount
     case isEmpty
     case isFull
     case notFound

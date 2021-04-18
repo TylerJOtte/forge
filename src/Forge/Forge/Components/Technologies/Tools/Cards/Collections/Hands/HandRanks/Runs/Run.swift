@@ -86,8 +86,9 @@ public class Run: Hand, HandRank {
     ///    - title: The name of the`HandRank`.
     /// - Throws:
     ///    - `ElementsError.insufficientElements` if the given `Card`s
-    ///       - Contain less than four `Card`s, or
-    ///       - Do contain the # of specified pairs.
+    ///       - Contain less than three `Card`s.
+    ///    - `ElementsError.invalidDuplicateCount` if the given `Card`s doesn't contain the
+    ///       specified # of pairs.
     ///    - `RangeError.invalidMin`if
     ///       - The given min is less than four.
     ///       -  The # of specified pairs &lt;= zero.
