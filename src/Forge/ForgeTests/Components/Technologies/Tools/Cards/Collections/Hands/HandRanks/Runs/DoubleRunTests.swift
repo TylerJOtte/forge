@@ -453,9 +453,10 @@ class DoubleRunTests: XCTestCase {
     //                             Min/Max Cards                               //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the min cards  of a `Double` equals four.
+    /// Tests that the min cards  of a `DoubleRun` equals four.
     func test_minCards_ofDoubleRun_equalsFour() throws {
         
+        // Given
         let rank1 = Rank.one
         let rank2 = Rank.two
         let rank3 = Rank.three
@@ -478,9 +479,10 @@ class DoubleRunTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the max cards  of a `Double` equals the system max.
+    /// Tests that the max cards  of a `DoubleRun` equals the system max.
     func test_maxCards_ofDoubleRun_equalsSystemMax() throws {
         
+        // Given
         let rank1 = Rank.one
         let rank2 = Rank.two
         let rank3 = Rank.three
@@ -498,6 +500,36 @@ class DoubleRunTests: XCTestCase {
         
         // When
         let actual = doubleRun.maxCards
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                 Count                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the count of a `DoubleRun` equals the # of `PlayingCards` given.
+    func test_count_ofDoubleRun_equalsNCardsGiven() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = 4
+        
+        // When
+        let actual = doubleRun.count
         
         // Then
         XCTAssertEqual(expected, actual)
