@@ -327,9 +327,9 @@ class DoubleRunTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-                                   //       //
-                                   // Pairs //
-                                   //       //
+    //-------------------------------------------------------------------------//
+    //                              Pair Points                                //
+    //-------------------------------------------------------------------------//
 
     /// Tests that the pair points of  a`DoubleRun` equals two.
     func test_pairPoints_ofDoubleRun_equalsTwo() throws {
