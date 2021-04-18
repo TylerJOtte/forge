@@ -18,7 +18,7 @@ import XCTest
 import SwiftUI
 @testable import Forge
 
-/// Unit tests for a `Run HandRank`.
+/// Unit tests for a `DoubleDoubleRun HandRank`.
 class DoubleDoubleRunTests: XCTestCase {
     
     //=========================================================================//
@@ -26,28 +26,21 @@ class DoubleDoubleRunTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                Success                                  //
-    //-------------------------------------------------------------------------//
-
-    
-    //-------------------------------------------------------------------------//
     //                               Failure                                   //
     //-------------------------------------------------------------------------//
     
-                            //                   //
-                            // Insuffcient Cards //
-                            //                   //
-
-
+                             //                   //
+                             // Insuffcient Cards //
+                             //                   //
     
-    /// Tests that creating a double double `Run HandRank` with less than five `PlayingCards`
-    /// returns nil.
-    func test_init_doubleDoubleRunWithInsufficientCards_returnsNil() throws {
+    /// Tests that creating a `DoubleDoubleRun` with less than five `PlayingCards` throws an
+    /// `ElementsError.insufficientElements Error`.
+    func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.two
-        let rank3 = Rank.three
+        let rank3 = Rank.two
         let rank4 = Rank.three
         let color = Color.black
         let symbol = Symbol.clover
@@ -57,47 +50,15 @@ class DoubleDoubleRunTests: XCTestCase {
         let card3 = PlayingCard(rank3, of: suit)!
         let card4 = PlayingCard(rank4, of: suit)!
         let cards = [card1, card2, card3, card4]
+        let expected = ElementsError.insufficientElements
         
         // When
-        let doubleDoubleRun = try DoubleDoubleRun(of: cards)
-        
-        // Then
-        XCTAssert(doubleDoubleRun == nil)
+        XCTAssertThrowsError(try DoubleDoubleRun(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
     }
-
-                             //                 //
-                             // Excessive Cards //
-                             //                 //
-
-    /// Tests that creating a double double`Run HandRank` with more than five `PlayingCards`
-    /// returns nil.
-    func test_init_doubleDoubleRunWithExcessiveCards_returnsNil() throws {
-
-        // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.three
-        let rank5 = Rank.four
-        let rank6 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let card5 = PlayingCard(rank5, of: suit)!
-        let card6 = PlayingCard(rank6, of: suit)!
-        let cards = [card1, card2, card3, card4, card5, card6]
-        
-        // When
-        let doubleDoublerun = try DoubleDoubleRun(of: cards)
-        
-        // Then
-        XCTAssert(run == nil)
-    }
-
     
     //=========================================================================//
     //                              PROPERTIES                                 //
@@ -108,7 +69,7 @@ class DoubleDoubleRunTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
 
-    /// Tests that the title of a double double `Run HandRank` equals "Double Double `Run`".
+    /// Tests that the title of a `DoubleDoubleRun` equals "Double Double Run".
     func test_title_ofDoubleDoubleRun_equalsDoubleDoubleRun() throws {
         
         let rank1 = Rank.one

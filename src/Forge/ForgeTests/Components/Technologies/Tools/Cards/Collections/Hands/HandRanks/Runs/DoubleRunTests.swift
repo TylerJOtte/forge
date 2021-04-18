@@ -18,7 +18,7 @@ import XCTest
 import SwiftUI
 @testable import Forge
 
-/// Unit tests for a `Run HandRank`.
+/// Unit tests for a `DoubleRun HandRank`.
 class DoubleRunTests: XCTestCase {
     
     //=========================================================================//
