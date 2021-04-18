@@ -112,10 +112,10 @@ class DoubleRunTests: XCTestCase {
         }
     }
     
-                          //                      //
-                          // Non-Sequential Cards //
-                          //                      //
-
+    //-------------------------------------------------------------------------//
+    //                           Non-Sequential Cards                          //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that creating a `DoubleRun` with`PlayingCards`that are not in sequential order throws
     ///  an `ElementsError.areNotSequential Error`.
     func test_init_withNontSequentialCards_throwsError() throws {
