@@ -251,4 +251,37 @@ class TripleRunTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                              Sequence                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the sequence total of a`TripleRun`with min `PlayingCard`s equals three.
+    func test_sequence_withMinCards_equalsThree() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let rank5 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let card5 = PlayingCard(rank5, of: suit)!
+        let cards = [card1, card2, card3, card4, card5]
+        let tripleRun = try TripleRun(of: cards)
+        let expected = 3
+        
+        // When
+        let actual = tripleRun.sequence
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
 }
