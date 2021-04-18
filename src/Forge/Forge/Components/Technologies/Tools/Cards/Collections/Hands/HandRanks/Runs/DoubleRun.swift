@@ -26,7 +26,10 @@ public class DoubleRun: Run {
     public let pairs: Int
     
     /// The total # of `Card`s in a run.
-    public var sequence: Int { count - Int(ceil(Double(pairs) / 2)) }
+    public var sequence: Int { count -
+        
+        (pairs % 2 == 0 ? pairs : Int(ceil(Double(pairs) / 2)))
+    }
     
     /// The total # of points from runs.
     public var runPoints: Int { runs * sequence }
