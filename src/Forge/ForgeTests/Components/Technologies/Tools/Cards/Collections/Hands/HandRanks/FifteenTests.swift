@@ -50,6 +50,10 @@ class FifteenTests: XCTestCase {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                             Excessive Cards                             //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that creating a `Fifteen` with more than five`PlayingCards` throws an
     /// `ElementsError.excessiveElements Error`.
     func test_init_withExcessiveCards_returnsNil() throws {
@@ -81,9 +85,9 @@ class FifteenTests: XCTestCase {
         }
     }
 
-                               //            //
-                               // Points Sum //
-                               //            //
+    //-------------------------------------------------------------------------//
+    //                           Insufficient Points                           //
+    //-------------------------------------------------------------------------//
     
     /// Tests that creating a `Fifteen HandRank` with `PlayingCard`s that have points that sum to
     /// less than 15 throws a `RewardsError.invalidPoints`.
@@ -107,6 +111,10 @@ class FifteenTests: XCTestCase {
             XCTAssertEqual(expected, error as? RewardsError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                            Excessive Points                             //
+    //-------------------------------------------------------------------------//
     
     /// Tests that creating a `Fifteen HandRank` with `PlayingCard`s that have points that sum to
     /// more than 15 throws a `RewardsError.invalidPoints`.
@@ -137,62 +145,10 @@ class FifteenTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the title of a`Fifteen HandRank` equals "Fifteen".
-    func test_title_ofFifteen_equalsFifteen() throws {
-        
-        // Given
-        let rank1 = Rank.ten
-        let rank2 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let cards = [card1, card2]
-        let fifteen = try Fifteen(of: cards)
-        let expected = "Fifteen"
-        
-        // When
-        let actual = fifteen.title
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Points                                   //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the points of a `Fifteen HandRank` equals 15.
-    func test_points_ofFifteen_equalsFifteen() throws {
-        
-        // Given
-        let rank1 = Rank.ten
-        let rank2 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let cards = [card1, card2]
-        let fifteen = try Fifteen(of: cards)
-        let expected = 15
-        
-        // When
-        let actual = fifteen.points
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                             Min/Max Cards                               //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the min cards  of a `Fifteen HandRank` equals two.
+    /// Tests that the min cards  of a `Fifteen` equals two.
     func test_minCards_ofFifteen_equalsTwo() throws {
         
         // Given
@@ -214,7 +170,7 @@ class FifteenTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the max cards  of a `Fifteen HandRank` equals five.
+    /// Tests that the max cards  of a `Fifteen` equals five.
     func test_maxCards_ofFifteen_equalsFive() throws {
         
         // Given
@@ -240,7 +196,7 @@ class FifteenTests: XCTestCase {
     //                                 Count                                   //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the count of a `Fifteen HandRank` equals the # of `PlayingCards` given.
+    /// Tests that the count of a `Fifteen` equals the # of `PlayingCards` given.
     func test_count_ofFifteen_equalsNCardsGiven() throws {
         
         // Given
@@ -263,6 +219,58 @@ class FifteenTests: XCTestCase {
         
         // When
         let actual = fifteen.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a`Fifteen` equals "Fifteen".
+    func test_title_ofFifteen_equalsFifteen() throws {
+        
+        // Given
+        let rank1 = Rank.ten
+        let rank2 = Rank.five
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let cards = [card1, card2]
+        let fifteen = try Fifteen(of: cards)
+        let expected = "Fifteen"
+        
+        // When
+        let actual = fifteen.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the points of a `Fifteen` equals two.
+    func test_points_ofFifteen_equalsTwo() throws {
+        
+        // Given
+        let rank1 = Rank.ten
+        let rank2 = Rank.five
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let cards = [card1, card2]
+        let fifteen = try Fifteen(of: cards)
+        let expected = 2
+        
+        // When
+        let actual = fifteen.points
         
         // Then
         XCTAssertEqual(expected, actual)

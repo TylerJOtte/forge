@@ -261,7 +261,7 @@ class FlushTests: XCTestCase {
     //                                Points                                   //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the points of a`Flush HandRank` equals N `Card`s given.
+    /// Tests that the points of a`Flush` equals N `Card`s given.
     func test_points_ofFlush_equalsNCards() throws {
         
         let rank1 = Rank.one

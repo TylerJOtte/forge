@@ -23,7 +23,7 @@ public class Fifteen: Hand, HandRank {
     public let title: String = "Fifteen"
     
     /// The total # of points.
-    public let points: Int = 15
+    public let points: Int = 2
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -40,6 +40,7 @@ public class Fifteen: Hand, HandRank {
     ///   - The `HandRank`s title is set to `Fifteen`.
     ///   - The `HandRank`s points are set to two.
     /// - Parameter cards: The `Card`s to create the`HandRank` with.
+    /// - Throws:
     ///   - `ElementsError.insufficientElements` if the given `Card`s contain less than two
     ///     `Card`s,
     ///   - `ElementsError.excessiveElements` if the given `Card`s contain more than five
