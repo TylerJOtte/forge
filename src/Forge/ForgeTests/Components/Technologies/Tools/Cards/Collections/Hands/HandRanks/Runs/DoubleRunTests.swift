@@ -270,13 +270,9 @@ class DoubleRunTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Points                                   //
+    //                              Run Points                                 //
     //-------------------------------------------------------------------------//
-    
-                                    //      //
-                                    // Runs //
-                                    //      //
-    
+
     /// Tests that the run points of  a`DoubleRun`with four `PlayingCard`s equals six.
     func test_runPoints_withFourCards_equalsSix() throws {
         
