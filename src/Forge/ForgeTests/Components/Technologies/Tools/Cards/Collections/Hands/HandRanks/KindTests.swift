@@ -108,4 +108,26 @@ class KindTests: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that the max cards  of a `Kind` equals the system max
+    func test_maxCards_ofKind_equalsSystemMax() throws {
+
+        // Given
+        let rank = Rank.ace
+        let color = Color.black
+        let symbol1 = Symbol.clover
+        let symbol2 = Symbol.spade
+        let suit1 = Suit(color, symbol1)
+        let suit2 = Suit(color, symbol2)
+        let card1 = PlayingCard(rank, of: suit1)!
+        let card2 = PlayingCard(rank, of: suit2)!
+        let cards = [card1, card2]
+        let kind = try Kind(of: cards)
+        let expected = Int.max
+        
+        // When
+        let actual = kind.maxCards
+        
+        XCTAssertEqual(expected, actual)
+    }
 }
