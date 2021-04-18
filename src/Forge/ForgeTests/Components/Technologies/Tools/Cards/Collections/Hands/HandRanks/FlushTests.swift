@@ -54,36 +54,33 @@ class FlushTests: XCTestCase {
         }
     }
     
-                                   //       //
-                                   // Suits //
-                                   //       //
-
-    /// Tests that creating a `Flush HandRank` with more than one `Suit`  returns nil.
-    func test_init_withMultipleSuits_returnsNil() throws {
+    /// Tests that creating a `Flush` with `PlayingCards`that do not all have the same `Suit` throws
+    /// an `ElementsError.insufficientElements Error`.
+    func test_init_withMultipleSuits_throwsError() throws {
 
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.four
-        let rank5 = Rank.five
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
+        let rank1 = Rank.jack
+        let rank2 = Rank.queen
+        let rank3 = Rank.king
+        let rank4 = Rank.ace
+        let color = Color.red
+        let symbol1 = Symbol.heart
+        let symbol2 = Symbol.diamond
         let suit1 = Suit(color, symbol1)
         let suit2 = Suit(color, symbol2)
         let card1 = PlayingCard(rank1, of: suit1)!
         let card2 = PlayingCard(rank2, of: suit1)!
         let card3 = PlayingCard(rank3, of: suit1)!
-        let card4 = PlayingCard(rank4, of: suit1)!
-        let card5 = PlayingCard(rank5, of: suit2)!
-        let cards = [card1, card2, card3, card4, card5]
+        let card4 = PlayingCard(rank4, of: suit2)!
+        let cards = [card1, card2, card3, card4]
+        let expected = ElementsError.insufficientElements
         
         // When
-        let flush = try Flush(of: cards)
-        
-        // Then
-        XCTAssert(flush == nil)
+        XCTAssertThrowsError(try Flush(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
     }
     
     //=========================================================================//
