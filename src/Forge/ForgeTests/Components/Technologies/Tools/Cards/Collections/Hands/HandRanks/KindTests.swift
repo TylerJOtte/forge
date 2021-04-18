@@ -49,4 +49,31 @@ class KindTests: XCTestCase {
             XCTAssertEqual(expected, error as? ElementsError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             Multiple Ranks                              //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that creating a `Kind` with `PlayingCards`that do not all have the same `Rank` throws
+    /// an `ElementsError.insufficientElements Error`.
+    func test_init_withMultipleRanks_throwsError() throws {
+
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.two
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let cards = [card1, card2]
+        let expected = ElementsError.insufficientElements
+        
+        // When
+        XCTAssertThrowsError(try Kind(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
 }
