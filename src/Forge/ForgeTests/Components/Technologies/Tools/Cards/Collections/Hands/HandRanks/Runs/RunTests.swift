@@ -32,6 +32,7 @@ class RunTests: XCTestCase {
                             //                    //
                             // Insufficient Cards //
                             //                    //
+    
 
     /// Tests that creating a `Run` with less than three `PlayingCards` throws an
     /// `ElementsError.insufficientElements Error`.
@@ -47,6 +48,35 @@ class RunTests: XCTestCase {
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
         let expected = ElementsError.insufficientElements
+        
+        // When
+        XCTAssertThrowsError(try Run(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+                          //                      //
+                          // Non-Sequential Cards //
+                          //                      //
+
+    /// Tests that creating a `Run` with`PlayingCards`that are not in sequential order throws an
+    /// `ElementsError.areNotSequential Error`.
+    func test_init_withNontSequentialCards_throwsError() throws {
+
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.three
+        let rank3 = Rank.two
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let cards = [card1, card2, card3]
+        let expected = ElementsError.areNotSequential
         
         // When
         XCTAssertThrowsError(try Run(of: cards)) { error in
