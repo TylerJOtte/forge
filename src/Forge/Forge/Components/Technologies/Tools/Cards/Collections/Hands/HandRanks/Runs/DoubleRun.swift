@@ -57,7 +57,7 @@ public class DoubleRun: Run {
     ///    - `ElementsError.insufficientElements` if the given `Card`s
     ///       - Contain less than four `Card`s, or
     ///       - Contain less than one pair.
-    ///    - `ElementsError.excessiveElements` if the given `Card`s contain more than two pairs.
+    ///    - `ElementsError.excessiveElements` if the given `Card`s contain more than one pair.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
     public override init(of cards: [PlayingCard]) throws {
         

@@ -58,6 +58,37 @@ class DoubleRunTests: XCTestCase {
         }
     }
     
+                            //                      //
+                            // Incorrect Pair Count //
+                            //                      //
+    
+    /// Tests that creating a `DoubleRun` with zero pairs throws an
+    /// `ElementsError.insufficientElements Error`.
+    func test_init_withZeroPairs_throwsError() throws {
+
+        // Given
+        let rank1 = Rank.ace
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.four
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let expected = ElementsError.insufficientElements
+        
+        // When
+        XCTAssertThrowsError(try DoubleRun(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+                            
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
