@@ -97,6 +97,7 @@ class RunTests: XCTestCase {
     /// Tests that the title of a `Run` equals "Run".
     func test_title_ofRun_equalsRun() throws {
         
+        // Given
         let rank1 = Rank.one
         let rank2 = Rank.two
         let rank3 = Rank.three
@@ -124,6 +125,7 @@ class RunTests: XCTestCase {
     /// Tests that the points of a`Run` equals the # of `Card`s it holds.
     func test_points_ofRun_equalsNCards() throws {
         
+        // Given
         let rank1 = Rank.one
         let rank2 = Rank.two
         let rank3 = Rank.three
