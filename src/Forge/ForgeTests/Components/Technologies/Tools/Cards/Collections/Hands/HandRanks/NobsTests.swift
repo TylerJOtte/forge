@@ -31,7 +31,7 @@ class NobsTests: XCTestCase {
     
     /// Tests that creating a `Nobs HandRank` with a non-`jack PlayingCard` and a `jack`
     /// `PlayingCard` of the same `Suit` succeeds.
-    func test_init_withSameSuit_succeeds() {
+    func test_init_withSameSuit_succeeds() throws {
         
         // Given
         let rank1 = Rank.ace
@@ -44,7 +44,7 @@ class NobsTests: XCTestCase {
         let cards = [card1, card2]
         
         // When
-        let nobs = Nobs(of: cards)
+        let nobs = try Nobs(of: cards)
         
         // Then
         XCTAssert(nobs != nil)
@@ -59,7 +59,7 @@ class NobsTests: XCTestCase {
                                   //       //
     
     /// Tests that creating a `Nobs HandRank` with less than two `PlayingCards` returns nil.
-    func test_init_withInsufficientCards_returnsNil() {
+    func test_init_withInsufficientCards_returnsNil() throws {
         
         // Given
         let rank = Rank.jack
@@ -70,14 +70,14 @@ class NobsTests: XCTestCase {
         let cards = [card]
         
         // When
-        let nobs = Nobs(of: cards)
+        let nobs = try Nobs(of: cards)
         
         // Then
         XCTAssert(nobs == nil)
     }
     
     /// Tests that creating a `Nobs HandRank` with more than two `PlayingCards` returns nil.
-    func test_init_withExcessiveCards_returnsNil() {
+    func test_init_withExcessiveCards_returnsNil() throws {
         
         // Given
         let rank1 = Rank.jack
@@ -92,7 +92,7 @@ class NobsTests: XCTestCase {
         let cards = [card1, card2, card3]
         
         // When
-        let nobs = Nobs(of: cards)
+        let nobs = try Nobs(of: cards)
         
         // Then
         XCTAssert(nobs == nil)
@@ -103,7 +103,7 @@ class NobsTests: XCTestCase {
                                   //       //
     
     /// Tests that creating a `Nobs HandRank` without a `jack PlayingCard` returns nil.
-    func test_init_withoutJack_returnsNil() {
+    func test_init_withoutJack_returnsNil() throws {
         
         // Given
         let rank1 = Rank.ace
@@ -116,14 +116,14 @@ class NobsTests: XCTestCase {
         let cards = [card1, card2]
         
         // When
-        let nobs = Nobs(of: cards)
+        let nobs = try Nobs(of: cards)
         
         // Then
         XCTAssert(nobs == nil)
     }
     
     /// Tests that creating a `Nobs HandRank` without a non-`jack PlayingCard` returns nil.
-    func test_init_withoutNonJack_returnsNil() {
+    func test_init_withoutNonJack_returnsNil() throws {
         
         // Given
         let rank = Rank.jack
@@ -135,7 +135,7 @@ class NobsTests: XCTestCase {
         let cards = [card1, card2]
         
         // When
-        let nobs = Nobs(of: cards)
+        let nobs = try Nobs(of: cards)
         
         // Then
         XCTAssert(nobs == nil)
@@ -147,7 +147,7 @@ class NobsTests: XCTestCase {
     
     /// Tests that creating a `Nobs HandRank` with non-`jack PlayingCard` and a `jack`
     /// `PlayingCard` of a different `Suit` returns nil.
-    func test_init_withDifferentSuits_returnsNil() {
+    func test_init_withDifferentSuits_returnsNil() throws {
         
         // Given
         let rank1 = Rank.ace
@@ -162,7 +162,7 @@ class NobsTests: XCTestCase {
         let cards = [card1, card2]
         
         // When
-        let nobs = Nobs(of: cards)
+        let nobs = try Nobs(of: cards)
         
         // Then
         XCTAssert(nobs == nil)
@@ -177,7 +177,7 @@ class NobsTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the title of a`Nobs HandRank` equals "Nobs".
-    func test_title_ofNobs_equalsNobs() {
+    func test_title_ofNobs_equalsNobs() throws {
         
         // Given
         let rank1 = Rank.ace
@@ -188,7 +188,7 @@ class NobsTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
-        let nobs = Nobs(of: cards)!
+        let nobs = try Nobs(of: cards)!
         let expected = "Nobs"
         
         // When
@@ -203,7 +203,7 @@ class NobsTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the points of a `Nobs HandRank` equals one.
-    func test_points_ofNobs_equalsOne() {
+    func test_points_ofNobs_equalsOne() throws {
         
         // Given
         let rank1 = Rank.ace
@@ -214,7 +214,7 @@ class NobsTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
-        let nobs = Nobs(of: cards)!
+        let nobs = try Nobs(of: cards)!
         let expected = 1
         
         // When
@@ -229,7 +229,7 @@ class NobsTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the min cards  of a `Nobs HandRank` equals two.
-    func test_minCards_ofNobs_equalsTwo() {
+    func test_minCards_ofNobs_equalsTwo() throws {
         
         // Given
         let rank1 = Rank.ace
@@ -240,7 +240,7 @@ class NobsTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
-        let nobs = Nobs(of: cards)!
+        let nobs = try Nobs(of: cards)!
         let expected = 2
         
         // When
@@ -251,7 +251,7 @@ class NobsTests: XCTestCase {
     }
     
     /// Tests that the max cards  of a `Nobs HandRank` equals two.
-    func test_maxCards_ofNobs_equalsTwo() {
+    func test_maxCards_ofNobs_equalsTwo() throws {
         
         // Given
         let rank1 = Rank.ace
@@ -262,7 +262,7 @@ class NobsTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
-        let nobs = Nobs(of: cards)!
+        let nobs = try Nobs(of: cards)!
         let expected = 2
         
         // When
@@ -277,7 +277,7 @@ class NobsTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the count of a `Nobs HandRank` equals two.
-    func test_count_ofNobs_equalsTwo() {
+    func test_count_ofNobs_equalsTwo() throws {
         
         // Given
         let rank1 = Rank.ace
@@ -288,7 +288,7 @@ class NobsTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
-        let nobs = Nobs(of: cards)!
+        let nobs = try Nobs(of: cards)!
         let expected = 2
         
         // When
