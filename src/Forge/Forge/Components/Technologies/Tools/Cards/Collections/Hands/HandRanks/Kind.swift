@@ -33,9 +33,9 @@ public class Kind: Hand, HandRank {
     ///
     /// - Precondition:
     ///   - The given `Card`s must contain at least two`Card`s.
-    ///   - The given `Card`s must all have the smae `Rank`.
+    ///   - The given `Card`s must all have the same `Rank`.
     /// - Postcondition:
-    ///   - The `HandRank` can hold two to Int.max `Card`s.
+    ///   - The `HandRank` can hold two to`Int.max Card`s.
     ///   - The `HandRank` contains the given `Card`s.
     ///   - The `HandRank`s title is set according to the # of `Card`s it holds.
     ///   - The `HandRank`s points are set according to the # of `Card`s it holds.

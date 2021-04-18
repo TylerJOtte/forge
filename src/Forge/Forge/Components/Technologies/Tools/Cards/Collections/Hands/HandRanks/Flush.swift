@@ -26,31 +26,38 @@ public class Flush: Hand, HandRank {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Flush`with the given terms.
+    /// Creates a`Flush`with the given `Card`s.
     ///
     /// - Precondition:
-    ///   - The given `Card`'s count  must be >= 4 and &lt;= 5.
-    ///   - All `Card`s in the given collection must have the same `Suit`.
+    ///   - The given `Card`s must contain at least four`Card`s.
+    ///   - The given `Card`s must all have the same `Suit`.
     /// - Postcondition:
-    ///   - The `Flush` can hold four to five `Card`s.
-    ///   - The `Flush` contains the given `Card`s.
-    ///   - The `Flush`s title is set according to the # of `Card`s it holds.
-    ///   - The `Flush`s points is set according to the # of `Card`s it holds.
-    /// - Parameter cards: The `Card`s to create `Kind` with.
-    public init?(of cards: [PlayingCard]) throws {
+    ///   - The `HandRank` can hold four to`Int.max Card`s.
+    ///   - The `HandRank` contains the given `Card`s.
+    ///   - The `HandRank`s title is set according to the # of `Card`s it holds.
+    ///   - The `HandRank`s points are set according to the # of `Card`s it holds.
+    /// - Parameter cards: The `Card`s to create the `HandRank` with.
+    /// - Throws:
+    ///   - `ElementsError.insufficientElements` if the given `Card`s
+    ///      - Contain less than four `Card`s, or
+    ///      - Do not all have the same `Suit`.
+    public init(of cards: [PlayingCard]) throws {
         
-        guard (cards.count >= 4 && cards.count <= 5) else {
+        let min = 4
+        let max = Int.max
+        
+        guard (cards.count >= min) else {
             
-            print("The given Card collection must contain four or five Cards.")
-            return nil
+            print("The collection must contain at least \(min) Cards.")
+            throw ElementsError.insufficientElements
         }
         
-        guard (cards.areEquallySuited()) else {
+        guard (cards.areEquallyRanked()) else {
             
             print("The given Cards must all have the same Suit.")
-            return nil
+            throw ElementsError.insufficientElements
         }
         
-        try super.init(of: 4, to: 5, cards)
+        try super.init(of: min, to: max, cards)
     }
 }
