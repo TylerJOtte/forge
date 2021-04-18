@@ -24,6 +24,10 @@ class CardTests: XCTestCase {
     //                                 TESTERS                                 //
     //=========================================================================//
     
+    //-------------------------------------------------------------------------//
+    //                                Equality                                 //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that two `Card`s with the same titles are equal.
     func test_areEqual_sameTitles_true() {
         
@@ -47,5 +51,23 @@ class CardTests: XCTestCase {
         
         // When/Then
         XCTAssertNotEqual(card1, card2)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                               Less Than                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a`Card` that has a title starting with a letter earlier in the alphabet than another `Card`'s
+    /// title is less than the latter.
+    func test_isLessThan_earlierTitleAlphaStart_true() {
+        
+        // Given
+        let title1 = "A Card"
+        let title2 = "B Card"
+        let card1 = Card(title1)
+        let card2 = Card(title2)
+        
+        // When/Then
+        XCTAssertLessThan(card1, card2)
     }
 }
