@@ -420,36 +420,6 @@ class DoubleRunTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that the title of a `DoubleRun` equals "Double Run".
-    func test_title_ofDoubleRun_equalsDoubleRun() throws {
-        
-        // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let cards = [card1, card2, card3, card4]
-        let doubleRun = try DoubleRun(of: cards)
-        let expected = "Double Run"
-        
-        // When
-        let actual = doubleRun.title
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                             Min/Max Cards                               //
     //-------------------------------------------------------------------------//
     
@@ -530,6 +500,36 @@ class DoubleRunTests: XCTestCase {
         
         // When
         let actual = doubleRun.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a `DoubleRun` equals "Double Run".
+    func test_title_ofDoubleRun_equalsDoubleRun() throws {
+        
+        // Given
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = "Double Run"
+        
+        // When
+        let actual = doubleRun.title
         
         // Then
         XCTAssertEqual(expected, actual)
