@@ -87,7 +87,7 @@ class DoubleRunTests: XCTestCase {
     
     /// Tests that creating a `DoubleRun` with more than one pair throws an
     /// `ElementsError.excessiveElements Error`.
-    func test_init_withMultiplePairs_throwsError() throws {
+    func test_init_withExcessivePairs_throwsError() throws {
 
         // Given
         let rank1 = Rank.ace
