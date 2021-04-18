@@ -83,9 +83,10 @@ extension Array where Element: PlayingCard  {
     ///
     /// - Precondition: `count` >= 2.
     /// - Postcondition: None.
+    /// - Parameter high: True if `.ace` is high, else false.
     /// - Returns: True if all `Card`s are in sequential order, else false.
     /// - Throws: `ElementsError.insufficientElements` if count &lt; 2.
-    func areSequential() throws -> Bool {
+    func areSequential(ace high: Bool = false) throws -> Bool {
         
         let min = 2
         
@@ -101,7 +102,7 @@ extension Array where Element: PlayingCard  {
         
         while (areSequential && card < lastCard) {
             
-            let nextRank = self[card].rank.next
+            let nextRank = self[card].rank.next(ace: high)
             let nextCardRank = self[card + 1].rank
             
             areSequential = nextRank == nextCardRank
@@ -118,6 +119,9 @@ extension Array where Element: PlayingCard  {
     ///    - The # of given pairs must be >= one.
     ///    - Must contain the specified # of pairs.
     /// - Postcondition: None.
+    /// - Parameters:
+    ///    - pairs: The # of paris that the collection contains.
+    ///    - high: True if `.ace` is high, else false.
     /// - Returns: True if all `Card`s are in sequential order with the given # of pairs, else false.
     /// - Throws:
     ///    - `ElementsError.insufficientElements` if the given `Card`s ontain less than four
@@ -125,7 +129,7 @@ extension Array where Element: PlayingCard  {
     ///    - `ElementsError.invalidDuplicateCount` if the given `Card`s doesn't contain the
     ///       specified # of pairs.
     ///    - `RangeError.invalidMin` if the # of specified pairs &lt;= zero.
-    func areSequential(with pairs: Int) throws -> Bool {
+    func areSequential(with pairs: Int, ace high: Bool = false) throws -> Bool {
         
         let min = 3
         let pairMin = 1
@@ -158,7 +162,7 @@ extension Array where Element: PlayingCard  {
         while (areSequential && card < lastCard) {
             
             let rank = self[card].rank
-            let nextRank = self[card].rank.next
+            let nextRank = self[card].rank.next(ace: high)
             let nextCardRank = self[card + 1].rank
             let isSequential = nextCardRank == nextRank
             let isPair = nextCardRank == rank

@@ -20,23 +20,6 @@ import SwiftUI
 /// A `PlayingCard Rank` extension.
 extension Rank {
     
-    /// The previous `Rank` in the standard French-suited `PlayingCard` hierarchy.
-    var previous: Rank? {
-        
-        return (self == .ace || self == .one || self == .joker) ? nil :
-            PlayingCards.ranks[PlayingCards.ranks.firstIndex(of: self)! - 1]
-    }
-    
-    /// The next `Rank` in the standard French-suited `PlayingCard` hierarchy.
-    var next: Rank? {
-        
-        return (self == .king || self == .joker) ? nil :
-            PlayingCards.ranks[
-                PlayingCards.ranks.firstIndex(
-                    of: self == .one ? .ace : self)! + 1
-            ]
-    }
-    
     //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//
@@ -111,6 +94,69 @@ extension Rank {
     //=========================================================================//
     //                                 GETTERS                                 //
     //=========================================================================//
+    
+    /// Retrieves the previous`Rank` in the standard French-suited `PlayingCard` hierarchy.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter high: True if `.ace` is high, else false.
+    /// - Returns: The previous `Rank` in the standard French-suited `PlayingCard` hierarchy.
+    func previous(ace high: Bool = false) -> Rank? {
+        
+        var previousRank: Rank!
+        let isAce = self == .ace || self == .one
+        
+        if ((isAce && !high) || self == .joker) {
+            
+            previousRank = nil
+        
+        } else if (isAce && high) {
+            
+            previousRank = .king
+        
+        } else {
+            
+            let ranks = PlayingCards.ranks
+            let rank = self == .one ? .ace : self
+            let index = ranks.firstIndex(of: rank)! - 1
+            
+            previousRank = ranks[index]
+        }
+        
+        return previousRank
+    }
+    
+    /// Retrieves the next `Rank` in the standard French-suited `PlayingCard` hierarchy.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter high: True if `.ace` is high, else false.
+    /// - Returns: The next `Rank` in the standard French-suited `PlayingCard` hierarchy.
+    func next(ace high: Bool = false) -> Rank? {
+        
+        var nextRank: Rank!
+        let isAce = self == .ace || self == .one
+        let isKing = self == .king
+        
+        if ((isKing && !high) || (isAce && high) || self == .joker) {
+            
+            nextRank = nil
+        
+        } else if (isKing && high) {
+            
+            nextRank = .ace
+        
+        } else {
+            
+            let ranks = PlayingCards.ranks
+            let rank = self == .one ? .ace : self
+            let index = ranks.firstIndex(of: rank)! + 1
+            
+            nextRank = ranks[index]
+        }
+        
+        return nextRank
+    }
     
     /// Retrieves the standard French-suited `PlayingCard` points for the `Rank`.
     ///

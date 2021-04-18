@@ -20,7 +20,7 @@ import Foundation
 public class Flush: Hand, HandRank {
     
     /// The primary name.
-    public var title: String = "Flush"
+    public var title: String
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -45,6 +45,7 @@ public class Flush: Hand, HandRank {
         
         let min = 4
         let max = Int.max
+        let high = true
         
         guard (cards.count >= min) else {
             
@@ -56,6 +57,19 @@ public class Flush: Hand, HandRank {
             
             print("The given Cards must all have the same Suit.")
             throw ElementsError.insufficientElements
+        }
+        
+        if (try cards.areSequential(ace: high) && cards.count == 5) {
+            
+            let isRoyal = cards[0].rank == Rank.ten &&
+                cards[1].rank == Rank.jack && cards[2].rank == Rank.queen &&
+                cards[3].rank == Rank.king && cards[4].rank == Rank.king
+            
+            self.title = isRoyal ? "Royal Flush" : "Straight Flush"
+            
+        } else {
+            
+            self.title = "Flush"
         }
         
         try super.init(of: min, to: max, cards)
