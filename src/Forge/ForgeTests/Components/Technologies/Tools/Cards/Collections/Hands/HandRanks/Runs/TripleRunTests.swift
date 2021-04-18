@@ -192,8 +192,8 @@ class TripleRunTests: XCTestCase {
     //                                Points                                   //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the total points of  a`TripleRun`with the min `PlayingCard`s equals fifteen.
-    func test_points_withMinCards_equalsFifteen() throws {
+    /// Tests that the total points of  a`TripleRun`with the min `PlayingCard`s equals 15.
+    func test_points_withMinCards_equals15() throws {
         
         // Given
         let rank1 = Rank.one
@@ -220,8 +220,8 @@ class TripleRunTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the total points of  a`TripleRun`with the six `PlayingCard`s equals eighteen.
-    func test_points_withSixCards_equalsEighteen() throws {
+    /// Tests that the total points of  a`TripleRun`with the six `PlayingCard`s equals 18
+    func test_points_withSixCards_equals18() throws {
         
         // Given
         let rank1 = Rank.one
