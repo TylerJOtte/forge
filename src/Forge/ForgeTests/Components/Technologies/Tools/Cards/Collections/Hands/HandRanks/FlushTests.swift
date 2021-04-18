@@ -88,10 +88,64 @@ class FlushTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
+    //                             Min/Max Cards                               //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the min cards  of a `Flush` equals four.
+    func test_minCards_ofFlush_equalsFour() throws {
+        
+        let rank1 = Rank.jack
+        let rank2 = Rank.queen
+        let rank3 = Rank.king
+        let rank4 = Rank.ace
+        let color = Color.red
+        let symbol = Symbol.heart
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let flush = try Flush(of: cards)
+        let expected = 4
+        
+        // When
+        let actual = flush.minCards
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the max cards  of a `Flush HandRank` equals the system max.
+    func test_maxCards_ofFlush_equalsSystemMax() throws {
+        
+        let rank1 = Rank.jack
+        let rank2 = Rank.queen
+        let rank3 = Rank.king
+        let rank4 = Rank.ace
+        let color = Color.red
+        let symbol = Symbol.heart
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let flush = try Flush(of: cards)
+        let expected = Int.max
+        
+        // When
+        let actual = flush.maxCards
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the title of a`Flush HandRank` equals "Flush"
+    /// Tests that the title of a`Flush HandRank` equals "Flush".
     func test_title_ofFlush_equalsNCardFlush() throws {
         
         // Given
@@ -143,64 +197,6 @@ class FlushTests: XCTestCase {
         
         // When
         let actual = flush.points
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                             Min/Max Cards                               //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the min cards  of a `Flush HandRank` equals four.
-    func test_minCards_ofFlush_equalsFour() throws {
-        
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.four
-        let rank5 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let card5 = PlayingCard(rank5, of: suit)!
-        let cards = [card1, card2, card3, card4, card5]
-        let flush = try Flush(of: cards)
-        let expected = 4
-        
-        // When
-        let actual = flush.minCards
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the max cards  of a `Flush HandRank` equals five.
-    func test_minCards_ofFlush_equalsFive() throws {
-        
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.four
-        let rank5 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let card5 = PlayingCard(rank5, of: suit)!
-        let cards = [card1, card2, card3, card4, card5]
-        let flush = try Flush(of: cards)
-        let expected = 5
-        
-        // When
-        let actual = flush.maxCards
         
         // Then
         XCTAssertEqual(expected, actual)
