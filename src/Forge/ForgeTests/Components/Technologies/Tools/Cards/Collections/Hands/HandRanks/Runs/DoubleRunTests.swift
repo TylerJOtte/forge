@@ -237,4 +237,33 @@ class DoubleRunTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                              Sequence                                     //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the sequence total of a`DoubleRun`with four `PlayingCard`s equals three.
+    func test_sequence_withFourCards_equalThree() throws {
+        
+        let rank1 = Rank.one
+        let rank2 = Rank.two
+        let rank3 = Rank.three
+        let rank4 = Rank.three
+        let color = Color.black
+        let symbol = Symbol.clover
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let cards = [card1, card2, card3, card4]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = 3
+        
+        // When
+        let actual = doubleRun.sequence
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
