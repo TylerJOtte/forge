@@ -26,62 +26,15 @@ class RunTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                Success                                  //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that creating a `Run HandRank` with `PlayingCard`s that are in sequential order
-    /// succeeds.
-    func test_init_withSequentialCards_succeeds() throws {
-        
-        // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.four
-        let rank5 = Rank.five
-        let rank6 = Rank.six
-        let rank7 = Rank.seven
-        let rank8 = Rank.eight
-        let rank9 = Rank.nine
-        let rank10 = Rank.ten
-        let rank11 = Rank.jack
-        let rank12 = Rank.queen
-        let rank13 = Rank.king
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let card5 = PlayingCard(rank5, of: suit)!
-        let card6 = PlayingCard(rank6, of: suit)!
-        let card7 = PlayingCard(rank7, of: suit)!
-        let card8 = PlayingCard(rank8, of: suit)!
-        let card9 = PlayingCard(rank9, of: suit)!
-        let card10 = PlayingCard(rank10, of: suit)!
-        let card11 = PlayingCard(rank11, of: suit)!
-        let card12 = PlayingCard(rank12, of: suit)!
-        let card13 = PlayingCard(rank13, of: suit)!
-        let cards = [card1, card2, card3, card4, card5, card6, card7, card8,
-                     card9, card10, card11, card12, card13]
-        
-        // When
-        let run = try Run(of: cards)
-        
-        // Then
-        XCTAssert(run != nil)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                               Failure                                   //
     //-------------------------------------------------------------------------//
     
-                            //                   //
-                            // Insuffcient Cards //
-                            //                   //
+                            //                    //
+                            // Insufficient Cards //
+                            //                    //
 
-    /// Tests that creating a `Run HandRank` with less than three `PlayingCards` returns nil.
+    /// Tests that creating a `Run` with less than three `PlayingCards` throws an
+    /// `ElementsError.insufficientElements Error`.
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
@@ -93,23 +46,15 @@ class RunTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
+        let expected = ElementsError.insufficientElements
         
         // When
-        let run = try Run(of: cards)
-        
-        // Then
-        XCTAssert(run == nil)
+        XCTAssertThrowsError(try Run(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
     }
-    
-
-
-    
-                             //                 //
-                             // Excessive Cards //
-                             //                 //
-
-
-  
     
     //=========================================================================//
     //                              PROPERTIES                                 //
@@ -119,8 +64,8 @@ class RunTests: XCTestCase {
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the title of a  standard n-`Card Run HandRank` equals "`Run` of n".
-    func test_title_ofRun_equalsRunOfN() throws {
+    /// Tests that the title of a `Run` equals "Run".
+    func test_title_ofRun_equalsRun() throws {
         
         let rank1 = Rank.one
         let rank2 = Rank.two
@@ -132,8 +77,8 @@ class RunTests: XCTestCase {
         let card2 = PlayingCard(rank2, of: suit)!
         let card3 = PlayingCard(rank3, of: suit)!
         let cards = [card1, card2, card3]
-        let run = Run(of: cards)!
-        let expected = "Run Of 3"
+        let run = try Run(of: cards)
+        let expected = "Run"
         
         // When
         let actual = run.title
@@ -141,15 +86,12 @@ class RunTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
-
-
-
     
     //-------------------------------------------------------------------------//
     //                                Points                                   //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the points of a`Run` equals the # of  `Csrd`s it holds.
+    /// Tests that the points of a`Run` equals the # of `Card`s it holds.
     func test_points_ofRun_equalsNCards() throws {
         
         let rank1 = Rank.one
@@ -162,8 +104,8 @@ class RunTests: XCTestCase {
         let card2 = PlayingCard(rank2, of: suit)!
         let card3 = PlayingCard(rank3, of: suit)!
         let cards = [card1, card2, card3]
-        let run = try Run(of: cards)!
-        let expected = 3
+        let run = try Run(of: cards)
+        let expected = run.count
         
         // When
         let actual = run.points

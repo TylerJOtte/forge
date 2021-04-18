@@ -46,6 +46,12 @@ public class Run: Hand, HandRank {
         let min = 3
         let max = Int.max
         
+        guard (cards.count >= min) else {
+            
+            print("The collection must contain at least \(min) Cards.")
+            throw ElementsError.insufficientElements
+        }
+        
         guard (try cards.areSequential()) else {
 
             print("The given Cards are not in sequential order.")
