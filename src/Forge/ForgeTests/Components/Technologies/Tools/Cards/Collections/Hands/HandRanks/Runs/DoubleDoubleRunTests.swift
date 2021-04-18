@@ -193,7 +193,7 @@ class DoubleDoubleRunTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the total points of  a`DoubleDoubleRun`with the min `PlayingCard`s equals sixteen.
-    func test_points_withMinCards_equalsTwelve() throws {
+    func test_points_withMinCards_equalsSixteen() throws {
         
         // Given
         let rank1 = Rank.one
