@@ -228,6 +228,35 @@ class FlushTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that the title with five`Cards` in sequential order from `.ten` to `.ace` equals
+    /// "Royal Flush".
+    func test_title_withSequentialTenToAceCards_equalsRoyalFlush() throws {
+        
+        // Given
+        let rank1 = Rank.ten
+        let rank2 = Rank.jack
+        let rank3 = Rank.queen
+        let rank4 = Rank.king
+        let rank5 = Rank.ace
+        let color = Color.red
+        let symbol = Symbol.heart
+        let suit = Suit(color, symbol)
+        let card1 = PlayingCard(rank1, of: suit)!
+        let card2 = PlayingCard(rank2, of: suit)!
+        let card3 = PlayingCard(rank3, of: suit)!
+        let card4 = PlayingCard(rank4, of: suit)!
+        let card5 = PlayingCard(rank5, of: suit)!
+        let cards = [card1, card2, card3, card4, card5]
+        let flush = try Flush(of: cards)
+        let expected = "Royal Flush"
+        
+        // When
+        let actual = flush.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                                Points                                   //
     //-------------------------------------------------------------------------//

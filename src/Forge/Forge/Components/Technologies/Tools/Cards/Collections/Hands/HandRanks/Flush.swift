@@ -34,7 +34,7 @@ public class Flush: Hand, HandRank {
     /// - Postcondition:
     ///   - The `HandRank` can hold four to`Int.max Card`s.
     ///   - The `HandRank` contains the given `Card`s.
-    ///   - The `HandRank`s title is set according to the # of `Card`s it holds.
+    ///   - The `HandRank`s title is set according to the # and order of `Card`s it holds.
     ///   - The `HandRank`s points are set according to the # of `Card`s it holds.
     /// - Parameter cards: The `Card`s to create the `HandRank` with.
     /// - Throws:
@@ -59,12 +59,17 @@ public class Flush: Hand, HandRank {
             throw ElementsError.insufficientElements
         }
         
-        if (try cards.areSequential(ace: high) && cards.count == 5) {
+        let areSequential = try cards.areSequential(ace: high)
+        let isAStraight = cards.count == 5 && areSequential
+        
+        if (isAStraight) {
             
-            let isRoyal = cards[0].rank == Rank.ten &&
+           let isRoyal = cards[0].rank == Rank.ten &&
                 cards[1].rank == Rank.jack && cards[2].rank == Rank.queen &&
-                cards[3].rank == Rank.king && cards[4].rank == Rank.king
-            
+                cards[3].rank == Rank.king &&
+                (cards[4].rank == Rank.ace || cards[4].rank == Rank.one)
+                
+                
             self.title = isRoyal ? "Royal Flush" : "Straight Flush"
             
         } else {
