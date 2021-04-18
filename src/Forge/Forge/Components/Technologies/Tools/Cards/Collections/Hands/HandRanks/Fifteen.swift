@@ -29,31 +29,46 @@ public class Fifteen: Hand, HandRank {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Fifteen`with the given terms.
+    /// Creates a`Fifteen`with the given `Card`s.
     ///
     /// - Precondition:
-    ///   - The given `Card`'s count  must be >= 2 and &lt;= 5.
+    ///   - The given `Card`s must contain 2-5`Card`s.
     ///   - The given `Card`'s points must sum to 15.
     /// - Postcondition:
-    ///   - The `Fifteen` can hold two  to five `Card`s.
-    ///   - The `Fifteen` contains the given `Card`s.
-    ///   - The `Fifteen`s title is set to `Fifteen`.
-    ///   - The `Fifeen`s points are set to two.
-    /// - Parameter cards: The `Card`s to create `Kind` with.
-    public init?(of cards: [PlayingCard]) throws {
+    ///   - The `HandRank` can hold two  to five `Card`s.
+    ///   - The `HandRank` contains the given `Card`s.
+    ///   - The `HandRank`s title is set to `Fifteen`.
+    ///   - The `HandRank`s points are set to two.
+    /// - Parameter cards: The `Card`s to create the`HandRank` with.
+    ///   - `ElementsError.insufficientElements` if the given `Card`s contain less than two
+    ///     `Card`s,
+    ///   - `ElementsError.excessiveElements` if the given `Card`s contain more than five
+    ///     `Card`s.
+    ///   - `RewardsError.invalidPoints` if the given `Card`s' sum does not sum to 15.
+    public init(of cards: [PlayingCard]) throws {
         
-        guard (cards.count >= 2 && cards.count <= 5) else {
+        let min = 2
+        let max = 5
+        let points = 15
+        
+        guard (cards.count >= min) else {
             
-            print("The given Card collection must contain two to five Cards.")
-            return nil
+            print("The collection must contain at least \(min) Cards.")
+            throw ElementsError.insufficientElements
         }
         
-        guard (cards.sum() == 15) else {
+        guard (cards.count <= max) else {
             
-            print("The given Card's points must sum to 15.")
-            return nil
+            print("The collection must contain at most \(max) Cards.")
+            throw ElementsError.excessiveElements
         }
         
-        try super.init(of: 2, to: 5, cards)
+        guard (cards.sum() == points) else {
+            
+            print("The given Cards' points must sum to 15.")
+            throw RewardsError.invalidPoints
+        }
+        
+        try super.init(of: min, to: max, cards)
     }
 }

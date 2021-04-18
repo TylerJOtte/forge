@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// An throwable `Elements Error`
+/// A throwable `Elements Error`
 public enum ElementsError: Error {
     
     case areNotSequential

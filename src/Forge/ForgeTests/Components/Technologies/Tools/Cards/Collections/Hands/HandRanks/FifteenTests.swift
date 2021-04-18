@@ -18,7 +18,7 @@ import XCTest
 import SwiftUI
 @testable import Forge
 
-/// Unit tests for the `Fifteen` class.
+/// Unit tests for the `Fifteen HandRank`.
 class FifteenTests: XCTestCase {
    
     //=========================================================================//
@@ -26,57 +26,32 @@ class FifteenTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                Success                                  //
+    //                            Insufficient Cards                           //
     //-------------------------------------------------------------------------//
     
-    /// Tests that creating a `Fifteen HandRank` with `PlayingCard`s that have points that sum to 15
-    /// succeeds.
-    func test_init_with15PointsSum_succeeds() throws {
-        
+    /// Tests that creating a `Fifteen` with less than two`PlayingCards` throws an
+    /// `ElementsError.insufficientElements Error`.
+    func test_init_withInsufficientCards_throwsError() throws {
+
         // Given
         let rank1 = Rank.ten
-        let rank2 = Rank.five
         let color = Color.black
         let symbol = Symbol.clover
         let suit = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let cards = [card1, card2]
-        
-        // When
-        let fifteen = try Fifteen(of: cards)
-        
-        // Then
-        XCTAssert(fifteen != nil)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                               Failure                                   //
-    //-------------------------------------------------------------------------//
-    
-                                   //       //
-                                   // Count //
-                                   //       //
-
-    /// Tests that creating a `Fifteen HandRank` with less than two `PlayingCards` returns nil.
-    func test_init_withInsufficientCards_returnsNil() throws {
-
-        // Given
-        let rank = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
-        let card = PlayingCard(rank, of: suit)!
+        let card = PlayingCard(rank1, of: suit)!
         let cards = [card]
+        let expected = ElementsError.insufficientElements
         
         // When
-        let fifteen = try Fifteen(of: cards)
-        
-        // Then
-        XCTAssert(fifteen == nil)
+        XCTAssertThrowsError(try Fifteen(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
     }
     
-    /// Tests that creating a `Fifteen HandRank` with more than five `PlayingCards` returns nil.
+    /// Tests that creating a `Fifteen` with more than five`PlayingCards` throws an
+    /// `ElementsError.excessiveElements Error`.
     func test_init_withExcessiveCards_returnsNil() throws {
 
         // Given
@@ -96,12 +71,14 @@ class FifteenTests: XCTestCase {
         let card5 = PlayingCard(rank5, of: suit)!
         let card6 = PlayingCard(rank6, of: suit)!
         let cards = [card1, card2, card3, card4, card5, card6]
+        let expected = ElementsError.excessiveElements
         
         // When
-        let fifteen = try Fifteen(of: cards)
-        
-        // Then
-        XCTAssert(fifteen == nil)
+        XCTAssertThrowsError(try Fifteen(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
     }
 
                                //            //
@@ -109,7 +86,7 @@ class FifteenTests: XCTestCase {
                                //            //
     
     /// Tests that creating a `Fifteen HandRank` with `PlayingCard`s that have points that sum to
-    /// less than 15 returns nil.
+    /// less than 15 throws a `RewardsError.invalidPoints`.
     func test_init_withUnder15PointsSum_returnsNil() throws {
         
         // Given
@@ -121,16 +98,18 @@ class FifteenTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
+        let expected = RewardsError.invalidPoints
         
         // When
-        let fifteen = try Fifteen(of: cards)
-        
-        // Then
-        XCTAssert(fifteen == nil)
+        XCTAssertThrowsError(try Fifteen(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? RewardsError)
+        }
     }
     
     /// Tests that creating a `Fifteen HandRank` with `PlayingCard`s that have points that sum to
-    /// over 15 returns nil.
+    /// more than 15 throws a `RewardsError.invalidPoints`.
     func test_init_withOver15PointsSum_returnsNil() throws {
         
         // Given
@@ -143,11 +122,14 @@ class FifteenTests: XCTestCase {
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
         
-        // When
-        let fifteen = try Fifteen(of: cards)
+        let expected = RewardsError.invalidPoints
         
-        // Then
-        XCTAssert(fifteen == nil)
+        // When
+        XCTAssertThrowsError(try Fifteen(of: cards)) { error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? RewardsError)
+        }
     }
     
     //=========================================================================//
@@ -170,7 +152,7 @@ class FifteenTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
-        let fifteen = try Fifteen(of: cards)!
+        let fifteen = try Fifteen(of: cards)
         let expected = "Fifteen"
         
         // When
@@ -196,7 +178,7 @@ class FifteenTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
-        let fifteen = try Fifteen(of: cards)!
+        let fifteen = try Fifteen(of: cards)
         let expected = 15
         
         // When
@@ -222,7 +204,7 @@ class FifteenTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
-        let fifteen = try Fifteen(of: cards)!
+        let fifteen = try Fifteen(of: cards)
         let expected = 2
         
         // When
@@ -244,7 +226,7 @@ class FifteenTests: XCTestCase {
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
-        let fifteen = try Fifteen(of: cards)!
+        let fifteen = try Fifteen(of: cards)
         let expected = 5
         
         // When
@@ -276,7 +258,7 @@ class FifteenTests: XCTestCase {
         let card4 = PlayingCard(rank4, of: suit)!
         let card5 = PlayingCard(rank5, of: suit)!
         let cards = [card1, card2, card3, card4, card5]
-        let fifteen = try Fifteen(of: cards)!
+        let fifteen = try Fifteen(of: cards)
         let expected = 5
         
         // When
