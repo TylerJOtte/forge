@@ -20,7 +20,7 @@ import Foundation
 public class Flush: Hand, HandRank {
     
     /// The primary name.
-    public var title: String { return "\(count)-Card Flush" }
+    public var title: String = "Flush"
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -52,7 +52,7 @@ public class Flush: Hand, HandRank {
             throw ElementsError.insufficientElements
         }
         
-        guard (cards.areEquallyRanked()) else {
+        guard (cards.areEquallySuited()) else {
             
             print("The given Cards must all have the same Suit.")
             throw ElementsError.insufficientElements
