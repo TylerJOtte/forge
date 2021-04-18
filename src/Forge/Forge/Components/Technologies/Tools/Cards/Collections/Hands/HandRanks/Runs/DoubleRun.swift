@@ -62,7 +62,7 @@ public class DoubleRun: Run {
     public override init(of cards: [PlayingCard]) throws {
         
         let min = 4
-        let runs = 1
+        let runs = 2
         let pairs = 1
         let title = "Double Run"
   
