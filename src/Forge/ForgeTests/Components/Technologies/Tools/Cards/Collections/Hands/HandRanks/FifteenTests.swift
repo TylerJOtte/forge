@@ -36,7 +36,7 @@ class FifteenTests: XCTestCase {
         // Given
         let rank1 = Rank.ten
         let suit = Suit.clubs
-        let card = PlayingCard(rank1, of: suit)!
+        let card = try PlayingCard(rank1, of: suit)
         let cards = [card]
         let expected = ElementsError.insufficientElements
         
@@ -64,12 +64,12 @@ class FifteenTests: XCTestCase {
         let rank5 = Rank.five
         let rank6 = Rank.six
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let card5 = PlayingCard(rank5, of: suit)!
-        let card6 = PlayingCard(rank6, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
+        let card3 = try PlayingCard(rank3, of: suit)
+        let card4 = try PlayingCard(rank4, of: suit)
+        let card5 = try PlayingCard(rank5, of: suit)
+        let card6 = try PlayingCard(rank6, of: suit)
         let cards = [card1, card2, card3, card4, card5, card6]
         let expected = ElementsError.excessiveElements
         
@@ -93,8 +93,8 @@ class FifteenTests: XCTestCase {
         let rank1 = Rank.ten
         let rank2 = Rank.four
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let expected = RewardsError.invalidPoints
         
@@ -118,8 +118,8 @@ class FifteenTests: XCTestCase {
         let rank1 = Rank.ten
         let rank2 = Rank.six
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         
         let expected = RewardsError.invalidPoints
@@ -147,8 +147,8 @@ class FifteenTests: XCTestCase {
         let rank1 = Rank.ten
         let rank2 = Rank.five
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let fifteen = try Fifteen(of: cards)
         let expected = 2
@@ -167,8 +167,8 @@ class FifteenTests: XCTestCase {
         let rank1 = Rank.ten
         let rank2 = Rank.five
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let fifteen = try Fifteen(of: cards)
         let expected = 5
@@ -194,11 +194,11 @@ class FifteenTests: XCTestCase {
         let rank4 = Rank.four
         let rank5 = Rank.five
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
-        let card4 = PlayingCard(rank4, of: suit)!
-        let card5 = PlayingCard(rank5, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
+        let card3 = try PlayingCard(rank3, of: suit)
+        let card4 = try PlayingCard(rank4, of: suit)
+        let card5 = try PlayingCard(rank5, of: suit)
         let cards = [card1, card2, card3, card4, card5]
         let fifteen = try Fifteen(of: cards)
         let expected = 5
@@ -221,8 +221,8 @@ class FifteenTests: XCTestCase {
         let rank1 = Rank.ten
         let rank2 = Rank.five
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let fifteen = try Fifteen(of: cards)
         let expected = "Fifteen"
@@ -245,8 +245,8 @@ class FifteenTests: XCTestCase {
         let rank1 = Rank.ten
         let rank2 = Rank.five
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let fifteen = try Fifteen(of: cards)
         let expected = 2

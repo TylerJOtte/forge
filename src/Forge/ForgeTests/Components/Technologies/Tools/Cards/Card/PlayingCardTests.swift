@@ -31,14 +31,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with an `ace Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_witAceRankAndValidSuit_true() {
+    func test_init_witAceRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.ace
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -46,14 +46,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `one Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withOneRankAndValidSuit_true() {
+    func test_init_withOneRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.one
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -61,14 +61,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `two Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withTwoRankAndValidSuit_true() {
+    func test_init_withTwoRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.two
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -76,14 +76,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `three Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withThreeRankAndValidSuit_true() {
+    func test_init_withThreeRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.three
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -91,14 +91,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `four Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withFourRankAndValidSuit_true() {
+    func test_init_withFourRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.four
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -106,14 +106,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `five Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withFiveRankAndValidSuit_true() {
+    func test_init_withFiveRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.five
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -121,14 +121,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `six Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withSixRankAndValidSuit_true() {
+    func test_init_withSixRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.six
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -136,14 +136,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `seven Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withSevenRankAndValidSuit_true() {
+    func test_init_withSevenRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.seven
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -151,14 +151,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with an `eight Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withEightRankAndValidSuit_true() {
+    func test_init_withEightRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.eight
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -166,14 +166,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `nine Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withNineRankAndValidSuit_true() {
+    func test_init_withNineRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.nine
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -181,14 +181,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `ten Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withTenRankAndValidSuit_true() {
+    func test_init_withTenRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.ten
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -196,14 +196,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `jack Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withJackRankAndValidSuit_true() {
+    func test_init_withJackRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.jack
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -211,14 +211,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `queen Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withQueenRankAndValidSuit_true() {
+    func test_init_withQueenRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.queen
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
@@ -226,27 +226,27 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `king Rank` & a standard `PlayingCard Suit`
     /// succeeds.
-    func test_init_withKingRankAndValidSuit_true() {
+    func test_init_withKingRankAndValidSuit_true() throws {
         
         // Given
         let rank = Rank.king
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual != nil)
     }
     
     /// Tests that creating a`PlayingCard` with a `joker Rank` & nil `Suit`succeeds.
-    func test_init_withJokerAndNilSuit_true() {
+    func test_init_withJokerAndNilSuit_true() throws {
         
         // Given
         let rank = Rank.joker
         
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
         
         // Then
         XCTAssert(actual != nil)
@@ -261,14 +261,14 @@ class PlayingCardTests: XCTestCase {
                                 //             //
                                 
     /// Tests that creating a`PlayingCard` with a `joker Rank` & `PlayingCard Suit`fails.
-    func test_init_withJokerAndInvalidSuit_false() {
+    func test_init_withJokerAndInvalidSuit_false() throws {
         
         // Given
         let rank = Rank.joker
         let suit = Suit.clubs
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -279,182 +279,182 @@ class PlayingCardTests: XCTestCase {
                                 //           //
 
     /// Tests that creating a`PlayingCard` with an `ace Rank` & a nil `Suit` fails.
-    func test_init_witAceRankAndNilSuit_false() {
+    func test_init_witAceRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.ace
         
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `one Rank` & a nil `Suit` fails.
-    func test_init_withOneRankAnddNilSuit_false() {
+    func test_init_withOneRankAnddNilSuit_false() throws {
 
         // Given
         let rank = Rank.one
         
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `two Rank` & a nil `Suit` fails.
-    func test_init_withTwoRankAndNilSuit_false() {
+    func test_init_withTwoRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.two
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `three Rank` & a nil `Suit` fails.
-    func test_init_withThreeRankAndNilSuit_false() {
+    func test_init_withThreeRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.three
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `four Rank` & a nil `Suit` fails.
-    func test_init_withFourRankAndNilSuit_false() {
+    func test_init_withFourRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.four
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `five Rank` & a nil `Suit` fails.
-    func test_init_withFiveRankAndNilSuit_false() {
+    func test_init_withFiveRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.five
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `six Rank` & a nil `Suit` fails.
-    func test_init_withSixRankAndNilSuit_false(){
+    func test_init_withSixRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.six
         
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `seven Rank` & a nil `Suit` fails.
-    func test_init_withSevenRankAndNilSuit_false() {
+    func test_init_withSevenRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.seven
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with an `eight Rank` & a nil `Suit` fails.
-    func test_init_withEightRankAndNilSuit_false() {
+    func test_init_withEightRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.eight
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `nine Rank` & a nil `Suit` fails.
-    func test_init_withNineRankAndNilSuit_false() {
+    func test_init_withNineRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.nine
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `ten Rank` & a nil `Suit` fails.
-    func test_init_withTenRankAndNilSuit_false() {
+    func test_init_withTenRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.ten
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `jack Rank` & a nil `Suit` fails.
-    func test_init_withJackRankAndNilSuit_false() {
+    func test_init_withJackRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.jack
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `queen Rank` & a nil `Suit` fails.
-    func test_init_withQueenRankAndNilSuit_false() {
+    func test_init_withQueenRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.queen
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
     }
 
     /// Tests that creating a`PlayingCard` with a `king Rank` & a nil `Suit` fails.
-    func test_init_withKingRankAndNilSuit_false(){
+    func test_init_withKingRankAndNilSuit_false() throws {
 
         // Given
         let rank = Rank.king
 
         // When
-        let actual = PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: nil)
 
         // Then
         XCTAssert(actual == nil)
@@ -466,14 +466,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with an `ace Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_witAceRankAndInValidSuit_false() {
+    func test_init_witAceRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.ace
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -481,14 +481,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `one Rank` & a non-standard
     ///  `PlayingCard Suit` fails.
-    func test_init_withOneRankAndInValidSuit_false() {
+    func test_init_withOneRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.one
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -496,14 +496,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `two Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withTwoRankAndInValidSuit_false() {
+    func test_init_withTwoRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.two
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -511,14 +511,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `three Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withThreeRankAndInValidSuit_false() {
+    func test_init_withThreeRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.three
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -526,14 +526,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `four Rank` & a non-standard
     ///  `PlayingCard Suit` fails.
-    func test_init_withFourRankAndInValidSuit_false() {
+    func test_init_withFourRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.four
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -541,14 +541,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `five Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withFiveRankAndInValidSuit_false() {
+    func test_init_withFiveRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.five
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -556,14 +556,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `six Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withSixRankAndInValidSuit_false(){
+    func test_init_withSixRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.six
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -571,14 +571,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `seven Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withSevenRankAndInValidSuit_false() {
+    func test_init_withSevenRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.seven
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -586,14 +586,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with an `eight Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withEightRankAndInValidSuit_false() {
+    func test_init_withEightRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.eight
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -601,14 +601,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `nine Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withNineRankAndInValidSuit_false() {
+    func test_init_withNineRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.nine
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -616,14 +616,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `ten Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withTenRankAndInValidSuit_false() {
+    func test_init_withTenRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.ten
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -631,14 +631,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `jack Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withJackRankAndInValidSuit_false() {
+    func test_init_withJackRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.jack
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -646,14 +646,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `queen Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withQueenRankAndInValidSuit_false() {
+    func test_init_withQueenRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.queen
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -661,14 +661,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `king Rank` & a non-standard
     /// `PlayingCard Suit` fails.
-    func test_init_withKingRankAndInValidSuit_false(){
+    func test_init_withKingRankAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.king
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -676,14 +676,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that creating a`PlayingCard` with a `joker Rank` & a non-standard
     /// `PlayingCard Suit`fails.
-    func test_init_withJokerAndInValidSuit_false(){
+    func test_init_withJokerAndInValidSuit_false() throws {
         
         // Given
         let rank = Rank.joker
         let suit = Suit.stars
         
         // When
-        let actual = PlayingCard(rank, of: suit)
+        let actual = try PlayingCard(rank, of: suit)
         
         // Then
         XCTAssert(actual == nil)
@@ -698,12 +698,12 @@ class PlayingCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the default points of a`PlayingCard` with an `ace Rank` equal one.
-    func test_defaultPoints_ofAce_equalOne() {
+    func test_defaultPoints_ofAce_equalOne() throws {
         
         // Given
         let rank = Rank.ace
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 1
         
         // When
@@ -714,12 +714,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `one Rank` equal one.
-    func test_defaultPoints_ofOne_equalOne() {
+    func test_defaultPoints_ofOne_equalOne() throws {
         
         // Given
         let rank = Rank.one
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 1
         
         // When
@@ -730,12 +730,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `two Rank` equal two.
-    func test_defaultPoints_ofTwo_equalTwo(){
+    func test_defaultPoints_ofTwo_equalTwo() throws {
         
         // Given
         let rank = Rank.two
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 2
         
         // When
@@ -746,12 +746,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `three Rank` equal three..
-    func test_defaultPoints_ofThree_equalThree() {
+    func test_defaultPoints_ofThree_equalThree() throws {
         
         // Given
         let rank = Rank.three
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 3
         
         // When
@@ -762,12 +762,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `four Rank` equal four.
-    func test_defaultPoints_ofFour_equalFour() {
+    func test_defaultPoints_ofFour_equalFour() throws {
         
         // Given
         let rank = Rank.four
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 4
         
         // When
@@ -778,12 +778,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `five Rank` equal five.
-    func test_defaultPoints_ofFive_equalFive() {
+    func test_defaultPoints_ofFive_equalFive() throws {
         
         // Given
         let rank = Rank.five
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 5
         
         // When
@@ -794,12 +794,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `six Rank` equal six.
-    func test_defaultPoints_ofSix_equalSix() {
+    func test_defaultPoints_ofSix_equalSix() throws {
         
         // Given
         let rank = Rank.six
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 6
         
         // When
@@ -810,12 +810,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `seven Rank` equal seven.
-    func test_defaultPoints_ofSeven_equalSeven() {
+    func test_defaultPoints_ofSeven_equalSeven() throws {
         
         // Given
         let rank = Rank.seven
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 7
         
         // When
@@ -826,12 +826,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with an `eight Rank` equal eight.
-    func test_defaultPoints_ofEight_equalEight() {
+    func test_defaultPoints_ofEight_equalEight() throws {
         
         // Given
         let rank = Rank.eight
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 8
         
         // When
@@ -842,12 +842,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `nine Rank` equal nine.
-    func test_defaultPoints_ofNine_equalNine() {
+    func test_defaultPoints_ofNine_equalNine() throws {
         
         // Given
         let rank = Rank.nine
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 9
         
         // When
@@ -858,12 +858,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `ten Rank` equal ten.
-    func test_defaultPoints_ofTen_equalTen() {
+    func test_defaultPoints_ofTen_equalTen() throws {
         
         // Given
         let rank = Rank.ten
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 10
         
         // When
@@ -874,12 +874,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `jack Rank` equal ten.
-    func test_defaultPoints_ofJack_equalTen() {
+    func test_defaultPoints_ofJack_equalTen() throws {
         
         // Given
         let rank = Rank.jack
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 10
         
         // When
@@ -890,12 +890,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `queen Rank` equal ten.
-    func test_defaultPoints_ofQueen_equalTen() {
+    func test_defaultPoints_ofQueen_equalTen() throws {
         
         // Given
         let rank = Rank.queen
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 10
         
         // When
@@ -906,12 +906,12 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `king Rank` equal ten.
-    func test_defaultPoints_ofKing_equalTen() {
+    func test_defaultPoints_ofKing_equalTen() throws {
         
         // Given
         let rank = Rank.king
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = 10
         
         // When
@@ -922,11 +922,11 @@ class PlayingCardTests: XCTestCase {
     }
     
     /// Tests that the default points of a`PlayingCard` with a `joker Rank` equal zero.
-    func test_defaultPoints_ofJoker_equalZero() {
+    func test_defaultPoints_ofJoker_equalZero() throws {
         
         // Given
         let rank = Rank.joker
-        let card = PlayingCard(rank, of: nil)!
+        let card = try PlayingCard(rank, of: nil)
         let expected = 0
         
         // When
@@ -946,12 +946,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with an `ace Rank`& a clubs `Suit` equals the expected
     /// value.
-    func test_title_ofAceOfClubs_equalsExpected() {
+    func test_title_ofAceOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.ace
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ace Of Clubs"
         
         // When
@@ -963,12 +963,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with an `ace Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofAceOfDiamonds_equalsExpected() {
+    func test_title_ofAceOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.ace
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ace Of Diamonds"
         
         // When
@@ -980,12 +980,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with an `ace Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofAceOfHearts_equalsExpected() {
+    func test_title_ofAceOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.ace
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ace Of Hearts"
         
         // When
@@ -997,12 +997,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with an `ace Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofAceOfSpades_equalsExpected() {
+    func test_title_ofAceOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.ace
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ace Of Spades"
         
         // When
@@ -1018,12 +1018,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `one Rank`& a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofOneOfClubs_equalsExpected() {
+    func test_title_ofOneOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.one
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ace Of Clubs"
         
         // When
@@ -1035,12 +1035,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `one Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofOneOfDiamonds_equalsExpected() {
+    func test_title_ofOneOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.one
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ace Of Diamonds"
         
         // When
@@ -1052,12 +1052,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `one Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofOneOfHearts_equalsExpected() {
+    func test_title_ofOneOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.one
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ace Of Hearts"
         
         // When
@@ -1069,12 +1069,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `one Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofOneOfSpades_equalsExpected() {
+    func test_title_ofOneOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.one
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ace Of Spades"
         
         // When
@@ -1090,12 +1090,12 @@ class PlayingCardTests: XCTestCase {
 
     /// Tests that the title of a`PlayingCard` with a `two Rank` & a clubs `Suit` equals the expected
     /// value.
-    func test_title_ofTwoOfClubs_equalsExpected(){
+    func test_title_ofTwoOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.two
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Two Of Clubs"
         
         // When
@@ -1107,12 +1107,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `two Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofTwoOfDiamonds_equalsExpected() {
+    func test_title_ofTwoOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.two
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Two Of Diamonds"
         
         // When
@@ -1124,12 +1124,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `two Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofTwoOfHearts_equalsExpected() {
+    func test_title_ofTwoOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.two
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Two Of Hearts"
         
         // When
@@ -1141,12 +1141,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `two Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofTwoOfSpades_equalsExpected() {
+    func test_title_ofTwoOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.two
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Two Of Spades"
         
         // When
@@ -1162,12 +1162,12 @@ class PlayingCardTests: XCTestCase {
                                     
     /// Tests that the title of a`PlayingCard` with a `three Rank` & a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofThreeOfClubs_equalsExpected() {
+    func test_title_ofThreeOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.three
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Three Of Clubs"
         
         // When
@@ -1179,12 +1179,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `three Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofThreeOfDiamonds_equalsExpected() {
+    func test_title_ofThreeOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.three
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Three Of Diamonds"
         
         // When
@@ -1196,12 +1196,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `three Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofThreeOfHearts_equalsExpected() {
+    func test_title_ofThreeOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.three
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Three Of Hearts"
         
         // When
@@ -1213,12 +1213,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `three Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofThreeOfSpades_equalsExpected() {
+    func test_title_ofThreeOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.three
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Three Of Spades"
         
         // When
@@ -1234,12 +1234,12 @@ class PlayingCardTests: XCTestCase {
 
     /// Tests that the title of a`PlayingCard` with a `four Rank` & a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofFourOfClubs_equalsExpected() {
+    func test_title_ofFourOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.four
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Four Of Clubs"
         
         // When
@@ -1251,12 +1251,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `four Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofFourOfDiamonds_equalsExpected() {
+    func test_title_ofFourOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.four
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Four Of Diamonds"
         
         // When
@@ -1268,12 +1268,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `four Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofFourOfHearts_equalsExpected() {
+    func test_title_ofFourOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.four
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Four Of Hearts"
         
         // When
@@ -1285,12 +1285,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `four Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofFourOfSpades_equalsExpected() {
+    func test_title_ofFourOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.four
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Four Of Spades"
         
         // When
@@ -1306,12 +1306,12 @@ class PlayingCardTests: XCTestCase {
 
     /// Tests that the title of a`PlayingCard` with a `five Rank` & a clubs `Suit` equals the expected
     /// value.
-    func test_title_ofFiveOfClubs_equalsExpected() {
+    func test_title_ofFiveOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.five
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Five Of Clubs"
         
         // When
@@ -1323,12 +1323,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `five Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofFiveOfDiamonds_equalsExpected() {
+    func test_title_ofFiveOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.five
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Five Of Diamonds"
         
         // When
@@ -1340,12 +1340,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `five Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofFiveOfHearts_equalsExpected() {
+    func test_title_ofFiveOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.five
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Five Of Hearts"
         
         // When
@@ -1357,12 +1357,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `five Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofFiveOfSpades_equalsExpected() {
+    func test_title_ofFiveOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.five
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Five Of Spades"
         
         // When
@@ -1378,12 +1378,12 @@ class PlayingCardTests: XCTestCase {
 
     /// Tests that the title of a`PlayingCard` with a `six Rank` & a clubs `Suit` equals the expected
     /// value.
-    func test_title_ofSixOfClubs_equalsExpected() {
+    func test_title_ofSixOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.six
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Six Of Clubs"
         
         // When
@@ -1395,12 +1395,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `six Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofSixOfDiamonds_equalsExpected() {
+    func test_title_ofSixOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.six
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Six Of Diamonds"
         
         // When
@@ -1412,12 +1412,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `six Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofSixOfHearts_equalsExpected() {
+    func test_title_ofSixOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.six
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Six Of Hearts"
         
         // When
@@ -1429,12 +1429,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `six Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofSixOfSpades_equalsExpected() {
+    func test_title_ofSixOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.six
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Six Of Spades"
         
         // When
@@ -1450,12 +1450,12 @@ class PlayingCardTests: XCTestCase {
                                     
     /// Tests that the title of a`PlayingCard` with a `seven Rank` & a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofSevenOfClubs_equalsExpected() {
+    func test_title_ofSevenOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.seven
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Seven Of Clubs"
         
         // When
@@ -1467,12 +1467,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `seven Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofSevenOfDiamonds_equalsExpected() {
+    func test_title_ofSevenOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.seven
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Seven Of Diamonds"
         
         // When
@@ -1484,12 +1484,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `seven Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofSevenOfHearts_equalsExpected() {
+    func test_title_ofSevenOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.seven
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Seven Of Hearts"
         
         // When
@@ -1501,12 +1501,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `seven Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofSevenOfSpades_equalsExpected() {
+    func test_title_ofSevenOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.seven
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Seven Of Spades"
         
         // When
@@ -1522,12 +1522,12 @@ class PlayingCardTests: XCTestCase {
 
     /// Tests that the title of a`PlayingCard` with an `eight Rank` & a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofEightOfClubs_equalsExpected() {
+    func test_title_ofEightOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.eight
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Eight Of Clubs"
         
         // When
@@ -1539,12 +1539,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with an`eight Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofEightOfDiamonds_equalsExpected() {
+    func test_title_ofEightOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.eight
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Eight Of Diamonds"
         
         // When
@@ -1556,12 +1556,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with an `eight Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofEightOfHearts_equalsExpected() {
+    func test_title_ofEightOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.eight
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Eight Of Hearts"
         
         // When
@@ -1573,12 +1573,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with an `eight Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofEightOfSpades_equalsExpected() {
+    func test_title_ofEightOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.eight
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Eight Of Spades"
         
         // When
@@ -1594,12 +1594,12 @@ class PlayingCardTests: XCTestCase {
 
     /// Tests that the title of a`PlayingCard` with a `nine Rank` & a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofNineOfClubs_equalsExpected() {
+    func test_title_ofNineOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.nine
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Nine Of Clubs"
         
         // When
@@ -1611,12 +1611,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `nine Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofNineOfDiamonds_equalsExpected() {
+    func test_title_ofNineOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.nine
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Nine Of Diamonds"
         
         // When
@@ -1628,12 +1628,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `nine Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofNineOfHearts_equalsExpected() {
+    func test_title_ofNineOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.nine
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Nine Of Hearts"
         
         // When
@@ -1645,12 +1645,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `nine Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofNineOfSpades_equalsExpected() {
+    func test_title_ofNineOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.nine
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Nine Of Spades"
         
         // When
@@ -1666,12 +1666,12 @@ class PlayingCardTests: XCTestCase {
 
     /// Tests that the title of a`PlayingCard` with a `ten Rank` & a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofTenOfClubs_equalsExpected() {
+    func test_title_ofTenOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.ten
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ten Of Clubs"
         
         // When
@@ -1683,12 +1683,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `ten Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofTenOfDiamonds_equalsExpected() {
+    func test_title_ofTenOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.ten
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ten Of Diamonds"
         
         // When
@@ -1700,12 +1700,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `ten Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofTenOfHearts_equalsExpected() {
+    func test_title_ofTenOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.ten
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ten Of Hearts"
         
         // When
@@ -1717,12 +1717,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `ten Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofTenOfSpades_equalsExpected() {
+    func test_title_ofTenOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.ten
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Ten Of Spades"
         
         // When
@@ -1738,12 +1738,12 @@ class PlayingCardTests: XCTestCase {
 
     /// Tests that the title of a`PlayingCard` with a `jack Rank` & a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofJackOfClubs_equalsExpected() {
+    func test_title_ofJackOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.jack
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Jack Of Clubs"
         
         // When
@@ -1755,12 +1755,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `jack Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofJackOfDiamonds_equalsExpected() {
+    func test_title_ofJackOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.jack
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Jack Of Diamonds"
         
         // When
@@ -1772,12 +1772,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `jack Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofJackOfHearts_equalsExpected() {
+    func test_title_ofJackOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.jack
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Jack Of Hearts"
         
         // When
@@ -1789,12 +1789,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `jack Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofJackOfSpades_equalsExpected() {
+    func test_title_ofJackOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.jack
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Jack Of Spades"
         
         // When
@@ -1810,12 +1810,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `queen Rank` & a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofQueenOfClubs_equalsExpected() {
+    func test_title_ofQueenOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.queen
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Queen Of Clubs"
         
         // When
@@ -1827,12 +1827,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `queen Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofQueenOfDiamonds_equalsExpected() {
+    func test_title_ofQueenOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.queen
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Queen Of Diamonds"
         
         // When
@@ -1844,12 +1844,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `queen Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofQueenOfHearts_equalsExpected() {
+    func test_title_ofQueenOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.queen
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Queen Of Hearts"
         
         // When
@@ -1861,12 +1861,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `queen Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofQueenOfSpades_equalsExpected() {
+    func test_title_ofQueenOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.queen
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "Queen Of Spades"
         
         // When
@@ -1882,12 +1882,12 @@ class PlayingCardTests: XCTestCase {
 
     /// Tests that the title of a`PlayingCard` with a `king Rank` & a clubs `Suit` equals the
     /// expected value.
-    func test_title_ofKingOfClubs_equalsExpected() {
+    func test_title_ofKingOfClubs_equalsExpected() throws {
         
         // Given
         let rank = Rank.king
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "King Of Clubs"
         
         // When
@@ -1899,12 +1899,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `king Rank`& a diamonds`Suit` equals the
     /// expected value.
-    func test_title_ofKingOfDiamonds_equalsExpected() {
+    func test_title_ofKingOfDiamonds_equalsExpected() throws {
         
         // Given
         let rank = Rank.king
         let suit = Suit.diamonds
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "King Of Diamonds"
         
         // When
@@ -1916,12 +1916,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `king Rank`& a hearts `Suit` equals the
     /// expected value.
-    func test_title_ofKingOfHearts_equalsExpected() {
+    func test_title_ofKingOfHearts_equalsExpected() throws {
         
         // Given
         let rank = Rank.king
         let suit = Suit.hearts
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "King Of Hearts"
         
         // When
@@ -1933,12 +1933,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `king Rank`& a spades `Suit` equals the
     /// expected value.
-    func test_title_ofKingOfSpades_equalsExpected() {
+    func test_title_ofKingOfSpades_equalsExpected() throws {
         
         // Given
         let rank = Rank.king
         let suit = Suit.spades
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let expected = "King Of Spades"
         
         // When
@@ -1954,12 +1954,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `joker Rank` and a `black Color` equals the
     /// expected value.
-    func test_title_ofBlackJoker_equalsExpected() {
+    func test_title_ofBlackJoker_equalsExpected() throws {
         
         // Given
         let rank = Rank.joker
         let color = Color.black
-        let card = PlayingCard(rank, of: nil, color)!
+        let card = try PlayingCard(rank, of: nil, color)
         let expected = "Black Joker"
         
         // When
@@ -1971,12 +1971,12 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that the title of a`PlayingCard` with a `joker Rank` and a `red Color` equals the
     /// expected value.
-    func test_title_ofRedJoker_equalsExpected() {
+    func test_title_ofRedJoker_equalsExpected() throws {
         
         // Given
         let rank = Rank.joker
         let color = Color.red
-        let card = PlayingCard(rank, of: nil, color)!
+        let card = try PlayingCard(rank, of: nil, color)
         let expected = "Red Joker"
         
         // When
@@ -1995,13 +1995,13 @@ class PlayingCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that two standard`PlayingCard`s with the same `Rank` & `Suit` are equal.
-    func test_areEqual_sameRankAndSuit_true() {
+    func test_areEqual_sameRankAndSuit_true() throws {
         
         // Given
         let rank = Rank.ace
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank, of: suit)
-        let card2 = PlayingCard(rank, of: suit)
+        let card1 = try PlayingCard(rank, of: suit)
+        let card2 = try PlayingCard(rank, of: suit)
         
         // When/Then
         XCTAssertEqual(card1, card2)
@@ -2009,14 +2009,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that a`PlayingCard` with an `ace` `Rank` is equal to a `PlayingCard` with a `one`
     /// `Rank` of the same  `Suit`.
-    func test_areEqual_aceAndOneOfSameSuit_true() {
+    func test_areEqual_aceAndOneOfSameSuit_true() throws {
         
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.one
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)
-        let card2 = PlayingCard(rank2, of: suit)
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssertEqual(card1, card2)
@@ -2024,14 +2024,14 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that a`PlayingCard` with a `one` `Rank` is equal to a `PlayingCard` with a `ace`
     /// `Rank` of the same  `Suit`.
-    func test_areEqual_oneAndAceOfSameSuit_true() {
+    func test_areEqual_oneAndAceOfSameSuit_true() throws {
         
         // Given
         let rank1 = Rank.one
         let rank2 = Rank.ace
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)
-        let card2 = PlayingCard(rank2, of: suit)
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssertEqual(card1, card2)
@@ -2042,43 +2042,43 @@ class PlayingCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that two standard`PlayingCard`s with the same `Rank` &  different `Suit`s are not equal.
-    func test_areNotEqual_sameRankAndDifferntSuit_true() {
+    func test_areNotEqual_sameRankAndDifferntSuit_true() throws {
         
         // Given
         let rank = Rank.ace
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
-        let card1 = PlayingCard(rank, of: suit1)
-        let card2 = PlayingCard(rank, of: suit2)
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
         
         // When/Then
         XCTAssertNotEqual(card1, card2)
     }
     
     /// Tests that two standard`PlayingCard`s with different `Rank`s & the same`Suit` are not equal.
-    func test_areNotEqual_differentRankAndSameSuit_true() {
+    func test_areNotEqual_differentRankAndSameSuit_true() throws {
         
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.king
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)
-        let card2 = PlayingCard(rank2, of: suit)
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssertNotEqual(card1, card2)
     }
     
     /// Tests that two standard`PlayingCard`s with different `Rank`s`Suit`s are not equal.
-    func test_areNotEqual_differentRankAndSuit_true() {
+    func test_areNotEqual_differentRankAndSuit_true() throws {
         
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.king
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
-        let card1 = PlayingCard(rank1, of: suit1)
-        let card2 = PlayingCard(rank2, of: suit2)
+        let card1 = try PlayingCard(rank1, of: suit1)
+        let card2 = try PlayingCard(rank2, of: suit2)
         
         // When/Then
         XCTAssertNotEqual(card1, card2)
@@ -2089,182 +2089,182 @@ class PlayingCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that a`joker PlayingCard` is less than an `ace PlayingCard`.
-    func test_isLessThan_withJokerAndAce_true() {
+    func test_isLessThan_withJokerAndAce_true() throws {
         
         // Given
         let rank1 = Rank.joker
         let rank2 = Rank.ace
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: nil)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: nil)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that an`ace PlayingCard` is less than an `two PlayingCard`.
-    func test_isLessThan_withAceAndTwo_true() {
+    func test_isLessThan_withAceAndTwo_true() throws {
         
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.two
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that a`two PlayingCard` is less than a`three PlayingCard`.
-    func test_isLessThan_withTwoAndThree_true() {
+    func test_isLessThan_withTwoAndThree_true() throws {
         
         // Given
         let rank1 = Rank.two
         let rank2 = Rank.three
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
 
     /// Tests that a`three PlayingCard` is less than a`four PlayingCard`.
-    func test_isLessThan_withThreeAndFour_true() {
+    func test_isLessThan_withThreeAndFour_true() throws {
         
         // Given
         let rank1 = Rank.three
         let rank2 = Rank.four
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that a`four PlayingCard` is less than a`five PlayingCard`.
-    func test_isLessThan_withFourAndFive_true() {
+    func test_isLessThan_withFourAndFive_true() throws {
         
         // Given
         let rank1 = Rank.four
         let rank2 = Rank.five
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that a`five PlayingCard` is less than a`six PlayingCard`.
-    func test_isLessThan_withFiveAndSix_true() {
+    func test_isLessThan_withFiveAndSix_true() throws {
         
         // Given
         let rank1 = Rank.five
         let rank2 = Rank.six
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that a`six PlayingCard` is less than a`seven PlayingCard`.
-    func test_isLessThan_withSixAndSeven_true() {
+    func test_isLessThan_withSixAndSeven_true() throws {
         
         // Given
         let rank1 = Rank.six
         let rank2 = Rank.seven
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that a`seven PlayingCard` is less than an`eight PlayingCard`.
-    func test_isLessThan_withSevenAndEight_true() {
+    func test_isLessThan_withSevenAndEight_true() throws {
         
         // Given
         let rank1 = Rank.seven
         let rank2 = Rank.eight
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that an`eight PlayingCard` is less than a`nine PlayingCard`.
-    func test_isLessThan_withEightAndNine_true() {
+    func test_isLessThan_withEightAndNine_true() throws {
         
         // Given
         let rank1 = Rank.eight
         let rank2 = Rank.nine
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that a`nine PlayingCard` is less than a`ten PlayingCard`.
-    func test_isLessThan_withNineAndTen_true() {
+    func test_isLessThan_withNineAndTen_true() throws {
         
         // Given
         let rank1 = Rank.nine
         let rank2 = Rank.ten
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that a`ten PlayingCard` is less than a`jack PlayingCard`.
-    func test_isLessThan_withTenAndJack_true() {
+    func test_isLessThan_withTenAndJack_true() throws {
         
         // Given
         let rank1 = Rank.ten
         let rank2 = Rank.jack
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that a`jack PlayingCard` is less than a`queen PlayingCard`.
-    func test_isLessThan_withJackAndQueen_true() {
+    func test_isLessThan_withJackAndQueen_true() throws {
         
         // Given
         let rank1 = Rank.jack
         let rank2 = Rank.queen
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)
     }
     
     /// Tests that a`queen PlayingCard` is less than a`king PlayingCard`.
-    func test_isLessThan_withQueenAndKing_true() {
+    func test_isLessThan_withQueenAndKing_true() throws {
         
         // Given
         let rank1 = Rank.queen
         let rank2 = Rank.king
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssert(card1 < card2)

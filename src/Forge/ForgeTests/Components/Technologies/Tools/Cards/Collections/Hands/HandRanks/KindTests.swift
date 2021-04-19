@@ -36,7 +36,7 @@ class KindTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let suit = Suit.clubs
-        let card = PlayingCard(rank1, of: suit)!
+        let card = try PlayingCard(rank1, of: suit)
         let cards = [card]
         let expected = ElementsError.insufficientElements
         
@@ -61,8 +61,8 @@ class KindTests: XCTestCase {
         let rank2 = Rank.two
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
-        let card1 = PlayingCard(rank1, of: suit1)!
-        let card2 = PlayingCard(rank2, of: suit2)!
+        let card1 = try PlayingCard(rank1, of: suit1)
+        let card2 = try PlayingCard(rank2, of: suit2)
         let cards = [card1, card2]
         let expected = ElementsError.insufficientElements
         
@@ -89,8 +89,8 @@ class KindTests: XCTestCase {
         let rank = Rank.ace
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
-        let card1 = PlayingCard(rank, of: suit1)!
-        let card2 = PlayingCard(rank, of: suit2)!
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
         let cards = [card1, card2]
         let kind = try Kind(of: cards)
         let expected = 2
@@ -108,8 +108,8 @@ class KindTests: XCTestCase {
         let rank = Rank.ace
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
-        let card1 = PlayingCard(rank, of: suit1)!
-        let card2 = PlayingCard(rank, of: suit2)!
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
         let cards = [card1, card2]
         let kind = try Kind(of: cards)
         let expected = Int.max
@@ -131,8 +131,8 @@ class KindTests: XCTestCase {
         let rank = Rank.ace
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
-        let card1 = PlayingCard(rank, of: suit1)!
-        let card2 = PlayingCard(rank, of: suit2)!
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
         let cards = [card1, card2]
         let kind = try Kind(of: cards)
         let expected = 2
@@ -154,8 +154,8 @@ class KindTests: XCTestCase {
         let rank = Rank.ace
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
-        let card1 = PlayingCard(rank, of: suit1)!
-        let card2 = PlayingCard(rank, of: suit2)!
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
         let cards = [card1, card2]
         let kind = try Kind(of: cards)
         let expected = "Pair"
@@ -174,9 +174,9 @@ class KindTests: XCTestCase {
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
         let suit3 = Suit.diamonds
-        let card1 = PlayingCard(rank, of: suit1)!
-        let card2 = PlayingCard(rank, of: suit2)!
-        let card3 = PlayingCard(rank, of: suit3)!
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
+        let card3 = try PlayingCard(rank, of: suit3)
         let cards = [card1, card2, card3]
         let kind = try Kind(of: cards)
         let expected = "3 Of A Kind"
@@ -196,10 +196,10 @@ class KindTests: XCTestCase {
         let suit2 = Suit.spades
         let suit3 = Suit.diamonds
         let suit4 = Suit.hearts
-        let card1 = PlayingCard(rank, of: suit1)!
-        let card2 = PlayingCard(rank, of: suit2)!
-        let card3 = PlayingCard(rank, of: suit3)!
-        let card4 = PlayingCard(rank, of: suit4)!
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
+        let card3 = try PlayingCard(rank, of: suit3)
+        let card4 = try PlayingCard(rank, of: suit4)
         let cards = [card1, card2, card3, card4]
         let kind = try Kind(of: cards)
         let expected = "4 Of A Kind"
@@ -221,8 +221,8 @@ class KindTests: XCTestCase {
         let rank = Rank.ace
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
-        let card1 = PlayingCard(rank, of: suit1)!
-        let card2 = PlayingCard(rank, of: suit2)!
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
         let cards = [card1, card2]
         let kind = try Kind(of: cards)
         let expected = 2
@@ -241,9 +241,9 @@ class KindTests: XCTestCase {
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
         let suit3 = Suit.diamonds
-        let card1 = PlayingCard(rank, of: suit1)!
-        let card2 = PlayingCard(rank, of: suit2)!
-        let card3 = PlayingCard(rank, of: suit3)!
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
+        let card3 = try PlayingCard(rank, of: suit3)
         let cards = [card1, card2, card3]
         let kind = try Kind(of: cards)
         let expected = 6
@@ -263,10 +263,10 @@ class KindTests: XCTestCase {
         let suit2 = Suit.spades
         let suit3 = Suit.diamonds
         let suit4 = Suit.hearts
-        let card1 = PlayingCard(rank, of: suit1)!
-        let card2 = PlayingCard(rank, of: suit2)!
-        let card3 = PlayingCard(rank, of: suit3)!
-        let card4 = PlayingCard(rank, of: suit4)!
+        let card1 = try PlayingCard(rank, of: suit1)
+        let card2 = try PlayingCard(rank, of: suit2)
+        let card3 = try PlayingCard(rank, of: suit3)
+        let card4 = try PlayingCard(rank, of: suit4)
         let cards = [card1, card2, card3, card4]
         let kind = try Kind(of: cards)
         let expected = 12

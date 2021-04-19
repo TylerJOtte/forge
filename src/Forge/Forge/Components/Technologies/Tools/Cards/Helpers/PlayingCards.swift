@@ -38,10 +38,10 @@ class PlayingCards {
 //        PlayingCard(.joker, of: nil, Color.black)!,
 //        PlayingCard(.joker, of: nil, Color.red)!
     
-    static let jokerCards: [PlayingCard] = [
-        PlayingCard(.joker, of: nil, Color.black)!,
-        PlayingCard(.joker, of: nil, Color.red)!
-    ]
+//    static let jokerCards: [PlayingCard] = [
+//        PlayingCard(.joker, of: nil, Color.black),
+//        PlayingCard(.joker, of: nil, Color.red)
+//    ]
     
     //=========================================================================//
     //                                 METHODS                                 //
@@ -66,7 +66,7 @@ class PlayingCards {
         
         for rank in ranks {
             
-            let card = PlayingCard(rank, of: suit)!
+            let card = try PlayingCard(rank, of: suit)
             
             cards.append(card)
         }
@@ -105,7 +105,7 @@ class PlayingCards {
     /// - Returns: An array of `PlayingCard`s.
     static func getCards(with jokers: Bool = false) -> [PlayingCard]? {
 
-        var cards: [PlayingCard] = jokers ? jokerCards : []
+        var cards: [PlayingCard] = [] //jokers ? jokerCards : []
         
         do {
             

@@ -36,7 +36,7 @@ class NobsTests: XCTestCase {
         // Given
         let rank = Rank.jack
         let suit = Suit.clubs
-        let card = PlayingCard(rank, of: suit)!
+        let card = try PlayingCard(rank, of: suit)
         let cards = [card]
         let expected = ElementsError.insufficientElements
 
@@ -61,9 +61,9 @@ class NobsTests: XCTestCase {
         let rank2 = Rank.ace
         let rank3 = Rank.king
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
+        let card3 = try PlayingCard(rank3, of: suit)
         let cards = [card1, card2, card3]
         let expected = ElementsError.excessiveElements
 
@@ -86,8 +86,8 @@ class NobsTests: XCTestCase {
         // Given
         let rank = Rank.jack
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank, of: suit)!
-        let card2 = PlayingCard(rank, of: suit)!
+        let card1 = try PlayingCard(rank, of: suit)
+        let card2 = try PlayingCard(rank, of: suit)
         let cards = [card1, card2]
         let expected = ElementsError.insufficientElements
 
@@ -107,8 +107,8 @@ class NobsTests: XCTestCase {
         let rank1 = Rank.ace
         let rank2 = Rank.two
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let expected = ElementsError.insufficientElements
 
@@ -129,8 +129,8 @@ class NobsTests: XCTestCase {
         let rank2 = Rank.ace
         let suit1 = Suit.clubs
         let suit2 = Suit.spades
-        let card1 = PlayingCard(rank1, of: suit1)!
-        let card2 = PlayingCard(rank2, of: suit2)!
+        let card1 = try PlayingCard(rank1, of: suit1)
+        let card2 = try PlayingCard(rank2, of: suit2)
         let cards = [card1, card2]
         let expected = ElementsError.insufficientElements
         
@@ -157,8 +157,8 @@ class NobsTests: XCTestCase {
         let rank1 = Rank.ace
         let rank2 = Rank.jack
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let nobs = try Nobs(of: cards)
         let expected = 2
@@ -177,8 +177,8 @@ class NobsTests: XCTestCase {
         let rank1 = Rank.ace
         let rank2 = Rank.jack
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let nobs = try Nobs(of: cards)
         let expected = 2
@@ -201,8 +201,8 @@ class NobsTests: XCTestCase {
         let rank1 = Rank.ace
         let rank2 = Rank.jack
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let nobs = try Nobs(of: cards)
         let expected = 2
@@ -225,8 +225,8 @@ class NobsTests: XCTestCase {
         let rank1 = Rank.ace
         let rank2 = Rank.jack
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let nobs = try Nobs(of: cards)
         let expected = "Nobs"
@@ -249,8 +249,8 @@ class NobsTests: XCTestCase {
         let rank1 = Rank.ace
         let rank2 = Rank.jack
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let nobs = try Nobs(of: cards)
         let expected = 1

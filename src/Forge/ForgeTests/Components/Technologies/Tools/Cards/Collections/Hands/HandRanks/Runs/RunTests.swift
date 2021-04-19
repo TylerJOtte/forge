@@ -42,8 +42,8 @@ class RunTests: XCTestCase {
         let rank1 = Rank.ace
         let rank2 = Rank.two
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
         let cards = [card1, card2]
         let expected = ElementsError.insufficientElements
         
@@ -68,9 +68,9 @@ class RunTests: XCTestCase {
         let rank2 = Rank.three
         let rank3 = Rank.two
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
+        let card3 = try PlayingCard(rank3, of: suit)
         let cards = [card1, card2, card3]
         let expected = ElementsError.areNotSequential
         
@@ -98,9 +98,9 @@ class RunTests: XCTestCase {
         let rank2 = Rank.two
         let rank3 = Rank.three
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
+        let card3 = try PlayingCard(rank3, of: suit)
         let cards = [card1, card2, card3]
         let run = try Run(of: cards)
         let expected = "Run"
@@ -124,9 +124,9 @@ class RunTests: XCTestCase {
         let rank2 = Rank.two
         let rank3 = Rank.three
         let suit = Suit.clubs
-        let card1 = PlayingCard(rank1, of: suit)!
-        let card2 = PlayingCard(rank2, of: suit)!
-        let card3 = PlayingCard(rank3, of: suit)!
+        let card1 = try PlayingCard(rank1, of: suit)
+        let card2 = try PlayingCard(rank2, of: suit)
+        let card3 = try PlayingCard(rank3, of: suit)
         let cards = [card1, card2, card3]
         let run = try Run(of: cards)
         let expected = run.count
