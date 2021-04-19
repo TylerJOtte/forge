@@ -60,7 +60,7 @@ public class PlayingCard: Card, Hashable {
     ///   - `PlayingCardError.invalidRankAndSuitCombination` if the given
     ///      - `Rank` is not a `joker` and the specified `Suit` is nil, or
     ///      - `Rank` is a `joker`, and the specified `Suit` is not nil.
-    public init(_ rank: Rank, of suit: Suit?,
+    init(_ rank: Rank, of suit: Suit?,
                  _ color: Color = Color.white) throws {
         
         guard (rank.isValid()) else {
