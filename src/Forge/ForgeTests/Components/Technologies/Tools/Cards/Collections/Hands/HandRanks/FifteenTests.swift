@@ -35,9 +35,7 @@ class FifteenTests: XCTestCase {
 
         // Given
         let rank1 = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank1, of: suit)!
         let cards = [card]
         let expected = ElementsError.insufficientElements
@@ -65,9 +63,7 @@ class FifteenTests: XCTestCase {
         let rank4 = Rank.four
         let rank5 = Rank.five
         let rank6 = Rank.six
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let card3 = PlayingCard(rank3, of: suit)!
@@ -96,9 +92,7 @@ class FifteenTests: XCTestCase {
         // Given
         let rank1 = Rank.ten
         let rank2 = Rank.four
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -123,9 +117,7 @@ class FifteenTests: XCTestCase {
         // Given
         let rank1 = Rank.ten
         let rank2 = Rank.six
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -154,9 +146,7 @@ class FifteenTests: XCTestCase {
         // Given
         let rank1 = Rank.ten
         let rank2 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -176,9 +166,7 @@ class FifteenTests: XCTestCase {
         // Given
         let rank1 = Rank.ten
         let rank2 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -205,9 +193,7 @@ class FifteenTests: XCTestCase {
         let rank3 = Rank.three
         let rank4 = Rank.four
         let rank5 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let card3 = PlayingCard(rank3, of: suit)!
@@ -234,9 +220,7 @@ class FifteenTests: XCTestCase {
         // Given
         let rank1 = Rank.ten
         let rank2 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -260,9 +244,7 @@ class FifteenTests: XCTestCase {
         // Given
         let rank1 = Rank.ten
         let rank2 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]

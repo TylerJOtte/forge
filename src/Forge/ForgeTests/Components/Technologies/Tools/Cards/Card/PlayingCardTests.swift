@@ -35,9 +35,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -52,9 +50,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.one
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -69,9 +65,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.two
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -86,9 +80,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -103,9 +95,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.four
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -120,9 +110,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -137,9 +125,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.six
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -154,9 +140,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.seven
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -171,9 +155,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.eight
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -188,9 +170,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.nine
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -205,9 +185,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -222,9 +200,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -239,9 +215,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.queen
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -256,9 +230,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.king
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -293,9 +265,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.joker
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -500,9 +470,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -517,9 +485,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.one
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -534,9 +500,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.two
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -551,9 +515,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.three
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -568,9 +530,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.four
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -585,9 +545,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.five
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -602,9 +560,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.six
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -619,9 +575,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.seven
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -636,9 +590,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.eight
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -653,9 +605,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.nine
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -670,9 +620,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -687,9 +635,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -704,9 +650,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.queen
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -721,9 +665,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.king
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -738,9 +680,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.joker
-        let color = Color.black
-        let symbol = Symbol.star
-        let suit = Suit(color, symbol)
+        let suit = Suit.stars
         
         // When
         let actual = PlayingCard(rank, of: suit)
@@ -762,9 +702,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 1
         
@@ -780,9 +718,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.one
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 1
         
@@ -798,9 +734,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.two
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 2
         
@@ -816,9 +750,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 3
         
@@ -834,9 +766,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.four
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 4
         
@@ -852,9 +782,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 5
         
@@ -870,9 +798,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.six
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 6
         
@@ -888,9 +814,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.seven
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 7
         
@@ -906,9 +830,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.eight
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 8
         
@@ -924,9 +846,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.nine
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 9
         
@@ -942,9 +862,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 10
         
@@ -960,9 +878,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 10
         
@@ -978,9 +894,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.queen
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 10
         
@@ -996,9 +910,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.king
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = 10
         
@@ -1038,9 +950,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ace Of Clubs"
         
@@ -1057,9 +967,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ace Of Diamonds"
         
@@ -1076,9 +984,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ace Of Hearts"
         
@@ -1095,9 +1001,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ace Of Spades"
         
@@ -1118,9 +1022,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.one
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ace Of Clubs"
         
@@ -1137,9 +1039,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.one
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ace Of Diamonds"
         
@@ -1156,9 +1056,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.one
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ace Of Hearts"
         
@@ -1175,9 +1073,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.one
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ace Of Spades"
         
@@ -1198,9 +1094,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.two
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Two Of Clubs"
         
@@ -1217,9 +1111,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.two
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Two Of Diamonds"
         
@@ -1236,9 +1128,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.two
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Two Of Hearts"
         
@@ -1255,9 +1145,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.two
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Two Of Spades"
         
@@ -1278,9 +1166,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Three Of Clubs"
         
@@ -1297,9 +1183,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.three
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Three Of Diamonds"
         
@@ -1316,9 +1200,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.three
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Three Of Hearts"
         
@@ -1335,9 +1217,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.three
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Three Of Spades"
         
@@ -1358,9 +1238,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.four
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Four Of Clubs"
         
@@ -1377,9 +1255,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.four
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Four Of Diamonds"
         
@@ -1396,9 +1272,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.four
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Four Of Hearts"
         
@@ -1415,9 +1289,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.four
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Four Of Spades"
         
@@ -1438,9 +1310,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Five Of Clubs"
         
@@ -1457,9 +1327,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.five
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Five Of Diamonds"
         
@@ -1476,9 +1344,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.five
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Five Of Hearts"
         
@@ -1495,9 +1361,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.five
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Five Of Spades"
         
@@ -1518,9 +1382,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.six
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Six Of Clubs"
         
@@ -1537,9 +1399,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.six
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Six Of Diamonds"
         
@@ -1556,9 +1416,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.six
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Six Of Hearts"
         
@@ -1575,9 +1433,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.six
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Six Of Spades"
         
@@ -1598,9 +1454,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.seven
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Seven Of Clubs"
         
@@ -1617,9 +1471,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.seven
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Seven Of Diamonds"
         
@@ -1636,9 +1488,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.seven
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Seven Of Hearts"
         
@@ -1655,9 +1505,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.seven
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Seven Of Spades"
         
@@ -1678,9 +1526,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.eight
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Eight Of Clubs"
         
@@ -1697,9 +1543,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.eight
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Eight Of Diamonds"
         
@@ -1716,9 +1560,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.eight
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Eight Of Hearts"
         
@@ -1735,9 +1577,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.eight
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Eight Of Spades"
         
@@ -1758,9 +1598,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.nine
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Nine Of Clubs"
         
@@ -1777,9 +1615,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.nine
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Nine Of Diamonds"
         
@@ -1796,9 +1632,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.nine
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Nine Of Hearts"
         
@@ -1815,9 +1649,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.nine
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Nine Of Spades"
         
@@ -1838,9 +1670,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ten Of Clubs"
         
@@ -1857,9 +1687,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ten Of Diamonds"
         
@@ -1876,9 +1704,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ten Of Hearts"
         
@@ -1895,9 +1721,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Ten Of Spades"
         
@@ -1918,9 +1742,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Jack Of Clubs"
         
@@ -1937,9 +1759,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Jack Of Diamonds"
         
@@ -1956,9 +1776,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Jack Of Hearts"
         
@@ -1975,9 +1793,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Jack Of Spades"
         
@@ -1998,9 +1814,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.queen
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "Queen Of Clubs"
         
@@ -2017,9 +1831,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.queen
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "Queen Of Diamonds"
         
@@ -2036,9 +1848,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.queen
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "Queen Of Hearts"
         
@@ -2055,9 +1865,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.queen
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "Queen Of Spades"
         
@@ -2078,9 +1886,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.king
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let expected = "King Of Clubs"
         
@@ -2097,9 +1903,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.king
-        let color = Color.black
-        let symbol = Symbol.diamond
-        let suit = Suit(color, symbol)
+        let suit = Suit.diamonds
         let card = PlayingCard(rank, of: suit)!
         let expected = "King Of Diamonds"
         
@@ -2116,9 +1920,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.king
-        let color = Color.black
-        let symbol = Symbol.heart
-        let suit = Suit(color, symbol)
+        let suit = Suit.hearts
         let card = PlayingCard(rank, of: suit)!
         let expected = "King Of Hearts"
         
@@ -2135,9 +1937,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.king
-        let color = Color.black
-        let symbol = Symbol.spade
-        let suit = Suit(color, symbol)
+        let suit = Suit.spades
         let card = PlayingCard(rank, of: suit)!
         let expected = "King Of Spades"
         
@@ -2199,12 +1999,9 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit1 = Suit(color, symbol)
-        let suit2 = Suit(color, symbol)
-        let card1 = PlayingCard(rank, of: suit1)
-        let card2 = PlayingCard(rank, of: suit2)
+        let suit = Suit.clubs
+        let card1 = PlayingCard(rank, of: suit)
+        let card2 = PlayingCard(rank, of: suit)
         
         // When/Then
         XCTAssertEqual(card1, card2)
@@ -2217,12 +2014,9 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.one
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit1 = Suit(color, symbol)
-        let suit2 = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit1)
-        let card2 = PlayingCard(rank2, of: suit2)
+        let suit = Suit.clubs
+        let card1 = PlayingCard(rank1, of: suit)
+        let card2 = PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssertEqual(card1, card2)
@@ -2235,12 +2029,9 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.one
         let rank2 = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit1 = Suit(color, symbol)
-        let suit2 = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit1)
-        let card2 = PlayingCard(rank2, of: suit2)
+        let suit = Suit.clubs
+        let card1 = PlayingCard(rank1, of: suit)
+        let card2 = PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssertEqual(card1, card2)
@@ -2255,11 +2046,8 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let suit1 = Suit(color, symbol1)
-        let suit2 = Suit(color, symbol2)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
         let card1 = PlayingCard(rank, of: suit1)
         let card2 = PlayingCard(rank, of: suit2)
         
@@ -2273,12 +2061,9 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.king
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit1 = Suit(color, symbol)
-        let suit2 = Suit(color, symbol)
-        let card1 = PlayingCard(rank1, of: suit1)
-        let card2 = PlayingCard(rank2, of: suit2)
+        let suit = Suit.clubs
+        let card1 = PlayingCard(rank1, of: suit)
+        let card2 = PlayingCard(rank2, of: suit)
         
         // When/Then
         XCTAssertNotEqual(card1, card2)
@@ -2290,11 +2075,8 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.king
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let suit1 = Suit(color, symbol1)
-        let suit2 = Suit(color, symbol2)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
         let card1 = PlayingCard(rank1, of: suit1)
         let card2 = PlayingCard(rank2, of: suit2)
         
@@ -2312,9 +2094,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.joker
         let rank2 = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: nil)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2328,9 +2108,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.two
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2344,9 +2122,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.two
         let rank2 = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2360,9 +2136,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.three
         let rank2 = Rank.four
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2376,9 +2150,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.four
         let rank2 = Rank.five
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2392,9 +2164,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.five
         let rank2 = Rank.six
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2408,9 +2178,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.six
         let rank2 = Rank.seven
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2424,9 +2192,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.seven
         let rank2 = Rank.eight
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2440,9 +2206,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.eight
         let rank2 = Rank.nine
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2456,9 +2220,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.nine
         let rank2 = Rank.ten
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2472,9 +2234,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.ten
         let rank2 = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2488,9 +2248,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.jack
         let rank2 = Rank.queen
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         
@@ -2504,9 +2262,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank1 = Rank.queen
         let rank2 = Rank.king
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         

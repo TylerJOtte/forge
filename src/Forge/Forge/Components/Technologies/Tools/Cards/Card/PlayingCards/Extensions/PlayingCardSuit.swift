@@ -25,8 +25,12 @@ extension Suit {
     /// - Postcondition: None.
     /// - Returns: True if the `Suit` is a standard French-suited`PlayingCard Suit`, else false.
     func isStandard() -> Bool {
+       
+//        return self is Clubs || self is Spades || self is Diamonds || self is Hearts
         
-        return self.symbol == .clover || self.symbol == .diamond ||
-            self.symbol == .heart || self.symbol == .spade
+//        return self.symbol == .clover || self.symbol == .diamond ||
+//            self.symbol == .heart || self.symbol == .spade
+        
+        return self == .clubs || self == .diamonds || self == .hearts || self == .spades
     }
 }

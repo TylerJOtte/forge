@@ -35,9 +35,7 @@ class KindTests: XCTestCase {
 
         // Given
         let rank1 = Rank.ace
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank1, of: suit)!
         let cards = [card]
         let expected = ElementsError.insufficientElements
@@ -61,11 +59,8 @@ class KindTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.two
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let suit1 = Suit(color, symbol1)
-        let suit2 = Suit(color, symbol2)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
         let card1 = PlayingCard(rank1, of: suit1)!
         let card2 = PlayingCard(rank2, of: suit2)!
         let cards = [card1, card2]
@@ -92,11 +87,8 @@ class KindTests: XCTestCase {
 
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let suit1 = Suit(color, symbol1)
-        let suit2 = Suit(color, symbol2)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
         let card1 = PlayingCard(rank, of: suit1)!
         let card2 = PlayingCard(rank, of: suit2)!
         let cards = [card1, card2]
@@ -114,11 +106,8 @@ class KindTests: XCTestCase {
 
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let suit1 = Suit(color, symbol1)
-        let suit2 = Suit(color, symbol2)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
         let card1 = PlayingCard(rank, of: suit1)!
         let card2 = PlayingCard(rank, of: suit2)!
         let cards = [card1, card2]
@@ -140,11 +129,8 @@ class KindTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let suit1 = Suit(color, symbol1)
-        let suit2 = Suit(color, symbol2)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
         let card1 = PlayingCard(rank, of: suit1)!
         let card2 = PlayingCard(rank, of: suit2)!
         let cards = [card1, card2]
@@ -166,11 +152,8 @@ class KindTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let suit1 = Suit(color, symbol1)
-        let suit2 = Suit(color, symbol2)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
         let card1 = PlayingCard(rank, of: suit1)!
         let card2 = PlayingCard(rank, of: suit2)!
         let cards = [card1, card2]
@@ -188,14 +171,9 @@ class KindTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color1 = Color.black
-        let color2 = Color.red
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let symbol3 = Symbol.diamond
-        let suit1 = Suit(color1, symbol1)
-        let suit2 = Suit(color1, symbol2)
-        let suit3 = Suit(color2, symbol3)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
         let card1 = PlayingCard(rank, of: suit1)!
         let card2 = PlayingCard(rank, of: suit2)!
         let card3 = PlayingCard(rank, of: suit3)!
@@ -214,16 +192,10 @@ class KindTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color1 = Color.black
-        let color2 = Color.red
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let symbol3 = Symbol.diamond
-        let symbol4 = Symbol.heart
-        let suit1 = Suit(color1, symbol1)
-        let suit2 = Suit(color1, symbol2)
-        let suit3 = Suit(color2, symbol3)
-        let suit4 = Suit(color2, symbol4)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.hearts
         let card1 = PlayingCard(rank, of: suit1)!
         let card2 = PlayingCard(rank, of: suit2)!
         let card3 = PlayingCard(rank, of: suit3)!
@@ -247,11 +219,8 @@ class KindTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let suit1 = Suit(color, symbol1)
-        let suit2 = Suit(color, symbol2)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
         let card1 = PlayingCard(rank, of: suit1)!
         let card2 = PlayingCard(rank, of: suit2)!
         let cards = [card1, card2]
@@ -269,14 +238,9 @@ class KindTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color1 = Color.black
-        let color2 = Color.red
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let symbol3 = Symbol.diamond
-        let suit1 = Suit(color1, symbol1)
-        let suit2 = Suit(color1, symbol2)
-        let suit3 = Suit(color2, symbol3)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
         let card1 = PlayingCard(rank, of: suit1)!
         let card2 = PlayingCard(rank, of: suit2)!
         let card3 = PlayingCard(rank, of: suit3)!
@@ -295,16 +259,10 @@ class KindTests: XCTestCase {
         
         // Given
         let rank = Rank.ace
-        let color1 = Color.black
-        let color2 = Color.red
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let symbol3 = Symbol.diamond
-        let symbol4 = Symbol.heart
-        let suit1 = Suit(color1, symbol1)
-        let suit2 = Suit(color1, symbol2)
-        let suit3 = Suit(color2, symbol3)
-        let suit4 = Suit(color2, symbol4)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.hearts
         let card1 = PlayingCard(rank, of: suit1)!
         let card2 = PlayingCard(rank, of: suit2)!
         let card3 = PlayingCard(rank, of: suit3)!

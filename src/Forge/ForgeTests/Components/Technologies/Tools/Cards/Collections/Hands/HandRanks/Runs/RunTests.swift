@@ -41,9 +41,7 @@ class RunTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.two
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -69,9 +67,7 @@ class RunTests: XCTestCase {
         let rank1 = Rank.ace
         let rank2 = Rank.three
         let rank3 = Rank.two
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let card3 = PlayingCard(rank3, of: suit)!
@@ -101,9 +97,7 @@ class RunTests: XCTestCase {
         let rank1 = Rank.one
         let rank2 = Rank.two
         let rank3 = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let card3 = PlayingCard(rank3, of: suit)!
@@ -129,9 +123,7 @@ class RunTests: XCTestCase {
         let rank1 = Rank.one
         let rank2 = Rank.two
         let rank3 = Rank.three
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let card3 = PlayingCard(rank3, of: suit)!

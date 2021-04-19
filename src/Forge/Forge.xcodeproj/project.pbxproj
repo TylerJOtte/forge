@@ -320,7 +320,7 @@
 			children = (
 				B5566860262527AC0045AC2B /* Depiction.swift */,
 				B5817D322617D3730022B805 /* Symbol.swift */,
-				B5817D472618BC7D0022B805 /* Suit.swift */,
+				B5867367262CFD2100769406 /* Suits */,
 			);
 			path = Depictions;
 			sourceTree = "<group>";
@@ -426,6 +426,14 @@
 				B5817DA1261A27600022B805 /* ArrayExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B5867367262CFD2100769406 /* Suits */ = {
+			isa = PBXGroup;
+			children = (
+				B5817D472618BC7D0022B805 /* Suit.swift */,
+			);
+			path = Suits;
 			sourceTree = "<group>";
 		};
 		B597383625FE9CF300367598 /* Card */ = {

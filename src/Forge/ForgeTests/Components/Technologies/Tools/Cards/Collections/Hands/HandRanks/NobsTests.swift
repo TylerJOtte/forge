@@ -35,9 +35,7 @@ class NobsTests: XCTestCase {
         
         // Given
         let rank = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card = PlayingCard(rank, of: suit)!
         let cards = [card]
         let expected = ElementsError.insufficientElements
@@ -62,9 +60,7 @@ class NobsTests: XCTestCase {
         let rank1 = Rank.jack
         let rank2 = Rank.ace
         let rank3 = Rank.king
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let card3 = PlayingCard(rank3, of: suit)!
@@ -89,9 +85,7 @@ class NobsTests: XCTestCase {
         
         // Given
         let rank = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank, of: suit)!
         let card2 = PlayingCard(rank, of: suit)!
         let cards = [card1, card2]
@@ -112,9 +106,7 @@ class NobsTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.two
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -135,11 +127,8 @@ class NobsTests: XCTestCase {
         // Given
         let rank1 = Rank.jack
         let rank2 = Rank.ace
-        let color = Color.black
-        let symbol1 = Symbol.clover
-        let symbol2 = Symbol.spade
-        let suit1 = Suit(color, symbol1)
-        let suit2 = Suit(color, symbol2)
+        let suit1 = Suit.clubs
+        let suit2 = Suit.spades
         let card1 = PlayingCard(rank1, of: suit1)!
         let card2 = PlayingCard(rank2, of: suit2)!
         let cards = [card1, card2]
@@ -167,9 +156,7 @@ class NobsTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -189,9 +176,7 @@ class NobsTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -215,9 +200,7 @@ class NobsTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -241,9 +224,7 @@ class NobsTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]
@@ -267,9 +248,7 @@ class NobsTests: XCTestCase {
         // Given
         let rank1 = Rank.ace
         let rank2 = Rank.jack
-        let color = Color.black
-        let symbol = Symbol.clover
-        let suit = Suit(color, symbol)
+        let suit = Suit.clubs
         let card1 = PlayingCard(rank1, of: suit)!
         let card2 = PlayingCard(rank2, of: suit)!
         let cards = [card1, card2]

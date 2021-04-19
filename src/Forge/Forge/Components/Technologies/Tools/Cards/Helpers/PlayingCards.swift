@@ -27,10 +27,16 @@ class PlayingCards {
     static let ranks: [Rank] = [.ace, .two, .three, .four, .five, .six, .seven,
                                 .eight, .nine, .ten, .jack, .queen, .king]
                        
-    static let suits: [Suit] = [Suit(Color.black, .clover),
-                                       Suit(Color.red, .diamond),
-                                       Suit(Color.red, .heart),
-                                       Suit(Color.black, .spade)]
+//    static let suits: [Suit] = [Suit(Color.black, .clover),
+//                                       Suit(Color.red, .diamond),
+//                                       Suit(Color.red, .heart),
+//                                       Suit(Color.black, .spade)]
+    
+    static let suits: [Suit] = [.clubs, .diamonds, .hearts, .spades]
+    
+//    static let jokerCards: [PlayingCard] = [
+//        PlayingCard(.joker, of: nil, Color.black)!,
+//        PlayingCard(.joker, of: nil, Color.red)!
     
     static let jokerCards: [PlayingCard] = [
         PlayingCard(.joker, of: nil, Color.black)!,
