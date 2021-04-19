@@ -68,6 +68,7 @@
 		B5F2D456262E4D330089403F /* Three.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D455262E4D330089403F /* Three.swift */; };
 		B5F2D45A262E4D9E0089403F /* Four.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D459262E4D9E0089403F /* Four.swift */; };
 		B5F2D45E262E4E180089403F /* Five.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D45D262E4E180089403F /* Five.swift */; };
+		B5F2D462262E4E540089403F /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D461262E4E540089403F /* Six.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		B5F2D455262E4D330089403F /* Three.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Three.swift; sourceTree = "<group>"; };
 		B5F2D459262E4D9E0089403F /* Four.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Four.swift; sourceTree = "<group>"; };
 		B5F2D45D262E4E180089403F /* Five.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Five.swift; sourceTree = "<group>"; };
+		B5F2D461262E4E540089403F /* Six.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Six.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -552,6 +554,7 @@
 				B5F2D455262E4D330089403F /* Three.swift */,
 				B5F2D459262E4D9E0089403F /* Four.swift */,
 				B5F2D45D262E4E180089403F /* Five.swift */,
+				B5F2D461262E4E540089403F /* Six.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F2D462262E4E540089403F /* Six.swift in Sources */,
 				B5817D97261A19DA0022B805 /* HandRank.swift in Sources */,
 				B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */,
 				B556687D26252B0B0045AC2B /* Mechanic.swift in Sources */,
