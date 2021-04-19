@@ -73,6 +73,7 @@
 		B5F2D46A262E4ED00089403F /* Eight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D469262E4ED00089403F /* Eight.swift */; };
 		B5F2D46F262E4F210089403F /* Nine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D46E262E4F210089403F /* Nine.swift */; };
 		B5F2D473262E4F5C0089403F /* Ten.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D472262E4F5C0089403F /* Ten.swift */; };
+		B5F2D477262E4FA00089403F /* Jack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D476262E4FA00089403F /* Jack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		B5F2D469262E4ED00089403F /* Eight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eight.swift; sourceTree = "<group>"; };
 		B5F2D46E262E4F210089403F /* Nine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nine.swift; sourceTree = "<group>"; };
 		B5F2D472262E4F5C0089403F /* Ten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ten.swift; sourceTree = "<group>"; };
+		B5F2D476262E4FA00089403F /* Jack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -549,6 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F2D43B262D16340089403F /* FaceCard.swift */,
+				B5F2D476262E4FA00089403F /* Jack.swift */,
 			);
 			path = FaceCards;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				B5817D722619482C0022B805 /* PlayingCardDeck.swift in Sources */,
 				B5F2D46A262E4ED00089403F /* Eight.swift in Sources */,
 				B5F2D45E262E4E180089403F /* Five.swift in Sources */,
+				B5F2D477262E4FA00089403F /* Jack.swift in Sources */,
 				B55668B3262B57470045AC2B /* RangeError.swift in Sources */,
 				B55668702625297E0045AC2B /* Environment.swift in Sources */,
 				B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */,
