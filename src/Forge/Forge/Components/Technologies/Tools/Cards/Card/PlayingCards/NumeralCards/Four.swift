@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  Three.swift                                                                //
+//  Four.swift                                                                 //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/19/21.                                       //
@@ -17,27 +17,27 @@
 import Foundation
 import SwiftUI
 
-/// A standard French-suited three `PlayingCard`.
-public class Three: NumeralCard {
+/// A standard French-suited four `PlayingCard`.
+public class Four: NumeralCard {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Three` with the given `Suit`.
+    /// Creates a`Four` with the given `Suit`.
     ///
     /// - Precondition: The given `Suit` must be `clubs`, `diamonds`, `hearts`, or
     ///  `spades`.
     /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to `three`.
+    ///   - The `Card`s `Rank`is set to `four`.
     ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to three.
-    ///   - The `Card`s title is set to "`Three` of `{Suit}`.
+    ///   - The `Card`s points are set to four.
+    ///   - The `Card`s title is set to "`Four` of `{Suit}`.
     /// - Parameter suit: The symbol grouping.
     /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
     ///   `diamonds`, `hearts`, or `spades`.
     public init(of suit: Suit) throws {
         
-        try super.init(.three, of: suit)
+        try super.init(.four, of: suit)
     }
 }

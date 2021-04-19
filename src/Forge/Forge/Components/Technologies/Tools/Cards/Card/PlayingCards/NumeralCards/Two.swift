@@ -36,7 +36,7 @@ public class Two: NumeralCard {
     /// - Parameter suit: The symbol grouping.
     /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
     ///   `diamonds`, `hearts`, or `spades`.
-    public init(of suit: Suit, is high: Bool = false) throws {
+    public init(of suit: Suit) throws {
         
         try super.init(.two, of: suit)
     }
