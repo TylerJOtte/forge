@@ -69,6 +69,7 @@
 		B5F2D45A262E4D9E0089403F /* Four.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D459262E4D9E0089403F /* Four.swift */; };
 		B5F2D45E262E4E180089403F /* Five.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D45D262E4E180089403F /* Five.swift */; };
 		B5F2D462262E4E540089403F /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D461262E4E540089403F /* Six.swift */; };
+		B5F2D466262E4E960089403F /* Seven.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D465262E4E960089403F /* Seven.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		B5F2D459262E4D9E0089403F /* Four.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Four.swift; sourceTree = "<group>"; };
 		B5F2D45D262E4E180089403F /* Five.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Five.swift; sourceTree = "<group>"; };
 		B5F2D461262E4E540089403F /* Six.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Six.swift; sourceTree = "<group>"; };
+		B5F2D465262E4E960089403F /* Seven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seven.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -555,6 +557,7 @@
 				B5F2D459262E4D9E0089403F /* Four.swift */,
 				B5F2D45D262E4E180089403F /* Five.swift */,
 				B5F2D461262E4E540089403F /* Six.swift */,
+				B5F2D465262E4E960089403F /* Seven.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				B5F2D44E262E4AD90089403F /* Ace.swift in Sources */,
 				B55668A4262A70250045AC2B /* DoubleRun.swift in Sources */,
 				B5817D482618BC7D0022B805 /* Suit.swift in Sources */,
+				B5F2D466262E4E960089403F /* Seven.swift in Sources */,
 				B556688326252BEC0045AC2B /* Rule.swift in Sources */,
 				B5817D4F2618DE4D0022B805 /* PlayingCardRank.swift in Sources */,
 				B5817DA2261A27600022B805 /* ArrayExtension.swift in Sources */,
