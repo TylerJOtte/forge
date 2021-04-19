@@ -63,6 +63,7 @@
 		B5F2D43C262D16340089403F /* FaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D43B262D16340089403F /* FaceCard.swift */; };
 		B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D441262E39380089403F /* PlayingCardError.swift */; };
 		B5F2D44A262E496E0089403F /* NumeralCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D449262E496E0089403F /* NumeralCard.swift */; };
+		B5F2D44E262E4AD90089403F /* Ace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D44D262E4AD90089403F /* Ace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		B5F2D43B262D16340089403F /* FaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCard.swift; sourceTree = "<group>"; };
 		B5F2D441262E39380089403F /* PlayingCardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardError.swift; sourceTree = "<group>"; };
 		B5F2D449262E496E0089403F /* NumeralCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralCard.swift; sourceTree = "<group>"; };
+		B5F2D44D262E4AD90089403F /* Ace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,9 +346,8 @@
 			isa = PBXGroup;
 			children = (
 				B5817D2D2617D2E40022B805 /* PlayingCard.swift */,
-				B5F2D447262E49430089403F /* FaceCards */,
 				B5F2D448262E49530089403F /* NumeralCards */,
-				B5F2D441262E39380089403F /* PlayingCardError.swift */,
+				B5F2D447262E49430089403F /* FaceCards */,
 				B5817D5C2618DF380022B805 /* Extensions */,
 			);
 			path = PlayingCards;
@@ -357,6 +358,7 @@
 			children = (
 				B5817D4E2618DE4D0022B805 /* PlayingCardRank.swift */,
 				B5817D542618DE800022B805 /* PlayingCardSuit.swift */,
+				B5F2D441262E39380089403F /* PlayingCardError.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -537,6 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F2D449262E496E0089403F /* NumeralCard.swift */,
+				B5F2D44D262E4AD90089403F /* Ace.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				B5817D97261A19DA0022B805 /* HandRank.swift in Sources */,
 				B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */,
 				B556687D26252B0B0045AC2B /* Mechanic.swift in Sources */,
+				B5F2D44E262E4AD90089403F /* Ace.swift in Sources */,
 				B55668A4262A70250045AC2B /* DoubleRun.swift in Sources */,
 				B5817D482618BC7D0022B805 /* Suit.swift in Sources */,
 				B556688326252BEC0045AC2B /* Rule.swift in Sources */,
