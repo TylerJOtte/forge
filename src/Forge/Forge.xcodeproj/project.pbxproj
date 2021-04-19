@@ -64,6 +64,7 @@
 		B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D441262E39380089403F /* PlayingCardError.swift */; };
 		B5F2D44A262E496E0089403F /* NumeralCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D449262E496E0089403F /* NumeralCard.swift */; };
 		B5F2D44E262E4AD90089403F /* Ace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D44D262E4AD90089403F /* Ace.swift */; };
+		B5F2D452262E4C660089403F /* Two.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D451262E4C660089403F /* Two.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		B5F2D441262E39380089403F /* PlayingCardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardError.swift; sourceTree = "<group>"; };
 		B5F2D449262E496E0089403F /* NumeralCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralCard.swift; sourceTree = "<group>"; };
 		B5F2D44D262E4AD90089403F /* Ace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ace.swift; sourceTree = "<group>"; };
+		B5F2D451262E4C660089403F /* Two.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Two.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +542,7 @@
 			children = (
 				B5F2D449262E496E0089403F /* NumeralCard.swift */,
 				B5F2D44D262E4AD90089403F /* Ace.swift */,
+				B5F2D451262E4C660089403F /* Two.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				B556685D2625268D0045AC2B /* Feature.swift in Sources */,
 				B5F2D43C262D16340089403F /* FaceCard.swift in Sources */,
 				B5817D862619FFD50022B805 /* FeatureError.swift in Sources */,
+				B5F2D452262E4C660089403F /* Two.swift in Sources */,
 				B556684D2623EB150045AC2B /* Component.swift in Sources */,
 				B5817D332617D3730022B805 /* Symbol.swift in Sources */,
 				B5566869262527FE0045AC2B /* Description.swift in Sources */,

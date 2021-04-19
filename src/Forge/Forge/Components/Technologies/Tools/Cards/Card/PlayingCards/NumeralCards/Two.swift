@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  Ace.swift                                                                  //
+//  Two.swift                                                                  //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/19/21.                                       //
@@ -17,38 +17,27 @@
 import Foundation
 import SwiftUI
 
-/// A standard French-suited ace `PlayingCard`.
-public class Ace: NumeralCard {
-    
-    //=========================================================================//
-    //                                ATTRIBUTES                               //
-    //=========================================================================//
-    
-    /// True if is the high `Card`, else false.
-    public let isHigh: Bool
+/// A standard French-suited Two `PlayingCard`.
+public class Two: NumeralCard {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates an`Ace` with the given `Suit`.
+    /// Creates a`Two` with the given `Suit`.
     ///
     /// - Precondition: The given `Suit` must be `clubs`, `diamonds`, `hearts`, or
     ///  `spades`.
     /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to `ace`.
+    ///   - The `Card`s `Rank`is set to `two`.
     ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to one if not high, else 11.
-    ///   - The `Card`s title is set to `Ace` of `{Suit}`.
-    /// - Parameters:
-    ///   - suit: The symbol grouping.
-    ///   - high: True if the `ace` is the high `Card`, else false.
+    ///   - The `Card`s points are set to two.
+    ///   - The `Card`s title is set to "`Tow` of `{Suit}`.
+    /// - Parameter suit: The symbol grouping.
     /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
     ///   `diamonds`, `hearts`, or `spades`.
     public init(of suit: Suit, is high: Bool = false) throws {
         
-        self.isHigh = high
-        
-        try super.init(.ace, of: suit)
+        try super.init(.two, of: suit)
     }
 }
