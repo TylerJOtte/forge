@@ -51,7 +51,7 @@ extension Rank {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: True if the `Rank` is a face`PlayingCard Rank`, else false.
-    func isFaceCardRank() -> Bool {
+    func isRoyal() -> Bool {
         
         return self == .jack || self == .queen || self == .king
     }
@@ -63,7 +63,7 @@ extension Rank {
     /// - Returns: True if the `Rank` is a standard French-suited`PlayingCard Rank`, else false.
     func isStandard() -> Bool {
         
-        return isNumericRank() || isFaceCardRank()
+        return isNumericRank() || isRoyal()
     }
     
     /// Determines if the `Rank` is a standard `PlayingCard Rank`, and the given `Suit` is a
@@ -175,7 +175,7 @@ extension Rank {
             
             points = self.rawValue
         
-        } else if (self.isFaceCardRank()) {
+        } else if (self.isRoyal()) {
             
             points = 10
         

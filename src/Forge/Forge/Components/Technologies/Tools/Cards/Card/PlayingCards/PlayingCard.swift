@@ -52,6 +52,13 @@ public class PlayingCard: Card, Hashable {
     ///   - rank: The hierarchical position.
     ///   - suit: The color-coded `Symbol`.
     ///   - color: The primary `Color`.
+    /// - Throws:
+    ///   - `FeatureError.invalidRank` if the given `Rank` is not an `ace`, `one`..`ten`,
+    ///     `jack`, `queen`, `king`, or `joker`.
+    ///   - `FeatureError.invalidSuit`  if the given `Suit`
+    ///      - Is not `clubs`, `diamonds`, `hearts`, or `spades` & the specified  `Rank` is a
+    ///        a standard french-suited `PlayingCard Rank`, or
+    ///      - Is not nil and the specified `Rank` is a `joker.`
     public init?(_ rank: Rank, of suit: Suit?, _ color: Color = Color.white) {
         
         guard (rank.isValid(for: suit)) else {

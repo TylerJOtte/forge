@@ -60,6 +60,7 @@
 		B597386125FED1B900367598 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597386025FED1B900367598 /* CardTests.swift */; };
 		B59A44AF25FE934200857EB5 /* Forge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A44A525FE934100857EB5 /* Forge.framework */; };
 		B59A44B625FE934200857EB5 /* Forge.h in Headers */ = {isa = PBXBuildFile; fileRef = B59A44A825FE934200857EB5 /* Forge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F2D43C262D16340089403F /* FaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D43B262D16340089403F /* FaceCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		B59A44A925FE934200857EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59A44AE25FE934200857EB5 /* ForgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59A44B525FE934200857EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5F2D43B262D16340089403F /* FaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				B5817D2D2617D2E40022B805 /* PlayingCard.swift */,
+				B5F2D43B262D16340089403F /* FaceCard.swift */,
 				B5817D5C2618DF380022B805 /* Extensions */,
 			);
 			path = PlayingCards;
@@ -639,6 +642,7 @@
 				B55668AF262A7A350045AC2B /* TripleRun.swift in Sources */,
 				B55668AB262A78390045AC2B /* DoubleDoubleRun.swift in Sources */,
 				B556685D2625268D0045AC2B /* Feature.swift in Sources */,
+				B5F2D43C262D16340089403F /* FaceCard.swift in Sources */,
 				B5817D862619FFD50022B805 /* FeatureError.swift in Sources */,
 				B556684D2623EB150045AC2B /* Component.swift in Sources */,
 				B5817D332617D3730022B805 /* Symbol.swift in Sources */,
