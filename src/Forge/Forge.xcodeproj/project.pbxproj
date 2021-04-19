@@ -71,6 +71,7 @@
 		B5F2D462262E4E540089403F /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D461262E4E540089403F /* Six.swift */; };
 		B5F2D466262E4E960089403F /* Seven.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D465262E4E960089403F /* Seven.swift */; };
 		B5F2D46A262E4ED00089403F /* Eight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D469262E4ED00089403F /* Eight.swift */; };
+		B5F2D46F262E4F210089403F /* Nine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D46E262E4F210089403F /* Nine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		B5F2D461262E4E540089403F /* Six.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Six.swift; sourceTree = "<group>"; };
 		B5F2D465262E4E960089403F /* Seven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seven.swift; sourceTree = "<group>"; };
 		B5F2D469262E4ED00089403F /* Eight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eight.swift; sourceTree = "<group>"; };
+		B5F2D46E262E4F210089403F /* Nine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,6 +563,7 @@
 				B5F2D461262E4E540089403F /* Six.swift */,
 				B5F2D465262E4E960089403F /* Seven.swift */,
 				B5F2D469262E4ED00089403F /* Eight.swift */,
+				B5F2D46E262E4F210089403F /* Nine.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				B5F2D462262E4E540089403F /* Six.swift in Sources */,
 				B5817D97261A19DA0022B805 /* HandRank.swift in Sources */,
 				B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */,
+				B5F2D46F262E4F210089403F /* Nine.swift in Sources */,
 				B556687D26252B0B0045AC2B /* Mechanic.swift in Sources */,
 				B5F2D44E262E4AD90089403F /* Ace.swift in Sources */,
 				B55668A4262A70250045AC2B /* DoubleRun.swift in Sources */,
