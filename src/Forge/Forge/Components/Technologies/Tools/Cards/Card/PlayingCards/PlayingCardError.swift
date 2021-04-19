@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  PlayingCardSuit.swift                                                      //
+//  PlayingCardError.swift                                                     //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/03/21.                                       //
+//  Created by Tyler J. Otte on 4/19/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -16,17 +16,8 @@
 
 import Foundation
 
-/// A `PlayingCard Suit` extension.
-extension Suit {
-
-    /// Determines if the `Suit` is a standard French-suited`PlayingCard Suit`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the `Suit` is a standard French-suited`PlayingCard Suit`, else false.
-    func isStandard() -> Bool {
-       
-        return self == .clubs || self == .diamonds || self == .hearts ||
-            self == .spades
-    }
+/// A throwable `PlayingCard Error`
+public enum PlayingCardError: Error {
+    
+    case invalidRankAndSuitCombination
 }

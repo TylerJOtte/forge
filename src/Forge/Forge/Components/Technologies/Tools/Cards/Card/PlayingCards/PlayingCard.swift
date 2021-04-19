@@ -40,9 +40,9 @@ public class PlayingCard: Card, Hashable {
     /// Creates a `PlayingCard` with the given `Rank`, `Suit`, & `Color`.
     ///
     /// - Precondition:
-    ///   - `Rank` must be an `ace`, `one`..`ten`, `jack`, `queen`, `king`, or `joker`.
-    ///   - `Suit` must be nil if `Rank` is a `joker`, else `Suit`'s symbol must be a `clover`,
-    ///     `diamond`, `heart`, or `spade`.
+    ///   - The given `Rank` must be an `ace`..`ten`, `jack`, `queen`, `king`, or `joker`.
+    ///   - The given `Suit` must be `clubs`, `diamonds`, `hearts`, `spades`, or nil.
+    ///   - The given `Suit` must be nil if the specified `Rank` is a `joker`.
     /// - Postcondition:
     ///   - The `Card`s `Rank`is set to the given `Rank`.
     ///   - The `Card`s `Suit` is set to the given `Suit`.
@@ -55,16 +55,31 @@ public class PlayingCard: Card, Hashable {
     /// - Throws:
     ///   - `FeatureError.invalidRank` if the given `Rank` is not an `ace`, `one`..`ten`,
     ///     `jack`, `queen`, `king`, or `joker`.
-    ///   - `FeatureError.invalidSuit`  if the given `Suit`
-    ///      - Is not `clubs`, `diamonds`, `hearts`, or `spades` & the specified  `Rank` is a
-    ///        a standard french-suited `PlayingCard Rank`, or
-    ///      - Is not nil and the specified `Rank` is a `joker.`
-    public init?(_ rank: Rank, of suit: Suit?, _ color: Color = Color.white) {
+    ///   - `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`, `diamonds`,
+    ///     `hearts`, `spades`, or nil.
+    ///   - `PlayingCardError.invalidRankAndSuitCombination` if the given
+    ///      - `Rank` is not a `joker` and the specified `Suit` is nil, or
+    ///      - `Rank` is a `joker`, and the specified `Suit` is not nil.
+    public init(_ rank: Rank, of suit: Suit?,
+                 _ color: Color = Color.white) throws {
         
-        guard (rank.isValid(for: suit)) else {
+        guard (rank.isValid()) else {
             
-            print("The given Rank and Suit are not a valid PlayingCard pair.")
-            return nil
+            print("The given Rank is not a valid PlayingCard Rank.")
+            throw FeatureError.invalidRank
+        }
+        
+        guard (suit == nil || suit!.isStandard()) else {
+            
+            print("The given Suit is not a valid PlayingCard Suit.")
+            throw FeatureError.invalidSuit
+        }
+        
+        guard ((rank != .joker && suit != nil) ||
+               (rank == .joker && suit == nil)) else {
+            
+            print("The given Rank and Suit is not a valid combination.")
+            throw PlayingCardError.invalidRankAndSuitCombination 
         }
         
         self.rank = rank

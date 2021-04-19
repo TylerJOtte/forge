@@ -56,6 +56,6 @@ public class FaceCard: PlayingCard {
             throw FeatureError.invalidSuit
         }
         
-        super.init(rank, of: suit)
+        try super.init(rank, of: suit)
     }
 }

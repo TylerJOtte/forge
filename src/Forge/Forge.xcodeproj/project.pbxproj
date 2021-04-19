@@ -61,6 +61,7 @@
 		B59A44AF25FE934200857EB5 /* Forge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A44A525FE934100857EB5 /* Forge.framework */; };
 		B59A44B625FE934200857EB5 /* Forge.h in Headers */ = {isa = PBXBuildFile; fileRef = B59A44A825FE934200857EB5 /* Forge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F2D43C262D16340089403F /* FaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D43B262D16340089403F /* FaceCard.swift */; };
+		B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D441262E39380089403F /* PlayingCardError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		B59A44AE25FE934200857EB5 /* ForgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59A44B525FE934200857EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5F2D43B262D16340089403F /* FaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCard.swift; sourceTree = "<group>"; };
+		B5F2D441262E39380089403F /* PlayingCardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +341,7 @@
 		B5817D4D2618DE180022B805 /* PlayingCards */ = {
 			isa = PBXGroup;
 			children = (
+				B5F2D441262E39380089403F /* PlayingCardError.swift */,
 				B5817D2D2617D2E40022B805 /* PlayingCard.swift */,
 				B5F2D43B262D16340089403F /* FaceCard.swift */,
 				B5817D5C2618DF380022B805 /* Extensions */,
@@ -629,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5817D97261A19DA0022B805 /* HandRank.swift in Sources */,
+				B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */,
 				B556687D26252B0B0045AC2B /* Mechanic.swift in Sources */,
 				B55668A4262A70250045AC2B /* DoubleRun.swift in Sources */,
 				B5817D482618BC7D0022B805 /* Suit.swift in Sources */,

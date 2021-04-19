@@ -41,7 +41,7 @@ extension Rank {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: True if the `Rank` is a numeric `PlayingCard Rank`, else false.
-    func isNumericRank() -> Bool {
+    func isNumeral() -> Bool {
         
         return self == .ace || self.isNumeric()
     }
@@ -63,7 +63,7 @@ extension Rank {
     /// - Returns: True if the `Rank` is a standard French-suited`PlayingCard Rank`, else false.
     func isStandard() -> Bool {
         
-        return isNumericRank() || isRoyal()
+        return isNumeral() || isRoyal()
     }
     
     /// Determines if the `Rank` is a standard `PlayingCard Rank`, and the given `Suit` is a
@@ -77,6 +77,16 @@ extension Rank {
     func isStandard(for suit: Suit) -> Bool {
         
         return isStandard() && suit.isStandard()
+    }
+    
+    /// Determines if the `Rank` is a valid `PlayingCard Rank`..
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the `Rank` is a valid `PlayingCard Rank`, else false.
+    func isValid() -> Bool {
+        
+        return self == .joker || self.isStandard()
     }
     
     /// Determines if the `Rank` is a valid `PlayingCard Rank` for the given `Suit`.
