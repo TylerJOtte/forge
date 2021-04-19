@@ -70,6 +70,7 @@
 		B5F2D45E262E4E180089403F /* Five.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D45D262E4E180089403F /* Five.swift */; };
 		B5F2D462262E4E540089403F /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D461262E4E540089403F /* Six.swift */; };
 		B5F2D466262E4E960089403F /* Seven.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D465262E4E960089403F /* Seven.swift */; };
+		B5F2D46A262E4ED00089403F /* Eight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D469262E4ED00089403F /* Eight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		B5F2D45D262E4E180089403F /* Five.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Five.swift; sourceTree = "<group>"; };
 		B5F2D461262E4E540089403F /* Six.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Six.swift; sourceTree = "<group>"; };
 		B5F2D465262E4E960089403F /* Seven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seven.swift; sourceTree = "<group>"; };
+		B5F2D469262E4ED00089403F /* Eight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -558,6 +560,7 @@
 				B5F2D45D262E4E180089403F /* Five.swift */,
 				B5F2D461262E4E540089403F /* Six.swift */,
 				B5F2D465262E4E960089403F /* Seven.swift */,
+				B5F2D469262E4ED00089403F /* Eight.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				B55668432623EA130045AC2B /* Tool.swift in Sources */,
 				B55668592623EC430045AC2B /* Reward.swift in Sources */,
 				B5817D722619482C0022B805 /* PlayingCardDeck.swift in Sources */,
+				B5F2D46A262E4ED00089403F /* Eight.swift in Sources */,
 				B5F2D45E262E4E180089403F /* Five.swift in Sources */,
 				B55668B3262B57470045AC2B /* RangeError.swift in Sources */,
 				B55668702625297E0045AC2B /* Environment.swift in Sources */,
