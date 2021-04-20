@@ -27,11 +27,14 @@ public class PlayingCard: Card, Hashable {
     /// The hierarchical position.
     public let rank: Rank
     
-    /// The color-coded `Symbol`.
+    /// The symbol groupoing.
     public let suit: Suit?
     
     /// The total # of points.
     public let points: Int
+    
+    /// The primary `Color`.
+    public let color: Color
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -41,7 +44,7 @@ public class PlayingCard: Card, Hashable {
     ///
     /// - Precondition:
     ///   - The given `Rank` must be an `ace`..`ten`, `jack`, `queen`, `king`, or `joker`.
-    ///   - The given `Suit` must be `clubs`, `diamonds`, `hearts`, `spades`, or nil.
+    ///   - The given `Suit` must be `clubs`, `diamonds`, `hearts`, `spades`, or `null`.
     ///   - The given `Suit` must be nil if the specified `Rank` is a `joker`.
     /// - Postcondition:
     ///   - The `Card`s `Rank`is set to the given `Rank`.
@@ -56,12 +59,11 @@ public class PlayingCard: Card, Hashable {
     ///   - `FeatureError.invalidRank` if the given `Rank` is not an `ace`, `one`..`ten`,
     ///     `jack`, `queen`, `king`, or `joker`.
     ///   - `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`, `diamonds`,
-    ///     `hearts`, `spades`, or nil.
+    ///     `hearts`, `spades`, or `null`.
     ///   - `PlayingCardError.invalidRankAndSuitCombination` if the given
-    ///      - `Rank` is not a `joker` and the specified `Suit` is nil, or
-    ///      - `Rank` is a `joker`, and the specified `Suit` is not nil.
-    init(_ rank: Rank, of suit: Suit?,
-                 _ color: Color = Color.white) throws {
+    ///      - `Rank` is not a `joker` and the specified `Suit` is `null`, or
+    ///      - `Rank` is a `joker`, and the specified `Suit` is not `null`.
+    init(_ rank: Rank, of suit: Suit, in color: Color = Color.red) throws {
         
         guard (rank.isValid()) else {
             
@@ -69,14 +71,14 @@ public class PlayingCard: Card, Hashable {
             throw FeatureError.invalidRank
         }
         
-        guard (suit == nil || suit!.isStandard()) else {
+        guard (suit.isValid()) else {
             
             print("The given Suit is not a valid PlayingCard Suit.")
             throw FeatureError.invalidSuit
         }
         
-        guard ((rank != .joker && suit != nil) ||
-               (rank == .joker && suit == nil)) else {
+        guard ((rank != .joker && suit != .null) ||
+               (rank == .joker && suit == .null)) else {
             
             print("The given Rank and Suit is not a valid combination.")
             throw PlayingCardError.invalidRankAndSuitCombination 
@@ -85,6 +87,7 @@ public class PlayingCard: Card, Hashable {
         self.rank = rank
         self.suit = suit
         self.points = rank.getPoints()
+        self.color = color
         super.init(rank.getTitle(for: suit, color))
     }
     

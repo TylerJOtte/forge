@@ -76,6 +76,7 @@
 		B5F2D477262E4FA00089403F /* Jack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D476262E4FA00089403F /* Jack.swift */; };
 		B5F2D47B262E500D0089403F /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D47A262E500D0089403F /* Queen.swift */; };
 		B5F2D47F262E50510089403F /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D47E262E50510089403F /* King.swift */; };
+		B5F2D483262E50CD0089403F /* Joker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D482262E50CD0089403F /* Joker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		B5F2D476262E4FA00089403F /* Jack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jack.swift; sourceTree = "<group>"; };
 		B5F2D47A262E500D0089403F /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
 		B5F2D47E262E50510089403F /* King.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = King.swift; sourceTree = "<group>"; };
+		B5F2D482262E50CD0089403F /* Joker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 				B5817D2D2617D2E40022B805 /* PlayingCard.swift */,
 				B5F2D448262E49530089403F /* NumeralCards */,
 				B5F2D447262E49430089403F /* FaceCards */,
+				B5F2D482262E50CD0089403F /* Joker.swift */,
 				B5817D5C2618DF380022B805 /* Extensions */,
 			);
 			path = PlayingCards;
@@ -739,6 +742,7 @@
 				B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */,
 				B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */,
 				B5566812262238350045AC2B /* Flush.swift in Sources */,
+				B5F2D483262E50CD0089403F /* Joker.swift in Sources */,
 				B5817D552618DE800022B805 /* PlayingCardSuit.swift in Sources */,
 				B5F2D473262E4F5C0089403F /* Ten.swift in Sources */,
 				B5817DA8261A3E0E0022B805 /* Run.swift in Sources */,

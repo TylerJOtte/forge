@@ -79,7 +79,7 @@ extension Rank {
         return isStandard() && suit.isStandard()
     }
     
-    /// Determines if the `Rank` is a valid `PlayingCard Rank`..
+    /// Determines if the `Rank` is a valid `PlayingCard Rank`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.

@@ -20,6 +20,7 @@ import SwiftUI
 /// A color-coded symbol.
 public enum Suit: String, Depiction {// Hashable {
     
+    case null
     case clubs
     case diamonds
     case hearts

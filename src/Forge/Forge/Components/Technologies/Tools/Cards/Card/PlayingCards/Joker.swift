@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  PlayingCardSuit.swift                                                      //
+//  Joker.swift                                                                //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/03/21.                                       //
+//  Created by Tyler J. Otte on 4/19/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -15,28 +15,26 @@
 //=============================================================================//
 
 import Foundation
+import SwiftUI
 
-/// A `PlayingCard Suit` extension.
-extension Suit {
-
-    /// Determines if the `Suit` is a standard French-suited`PlayingCard Suit`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the `Suit` is a standard French-suited`PlayingCard Suit`, else false.
-    func isStandard() -> Bool {
-       
-        return self == .clubs || self == .diamonds || self == .hearts ||
-            self == .spades
-    }
+/// A standard French-suited joker `PlayingCard`.
+public class Joker: FaceCard {
     
-    /// Determines if the `Suit` is a valid `PlayingCard Suit`.
+    //=========================================================================//
+    //                               CONSTRUCTORS                              //
+    //=========================================================================//
+    
+    /// Creates a`Joker` with the given `Color`.
     ///
     /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the `Suit` is a valid `PlayingCard Suit`, else false.
-    func isValid() -> Bool {
+    /// - Postcondition:
+    ///   - The `Card`s `Rank` is set to ` Joker`.
+    ///   - The `Card`s `Suit` is set to nil.
+    ///   - The `Card`s points are set to 0.
+    ///   - The `Card`s title is set to "`Color Joker`.
+    /// - Parameter color: The primary `Color`.
+    public init(color: Color = Color.red) throws {
         
-        return self == .null || isStandard()
+        try super.init(.joker, of: .null)
     }
 }
