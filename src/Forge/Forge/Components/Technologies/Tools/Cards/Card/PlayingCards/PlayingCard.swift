@@ -86,7 +86,7 @@ public class PlayingCard: Card, Hashable {
     ///   - `PlayingCardError.invalidRankAndSuitCombination` if the given
     ///      - `Rank` is not a `joker` and the specified `Suit` is `null`, or
     ///      - `Rank` is a `joker`, and the specified `Suit` is not `null`.
-    init(_ rank: Rank, of suit: Suit, in color: Color = Color.red) throws {
+    init(_ rank: Rank, of suit: Suit = .hearts, in color: Color = .red) throws {
         
         guard (rank.isValid()) else {
             

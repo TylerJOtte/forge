@@ -45,7 +45,7 @@ public class FaceCard: PlayingCard {
     ///     `king`.
     ///   - `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`, `diamonds`,
     ///     `hearts`, or `spades`.
-    init(_ rank: Rank, of suit: Suit) throws {
+    init(_ rank: Rank, of suit: Suit = .hearts) throws {
         
         guard (rank.isRoyal()) else {
             

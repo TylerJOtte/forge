@@ -39,7 +39,7 @@ public class Three: NumeralCard {
     /// - Parameter suit: The symbol grouping.
     /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
     ///   `diamonds`, `hearts`, or `spades`.
-    public init(of suit: Suit) throws {
+    public init(of suit: Suit = .hearts) throws {
         
         try super.init(.three, of: suit)
     }

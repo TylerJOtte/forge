@@ -44,7 +44,7 @@ public class NumeralCard: PlayingCard {
     ///   - `FeatureError.invalidRank` if the given `Rank` is not an `ace..ten`.
     ///   - `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`, `diamonds`,
     ///     `hearts`, or `spades`.
-    init(_ rank: Rank, of suit: Suit) throws {
+    init(_ rank: Rank, of suit: Suit = .hearts) throws {
         
         guard (rank.isNumeral()) else {
             

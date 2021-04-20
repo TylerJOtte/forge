@@ -48,7 +48,7 @@ public class Ace: NumeralCard {
     ///   - high: True if the `ace` is the high `Card`, else false.
     /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
     ///   `diamonds`, `hearts`, or `spades`.
-    public init(of suit: Suit, is high: Bool = false) throws {
+    public init(of suit: Suit = .hearts, is high: Bool = false) throws {
         
         self.isHigh = high
         

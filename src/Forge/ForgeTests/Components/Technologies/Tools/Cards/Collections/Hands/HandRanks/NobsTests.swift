@@ -34,10 +34,8 @@ class NobsTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
         
         // Given
-        let rank = Rank.jack
-        let suit = Suit.clubs
-        let card = try PlayingCard(rank, of: suit)
-        let cards = [card]
+        let jack = try Jack()
+        let cards = [jack]
         let expected = ElementsError.insufficientElements
 
         // When

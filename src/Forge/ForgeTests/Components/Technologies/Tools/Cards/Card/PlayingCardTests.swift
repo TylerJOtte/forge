@@ -246,7 +246,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.joker
         
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
         
         // Then
         XCTAssert(actual != nil)
@@ -285,7 +285,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.ace
         
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -298,7 +298,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.one
         
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -311,7 +311,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.two
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -324,7 +324,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.three
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -337,7 +337,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.four
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -350,7 +350,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.five
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -363,7 +363,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.six
         
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -376,7 +376,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.seven
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -389,7 +389,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.eight
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -402,7 +402,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.nine
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -415,7 +415,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.ten
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -428,7 +428,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.jack
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -441,7 +441,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.queen
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -454,7 +454,7 @@ class PlayingCardTests: XCTestCase {
         let rank = Rank.king
 
         // When
-        let actual = try PlayingCard(rank, of: nil)
+        let actual = try PlayingCard(rank, of: .null)
 
         // Then
         XCTAssert(actual == nil)
@@ -926,7 +926,7 @@ class PlayingCardTests: XCTestCase {
         
         // Given
         let rank = Rank.joker
-        let card = try PlayingCard(rank, of: nil)
+        let card = try PlayingCard(rank, of: .null)
         let expected = 0
         
         // When
@@ -1959,7 +1959,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank = Rank.joker
         let color = Color.black
-        let card = try PlayingCard(rank, of: nil, color)
+        let card = try PlayingCard(rank, of: .null, in: color)
         let expected = "Black Joker"
         
         // When
@@ -1976,7 +1976,7 @@ class PlayingCardTests: XCTestCase {
         // Given
         let rank = Rank.joker
         let color = Color.red
-        let card = try PlayingCard(rank, of: nil, color)
+        let card = try PlayingCard(rank, of: .null, in: color)
         let expected = "Red Joker"
         
         // When
@@ -2095,7 +2095,7 @@ class PlayingCardTests: XCTestCase {
         let rank1 = Rank.joker
         let rank2 = Rank.ace
         let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: nil)
+        let card1 = try PlayingCard(rank1, of: .null)
         let card2 = try PlayingCard(rank2, of: suit)
         
         // When/Then
