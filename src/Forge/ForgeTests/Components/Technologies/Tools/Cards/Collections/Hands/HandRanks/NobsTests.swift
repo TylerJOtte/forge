@@ -55,14 +55,10 @@ class NobsTests: XCTestCase {
     func test_init_withExcessiveCards_throwsError() throws {
         
         // Given
-        let rank1 = Rank.jack
-        let rank2 = Rank.ace
-        let rank3 = Rank.king
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let cards = [card1, card2, card3]
+        let ace = try Ace()
+        let jack = try Jack()
+        let king = try King()
+        let cards = [ace, jack, king]
         let expected = ElementsError.excessiveElements
 
         // When
@@ -82,11 +78,9 @@ class NobsTests: XCTestCase {
     func test_init_withoutNonJack_throwsError() throws {
         
         // Given
-        let rank = Rank.jack
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank, of: suit)
-        let card2 = try PlayingCard(rank, of: suit)
-        let cards = [card1, card2]
+        let jack1 = try Jack(of: .clubs)
+        let jack2 = try Jack(of: .spades)
+        let cards = [jack1, jack2]
         let expected = ElementsError.insufficientElements
 
         // When
@@ -102,12 +96,9 @@ class NobsTests: XCTestCase {
     func test_init_withoutJack_throwsError() throws {
         
         // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.two
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ace = try Ace()
+        let two = try Two()
+        let cards = [ace, two]
         let expected = ElementsError.insufficientElements
 
         // When
@@ -123,13 +114,9 @@ class NobsTests: XCTestCase {
     func test_init_withDifferentSuits_throwsError() throws {
         
         // Given
-        let rank1 = Rank.jack
-        let rank2 = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let card1 = try PlayingCard(rank1, of: suit1)
-        let card2 = try PlayingCard(rank2, of: suit2)
-        let cards = [card1, card2]
+        let ace = try Ace(of: .clubs)
+        let jack = try Jack(of: .spades)
+        let cards = [ace, jack]
         let expected = ElementsError.insufficientElements
         
         // When
@@ -152,12 +139,9 @@ class NobsTests: XCTestCase {
     func test_minCards_ofNobs_equalsTwo() throws {
         
         // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.jack
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ace = try Ace()
+        let jack = try Jack()
+        let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = 2
         
@@ -172,12 +156,9 @@ class NobsTests: XCTestCase {
     func test_maxCards_ofNobs_equalsTwo() throws {
         
         // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.jack
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ace = try Ace()
+        let jack = try Jack()
+        let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = 2
         
@@ -196,12 +177,9 @@ class NobsTests: XCTestCase {
     func test_count_ofNobs_equalsTwo() throws {
         
         // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.jack
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ace = try Ace()
+        let jack = try Jack()
+        let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = 2
         
@@ -220,12 +198,9 @@ class NobsTests: XCTestCase {
     func test_title_ofNobs_equalsNobs() throws {
         
         // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.jack
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ace = try Ace()
+        let jack = try Jack()
+        let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = "Nobs"
         
@@ -244,12 +219,9 @@ class NobsTests: XCTestCase {
     func test_points_ofNobs_equalsOne() throws {
         
         // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.jack
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ace = try Ace()
+        let jack = try Jack()
+        let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = 1
         
