@@ -34,14 +34,10 @@ class FlushTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
-        let rank1 = Rank.jack
-        let rank2 = Rank.queen
-        let rank3 = Rank.king
-        let suit = Suit.hearts
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let cards = [card1, card2, card3]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen = try Queen()
+        let cards = [ten, jack, queen]
         let expected = ElementsError.insufficientElements
         
         // When
@@ -57,17 +53,11 @@ class FlushTests: XCTestCase {
     func test_init_withMultipleSuits_throwsError() throws {
 
         // Given
-        let rank1 = Rank.jack
-        let rank2 = Rank.queen
-        let rank3 = Rank.king
-        let rank4 = Rank.ace
-        let suit1 = Suit.hearts
-        let suit2 = Suit.diamonds
-        let card1 = try PlayingCard(rank1, of: suit1)
-        let card2 = try PlayingCard(rank2, of: suit1)
-        let card3 = try PlayingCard(rank3, of: suit1)
-        let card4 = try PlayingCard(rank4, of: suit2)
-        let cards = [card1, card2, card3, card4]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen = try Queen()
+        let king = try King(of: .diamonds)
+        let cards = [ten, jack, queen, king]
         let expected = ElementsError.insufficientElements
         
         // When
@@ -89,16 +79,11 @@ class FlushTests: XCTestCase {
     /// Tests that the min cards  of a `Flush` equals four.
     func test_minCards_ofFlush_equalsFour() throws {
         
-        let rank1 = Rank.jack
-        let rank2 = Rank.queen
-        let rank3 = Rank.king
-        let rank4 = Rank.ace
-        let suit = Suit.hearts
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let cards = [card1, card2, card3, card4]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen = try Queen()
+        let king = try King()
+        let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = 4
         
@@ -112,16 +97,11 @@ class FlushTests: XCTestCase {
     /// Tests that the max cards  of a `Flush` equals the system max.
     func test_maxCards_ofFlush_equalsSystemMax() throws {
         
-        let rank1 = Rank.jack
-        let rank2 = Rank.queen
-        let rank3 = Rank.king
-        let rank4 = Rank.ace
-        let suit = Suit.hearts
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let cards = [card1, card2, card3, card4]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen = try Queen()
+        let king = try King()
+        let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = Int.max
         
@@ -140,16 +120,11 @@ class FlushTests: XCTestCase {
     func test_count_ofFlush_equalsNCardsGiven() throws {
         
         // Given
-        let rank1 = Rank.jack
-        let rank2 = Rank.queen
-        let rank3 = Rank.king
-        let rank4 = Rank.ace
-        let suit = Suit.hearts
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let cards = [card1, card2, card3, card4]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen = try Queen()
+        let king = try King()
+        let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = 4
         
@@ -167,16 +142,11 @@ class FlushTests: XCTestCase {
     func test_title_withFourCards_equalsFlush() throws {
         
         // Given
-        let rank1 = Rank.jack
-        let rank2 = Rank.queen
-        let rank3 = Rank.king
-        let rank4 = Rank.ace
-        let suit = Suit.hearts
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let cards = [card1, card2, card3, card4]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen = try Queen()
+        let king = try King()
+        let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = "Flush"
         
@@ -191,18 +161,12 @@ class FlushTests: XCTestCase {
     func test_title_withFiveSequentialCards_equalsStraightlush() throws {
         
         // Given
-        let rank1 = Rank.nine
-        let rank2 = Rank.ten
-        let rank3 = Rank.jack
-        let rank4 = Rank.queen
-        let rank5 = Rank.king
-        let suit = Suit.hearts
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let nine = try Nine()
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen = try Queen()
+        let king = try King()
+        let cards = [nine, ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = "Straight Flush"
         
@@ -218,18 +182,13 @@ class FlushTests: XCTestCase {
     func test_title_withSequentialTenToAceCards_equalsRoyalFlush() throws {
         
         // Given
-        let rank1 = Rank.ten
-        let rank2 = Rank.jack
-        let rank3 = Rank.queen
-        let rank4 = Rank.king
-        let rank5 = Rank.ace
-        let suit = Suit.hearts
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let high = true
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen = try Queen()
+        let king = try King()
+        let ace = try Ace(of: .hearts, is: high)
+        let cards = [ten, jack, queen, king, ace]
         let flush = try Flush(of: cards)
         let expected = "Royal Flush"
         
@@ -247,20 +206,13 @@ class FlushTests: XCTestCase {
     /// Tests that the points of a`Flush` equals N `Card`s given.
     func test_points_ofFlush_equalsNCards() throws {
         
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.four
-        let rank5 = Rank.five
-        let suit = Suit.hearts
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen = try Queen()
+        let king = try King()
+        let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
-        let expected = 5
+        let expected = 4
         
         // When
         let actual = flush.points
