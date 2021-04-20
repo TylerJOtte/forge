@@ -18,6 +18,26 @@ import Foundation
 
 /// A `PlayingCard Suit` extension.
 extension Suit {
+    
+    /// Determines if the `Suit` is a red `PlayingCard Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the `Suit` is a red `PlayingCard Suit`, else false.
+    func isRed() -> Bool {
+        
+        return self == .hearts || self == .diamonds
+    }
+    
+    /// Determines if the `Suit` is a black `PlayingCard Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the `Suit` is a black `PlayingCard Suit`, else false.
+    func isBlack() -> Bool {
+        
+        return self == .clubs || self == .spades
+    }
 
     /// Determines if the `Suit` is a standard French-suited`PlayingCard Suit`.
     ///
@@ -26,8 +46,7 @@ extension Suit {
     /// - Returns: True if the `Suit` is a standard French-suited`PlayingCard Suit`, else false.
     func isStandard() -> Bool {
        
-        return self == .clubs || self == .diamonds || self == .hearts ||
-            self == .spades
+        return isRed() || isBlack()
     }
     
     /// Determines if the `Suit` is a valid `PlayingCard Suit`.

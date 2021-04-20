@@ -33,6 +33,9 @@ public class Seven: NumeralCard {
     ///   - The `Card`s `Suit` is set to the given `Suit`.
     ///   - The `Card`s points are set to seven.
     ///   - The `Card`s title is set to "`Seven` of `{Suit}`.
+    ///   - The `Card`s `Color` is set to
+    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
+    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
     /// - Parameter suit: The symbol grouping.
     /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
     ///   `diamonds`, `hearts`, or `spades`.

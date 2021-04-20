@@ -34,6 +34,9 @@ public class FaceCard: PlayingCard {
     ///   - The `Card`s `Suit` is set to the given `Suit`.
     ///   - The `Card`s points are set to 10.
     ///   - The `Card`s title is set to the given "`{Rank}` of `{Suit}`.
+    ///   - The `Card`s `Color` is set to
+    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
+    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
     /// - Parameters:
     ///   - rank: The hierarchical position.
     ///   - suit: The symbol grouping.

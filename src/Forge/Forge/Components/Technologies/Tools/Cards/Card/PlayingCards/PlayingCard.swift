@@ -40,6 +40,25 @@ public class PlayingCard: Card, Hashable {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
+    /// Creates a default `PlayingCard`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Card`s `Rank`is set to `ace`.
+    ///   - The `Card`s `Suit` is set to `hearts`.
+    ///   - The `Card`s points are set to one.
+    ///   - The `Card`s title is set to "Ace of Hearts".
+    ///   - The `Card`s `Color` is set to `red`.
+    init() {
+        
+        self.rank = .ace
+        self.suit = .hearts
+        self.points = 1
+        self.color = Color.red
+        
+        super.init("Ace Of Hearts")
+    }
+    
     /// Creates a `PlayingCard` with the given `Rank`, `Suit`, & `Color`.
     ///
     /// - Precondition:
@@ -51,6 +70,10 @@ public class PlayingCard: Card, Hashable {
     ///   - The `Card`s `Suit` is set to the given `Suit`.
     ///   - The `Card`s points are set to the standard default points for the`Rank`.
     ///   - The `Card`s title is set to "`Rank` of `Suit`" if not a `joker`, else `Color` Joker.
+    ///   - The `Card`s `Color` is set to
+    ///      -  The given `Color` if the specified `Rank` is a `joker`, or
+    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
+    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
     /// - Parameters:
     ///   - rank: The hierarchical position.
     ///   - suit: The color-coded `Symbol`.
@@ -87,7 +110,7 @@ public class PlayingCard: Card, Hashable {
         self.rank = rank
         self.suit = suit
         self.points = rank.getPoints()
-        self.color = color
+        self.color = rank == .joker ? color : suit.isRed() ? .red : .black
         super.init(rank.getTitle(for: suit, color))
     }
     

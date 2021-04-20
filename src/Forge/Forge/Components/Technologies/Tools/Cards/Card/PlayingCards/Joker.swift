@@ -32,6 +32,7 @@ public class Joker: FaceCard {
     ///   - The `Card`s `Suit` is set to nil.
     ///   - The `Card`s points are set to 0.
     ///   - The `Card`s title is set to "`Color Joker`.
+    ///   - The `Card`s `Color` is set to the given `Color`.
     /// - Parameter color: The primary `Color`.
     public init(color: Color = Color.red) throws {
         
