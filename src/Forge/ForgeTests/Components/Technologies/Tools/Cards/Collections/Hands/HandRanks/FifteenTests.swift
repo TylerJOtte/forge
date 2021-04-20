@@ -34,10 +34,8 @@ class FifteenTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
-        let rank1 = Rank.ten
-        let suit = Suit.clubs
-        let card = try PlayingCard(rank1, of: suit)
-        let cards = [card]
+        let ten = try Ten()
+        let cards = [ten]
         let expected = ElementsError.insufficientElements
         
         // When
@@ -57,20 +55,13 @@ class FifteenTests: XCTestCase {
     func test_init_withExcessiveCards_returnsNil() throws {
 
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.four
-        let rank5 = Rank.five
-        let rank6 = Rank.six
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let card6 = try PlayingCard(rank6, of: suit)
-        let cards = [card1, card2, card3, card4, card5, card6]
+        let ace = try Ace()
+        let two = try Two()
+        let three = try Three()
+        let four = try Four()
+        let five = try Five()
+        let six = try Six()
+        let cards = [ace, two, three, four, five, six]
         let expected = ElementsError.excessiveElements
         
         // When
@@ -90,12 +81,9 @@ class FifteenTests: XCTestCase {
     func test_init_withUnder15PointsSum_returnsNil() throws {
         
         // Given
-        let rank1 = Rank.ten
-        let rank2 = Rank.four
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ten = try Ten()
+        let five = try Four()
+        let cards = [ten, five]
         let expected = RewardsError.invalidPoints
         
         // When
@@ -115,12 +103,9 @@ class FifteenTests: XCTestCase {
     func test_init_withOver15PointsSum_returnsNil() throws {
         
         // Given
-        let rank1 = Rank.ten
-        let rank2 = Rank.six
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ten = try Ten()
+        let five = try Six()
+        let cards = [ten, five]
         
         let expected = RewardsError.invalidPoints
         
@@ -144,12 +129,9 @@ class FifteenTests: XCTestCase {
     func test_minCards_ofFifteen_equalsTwo() throws {
         
         // Given
-        let rank1 = Rank.ten
-        let rank2 = Rank.five
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ten = try Ten()
+        let five = try Five()
+        let cards = [ten, five]
         let fifteen = try Fifteen(of: cards)
         let expected = 2
         
@@ -164,12 +146,9 @@ class FifteenTests: XCTestCase {
     func test_maxCards_ofFifteen_equalsFive() throws {
         
         // Given
-        let rank1 = Rank.ten
-        let rank2 = Rank.five
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ten = try Ten()
+        let five = try Five()
+        let cards = [ten, five]
         let fifteen = try Fifteen(of: cards)
         let expected = 5
         
@@ -188,18 +167,12 @@ class FifteenTests: XCTestCase {
     func test_count_ofFifteen_equalsNCardsGiven() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.four
-        let rank5 = Rank.five
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let ace = try Ace()
+        let two = try Two()
+        let three = try Three()
+        let four = try Four()
+        let five = try Five()
+        let cards = [ace, two, three, four, five]
         let fifteen = try Fifteen(of: cards)
         let expected = 5
         
@@ -218,12 +191,9 @@ class FifteenTests: XCTestCase {
     func test_title_ofFifteen_equalsFifteen() throws {
         
         // Given
-        let rank1 = Rank.ten
-        let rank2 = Rank.five
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ten = try Ten()
+        let five = try Five()
+        let cards = [ten, five]
         let fifteen = try Fifteen(of: cards)
         let expected = "Fifteen"
         
@@ -242,12 +212,9 @@ class FifteenTests: XCTestCase {
     func test_points_ofFifteen_equalsTwo() throws {
         
         // Given
-        let rank1 = Rank.ten
-        let rank2 = Rank.five
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let cards = [card1, card2]
+        let ten = try Ten()
+        let five = try Five()
+        let cards = [ten, five]
         let fifteen = try Fifteen(of: cards)
         let expected = 2
         
