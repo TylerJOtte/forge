@@ -34,10 +34,8 @@ class KindTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
-        let rank1 = Rank.ace
-        let suit = Suit.clubs
-        let card = try PlayingCard(rank1, of: suit)
-        let cards = [card]
+        let ace = try Ace()
+        let cards = [ace]
         let expected = ElementsError.insufficientElements
         
         // When
@@ -57,13 +55,9 @@ class KindTests: XCTestCase {
     func test_init_withMultipleRanks_throwsError() throws {
 
         // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.two
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let card1 = try PlayingCard(rank1, of: suit1)
-        let card2 = try PlayingCard(rank2, of: suit2)
-        let cards = [card1, card2]
+        let ace = try Ace()
+        let two = try Two()
+        let cards = [ace, two]
         let expected = ElementsError.insufficientElements
         
         // When
@@ -86,12 +80,9 @@ class KindTests: XCTestCase {
     func test_minCards_ofKind_equalsTwo() throws {
 
         // Given
-        let rank = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let card1 = try PlayingCard(rank, of: suit1)
-        let card2 = try PlayingCard(rank, of: suit2)
-        let cards = [card1, card2]
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let cards = [ace1, ace2]
         let kind = try Kind(of: cards)
         let expected = 2
         
@@ -105,12 +96,9 @@ class KindTests: XCTestCase {
     func test_maxCards_ofKind_equalsSystemMax() throws {
 
         // Given
-        let rank = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let card1 = try PlayingCard(rank, of: suit1)
-        let card2 = try PlayingCard(rank, of: suit2)
-        let cards = [card1, card2]
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let cards = [ace1, ace2]
         let kind = try Kind(of: cards)
         let expected = Int.max
         
@@ -128,12 +116,9 @@ class KindTests: XCTestCase {
     func test_count_ofKind_equalsNCardsGiven() throws {
         
         // Given
-        let rank = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let card1 = try PlayingCard(rank, of: suit1)
-        let card2 = try PlayingCard(rank, of: suit2)
-        let cards = [card1, card2]
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let cards = [ace1, ace2]
         let kind = try Kind(of: cards)
         let expected = 2
         
@@ -151,12 +136,9 @@ class KindTests: XCTestCase {
     func test_title_withTwoCards_equalsPair() throws {
         
         // Given
-        let rank = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let card1 = try PlayingCard(rank, of: suit1)
-        let card2 = try PlayingCard(rank, of: suit2)
-        let cards = [card1, card2]
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let cards = [ace1, ace2]
         let kind = try Kind(of: cards)
         let expected = "Pair"
         
@@ -170,14 +152,10 @@ class KindTests: XCTestCase {
     func test_title_withThreeCards_equalsThreeOfAKind() throws {
         
         // Given
-        let rank = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let suit3 = Suit.diamonds
-        let card1 = try PlayingCard(rank, of: suit1)
-        let card2 = try PlayingCard(rank, of: suit2)
-        let card3 = try PlayingCard(rank, of: suit3)
-        let cards = [card1, card2, card3]
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
         let kind = try Kind(of: cards)
         let expected = "3 Of A Kind"
         
@@ -191,16 +169,11 @@ class KindTests: XCTestCase {
     func test_title_withFourCards_equalsFourOfAKind() throws {
         
         // Given
-        let rank = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let suit3 = Suit.diamonds
-        let suit4 = Suit.hearts
-        let card1 = try PlayingCard(rank, of: suit1)
-        let card2 = try PlayingCard(rank, of: suit2)
-        let card3 = try PlayingCard(rank, of: suit3)
-        let card4 = try PlayingCard(rank, of: suit4)
-        let cards = [card1, card2, card3, card4]
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let ace3 = try Ace(of: .diamonds)
+        let ace4 = try Ace(of: .hearts)
+        let cards = [ace1, ace2, ace3, ace4]
         let kind = try Kind(of: cards)
         let expected = "4 Of A Kind"
         
@@ -218,12 +191,9 @@ class KindTests: XCTestCase {
     func test_points_withTwoCards_equalsTwo() throws {
         
         // Given
-        let rank = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let card1 = try PlayingCard(rank, of: suit1)
-        let card2 = try PlayingCard(rank, of: suit2)
-        let cards = [card1, card2]
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let cards = [ace1, ace2]
         let kind = try Kind(of: cards)
         let expected = 2
         
@@ -237,14 +207,10 @@ class KindTests: XCTestCase {
     func test_points_withThreeCards_equalsSix() throws {
         
         // Given
-        let rank = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let suit3 = Suit.diamonds
-        let card1 = try PlayingCard(rank, of: suit1)
-        let card2 = try PlayingCard(rank, of: suit2)
-        let card3 = try PlayingCard(rank, of: suit3)
-        let cards = [card1, card2, card3]
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
         let kind = try Kind(of: cards)
         let expected = 6
         
@@ -258,16 +224,11 @@ class KindTests: XCTestCase {
     func test_points_withFourCards_equals12() throws {
         
         // Given
-        let rank = Rank.ace
-        let suit1 = Suit.clubs
-        let suit2 = Suit.spades
-        let suit3 = Suit.diamonds
-        let suit4 = Suit.hearts
-        let card1 = try PlayingCard(rank, of: suit1)
-        let card2 = try PlayingCard(rank, of: suit2)
-        let card3 = try PlayingCard(rank, of: suit3)
-        let card4 = try PlayingCard(rank, of: suit4)
-        let cards = [card1, card2, card3, card4]
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let ace3 = try Ace(of: .diamonds)
+        let ace4 = try Ace(of: .hearts)
+        let cards = [ace1, ace2, ace3, ace4]
         let kind = try Kind(of: cards)
         let expected = 12
         
