@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A standard French-suited playing `Card`.
-public class PlayingCard: Card, Hashable {
+public class PlayingCard: Card {//, Hashable {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -96,7 +96,7 @@ public class PlayingCard: Card, Hashable {
         
         guard (suit.isValid()) else {
             
-            print("The given Suit is not a valid PlayingCard Suit.")
+            print("\(suit) is not PlayingCard Suit.")
             throw FeatureError.invalidSuit
         }
         
@@ -161,26 +161,27 @@ public class PlayingCard: Card, Hashable {
         return isLessThan
     }
     
-    /// *Note* The following documentation is taken directly from Swift's `Hashable` protocol.
-    ///
-    /// Hashes the essential components of this value by feeding them into the
-    /// given hasher.
-    ///
-    /// Implement this method to conform to the `Hashable` protocol. The
-    /// components used for hashing must be the same as the components compared
-    /// in your type's `==` operator implementation. Call `hasher.combine(_:)`
-    /// with each of these components.
-    ///
-    /// - Important: Never call `finalize()` on `hasher`. Doing so may become a
-    ///   compile-time error in the future.
-    ///
-    /// - Parameter hasher: The hasher to use when combining the components
-    ///   of this instance.
-    public func hash(into hasher: inout Hasher) {
-        
-        hasher.combine(title)
-        hasher.combine(rank)
-        hasher.combine(suit)
-        hasher.combine(points)
-    }
+//    /// *Note* The following documentation is taken directly from Swift's `Hashable` protocol.
+//    ///
+//    /// Hashes the essential components of this value by feeding them into the
+//    /// given hasher.
+//    ///
+//    /// Implement this method to conform to the `Hashable` protocol. The
+//    /// components used for hashing must be the same as the components compared
+//    /// in your type's `==` operator implementation. Call `hasher.combine(_:)`
+//    /// with each of these components.
+//    ///
+//    /// - Important: Never call `finalize()` on `hasher`. Doing so may become a
+//    ///   compile-time error in the future.
+//    ///
+//    /// - Parameter hasher: The hasher to use when combining the components
+//    ///   of this instance.
+//    public func hash(into hasher: inout Hasher) {
+//
+//        hasher.combine(title)
+//        hasher.combine(rank)
+//        hasher.combine(suit)
+//        hasher.combine(points)
+//        hasher.combine(color)
+//    }
 }
