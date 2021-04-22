@@ -133,7 +133,7 @@ extension Array where Element: PlayingCard  {
         
         let min = 3
         let pairMin = 1
-        let pairCount = getDuplicateCount()
+        let pairCount = getPairCount()
         let s = pairs > 1 ? "s" : ""
         
         guard (count >= min) else {
@@ -172,6 +172,36 @@ extension Array where Element: PlayingCard  {
         }
         
         return areSequential
+    }
+    
+    /// Retrieves the duplicate items in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The duplicate items in the collection.
+    func getPairs() -> [Rank:[Element]] {
+        
+        return Dictionary(grouping: self, by: {$0.rank}).filter({$0.value.count > 1})
+    }
+    
+    /// Retrieves the count of each duplicate in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The count of each duplicate in the collection.
+    func getPairCounts() -> [Rank:Int] {
+        
+        return getPairs().mapValues{ ($0.count * ($0.count - 1)) / 2 }
+    }
+    
+    /// Retrieves the total duplicate count in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The total duplicate count in the collection.
+    func getPairCount() -> Int {
+        
+        return getPairCounts().values.reduce(0, +)
     }
     
     //=========================================================================//
