@@ -124,4 +124,64 @@ class AceTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Suit                                     //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the `Suit` of an `Ace` created with a `clubs Suit` equals `clubs`.
+    func test_suit_withClubs_equalsClubs() throws {
+        
+        // Given
+        let ace = try Ace(of: .clubs)
+        let expected = Suit.clubs
+        
+        // When
+        let actual = ace.suit
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Suit` of an `Ace` created with a `diamonds Suit` equals `diamonds`.
+    func test_suit_withDiamonds_equalsDiamonds() throws {
+        
+        // Given
+        let ace = try Ace(of: .diamonds)
+        let expected = Suit.diamonds
+        
+        // When
+        let actual = ace.suit
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Suit` of an `Ace` created with a `hearts Suit` equals `hearts`.
+    func test_suit_withHearts_equalsHearts() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let expected = Suit.hearts
+        
+        // When
+        let actual = ace.suit
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Suit` of an `Ace` created with a `spades Suit` equals `spades`.
+    func test_suit_withSpades_equalsSpades() throws {
+        
+        // Given
+        let ace = try Ace(of: .spades)
+        let expected = Suit.spades
+        
+        // When
+        let actual = ace.suit
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
