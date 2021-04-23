@@ -38,7 +38,7 @@ public class Ace: NumeralCard {
     /// - Postcondition:
     ///   - The `Card`s `Rank`is set to `ace`.
     ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to one if not high, else 11.
+    ///   - The `Card`s points are set to one.
     ///   - The `Card`s title is set to `Ace` of `{Suit}`.
     ///   - The `Card`s `Color` is set to
     ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or

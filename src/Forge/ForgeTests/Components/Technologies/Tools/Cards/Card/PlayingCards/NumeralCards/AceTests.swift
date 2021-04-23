@@ -202,4 +202,19 @@ class AceTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that the points of an `Ace` that is high equals one.
+    func test_points_ofHighAce_equalsOne() throws {
+        
+        // Given
+        let high = true
+        let ace = try Ace(of: .hearts, is: high)
+        let expected = 1
+        
+        // When
+        let actual = ace.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
