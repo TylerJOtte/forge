@@ -128,8 +128,9 @@ public class PlayingCard: Card {//, Hashable {
     /// - Returns: True if the given `Card`s are equal, else false.
     public static func == (lhs: PlayingCard, rhs: PlayingCard) -> Bool {
         
-        return lhs.rank.equals(rhs.rank) && lhs.suit == rhs.suit &&
-            lhs.points == rhs.points && lhs.title == rhs.title
+        return lhs.rank == rhs.rank && lhs.suit == rhs.suit
+//        return lhs.rank.equals(rhs.rank) && lhs.suit == rhs.suit &&
+//            lhs.points == rhs.points && lhs.title == rhs.title
     }
     
     /// Determines if the given left-handside`Card` is less than the specified right-handside `Card`.

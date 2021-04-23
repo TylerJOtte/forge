@@ -303,4 +303,23 @@ class AceTests: XCTestCase {
         // When/Then
         XCTAssert(ace.isHigh)
     }
+    
+    //=========================================================================//
+    //                              COMPARISONS                                //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                               Equality                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that two `Ace`s with the same `Suit` are equal.
+    func test_equals_AceWithSameSuit_true() throws {
+        
+        // Given
+        let ace1 = try Ace(of: .spades)
+        let ace2 = try Ace(of: .spades)
+        
+        // When/Then
+        XCTAssertEqual(ace1, ace2)
+    }
 }
