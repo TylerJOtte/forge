@@ -184,4 +184,22 @@ class AceTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the points of an `Ace` that is not high equals one.
+    func test_points_ofLowAce_equalsOne() throws {
+        
+        // Given
+        let ace = try Ace()
+        let expected = 1
+        
+        // When
+        let actual = ace.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
