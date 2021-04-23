@@ -222,7 +222,7 @@ class AceTests: XCTestCase {
     //-------------------------------------------------------------------------//
     //                                Color                                    //
     //-------------------------------------------------------------------------//
-    
+
     /// Tests that the `Color` of an `Ace` created with a `clubs Suit` equals `black`.
     func test_color_withClubs_equalsBlack() throws {
         
@@ -277,5 +277,19 @@ class AceTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                               Is High                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that `isHigh` of a default `Ace` equals false.
+    func test_isHigh_ofDefaultAce_equalsFalse() throws {
+        
+        // Given
+        let ace = try Ace()
+        
+        // When/Then
+        XCTAssertFalse(ace.isHigh)
     }
 }
