@@ -54,4 +54,21 @@ public class NumeralCard: PlayingCard {
 
         try super.init(rank, of: suit)
     }
+    
+    //=========================================================================//
+    //                                 METHODS                                 //
+    //=========================================================================//
+    
+    /// Determines if the given left-handside`Card` is less than the specified right-handside `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The value to compare against.
+    ///   - rhs: The value to compare to.
+    /// - Returns: True if given left-handside`Card` is less than the specified right-handside `Card`.
+    public static func < (lhs: NumeralCard, rhs: NumeralCard) -> Bool {
+        
+        return lhs.points < rhs.points
+    }
 }

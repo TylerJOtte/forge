@@ -309,7 +309,7 @@ class AceTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                               Equality                                  //
+    //                                Equality                                 //
     //-------------------------------------------------------------------------//
     
     /// Tests that two `Ace`s with the same `Suit` are equal.
@@ -332,5 +332,20 @@ class AceTests: XCTestCase {
         
         // When/Then
         XCTAssertNotEqual(ace1, ace2)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                               Less Than                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a low `Ace` is less than a `Two PlayingCard`.
+    func test_isLessThan_LowAceAndTwo_true() throws {
+        
+        // Given
+        let ace = try Ace()
+        let two = try Two()
+        
+        // When/Then
+        XCTAssertLessThan(ace, two)
     }
 }
