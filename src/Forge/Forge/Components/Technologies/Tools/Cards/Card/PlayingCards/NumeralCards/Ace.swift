@@ -46,9 +46,16 @@ public class Ace: NumeralCard {
     /// - Parameters:
     ///   - suit: The symbol grouping.
     ///   - high: True if the `ace` is the high `Card`, else false.
-    /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
+    /// - Throws:
+    ///   -  `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
     ///   `diamonds`, `hearts`, or `spades`.
     public init(of suit: Suit = .hearts, is high: Bool = false) throws {
+        
+        guard (suit.isStandard()) else {
+            
+            print("The given Suit must be clubs, diamonds, hearts, or spades.")
+            throw FeatureError.invalidSuit
+        }
         
         self.isHigh = high
         
