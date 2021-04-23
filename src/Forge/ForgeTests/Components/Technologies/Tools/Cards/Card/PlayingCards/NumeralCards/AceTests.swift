@@ -15,6 +15,7 @@
 //=============================================================================//
 
 import XCTest
+import SwiftUI
 @testable import Forge
 
 /// Unit tests for an `Ace PlayingCard`.
@@ -51,7 +52,7 @@ class AceTests: XCTestCase {
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the title of an `Ace` created with a `clubs Suit` is "Ace Of Clubs".
+    /// Tests that the title of an `Ace` created with a `clubs Suit` equals "Ace Of Clubs".
     func test_title_withClubs_equalsAceOfClubs() throws {
         
         // Given
@@ -65,7 +66,7 @@ class AceTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of an `Ace` created with a `diamonds Suit` is "Ace Of Diamonds".
+    /// Tests that the title of an `Ace` created with a `diamonds Suit` equals "Ace Of Diamonds".
     func test_title_withDiamonds_equalsAceOfDiamonds() throws {
         
         // Given
@@ -79,7 +80,7 @@ class AceTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of an `Ace` created with a `hearts Suit` is "Ace Of Clubs".
+    /// Tests that the title of an `Ace` created with a `hearts Suit` equals "Ace Of Hearts".
     func test_title_withHearts_equalsAceOfHearts() throws {
         
         // Given
@@ -93,7 +94,7 @@ class AceTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of an `Ace` created with a `spades Suit` is "Ace Of Clubs".
+    /// Tests that the title of an `Ace` created with a `spades Suit` equals "Ace Of Spades".
     func test_title_withSpades_equalsAceOfSpades() throws {
         
         // Given
@@ -213,6 +214,66 @@ class AceTests: XCTestCase {
         
         // When
         let actual = ace.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Color                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the `Color` of an `Ace` created with a `clubs Suit` equals `black`.
+    func test_color_withClubs_equalsBlack() throws {
+        
+        // Given
+        let ace = try Ace(of: .clubs)
+        let expected = Color.black
+        
+        // When
+        let actual = ace.color
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Color` of an `Ace` created with a `diamonds Suit` equals `red`.
+    func test_color_withDiamonds_equalsRed() throws {
+        
+        // Given
+        let ace = try Ace(of: .diamonds)
+        let expected = Color.red
+        
+        // When
+        let actual = ace.color
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Color` of an `Ace` created with a `hearts Suit` equals `red`.
+    func test_color_withHearts_equalsRed() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let expected = Color.red
+        
+        // When
+        let actual = ace.color
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Color` of an `Ace` created with a `spades Suit` equals `black`
+    func test_color_withSpades_equalsBlack() throws {
+        
+        // Given
+        let ace = try Ace(of: .spades)
+        let expected = Color.black
+        
+        // When
+        let actual = ace.color
         
         // Then
         XCTAssertEqual(expected, actual)
