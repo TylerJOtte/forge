@@ -322,4 +322,15 @@ class AceTests: XCTestCase {
         // When/Then
         XCTAssertEqual(ace1, ace2)
     }
+    
+    /// Tests that two `Ace`s with the different `Suit`s are not equal.
+    func test_equals_AceWithDifferentSuits_false() throws {
+        
+        // Given
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
+        
+        // When/Then
+        XCTAssertNotEqual(ace1, ace2)
+    }
 }
