@@ -292,4 +292,15 @@ class AceTests: XCTestCase {
         // When/Then
         XCTAssertFalse(ace.isHigh)
     }
+    
+    /// Tests that `isHigh` of a high `Ace` equals true.
+    func test_isHigh_ofHighAce_equalsTrue() throws {
+        
+        // Given
+        let high = true
+        let ace = try Ace(of: .hearts, is: high)
+        
+        // When/Then
+        XCTAssert(ace.isHigh)
+    }
 }
