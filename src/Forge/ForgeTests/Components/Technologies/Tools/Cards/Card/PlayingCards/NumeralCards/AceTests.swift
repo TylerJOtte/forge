@@ -106,4 +106,22 @@ class AceTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                 Rank                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the `Rank` of an `Ace` equals `ace`.
+    func test_rank_ofAce_equalsAce() throws {
+        
+        // Given
+        let ace = try Ace()
+        let expected = Rank.ace
+        
+        // When
+        let actual = ace.rank
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
