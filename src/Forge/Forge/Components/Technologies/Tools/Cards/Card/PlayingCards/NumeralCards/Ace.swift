@@ -61,4 +61,46 @@ public class Ace: NumeralCard {
         
         try super.init(.ace, of: suit)
     }
+    
+    //=========================================================================//
+    //                                 METHODS                                 //
+    //=========================================================================//
+    
+    /// Determines if the `Card` is  less than the  given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card` to compare against.
+    /// - Returns: True if the `Card` is  less than the  given `Card`.
+    override func isLessThan(_ card: Card) -> Bool {
+
+        print("------------------------")
+        print("Ace is less than")
+        print("------------------------")
+        
+        return (card as? PlayingCard).map{ playingCard in
+            
+            return !isHigh && !(playingCard is Ace)
+            
+        } ?? false
+    }
+    
+    /// Determines if the `Card` is  greater  than the  given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card` to compare against.
+    /// - Returns: True if the `Card` is  greater than the  given `Card`.
+    override func isGreaterThan(_ card: Card) -> Bool {
+
+        print("------------------------")
+        print("Ace is greater than")
+        print("------------------------")
+        
+        return (card as? PlayingCard).map{ playingCard in
+            
+            return isHigh && !(playingCard is Ace)
+            
+        } ?? false
+    }
 }

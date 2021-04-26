@@ -118,48 +118,23 @@ public class PlayingCard: Card {//, Hashable {
     //                                 METHODS                                 //
     //=========================================================================//
     
-    /// Determines if the given `Card`s are equal.
+    /// Determines if the `Card` is  equal to the  given `Card`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The value to compare against.
-    ///   - rhs: The value to compare to.
-    /// - Returns: True if the given `Card`s are equal, else false.
-    public static func == (lhs: PlayingCard, rhs: PlayingCard) -> Bool {
+    /// - Parameter card: The `Card` to compare against.
+    /// - Returns: True if the `Card` is equal to the  given `Card`.
+    override func equals(_ card: Card) -> Bool {
+
+        print("------------------------")
+        print("PlayingCard equals")
+        print("------------------------")
         
-        return lhs.rank == rhs.rank && lhs.suit == rhs.suit
-//        return lhs.rank.equals(rhs.rank) && lhs.suit == rhs.suit &&
-//            lhs.points == rhs.points && lhs.title == rhs.title
-    }
-    
-    /// Determines if the given left-handside`Card` is less than the specified right-handside `Card`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The value to compare against.
-    ///   - rhs: The value to compare to.
-    /// - Returns: True if given left-handside`Card` is less than the specified right-handside `Card`.
-    public static func < (lhs: PlayingCard, rhs: PlayingCard) -> Bool {
-        
-        var isLessThan: Bool
-        let aces = lhs.rank == .ace || rhs.rank == .ace
-        let jokers = lhs.rank == .joker || rhs.rank == .joker
-        
-        if (aces || jokers) { // Account for ace being high & variable joker
+        return (card as? PlayingCard).map{ playingCard in
             
-            isLessThan = lhs.points < rhs.points
-        
-        } else { // Get the natural hierarchy
+            return rank == playingCard.rank
             
-            let index1 = PlayingCards.ranks.firstIndex(of: lhs.rank)!
-            let index2 = PlayingCards.ranks.firstIndex(of: rhs.rank)!
-            
-            isLessThan = index1 < index2
-        }
-        
-        return isLessThan
+        } ?? false
     }
     
 //    /// *Note* The following documentation is taken directly from Swift's `Hashable` protocol.

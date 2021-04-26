@@ -313,7 +313,7 @@ class AceTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that two `Ace`s with the same `Suit` are equal.
-    func test_equals_AceWithSameSuit_true() throws {
+    func test_equals_AcesWithSameSuit_true() throws {
         
         // Given
         let ace1 = try Ace(of: .spades)
@@ -323,29 +323,45 @@ class AceTests: XCTestCase {
         XCTAssertEqual(ace1, ace2)
     }
     
-    /// Tests that two `Ace`s with the different `Suit`s are not equal.
-    func test_equals_AceWithDifferentSuits_false() throws {
+    /// Tests that two `Ace`s with the different `Suit`s are equal.
+    func test_equals_AcesWithDifferentSuits_true() throws {
         
         // Given
         let ace1 = try Ace(of: .hearts)
         let ace2 = try Ace(of: .spades)
         
         // When/Then
-        XCTAssertNotEqual(ace1, ace2)
+        XCTAssertEqual(ace1, ace2)
     }
     
     //-------------------------------------------------------------------------//
     //                               Less Than                                 //
     //-------------------------------------------------------------------------//
-    
+
     /// Tests that a low `Ace` is less than a `Two PlayingCard`.
     func test_isLessThan_LowAceAndTwo_true() throws {
-        
+
         // Given
         let ace = try Ace()
         let two = try Two()
-        
+
         // When/Then
         XCTAssertLessThan(ace, two)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                             Greater Than                                //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a high `Ace` is greater than a `Two PlayingCard`.
+    func test_isGreaterThan_highAceAndTwo_true() throws {
+
+        // Given
+        let high = true
+        let ace = try Ace(of: .hearts, is: high)
+        let two = try Two()
+
+        // When/Then
+        XCTAssertGreaterThan(ace, two)
     }
 }
