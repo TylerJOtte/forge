@@ -31,7 +31,7 @@ public class Ace: NumeralCard {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates an`Ace` with the given `Suit`.
+    /// Creates an`Ace` with the given terms.
     ///
     /// - Precondition: The given `Suit` must be `clubs`, `diamonds`, `hearts`, or
     ///  `spades`.
@@ -43,6 +43,7 @@ public class Ace: NumeralCard {
     ///   - The `Card`s `Color` is set to
     ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
     ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
+    ///   - The `Card`'s `isHigh` status is set to the given `high` status.
     /// - Parameters:
     ///   - suit: The symbol grouping.
     ///   - high: True if the `ace` is the high `Card`, else false.
@@ -61,7 +62,7 @@ public class Ace: NumeralCard {
         
         try super.init(.ace, of: suit)
     }
-    
+ 
     //=========================================================================//
     //                                 METHODS                                 //
     //=========================================================================//

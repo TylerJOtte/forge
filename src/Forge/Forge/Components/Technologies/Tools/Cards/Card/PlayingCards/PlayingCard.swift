@@ -118,6 +118,26 @@ public class PlayingCard: Card {//, Hashable {
     //                                 METHODS                                 //
     //=========================================================================//
     
+    /// Determines if the `Card` is  less than the  given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card` to compare against.
+    /// - Returns: True if the `Card` is  less than the  given `Card`.
+    override func isLessThan(_ card: Card) -> Bool {
+
+        print("------------------------")
+        print("PlayingCard is less than")
+        print("------------------------")
+        
+        return (card as? PlayingCard).map{ playingCard in
+            
+            return playingCard is Ace ? (playingCard as! Ace).isHigh :
+                points < playingCard.points
+            
+        } ?? false
+    }
+    
     /// Determines if the `Card` is  equal to the  given `Card`.
     ///
     /// - Precondition: None.
