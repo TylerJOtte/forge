@@ -79,6 +79,7 @@
 		B5F2D483262E50CD0089403F /* Joker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D482262E50CD0089403F /* Joker.swift */; };
 		B5F2D48B2630FE360089403F /* AceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D48A2630FE360089403F /* AceTests.swift */; };
 		B5F2D4992636D9500089403F /* TwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4982636D9500089403F /* TwoTests.swift */; };
+		B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D49E2636E0970089403F /* ThreeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		B5F2D482262E50CD0089403F /* Joker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joker.swift; sourceTree = "<group>"; };
 		B5F2D48A2630FE360089403F /* AceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceTests.swift; sourceTree = "<group>"; };
 		B5F2D4982636D9500089403F /* TwoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTests.swift; sourceTree = "<group>"; };
+		B5F2D49E2636E0970089403F /* ThreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -601,6 +603,7 @@
 			children = (
 				B5F2D48A2630FE360089403F /* AceTests.swift */,
 				B5F2D4982636D9500089403F /* TwoTests.swift */,
+				B5F2D49E2636E0970089403F /* ThreeTests.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 				B5F2D48B2630FE360089403F /* AceTests.swift in Sources */,
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
 				B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */,
+				B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */,
 				B556689226252E030045AC2B /* NobsTests.swift in Sources */,
 				B556689826253AEA0045AC2B /* FifteenTests.swift in Sources */,
 				B55668A026265E160045AC2B /* RunTests.swift in Sources */,
