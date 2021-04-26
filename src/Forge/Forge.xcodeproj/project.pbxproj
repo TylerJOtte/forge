@@ -85,6 +85,7 @@
 		B5F2D4AB2636E47D0089403F /* SixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4AA2636E47D0089403F /* SixTests.swift */; };
 		B5F2D4AF2636E5360089403F /* SevenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4AE2636E5360089403F /* SevenTests.swift */; };
 		B5F2D4B32636E5F20089403F /* EightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4B22636E5F20089403F /* EightTests.swift */; };
+		B5F2D4B72636E6AB0089403F /* NineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4B62636E6AB0089403F /* NineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,7 @@
 		B5F2D4AA2636E47D0089403F /* SixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixTests.swift; sourceTree = "<group>"; };
 		B5F2D4AE2636E5360089403F /* SevenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenTests.swift; sourceTree = "<group>"; };
 		B5F2D4B22636E5F20089403F /* EightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightTests.swift; sourceTree = "<group>"; };
+		B5F2D4B62636E6AB0089403F /* NineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,6 +621,7 @@
 				B5F2D4AA2636E47D0089403F /* SixTests.swift */,
 				B5F2D4AE2636E5360089403F /* SevenTests.swift */,
 				B5F2D4B22636E5F20089403F /* EightTests.swift */,
+				B5F2D4B62636E6AB0089403F /* NineTests.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				B5817D642618EE9E0022B805 /* PlayingCardTests.swift in Sources */,
 				B5F2D4992636D9500089403F /* TwoTests.swift in Sources */,
 				B5817D90261A12CD0022B805 /* PlayingCardDeckTests.swift in Sources */,
+				B5F2D4B72636E6AB0089403F /* NineTests.swift in Sources */,
 				B597386125FED1B900367598 /* CardTests.swift in Sources */,
 				B5F2D4B32636E5F20089403F /* EightTests.swift in Sources */,
 			);
