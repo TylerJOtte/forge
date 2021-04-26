@@ -80,6 +80,7 @@
 		B5F2D48B2630FE360089403F /* AceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D48A2630FE360089403F /* AceTests.swift */; };
 		B5F2D4992636D9500089403F /* TwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4982636D9500089403F /* TwoTests.swift */; };
 		B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D49E2636E0970089403F /* ThreeTests.swift */; };
+		B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4A22636E27D0089403F /* FourTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,7 @@
 		B5F2D48A2630FE360089403F /* AceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceTests.swift; sourceTree = "<group>"; };
 		B5F2D4982636D9500089403F /* TwoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTests.swift; sourceTree = "<group>"; };
 		B5F2D49E2636E0970089403F /* ThreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeTests.swift; sourceTree = "<group>"; };
+		B5F2D4A22636E27D0089403F /* FourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -604,6 +606,7 @@
 				B5F2D48A2630FE360089403F /* AceTests.swift */,
 				B5F2D4982636D9500089403F /* TwoTests.swift */,
 				B5F2D49E2636E0970089403F /* ThreeTests.swift */,
+				B5F2D4A22636E27D0089403F /* FourTests.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				B55668D2262C88EC0045AC2B /* KindTests.swift in Sources */,
 				B55668C4262B929C0045AC2B /* DoubleDoubleRunTests.swift in Sources */,
 				B5F2D48B2630FE360089403F /* AceTests.swift in Sources */,
+				B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */,
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
 				B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */,
 				B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */,

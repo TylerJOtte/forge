@@ -157,6 +157,22 @@ public class PlayingCard: Card {//, Hashable {
         } ?? false
     }
     
+    /// Determines if the `Card` is  greater  than the  given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card` to compare against.
+    /// - Returns: True if the `Card` is  greater than the  given `Card`.
+    override func isGreaterThan(_ card: Card) -> Bool {
+
+        return (card as? PlayingCard).map{ playingCard in
+            
+            return playingCard is Ace ? !(playingCard as! Ace).isHigh :
+                points > playingCard.points
+            
+        } ?? false
+    }
+    
 //    /// *Note* The following documentation is taken directly from Swift's `Hashable` protocol.
 //    ///
 //    /// Hashes the essential components of this value by feeding them into the
