@@ -36,6 +36,25 @@ public class PlayingCard: Card {//, Hashable {
     /// The primary `Color`.
     public let color: Color
     
+    /// The standard`Rank` hierarchy.
+    private let hiearchy: [Rank:Int] = [
+    
+        .joker: 0,
+        .ace: 1,
+        .two: 2,
+        .three: 3,
+        .four: 4,
+        .five: 5,
+        .six: 6,
+        .seven: 7,
+        .eight: 8,
+        .nine: 9,
+        .ten: 10,
+        .jack: 11,
+        .queen: 12,
+        .king: 13
+    ]
+    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
@@ -133,7 +152,7 @@ public class PlayingCard: Card {//, Hashable {
         return (card as? PlayingCard).map{ playingCard in
             
             return playingCard is Ace ? (playingCard as! Ace).isHigh :
-                points < playingCard.points
+                hiearchy[rank]! < hiearchy[playingCard.rank]!
             
         } ?? false
     }
@@ -168,7 +187,7 @@ public class PlayingCard: Card {//, Hashable {
         return (card as? PlayingCard).map{ playingCard in
             
             return playingCard is Ace ? !(playingCard as! Ace).isHigh :
-                points > playingCard.points
+                hiearchy[rank]! > hiearchy[playingCard.rank]!
             
         } ?? false
     }

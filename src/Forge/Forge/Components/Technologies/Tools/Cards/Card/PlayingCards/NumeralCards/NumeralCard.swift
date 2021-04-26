@@ -54,42 +54,4 @@ public class NumeralCard: PlayingCard {
 
         try super.init(rank, of: suit)
     }
-    
-    //=========================================================================//
-    //                                 METHODS                                 //
-    //=========================================================================//
-    
-    /// Determines if the `Card` is  less than the  given `Card`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is  less than the  given `Card`.
-    override func isLessThan(_ card: Card) -> Bool {
-
-        print("------------------------")
-        print("NumeralCard is less than")
-        print("------------------------")
-        
-        return (card as? PlayingCard).map{ playingCard in
-            
-            return playingCard is FaceCard ? true : super.isLessThan(card)
-            
-        } ?? false
-    }
-    
-    /// Determines if the `Card` is  greater  than the  given `Card`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is  greater than the  given `Card`.
-    override func isGreaterThan(_ card: Card) -> Bool {
-
-        return (card as? PlayingCard).map{ playingCard in
-            
-            return playingCard is FaceCard ? false : super.isGreaterThan(card)
-            
-        } ?? false
-    }
 }

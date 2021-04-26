@@ -87,6 +87,7 @@
 		B5F2D4B32636E5F20089403F /* EightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4B22636E5F20089403F /* EightTests.swift */; };
 		B5F2D4B72636E6AB0089403F /* NineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4B62636E6AB0089403F /* NineTests.swift */; };
 		B5F2D4BB2636E7820089403F /* TenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4BA2636E7820089403F /* TenTests.swift */; };
+		B5F2D4C02636EAB60089403F /* JackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4BF2636EAB60089403F /* JackTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		B5F2D4B22636E5F20089403F /* EightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightTests.swift; sourceTree = "<group>"; };
 		B5F2D4B62636E6AB0089403F /* NineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineTests.swift; sourceTree = "<group>"; };
 		B5F2D4BA2636E7820089403F /* TenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenTests.swift; sourceTree = "<group>"; };
+		B5F2D4BF2636EAB60089403F /* JackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,6 +610,7 @@
 			children = (
 				B5817D632618EE9E0022B805 /* PlayingCardTests.swift */,
 				B5F2D4892630FE200089403F /* NumeralCards */,
+				B5F2D4BE2636EA9D0089403F /* FaceCards */,
 			);
 			path = PlayingCards;
 			sourceTree = "<group>";
@@ -627,6 +630,14 @@
 				B5F2D4BA2636E7820089403F /* TenTests.swift */,
 			);
 			path = NumeralCards;
+			sourceTree = "<group>";
+		};
+		B5F2D4BE2636EA9D0089403F /* FaceCards */ = {
+			isa = PBXGroup;
+			children = (
+				B5F2D4BF2636EAB60089403F /* JackTests.swift */,
+			);
+			path = FaceCards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -814,6 +825,7 @@
 				B556689226252E030045AC2B /* NobsTests.swift in Sources */,
 				B5F2D4A72636E3E20089403F /* FiveTests.swift in Sources */,
 				B556689826253AEA0045AC2B /* FifteenTests.swift in Sources */,
+				B5F2D4C02636EAB60089403F /* JackTests.swift in Sources */,
 				B55668A026265E160045AC2B /* RunTests.swift in Sources */,
 				B597384E25FEB07900367598 /* DeckTests.swift in Sources */,
 				B55668BE262B92920045AC2B /* DoubleRunTests.swift in Sources */,
