@@ -44,29 +44,103 @@ public class Card: Tool, Comparable {
     //                                 METHODS                                 //
     //=========================================================================//
     
-    /// Determines if the given `Card`s are equal.
+    /// Determines if the `Card` is  less than the  given `Card`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The value to compare against.
-    ///   - rhs: The value to compare to.
-    /// - Returns: True if the given `Card`s are equal, else false.
-    public static func == (lhs: Card, rhs: Card) -> Bool {
+    /// - Parameter card: The `Card` to compare against.
+    /// - Returns: True if the `Card` is  less than the  given `Card`.
+    func isLessThan(_ card: Card) -> Bool {
+
+        print("------------------------")
+        print("Card is less than")
+        print("------------------------")
         
-        return lhs.title == rhs.title
+        return title < card.title
     }
     
-    /// Determines if the given left-handside`Card` is less than the specified right-handside `Card`.
+    /// Determines if the `Card` is  equal to the  given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card` to compare against.
+    /// - Returns: True if the `Card` is equal to the  given `Card`.
+    func equals(_ card: Card) -> Bool {
+
+        print("------------------------")
+        print("Card equals")
+        print("------------------------")
+        
+        return title == card.title
+    }
+    
+    /// Determines if the `Card` is  greater  than the  given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card` to compare against.
+    /// - Returns: True if the `Card` is  greater than the  given `Card`.
+    func isGreaterThan(_ card: Card) -> Bool {
+
+        print("------------------------")
+        print("Card is greater than")
+        print("------------------------")
+        
+        return title > card.title
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                               Operators                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the given left-handside `Card` is less than the specified right-handside `Card`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Parameters:
-    ///   - lhs: The value to compare against.
-    ///   - rhs: The value to compare to.
-    /// - Returns: True if given left-handside`Card` is less than the specified right-handside `Card`.
+    ///   - lhs: The `Card` to compare against.
+    ///   - rhs: The `Card` to compare to.
+    /// - Returns: True if given left-handside `Card` is less than the specified right-handside `Card`.
     public static func < (lhs: Card, rhs: Card) -> Bool {
+
+        print("------------------------")
+        print("Card <")
+        print("------------------------")
         
-        return lhs.title < rhs.title
+        return lhs.isLessThan(rhs)
+    }
+
+    /// Determines if the given left-handside `Card` is equal to the specified right-handside `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Card` to compare against.
+    ///   - rhs: The `Card` to compare to.
+    /// - Returns: True if given left-handside `Card` is equal to the specified right-handside `Card`.
+    public static func == (lhs: Card, rhs: Card) -> Bool {
+
+        print("------------------------")
+        print("Card == ")
+        print("------------------------")
+        
+        return lhs.equals(rhs)
+    }
+    
+    /// Determines if the given left-handside `Card` is greater than the specified right-handside `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Card` to compare against.
+    ///   - rhs: The `Card` to compare to.
+    /// - Returns: True if given left-handside `Card` is greater than the specified right-handside `Card`.
+    public static func > (lhs: Card, rhs: Card) -> Bool {
+
+        print("------------------------")
+        print("Card >")
+        print("------------------------")
+        
+        return lhs.isGreaterThan(rhs)
     }
 }
