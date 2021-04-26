@@ -89,6 +89,7 @@
 		B5F2D4BB2636E7820089403F /* TenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4BA2636E7820089403F /* TenTests.swift */; };
 		B5F2D4C02636EAB60089403F /* JackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4BF2636EAB60089403F /* JackTests.swift */; };
 		B5F2D4C62636F3B80089403F /* QueenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4C52636F3B80089403F /* QueenTests.swift */; };
+		B5F2D4CA2636F4440089403F /* KingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4C92636F4440089403F /* KingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +188,7 @@
 		B5F2D4BA2636E7820089403F /* TenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenTests.swift; sourceTree = "<group>"; };
 		B5F2D4BF2636EAB60089403F /* JackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackTests.swift; sourceTree = "<group>"; };
 		B5F2D4C52636F3B80089403F /* QueenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueenTests.swift; sourceTree = "<group>"; };
+		B5F2D4C92636F4440089403F /* KingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -639,6 +641,7 @@
 			children = (
 				B5F2D4BF2636EAB60089403F /* JackTests.swift */,
 				B5F2D4C52636F3B80089403F /* QueenTests.swift */,
+				B5F2D4C92636F4440089403F /* KingTests.swift */,
 			);
 			path = FaceCards;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 			files = (
 				B556689C262659030045AC2B /* FlushTests.swift in Sources */,
 				B55668D2262C88EC0045AC2B /* KindTests.swift in Sources */,
+				B5F2D4CA2636F4440089403F /* KingTests.swift in Sources */,
 				B55668C4262B929C0045AC2B /* DoubleDoubleRunTests.swift in Sources */,
 				B5F2D48B2630FE360089403F /* AceTests.swift in Sources */,
 				B5F2D4AB2636E47D0089403F /* SixTests.swift in Sources */,
