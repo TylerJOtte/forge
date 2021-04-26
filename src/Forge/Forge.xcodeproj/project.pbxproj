@@ -83,6 +83,7 @@
 		B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4A22636E27D0089403F /* FourTests.swift */; };
 		B5F2D4A72636E3E20089403F /* FiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4A62636E3E20089403F /* FiveTests.swift */; };
 		B5F2D4AB2636E47D0089403F /* SixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4AA2636E47D0089403F /* SixTests.swift */; };
+		B5F2D4AF2636E5360089403F /* SevenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4AE2636E5360089403F /* SevenTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		B5F2D4A22636E27D0089403F /* FourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTests.swift; sourceTree = "<group>"; };
 		B5F2D4A62636E3E20089403F /* FiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveTests.swift; sourceTree = "<group>"; };
 		B5F2D4AA2636E47D0089403F /* SixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixTests.swift; sourceTree = "<group>"; };
+		B5F2D4AE2636E5360089403F /* SevenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -613,6 +615,7 @@
 				B5F2D4A22636E27D0089403F /* FourTests.swift */,
 				B5F2D4A62636E3E20089403F /* FiveTests.swift */,
 				B5F2D4AA2636E47D0089403F /* SixTests.swift */,
+				B5F2D4AE2636E5360089403F /* SevenTests.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				B5F2D4AB2636E47D0089403F /* SixTests.swift in Sources */,
 				B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */,
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
+				B5F2D4AF2636E5360089403F /* SevenTests.swift in Sources */,
 				B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */,
 				B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */,
 				B556689226252E030045AC2B /* NobsTests.swift in Sources */,
