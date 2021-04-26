@@ -81,6 +81,7 @@
 		B5F2D4992636D9500089403F /* TwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4982636D9500089403F /* TwoTests.swift */; };
 		B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D49E2636E0970089403F /* ThreeTests.swift */; };
 		B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4A22636E27D0089403F /* FourTests.swift */; };
+		B5F2D4A72636E3E20089403F /* FiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4A62636E3E20089403F /* FiveTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		B5F2D4982636D9500089403F /* TwoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTests.swift; sourceTree = "<group>"; };
 		B5F2D49E2636E0970089403F /* ThreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeTests.swift; sourceTree = "<group>"; };
 		B5F2D4A22636E27D0089403F /* FourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTests.swift; sourceTree = "<group>"; };
+		B5F2D4A62636E3E20089403F /* FiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -607,6 +609,7 @@
 				B5F2D4982636D9500089403F /* TwoTests.swift */,
 				B5F2D49E2636E0970089403F /* ThreeTests.swift */,
 				B5F2D4A22636E27D0089403F /* FourTests.swift */,
+				B5F2D4A62636E3E20089403F /* FiveTests.swift */,
 			);
 			path = NumeralCards;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */,
 				B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */,
 				B556689226252E030045AC2B /* NobsTests.swift in Sources */,
+				B5F2D4A72636E3E20089403F /* FiveTests.swift in Sources */,
 				B556689826253AEA0045AC2B /* FifteenTests.swift in Sources */,
 				B55668A026265E160045AC2B /* RunTests.swift in Sources */,
 				B597384E25FEB07900367598 /* DeckTests.swift in Sources */,
