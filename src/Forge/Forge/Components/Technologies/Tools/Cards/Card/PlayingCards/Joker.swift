@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A standard French-suited joker `PlayingCard`.
-public class Joker: FaceCard {
+public class Joker: PlayingCard {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -36,6 +36,6 @@ public class Joker: FaceCard {
     /// - Parameter color: The primary `Color`.
     public init(color: Color = Color.red) throws {
         
-        try super.init(.joker, of: .null)
+        try super.init(.joker, of: .null, in: color)
     }
 }

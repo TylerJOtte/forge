@@ -151,7 +151,8 @@ public class PlayingCard: Card {//, Hashable {
         
         return (card as? PlayingCard).map{ playingCard in
             
-            return playingCard is Ace ? (playingCard as! Ace).isHigh :
+            return (playingCard is Ace && rank != .joker) ?
+                (playingCard as! Ace).isHigh :
                 hiearchy[rank]! < hiearchy[playingCard.rank]!
             
         } ?? false

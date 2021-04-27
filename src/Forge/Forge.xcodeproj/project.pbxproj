@@ -40,7 +40,6 @@
 		B5817D482618BC7D0022B805 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D472618BC7D0022B805 /* Suit.swift */; };
 		B5817D4F2618DE4D0022B805 /* PlayingCardRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D4E2618DE4D0022B805 /* PlayingCardRank.swift */; };
 		B5817D552618DE800022B805 /* PlayingCardSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D542618DE800022B805 /* PlayingCardSuit.swift */; };
-		B5817D642618EE9E0022B805 /* PlayingCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D632618EE9E0022B805 /* PlayingCardTests.swift */; };
 		B5817D722619482C0022B805 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D712619482C0022B805 /* PlayingCardDeck.swift */; };
 		B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D78261953CD0022B805 /* PlayingCards.swift */; };
 		B5817D862619FFD50022B805 /* FeatureError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D852619FFD50022B805 /* FeatureError.swift */; };
@@ -90,6 +89,7 @@
 		B5F2D4C02636EAB60089403F /* JackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4BF2636EAB60089403F /* JackTests.swift */; };
 		B5F2D4C62636F3B80089403F /* QueenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4C52636F3B80089403F /* QueenTests.swift */; };
 		B5F2D4CA2636F4440089403F /* KingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4C92636F4440089403F /* KingTests.swift */; };
+		B5F2D4D0263796160089403F /* JokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D4CF263796160089403F /* JokerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +136,6 @@
 		B5817D472618BC7D0022B805 /* Suit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suit.swift; sourceTree = "<group>"; };
 		B5817D4E2618DE4D0022B805 /* PlayingCardRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardRank.swift; sourceTree = "<group>"; };
 		B5817D542618DE800022B805 /* PlayingCardSuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardSuit.swift; sourceTree = "<group>"; };
-		B5817D632618EE9E0022B805 /* PlayingCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardTests.swift; sourceTree = "<group>"; };
 		B5817D712619482C0022B805 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
 		B5817D78261953CD0022B805 /* PlayingCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCards.swift; sourceTree = "<group>"; };
 		B5817D852619FFD50022B805 /* FeatureError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureError.swift; sourceTree = "<group>"; };
@@ -189,6 +188,7 @@
 		B5F2D4BF2636EAB60089403F /* JackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackTests.swift; sourceTree = "<group>"; };
 		B5F2D4C52636F3B80089403F /* QueenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueenTests.swift; sourceTree = "<group>"; };
 		B5F2D4C92636F4440089403F /* KingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingTests.swift; sourceTree = "<group>"; };
+		B5F2D4CF263796160089403F /* JokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -612,9 +612,9 @@
 		B5F2D4882630FE130089403F /* PlayingCards */ = {
 			isa = PBXGroup;
 			children = (
-				B5817D632618EE9E0022B805 /* PlayingCardTests.swift */,
 				B5F2D4892630FE200089403F /* NumeralCards */,
 				B5F2D4BE2636EA9D0089403F /* FaceCards */,
+				B5F2D4CF263796160089403F /* JokerTests.swift */,
 			);
 			path = PlayingCards;
 			sourceTree = "<group>";
@@ -830,6 +830,7 @@
 				B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */,
 				B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */,
 				B556689226252E030045AC2B /* NobsTests.swift in Sources */,
+				B5F2D4D0263796160089403F /* JokerTests.swift in Sources */,
 				B5F2D4A72636E3E20089403F /* FiveTests.swift in Sources */,
 				B556689826253AEA0045AC2B /* FifteenTests.swift in Sources */,
 				B5F2D4C02636EAB60089403F /* JackTests.swift in Sources */,
@@ -837,7 +838,6 @@
 				B5F2D4C62636F3B80089403F /* QueenTests.swift in Sources */,
 				B597384E25FEB07900367598 /* DeckTests.swift in Sources */,
 				B55668BE262B92920045AC2B /* DoubleRunTests.swift in Sources */,
-				B5817D642618EE9E0022B805 /* PlayingCardTests.swift in Sources */,
 				B5F2D4992636D9500089403F /* TwoTests.swift in Sources */,
 				B5817D90261A12CD0022B805 /* PlayingCardDeckTests.swift in Sources */,
 				B5F2D4B72636E6AB0089403F /* NineTests.swift in Sources */,
