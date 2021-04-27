@@ -98,18 +98,22 @@ public class DoubleRun: Run {
     ///    - cards: The `Card`s to create the `HandRank` with.
     ///    - pairs: The # of pairs that the given `Card`s contain.
     ///    - title: The name of the`HandRank`.
+    ///    - groups: True if multiple pair groups allowed, else false.
     /// - Throws:
     /// - Throws:
     ///    - `ElementsError.insufficientElements` if the given `Card`s
     ///       - Contain less than four `Card`s, or
     ///       - Contain less pairs than the specified # of pairs.
+    ///    - `ElementsError.invalidDuplicateCount` if specified groups is false, and `Card`s
+    ///       contain multiple pair groups.
     ///    - `ElementsError.excessiveElements` if the given `Card`s contain more  pairs than the specified # of pairs.
     ///    - `RangeError.invalidMin`if
     ///       - The given min is less than four.
     ///       -  The # of specified pairs &lt;= zero.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
     init(of min: Int, _ cards: [PlayingCard], with runs: Int,
-                  and pairs: Int, named title: String) throws {
+         and pairs: Int, named title: String,
+         multiple groups: Bool = true) throws {
         
         let minCards = 4
         
@@ -129,6 +133,7 @@ public class DoubleRun: Run {
         self.runs = runs
         self.pairs = pairs
         
-        try super.init(of: min, cards, with: pairs, named: title)
+        try super.init(of: min, cards, with: pairs, named: title,
+                       multiple: groups)
     }
 }

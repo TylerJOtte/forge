@@ -84,17 +84,19 @@ public class Run: Hand, HandRank {
     ///    - cards: The `Card`s to create the `HandRank` with.
     ///    - pairs: The # of pairs that the given `Card`s contain.
     ///    - title: The name of the`HandRank`.
+    ///    - groups: True if multiple pair groups allowed, else false.
     /// - Throws:
     ///    - `ElementsError.insufficientElements` if the given `Card`s
     ///       - Contain less than three `Card`s.
-    ///    - `ElementsError.invalidDuplicateCount` if the given `Card`s doesn't contain the
-    ///       specified # of pairs.
+    ///    - `ElementsError.invalidDuplicateCount` if
+    ///       - Doesn't contain the specified # of pairs, or
+    ///       - Specified groups is false, and `Card`s contain multiple pair groups
     ///    - `RangeError.invalidMin`if
     ///       - The given min is less than four.
     ///       -  The # of specified pairs &lt;= zero.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
     init(of min: Int, _ cards: [PlayingCard], with pairs: Int,
-         named title: String) throws {
+         named title: String, multiple groups: Bool = true) throws {
         
         let minCards = 3
         let max = Int.max
@@ -105,7 +107,7 @@ public class Run: Hand, HandRank {
             throw ElementsError.insufficientElements
         }
         
-        guard (try cards.areSequential(with: pairs)) else {
+        guard (try cards.areSequential(with: pairs, multiple: groups)) else {
 
             print("The given Cards are not in sequential order.")
             throw ElementsError.areNotSequential

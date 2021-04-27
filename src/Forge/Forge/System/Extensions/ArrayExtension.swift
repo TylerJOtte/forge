@@ -122,17 +122,20 @@ extension Array where Element: PlayingCard  {
     /// - Parameters:
     ///    - pairs: The # of paris that the collection contains.
     ///    - high: True if `.ace` is high, else false.
+    ///    - groups: True if multiple pair groups allowed, else false.
     /// - Returns: True if all `Card`s are in sequential order with the given # of pairs, else false.
     /// - Throws:
-    ///    - `ElementsError.insufficientElements` if the given `Card`s ontain less than four
-    ///      `Card`s.
-    ///    - `ElementsError.invalidDuplicateCount` if the given `Card`s doesn't contain the
-    ///       specified # of pairs.
+    ///    - `ElementsError.insufficientElements` if contains less than four `Card`s.
+    ///    - `ElementsError.invalidDuplicateCount` if
+    ///       - Doesn't contain the specified # of pairs, or
+    ///       - Specified groups is false, and `Card`s contain multiple pair groups
     ///    - `RangeError.invalidMin` if the # of specified pairs &lt;= zero.
-    func areSequential(with pairs: Int, ace high: Bool = false) throws -> Bool {
+    func areSequential(with pairs: Int, ace high: Bool = false,
+                       multiple groups: Bool = true) throws -> Bool {
         
         let min = 3
         let pairMin = 1
+        let pairGroups = getPairCounts().count
         let pairCount = getPairCount()
         let s = pairs > 1 ? "s" : ""
         
@@ -152,6 +155,12 @@ extension Array where Element: PlayingCard  {
             
             let tenet = pairCount < pairs ? "" : "only "
             print("The collection must contain \(tenet)\(pairs) pair\(s).")
+            throw ElementsError.invalidDuplicateCount
+        }
+        
+        if (!groups && pairGroups > 1) {
+            
+            print("The collection must contain only one grouping of pairs.")
             throw ElementsError.invalidDuplicateCount
         }
         

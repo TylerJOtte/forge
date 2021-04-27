@@ -27,21 +27,7 @@ class PlayingCards {
     static let ranks: [Rank] = [.ace, .two, .three, .four, .five, .six, .seven,
                                 .eight, .nine, .ten, .jack, .queen, .king]
                        
-//    static let suits: [Suit] = [Suit(Color.black, .clover),
-//                                       Suit(Color.red, .diamond),
-//                                       Suit(Color.red, .heart),
-//                                       Suit(Color.black, .spade)]
-    
     static let suits: [Suit] = [.clubs, .diamonds, .hearts, .spades]
-    
-//    static let jokerCards: [PlayingCard] = [
-//        PlayingCard(.joker, of: nil, Color.black)!,
-//        PlayingCard(.joker, of: nil, Color.red)!
-    
-//    static let jokerCards: [PlayingCard] = [
-//        PlayingCard(.joker, of: nil, Color.black),
-//        PlayingCard(.joker, of: nil, Color.red)
-//    ]
     
     //=========================================================================//
     //                                 METHODS                                 //
@@ -62,16 +48,21 @@ class PlayingCards {
             throw FeatureError.invalidSuit
         }
         
-        var cards: [PlayingCard] = []
-        
-        for rank in ranks {
-            
-            let card = try PlayingCard(rank, of: suit)
-            
-            cards.append(card)
-        }
-        
-        return cards
+        return [
+            try Ace(of: suit),
+            try Two(of: suit),
+            try Three(of: suit),
+            try Four(of: suit),
+            try Five(of: suit),
+            try Six(of: suit),
+            try Seven(of: suit),
+            try Eight(of: suit),
+            try Nine(of: suit),
+            try Ten(of: suit),
+            try Jack(of: suit),
+            try Queen(of: suit),
+            try King(of: suit)
+        ]
     }
     
     /// Retrieves a collection of`PlayingCard`s for each `PlayingCard Rank` per the given `Suit`s.
@@ -110,6 +101,12 @@ class PlayingCards {
         do {
             
             try cards.append(contentsOf: getCards(of: suits))
+            
+            if (jokers) {
+                
+                cards.append(try Joker())
+                cards.append(try Joker(color: .black))
+            }
         
         } catch {
             

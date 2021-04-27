@@ -11,8 +11,12 @@ import Forge
 
 struct ContentView: View {
     
+    let deck = PlayingCardDeck()
+    let ace = [Ace(of: .clubs)]
+    
+    
     var body: some View {
-        Text("Hello, world!")
+        Text(deck.add(ace))
             .padding()
     }
 }

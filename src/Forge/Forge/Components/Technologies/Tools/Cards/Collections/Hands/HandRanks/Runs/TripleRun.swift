@@ -39,6 +39,8 @@ public class TripleRun: DoubleRun {
     ///    - `ElementsError.insufficientElements` if the given `Card`s
     ///       - Contain less than five `Card`s, or
     ///       - Contain less than three pairs.
+    ///      - `ElementsError.invalidDuplicateCount` if specified groups is false, and
+    ///        `Card`s contain multiple pair groups.
     ///    - `ElementsError.excessiveElements` if the given `Card`s contain more than three pairs.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
     public override init(of cards: [PlayingCard]) throws {
@@ -47,7 +49,9 @@ public class TripleRun: DoubleRun {
         let runs = 3
         let pairs = 3
         let title = "Triple Run"
+        let groups = false
 
-        try super.init(of: min, cards, with: runs, and: pairs, named: title)
+        try super.init(of: min, cards, with: runs, and: pairs, named: title,
+                       multiple: groups)
     }
 }
