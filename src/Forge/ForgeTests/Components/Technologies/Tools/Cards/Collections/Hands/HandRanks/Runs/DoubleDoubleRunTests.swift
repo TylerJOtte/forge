@@ -34,16 +34,11 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
-        let rank1 = Rank.ace
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let cards = [card1, card2, card3, card4]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king = try King()
+        let cards = [jack, queen1, queen2, king]
         let expected = ElementsError.insufficientElements
         
         // When
@@ -63,18 +58,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_init_withInsuficcientPairs_throwsError() throws {
 
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.four
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king = try King()
+        let cards = [ten, jack, queen1, queen2, king]
         let expected = ElementsError.invalidDuplicateCount
         
         // When
@@ -90,20 +79,14 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_init_withExcessivePairs_throwsError() throws {
 
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.one
-        let rank3 = Rank.two
-        let rank4 = Rank.two
-        let rank5 = Rank.three
-        let rank6 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let card6 = try PlayingCard(rank6, of: suit)
-        let cards = [card1, card2, card3, card4, card5, card6]
+        let ten = try Ten()
+        let jack1 = try Jack()
+        let jack2 = try Jack(of: .diamonds)
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [ten, jack1, jack2, queen1, queen2, king1, king2]
         let expected = ElementsError.invalidDuplicateCount
         
         // When
@@ -123,18 +106,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_init_withNontSequentialCards_throwsError() throws {
 
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.three
-        let rank4 = Rank.two
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, king1, king2, queen1, queen2]
         let expected = ElementsError.areNotSequential
         
         // When
@@ -157,18 +134,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_minCards_ofDoubleRun_equalsFour() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 5
         
@@ -183,18 +154,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_maxCards_ofDoubleDoubleRun_equalsSystemMax() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = Int.max
         
@@ -213,18 +178,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_count_ofDoubleDoubleRun_equalsNCardsGiven() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 5
         
@@ -243,18 +202,13 @@ class DoubleDoubleRunTests: XCTestCase {
     /// Tests that the title of a `DoubleDoubleRun` equals "Double Double Run".
     func test_title_ofDoubleDoubleRun_equalsDoubleDoubleRun() throws {
         
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        // Given
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = "Double Double Run"
         
@@ -273,18 +227,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_points_withMinCards_equals16() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 16
         
@@ -299,20 +247,13 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_points_withSixCards_equals20() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let rank6 = Rank.four
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let card6 = try PlayingCard(rank6, of: suit)
-        let cards = [card1, card2, card3, card4, card5, card6]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [ten, jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 20
         
@@ -331,18 +272,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_runs_ofDoubleDoubleRun_equalsFour() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 4
         
@@ -361,18 +296,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_pairs_ofDoubleDoubleRun_equalsTwo() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 2
         
@@ -391,18 +320,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_sequence_withMinCards_equalsThree() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 3
         
@@ -417,20 +340,13 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_sequence_withSixCards_equalsFour() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let rank6 = Rank.four
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let card6 = try PlayingCard(rank6, of: suit)
-        let cards = [card1, card2, card3, card4, card5, card6]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [ten, jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 4
         
@@ -449,18 +365,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_runPoints_withMinCards_equalsTwelve() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 12
         
@@ -475,20 +385,13 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_runPoints_withSixCards_equalsSixteen() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let rank6 = Rank.four
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let card6 = try PlayingCard(rank6, of: suit)
-        let cards = [card1, card2, card3, card4, card5, card6]
+        let ten = try Ten()
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [ten, jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 16
         
@@ -507,18 +410,12 @@ class DoubleDoubleRunTests: XCTestCase {
     func test_pairPoints_ofDoubleDoubleRun_equalsFour() throws {
         
         // Given
-        let rank1 = Rank.one
-        let rank2 = Rank.two
-        let rank3 = Rank.two
-        let rank4 = Rank.three
-        let rank5 = Rank.three
-        let suit = Suit.clubs
-        let card1 = try PlayingCard(rank1, of: suit)
-        let card2 = try PlayingCard(rank2, of: suit)
-        let card3 = try PlayingCard(rank3, of: suit)
-        let card4 = try PlayingCard(rank4, of: suit)
-        let card5 = try PlayingCard(rank5, of: suit)
-        let cards = [card1, card2, card3, card4, card5]
+        let jack = try Jack()
+        let queen1 = try Queen()
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King()
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
         let doubleDoubleRun = try DoubleDoubleRun(of: cards)
         let expected = 4
         
