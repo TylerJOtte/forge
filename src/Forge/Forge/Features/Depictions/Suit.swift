@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  Symbol.swift                                                               //
+//  Suit.swift                                                                 //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/02/21.                                       //
+//  Created by Tyler J. Otte on 4/03/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -15,13 +15,15 @@
 //=============================================================================//
 
 import Foundation
+import SwiftUI
 
-/// An illustrative icon.
-public enum Symbol: Depiction {
+/// A symbol grouping.
+public enum Suit: String, Depiction {
     
-    case clover
-    case diamond
-    case heart
-    case spade
-    case star
+    case null
+    case clubs
+    case diamonds
+    case hearts
+    case spades
+    case stars
 }

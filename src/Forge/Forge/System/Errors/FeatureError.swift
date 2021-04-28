@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// A throwable `Feature Error`
+/// A throwable `Feature Error`.
 public enum FeatureError: Error {
     
     case invalidRank

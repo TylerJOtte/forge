@@ -14,44 +14,6 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `Array` operations.
-extension Array where Element: Hashable {
-    
-    //=========================================================================//
-    //                                 GETTERS                                 //
-    //=========================================================================//
-    
-    /// Retrieves the duplicate items in the collection.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The duplicate items in the collection.
-    func getDuplicates() -> [Element:[Element]] {
-        
-        return Dictionary(grouping: self, by: {$0}).filter({$0.value.count > 1})
-    }
-    
-    /// Retrieves the count of each duplicate in the collection.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The count of each duplicate in the collection.
-    func getDuplicateCounts() -> [Element:Int] {
-        
-        return getDuplicates().mapValues{ ($0.count * ($0.count - 1)) / 2 }
-    }
-    
-    /// Retrieves the total duplicate count in the collection.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The total duplicate count in the collection.
-    func getDuplicateCount() -> Int {
-        
-        return getDuplicateCounts().values.reduce(0, +)
-    }
-}
-
 /// An extension for common `PlayingCard Array` operations.
 extension Array where Element: PlayingCard  {
 
@@ -66,7 +28,7 @@ extension Array where Element: PlayingCard  {
     /// - Returns: True if all `Card`s in the collection have the same `Rank`, else false.
     func areEquallyRanked() -> Bool {
         
-        return !self.contains(where: {$0.rank != self.first?.rank})
+        return !self.contains(where: {$0 != self.first})
     }
     
     /// Determines if all `Card`s in the collection have the same `Suit`.
@@ -188,9 +150,10 @@ extension Array where Element: PlayingCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: The duplicate items in the collection.
-    func getPairs() -> [Rank:[Element]] {
+    func getPairs() -> [Rank:[PlayingCard]] {
         
-        return Dictionary(grouping: self, by: {$0.rank}).filter({$0.value.count > 1})
+        return Dictionary(grouping: self, by: {$0.rank})
+            .filter({$0.value.count > 1})
     }
     
     /// Retrieves the count of each duplicate in the collection.

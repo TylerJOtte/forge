@@ -16,9 +16,9 @@
 
 import Foundation
 
-/// A throwable `Range Error`
+/// A throwable `Range Error`.
 public enum RangeError: Error {
     
-    case invalidMin
     case invalidMax
+    case invalidMin
 }

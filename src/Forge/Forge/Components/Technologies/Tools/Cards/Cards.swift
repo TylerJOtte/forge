@@ -43,11 +43,11 @@ extension Cards {
     
     /// Determines if the collection has capacity to add all of the given `Card`s.
     ///
-    /// - Parameter cards: The `Card`s to add to the collection.
     /// - Precondition: None.
     /// - Postcondition: None.
+    /// - Parameter cards: The `Card`s to add to the collection.
     /// - Returns: True if the collection can add all of the given `Card`s, else false.
-    public func hasCapacity(for cards: [Card]) -> Bool {
+    func hasCapacity(for cards: [Card]) -> Bool {
         
         return cards.count <= capacity
     }

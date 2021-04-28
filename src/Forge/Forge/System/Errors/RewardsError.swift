@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// A throwable `Rewards Error`
+/// A throwable `Rewards Error`.
 public enum RewardsError: Error {
     
     case invalidPoints
