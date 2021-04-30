@@ -26,7 +26,7 @@ class CribbageHandTests: XCTestCase {
 
     /// Tests that creating a `CribbageHand` with a `Joker` throws a
     /// `FeatureError.jokersNotAllowed Error`.
-    func test_init_withExcessiveCards_throwsError() throws {
+    func test_init_withJoker_throwsError() throws {
 
         // Given
         let fiveOfDiamonds = try Five(of: .diamonds)
@@ -35,6 +35,28 @@ class CribbageHandTests: XCTestCase {
         let joker = try Joker()
         let cutCard = try Five()
         let cards = [fiveOfDiamonds, fiveOfClubs, fiveOfSpades, joker]
+        let expected = FeatureError.jokersNotAllowed
+        
+        // When
+        XCTAssertThrowsError(try CribbageHand(with: cards, and: cutCard)) {
+            error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? FeatureError)
+        }
+    }
+    
+    /// Tests that creating a `CribbageHand` with a `Joker`as the cut `Card` throws a
+    /// `FeatureError.jokersNotAllowed Error`.
+    func test_init_withJokerCutCard_throwsError() throws {
+
+        // Given
+        let jackOfHearts = try Jack()
+        let fiveOfDiamonds = try Five(of: .diamonds)
+        let fiveOfClubs = try Five(of: .clubs)
+        let fiveOfSpades = try Five(of: .spades)
+        let cutCard = try Joker()
+        let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
         let expected = FeatureError.jokersNotAllowed
         
         // When
