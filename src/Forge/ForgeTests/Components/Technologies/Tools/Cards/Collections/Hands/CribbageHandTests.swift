@@ -24,6 +24,37 @@ class CribbageHandTests: XCTestCase {
     //                             Initialization                              //
     //=========================================================================//
 
+    //-------------------------------------------------------------------------//
+    //                             Excessive Cards                             //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that creating a `CribbageHand` with more than four `Card`s throws an
+    /// `ElementsError.excessiveElements Error`.
+    func test_init_withExcessiveCards_throwsError() throws {
+
+        // Given
+        let jackOfHearts = try Jack()
+        let fiveOfDiamonds = try Five(of: .diamonds)
+        let fiveOfClubs = try Five(of: .clubs)
+        let fiveOfSpades = try Five(of: .spades)
+        let aceOfHearts = try Ace()
+        let cutCard = try Five()
+        let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades, aceOfHearts]
+        let expected = ElementsError.excessiveElements
+        
+        // When
+        XCTAssertThrowsError(try CribbageHand(with: cards, and: cutCard)) {
+            error in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  Jokers                                 //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that creating a `CribbageHand` with a `Joker` throws a
     /// `FeatureError.jokersNotAllowed Error`.
     func test_init_withJoker_throwsError() throws {
