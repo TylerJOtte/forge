@@ -35,8 +35,8 @@ class CardTests: XCTestCase {
         // Given
         let title1 = "A Card"
         let title2 = "B Card"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
         
         // When/Then
         XCTAssertLessThan(card1, card2)
@@ -51,8 +51,8 @@ class CardTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card1 = Card(title)
-        let card2 = Card(title)
+        let card1 = Card(named: title)
+        let card2 = Card(named: title)
         
         // When/Then
         XCTAssertEqual(card1, card2)
@@ -64,8 +64,8 @@ class CardTests: XCTestCase {
         // Given
         let title1 = "Card 1"
         let title2 = "Card 2"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
         
         // When/Then
         XCTAssertNotEqual(card1, card2)
@@ -82,8 +82,8 @@ class CardTests: XCTestCase {
         // Given
         let title1 = "Z Card"
         let title2 = "A Card"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
         
         // When/Then
         XCTAssertGreaterThan(card1, card2)

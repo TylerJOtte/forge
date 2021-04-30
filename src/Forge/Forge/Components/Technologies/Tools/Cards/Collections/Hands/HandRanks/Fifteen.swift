@@ -32,7 +32,7 @@ public class Fifteen: Hand, HandRank {
     /// Creates a`Fifteen`with the given `Card`s.
     ///
     /// - Precondition:
-    ///   - The given `Card`s must contain 2-5`Card`s.
+    ///   - The given `Card`s must contain two to five`Card`s.
     ///   - The given `Card`'s points must sum to 15.
     /// - Postcondition:
     ///   - The `HandRank` can hold two  to five `Card`s.

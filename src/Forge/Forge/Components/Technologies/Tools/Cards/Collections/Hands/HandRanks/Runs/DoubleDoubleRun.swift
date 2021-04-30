@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of two `DoubleRun`s.
-public class DoubleDoubleRun: DoubleRun {
+public class DoubleDoubleRun: MultiRun {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -41,7 +41,7 @@ public class DoubleDoubleRun: DoubleRun {
     ///       - Contain less than two pairs.
     ///    - `ElementsError.excessiveElements` if the given `Card`s contain more than two pairs.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
-    public override init(of cards: [PlayingCard]) throws {
+    public init(of cards: [PlayingCard]) throws {
         
         let min = 5
         let runs = 4

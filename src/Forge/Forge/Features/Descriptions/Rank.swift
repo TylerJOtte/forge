@@ -23,7 +23,7 @@ public enum Rank: Int, Description {
     //                                 ATTRIBUTES                              //
     //=========================================================================//
     
-    case ace
+    case zero = 0
     case one = 1
     case two = 2
     case three = 3
@@ -37,6 +37,7 @@ public enum Rank: Int, Description {
     case jack
     case queen
     case king
+    case ace
     case joker
     
     //=========================================================================//

@@ -35,7 +35,7 @@ public class Card: Tool, Comparable {
     /// - Precondition: None.
     /// - Postcondition: The `Card`s title is set to the given title.
     /// - Parameter title: The primary name.
-    public init(_ title: String) {
+    public init(named title: String) {
         
         self.title = title
     }

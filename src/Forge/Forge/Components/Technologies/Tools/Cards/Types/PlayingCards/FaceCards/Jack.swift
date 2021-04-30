@@ -17,7 +17,7 @@
 import Foundation
 import SwiftUI
 
-/// A standard French-suited jack `PlayingCard`.
+/// A standard French-suited `PlayingCard` with a `jack Rank`.
 public class Jack: FaceCard {
     
     //=========================================================================//
@@ -26,19 +26,18 @@ public class Jack: FaceCard {
     
     /// Creates a`Jack` with the given `Suit`.
     ///
-    /// - Precondition: The given `Suit` must be `clubs`, `diamonds`, `hearts`, or
-    ///  `spades`.
+    /// - Precondition: `Suit` = `clubs`, `diamonds`, `hearts`, or `spades`.
     /// - Postcondition:
     ///   - The `Card`s `Rank`is set to `jack`.
     ///   - The `Card`s `Suit` is set to the given `Suit`.
     ///   - The `Card`s points are set to 10.
-    ///   - The `Card`s title is set to "`Jack` of `{Suit}`.
+    ///   - The `Card`s title is set to "`Jack` of `Suit`.
     ///   - The `Card`s `Color` is set to
-    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
-    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
+    ///      - `red` if`Suit` = `hearts` or `diamonds`, or
+    ///      - `black` if `Suit` = `clubs` or `spades`.
     /// - Parameter suit: The symbol grouping.
-    /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
-    ///   `diamonds`, `hearts`, or `spades`.
+    /// - Throws: `FeatureError.invalidSuit`  if `Suit` != `clubs`, `diamonds`,
+    ///           `hearts`, or `spades`.
     public init(of suit: Suit = .hearts) throws {
         
         try super.init(.jack, of: suit)

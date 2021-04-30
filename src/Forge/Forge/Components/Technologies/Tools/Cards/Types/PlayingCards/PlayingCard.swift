@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A standard French-suited playing `Card`.
-public class PlayingCard: Card {//, Hashable {
+public class PlayingCard: Card {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -27,7 +27,7 @@ public class PlayingCard: Card {//, Hashable {
     /// The hierarchical position.
     public let rank: Rank
     
-    /// The symbol groupoing.
+    /// The symbol grouping.
     public let suit: Suit?
     
     /// The total # of points.
@@ -59,31 +59,12 @@ public class PlayingCard: Card {//, Hashable {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a default `PlayingCard`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to `ace`.
-    ///   - The `Card`s `Suit` is set to `hearts`.
-    ///   - The `Card`s points are set to one.
-    ///   - The `Card`s title is set to "Ace of Hearts".
-    ///   - The `Card`s `Color` is set to `red`.
-    init() {
-        
-        self.rank = .ace
-        self.suit = .hearts
-        self.points = 1
-        self.color = Color.red
-        
-        super.init("Ace Of Hearts")
-    }
-    
     /// Creates a `PlayingCard` with the given `Rank`, `Suit`, & `Color`.
     ///
     /// - Precondition:
-    ///   - The given `Rank` must be an `ace`..`ten`, `jack`, `queen`, `king`, or `joker`.
-    ///   - The given `Suit` must be `clubs`, `diamonds`, `hearts`, `spades`, or `null`.
-    ///   - The given `Suit` must be nil if the specified `Rank` is a `joker`.
+    ///   - `Rank` = `ace`..`ten`, `jack`, `queen`, `king`, or `joker`.
+    ///   - `Suit` =`clubs`, `diamonds`, `hearts`, `spades`, or `null`.
+    ///   - `Suit` = `null` if `Rank` equals `joker`.
     /// - Postcondition:
     ///   - The `Card`s `Rank`is set to the given `Rank`.
     ///   - The `Card`s `Suit` is set to the given `Suit`.
@@ -130,7 +111,7 @@ public class PlayingCard: Card {//, Hashable {
         self.suit = suit
         self.points = rank.getPoints()
         self.color = rank == .joker ? color : suit.isRed() ? .red : .black
-        super.init(rank.getTitle(for: suit, color))
+        super.init(named: rank.getTitle(for: suit, color))
     }
     
     //=========================================================================//
@@ -145,10 +126,6 @@ public class PlayingCard: Card {//, Hashable {
     /// - Returns: True if the `Card` is  less than the  given `Card`.
     override func isLessThan(_ card: Card) -> Bool {
 
-        print("------------------------")
-        print("PlayingCard is less than")
-        print("------------------------")
-        
         return (card as? PlayingCard).map{ playingCard in
             
             return (playingCard is Ace && rank != .joker) ?
@@ -166,10 +143,6 @@ public class PlayingCard: Card {//, Hashable {
     /// - Returns: True if the `Card` is equal to the  given `Card`.
     override func equals(_ card: Card) -> Bool {
 
-        print("------------------------")
-        print("PlayingCard equals")
-        print("------------------------")
-        
         return (card as? PlayingCard).map{ playingCard in
             
             return rank == playingCard.rank
@@ -192,28 +165,4 @@ public class PlayingCard: Card {//, Hashable {
             
         } ?? false
     }
-    
-//    /// *Note* The following documentation is taken directly from Swift's `Hashable` protocol.
-//    ///
-//    /// Hashes the essential components of this value by feeding them into the
-//    /// given hasher.
-//    ///
-//    /// Implement this method to conform to the `Hashable` protocol. The
-//    /// components used for hashing must be the same as the components compared
-//    /// in your type's `==` operator implementation. Call `hasher.combine(_:)`
-//    /// with each of these components.
-//    ///
-//    /// - Important: Never call `finalize()` on `hasher`. Doing so may become a
-//    ///   compile-time error in the future.
-//    ///
-//    /// - Parameter hasher: The hasher to use when combining the components
-//    ///   of this instance.
-//    public func hash(into hasher: inout Hasher) {
-//
-//        hasher.combine(title)
-//        hasher.combine(rank)
-//        hasher.combine(suit)
-//        hasher.combine(points)
-//        hasher.combine(color)
-//    }
 }

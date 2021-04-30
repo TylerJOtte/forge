@@ -53,7 +53,7 @@ class JackTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the title of a `Jack` created with a `clubs Suit` equals "Jack Of Clubs".
-    func test_title_withClubs_equalsAceOfClubs() throws {
+    func test_title_withClubs_equalsJackOfClubs() throws {
         
         // Given
         let jack = try Jack(of: .clubs)
@@ -67,7 +67,7 @@ class JackTests: XCTestCase {
     }
     
     /// Tests that the title of a `Jack` created with a `diamonds Suit` equals "Jack Of Diamonds".
-    func test_title_withDiamonds_equalsAceOfDiamonds() throws {
+    func test_title_withDiamonds_equalsJackOfDiamonds() throws {
         
         // Given
         let jack = try Jack(of: .diamonds)
@@ -81,7 +81,7 @@ class JackTests: XCTestCase {
     }
     
     /// Tests that the title of a `Jack` created with a `hearts Suit` equals "Jack Of Hearts".
-    func test_title_withHearts_equalsAceOfHearts() throws {
+    func test_title_withHearts_equalsJackOfHearts() throws {
         
         // Given
         let jack = try Jack(of: .hearts)
@@ -95,7 +95,7 @@ class JackTests: XCTestCase {
     }
     
     /// Tests that the title of a `Jack` created with a `spades Suit` equals "Jack Of Spades".
-    func test_title_withSpades_equalsAceOfSpades() throws {
+    func test_title_withSpades_equalsJackOfSpades() throws {
         
         // Given
         let jack = try Jack(of: .spades)
@@ -113,7 +113,7 @@ class JackTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the `Rank` of a `Jack` equals `jack`.
-    func test_rank_ofAce_equalsTen() throws {
+    func test_rank_ofJack_equalsJack() throws {
         
         // Given
         let jack = try Jack()
@@ -190,8 +190,8 @@ class JackTests: XCTestCase {
     //                                Points                                   //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the points of a `Jack` that is not high equals jack.
-    func test_points_ofLowAce_equalsTen() throws {
+    /// Tests that the points of a `Jack` equals 10.
+    func test_points_ofJack_equals10() throws {
         
         // Given
         let jack = try Jack()
@@ -271,18 +271,6 @@ class JackTests: XCTestCase {
     //-------------------------------------------------------------------------//
     //                               Less Than                                 //
     //-------------------------------------------------------------------------//
-
-    /// Tests that a `Jack` is less than a high`Ace`.
-    func test_isLessThan_TenAndHighAce_true() throws {
-
-        // Given
-        let high = true
-        let jack = try Jack()
-        let ace = try Ace(of: .hearts, is: high)
-
-        // When/Then
-        XCTAssertLessThan(jack, ace)
-    }
     
     /// Tests that a `Jack` is less than a `Queen PlayingCard`.
     func test_isLessThan_TenAndJack_true() throws {
@@ -300,25 +288,25 @@ class JackTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that `Jack`s with the same `Suit` are equal.
-    func test_equals_TensWithSameSuit_true() throws {
+    func test_equals_JacksWithSameSuit_true() throws {
         
         // Given
-        let ten1 = try Jack(of: .spades)
-        let ten2 = try Jack(of: .spades)
+        let jack1 = try Jack(of: .spades)
+        let jack2 = try Jack(of: .spades)
         
         // When/Then
-        XCTAssertEqual(ten1, ten2)
+        XCTAssertEqual(jack1, jack2)
     }
     
     /// Tests that `Jack`s with the different `Suit`s are equal.
-    func test_equals_TensWithDifferentSuits_true() throws {
+    func test_equals_JacksWithDifferentSuits_true() throws {
         
         // Given
-        let ten1 = try Jack(of: .hearts)
-        let ten2 = try Jack(of: .spades)
+        let jack1 = try Jack(of: .hearts)
+        let jack2 = try Jack(of: .spades)
         
         // When/Then
-        XCTAssertEqual(ten1, ten2)
+        XCTAssertEqual(jack1, jack2)
     }
     
     //-------------------------------------------------------------------------//

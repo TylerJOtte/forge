@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` with three `Run`s and a royal pair.
-public class TripleRun: DoubleRun {
+public class TripleRun: MultiRun {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -43,7 +43,7 @@ public class TripleRun: DoubleRun {
     ///        `Card`s contain multiple pair groups.
     ///    - `ElementsError.excessiveElements` if the given `Card`s contain more than three pairs.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
-    public override init(of cards: [PlayingCard]) throws {
+    public init(of cards: [PlayingCard]) throws {
         
         let min = 5
         let runs = 3

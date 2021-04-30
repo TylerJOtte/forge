@@ -63,7 +63,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let deck = Deck()
         let expected = 1
         
@@ -81,8 +81,8 @@ class DeckTests: XCTestCase {
         // Given
         let title1 = "Card 1"
         let title2 = "Card 2"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
         let cards = [card1, card2]
         let deck = Deck()
         let expected = 2
@@ -104,7 +104,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let cards = [card]
         let deck = Deck(of: cards)!
         
@@ -117,7 +117,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let cards = [card]
         let deck = Deck(of: cards)!
         let expected = 1
@@ -134,7 +134,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let cards = [card]
         let max = 2
         let deck = Deck(of: cards, with: max)!
@@ -149,8 +149,8 @@ class DeckTests: XCTestCase {
         // Given
         let title1 = "Card 1"
         let title2 = "Card 2"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
         let cards = [card1]
         let deck = Deck(of: cards)!
         let expected = 2
@@ -171,10 +171,10 @@ class DeckTests: XCTestCase {
         let title2 = "Card 2"
         let title3 = "Card 3"
         let title4 = "Card 4"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
-        let card3 = Card(title3)
-        let card4 = Card(title4)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
+        let card4 = Card(named: title4)
         let cards1 = [card1, card2]
         let cards2 = [card3, card4]
         let deck = Deck(of: cards1)!
@@ -197,7 +197,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let cards = [card]
         let max = 1
         let deck = Deck(of: cards, with: max)!
@@ -234,7 +234,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let cards = [card]
         let deck = Deck(of: cards)!
         
@@ -247,7 +247,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let deck = Deck()
         
         // When
@@ -277,7 +277,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let cards = [card]
         let max = 2
         let deck = Deck(of: cards, with: max)!
@@ -291,7 +291,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let cards = [card]
         let max = 1
         let deck = Deck(of: cards, with: max)!
@@ -311,9 +311,9 @@ class DeckTests: XCTestCase {
         let title1 = "Card 1"
         let title2 = "Card 2"
         let title3 = "Card 3"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
-        let card3 = Card(title3)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
         let cards = [card1, card2, card3]
         let deck = Deck(of: cards)!
         let expected = card2
@@ -330,10 +330,10 @@ class DeckTests: XCTestCase {
         let title2 = "Card 2"
         let title3 = "Card 3"
         let title4 = "Card 4"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
-        let card3 = Card(title3)
-        let card4 = Card(title4)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
+        let card4 = Card(named: title4)
         let cards = [card1, card2, card3]
         let deck = Deck(of: cards)!
         let expected = card4
@@ -347,7 +347,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let deck = Deck()
         
         // When
@@ -364,9 +364,9 @@ class DeckTests: XCTestCase {
         let title1 = "Card 1"
         let title2 = "Card 2"
         let title3 = "Card 3"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
-        let card3 = Card(title3)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
         let cards = [card1, card2, card3]
         let deck = Deck(of: cards)!
         let expected = card2
@@ -389,9 +389,9 @@ class DeckTests: XCTestCase {
         let title1 = "Card 1"
         let title2 = "Card 2"
         let title3 = "Card 3"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
-        let card3 = Card(title3)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
         let cards = [card1, card2, card3]
         let deck = Deck(of: cards)!
         let expected = card2
@@ -412,7 +412,7 @@ class DeckTests: XCTestCase {
         
         // Given
         let title = "Card"
-        let card = Card(title)
+        let card = Card(named: title)
         let deck = Deck()
         let expected = ElementsError.isEmpty
         
@@ -433,10 +433,10 @@ class DeckTests: XCTestCase {
         let title2 = "Card 2"
         let title3 = "Card 3"
         let title4 = "Card 4"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
-        let card3 = Card(title3)
-        let card4 = Card(title4)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
+        let card4 = Card(named: title4)
         let cards = [card1, card2, card3]
         let deck = Deck(of: cards)!
         let expected = ElementsError.notFound
@@ -456,9 +456,9 @@ class DeckTests: XCTestCase {
         let title1 = "Card 1"
         let title2 = "Card 2"
         let title3 = "Card 3"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
-        let card3 = Card(title3)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
         let cards = [card1, card2]
         let max = 2
         let deck = Deck(of: cards, with: max)!
@@ -480,10 +480,10 @@ class DeckTests: XCTestCase {
         let title2 = "Card 2"
         let title3 = "Card 3"
         let title4 = "Card 4"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
-        let card3 = Card(title3)
-        let card4 = Card(title4)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
+        let card4 = Card(named: title4)
         let cards1 = [card1, card2]
         let cards2 = [card3, card4]
         let max = 2
@@ -508,10 +508,10 @@ class DeckTests: XCTestCase {
         let title2 = "Card 2"
         let title3 = "Card 3"
         let title4 = "Card 4"
-        let card1 = Card(title1)
-        let card2 = Card(title2)
-        let card3 = Card(title3)
-        let card4 = Card(title4)
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
+        let card4 = Card(named: title4)
         let cards1 = [card1, card2]
         let cards2 = [card3, card4]
         let max = 3

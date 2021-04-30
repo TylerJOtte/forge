@@ -17,7 +17,7 @@
 import Foundation
 
 /// A collection of `Card`s.
-public protocol Cards: Tool, Elements where T == Card {
+public protocol Cards: Tool, Elements where T: Card {
     
     /// The minimum # of `Card`s allowed.
     ///
@@ -76,7 +76,7 @@ extension Cards {
         
         for card in cards {
             
-            try add(card)
+            try add(card as! Self.T)
         }
     }
 }
