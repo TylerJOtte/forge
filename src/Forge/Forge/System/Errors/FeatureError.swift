@@ -21,4 +21,5 @@ public enum FeatureError: Error {
     
     case invalidRank
     case invalidSuit
+    case jokersNotAllowed
 }

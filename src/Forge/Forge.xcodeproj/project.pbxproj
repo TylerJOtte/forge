@@ -59,6 +59,7 @@
 		B59A44AF25FE934200857EB5 /* Forge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A44A525FE934100857EB5 /* Forge.framework */; };
 		B59A44B625FE934200857EB5 /* Forge.h in Headers */ = {isa = PBXBuildFile; fileRef = B59A44A825FE934200857EB5 /* Forge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F29B25263B7EE200082A1A /* MultiRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B24263B7EE200082A1A /* MultiRun.swift */; };
+		B5F29B2B263B8B8500082A1A /* CribbageHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B2A263B8B8500082A1A /* CribbageHand.swift */; };
 		B5F2D43C262D16340089403F /* FaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D43B262D16340089403F /* FaceCard.swift */; };
 		B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D441262E39380089403F /* PlayingCardError.swift */; };
 		B5F2D44A262E496E0089403F /* NumeralCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D449262E496E0089403F /* NumeralCard.swift */; };
@@ -158,6 +159,7 @@
 		B59A44AE25FE934200857EB5 /* ForgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59A44B525FE934200857EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5F29B24263B7EE200082A1A /* MultiRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRun.swift; sourceTree = "<group>"; };
+		B5F29B2A263B8B8500082A1A /* CribbageHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageHand.swift; sourceTree = "<group>"; };
 		B5F2D43B262D16340089403F /* FaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCard.swift; sourceTree = "<group>"; };
 		B5F2D441262E39380089403F /* PlayingCardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardError.swift; sourceTree = "<group>"; };
 		B5F2D449262E496E0089403F /* NumeralCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralCard.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				B597384825FEAD4100367598 /* Hand.swift */,
+				B5F29B2A263B8B8500082A1A /* CribbageHand.swift */,
 				B5817D95261A19BD0022B805 /* HandRanks */,
 			);
 			path = Hands;
@@ -778,6 +781,7 @@
 				B556685D2625268D0045AC2B /* Feature.swift in Sources */,
 				B5F2D43C262D16340089403F /* FaceCard.swift in Sources */,
 				B5817D862619FFD50022B805 /* FeatureError.swift in Sources */,
+				B5F29B2B263B8B8500082A1A /* CribbageHand.swift in Sources */,
 				B5F2D456262E4D330089403F /* Three.swift in Sources */,
 				B5F2D452262E4C660089403F /* Two.swift in Sources */,
 				B556684D2623EB150045AC2B /* Component.swift in Sources */,
