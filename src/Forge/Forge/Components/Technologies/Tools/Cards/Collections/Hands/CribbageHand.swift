@@ -50,7 +50,7 @@ public class CribbageHand: Hand {
         let max = 4
         let joker = try Joker()
         
-        guard (cards.contains(joker)) else {
+        guard (!cards.contains(joker)) else {
             
             print("The given Cards must not contain any Jokers.")
             throw FeatureError.jokersNotAllowed
