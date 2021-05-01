@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `PlayingCard Hand` for a game of Cribbage.
-public class CribbageHand: Hand {
+public class CribbageHand: PlayingCardHand {
     
     /// The `Deck`'s cut `Card`.
     public let cutCard: PlayingCard

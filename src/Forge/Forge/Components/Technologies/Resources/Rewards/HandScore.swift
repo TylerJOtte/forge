@@ -24,7 +24,7 @@ public class HandScore: Score {
     //                                ATTRIBUTES                               //
     //=========================================================================//
     
-    /// The `HandRank`'s that makeup the `Hand`'s total points.
+    /// The `HandRank`'s that make up the `Hand`'s total points.
     public var handRanks: [String:[HandRank]]
     
     /// The total # of points.
