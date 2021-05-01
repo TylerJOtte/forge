@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Deck` of `Card`s.
-public class Deck: Cards {
+public class Deck: Tool, Cards {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -45,7 +45,7 @@ public class Deck: Cards {
     /// - Postcondition:
     ///   - The `Deck` can hold zero - Int.max `Card`s.
     ///   - The `Deck` is empty.
-    public init() {
+    public override init() {
         
         self.minCards = 0
         self.maxCards = Int.max
@@ -95,6 +95,7 @@ public class Deck: Cards {
         self.minCards = min
         self.maxCards = max
         self.cards = [:]
+        super.init()
         try! add(cards)
     }
     
@@ -126,7 +127,7 @@ public class Deck: Cards {
         self.minCards = 0
         self.maxCards = max
         self.cards = [:]
-        
+        super.init()
         try! add(cards)
     }
     

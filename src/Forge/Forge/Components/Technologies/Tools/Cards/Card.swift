@@ -17,7 +17,7 @@
 import Foundation
 
 /// A game `Card`.
-public class Card: Tool, Comparable {
+public class Card: Tool {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -44,79 +44,50 @@ public class Card: Tool, Comparable {
     //                                 METHODS                                 //
     //=========================================================================//
     
-    /// Determines if the `Card` is  less than the  given `Card`.
+    /// Determines if the `Element` is  less than the  given `Element`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is  less than the  given `Card`.
-    func isLessThan(_ card: Card) -> Bool {
-
-        return title < card.title
-    }
-    
-    /// Determines if the `Card` is  equal to the  given `Card`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is equal to the  given `Card`.
-    func equals(_ card: Card) -> Bool {
+    /// - Parameter card: The `Element` to compare against.
+    /// - Returns: True if the `Element` is  less than the  given `Element`.
+    override func isLessThan(_ element: Element) -> Bool {
         
-        return title == card.title
+        return (element as? Card).map{ card in
+            
+            return title < card.title
+            
+        } ?? false
     }
     
-    /// Determines if the `Card` is  greater  than the  given `Card`.
+    /// Determines if the `Element` is  equal to the  given `Element`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is  greater than the  given `Card`.
-    func isGreaterThan(_ card: Card) -> Bool {
-
-        return title > card.title
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                               Operators                                 //
-    //-------------------------------------------------------------------------//
-    
-    /// Determines if the given left-handside `Card` is less than the specified right-handside `Card`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `Card` to compare against.
-    ///   - rhs: The `Card` to compare to.
-    /// - Returns: True if given left-handside `Card` is less than the specified right-handside `Card`.
-    public static func < (lhs: Card, rhs: Card) -> Bool {
+    /// - Parameter card: The `Element` to compare against.
+    /// - Returns: True if the `Element` is equal to the  given `Element`.
+    override func equals(_ element: Element) -> Bool {
         
-        return lhs.isLessThan(rhs)
-    }
-
-    /// Determines if the given left-handside `Card` is equal to the specified right-handside `Card`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `Card` to compare against.
-    ///   - rhs: The `Card` to compare to.
-    /// - Returns: True if given left-handside `Card` is equal to the specified right-handside `Card`.
-    public static func == (lhs: Card, rhs: Card) -> Bool {
         
-        return lhs.equals(rhs)
+        return (element as? Card).map{ card in
+            
+            return title == card.title
+            
+        } ?? false
     }
     
-    /// Determines if the given left-handside `Card` is greater than the specified right-handside `Card`.
+    /// Determines if the `Element` is  greater  than the  given `Element`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `Card` to compare against.
-    ///   - rhs: The `Card` to compare to.
-    /// - Returns: True if given left-handside `Card` is greater than the specified right-handside `Card`.
-    public static func > (lhs: Card, rhs: Card) -> Bool {
+    /// - Parameter card: The `Element` to compare against.
+    /// - Returns: True if the `Element` is  greater than the  given `Element`.
+    override func isGreaterThan(_ element: Element) -> Bool {
 
-        return lhs.isGreaterThan(rhs)
+        
+        return (element as? Card).map{ card in
+            
+            return title > card.title
+            
+        } ?? false
     }
 }

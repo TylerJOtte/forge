@@ -17,6 +17,6 @@
 import Foundation
 
 /// An item received in recognition of an achievement.
-public protocol Reward: Resource {
+public class Reward: Resource {
     
 }

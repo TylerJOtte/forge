@@ -67,40 +67,32 @@ public class Ace: NumeralCard {
     //                                 METHODS                                 //
     //=========================================================================//
     
-    /// Determines if the `Card` is  less than the  given `Card`.
+    /// Determines if the `Element` is  less than the  given `Element`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is  less than the  given `Card`.
-    override func isLessThan(_ card: Card) -> Bool {
+    /// - Parameter card: The `Element` to compare against.
+    /// - Returns: True if the `Element` is  less than the  given `Element`.
+    override func isLessThan(_ element: Element) -> Bool {
 
-        print("------------------------")
-        print("Ace is less than")
-        print("------------------------")
-        
-        return (card as? PlayingCard).map{ playingCard in
+        return (element as? PlayingCard).map{ card in
             
-            return !isHigh && !(playingCard is Ace)
+            return !isHigh && !(card is Ace)
             
         } ?? false
     }
     
-    /// Determines if the `Card` is  greater  than the  given `Card`.
+    /// Determines if the `Element` is  greater  than the  given `Element`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is  greater than the  given `Card`.
-    override func isGreaterThan(_ card: Card) -> Bool {
+    /// - Parameter card: The `Element` to compare against.
+    /// - Returns: True if the `Element` is  greater than the  given `Element`.
+    override func isGreaterThan(_ element: Element) -> Bool {
 
-        print("------------------------")
-        print("Ace is greater than")
-        print("------------------------")
-        
-        return (card as? PlayingCard).map{ playingCard in
+        return (element as? PlayingCard).map{ card in
             
-            return isHigh && !(playingCard is Ace)
+            return isHigh && !(card is Ace)
             
         } ?? false
     }

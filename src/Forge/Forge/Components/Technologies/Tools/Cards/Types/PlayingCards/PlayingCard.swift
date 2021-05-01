@@ -118,50 +118,49 @@ public class PlayingCard: Card {
     //                                 METHODS                                 //
     //=========================================================================//
     
-    /// Determines if the `Card` is  less than the  given `Card`.
+    /// Determines if the `Element` is  less than the  given `Element`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is  less than the  given `Card`.
-    override func isLessThan(_ card: Card) -> Bool {
+    /// - Parameter card: The `Element` to compare against.
+    /// - Returns: True if the `Element` is  less than the  given `Element`.
+    override func isLessThan(_ element: Element) -> Bool {
 
-        return (card as? PlayingCard).map{ playingCard in
+        return (element as? PlayingCard).map{ card in
             
-            return (playingCard is Ace && rank != .joker) ?
-                (playingCard as! Ace).isHigh :
-                hiearchy[rank]! < hiearchy[playingCard.rank]!
+            return (card is Ace && rank != .joker) ? (card as! Ace).isHigh :
+                hiearchy[rank]! < hiearchy[card.rank]!
             
         } ?? false
     }
     
-    /// Determines if the `Card` is  equal to the  given `Card`.
+    /// Determines if the `Element` is  equal to the  given `Element`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is equal to the  given `Card`.
-    override func equals(_ card: Card) -> Bool {
+    /// - Parameter card: The `Element` to compare against.
+    /// - Returns: True if the `Element` is equal to the  given `Element`.
+    override func equals(_ element: Element) -> Bool {
 
-        return (card as? PlayingCard).map{ playingCard in
+        return (element as? PlayingCard).map{ card in
             
-            return rank == playingCard.rank
+            return rank == card.rank
             
         } ?? false
     }
     
-    /// Determines if the `Card` is  greater  than the  given `Card`.
+    /// Determines if the `Element` is  greater  than the  given `Element`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter card: The `Card` to compare against.
-    /// - Returns: True if the `Card` is  greater than the  given `Card`.
-    override func isGreaterThan(_ card: Card) -> Bool {
+    /// - Parameter card: The `Element` to compare against.
+    /// - Returns: True if the `Element` is  greater than the  given `Element`.
+    override func isGreaterThan(_ element: Element) -> Bool {
 
-        return (card as? PlayingCard).map{ playingCard in
+        return (element as? PlayingCard).map{ card in
             
-            return playingCard is Ace ? !(playingCard as! Ace).isHigh :
-                hiearchy[rank]! > hiearchy[playingCard.rank]!
+            return card is Ace ? !(card as! Ace).isHigh :
+                hiearchy[rank]! > hiearchy[card.rank]!
             
         } ?? false
     }

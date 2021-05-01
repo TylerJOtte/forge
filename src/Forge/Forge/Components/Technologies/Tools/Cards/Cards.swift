@@ -62,7 +62,7 @@ extension Cards {
     /// - Throws:
     ///   - `RangeError.isFull` if the `Card`s are full.
     ///   - `RangeError.limitedCapacity` if all of the given collection's `Card`s  cannot be added.
-    public func add(_ cards: [Card]) throws {
+    public func add(_ cards: [T]) throws {
         
         guard (!isFull()) else {
             
@@ -76,7 +76,7 @@ extension Cards {
         
         for card in cards {
             
-            try add(card as! Self.T)
+            try add(card)
         }
     }
 }
