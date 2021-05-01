@@ -448,7 +448,7 @@ class HandTests: XCTestCase {
         }
     }
     
-    /// Tests that adding a `Card` to a full `Hand` throws an `ElementsError.isFull` error.
+    /// Tests that adding a `Card` to a full `Hand` throws an `RangeError.isFull` error.
     func test_throwsIsFullError_addCardToFullHand_true() throws {
         
         // Given
@@ -461,17 +461,17 @@ class HandTests: XCTestCase {
         let cards = [card1, card2]
         let max = 2
         let hand = try Hand(of: cards, with: max)
-        let expected = ElementsError.isFull
+        let expected = RangeError.isFull
         
         // When
         XCTAssertThrowsError(try hand.add(card3)) { (error) in
             
             // Then
-            XCTAssertEqual(expected, error as? ElementsError)
+            XCTAssertEqual(expected, error as? RangeError)
         }
     }
     
-    /// Tests that adding `Card`s to a full `Hand` throws an `ElementsError.isFull` error.
+    /// Tests that adding `Card`s to a full `Hand` throws an `RangeError.isFull` error.
     func test_throwsIsFullError_addCardsToFullHand_true() throws {
         
         // Given
@@ -487,18 +487,18 @@ class HandTests: XCTestCase {
         let cards2 = [card3, card4]
         let max = 2
         let hand = try Hand(of: cards1, with: max)
-        let expected = ElementsError.isFull
+        let expected = RangeError.isFull
         
         // When
         XCTAssertThrowsError(try hand.add(cards2)) { (error) in
             
             // Then
-            XCTAssertEqual(expected, error as? ElementsError)
+            XCTAssertEqual(expected, error as? RangeError)
         }
     }
     
     /// Tests that adding `Card`s to a `Hand`greater than its capacity throws an
-    /// `ElementsError.insufficientCapacity` error.
+    /// `RangeError.limitedCapacity` error.
     func test_throwsInsufficientCapacityError_addMoreCardsThanCapacity_true()
         throws {
         
@@ -515,13 +515,13 @@ class HandTests: XCTestCase {
         let cards2 = [card3, card4]
         let max = 3
         let hand = try Hand(of: cards1, with: max)
-        let expected = ElementsError.insufficientCapacity
+        let expected = RangeError.limitedCapacity
         
         // When
         XCTAssertThrowsError(try hand.add(cards2)) { (error) in
             
             // Then
-            XCTAssertEqual(expected, error as? ElementsError)
+            XCTAssertEqual(expected, error as? RangeError)
         }
     }
 }

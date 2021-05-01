@@ -23,5 +23,5 @@ public enum RangeError: Error {
     case invalidMin
     case isEmpty
     case isFull
-    case noCapacity
+    case limitedCapacity
 }

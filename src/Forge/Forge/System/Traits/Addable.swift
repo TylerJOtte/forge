@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  Elements.swift                                                             //
+//  Addable.swift                                                              //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 3/14/21.                                       //
+//  Created by Tyler J. Otte on 5/01/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -16,18 +16,26 @@
 
 import Foundation
 
-/// A collection of `Element`s.
-public protocol Elements: Addable {
+/// An addable characteristic.
+public protocol Addable: Containable {
     
-    /// Removes the first istance of the given `T` from the collection.
+    /// Adds the given `T`.
+    ///
+    /// - Precondition: The {model} cannot be full.
+    /// - Postcondition: The {model} contains the given `T`.
+    /// - Parameter t: The `T` to add to the {model}.
+    /// - Throws: `RangeError.isFull` if the {model} is full.
+    func add(_ t: T) throws
+    
+    /// Adds the given collection of `T`s.
     ///
     /// - Precondition:
-    ///   - The collection cannot be empty.
-    ///   - The collection must contain the given `T`.
-    /// - Postcondition: The collection contains one less instance of the given `T`.
-    /// - Parameter t: The `T` to remove from the collection.
+    ///    - The {model} cannot be full.
+    ///    - The {model} must have capacity to add all of the given `T`s.
+    /// - Postcondition: The {model} contain{s} the given collection's `T`s.
+    /// - Parameter ts: The collection of `T`s to add to the {model}.
     /// - Throws:
-    ///   - `ElementsError.isEmpty` if the collection is empty.
-    ///   - `ElementsError.notFound` if the collection doesn't contain the given `T`.
-    func remove(_ t: T) throws -> T
+    ///   - `RangeError.isFull` if the {model} {is/are} full.
+    ///   - `RangeError.limitedCapacity` if all of the given collection's `T`s  cannot be added.
+    func add(_ ts: [T]) throws
 }

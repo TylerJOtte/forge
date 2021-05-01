@@ -22,18 +22,18 @@ public protocol Containable {
     /// The type of `Element` that the model contains.
     associatedtype T
     
-    /// Determines if the model  is empty.
+    /// Determines if the {model} is empty.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: True if the model is empty, else false.
+    /// - Returns: True if the {model} is empty, else false.
     func isEmpty() -> Bool
     
-    /// Determines if the model is full.
+    /// Determines if the {model} is full.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: True if the model is full, else false.
+    /// - Returns: True if the {model} is full, else false.
     func isFull() -> Bool
     
     /// Determines if the given `T` exists.

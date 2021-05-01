@@ -66,139 +66,6 @@
 					"operations": [
 						{
 							"_type": "UMLOperation",
-							"_id": "AAAAAAF4MXWeIVFtP64=",
-							"_parent": {
-								"$ref": "AAAAAAF4MWWBilEtfbQ="
-							},
-							"name": "isEmpty",
-							"documentation": "---\n### Specification\n---\n\nDetermines if the collection is empty.\n\n- **Precondition**: None.\n- **Postcondition**: None.\n- **Returns**: True if the collection is empty, else false.",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4MXW5xFF0lXw=",
-									"_parent": {
-										"$ref": "AAAAAAF4MXWeIVFtP64="
-									},
-									"type": "boolean",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4MXXaZFF3pBs=",
-							"_parent": {
-								"$ref": "AAAAAAF4MWWBilEtfbQ="
-							},
-							"name": "isFull",
-							"documentation": "---\n### Specification\n---\n\nDetermines if the collection is full.\n\n- **Precondition**: None.\n- **Postcondition**: None.\n- **Returns**: True if the collection is full, else false.",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4MXXo7lF++N4=",
-									"_parent": {
-										"$ref": "AAAAAAF4MXXaZFF3pBs="
-									},
-									"type": "boolean",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4MWW9YFFZuic=",
-							"_parent": {
-								"$ref": "AAAAAAF4MWWBilEtfbQ="
-							},
-							"name": "contains",
-							"documentation": "---\n### Specification\n---\n\nDetermines if the given `T` exists.\n\n- **Precondition**: None.\n- **Postcondition**: None.\n- **Parameter _t_**: The `T` to find.\n- **Returns**: True if the given `T` exists, else false.",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4MWXr71Fg+SI=",
-									"_parent": {
-										"$ref": "AAAAAAF4MWW9YFFZuic="
-									},
-									"name": "t",
-									"type": "T"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4MWXr71Fh2wg=",
-									"_parent": {
-										"$ref": "AAAAAAF4MWW9YFFZuic="
-									},
-									"type": "boolean",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4MZiTtlJ9Qco=",
-							"_parent": {
-								"$ref": "AAAAAAF4MWWBilEtfbQ="
-							},
-							"name": "add",
-							"documentation": "---\n### Specification\n---\n\nAdds the given `T` to the collection.\n\n- **Precondition**: The collection cannot be full.\n- **Postcondition**: The collection contains the given `T`.\n- **Parameter _t_**: The `T` to add to the collection.\n- **Throws**: `ElementsError.isFull` if the collection is full.",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4MZipAVKE7+s=",
-									"_parent": {
-										"$ref": "AAAAAAF4MZiTtlJ9Qco="
-									},
-									"name": "t",
-									"type": "T"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4MZipAVKFLIw=",
-									"_parent": {
-										"$ref": "AAAAAAF4MZiTtlJ9Qco="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							],
-							"raisedExceptions": [
-								{
-									"$ref": "AAAAAAF4Ms7WQoITwg0="
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF5J9C0OQdYFBc=",
-							"_parent": {
-								"$ref": "AAAAAAF4MWWBilEtfbQ="
-							},
-							"name": "add",
-							"documentation": "---\n### Specification\n---\n\nAdds the given `Element`s to the collection.\n\n- Precondition:\n  - The collection cannot be full.\n  - The collection must have capacity to add all of the given `Element`s.\n- Postcondition: The collection contains the given `Element`s.\n- Parameter elements: The `Element`s to add to the collection.\n- Throws:\n  - `ElementsError.isFull` if the collection is full.\n  - `ElementsError.insufficientCapacity` if all of the given `Element`s cannot be added.\n  \n---\n### Algorithm\n---\n\n\n1. guard (isFull())\n\t1.1. Else throw ElementsError.isFull\n    \n2. guard (hasCapacity(elements))\n\t2.1. Else throw ElementsError.insufficientCapacity\n    \n3. foreach (element in elements)\n\t3.1. try add(element)",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF5J9D63gdoH4I=",
-									"_parent": {
-										"$ref": "AAAAAAF5J9C0OQdYFBc="
-									},
-									"name": "elements",
-									"type": "T",
-									"multiplicity": "0..*"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF5J9D63wdpu1E=",
-									"_parent": {
-										"$ref": "AAAAAAF5J9C0OQdYFBc="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
 							"_id": "AAAAAAF4MZhSU1JwoMc=",
 							"_parent": {
 								"$ref": "AAAAAAF4MWWBilEtfbQ="
@@ -9838,7 +9705,7 @@
 																			"font": "Arial;13;0",
 																			"left": 717,
 																			"top": 39,
-																			"width": 156.93798828125,
+																			"width": 183.66162109375,
 																			"height": 13,
 																			"text": "«interface»"
 																		},
@@ -9854,7 +9721,7 @@
 																			"font": "Arial;13;1",
 																			"left": 717,
 																			"top": 54,
-																			"width": 156.93798828125,
+																			"width": 183.66162109375,
 																			"height": 13,
 																			"text": "Elements"
 																		},
@@ -9898,7 +9765,7 @@
 																	"font": "Arial;13;0",
 																	"left": 712,
 																	"top": 34,
-																	"width": 166.93798828125,
+																	"width": 193.66162109375,
 																	"height": 38,
 																	"stereotypeLabel": {
 																		"$ref": "AAAAAAF4MbswQFazF4Q="
@@ -9944,106 +9811,6 @@
 																	"subViews": [
 																		{
 																			"_type": "UMLOperationView",
-																			"_id": "AAAAAAF4MbswQFa5J9k=",
-																			"_parent": {
-																				"$ref": "AAAAAAF4MbswQFa4nMc="
-																			},
-																			"model": {
-																				"$ref": "AAAAAAF4MXWeIVFtP64="
-																			},
-																			"lineColor": "#0e7172",
-																			"fillColor": "#00202a",
-																			"fontColor": "#d2dfe7",
-																			"font": "Arial;13;0",
-																			"left": 717,
-																			"top": 77,
-																			"width": 156.93798828125,
-																			"height": 13,
-																			"text": "+isEmpty(): boolean",
-																			"horizontalAlignment": 0
-																		},
-																		{
-																			"_type": "UMLOperationView",
-																			"_id": "AAAAAAF4MbswQFa62AA=",
-																			"_parent": {
-																				"$ref": "AAAAAAF4MbswQFa4nMc="
-																			},
-																			"model": {
-																				"$ref": "AAAAAAF4MXXaZFF3pBs="
-																			},
-																			"lineColor": "#0e7172",
-																			"fillColor": "#00202a",
-																			"fontColor": "#d2dfe7",
-																			"font": "Arial;13;0",
-																			"left": 717,
-																			"top": 92,
-																			"width": 156.93798828125,
-																			"height": 13,
-																			"text": "+isFull(): boolean",
-																			"horizontalAlignment": 0
-																		},
-																		{
-																			"_type": "UMLOperationView",
-																			"_id": "AAAAAAF4MbswQFa7FJU=",
-																			"_parent": {
-																				"$ref": "AAAAAAF4MbswQFa4nMc="
-																			},
-																			"model": {
-																				"$ref": "AAAAAAF4MWW9YFFZuic="
-																			},
-																			"lineColor": "#0e7172",
-																			"fillColor": "#00202a",
-																			"fontColor": "#d2dfe7",
-																			"font": "Arial;13;0",
-																			"left": 717,
-																			"top": 107,
-																			"width": 156.93798828125,
-																			"height": 13,
-																			"text": "+contains(t: T): boolean",
-																			"horizontalAlignment": 0
-																		},
-																		{
-																			"_type": "UMLOperationView",
-																			"_id": "AAAAAAF4MbswQFa8Lpk=",
-																			"_parent": {
-																				"$ref": "AAAAAAF4MbswQFa4nMc="
-																			},
-																			"model": {
-																				"$ref": "AAAAAAF4MZiTtlJ9Qco="
-																			},
-																			"lineColor": "#0e7172",
-																			"fillColor": "#00202a",
-																			"fontColor": "#d2dfe7",
-																			"font": "Arial;13;0",
-																			"left": 717,
-																			"top": 122,
-																			"width": 156.93798828125,
-																			"height": 13,
-																			"text": "+add(t: T): void",
-																			"horizontalAlignment": 0
-																		},
-																		{
-																			"_type": "UMLOperationView",
-																			"_id": "AAAAAAF5KANg+wgtj+I=",
-																			"_parent": {
-																				"$ref": "AAAAAAF4MbswQFa4nMc="
-																			},
-																			"model": {
-																				"$ref": "AAAAAAF5J9C0OQdYFBc="
-																			},
-																			"lineColor": "#0e7172",
-																			"fillColor": "#00202a",
-																			"fontColor": "#d2dfe7",
-																			"font": "Arial;13;0",
-																			"left": 717,
-																			"top": 137,
-																			"width": 156.93798828125,
-																			"height": 13,
-																			"text": "+add(elements: T[0..*]): void",
-																			"horizontalAlignment": 0
-																		},
-																		{
-																			"_type": "UMLOperationView",
 																			"_id": "AAAAAAF4MbswQFa9yZ8=",
 																			"_parent": {
 																				"$ref": "AAAAAAF4MbswQFa4nMc="
@@ -10057,7 +9824,7 @@
 																			"font": "Arial;13;0",
 																			"left": 717,
 																			"top": 152,
-																			"width": 156.93798828125,
+																			"width": 183.66162109375,
 																			"height": 13,
 																			"text": "+remove(t: T): T",
 																			"horizontalAlignment": 0
@@ -10069,7 +9836,7 @@
 																	"font": "Arial;13;0",
 																	"left": 712,
 																	"top": 72,
-																	"width": 173.66162109375,
+																	"width": 193.66162109375,
 																	"height": 98
 																},
 																{
@@ -10114,7 +9881,7 @@
 																			"fillColor": "#00202a",
 																			"fontColor": "#d2dfe7",
 																			"font": "Arial;13;0",
-																			"left": 864.16162109375,
+																			"left": 890.88525390625,
 																			"top": 21,
 																			"width": 18.7763671875,
 																			"height": 13,
@@ -10126,7 +9893,7 @@
 																	"fillColor": "#00202a",
 																	"fontColor": "#d2dfe7",
 																	"font": "Arial;13;0",
-																	"left": 859.16162109375,
+																	"left": 885.88525390625,
 																	"top": 16,
 																	"width": 28.7763671875,
 																	"height": 23
@@ -10139,8 +9906,8 @@
 															"containerChangeable": true,
 															"left": 712,
 															"top": 16,
-															"width": 176.93798828125,
-															"height": 139,
+															"width": 203.66162109375,
+															"height": 154,
 															"autoResize": true,
 															"showProperty": false,
 															"nameCompartment": {
@@ -10424,7 +10191,7 @@
 															"left": 527,
 															"top": 311,
 															"width": 245.2060546875,
-															"height": 131,
+															"height": 116,
 															"autoResize": true,
 															"showProperty": false,
 															"nameCompartment": {
@@ -11066,7 +10833,7 @@
 															"tail": {
 																"$ref": "AAAAAAF4McK1NFmxiX0="
 															},
-															"points": "424:552;424:512;640:512;640:441",
+															"points": "424:552;424:512;640:512;640:426",
 															"showVisibility": true,
 															"showProperty": false,
 															"nameLabel": {
@@ -11101,7 +10868,7 @@
 																	"fillColor": "#00202a",
 																	"font": "Arial;13;0",
 																	"left": 752,
-																	"top": 243,
+																	"top": 251,
 																	"width": 129.3271484375,
 																	"height": 13,
 																	"alpha": -1.8157748221068912,
@@ -11124,7 +10891,7 @@
 																	"fillColor": "#00202a",
 																	"font": "Arial;13;0",
 																	"left": 752,
-																	"top": 227,
+																	"top": 235,
 																	"width": 39.0380859375,
 																	"height": 13,
 																	"alpha": -1.6447352020325823,
@@ -11149,7 +10916,7 @@
 																	"fontColor": "#d2dfe7",
 																	"font": "Arial;13;0",
 																	"left": 758,
-																	"top": 226,
+																	"top": 234,
 																	"height": 13,
 																	"alpha": -1.5707963267948966,
 																	"distance": 15,
@@ -11168,7 +10935,7 @@
 															"tail": {
 																"$ref": "AAAAAAF4MbswQFbBFvM="
 															},
-															"points": "744:311;744:154",
+															"points": "744:311;744:169",
 															"showVisibility": true,
 															"showProperty": false,
 															"nameLabel": {
@@ -11488,7 +11255,7 @@
 															"tail": {
 																"$ref": "AAAAAAF4Mex/mG2mE4w="
 															},
-															"points": "848:552;848:512;640:512;640:441",
+															"points": "848:552;848:512;640:512;640:426",
 															"showVisibility": true,
 															"showProperty": false,
 															"nameLabel": {
@@ -17671,7 +17438,7 @@
 																			}
 																		}
 																	],
-																	"documentation": "A `Deck` of `Card`s.\n\n---\n### Elements Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Return containsKey(card) && cards[card.title].count > 0\n\n### add(card: Card): void\n\n1. If isFull(), throw ElementsError.isFull\n2. If containsKey(card)\n  - Add a key with the card's title to cards dictionary\n  - Initialize a new array for the key's value\n  - Add the card to the array\n3. Else\n  - Get the card array for the key with the card's title from the cards dictionary\n  - Add the card to the end of the array\n  \n### remove(card: Card): Card\n\n1. If !isEmpty(), throw ElementsError.isEmpty\n2. If !contains(card), throw ElementsError.notFound\n3. Get the array of cards for the key with given card's title from the cards dictionary\n4. Return the last card from the array",
+																	"documentation": "A `Deck` of `Card`s.\n\n---\n### Elements Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Return containsKey(card) && cards[card.title].count > 0\n\n### add(card: Card): void\n\n1. If isFull(), throw RangeError.isFull\n2. If containsKey(card)\n  - Add a key with the card's title to cards dictionary\n  - Initialize a new array for the key's value\n  - Add the card to the array\n3. Else\n  - Get the card array for the key with the card's title from the cards dictionary\n  - Add the card to the end of the array\n  \n### remove(card: Card): Card\n\n1. If !isEmpty(), throw ElementsError.isEmpty\n2. If !contains(card), throw ElementsError.notFound\n3. Get the array of cards for the key with given card's title from the cards dictionary\n4. Return the last card from the array",
 																	"attributes": [
 																		{
 																			"_type": "UMLAttribute",
@@ -17834,7 +17601,7 @@
 																			}
 																		}
 																	],
-																	"documentation": "A `Hand` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Return cards.contains(card)\n\n#### add(card: Card): void\n\n1. If isFull(), throw ElementsError.isFull\n2. Add the card to the end of the cards array\n\n### remove(card: Card): Card\n\n1. If !isEmpty(), throw ElementsError.isEmpty\n2. If !contains(card), throw ElementsError.notFound\n3. Return the first instance of the given card in the cards array\n",
+																	"documentation": "A `Hand` of `Card`s.\n\n---\n### Algorithms\n---\n\n#### isEmpty(): boolean\n\n1. Return cards.count = 0\n\n#### isFull(): boolean\n\n1. Return cards.count = maxCards\n\n#### contains(card: Card): boolean\n\n1. Return cards.contains(card)\n\n#### add(card: Card): void\n\n1. If isFull(), throw RangeError.isFull\n2. Add the card to the end of the cards array\n\n### remove(card: Card): Card\n\n1. If !isEmpty(), throw ElementsError.isEmpty\n2. If !contains(card), throw ElementsError.notFound\n3. Return the first instance of the given card in the cards array\n",
 																	"attributes": [
 																		{
 																			"_type": "UMLAttribute",
@@ -18574,106 +18341,6 @@
 																										"$ref": "AAAAAAF4MWWBilEtfbQ="
 																									},
 																									"subViews": [
-																										{
-																											"_type": "UMLOperationView",
-																											"_id": "AAAAAAF5IAAJ3884FZg=",
-																											"_parent": {
-																												"$ref": "AAAAAAF5IAAJ3883Bhs="
-																											},
-																											"model": {
-																												"$ref": "AAAAAAF4MXWeIVFtP64="
-																											},
-																											"lineColor": "#0e7172",
-																											"fillColor": "#00202a",
-																											"fontColor": "#d2dfe7",
-																											"font": "Arial;13;0",
-																											"left": 717,
-																											"top": 77,
-																											"width": 156.93798828125,
-																											"height": 13,
-																											"text": "+isEmpty(): boolean",
-																											"horizontalAlignment": 0
-																										},
-																										{
-																											"_type": "UMLOperationView",
-																											"_id": "AAAAAAF5IAAJ3885PLQ=",
-																											"_parent": {
-																												"$ref": "AAAAAAF5IAAJ3883Bhs="
-																											},
-																											"model": {
-																												"$ref": "AAAAAAF4MXXaZFF3pBs="
-																											},
-																											"lineColor": "#0e7172",
-																											"fillColor": "#00202a",
-																											"fontColor": "#d2dfe7",
-																											"font": "Arial;13;0",
-																											"left": 717,
-																											"top": 92,
-																											"width": 156.93798828125,
-																											"height": 13,
-																											"text": "+isFull(): boolean",
-																											"horizontalAlignment": 0
-																										},
-																										{
-																											"_type": "UMLOperationView",
-																											"_id": "AAAAAAF5IAAJ3886Lf0=",
-																											"_parent": {
-																												"$ref": "AAAAAAF5IAAJ3883Bhs="
-																											},
-																											"model": {
-																												"$ref": "AAAAAAF4MWW9YFFZuic="
-																											},
-																											"lineColor": "#0e7172",
-																											"fillColor": "#00202a",
-																											"fontColor": "#d2dfe7",
-																											"font": "Arial;13;0",
-																											"left": 717,
-																											"top": 107,
-																											"width": 156.93798828125,
-																											"height": 13,
-																											"text": "+contains(t: T): boolean",
-																											"horizontalAlignment": 0
-																										},
-																										{
-																											"_type": "UMLOperationView",
-																											"_id": "AAAAAAF5IAAJ4M87CeE=",
-																											"_parent": {
-																												"$ref": "AAAAAAF5IAAJ3883Bhs="
-																											},
-																											"model": {
-																												"$ref": "AAAAAAF4MZiTtlJ9Qco="
-																											},
-																											"lineColor": "#0e7172",
-																											"fillColor": "#00202a",
-																											"fontColor": "#d2dfe7",
-																											"font": "Arial;13;0",
-																											"left": 717,
-																											"top": 122,
-																											"width": 156.93798828125,
-																											"height": 13,
-																											"text": "+add(t: T): void",
-																											"horizontalAlignment": 0
-																										},
-																										{
-																											"_type": "UMLOperationView",
-																											"_id": "AAAAAAF5KANhFAhmAgQ=",
-																											"_parent": {
-																												"$ref": "AAAAAAF5IAAJ3883Bhs="
-																											},
-																											"model": {
-																												"$ref": "AAAAAAF5J9C0OQdYFBc="
-																											},
-																											"lineColor": "#0e7172",
-																											"fillColor": "#00202a",
-																											"fontColor": "#d2dfe7",
-																											"font": "Arial;13;0",
-																											"left": 717,
-																											"top": 137,
-																											"width": 156.93798828125,
-																											"height": 13,
-																											"text": "+add(elements: T[0..*]): void",
-																											"horizontalAlignment": 0
-																										},
 																										{
 																											"_type": "UMLOperationView",
 																											"_id": "AAAAAAF5IAAJ4M88Aq0=",
@@ -23477,106 +23144,6 @@
 																							"subViews": [
 																								{
 																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5H+nOOsI4/Gc=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5H+nOOsI3lVQ="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF4MXWeIVFtP64="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 77,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+isEmpty(): boolean",
-																									"horizontalAlignment": 0
-																								},
-																								{
-																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5H+nOOsI5T90=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5H+nOOsI3lVQ="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF4MXXaZFF3pBs="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 92,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+isFull(): boolean",
-																									"horizontalAlignment": 0
-																								},
-																								{
-																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5H+nOOsI6s1c=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5H+nOOsI3lVQ="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF4MWW9YFFZuic="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 107,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+contains(t: T): boolean",
-																									"horizontalAlignment": 0
-																								},
-																								{
-																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5H+nOOsI7pG8=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5H+nOOsI3lVQ="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF4MZiTtlJ9Qco="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 122,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+add(t: T): void",
-																									"horizontalAlignment": 0
-																								},
-																								{
-																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5KANhDghgHSk=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5H+nOOsI3lVQ="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF5J9C0OQdYFBc="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 137,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+add(elements: T[0..*]): void",
-																									"horizontalAlignment": 0
-																								},
-																								{
-																									"_type": "UMLOperationView",
 																									"_id": "AAAAAAF5H+nOOsI8LSA=",
 																									"_parent": {
 																										"$ref": "AAAAAAF5H+nOOsI3lVQ="
@@ -27811,106 +27378,6 @@
 																					"subViews": [
 																						{
 																							"_type": "UMLOperationView",
-																							"_id": "AAAAAAF5IFI6zuPNark=",
-																							"_parent": {
-																								"$ref": "AAAAAAF5IFI6zuPMaSE="
-																							},
-																							"model": {
-																								"$ref": "AAAAAAF4MXWeIVFtP64="
-																							},
-																							"lineColor": "#0e7172",
-																							"fillColor": "#00202a",
-																							"fontColor": "#d2dfe7",
-																							"font": "Arial;13;0",
-																							"left": 717,
-																							"top": 77,
-																							"width": 183.66162109375,
-																							"height": 13,
-																							"text": "+isEmpty(): boolean",
-																							"horizontalAlignment": 0
-																						},
-																						{
-																							"_type": "UMLOperationView",
-																							"_id": "AAAAAAF5IFI6zuPOcmI=",
-																							"_parent": {
-																								"$ref": "AAAAAAF5IFI6zuPMaSE="
-																							},
-																							"model": {
-																								"$ref": "AAAAAAF4MXXaZFF3pBs="
-																							},
-																							"lineColor": "#0e7172",
-																							"fillColor": "#00202a",
-																							"fontColor": "#d2dfe7",
-																							"font": "Arial;13;0",
-																							"left": 717,
-																							"top": 92,
-																							"width": 183.66162109375,
-																							"height": 13,
-																							"text": "+isFull(): boolean",
-																							"horizontalAlignment": 0
-																						},
-																						{
-																							"_type": "UMLOperationView",
-																							"_id": "AAAAAAF5IFI6zuPPsNY=",
-																							"_parent": {
-																								"$ref": "AAAAAAF5IFI6zuPMaSE="
-																							},
-																							"model": {
-																								"$ref": "AAAAAAF4MWW9YFFZuic="
-																							},
-																							"lineColor": "#0e7172",
-																							"fillColor": "#00202a",
-																							"fontColor": "#d2dfe7",
-																							"font": "Arial;13;0",
-																							"left": 717,
-																							"top": 107,
-																							"width": 183.66162109375,
-																							"height": 13,
-																							"text": "+contains(t: T): boolean",
-																							"horizontalAlignment": 0
-																						},
-																						{
-																							"_type": "UMLOperationView",
-																							"_id": "AAAAAAF5IFI6zuPQd3c=",
-																							"_parent": {
-																								"$ref": "AAAAAAF5IFI6zuPMaSE="
-																							},
-																							"model": {
-																								"$ref": "AAAAAAF4MZiTtlJ9Qco="
-																							},
-																							"lineColor": "#0e7172",
-																							"fillColor": "#00202a",
-																							"fontColor": "#d2dfe7",
-																							"font": "Arial;13;0",
-																							"left": 717,
-																							"top": 122,
-																							"width": 183.66162109375,
-																							"height": 13,
-																							"text": "+add(t: T): void",
-																							"horizontalAlignment": 0
-																						},
-																						{
-																							"_type": "UMLOperationView",
-																							"_id": "AAAAAAF5J9C0WwdbL8o=",
-																							"_parent": {
-																								"$ref": "AAAAAAF5IFI6zuPMaSE="
-																							},
-																							"model": {
-																								"$ref": "AAAAAAF5J9C0OQdYFBc="
-																							},
-																							"lineColor": "#0e7172",
-																							"fillColor": "#00202a",
-																							"fontColor": "#d2dfe7",
-																							"font": "Arial;13;0",
-																							"left": 717,
-																							"top": 137,
-																							"width": 183.66162109375,
-																							"height": 13,
-																							"text": "+add(elements: T[0..*]): void",
-																							"horizontalAlignment": 0
-																						},
-																						{
-																							"_type": "UMLOperationView",
 																							"_id": "AAAAAAF5IFI6zuPRHeM=",
 																							"_parent": {
 																								"$ref": "AAAAAAF5IFI6zuPMaSE="
@@ -31343,106 +30810,6 @@
 																								"$ref": "AAAAAAF4MWWBilEtfbQ="
 																							},
 																							"subViews": [
-																								{
-																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5J4TIIPmRQHQ=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5J4TIIPmQaVk="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF4MXWeIVFtP64="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 93,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+isEmpty(): boolean",
-																									"horizontalAlignment": 0
-																								},
-																								{
-																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5J4TIIPmSlUg=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5J4TIIPmQaVk="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF4MXXaZFF3pBs="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 108,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+isFull(): boolean",
-																									"horizontalAlignment": 0
-																								},
-																								{
-																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5J4TIIPmTV7A=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5J4TIIPmQaVk="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF4MWW9YFFZuic="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 123,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+contains(t: T): boolean",
-																									"horizontalAlignment": 0
-																								},
-																								{
-																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5J4TIIPmU9oQ=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5J4TIIPmQaVk="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF4MZiTtlJ9Qco="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 138,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+add(t: T): void",
-																									"horizontalAlignment": 0
-																								},
-																								{
-																									"_type": "UMLOperationView",
-																									"_id": "AAAAAAF5KANhHQhvI8E=",
-																									"_parent": {
-																										"$ref": "AAAAAAF5J4TIIPmQaVk="
-																									},
-																									"model": {
-																										"$ref": "AAAAAAF5J9C0OQdYFBc="
-																									},
-																									"lineColor": "#0e7172",
-																									"fillColor": "#00202a",
-																									"fontColor": "#d2dfe7",
-																									"font": "Arial;13;0",
-																									"left": 717,
-																									"top": 153,
-																									"width": 156.93798828125,
-																									"height": 13,
-																									"text": "+add(elements: T[0..*]): void",
-																									"horizontalAlignment": 0
-																								},
 																								{
 																									"_type": "UMLOperationView",
 																									"_id": "AAAAAAF5J4TIIPmVZHU=",
@@ -49670,8 +49037,8 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 453,
-															"top": 149,
-															"width": 86.72802734375,
+															"top": 141,
+															"width": 88.1435546875,
 															"height": 13,
 															"text": "«enumeration»"
 														},
@@ -49685,8 +49052,8 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;1",
 															"left": 453,
-															"top": 164,
-															"width": 86.72802734375,
+															"top": 156,
+															"width": 88.1435546875,
 															"height": 13,
 															"text": "RangeError"
 														},
@@ -49701,7 +49068,7 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 240,
-															"top": -32,
+															"top": -48,
 															"width": 73.658203125,
 															"height": 13,
 															"text": "(from Errors)"
@@ -49717,7 +49084,7 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 240,
-															"top": -32,
+															"top": -48,
 															"height": 13,
 															"horizontalAlignment": 1
 														}
@@ -49726,8 +49093,8 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 448,
-													"top": 144,
-													"width": 96.72802734375,
+													"top": 136,
+													"width": 98.1435546875,
 													"height": 38,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF5FCGdBQBIm4E="
@@ -49756,7 +49123,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 120,
-													"top": -16,
+													"top": -24,
 													"width": 10,
 													"height": 10
 												},
@@ -49773,9 +49140,9 @@
 													"fillColor": "#b2a080",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 120,
-													"top": -16,
-													"width": 10,
+													"left": 448,
+													"top": 212,
+													"width": 96.72802734375,
 													"height": 10
 												},
 												{
@@ -49792,7 +49159,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 120,
-													"top": -16,
+													"top": -24,
 													"width": 10,
 													"height": 10
 												},
@@ -49810,7 +49177,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 120,
-													"top": -16,
+													"top": -24,
 													"width": 10,
 													"height": 10
 												},
@@ -49837,8 +49204,8 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 453,
-															"top": 187,
-															"width": 86.72802734375,
+															"top": 179,
+															"width": 88.1435546875,
 															"height": 13,
 															"text": "invalidMax",
 															"horizontalAlignment": 0
@@ -49856,10 +49223,48 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 453,
-															"top": 202,
-															"width": 86.72802734375,
+															"top": 194,
+															"width": 88.1435546875,
 															"height": 13,
 															"text": "invalidMin",
+															"horizontalAlignment": 0
+														},
+														{
+															"_type": "UMLEnumerationLiteralView",
+															"_id": "AAAAAAF5KDXpEhdw0CA=",
+															"_parent": {
+																"$ref": "AAAAAAF5FCGdBgBQWXY="
+															},
+															"model": {
+																"$ref": "AAAAAAF5KDXo/Bdtxlw="
+															},
+															"fillColor": "#b2a080",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": 453,
+															"top": 209,
+															"width": 88.1435546875,
+															"height": 13,
+															"text": "isFull",
+															"horizontalAlignment": 0
+														},
+														{
+															"_type": "UMLEnumerationLiteralView",
+															"_id": "AAAAAAF5KDXO7Bdp+Zw=",
+															"_parent": {
+																"$ref": "AAAAAAF5FCGdBgBQWXY="
+															},
+															"model": {
+																"$ref": "AAAAAAF5KDXO1RdmOB4="
+															},
+															"fillColor": "#b2a080",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": 453,
+															"top": 224,
+															"width": 88.1435546875,
+															"height": 13,
+															"text": "limitedCapacity",
 															"horizontalAlignment": 0
 														}
 													],
@@ -49867,9 +49272,9 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 448,
-													"top": 182,
-													"width": 96.72802734375,
-													"height": 38
+													"top": 174,
+													"width": 98.1435546875,
+													"height": 68
 												}
 											],
 											"fillColor": "#b2a080",
@@ -49877,9 +49282,9 @@
 											"font": "Arial;13;0",
 											"containerChangeable": true,
 											"left": 448,
-											"top": 144,
-											"width": 96.72802734375,
-											"height": 76,
+											"top": 136,
+											"width": 98.1435546875,
+											"height": 106,
 											"showProperty": false,
 											"nameCompartment": {
 												"$ref": "AAAAAAF5FCGdBQBHguI="
@@ -50171,6 +49576,22 @@
 												"$ref": "AAAAAAF5FCGdBQBEIwo="
 											},
 											"name": "invalidMin"
+										},
+										{
+											"_type": "UMLEnumerationLiteral",
+											"_id": "AAAAAAF5KDXo/Bdtxlw=",
+											"_parent": {
+												"$ref": "AAAAAAF5FCGdBQBEIwo="
+											},
+											"name": "isFull"
+										},
+										{
+											"_type": "UMLEnumerationLiteral",
+											"_id": "AAAAAAF5KDXO1RdmOB4=",
+											"_parent": {
+												"$ref": "AAAAAAF5FCGdBQBEIwo="
+											},
+											"name": "limitedCapacity"
 										}
 									]
 								},
@@ -50828,7 +50249,7 @@
 															"font": "Arial;13;0",
 															"left": 405,
 															"top": 135,
-															"width": 183.66162109375,
+															"width": 113.5390625,
 															"height": 13,
 															"text": "«interface»"
 														},
@@ -50844,7 +50265,7 @@
 															"font": "Arial;13;1",
 															"left": 405,
 															"top": 150,
-															"width": 183.66162109375,
+															"width": 113.5390625,
 															"height": 13,
 															"text": "Elements"
 														},
@@ -50888,7 +50309,7 @@
 													"font": "Arial;13;0",
 													"left": 400,
 													"top": 130,
-													"width": 193.66162109375,
+													"width": 123.5390625,
 													"height": 38,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF4Mbw0X1f89HY="
@@ -50934,106 +50355,6 @@
 													"subViews": [
 														{
 															"_type": "UMLOperationView",
-															"_id": "AAAAAAF4Mbw0YFgCt08=",
-															"_parent": {
-																"$ref": "AAAAAAF4Mbw0YFgBew8="
-															},
-															"model": {
-																"$ref": "AAAAAAF4MXWeIVFtP64="
-															},
-															"lineColor": "#0e7172",
-															"fillColor": "#00202a",
-															"fontColor": "#d2dfe7",
-															"font": "Arial;13;0",
-															"left": 405,
-															"top": 173,
-															"width": 183.66162109375,
-															"height": 13,
-															"text": "+isEmpty(): boolean",
-															"horizontalAlignment": 0
-														},
-														{
-															"_type": "UMLOperationView",
-															"_id": "AAAAAAF4Mbw0YFgDMJ4=",
-															"_parent": {
-																"$ref": "AAAAAAF4Mbw0YFgBew8="
-															},
-															"model": {
-																"$ref": "AAAAAAF4MXXaZFF3pBs="
-															},
-															"lineColor": "#0e7172",
-															"fillColor": "#00202a",
-															"fontColor": "#d2dfe7",
-															"font": "Arial;13;0",
-															"left": 405,
-															"top": 188,
-															"width": 183.66162109375,
-															"height": 13,
-															"text": "+isFull(): boolean",
-															"horizontalAlignment": 0
-														},
-														{
-															"_type": "UMLOperationView",
-															"_id": "AAAAAAF4Mbw0YFgEcPk=",
-															"_parent": {
-																"$ref": "AAAAAAF4Mbw0YFgBew8="
-															},
-															"model": {
-																"$ref": "AAAAAAF4MWW9YFFZuic="
-															},
-															"lineColor": "#0e7172",
-															"fillColor": "#00202a",
-															"fontColor": "#d2dfe7",
-															"font": "Arial;13;0",
-															"left": 405,
-															"top": 203,
-															"width": 183.66162109375,
-															"height": 13,
-															"text": "+contains(t: T): boolean",
-															"horizontalAlignment": 0
-														},
-														{
-															"_type": "UMLOperationView",
-															"_id": "AAAAAAF4Mbw0YFgFnNA=",
-															"_parent": {
-																"$ref": "AAAAAAF4Mbw0YFgBew8="
-															},
-															"model": {
-																"$ref": "AAAAAAF4MZiTtlJ9Qco="
-															},
-															"lineColor": "#0e7172",
-															"fillColor": "#00202a",
-															"fontColor": "#d2dfe7",
-															"font": "Arial;13;0",
-															"left": 405,
-															"top": 218,
-															"width": 183.66162109375,
-															"height": 13,
-															"text": "+add(t: T): void",
-															"horizontalAlignment": 0
-														},
-														{
-															"_type": "UMLOperationView",
-															"_id": "AAAAAAF5KANhDAhdwm0=",
-															"_parent": {
-																"$ref": "AAAAAAF4Mbw0YFgBew8="
-															},
-															"model": {
-																"$ref": "AAAAAAF5J9C0OQdYFBc="
-															},
-															"lineColor": "#0e7172",
-															"fillColor": "#00202a",
-															"fontColor": "#d2dfe7",
-															"font": "Arial;13;0",
-															"left": 405,
-															"top": 233,
-															"width": 183.66162109375,
-															"height": 13,
-															"text": "+add(elements: T[0..*]): void",
-															"horizontalAlignment": 0
-														},
-														{
-															"_type": "UMLOperationView",
 															"_id": "AAAAAAF4Mbw0YFgGWcc=",
 															"_parent": {
 																"$ref": "AAAAAAF4Mbw0YFgBew8="
@@ -51046,8 +50367,8 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 405,
-															"top": 248,
-															"width": 183.66162109375,
+															"top": 173,
+															"width": 113.5390625,
 															"height": 13,
 															"text": "+remove(t: T): T",
 															"horizontalAlignment": 0
@@ -51059,8 +50380,8 @@
 													"font": "Arial;13;0",
 													"left": 400,
 													"top": 168,
-													"width": 193.66162109375,
-													"height": 98
+													"width": 123.5390625,
+													"height": 23
 												},
 												{
 													"_type": "UMLReceptionCompartmentView",
@@ -51104,7 +50425,7 @@
 															"fillColor": "#00202a",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
-															"left": 578.88525390625,
+															"left": 508.7626953125,
 															"top": 117,
 															"width": 18.7763671875,
 															"height": 13,
@@ -51116,7 +50437,7 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 573.88525390625,
+													"left": 503.7626953125,
 													"top": 112,
 													"width": 28.7763671875,
 													"height": 23
@@ -51129,8 +50450,8 @@
 											"containerChangeable": true,
 											"left": 400,
 											"top": 112,
-											"width": 203.66162109375,
-											"height": 154,
+											"width": 133.5390625,
+											"height": 79,
 											"autoResize": true,
 											"showProperty": false,
 											"nameCompartment": {
@@ -51199,9 +50520,9 @@
 															"fillColor": "#00202a",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
-															"left": 381,
-															"top": 215,
-															"width": 183.66162109375,
+															"left": 413,
+															"top": 221,
+															"width": 121.0244140625,
 															"height": 13,
 															"text": "«interface»"
 														},
@@ -51214,9 +50535,9 @@
 															"fillColor": "#00202a",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;1",
-															"left": 381,
-															"top": 230,
-															"width": 183.66162109375,
+															"left": 413,
+															"top": 236,
+															"width": 121.0244140625,
 															"height": 13,
 															"text": "Addable"
 														},
@@ -51230,8 +50551,8 @@
 															"fillColor": "#00202a",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
-															"left": -752,
-															"top": -160,
+															"left": -688,
+															"top": -112,
 															"width": 70.28759765625,
 															"height": 13,
 															"text": "(from Traits)"
@@ -51246,8 +50567,8 @@
 															"fillColor": "#00202a",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
-															"left": -752,
-															"top": -160,
+															"left": -688,
+															"top": -112,
 															"height": 13,
 															"horizontalAlignment": 1
 														}
@@ -51255,9 +50576,9 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 376,
-													"top": 210,
-													"width": 193.66162109375,
+													"left": 408,
+													"top": 216,
+													"width": 131.0244140625,
 													"height": 38,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF5KAQwjgh91Jo="
@@ -51284,9 +50605,9 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 376,
-													"top": 248,
-													"width": 193.66162109375,
+													"left": 408,
+													"top": 254,
+													"width": 131.0244140625,
 													"height": 10
 												},
 												{
@@ -51311,11 +50632,11 @@
 															"fillColor": "#00202a",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
-															"left": 381,
-															"top": 263,
-															"width": 183.66162109375,
+															"left": 413,
+															"top": 269,
+															"width": 121.0244140625,
 															"height": 13,
-															"text": "+add(element: T): void",
+															"text": "+add(t: T): void",
 															"horizontalAlignment": 0
 														},
 														{
@@ -51330,20 +50651,20 @@
 															"fillColor": "#00202a",
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
-															"left": 381,
-															"top": 278,
-															"width": 183.66162109375,
+															"left": 413,
+															"top": 284,
+															"width": 121.0244140625,
 															"height": 13,
-															"text": "+add(elements: T[0..*]): void",
+															"text": "+add(ts: T[0..*]): void",
 															"horizontalAlignment": 0
 														}
 													],
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 376,
-													"top": 258,
-													"width": 193.66162109375,
+													"left": 408,
+													"top": 264,
+													"width": 131.0244140625,
 													"height": 38
 												},
 												{
@@ -51359,8 +50680,8 @@
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": -376,
-													"top": -80,
+													"left": -344,
+													"top": -56,
 													"width": 10,
 													"height": 10
 												},
@@ -51373,44 +50694,25 @@
 													"model": {
 														"$ref": "AAAAAAF5KAQwjQh5lRY="
 													},
-													"subViews": [
-														{
-															"_type": "UMLTemplateParameterView",
-															"_id": "AAAAAAF5KASweginRXo=",
-															"_parent": {
-																"$ref": "AAAAAAF5KAQwjgiELR8="
-															},
-															"model": {
-																"$ref": "AAAAAAF5KASwYgiktq4="
-															},
-															"fillColor": "#00202a",
-															"fontColor": "#d2dfe7",
-															"font": "Arial;13;0",
-															"left": 512.248046875,
-															"top": 197,
-															"width": 61.41357421875,
-															"height": 13,
-															"text": "element: T",
-															"horizontalAlignment": 0
-														}
-													],
+													"visible": false,
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 507.248046875,
-													"top": 192,
+													"left": 539.248046875,
+													"top": 216,
 													"width": 71.41357421875,
-													"height": 23
+													"height": 10
 												}
 											],
 											"fillColor": "#00202a",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
 											"containerChangeable": true,
-											"left": 376,
-											"top": 192,
-											"width": 203.66162109375,
-											"height": 104,
+											"left": 408,
+											"top": 216,
+											"width": 131.0244140625,
+											"height": 86,
+											"autoResize": true,
 											"showProperty": false,
 											"nameCompartment": {
 												"$ref": "AAAAAAF5KAQwjgh8f6M="
@@ -51458,8 +50760,8 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 389,
-															"top": 53,
-															"width": 157.88525390625,
+															"top": 71,
+															"width": 177.88525390625,
 															"height": 13,
 															"text": "«interface»"
 														},
@@ -51473,8 +50775,8 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;1",
 															"left": 389,
-															"top": 68,
-															"width": 157.88525390625,
+															"top": 86,
+															"width": 177.88525390625,
 															"height": 13,
 															"text": "Containable"
 														},
@@ -51514,8 +50816,8 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 384,
-													"top": 48,
-													"width": 167.88525390625,
+													"top": 66,
+													"width": 187.88525390625,
 													"height": 38,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF5KBaAzBbI5X0="
@@ -51571,8 +50873,8 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 389,
-															"top": 91,
-															"width": 157.88525390625,
+															"top": 109,
+															"width": 177.88525390625,
 															"height": 13,
 															"text": "+isEmpty(): bool",
 															"horizontalAlignment": 0
@@ -51590,8 +50892,8 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 389,
-															"top": 106,
-															"width": 157.88525390625,
+															"top": 124,
+															"width": 177.88525390625,
 															"height": 13,
 															"text": "+isFull(): bool",
 															"horizontalAlignment": 0
@@ -51609,10 +50911,10 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 389,
-															"top": 121,
-															"width": 157.88525390625,
+															"top": 139,
+															"width": 177.88525390625,
 															"height": 13,
-															"text": "+contains(element: T): bool",
+															"text": "+contains(t: T): bool",
 															"horizontalAlignment": 0
 														}
 													],
@@ -51620,8 +50922,8 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 384,
-													"top": 86,
-													"width": 167.88525390625,
+													"top": 104,
+													"width": 187.88525390625,
 													"height": 53
 												},
 												{
@@ -51651,14 +50953,34 @@
 													"model": {
 														"$ref": "AAAAAAF5KBaAyxbE8/g="
 													},
-													"visible": false,
+													"subViews": [
+														{
+															"_type": "UMLTemplateParameterView",
+															"_id": "AAAAAAF5KBo2VxcxAaQ=",
+															"_parent": {
+																"$ref": "AAAAAAF5KBaAzRbPggE="
+															},
+															"model": {
+																"$ref": "AAAAAAF5KBo2NhcuTGM="
+															},
+															"fillColor": "#00202a",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": 557.10888671875,
+															"top": 53,
+															"width": 18.7763671875,
+															"height": 13,
+															"text": "t: T",
+															"horizontalAlignment": 0
+														}
+													],
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
-													"left": 32,
-													"top": -360,
-													"width": 10,
-													"height": 10
+													"left": 552.10888671875,
+													"top": 48,
+													"width": 28.7763671875,
+													"height": 23
 												}
 											],
 											"fillColor": "#00202a",
@@ -51667,8 +50989,8 @@
 											"containerChangeable": true,
 											"left": 384,
 											"top": 48,
-											"width": 167.88525390625,
-											"height": 91,
+											"width": 197.88525390625,
+											"height": 109,
 											"showProperty": false,
 											"nameCompartment": {
 												"$ref": "AAAAAAF5KBaAzBbHYGM="
@@ -51711,7 +51033,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 455,
-													"top": 158,
+													"top": 179,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 15,
@@ -51734,7 +51056,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 440,
-													"top": 158,
+													"top": 179,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 30,
@@ -51757,7 +51079,7 @@
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": 484,
-													"top": 159,
+													"top": 180,
 													"height": 13,
 													"alpha": -1.5707963267948966,
 													"distance": 15,
@@ -51776,7 +51098,7 @@
 											"tail": {
 												"$ref": "AAAAAAF5KAQwjgh7f9o="
 											},
-											"points": "470:192;470:138",
+											"points": "470:216;470:156",
 											"showVisibility": true,
 											"showProperty": false,
 											"nameLabel": {
@@ -51813,18 +51135,7 @@
 											}
 										}
 									],
-									"templateParameters": [
-										{
-											"_type": "UMLTemplateParameter",
-											"_id": "AAAAAAF5KASwYgiktq4=",
-											"_parent": {
-												"$ref": "AAAAAAF5KAQwjQh5lRY="
-											},
-											"name": "element",
-											"parameterType": "T",
-											"defaultValue": ""
-										}
-									],
+									"documentation": "An addable characteristic.",
 									"operations": [
 										{
 											"_type": "UMLOperation",
@@ -51833,7 +51144,7 @@
 												"$ref": "AAAAAAF5KAQwjQh5lRY="
 											},
 											"name": "add",
-											"documentation": "---\n### Specification\n---\n\nAdds the given `Element`.\n\n- **Precondition**: The model cannot be full.\n- **Postcondition**: The model contains the given `Element`.\n- **Parameter _element_**: The `Element` to add to the model.\n- **Throws**: `RangeError.isFull` if the model is full.",
+											"documentation": "---\n### Specification\n---\n\nAdds the given `T`.\n\n- **Precondition**: The {model} cannot be full.\n- **Postcondition**: The {model} contains the given `T`.\n- **Parameter _t_**: The `T` to add to the {model}.\n- **Throws**: `RangeError.isFull` if the {model} is full.",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -51841,7 +51152,7 @@
 													"_parent": {
 														"$ref": "AAAAAAF5KAYCbQjAvsk="
 													},
-													"name": "element",
+													"name": "t",
 													"type": "T"
 												},
 												{
@@ -51853,6 +51164,11 @@
 													"type": "void",
 													"direction": "return"
 												}
+											],
+											"raisedExceptions": [
+												{
+													"$ref": "AAAAAAF5KDXo/Bdtxlw="
+												}
 											]
 										},
 										{
@@ -51862,7 +51178,7 @@
 												"$ref": "AAAAAAF5KAQwjQh5lRY="
 											},
 											"name": "add",
-											"documentation": "\n---\n### Specification\n---\n\nAdds the given `Elements`.\n\n- **Precondition**:\n  - The model cannot be full.\n  - The model must have capacity to add all of the given `Element`s.\n- **Postcondition**: The model contains the given `Element`s.\n- **Parameter _elements_**: The `Element`s to add to the model.\n- **Throws**: \n  - `RangeError.isFull` if the model is full.\n  - `RangeError.noCapacity` if all of the given `Element`s cannot be added.\n  \n",
+											"documentation": "\n---\n### Specification\n---\n\nAdds the given collection of `T`s.\n\n- **Precondition**:\n  - The {model} cannot be full.\n  - The {model} must have capacity to add all of the given `T`s.\n- **Postcondition**: The {model} contain{s} the given collection's `T`s.\n- **Parameter _ts_**: The collection of `T`s to add to the {model}.\n- **Throws**: \n  - `RangeError.isFull` if the {model} {is/are} full.\n  - `RangeError.limitedCapacity` if all of the given collection's `T`s  cannot be added.\n  \n---\n### Algorithm\n---\n\n1. guard (isFull())\n\t1.1. Else throw RangeError.isFull\n    \n2. guard (hasCapacity(t))\n\t2.1. Else throw RangeError.limitedCapacity\n    \n3. foreach (element in t)\n\t3.1. try add(element)\n  \n",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -51870,7 +51186,7 @@
 													"_parent": {
 														"$ref": "AAAAAAF5KAYaBwjLFjA="
 													},
-													"name": "elements",
+													"name": "ts",
 													"type": "T",
 													"multiplicity": "0..*"
 												},
@@ -51883,6 +51199,14 @@
 													"type": "void",
 													"direction": "return"
 												}
+											],
+											"raisedExceptions": [
+												{
+													"$ref": "AAAAAAF5KDXo/Bdtxlw="
+												},
+												{
+													"$ref": "AAAAAAF5KDXO1RdmOB4="
+												}
 											]
 										}
 									]
@@ -51894,6 +51218,19 @@
 										"$ref": "AAAAAAF5KACyeAfsMXw="
 									},
 									"name": "Containable",
+									"documentation": "A containable characteristic.",
+									"templateParameters": [
+										{
+											"_type": "UMLTemplateParameter",
+											"_id": "AAAAAAF5KBo2NhcuTGM=",
+											"_parent": {
+												"$ref": "AAAAAAF5KBaAyxbE8/g="
+											},
+											"name": "t",
+											"parameterType": "T",
+											"defaultValue": ""
+										}
+									],
 									"operations": [
 										{
 											"_type": "UMLOperation",
@@ -51902,7 +51239,7 @@
 												"$ref": "AAAAAAF5KBaAyxbE8/g="
 											},
 											"name": "isEmpty",
-											"documentation": "---\n### Specification\n---\n\nDetermines if the model is empty.\n\n- **Precondition**: None.\n- **Postcondition**: None.\n- **Returns**: True if the model is empty, else false.",
+											"documentation": "---\n### Specification\n---\n\nDetermines if the {model} is empty.\n\n- **Precondition**: None.\n- **Postcondition**: None.\n- **Returns**: True if the {model} is empty, else false.",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -51922,7 +51259,7 @@
 												"$ref": "AAAAAAF5KBaAyxbE8/g="
 											},
 											"name": "isFull",
-											"documentation": "---\n### Specification\n---\n\nDetermines if the model is full.\n\n- **Precondition**: None.\n- **Postcondition**: None.\n- **Returns**: True if the model is full, else false.",
+											"documentation": "---\n### Specification\n---\n\nDetermines if the {model} is full.\n\n- **Precondition**: None.\n- **Postcondition**: None.\n- **Returns**: True if the {model} is full, else false.",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -51942,6 +51279,7 @@
 												"$ref": "AAAAAAF5KBaAyxbE8/g="
 											},
 											"name": "contains",
+											"documentation": "---\n### Specification\n---\n\nDetermines if the given `T` exists.\n\n- **Precondition**: None.\n- **Postcondition**: None.\n- **Parameter _t_**: The `T` to find.\n- **Returns**: True if the given `T` exists, else false.",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -51949,7 +51287,7 @@
 													"_parent": {
 														"$ref": "AAAAAAF5KBcDdBcDHoQ="
 													},
-													"name": "element",
+													"name": "t",
 													"type": "T"
 												},
 												{

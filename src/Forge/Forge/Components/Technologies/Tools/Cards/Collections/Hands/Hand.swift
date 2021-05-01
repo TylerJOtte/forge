@@ -181,17 +181,17 @@ public class Hand: Cards {
     //                                  Adders                                 //
     //-------------------------------------------------------------------------//
     
-    /// Adds the given `Card` to the collection.
+    /// Adds the given `Card`.
     ///
-    /// - Precondition: The collection cannot be full.
-    /// - Postcondition: The collection contains the given `Card`.
-    /// - Parameter card: The `Card` to add to the collection.
-    /// - Throws: `ElementsError.isFull` if the collection is full.
+    /// - Precondition: The `Hand` cannot be full.
+    /// - Postcondition: The `Hand` contains the given `Card`.
+    /// - Parameter card: The `Card` to add to the `Hand`.
+    /// - Throws: `RangeError.isFull` if the `Hand` is full.
     public func add(_ card: Card) throws {
         
         guard (!isFull()) else {
             
-            throw ElementsError.isFull
+            throw RangeError.isFull
         }
         
         cards.append(card)

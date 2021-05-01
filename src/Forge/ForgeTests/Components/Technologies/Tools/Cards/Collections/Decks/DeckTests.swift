@@ -449,7 +449,7 @@ class DeckTests: XCTestCase {
         }
     }
     
-    /// Tests that adding a `Card` to a full `Deck` throws an `ElementsError.isFull` error.
+    /// Tests that adding a `Card` to a full `Deck` throws an `RangeError.isFull` error.
     func test_throwsIsFullError_addCardToFullDeck_true() throws {
         
         // Given
@@ -462,17 +462,17 @@ class DeckTests: XCTestCase {
         let cards = [card1, card2]
         let max = 2
         let deck = Deck(of: cards, with: max)!
-        let expected = ElementsError.isFull
+        let expected = RangeError.isFull
         
         // When
         XCTAssertThrowsError(try deck.add(card3)) { (error) in
             
             // Then
-            XCTAssertEqual(expected, error as? ElementsError)
+            XCTAssertEqual(expected, error as? RangeError)
         }
     }
     
-    /// Tests that adding `Card`s to a full `Deck` throws an `ElementsError.isFull` error.
+    /// Tests that adding `Card`s to a full `Deck` throws an `RangeError.isFull` error.
     func test_throwsIsFullError_addCardsToFullDeck_true() throws {
         
         // Given
@@ -488,19 +488,19 @@ class DeckTests: XCTestCase {
         let cards2 = [card3, card4]
         let max = 2
         let deck = Deck(of: cards1, with: max)!
-        let expected = ElementsError.isFull
+        let expected = RangeError.isFull
         
         // When
         XCTAssertThrowsError(try deck.add(cards2)) { (error) in
             
             // Then
-            XCTAssertEqual(expected, error as? ElementsError)
+            XCTAssertEqual(expected, error as? RangeError)
         }
     }
     
     /// Tests that adding `Card`s to a `Deck`greater than its capacity throws an
-    /// `ElementsError.insufficientCapacity` error.
-    func test_throwsInsufficientCapacityError_addMoreCardsThanCapacity_true()
+    /// `RangeError.limitedCapacity` error.
+    func test_throwslimitedCapacityError_addMoreCardsThanCapacity_true()
         throws {
         
         // Given
@@ -516,13 +516,13 @@ class DeckTests: XCTestCase {
         let cards2 = [card3, card4]
         let max = 3
         let deck = Deck(of: cards1, with: max)!
-        let expected = ElementsError.insufficientCapacity
+        let expected = RangeError.limitedCapacity
         
         // When
         XCTAssertThrowsError(try deck.add(cards2)) { (error) in
             
             // Then
-            XCTAssertEqual(expected, error as? ElementsError)
+            XCTAssertEqual(expected, error as? RangeError)
         }
     }
 }

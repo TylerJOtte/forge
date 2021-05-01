@@ -52,26 +52,26 @@ extension Cards {
         return cards.count <= capacity
     }
     
-    /// Adds the given `Card`s to the collection.
+    /// Adds the given collection of `Card`s.
     ///
     /// - Precondition:
-    ///   - The collection cannot be full.
-    ///   - The collection must have capacity to add all of the given `Card`s.
-    /// - Postcondition: The collection contains the given `Card`s.
-    /// - Parameter cards: The `Card`s to add to the collection.
+    ///    - The `Card`s cannot be full.
+    ///    - The `Card`s must have capacity to add all of the given `Card`s.
+    /// - Postcondition: The `Card`s contain the given collection's `Card`s.
+    /// - Parameter cards: The collection of `Cards`s to add to the `Card`s.
     /// - Throws:
-    ///   - `ElementsError.isFull` if the collection is full.
-    ///   - `ElementsError.insufficientCapacity` if all of the given `Card`s cannot be added.
+    ///   - `RangeError.isFull` if the `Card`s are full.
+    ///   - `RangeError.limitedCapacity` if all of the given collection's `Card`s  cannot be added.
     public func add(_ cards: [Card]) throws {
         
         guard (!isFull()) else {
             
-            throw ElementsError.isFull
+            throw RangeError.isFull
         }
         
         guard (hasCapacity(for: cards)) else {
             
-            throw ElementsError.insufficientCapacity
+            throw RangeError.limitedCapacity
         }
         
         for card in cards {

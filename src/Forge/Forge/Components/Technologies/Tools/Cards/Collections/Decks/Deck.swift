@@ -184,17 +184,17 @@ public class Deck: Cards {
     //                                  Adders                                 //
     //-------------------------------------------------------------------------//
     
-    /// Adds the given `Card` to the collection.
+    /// Adds the given `Card`.
     ///
-    /// - Precondition: The collection cannot be full.
-    /// - Postcondition: The collection contains the given `Card`.
-    /// - Parameter card: The `Card` to add to the collection.
-    /// - Throws: `ElementsError.isFull` if the collection is full.
+    /// - Precondition: The `Deck` cannot be full.
+    /// - Postcondition: The `Deck` contains the given `Card`.
+    /// - Parameter card: The `card` to add to the `Deck`.
+    /// - Throws: `RangeError.isFull` if the `Deck` is full.
     public func add(_ card: Card) throws {
         
         guard (!isFull()) else {
             
-            throw ElementsError.isFull
+            throw RangeError.isFull
         }
         
         if (containsKey(card)) {
