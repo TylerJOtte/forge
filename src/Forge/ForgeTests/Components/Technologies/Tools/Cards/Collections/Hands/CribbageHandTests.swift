@@ -108,7 +108,7 @@ class CribbageHandTests: XCTestCase {
     //                             Min/Max Cards                               //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the min cards  of a`CribbageHand` equals zero.
+    /// Tests that the min `Card`s  of a`CribbageHand` equals zero.
     func test_minCards_ofCribbageHand_equalsZero() throws {
         
         // Given
@@ -123,6 +123,26 @@ class CribbageHandTests: XCTestCase {
         
         // When
         let actual = cribbageHand.minCards
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the max `Card`s  of a`CribbageHand` equals four.
+    func test_maxCards_ofCribbageHand_equalsFour() throws {
+        
+        // Given
+        let jackOfHearts = try Jack()
+        let fiveOfDiamonds = try Five(of: .diamonds)
+        let fiveOfClubs = try Five(of: .clubs)
+        let fiveOfSpades = try Five(of: .spades)
+        let cutCard = try Five()
+        let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
+        let expected = 4
+        let cribbageHand = try CribbageHand(with: cards, and: cutCard)
+        
+        // When
+        let actual = cribbageHand.maxCards
         
         // Then
         XCTAssertEqual(expected, actual)
