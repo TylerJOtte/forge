@@ -4387,7 +4387,7 @@
 															"font": "Arial;13;3",
 															"left": 557,
 															"top": 255,
-															"width": 51.99365234375,
+															"width": 59.2236328125,
 															"height": 13,
 															"text": "Depiction"
 														},
@@ -4514,7 +4514,7 @@
 											"containerChangeable": true,
 											"left": 552,
 											"top": 248,
-											"width": 61.99365234375,
+											"width": 69.2236328125,
 											"height": 25,
 											"autoResize": true,
 											"showProperty": false,
@@ -4989,7 +4989,7 @@
 											"tail": {
 												"$ref": "AAAAAAF4yM3hC/GaMz4="
 											},
-											"points": "696:376;696:264;613:264",
+											"points": "696:376;696:264;620:264",
 											"showVisibility": true,
 											"showProperty": false,
 											"nameLabel": {
@@ -10847,7 +10847,7 @@
 																	"fillColor": "#00202a",
 																	"font": "Arial;13;0",
 																	"left": 752,
-																	"top": 251,
+																	"top": 204,
 																	"width": 129.3271484375,
 																	"height": 13,
 																	"alpha": -1.8157748221068912,
@@ -10870,7 +10870,7 @@
 																	"fillColor": "#00202a",
 																	"font": "Arial;13;0",
 																	"left": 752,
-																	"top": 235,
+																	"top": 188,
 																	"width": 39.0380859375,
 																	"height": 13,
 																	"alpha": -1.6447352020325823,
@@ -10894,8 +10894,8 @@
 																	"fillColor": "#00202a",
 																	"fontColor": "#d2dfe7",
 																	"font": "Arial;13;0",
-																	"left": 758,
-																	"top": 234,
+																	"left": 759,
+																	"top": 187,
 																	"height": 13,
 																	"alpha": -1.5707963267948966,
 																	"distance": 15,
@@ -18215,8 +18215,8 @@
 																											"fontColor": "#d2dfe7",
 																											"font": "Arial;13;0",
 																											"left": 717,
-																											"top": 39,
-																											"width": 156.93798828125,
+																											"top": 21,
+																											"width": 193.66162109375,
 																											"height": 13,
 																											"text": "«interface»"
 																										},
@@ -18231,8 +18231,8 @@
 																											"fontColor": "#d2dfe7",
 																											"font": "Arial;13;1",
 																											"left": 717,
-																											"top": 54,
-																											"width": 156.93798828125,
+																											"top": 36,
+																											"width": 193.66162109375,
 																											"height": 13,
 																											"text": "Elements"
 																										},
@@ -18275,8 +18275,8 @@
 																									"fontColor": "#d2dfe7",
 																									"font": "Arial;13;0",
 																									"left": 712,
-																									"top": 34,
-																									"width": 166.93798828125,
+																									"top": 16,
+																									"width": 203.66162109375,
 																									"height": 38,
 																									"stereotypeLabel": {
 																										"$ref": "AAAAAAF5IAAJ388yps8="
@@ -18334,8 +18334,8 @@
 																											"fontColor": "#d2dfe7",
 																											"font": "Arial;13;0",
 																											"left": 717,
-																											"top": 152,
-																											"width": 156.93798828125,
+																											"top": 59,
+																											"width": 193.66162109375,
 																											"height": 13,
 																											"text": "+remove(t: T): T",
 																											"horizontalAlignment": 0
@@ -18346,9 +18346,9 @@
 																									"fontColor": "#d2dfe7",
 																									"font": "Arial;13;0",
 																									"left": 712,
-																									"top": 72,
-																									"width": 173.66162109375,
-																									"height": 98
+																									"top": 54,
+																									"width": 203.66162109375,
+																									"height": 23
 																								},
 																								{
 																									"_type": "UMLReceptionCompartmentView",
@@ -18378,6 +18378,7 @@
 																									"model": {
 																										"$ref": "AAAAAAF4MWWBilEtfbQ="
 																									},
+																									"visible": false,
 																									"lineColor": "#0e7172",
 																									"fillColor": "#00202a",
 																									"fontColor": "#d2dfe7",
@@ -18385,7 +18386,7 @@
 																									"left": 859.16162109375,
 																									"top": 16,
 																									"width": 28.7763671875,
-																									"height": 23
+																									"height": 10
 																								}
 																							],
 																							"lineColor": "#0e7172",
@@ -18395,8 +18396,8 @@
 																							"containerChangeable": true,
 																							"left": 712,
 																							"top": 16,
-																							"width": 176.93798828125,
-																							"height": 139,
+																							"width": 203.66162109375,
+																							"height": 154,
 																							"autoResize": true,
 																							"showProperty": false,
 																							"nameCompartment": {
@@ -18680,7 +18681,7 @@
 																							"left": 527,
 																							"top": 311,
 																							"width": 245.2060546875,
-																							"height": 131,
+																							"height": 116,
 																							"autoResize": true,
 																							"showProperty": false,
 																							"nameCompartment": {
@@ -19082,7 +19083,7 @@
 																							"tail": {
 																								"$ref": "AAAAAAF5IAAJ4M9AEfI="
 																							},
-																							"points": "744:311;744:154",
+																							"points": "744:311;744:169",
 																							"showVisibility": true,
 																							"showProperty": false,
 																							"nameLabel": {
@@ -19402,7 +19403,7 @@
 																							"tail": {
 																								"$ref": "AAAAAAF5IAAJ4M9gmvE="
 																							},
-																							"points": "640:552;640:441",
+																							"points": "640:552;640:426",
 																							"showVisibility": true,
 																							"showProperty": false,
 																							"nameLabel": {
@@ -22994,8 +22995,8 @@
 																									"fontColor": "#d2dfe7",
 																									"font": "Arial;13;0",
 																									"left": 717,
-																									"top": 39,
-																									"width": 156.93798828125,
+																									"top": 21,
+																									"width": 193.66162109375,
 																									"height": 13,
 																									"text": "«interface»"
 																								},
@@ -23010,8 +23011,8 @@
 																									"fontColor": "#d2dfe7",
 																									"font": "Arial;13;1",
 																									"left": 717,
-																									"top": 54,
-																									"width": 156.93798828125,
+																									"top": 36,
+																									"width": 193.66162109375,
 																									"height": 13,
 																									"text": "Elements"
 																								},
@@ -23054,8 +23055,8 @@
 																							"fontColor": "#d2dfe7",
 																							"font": "Arial;13;0",
 																							"left": 712,
-																							"top": 34,
-																							"width": 166.93798828125,
+																							"top": 16,
+																							"width": 203.66162109375,
 																							"height": 38,
 																							"stereotypeLabel": {
 																								"$ref": "AAAAAAF5H+nOOsIyOcA="
@@ -23113,8 +23114,8 @@
 																									"fontColor": "#d2dfe7",
 																									"font": "Arial;13;0",
 																									"left": 717,
-																									"top": 152,
-																									"width": 156.93798828125,
+																									"top": 59,
+																									"width": 193.66162109375,
 																									"height": 13,
 																									"text": "+remove(t: T): T",
 																									"horizontalAlignment": 0
@@ -23125,9 +23126,9 @@
 																							"fontColor": "#d2dfe7",
 																							"font": "Arial;13;0",
 																							"left": 712,
-																							"top": 72,
-																							"width": 173.66162109375,
-																							"height": 98
+																							"top": 54,
+																							"width": 203.66162109375,
+																							"height": 23
 																						},
 																						{
 																							"_type": "UMLReceptionCompartmentView",
@@ -23157,6 +23158,7 @@
 																							"model": {
 																								"$ref": "AAAAAAF4MWWBilEtfbQ="
 																							},
+																							"visible": false,
 																							"lineColor": "#0e7172",
 																							"fillColor": "#00202a",
 																							"fontColor": "#d2dfe7",
@@ -23164,7 +23166,7 @@
 																							"left": 859.16162109375,
 																							"top": 16,
 																							"width": 28.7763671875,
-																							"height": 23
+																							"height": 10
 																						}
 																					],
 																					"lineColor": "#0e7172",
@@ -23174,8 +23176,8 @@
 																					"containerChangeable": true,
 																					"left": 712,
 																					"top": 16,
-																					"width": 176.93798828125,
-																					"height": 139,
+																					"width": 203.66162109375,
+																					"height": 154,
 																					"autoResize": true,
 																					"showProperty": false,
 																					"nameCompartment": {
@@ -23459,7 +23461,7 @@
 																					"left": 527,
 																					"top": 311,
 																					"width": 245.2060546875,
-																					"height": 131,
+																					"height": 116,
 																					"autoResize": true,
 																					"showProperty": false,
 																					"nameCompartment": {
@@ -23861,7 +23863,7 @@
 																					"tail": {
 																						"$ref": "AAAAAAF5H+nOOsJAfDs="
 																					},
-																					"points": "744:311;744:154",
+																					"points": "744:311;744:169",
 																					"showVisibility": true,
 																					"showProperty": false,
 																					"nameLabel": {
@@ -24181,7 +24183,7 @@
 																					"tail": {
 																						"$ref": "AAAAAAF5H+nOOsJw9b8="
 																					},
-																					"points": "640:552;640:441",
+																					"points": "640:552;640:426",
 																					"showVisibility": true,
 																					"showProperty": false,
 																					"nameLabel": {
@@ -40693,14 +40695,34 @@
 																	"model": {
 																		"$ref": "AAAAAAF5KPITCxqjFkk="
 																	},
-																	"visible": false,
+																	"subViews": [
+																		{
+																			"_type": "UMLOperationView",
+																			"_id": "AAAAAAF5KiW2txxcDP0=",
+																			"_parent": {
+																				"$ref": "AAAAAAF5KPITCxqshFM="
+																			},
+																			"model": {
+																				"$ref": "AAAAAAF5KRIu7BuDcFg="
+																			},
+																			"fillColor": "#00202a",
+																			"fontColor": "#d2dfe7",
+																			"font": "Arial;13;0",
+																			"left": 501,
+																			"top": 362,
+																			"width": 64.32080078125,
+																			"height": 13,
+																			"text": "+Operation1()",
+																			"horizontalAlignment": 0
+																		}
+																	],
 																	"fillColor": "#00202a",
 																	"fontColor": "#d2dfe7",
 																	"font": "Arial;13;0",
-																	"left": 64,
-																	"top": 16,
-																	"width": 10,
-																	"height": 10
+																	"left": 496,
+																	"top": 357,
+																	"width": 90.57080078125,
+																	"height": 23
 																},
 																{
 																	"_type": "UMLReceptionCompartmentView",
@@ -40751,7 +40773,6 @@
 															"nameCompartment": {
 																"$ref": "AAAAAAF5KPITCxqm8e0="
 															},
-															"suppressOperations": true,
 															"attributeCompartment": {
 																"$ref": "AAAAAAF5KPITCxqrHvI="
 															},
@@ -41771,7 +41792,7 @@
 																		"$ref": "AAAAAAF4yIeqMuOK+Ls="
 																	},
 																	"fillColor": "#d2dfe7",
-																	"font": "Arial;13;1",
+																	"font": "Arial;13;3",
 																	"left": 629,
 																	"top": 350,
 																	"width": 72.46484375,
@@ -49998,6 +50019,25 @@
 														},
 														{
 															"_type": "UMLOperationView",
+															"_id": "AAAAAAF5KRJAiBuJutE=",
+															"_parent": {
+																"$ref": "AAAAAAF5FCht0QD4HzQ="
+															},
+															"model": {
+																"$ref": "AAAAAAF5KRJAbBuGoRg="
+															},
+															"fillColor": "#045a6d",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": 461,
+															"top": 295,
+															"width": 404.33935546875,
+															"height": 13,
+															"text": "+getPairCount(pairs: [Rank:int]) int()",
+															"horizontalAlignment": 0
+														},
+														{
+															"_type": "UMLOperationView",
 															"_id": "AAAAAAF5GWPb3QGfHwI=",
 															"_parent": {
 																"$ref": "AAAAAAF5FCht0QD4HzQ="
@@ -50009,7 +50049,7 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"left": 461,
-															"top": 295,
+															"top": 310,
 															"width": 404.33935546875,
 															"height": 13,
 															"text": "~sum(): int",
@@ -50022,7 +50062,7 @@
 													"left": 456,
 													"top": 185,
 													"width": 414.33935546875,
-													"height": 128
+													"height": 143
 												},
 												{
 													"_type": "UMLReceptionCompartmentView",
@@ -50066,7 +50106,7 @@
 											"left": 456,
 											"top": 160,
 											"width": 414.33935546875,
-											"height": 166,
+											"height": 168,
 											"showProperty": false,
 											"nameCompartment": {
 												"$ref": "AAAAAAF5FCht0ADybPw="
@@ -50183,7 +50223,7 @@
 												"$ref": "AAAAAAF5FCht0ADvm98="
 											},
 											"name": "areSequential",
-											"documentation": "---\n### Specification\n---\n\nDetermines if all `Card`s are in sequential order with the given # of pairs.\n\n- Precondition:\n  - `count` >= three.\n  - The # of given pairs must be >= one.\n  - Must contain the specified # of pairs.\n- Postcondition: None.\n- Parameters:\n  - pairs: The # of paris that the collection contains.\n  - high: True if `.ace` is high, else false.\n  - groups: True if multiple pair groups allowed, else false.\n- Returns: True if all `Card`s are in sequential order with the given # of pairs, else false.\n- Throws:\n  - `ElementsError.insufficientElements` if contains less than four `Card`s.\n  - `ElementsError.invalidDuplicateCount` if\n  - Doesn't contain the specified # of pairs, or\n  - Specified groups is false, and `Card`s contain multiple pair groups\n  - `RangeError.invalidMin` if the # of specified pairs &lt;= zero.\n\n---\n### Algorithms\n---\n\n1. const min = 3\n2. const pairMin = 1\n3. const pairGroups = getPairCounts().count\n4. const pairCount = getPairCount()\n5. var s = pairs > 1 ? \"s\" : \"\"\n6. guard (count >= min) else \n\t6.1. print(\"The collection must contain at least \\(min) Cards.\")\n    6.2. throw ElementsError.insufficientElements\n7. guard (pairs >= pairMin) else\n\t7.1. print(\"The # of given pairs must be >= \\(pairMin).\")\n    7.2. throw RangeError.invalidMin\n8. guard (pairCount == pairs) else \n \t8.1. let tenet = pairCount < pairs ? \"\" : \"only \"\n    8.2. print(\"The collection must contain \\(tenet)\\(pairs) pair\\(s).\")\n    8.3. throw ElementsError.invalidDuplicateCount\n9. if (!groups && pairGroups > 1) \n\t9.1. print(\"The collection must contain only one grouping of pairs.\")\n    9.2. throw ElementsError.invalidDuplicateCount\n10. const lastCard = count - 1\n11. var areSequential = true\n12. var card = 0\n13. while (areSequential && card < lastCard)\n\t13.1. const rank = this[card].rank\n    13.2. const nextRank = this[card].rank.next(ace: high)\n    13.3. const nextCardRank = this[card + 1].rank\n    13.4. isSequential = nextCardRank == nextRank\n    13.5. const let isPair = nextCardRank == rank\n    13.6. areSequential = isSequential || isPair\n    13.7. card += 1\n14. Return areSequential",
+											"documentation": "---\n### Specification\n---\n\nDetermines if all `Card`s are in sequential order with the given # of pairs.\n\n- Precondition:\n  - `count` >= three.\n  - The # of given pairs must be >= one.\n  - Must contain the specified # of pairs.\n- Postcondition: None.\n- Parameters:\n  - pairs: The # of paris that the collection contains.\n  - high: True if `.ace` is high, else false.\n  - groups: True if multiple pair groups allowed, else false.\n- Returns: True if all `Card`s are in sequential order with the given # of pairs, else false.\n- Throws:\n  - `ElementsError.insufficientElements` if contains less than four `Card`s.\n  - `ElementsError.invalidDuplicateCount` if\n  - Doesn't contain the specified # of pairs, or\n  - Specified groups is false, and `Card`s contain multiple pair groups\n  - `RangeError.invalidMin` if the # of specified pairs &lt;= zero.\n\n---\n### Algorithms\n---\n\n1. const min = 3\n2. const pairMin = 1\n3. const pairGroups = getPairCounts()\n4. const pairGroupCount = pairGroups.count\n5. const pairCount = getPairCount(pairGroups)\n6. var s = pairs > 1 ? \"s\" : \"\"\n7. guard (count >= min) else \n\t7.1. print(\"The collection must contain at least \\(min) Cards.\")\n    7.2. throw ElementsError.insufficientElements\n8. guard (pairs >= pairMin) else\n\t8.1. print(\"The # of given pairs must be >= \\(pairMin).\")\n    8.2. throw RangeError.invalidMin\n9. guard (pairCount == pairs) else \n \t9.1. let tenet = pairCount < pairs ? \"\" : \"only \"\n    9.2. print(\"The collection must contain \\(tenet)\\(pairs) pair\\(s).\")\n    9.3. throw ElementsError.invalidDuplicateCount\n10. if (!groups && pairGroupCount > 1) \n\t10.1. print(\"The collection must contain only one grouping of pairs.\")\n    10.2. throw ElementsError.invalidDuplicateCount\n11. const lastCard = count - 1\n12. var areSequential = true\n13. var card = 0\n14. while (areSequential && card < lastCard)\n\t14.1. const rank = this[card].rank\n    14.2. const nextRank = this[card].rank.next(ace: high)\n    14.3. const nextCardRank = this[card + 1].rank\n    14.4. isSequential = nextCardRank == nextRank\n    14.5. const let isPair = nextCardRank == rank\n    14.6. areSequential = isSequential || isPair\n    14.7. card += 1\n15. Return areSequential",
 											"visibility": "package",
 											"parameters": [
 												{
@@ -50277,6 +50317,15 @@
 													"direction": "return"
 												}
 											]
+										},
+										{
+											"_type": "UMLOperation",
+											"_id": "AAAAAAF5KRJAbBuGoRg=",
+											"_parent": {
+												"$ref": "AAAAAAF5FCht0ADvm98="
+											},
+											"name": "getPairCount(pairs: [Rank:int]) int",
+											"documentation": "---\n### Specification\n---\n\nRetrieves the total duplicate count in the given collection.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter pairs: The pairs to get duplicate count from.\n- Returns: The total duplicate count in the given collection.\n\n---\n### Algorithms\n---\n\n1. var filteredPairCounts = pairCounts where entry.values.count == 0\n2. Return filteredPairCounts.sum()"
 										},
 										{
 											"_type": "UMLOperation",
@@ -52065,14 +52114,35 @@
 													"model": {
 														"$ref": "AAAAAAF5KPITCxqjFkk="
 													},
+													"subViews": [
+														{
+															"_type": "UMLOperationView",
+															"_id": "AAAAAAF5KiW2yBx98Ec=",
+															"_parent": {
+																"$ref": "AAAAAAF5KPMLOhs0s18="
+															},
+															"model": {
+																"$ref": "AAAAAAF5KRIu7BuDcFg="
+															},
+															"fillColor": "#00202a",
+															"fontColor": "#d2dfe7",
+															"font": "Arial;13;0",
+															"left": -221,
+															"top": -393,
+															"width": 80.57080078125,
+															"height": 13,
+															"text": "+Operation1()",
+															"horizontalAlignment": 0
+														}
+													],
 													"visible": false,
 													"fillColor": "#00202a",
 													"fontColor": "#d2dfe7",
 													"font": "Arial;13;0",
 													"left": -226,
 													"top": -398,
-													"width": 10,
-													"height": 10
+													"width": 90.57080078125,
+													"height": 23
 												},
 												{
 													"_type": "UMLReceptionCompartmentView",
@@ -52348,9 +52418,510 @@
 											"documentation": "The total # of points.",
 											"type": "int"
 										}
+									],
+									"operations": [
+										{
+											"_type": "UMLOperation",
+											"_id": "AAAAAAF5KRIu7BuDcFg=",
+											"_parent": {
+												"$ref": "AAAAAAF5KPITCxqjFkk="
+											},
+											"name": "Operation1"
+										}
 									]
 								}
 							]
+						}
+					]
+				},
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAF5KiW2KBwyBmI=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Class Diagram",
+					"ownedViews": [
+						{
+							"_type": "UMLClassView",
+							"_id": "AAAAAAF5KiXV9ByDn6Y=",
+							"_parent": {
+								"$ref": "AAAAAAF5KiW2KBwyBmI="
+							},
+							"model": {
+								"$ref": "AAAAAAF5KiXV9ByBUfU="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF5KiXV9RyEz2U=",
+									"_parent": {
+										"$ref": "AAAAAAF5KiXV9ByDn6Y="
+									},
+									"model": {
+										"$ref": "AAAAAAF5KiXV9ByBUfU="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF5KiXV9RyFtJI=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyEz2U="
+											},
+											"visible": false,
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": -192,
+											"top": 80,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF5KiXV9RyGJNE=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyEz2U="
+											},
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;1",
+											"left": 469,
+											"top": 151,
+											"width": 253.63330078125,
+											"height": 13,
+											"text": "Element"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF5KiXV9RyHNIg=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyEz2U="
+											},
+											"visible": false,
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": -192,
+											"top": 80,
+											"width": 117.75537109375,
+											"height": 13,
+											"text": "(from Design Model)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF5KiXV9RyI720=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyEz2U="
+											},
+											"visible": false,
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": -192,
+											"top": 80,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"fillColor": "#045a6d",
+									"fontColor": "#d2dfe7",
+									"font": "Arial;13;0",
+									"left": 464,
+									"top": 144,
+									"width": 263.63330078125,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF5KiXV9RyFtJI="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF5KiXV9RyGJNE="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF5KiXV9RyHNIg="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF5KiXV9RyI720="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAF5KiXV9RyJ2HE=",
+									"_parent": {
+										"$ref": "AAAAAAF5KiXV9ByDn6Y="
+									},
+									"model": {
+										"$ref": "AAAAAAF5KiXV9ByBUfU="
+									},
+									"subViews": [
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAF5Kim6gR4HS4s=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyJ2HE="
+											},
+											"model": {
+												"$ref": "AAAAAAF5Kim6bB4ERsE="
+											},
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 174,
+											"width": 253.63330078125,
+											"height": 13,
+											"text": "#description: String",
+											"horizontalAlignment": 0
+										}
+									],
+									"fillColor": "#045a6d",
+									"fontColor": "#d2dfe7",
+									"font": "Arial;13;0",
+									"left": 464,
+									"top": 169,
+									"width": 263.63330078125,
+									"height": 23
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAF5KiXV9RyK9MM=",
+									"_parent": {
+										"$ref": "AAAAAAF5KiXV9ByDn6Y="
+									},
+									"model": {
+										"$ref": "AAAAAAF5KiXV9ByBUfU="
+									},
+									"subViews": [
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF5KieZSx0g8nc=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyK9MM="
+											},
+											"model": {
+												"$ref": "AAAAAAF5KieZNh0dUk4="
+											},
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 197,
+											"width": 253.63330078125,
+											"height": 13,
+											"text": "#isLessThan(element: Element): boolean",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF5Kihj/R2Asrw=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyK9MM="
+											},
+											"model": {
+												"$ref": "AAAAAAF5Kihj7B19NuA="
+											},
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 212,
+											"width": 253.63330078125,
+											"height": 13,
+											"text": "#equals(element: Element): boolean",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF5KihmbR2Gx9s=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyK9MM="
+											},
+											"model": {
+												"$ref": "AAAAAAF5KihmXB2D9IM="
+											},
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 227,
+											"width": 253.63330078125,
+											"height": 13,
+											"text": "#isGreaterThan(element: Element): boolean",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF5KiaNlBzGwV4=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyK9MM="
+											},
+											"model": {
+												"$ref": "AAAAAAF5KiaNehzDh0s="
+											},
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 242,
+											"width": 253.63330078125,
+											"height": 13,
+											"text": "+<(lhs: Element, rhs: Element): boolean()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF5KibzrRzfqmQ=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyK9MM="
+											},
+											"model": {
+												"$ref": "AAAAAAF5KibzmRzcdYU="
+											},
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 257,
+											"width": 253.63330078125,
+											"height": 13,
+											"text": "+==(lhs: Element, rhs: Element): boolean()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF5KicPvBzmp3E=",
+											"_parent": {
+												"$ref": "AAAAAAF5KiXV9RyK9MM="
+											},
+											"model": {
+												"$ref": "AAAAAAF5KicPqBzj7QQ="
+											},
+											"fillColor": "#045a6d",
+											"fontColor": "#d2dfe7",
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 272,
+											"width": 253.63330078125,
+											"height": 13,
+											"text": "+>(lhs: Element, rhs: Element): boolean()",
+											"horizontalAlignment": 0
+										}
+									],
+									"fillColor": "#045a6d",
+									"fontColor": "#d2dfe7",
+									"font": "Arial;13;0",
+									"left": 464,
+									"top": 192,
+									"width": 263.63330078125,
+									"height": 98
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAF5KiXV9RyLY44=",
+									"_parent": {
+										"$ref": "AAAAAAF5KiXV9ByDn6Y="
+									},
+									"model": {
+										"$ref": "AAAAAAF5KiXV9ByBUfU="
+									},
+									"visible": false,
+									"fillColor": "#045a6d",
+									"fontColor": "#d2dfe7",
+									"font": "Arial;13;0",
+									"left": -96,
+									"top": 40,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAF5KiXV9RyMKko=",
+									"_parent": {
+										"$ref": "AAAAAAF5KiXV9ByDn6Y="
+									},
+									"model": {
+										"$ref": "AAAAAAF5KiXV9ByBUfU="
+									},
+									"visible": false,
+									"fillColor": "#045a6d",
+									"fontColor": "#d2dfe7",
+									"font": "Arial;13;0",
+									"left": -96,
+									"top": 40,
+									"width": 10,
+									"height": 10
+								}
+							],
+							"fillColor": "#045a6d",
+							"fontColor": "#d2dfe7",
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 464,
+							"top": 144,
+							"width": 263.63330078125,
+							"height": 148,
+							"showProperty": false,
+							"nameCompartment": {
+								"$ref": "AAAAAAF5KiXV9RyEz2U="
+							},
+							"attributeCompartment": {
+								"$ref": "AAAAAAF5KiXV9RyJ2HE="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAF5KiXV9RyK9MM="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAF5KiXV9RyLY44="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAF5KiXV9RyMKko="
+							}
+						}
+					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAF5KiXV9ByBUfU=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Element",
+					"documentation": "A game `Element`.",
+					"attributes": [
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAF5Kim6bB4ERsE=",
+							"_parent": {
+								"$ref": "AAAAAAF5KiXV9ByBUfU="
+							},
+							"name": "description",
+							"documentation": "The `Element`'s representable form.",
+							"visibility": "protected",
+							"type": "String"
+						}
+					],
+					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF5KieZNh0dUk4=",
+							"_parent": {
+								"$ref": "AAAAAAF5KiXV9ByBUfU="
+							},
+							"name": "isLessThan",
+							"documentation": "---\n### Specification\n---\n\nDetermines if the `Element` is  less than the  given `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter card: The `Element` to compare against.\n- Returns: True if the `Element` is  less than the  given `Element`.\n\n---\n### Algorithm\n---\n\n1. Return description < element.description",
+							"visibility": "protected",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF5KiefBh0k+BU=",
+									"_parent": {
+										"$ref": "AAAAAAF5KieZNh0dUk4="
+									},
+									"name": "element",
+									"type": {
+										"$ref": "AAAAAAF5KiXV9ByBUfU="
+									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF5KiefBx0l/aw=",
+									"_parent": {
+										"$ref": "AAAAAAF5KieZNh0dUk4="
+									},
+									"type": "boolean",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF5Kihj7B19NuA=",
+							"_parent": {
+								"$ref": "AAAAAAF5KiXV9ByBUfU="
+							},
+							"name": "equals",
+							"documentation": "---\n### Specification\n---\n\nDetermines if the `Element` is  equal to the  given `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter card: The `Element` to compare against.\n- Returns: True if the `Element` is equal to the  given `Element`.\n\n---\n### Algorithm\n---\n\n1. Return description == element.description",
+							"visibility": "protected",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF5KiiaFR206KI=",
+									"_parent": {
+										"$ref": "AAAAAAF5Kihj7B19NuA="
+									},
+									"name": "element",
+									"type": {
+										"$ref": "AAAAAAF5KiXV9ByBUfU="
+									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF5KiiaFh21c3k=",
+									"_parent": {
+										"$ref": "AAAAAAF5Kihj7B19NuA="
+									},
+									"type": "boolean",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF5KihmXB2D9IM=",
+							"_parent": {
+								"$ref": "AAAAAAF5KiXV9ByBUfU="
+							},
+							"name": "isGreaterThan",
+							"documentation": "---\n### Specification\n---\n\nDetermines if the `Element` is  greater  than the  given `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter card: The `Element` to compare against.\n- Returns: True if the `Element` is  greater than the  given `Element`.\n\n---\n### Algorithm\n---\n\n1. Return description > element.description",
+							"visibility": "protected",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF5Kij/pB3151s=",
+									"_parent": {
+										"$ref": "AAAAAAF5KihmXB2D9IM="
+									},
+									"name": "element",
+									"type": {
+										"$ref": "AAAAAAF5KiXV9ByBUfU="
+									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF5Kij/pR32WtA=",
+									"_parent": {
+										"$ref": "AAAAAAF5KihmXB2D9IM="
+									},
+									"type": "boolean",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF5KiaNehzDh0s=",
+							"_parent": {
+								"$ref": "AAAAAAF5KiXV9ByBUfU="
+							},
+							"name": "<(lhs: Element, rhs: Element): boolean",
+							"documentation": "---\n### Specification\n---\n\nDetermines if the given left-handside `Element` is less than the specified right-handside `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameters:\n  - lhs: The `Element` to compare against.\n  - rhs: The `Element` to compare to.\n- Returns: True if given left-handside `Element` is less than the specified right-handside `Element`.\n\n---\n### Algorithm\n---\n\n1. Return lhs.isLessThan(rhs)"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF5KibzmRzcdYU=",
+							"_parent": {
+								"$ref": "AAAAAAF5KiXV9ByBUfU="
+							},
+							"name": "==(lhs: Element, rhs: Element): boolean",
+							"documentation": "---\n### Specification\n---\n\nDetermines if the given left-handside `Element` is equal to the specified right-handside `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameters:\n  - lhs: The `Element` to compare against.\n  - rhs: The `Element` to compare to.\n- Returns: True if given left-handside `Element` is equal to the specified right-handside `Element`.\n\n---\n### Algorithm\n---\n\n1. Return lhs.equals(rhs)"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF5KicPqBzj7QQ=",
+							"_parent": {
+								"$ref": "AAAAAAF5KiXV9ByBUfU="
+							},
+							"name": ">(lhs: Element, rhs: Element): boolean",
+							"documentation": "---\n### Specification\n---\n\nDetermines if the given left-handside `Element` is greater than the specified right-handside `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameters:\n  - lhs: The `Element` to compare against.\n  - rhs: The `Element` to compare to.\n- Returns: True if given left-handside `Element` is greater than the specified right-handside `Element`.\n\n---\n### Algorithm\n---\n\n1. Return lhs.isGreaterThan(rhs)"
 						}
 					]
 				}
