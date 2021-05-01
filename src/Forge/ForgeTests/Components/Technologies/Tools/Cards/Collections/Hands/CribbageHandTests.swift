@@ -147,4 +147,29 @@ class CribbageHandTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                 Count                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the count of a`CribbageHand` equals the # of `Card`s given.
+    func test_count_ofCribbageHand_equalsNCards() throws {
+        
+        // Given
+        let jackOfHearts = try Jack()
+        let fiveOfDiamonds = try Five(of: .diamonds)
+        let fiveOfClubs = try Five(of: .clubs)
+        let fiveOfSpades = try Five(of: .spades)
+        let cutCard = try Five()
+        let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
+        let expected = 4
+        let cribbageHand = try CribbageHand(with: cards, and: cutCard)
+        
+        // When
+        let actual = cribbageHand.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
 }
