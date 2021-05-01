@@ -33,7 +33,7 @@ public class Hand: Cards {
     public var count: Int { return cards.count }
     
     /// The `Card`s.
-    private var cards: [Card]
+    internal var cards: [Card]
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //

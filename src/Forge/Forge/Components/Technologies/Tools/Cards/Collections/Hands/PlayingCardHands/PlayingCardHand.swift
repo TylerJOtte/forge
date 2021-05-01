@@ -56,11 +56,11 @@ public class PlayingCardHand: Hand {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: A collection of `Kind`s.
-    public func getKinds() -> [Kind] {
+    public func getKinds() throws -> [Kind] {
         
-        // TODO: implement stub
-        
-        return []
+        let pairs = (cards as? [PlayingCard])?.getPairs()
+    
+        return try pairs.map{try $0.values.map{try Kind(of: $0)}}!
     }
     
     /// Retrieves all the `Run`s in the `Hand`.

@@ -40573,7 +40573,7 @@
 																			"fillColor": "#00202a",
 																			"fontColor": "#d2dfe7",
 																			"font": "Arial;13;0",
-																			"left": 509,
+																			"left": 501,
 																			"top": 301,
 																			"width": 64.32080078125,
 																			"height": 13,
@@ -40588,7 +40588,7 @@
 																			"fillColor": "#00202a",
 																			"fontColor": "#d2dfe7",
 																			"font": "Arial;13;1",
-																			"left": 509,
+																			"left": 501,
 																			"top": 316,
 																			"width": 64.32080078125,
 																			"height": 13,
@@ -40604,11 +40604,11 @@
 																			"fillColor": "#00202a",
 																			"fontColor": "#d2dfe7",
 																			"font": "Arial;13;0",
-																			"left": 144,
+																			"left": 128,
 																			"top": 32,
 																			"width": 89.5654296875,
 																			"height": 13,
-																			"text": "(from Rewards)"
+																			"text": "(from Traits)"
 																		},
 																		{
 																			"_type": "LabelView",
@@ -40620,7 +40620,7 @@
 																			"fillColor": "#00202a",
 																			"fontColor": "#d2dfe7",
 																			"font": "Arial;13;0",
-																			"left": 144,
+																			"left": 128,
 																			"top": 32,
 																			"height": 13,
 																			"horizontalAlignment": 1
@@ -40629,7 +40629,7 @@
 																	"fillColor": "#00202a",
 																	"fontColor": "#d2dfe7",
 																	"font": "Arial;13;0",
-																	"left": 504,
+																	"left": 496,
 																	"top": 296,
 																	"width": 74.32080078125,
 																	"height": 38,
@@ -40668,7 +40668,7 @@
 																			"fillColor": "#00202a",
 																			"fontColor": "#d2dfe7",
 																			"font": "Arial;13;0",
-																			"left": 509,
+																			"left": 501,
 																			"top": 339,
 																			"width": 64.32080078125,
 																			"height": 13,
@@ -40679,7 +40679,7 @@
 																	"fillColor": "#00202a",
 																	"fontColor": "#d2dfe7",
 																	"font": "Arial;13;0",
-																	"left": 504,
+																	"left": 496,
 																	"top": 334,
 																	"width": 74.32080078125,
 																	"height": 23
@@ -40697,7 +40697,7 @@
 																	"fillColor": "#00202a",
 																	"fontColor": "#d2dfe7",
 																	"font": "Arial;13;0",
-																	"left": 72,
+																	"left": 64,
 																	"top": 16,
 																	"width": 10,
 																	"height": 10
@@ -40715,7 +40715,7 @@
 																	"fillColor": "#00202a",
 																	"fontColor": "#d2dfe7",
 																	"font": "Arial;13;0",
-																	"left": 72,
+																	"left": 64,
 																	"top": 16,
 																	"width": 10,
 																	"height": 10
@@ -40733,7 +40733,7 @@
 																	"fillColor": "#00202a",
 																	"fontColor": "#d2dfe7",
 																	"font": "Arial;13;0",
-																	"left": 72,
+																	"left": 64,
 																	"top": 16,
 																	"width": 10,
 																	"height": 10
@@ -40743,7 +40743,7 @@
 															"fontColor": "#d2dfe7",
 															"font": "Arial;13;0",
 															"containerChangeable": true,
-															"left": 504,
+															"left": 496,
 															"top": 296,
 															"width": 74.32080078125,
 															"height": 61,
@@ -40929,7 +40929,7 @@
 															}
 														}
 													],
-													"documentation": "A `Hand`'s point total.\n\n---\n### Attribute Algorithms\n---\n\n---\n#### points: int\n---\n\n1. Return ranks.sum(x => x.values.sum(y => y.points))\n\n---\n### Addable Algorithms\n---\n\n---\n#### add(handRank: HandRank)\n---\n\n1. Define local variables\n\n\t1.1. var key = handRank.title  \n    1.2. var keys = ranks.keys  \n    1.3. containsKey = keys.contains(key)\n    \n2. contains(key) ? ranks[key].append(handRank) : ranks[key] = [handRank]",
+													"documentation": "A `Hand`'s point total.\n\n---\n### Attribute Algorithms\n---\n\n---\n#### points: int\n---\n\n1. Return ranks.sum(x => x.values.sum(y => y.points))",
 													"attributes": [
 														{
 															"_type": "UMLAttribute",
