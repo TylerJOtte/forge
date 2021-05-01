@@ -172,4 +172,27 @@ class CribbageHandTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    //-------------------------------------------------------------------------//
+    //                               Cut Card                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the cut `Card` of a`CribbageHand` equals the given cut `Card`.
+    func test_cutCard_ofCribbageHand_equalsGivenCutCard() throws {
+        
+        // Given
+        let jackOfHearts = try Jack()
+        let fiveOfDiamonds = try Five(of: .diamonds)
+        let fiveOfClubs = try Five(of: .clubs)
+        let fiveOfSpades = try Five(of: .spades)
+        let cutCard = try Five()
+        let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
+        let expected = cutCard
+        let cribbageHand = try CribbageHand(with: cards, and: cutCard)
+        
+        // When
+        let actual = cribbageHand.cutCard
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
