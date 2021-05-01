@@ -17,32 +17,7 @@
 import Foundation
 
 /// A collection of `Element`s.
-public protocol Elements {
-    
-    /// The type of `Element` that the collection contains.
-    associatedtype T
-    
-    /// Determines if the collection is empty.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the collection is empty, else false.
-    func isEmpty() -> Bool
-    
-    /// Determines if the collection is full.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the collection is full else false.
-    func isFull() -> Bool
-    
-    /// Determines if the given `T` exists.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter t: The `T` to find.
-    /// - Returns: True if the given `T` exists, else false.
-    func contains(_ t: T) -> Bool
+public protocol Elements: Containable {
     
     /// Adds the given `T` to the collection.
     ///

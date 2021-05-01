@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  RangeError.swift                                                           //
+//  Containable.swift                                                          //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/17/21.                                       //
+//  Created by Tyler J. Otte on 5/01/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -16,12 +16,31 @@
 
 import Foundation
 
-/// A throwable `Range Error`.
-public enum RangeError: Error {
+/// A containable characteristic.
+public protocol Containable {
     
-    case invalidMax
-    case invalidMin
-    case isEmpty
-    case isFull
-    case noCapacity
+    /// The type of `Element` that the model contains.
+    associatedtype T
+    
+    /// Determines if the model  is empty.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the model is empty, else false.
+    func isEmpty() -> Bool
+    
+    /// Determines if the model is full.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the model is full, else false.
+    func isFull() -> Bool
+    
+    /// Determines if the given `T` exists.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter t: The `T` to find.
+    /// - Returns: True if the given `T` exists, else false.
+    func contains(_ t: T) -> Bool
 }
