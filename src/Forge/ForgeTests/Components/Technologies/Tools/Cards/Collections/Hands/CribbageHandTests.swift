@@ -39,7 +39,8 @@ class CribbageHandTests: XCTestCase {
         let fiveOfSpades = try Five(of: .spades)
         let aceOfHearts = try Ace()
         let cutCard = try Five()
-        let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades, aceOfHearts]
+        let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades,
+                     aceOfHearts]
         let expected = ElementsError.excessiveElements
         
         // When
@@ -97,5 +98,33 @@ class CribbageHandTests: XCTestCase {
             // Then
             XCTAssertEqual(expected, error as? FeatureError)
         }
+    }
+    
+    //=========================================================================//
+    //                              PROPERTIES                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                             Min/Max Cards                               //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the min cards  of a`CribbageHand` equals zero.
+    func test_minCards_ofCribbageHand_equalsZero() throws {
+        
+        // Given
+        let jackOfHearts = try Jack()
+        let fiveOfDiamonds = try Five(of: .diamonds)
+        let fiveOfClubs = try Five(of: .clubs)
+        let fiveOfSpades = try Five(of: .spades)
+        let cutCard = try Five()
+        let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
+        let expected = 0
+        let cribbageHand = try CribbageHand(with: cards, and: cutCard)
+        
+        // When
+        let actual = cribbageHand.minCards
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
 }
