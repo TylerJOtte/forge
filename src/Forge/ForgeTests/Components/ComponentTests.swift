@@ -112,7 +112,7 @@ class ComponentTests: XCTestCase {
         XCTAssert(component1.equals(component2))
     }
     
-    /// Tests that two default `Component`s are equal using the equality operator.
+    /// Tests that two default `Component`s are equal, using the equality operator.
     func test_equalityOperator_defaultComponents_true() {
         
         // Given
@@ -122,4 +122,35 @@ class ComponentTests: XCTestCase {
         // When/Then
         XCTAssertEqual(component1, component2)
     }
+    
+                                  //             //
+                                  // Same Titles //
+                                  //             //
+    
+    /// Tests that two `Component`s with the same given title are equal.
+    func test_equals_componentWithSameTitles_true() {
+        
+        // Given
+        let title1 = "Component A"
+        let title2 = "Component A"
+        let component1 = Component(named: title1)
+        let component2 = Component(named: title2)
+        
+        // When/Then
+        XCTAssertEqual(component1, component2)
+    }
+
+    /// Tests that two `Component`s with the same given title are equal, using the equality operator.
+    func test_equalityOperator_componentWithSameTitles_true() {
+        
+        // Given
+        let title1 = "Component A"
+        let title2 = "Component A"
+        let component1 = Component(named: title1)
+        let component2 = Component(named: title2)
+        
+        // When/Then
+        XCTAssertEqual(component1, component2)
+    }
+    
 }

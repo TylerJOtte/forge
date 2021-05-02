@@ -112,7 +112,7 @@ class ElementTests: XCTestCase {
         XCTAssert(element1.equals(element2))
     }
     
-    /// Tests that two default `Element`s are equal using the equality operator.
+    /// Tests that two default `Element`s are equal, using the equality operator.
     func test_equalityOperator_defaultElements_true() {
         
         // Given
@@ -140,7 +140,7 @@ class ElementTests: XCTestCase {
         XCTAssertEqual(element1, element2)
     }
 
-    /// Tests that two `Element`s with the same given  title are equal using the equality operator.
+    /// Tests that two `Element`s with the same given title are equal, using the equality operator.
     func test_equalityOperator_elementWithSameTitles_true() {
         
         // Given
@@ -170,7 +170,7 @@ class ElementTests: XCTestCase {
         XCTAssertFalse(element1.equals(element2))
     }
     
-    /// Tests that two `Element`s with the different titles are not equal using the equality operator.
+    /// Tests that two `Element`s with the different titles are not equal, using the equality operator.
     func test_equalitOperator_elementWithDifferentTitles_false() {
         
         // Given
@@ -188,7 +188,7 @@ class ElementTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that an `Element` with an alphabetically later title is greater than another `Element` with
-    /// an alphabetically earlier `Element`.
+    /// an alphabetically earlier title.
     func test_isGreaterThan_WithAlphabeticallyLaterTitle_true() {
         
         // Given
@@ -202,7 +202,7 @@ class ElementTests: XCTestCase {
     }
     
     /// Tests that an `Element` with an alphabetically later title is greater than another `Element` with
-    /// an alphabetically earlier `Element` using the greater than operator.
+    /// an alphabetically earlier title, using the greater than operator.
     func test_isGreaterThanOperator_WithAlphabeticallyLaterTitle_true() {
         
         // Given
