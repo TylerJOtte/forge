@@ -92,4 +92,34 @@ class ComponentTests: XCTestCase {
         // When/Then
         XCTAssertLessThan(component1, component2)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Equality                                 //
+    //-------------------------------------------------------------------------//
+    
+                              //                   //
+                              // Default Component //
+                              //                   //
+    
+    /// Tests that two default `Component`s are equal.
+    func test_equals_defaultComponents_true() {
+        
+        // Given
+        let component1 = Component()
+        let component2 = Component()
+        
+        // When/Then
+        XCTAssert(component1.equals(component2))
+    }
+    
+    /// Tests that two default `Component`s are equal using the equality operator.
+    func test_equalityOperator_defaultComponents_true() {
+        
+        // Given
+        let component1 = Component()
+        let component2 = Component()
+        
+        // When/Then
+        XCTAssertEqual(component1, component2)
+    }
 }
