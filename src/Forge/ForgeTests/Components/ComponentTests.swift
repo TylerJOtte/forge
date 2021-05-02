@@ -153,4 +153,34 @@ class ComponentTests: XCTestCase {
         XCTAssertEqual(component1, component2)
     }
     
+                               //                  //
+                               // Different Titles //
+                               //                  //
+    
+    /// Tests that two `Component`s with different titles are not equal.
+    func test_equals_componentWithDifferentTitles_false() {
+        
+        // Given
+        let title1 = "Component A"
+        let title2 = "Component Z"
+        let component1 = Component(named: title1)
+        let component2 = Component(named: title2)
+        
+        // When/Then
+        XCTAssertFalse(component1.equals(component2))
+    }
+    
+    /// Tests that two `Component`s with different titles are not equal, using the equality operator.
+    func test_equalitOperator_componentWithDifferentTitles_false() {
+        
+        // Given
+        let title1 = "Component A"
+        let title2 = "Component Z"
+        let component1 = Component(named: title1)
+        let component2 = Component(named: title2)
+        
+        // When/Then
+        XCTAssertNotEqual(component1, component2)
+    }
+    
 }

@@ -157,7 +157,7 @@ class ElementTests: XCTestCase {
                                // Different Titles //
                                //                  //
     
-    /// Tests that two `Element`s with the different titles are not equal.
+    /// Tests that two `Element`s with different titles are not equal.
     func test_equals_elementWithDifferentTitles_false() {
         
         // Given
@@ -170,7 +170,7 @@ class ElementTests: XCTestCase {
         XCTAssertFalse(element1.equals(element2))
     }
     
-    /// Tests that two `Element`s with the different titles are not equal, using the equality operator.
+    /// Tests that two `Element`s with different titles are not equal, using the equality operator.
     func test_equalitOperator_elementWithDifferentTitles_false() {
         
         // Given
