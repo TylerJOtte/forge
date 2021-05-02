@@ -17,7 +17,7 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for a game `Element`.
+/// Unit tests for an `Element`.
 class ElementTests: XCTestCase {
     
     //=========================================================================//

@@ -23,7 +23,7 @@ public class Element: Comparable {
     //                                ATTRIBUTES                               //
     //=========================================================================//
     
-    /// The `Element`'s primary name.
+    /// The primary name.
     public let title: String
     
     //=========================================================================//

@@ -59276,8 +59276,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": -192,
-											"top": 80,
+											"left": -304,
+											"top": -32,
 											"height": 13
 										},
 										{
@@ -59289,8 +59289,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;1",
-											"left": 469,
-											"top": 151,
+											"left": 413,
+											"top": 95,
 											"width": 253.63330078125,
 											"height": 13,
 											"text": "Element"
@@ -59305,8 +59305,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": -192,
-											"top": 80,
+											"left": -304,
+											"top": -32,
 											"width": 117.75537109375,
 											"height": 13,
 											"text": "(from Design Model)"
@@ -59321,8 +59321,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": -192,
-											"top": 80,
+											"left": -304,
+											"top": -32,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
@@ -59330,8 +59330,8 @@
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 464,
-									"top": 144,
+									"left": 408,
+									"top": 88,
 									"width": 263.63330078125,
 									"height": 25,
 									"stereotypeLabel": {
@@ -59369,19 +59369,19 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 469,
-											"top": 174,
+											"left": 413,
+											"top": 118,
 											"width": 253.63330078125,
 											"height": 13,
-											"text": "#description: String",
+											"text": "+title: String",
 											"horizontalAlignment": 0
 										}
 									],
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 464,
-									"top": 169,
+									"left": 408,
+									"top": 113,
 									"width": 263.63330078125,
 									"height": 23
 								},
@@ -59407,8 +59407,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 469,
-											"top": 197,
+											"left": 413,
+											"top": 141,
 											"width": 253.63330078125,
 											"height": 13,
 											"text": "#isLessThan(element: Element): boolean",
@@ -59426,8 +59426,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 469,
-											"top": 212,
+											"left": 413,
+											"top": 156,
 											"width": 253.63330078125,
 											"height": 13,
 											"text": "#equals(element: Element): boolean",
@@ -59445,8 +59445,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 469,
-											"top": 227,
+											"left": 413,
+											"top": 171,
 											"width": 253.63330078125,
 											"height": 13,
 											"text": "#isGreaterThan(element: Element): boolean",
@@ -59464,8 +59464,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 469,
-											"top": 242,
+											"left": 413,
+											"top": 186,
 											"width": 253.63330078125,
 											"height": 13,
 											"text": "+<(lhs: Element, rhs: Element): boolean()",
@@ -59483,8 +59483,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 469,
-											"top": 257,
+											"left": 413,
+											"top": 201,
 											"width": 253.63330078125,
 											"height": 13,
 											"text": "+==(lhs: Element, rhs: Element): boolean()",
@@ -59502,8 +59502,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 469,
-											"top": 272,
+											"left": 413,
+											"top": 216,
 											"width": 253.63330078125,
 											"height": 13,
 											"text": "+>(lhs: Element, rhs: Element): boolean()",
@@ -59513,8 +59513,8 @@
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 464,
-									"top": 192,
+									"left": 408,
+									"top": 136,
 									"width": 263.63330078125,
 									"height": 98
 								},
@@ -59531,8 +59531,8 @@
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": -96,
-									"top": 40,
+									"left": -152,
+									"top": -16,
 									"width": 10,
 									"height": 10
 								},
@@ -59549,8 +59549,8 @@
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": -96,
-									"top": 40,
+									"left": -152,
+									"top": -16,
 									"width": 10,
 									"height": 10
 								}
@@ -59559,8 +59559,8 @@
 							"fontColor": "#d2dfe7",
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 464,
-							"top": 144,
+							"left": 408,
+							"top": 88,
 							"width": 263.63330078125,
 							"height": 148,
 							"showProperty": false,
@@ -59610,8 +59610,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 14,
-											"top": -198,
+											"left": -98,
+											"top": -310,
 											"height": 13
 										},
 										{
@@ -59623,8 +59623,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;1",
-											"left": 557,
-											"top": 391,
+											"left": 501,
+											"top": 335,
 											"width": 72.2109375,
 											"height": 13,
 											"text": "Component"
@@ -59639,8 +59639,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 564,
-											"top": 390,
+											"left": 452,
+											"top": 278,
 											"width": 111.97900390625,
 											"height": 13,
 											"text": "(from Components)"
@@ -59655,8 +59655,8 @@
 											"fillColor": "#045a6d",
 											"fontColor": "#d2dfe7",
 											"font": "Arial;13;0",
-											"left": 14,
-											"top": -198,
+											"left": -98,
+											"top": -310,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
@@ -59664,8 +59664,8 @@
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 552,
-									"top": 384,
+									"left": 496,
+									"top": 328,
 									"width": 82.2109375,
 									"height": 25,
 									"stereotypeLabel": {
@@ -59694,8 +59694,8 @@
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 552,
-									"top": 409,
+									"left": 496,
+									"top": 353,
 									"width": 121.97900390625,
 									"height": 10
 								},
@@ -59712,8 +59712,8 @@
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 552,
-									"top": 419,
+									"left": 496,
+									"top": 363,
 									"width": 121.97900390625,
 									"height": 10
 								},
@@ -59730,8 +59730,8 @@
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 7,
-									"top": -99,
+									"left": -49,
+									"top": -155,
 									"width": 10,
 									"height": 10
 								},
@@ -59748,8 +59748,8 @@
 									"fillColor": "#045a6d",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 7,
-									"top": -99,
+									"left": -49,
+									"top": -155,
 									"width": 10,
 									"height": 10
 								}
@@ -59758,8 +59758,8 @@
 							"fontColor": "#d2dfe7",
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 552,
-							"top": 384,
+							"left": 496,
+							"top": 328,
 							"width": 82.2109375,
 							"height": 25,
 							"autoResize": true,
@@ -59805,8 +59805,8 @@
 									"fillColor": "#00202a",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 576,
-									"top": 330,
+									"left": 520,
+									"top": 274,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -59828,8 +59828,8 @@
 									"fillColor": "#00202a",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 561,
-									"top": 330,
+									"left": 505,
+									"top": 274,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -59851,8 +59851,8 @@
 									"fillColor": "#00202a",
 									"fontColor": "#d2dfe7",
 									"font": "Arial;13;0",
-									"left": 605,
-									"top": 331,
+									"left": 549,
+									"top": 275,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -59871,7 +59871,7 @@
 							"tail": {
 								"$ref": "AAAAAAF5KjR7DR8QuBY="
 							},
-							"points": "591:384;591:291",
+							"points": "535:328;535:235",
 							"showVisibility": true,
 							"showProperty": false,
 							"nameLabel": {
@@ -59901,9 +59901,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF5KiXV9ByBUfU="
 							},
-							"name": "description",
-							"documentation": "The `Element`'s representable form.",
-							"visibility": "protected",
+							"name": "title",
+							"documentation": "The primary name.",
 							"type": "String"
 						}
 					],
@@ -59915,7 +59914,7 @@
 								"$ref": "AAAAAAF5KiXV9ByBUfU="
 							},
 							"name": "isLessThan",
-							"documentation": "---\n### Specification\n---\n\nDetermines if the `Element` is  less than the  given `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter card: The `Element` to compare against.\n- Returns: True if the `Element` is  less than the  given `Element`.\n\n---\n### Algorithm\n---\n\n1. Return description < element.description",
+							"documentation": "---\n### Specification\n---\n\nDetermines if the `Element` is  less than the  given `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter card: The `Element` to compare against.\n- Returns: True if the `Element` is  less than the  given `Element`.\n\n---\n### Algorithm\n---\n\n1. Return title < element.title",
 							"visibility": "protected",
 							"parameters": [
 								{
@@ -59947,7 +59946,7 @@
 								"$ref": "AAAAAAF5KiXV9ByBUfU="
 							},
 							"name": "equals",
-							"documentation": "---\n### Specification\n---\n\nDetermines if the `Element` is  equal to the  given `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter card: The `Element` to compare against.\n- Returns: True if the `Element` is equal to the  given `Element`.\n\n---\n### Algorithm\n---\n\n1. Return description == element.description",
+							"documentation": "---\n### Specification\n---\n\nDetermines if the `Element` is  equal to the  given `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter card: The `Element` to compare against.\n- Returns: True if the `Element` is equal to the  given `Element`.\n\n---\n### Algorithm\n---\n\n1. Return title == element.title",
 							"visibility": "protected",
 							"parameters": [
 								{
@@ -59979,7 +59978,7 @@
 								"$ref": "AAAAAAF5KiXV9ByBUfU="
 							},
 							"name": "isGreaterThan",
-							"documentation": "---\n### Specification\n---\n\nDetermines if the `Element` is  greater  than the  given `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter card: The `Element` to compare against.\n- Returns: True if the `Element` is  greater than the  given `Element`.\n\n---\n### Algorithm\n---\n\n1. Return description > element.description",
+							"documentation": "---\n### Specification\n---\n\nDetermines if the `Element` is  greater  than the  given `Element`.\n\n- Precondition: None.\n- Postcondition: None.\n- Parameter card: The `Element` to compare against.\n- Returns: True if the `Element` is  greater than the  given `Element`.\n\n---\n### Algorithm\n---\n\n1. Return title > element.title",
 							"visibility": "protected",
 							"parameters": [
 								{
