@@ -66,7 +66,7 @@ class ElementTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that an `Element` with an alphabetically earlier title is less than another `Element` with
-    /// an alphabetically later `Element`.
+    /// an alphabetically later title.
     func test_isLessThan_WithAlphabeticallyEarlierTitle_true() {
         
         // Given
@@ -80,7 +80,7 @@ class ElementTests: XCTestCase {
     }
     
     /// Tests that an `Element` with an alphabetically earlier title is less than another `Element` with
-    /// an alphabetically later `Element` using the less than operator.
+    /// an alphabetically later title, using the less than operator.
     func test_isLessThanOperator_WithAlphabeticallyEarlierTitle_true() {
         
         // Given

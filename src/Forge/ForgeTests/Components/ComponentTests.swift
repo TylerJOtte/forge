@@ -56,4 +56,40 @@ class ComponentTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //=========================================================================//
+    //                              COMPARISONS                                //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                               Less Than                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Component` with an alphabetically earlier title is less than another `Component` with
+    /// an alphabetically later title.
+    func test_isLessThan_WithAlphabeticallyEarlierTitle_true() {
+        
+        // Given
+        let title1 = "Component A"
+        let title2 = "Component Z"
+        let component1 = Component(named: title1)
+        let component2 = Component(named: title2)
+        
+        // When/Then
+        XCTAssert(component1.isLessThan(component2))
+    }
+    
+    /// Tests that a `Component` with an alphabetically earlier title is less than another `Component` with
+    /// an alphabetically later title, using the less than operator.
+    func test_isLessThanOperator_WithAlphabeticallyEarlierTitle_true() {
+        
+        // Given
+        let title1 = "Component A"
+        let title2 = "Component Z"
+        let component1 = Component(named: title1)
+        let component2 = Component(named: title2)
+        
+        // When/Then
+        XCTAssertLessThan(component1, component2)
+    }
 }
