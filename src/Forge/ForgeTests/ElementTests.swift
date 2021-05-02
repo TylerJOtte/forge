@@ -62,11 +62,58 @@ class ElementTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
+    //                               Less Than                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that an `Element` with an alphabetically earlier title is less than another `Element` with
+    /// an alphabetically later `Element`.
+    func test_isLessThan_WithAlphabeticallyEarlierTitle_true() {
+        
+        // Given
+        let title1 = "Element A"
+        let title2 = "Element Z"
+        let element1 = Element(named: title1)
+        let element2 = Element(named: title2)
+        
+        // When/Then
+        XCTAssert(element1.isLessThan(element2))
+    }
+    
+    /// Tests that an `Element` with an alphabetically earlier title is less than another `Element` with
+    /// an alphabetically later `Element` using the less than operator.
+    func test_isLessThanOperator_WithAlphabeticallyEarlierTitle_true() {
+        
+        // Given
+        let title1 = "Element A"
+        let title2 = "Element Z"
+        let element1 = Element(named: title1)
+        let element2 = Element(named: title2)
+        
+        // When/Then
+        XCTAssertLessThan(element1, element2)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Equality                                 //
     //-------------------------------------------------------------------------//
     
-    /// Tests that two `Element`s with the same descriptions are equal.
-    func test_equals_elementWithSameDescriptions_true() {
+                                //                 //
+                                // Default Element //
+                                //                 //
+    
+    /// Tests that two default `Element`s are equal.
+    func test_equals_defaultElements_true() {
+        
+        // Given
+        let element1 = Element()
+        let element2 = Element()
+        
+        // When/Then
+        XCTAssert(element1.equals(element2))
+    }
+    
+    /// Tests that two default `Element`s are equal using the equality operator.
+    func test_equalityOperator_defaultElements_true() {
         
         // Given
         let element1 = Element()
@@ -74,5 +121,65 @@ class ElementTests: XCTestCase {
         
         // When/Then
         XCTAssertEqual(element1, element2)
+    }
+    
+                                  //             //
+                                  // Same Titles //
+                                  //             //
+    
+    /// Tests that two `Element`s with the same given title are equal.
+    func test_equals_elementWithSameTitles_true() {
+        
+        // Given
+        let title1 = "Element A"
+        let title2 = "Element A"
+        let element1 = Element(named: title1)
+        let element2 = Element(named: title2)
+        
+        // When/Then
+        XCTAssertEqual(element1, element2)
+    }
+
+    /// Tests that two `Element`s with the same given  title are equal using the equality operator.
+    func test_equalityOperator_elementWithSameTitles_true() {
+        
+        // Given
+        let title1 = "Element A"
+        let title2 = "Element A"
+        let element1 = Element(named: title1)
+        let element2 = Element(named: title2)
+        
+        // When/Then
+        XCTAssertEqual(element1, element2)
+    }
+    
+                               //                  //
+                               // Different Titles //
+                               //                  //
+    
+    /// Tests that two `Element`s with the different titles are not equal.
+    func test_equals_elementWithDifferentTitles_false() {
+        
+        // Given
+        let title1 = "Element A"
+        let title2 = "Element Z"
+        let element1 = Element(named: title1)
+        let element2 = Element(named: title2)
+        
+        // When/Then
+        XCTAssertFalse(element1.equals(element2))
+    }
+    
+    /// Tests that two `Element`s with the different titles are not equal using the equality operator.
+    func test_equalitOperator_elementWithDifferentTitles_false() {
+        
+        // Given
+        let title1 = "Element A"
+        let title2 = "Element Z"
+        let element1 = Element(named: title1)
+        let element2 = Element(named: title2)
+        
+        // When/Then
+        XCTAssertNotEqual(element1, element2)
     }
 }
