@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  ResourceTests.swift                                                        //
+//  RewardTests.swift                                                          //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 5/02/21.                                       //
@@ -17,8 +17,8 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for a `Resource`.
-class ResourceTests: XCTestCase {
+/// Unit tests for a `Reward`.
+class RewardTests: XCTestCase {
     
     //=========================================================================//
     //                              PROPERTIES                                 //
@@ -28,30 +28,30 @@ class ResourceTests: XCTestCase {
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the title of a default `Resource` equals  "Resource".
-    func test_title_ofResource_equalsResource() {
+    /// Tests that the title of a default `Reward` equals  "Reward".
+    func test_title_ofReward_equalsReward() {
         
         // Given
-        let resource = Resource()
-        let expected = "Resource"
+        let reward = Reward()
+        let expected = "Reward"
         
         // When
-        let actual = resource.title
+        let actual = reward.title
         
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of a`Resource` equals a given title.
-    func test_title_ofResource_equalsGivenTitle() {
+    /// Tests that the title of a`Reward` equals a given title.
+    func test_title_ofReward_equalsGivenTitle() {
         
         // Given
         let title = "Title"
-        let resource = Resource(named: title)
+        let reward = Reward(named: title)
         let expected = title
         
         // When
-        let actual = resource.title
+        let actual = reward.title
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -65,32 +65,32 @@ class ResourceTests: XCTestCase {
     //                               Less Than                                 //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Resource` with an alphabetically earlier title is less than another `Resource` with
-    /// an alphabetically later title.
+    /// Tests that a `Reward` with an alphabetically earlier title is less than another `Reward` with an
+    /// alphabetically later title.
     func test_isLessThan_WithAlphabeticallyEarlierTitle_true() {
         
         // Given
-        let title1 = "Resource A"
-        let title2 = "Resource Z"
-        let resource1 = Resource(named: title1)
-        let resource2 = Resource(named: title2)
+        let title1 = "Reward A"
+        let title2 = "Reward Z"
+        let reward1 = Reward(named: title1)
+        let reward2 = Reward(named: title2)
         
         // When/Then
-        XCTAssert(resource1.isLessThan(resource2))
+        XCTAssert(reward1.isLessThan(reward2))
     }
     
-    /// Tests that a `Resource` with an alphabetically earlier title is less than another `Resource` with
-    /// an alphabetically later title, using the less than operator.
+    /// Tests that a `Reward` with an alphabetically earlier title is less than another `Reward` with an
+    /// alphabetically later title, using the less than operator.
     func test_isLessThanOperator_WithAlphabeticallyEarlierTitle_true() {
         
         // Given
-        let title1 = "Resource A"
-        let title2 = "Resource Z"
-        let resource1 = Resource(named: title1)
-        let resource2 = Resource(named: title2)
+        let title1 = "Reward A"
+        let title2 = "Reward Z"
+        let reward1 = Reward(named: title1)
+        let reward2 = Reward(named: title2)
         
         // When/Then
-        XCTAssertLessThan(resource1, resource2)
+        XCTAssertLessThan(reward1, reward2)
     }
     
     //-------------------------------------------------------------------------//
@@ -98,120 +98,120 @@ class ResourceTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
                               //                   //
-                              // Default Resource //
+                              // Default Reward //
                               //                   //
     
-    /// Tests that two default `Resource`s are equal.
-    func test_equals_defaultResources_true() {
+    /// Tests that two default `Reward`s are equal.
+    func test_equals_defaultRewards_true() {
         
         // Given
-        let resource1 = Resource()
-        let resource2 = Resource()
+        let reward1 = Reward()
+        let reward2 = Reward()
         
         // When/Then
-        XCTAssert(resource1.equals(resource2))
+        XCTAssert(reward1.equals(reward2))
     }
     
-    /// Tests that two default `Resource`s are equal, using the equality operator.
-    func test_equalityOperator_defaultResources_true() {
+    /// Tests that two default `Reward`s are equal, using the equality operator.
+    func test_equalityOperator_defaultRewards_true() {
         
         // Given
-        let resource1 = Resource()
-        let resource2 = Resource()
+        let reward1 = Reward()
+        let reward2 = Reward()
         
         // When/Then
-        XCTAssertEqual(resource1, resource2)
+        XCTAssertEqual(reward1, reward2)
     }
     
                                   //             //
                                   // Same Titles //
                                   //             //
     
-    /// Tests that two `Resource`s with the same given title are equal.
-    func test_equals_resourceWithSameTitles_true() {
+    /// Tests that two `Reward`s with the same given title are equal.
+    func test_equals_rewardWithSameTitles_true() {
         
         // Given
-        let title1 = "Resource A"
-        let title2 = "Resource A"
-        let resource1 = Resource(named: title1)
-        let resource2 = Resource(named: title2)
+        let title1 = "Reward A"
+        let title2 = "Reward A"
+        let reward1 = Reward(named: title1)
+        let reward2 = Reward(named: title2)
         
         // When/Then
-        XCTAssertEqual(resource1, resource2)
+        XCTAssertEqual(reward1, reward2)
     }
 
-    /// Tests that two `Resource`s with the same given title are equal, using the equality operator.
-    func test_equalityOperator_resourceWithSameTitles_true() {
+    /// Tests that two `Reward`s with the same given title are equal, using the equality operator.
+    func test_equalityOperator_rewardWithSameTitles_true() {
         
         // Given
-        let title1 = "Resource A"
-        let title2 = "Resource A"
-        let resource1 = Resource(named: title1)
-        let resource2 = Resource(named: title2)
+        let title1 = "Reward A"
+        let title2 = "Reward A"
+        let reward1 = Reward(named: title1)
+        let reward2 = Reward(named: title2)
         
         // When/Then
-        XCTAssertEqual(resource1, resource2)
+        XCTAssertEqual(reward1, reward2)
     }
     
                                //                  //
                                // Different Titles //
                                //                  //
     
-    /// Tests that two `Resource`s with different titles are not equal.
-    func test_equals_resourceWithDifferentTitles_false() {
+    /// Tests that two `Reward`s with different titles are not equal.
+    func test_equals_rewardWithDifferentTitles_false() {
         
         // Given
-        let title1 = "Resource A"
-        let title2 = "Resource Z"
-        let resource1 = Resource(named: title1)
-        let resource2 = Resource(named: title2)
+        let title1 = "Reward A"
+        let title2 = "Reward Z"
+        let reward1 = Reward(named: title1)
+        let reward2 = Reward(named: title2)
         
         // When/Then
-        XCTAssertFalse(resource1.equals(resource2))
+        XCTAssertFalse(reward1.equals(reward2))
     }
     
-    /// Tests that two `Resource`s with different titles are not equal, using the equality operator.
-    func test_equalitOperator_resourceWithDifferentTitles_false() {
+    /// Tests that two `Reward`s with different titles are not equal, using the equality operator.
+    func test_equalitOperator_rewardWithDifferentTitles_false() {
         
         // Given
-        let title1 = "Resource A"
-        let title2 = "Resource Z"
-        let resource1 = Resource(named: title1)
-        let resource2 = Resource(named: title2)
+        let title1 = "Reward A"
+        let title2 = "Reward Z"
+        let reward1 = Reward(named: title1)
+        let reward2 = Reward(named: title2)
         
         // When/Then
-        XCTAssertNotEqual(resource1, resource2)
+        XCTAssertNotEqual(reward1, reward2)
     }
     
     //-------------------------------------------------------------------------//
     //                             Greater Than                                //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Resource` with an alphabetically later title is greater than another `Resource`
-    /// with an alphabetically earlier title.
+    /// Tests that a `Reward` with an alphabetically later title is greater than another `Reward` with an
+    /// alphabetically earlier title.
     func test_isGreaterThan_WithAlphabeticallyLaterTitle_true() {
         
         // Given
-        let title1 = "Resource Z"
-        let title2 = "Resource A"
-        let resource1 = Resource(named: title1)
-        let resource2 = Resource(named: title2)
+        let title1 = "Reward Z"
+        let title2 = "Reward A"
+        let reward1 = Reward(named: title1)
+        let reward2 = Reward(named: title2)
         
         // When/Then
-        XCTAssert(resource1.isGreaterThan(resource2))
+        XCTAssert(reward1.isGreaterThan(reward2))
     }
     
-    /// Tests that a `Resource` with an alphabetically later title is greater than another `Resource`
-    /// with an alphabetically earlier title, using the greater than operator.
+    /// Tests that a `Reward` with an alphabetically later title is greater than another `Reward` with an
+    /// alphabetically earlier title, using the greater than operator.
     func test_isGreaterThanOperator_WithAlphabeticallyLaterTitle_true() {
         
         // Given
-        let title1 = "Resource Z"
-        let title2 = "Resource A"
-        let resource1 = Resource(named: title1)
-        let resource2 = Resource(named: title2)
+        let title1 = "Reward Z"
+        let title2 = "Reward A"
+        let reward1 = Reward(named: title1)
+        let reward2 = Reward(named: title2)
         
         // When/Then
-        XCTAssertGreaterThan(resource1, resource2)
+        XCTAssertGreaterThan(reward1, reward2)
     }
 }
