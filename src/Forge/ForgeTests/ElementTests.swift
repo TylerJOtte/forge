@@ -25,18 +25,33 @@ class ElementTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                              Description                                //
+    //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the description of an `Element` equals  "Element".
-    func test_description_ofElement_equalsElement() {
+    /// Tests that the title of a default `Element` equals  "Element".
+    func test_title_ofElement_equalsElement() {
         
         // Given
         let element = Element()
         let expected = "Element"
         
         // When
-        let actual = element.description
+        let actual = element.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of an`Element` equals a given title.
+    func test_title_ofElement_equalsGivenTitle() {
+        
+        // Given
+        let title = "Title"
+        let element = Element(named: title)
+        let expected = title
+        
+        // When
+        let actual = element.title
         
         // Then
         XCTAssertEqual(expected, actual)
