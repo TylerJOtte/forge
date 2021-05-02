@@ -78,6 +78,7 @@
 		B5F29B93263EF73D00082A1A /* ResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B92263EF73D00082A1A /* ResourceTests.swift */; };
 		B5F29B9A263EF84800082A1A /* RewardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B99263EF84800082A1A /* RewardTests.swift */; };
 		B5F29BA3263EFAA700082A1A /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29BA2263EFAA700082A1A /* EnvironmentTests.swift */; };
+		B5F29BAA263EFDF000082A1A /* MechanicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29BA9263EFDF000082A1A /* MechanicTests.swift */; };
 		B5F2D43C262D16340089403F /* FaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D43B262D16340089403F /* FaceCard.swift */; };
 		B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D441262E39380089403F /* PlayingCardError.swift */; };
 		B5F2D44A262E496E0089403F /* NumeralCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D449262E496E0089403F /* NumeralCard.swift */; };
@@ -196,6 +197,7 @@
 		B5F29B92263EF73D00082A1A /* ResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceTests.swift; sourceTree = "<group>"; };
 		B5F29B99263EF84800082A1A /* RewardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTests.swift; sourceTree = "<group>"; };
 		B5F29BA2263EFAA700082A1A /* EnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
+		B5F29BA9263EFDF000082A1A /* MechanicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicTests.swift; sourceTree = "<group>"; };
 		B5F2D43B262D16340089403F /* FaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCard.swift; sourceTree = "<group>"; };
 		B5F2D441262E39380089403F /* PlayingCardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardError.swift; sourceTree = "<group>"; };
 		B5F2D449262E496E0089403F /* NumeralCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralCard.swift; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 				B5F29B6F263E20F400082A1A /* ElementTests.swift */,
 				B5F29BA1263EFA8D00082A1A /* Environments */,
 				B556688B26252DAE0045AC2B /* Components */,
+				B5F29BA8263EFDE100082A1A /* Mechanics */,
 				B59A44B525FE934200857EB5 /* Info.plist */,
 			);
 			path = ForgeTests;
@@ -683,6 +686,14 @@
 				B5F29BA2263EFAA700082A1A /* EnvironmentTests.swift */,
 			);
 			path = Environments;
+			sourceTree = "<group>";
+		};
+		B5F29BA8263EFDE100082A1A /* Mechanics */ = {
+			isa = PBXGroup;
+			children = (
+				B5F29BA9263EFDF000082A1A /* MechanicTests.swift */,
+			);
+			path = Mechanics;
 			sourceTree = "<group>";
 		};
 		B5F2D447262E49430089403F /* FaceCards */ = {
@@ -951,6 +962,7 @@
 				B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */,
 				B5F29B86263EF3EA00082A1A /* TechnologyTests.swift in Sources */,
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
+				B5F29BAA263EFDF000082A1A /* MechanicTests.swift in Sources */,
 				B5F29B93263EF73D00082A1A /* ResourceTests.swift in Sources */,
 				B5F2D4BB2636E7820089403F /* TenTests.swift in Sources */,
 				B5F2D4AF2636E5360089403F /* SevenTests.swift in Sources */,
