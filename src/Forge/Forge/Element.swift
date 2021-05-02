@@ -23,8 +23,34 @@ public class Element: Comparable {
     //                                ATTRIBUTES                               //
     //=========================================================================//
     
-    /// The `Element`'s representable form.
-    internal var description: String { return String(describing: Element.self) }
+    /// The `Element`'s primary name.
+    public let title: String
+    
+    //=========================================================================//
+    //                               CONSTRUCTORS                              //
+    //=========================================================================//
+    
+    /// Creates a default `Element`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: The `Element`'s title is set to the name of the model.
+    public init() {
+        
+        let modelName = String(describing: type(of: self))
+        let title = modelName.splitOnCapitals()
+        
+        self.title = title
+    }
+    
+    /// Creates an `Element` with the given title.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: The `Element`s title is set to the given title.
+    /// - Parameter title: The primary name.
+    public init(named title: String) {
+        
+        self.title = title
+    }
     
     //=========================================================================//
     //                                 METHODS                                 //
@@ -38,7 +64,7 @@ public class Element: Comparable {
     /// - Returns: True if the `Element` is  less than the  given `Element`.
     func isLessThan(_ element: Element) -> Bool {
 
-        return description < element.description
+        return title < element.title
     }
     
     /// Determines if the `Element` is  equal to the  given `Element`.
@@ -49,7 +75,7 @@ public class Element: Comparable {
     /// - Returns: True if the `Element` is equal to the  given `Element`.
     func equals(_ element: Element) -> Bool {
 
-        return description == element.description
+        return title == element.title
     }
     
     /// Determines if the `Element` is  greater  than the  given `Element`.
@@ -60,7 +86,7 @@ public class Element: Comparable {
     /// - Returns: True if the `Element` is  greater than the  given `Element`.
     func isGreaterThan(_ element: Element) -> Bool {
 
-        return description > element.description
+        return title > element.title
     }
     
     //-------------------------------------------------------------------------//
@@ -112,3 +138,4 @@ public class Element: Comparable {
         return lhs.isGreaterThan(rhs)
     }
 }
+

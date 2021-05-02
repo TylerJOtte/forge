@@ -25,7 +25,7 @@ extension Sequence {
     /// - Postcondition: The `Sequence` is split  before each element where predicate is true.
     /// - Parameter predicate: The evalation to determine where to split `Sequence` elements.
     /// - Throws: `Error` if `Sequence` is unable to split elements using the given predicate.
-    func split(before predicate: (Iterator.Element) throws -> Bool)
+    func split(where predicate: (Iterator.Element) throws -> Bool)
         rethrows -> [AnySequence<Iterator.Element>] {
         
             var result: [AnySequence<Iterator.Element>] = []
