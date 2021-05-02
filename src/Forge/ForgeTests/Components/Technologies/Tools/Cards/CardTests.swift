@@ -17,24 +17,75 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for the `Card` class.
+/// Unit tests for a `Card`.
 class CardTests: XCTestCase {
     
     //=========================================================================//
-    //                                 TESTERS                                 //
+    //                              PROPERTIES                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a default `Card` equals  "Card".
+    func test_title_ofCard_equalsCard() {
+        
+        // Given
+        let card = Card()
+        let expected = "Card"
+        
+        // When
+        let actual = card.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a`Card` equals a given title.
+    func test_title_ofCard_equalsGivenTitle() {
+        
+        // Given
+        let title = "Title"
+        let card = Card(named: title)
+        let expected = title
+        
+        // When
+        let actual = card.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //=========================================================================//
+    //                              COMPARISONS                                //
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
     //                               Less Than                                 //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a`Card` that has a title starting with a letter earlier in the alphabet than another `Card`'s
-    /// title is less than the latter.
-    func test_isLessThan_earlierTitleAlphaStart_true() {
+    /// Tests that a `Card` with an alphabetically earlier title is less than another `Card` with an
+    /// alphabetically later title.
+    func test_isLessThan_WithAlphabeticallyEarlierTitle_true() {
         
         // Given
-        let title1 = "A Card"
-        let title2 = "B Card"
+        let title1 = "Card A"
+        let title2 = "Card Z"
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        
+        // When/Then
+        XCTAssert(card1.isLessThan(card2))
+    }
+    
+    /// Tests that a `Card` with an alphabetically earlier title is less than another `Card` with an
+    /// alphabetically later title, using the less than operator.
+    func test_isLessThanOperator_WithAlphabeticallyEarlierTitle_true() {
+        
+        // Given
+        let title1 = "Card A"
+        let title2 = "Card Z"
         let card1 = Card(named: title1)
         let card2 = Card(named: title2)
         
@@ -46,24 +97,85 @@ class CardTests: XCTestCase {
     //                                Equality                                 //
     //-------------------------------------------------------------------------//
     
-    /// Tests that two `Card`s with the same titles are equal.
-    func test_areEqual_sameTitles_true() {
+                                 //              //
+                                 // Default Card //
+                                 //              //
+    
+    /// Tests that two default `Card`s are equal.
+    func test_equals_defaultCards_true() {
         
         // Given
-        let title = "Card"
-        let card1 = Card(named: title)
-        let card2 = Card(named: title)
+        let card1 = Card()
+        let card2 = Card()
+        
+        // When/Then
+        XCTAssert(card1.equals(card2))
+    }
+    
+    /// Tests that two default `Card`s are equal, using the equality operator.
+    func test_equalityOperator_defaultCards_true() {
+        
+        // Given
+        let card1 = Card()
+        let card2 = Card()
         
         // When/Then
         XCTAssertEqual(card1, card2)
     }
     
-    /// Tests that two `Card`s with different titlte are not equal.
-    func test_areNotEqual_differentTitles_true() {
+                                  //             //
+                                  // Same Titles //
+                                  //             //
+    
+    /// Tests that two `Card`s with the same given title are equal.
+    func test_equals_cardWithSameTitles_true() {
         
         // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
+        let title1 = "Card A"
+        let title2 = "Card A"
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        
+        // When/Then
+        XCTAssertEqual(card1, card2)
+    }
+
+    /// Tests that two `Card`s with the same given title are equal, using the equality operator.
+    func test_equalityOperator_cardWithSameTitles_true() {
+        
+        // Given
+        let title1 = "Card A"
+        let title2 = "Card A"
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        
+        // When/Then
+        XCTAssertEqual(card1, card2)
+    }
+    
+                               //                  //
+                               // Different Titles //
+                               //                  //
+    
+    /// Tests that two `Card`s with different titles are not equal.
+    func test_equals_cardWithDifferentTitles_false() {
+        
+        // Given
+        let title1 = "Card A"
+        let title2 = "Card Z"
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        
+        // When/Then
+        XCTAssertFalse(card1.equals(card2))
+    }
+    
+    /// Tests that two `Card`s with different titles are not equal, using the equality operator.
+    func test_equalitOperator_cardWithDifferentTitles_false() {
+        
+        // Given
+        let title1 = "Card A"
+        let title2 = "Card Z"
         let card1 = Card(named: title1)
         let card2 = Card(named: title2)
         
@@ -72,16 +184,30 @@ class CardTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                              Greater Than                               //
+    //                             Greater Than                                //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a`Card` that has a title starting with a letter later in the alphabet than another `Card`'s
-    /// title is greater than the latter.
-    func test_isGreaterThan_laterTitleAlphaStart_true() {
+    /// Tests that a `Card` with an alphabetically later title is greater than another `Card` with an
+    /// alphabetically earlier title.
+    func test_isGreaterThan_WithAlphabeticallyLaterTitle_true() {
         
         // Given
-        let title1 = "Z Card"
-        let title2 = "A Card"
+        let title1 = "Card Z"
+        let title2 = "Card A"
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        
+        // When/Then
+        XCTAssert(card1.isGreaterThan(card2))
+    }
+    
+    /// Tests that a `Card` with an alphabetically later title is greater than another `Card` with an
+    /// alphabetically earlier title, using the greater than operator.
+    func test_isGreaterThanOperator_WithAlphabeticallyLaterTitle_true() {
+        
+        // Given
+        let title1 = "Card Z"
+        let title2 = "Card A"
         let card1 = Card(named: title1)
         let card2 = Card(named: title2)
         
