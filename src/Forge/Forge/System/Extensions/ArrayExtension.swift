@@ -97,8 +97,9 @@ extension Array where Element: PlayingCard  {
         
         let min = 3
         let pairMin = 1
-        let pairGroups = getPairCounts().count
-        let pairCount = getPairCount()
+        let pairGroups = getPairCounts()
+        let pairGroupCount = pairGroups.count
+        let pairCount = getPairCount(from: pairGroups)
         let s = pairs > 1 ? "s" : ""
         
         guard (count >= min) else {
@@ -120,7 +121,7 @@ extension Array where Element: PlayingCard  {
             throw ElementsError.invalidDuplicateCount
         }
         
-        if (!groups && pairGroups > 1) {
+        if (!groups && pairGroupCount > 1) {
             
             print("The collection must contain only one grouping of pairs.")
             throw ElementsError.invalidDuplicateCount
@@ -165,7 +166,7 @@ extension Array where Element: PlayingCard  {
         
         return getPairs().mapValues{ ($0.count * ($0.count - 1)) / 2 }
     }
-    
+
     /// Retrieves the total duplicate count in the collection.
     ///
     /// - Precondition: None.
@@ -174,6 +175,17 @@ extension Array where Element: PlayingCard  {
     func getPairCount() -> Int {
         
         return getPairCounts().values.reduce(0, +)
+    }
+    
+    /// Retrieves the total duplicate count in the given collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter pairs: The pairs to get duplicate count from.
+    /// - Returns: The total duplicate count in the given collection.
+    func getPairCount(from pairs: [Rank:Int]) -> Int {
+        
+        return pairs.values.reduce(0, +)
     }
     
     //=========================================================================//

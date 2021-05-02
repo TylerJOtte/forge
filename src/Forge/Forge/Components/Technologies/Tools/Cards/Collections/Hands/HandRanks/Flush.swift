@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of equally `Suit`ed `Card`s.
-public class Flush: Hand, HandRank {
+public class Flush: PlayingCardHand, HandRank {
     
     /// The primary name.
     public var title: String

@@ -18,7 +18,7 @@ import Foundation
 
 /// A `HandRank` of `PlayingCard`s with a  standard non-`jack Card` & a`jack Card` with
 /// same `Suit`.
-public class Nobs: Hand, HandRank {
+public class Nobs: PlayingCardHand, HandRank {
     
     /// The primary name.
     public let title: String = "Nobs"

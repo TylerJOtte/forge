@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Hand` of `Card`'s hiearchical position.
-public protocol HandRank: Hand {
+public protocol HandRank: PlayingCardHand {
     
     /// The primary name.
     var title: String { get }

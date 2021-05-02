@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Hand` of `Card`s.
-public class Hand: Cards {
+public class Hand<T: Card>: Tool, Cards {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -33,7 +33,7 @@ public class Hand: Cards {
     public var count: Int { return cards.count }
     
     /// The `Card`s.
-    internal var cards: [Card]
+    internal var cards: [T]
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -45,7 +45,7 @@ public class Hand: Cards {
     /// - Postcondition:
     ///   - The `Hand` can hold zero - Int.max `Card`s.
     ///   - The `Hand` is empty.
-    public init() {
+    public override init() {
         
         self.minCards = 0
         self.maxCards = Int.max
@@ -66,7 +66,7 @@ public class Hand: Cards {
     /// - Throws:
     ///   - `RangeError.invalidMax` if the given max is &lt; one.
     ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
-    public init(of cards: [Card], with max: Int = Int.max) throws {
+    public init(of cards: [T], with max: Int = Int.max) throws {
         
        let min = 0
         
@@ -85,6 +85,8 @@ public class Hand: Cards {
         self.minCards = min
         self.maxCards = max
         self.cards = []
+        
+        super.init()
         try! add(cards)
     }
 
@@ -106,7 +108,7 @@ public class Hand: Cards {
     ///   - `RangeError.invalidMin` if the given min is &lt; zero.
     ///   - `RangeError.invalidMax` if the given max is &lt; one or &lt; the specified min.
     ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
-    public init(of min: Int, to max: Int, _ cards: [Card]) throws {
+    public init(of min: Int, to max: Int, _ cards: [T]) throws {
         
         guard (min >= 0) else {
             
@@ -135,6 +137,7 @@ public class Hand: Cards {
         self.minCards = min
         self.maxCards = max
         self.cards = []
+        super.init()
         try! add(cards)
     }
     
@@ -172,7 +175,7 @@ public class Hand: Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find.
     /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: Card) -> Bool {
+    public func contains(_ card: T) -> Bool {
         
         return cards.contains(card)
     }
@@ -187,7 +190,7 @@ public class Hand: Cards {
     /// - Postcondition: The `Hand` contains the given `Card`.
     /// - Parameter card: The `Card` to add to the `Hand`.
     /// - Throws: `RangeError.isFull` if the `Hand` is full.
-    public func add(_ card: Card) throws {
+    public func add(_ card: T) throws {
         
         guard (!isFull()) else {
             
@@ -211,7 +214,7 @@ public class Hand: Cards {
     /// - Throws:
     ///   - `ElementsError.isEmpty` if the collection is empty.
     ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
-    public func remove(_ card: Card) throws -> Card {
+    public func remove(_ card: T) throws -> T {
         
         guard (!isEmpty()) else {
             

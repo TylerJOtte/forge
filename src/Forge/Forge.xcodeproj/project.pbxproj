@@ -67,6 +67,8 @@
 		B5F29B59263D99FB00082A1A /* Scoreable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B58263D99FB00082A1A /* Scoreable.swift */; };
 		B5F29B5D263D9AF400082A1A /* HandScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B5C263D9AF400082A1A /* HandScore.swift */; };
 		B5F29B62263DB81F00082A1A /* PlayingCardHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B61263DB81F00082A1A /* PlayingCardHand.swift */; };
+		B5F29B6A263E0EA400082A1A /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B69263E0EA400082A1A /* Element.swift */; };
+		B5F29B70263E20F400082A1A /* ElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B6F263E20F400082A1A /* ElementTests.swift */; };
 		B5F2D43C262D16340089403F /* FaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D43B262D16340089403F /* FaceCard.swift */; };
 		B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D441262E39380089403F /* PlayingCardError.swift */; };
 		B5F2D44A262E496E0089403F /* NumeralCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D449262E496E0089403F /* NumeralCard.swift */; };
@@ -174,6 +176,8 @@
 		B5F29B58263D99FB00082A1A /* Scoreable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreable.swift; sourceTree = "<group>"; };
 		B5F29B5C263D9AF400082A1A /* HandScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandScore.swift; sourceTree = "<group>"; };
 		B5F29B61263DB81F00082A1A /* PlayingCardHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardHand.swift; sourceTree = "<group>"; };
+		B5F29B69263E0EA400082A1A /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		B5F29B6F263E20F400082A1A /* ElementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTests.swift; sourceTree = "<group>"; };
 		B5F2D43B262D16340089403F /* FaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCard.swift; sourceTree = "<group>"; };
 		B5F2D441262E39380089403F /* PlayingCardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardError.swift; sourceTree = "<group>"; };
 		B5F2D449262E496E0089403F /* NumeralCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralCard.swift; sourceTree = "<group>"; };
@@ -568,6 +572,7 @@
 		B59A44A725FE934100857EB5 /* Forge */ = {
 			isa = PBXGroup;
 			children = (
+				B5F29B69263E0EA400082A1A /* Element.swift */,
 				B556688826252C970045AC2B /* System */,
 				B556686E2625296F0045AC2B /* Environments */,
 				B556683F2623E9B70045AC2B /* Components */,
@@ -582,6 +587,7 @@
 		B59A44B225FE934200857EB5 /* ForgeTests */ = {
 			isa = PBXGroup;
 			children = (
+				B5F29B6F263E20F400082A1A /* ElementTests.swift */,
 				B556688B26252DAE0045AC2B /* Components */,
 				B59A44B525FE934200857EB5 /* Info.plist */,
 			);
@@ -858,6 +864,7 @@
 				B5F29B5D263D9AF400082A1A /* HandScore.swift in Sources */,
 				B5F29B62263DB81F00082A1A /* PlayingCardHand.swift in Sources */,
 				B55668592623EC430045AC2B /* Reward.swift in Sources */,
+				B5F29B6A263E0EA400082A1A /* Element.swift in Sources */,
 				B5817D722619482C0022B805 /* PlayingCardDeck.swift in Sources */,
 				B5F2D46A262E4ED00089403F /* Eight.swift in Sources */,
 				B5F29B51263D8FE900082A1A /* Addable.swift in Sources */,
@@ -890,6 +897,7 @@
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
 				B5F2D4BB2636E7820089403F /* TenTests.swift in Sources */,
 				B5F2D4AF2636E5360089403F /* SevenTests.swift in Sources */,
+				B5F29B70263E20F400082A1A /* ElementTests.swift in Sources */,
 				B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */,
 				B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */,
 				B5F29B35263B94A300082A1A /* CribbageHandTests.swift in Sources */,

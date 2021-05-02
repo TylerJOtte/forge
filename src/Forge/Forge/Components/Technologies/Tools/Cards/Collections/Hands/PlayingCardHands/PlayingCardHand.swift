@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A `Hand` of `PlayingCard`s.
-public class PlayingCardHand: Hand {
+public class PlayingCardHand: Hand<PlayingCard> {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -38,9 +38,32 @@ public class PlayingCardHand: Hand {
     /// - Throws:
     ///   - `RangeError.invalidMax` if the given max is &lt; one.
     ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
-    init(of cards: [PlayingCard], with max: Int = Int.max) throws {
+    override init(of cards: [PlayingCard], with max: Int = Int.max) throws {
         
         try super.init(of: cards, with: max)
+    }
+    
+    /// Creates a`Hand`with the given `Card`s and specified `min` & `max`.
+    ///
+    /// - Precondition:
+    ///   - `min` must be >= 0.
+    ///   - `max` must be  >= 1.
+    ///   - `max` must be >= `minCards`.
+    ///   - The # of given `Card`s must be &lt;= `max`.
+    /// - Postcondition:
+    ///   - The `Hand` can hold zero to given max `Card`s.
+    ///   - The `Hand` contains the given `Card`s.
+    /// - Parameters:
+    ///   - min: The minimum # of `Card`s allowed in the `Hand`.
+    ///   - max: The maximum # of `Card`s allowed in the `Hand`.
+    ///   - cards: The `Card`s to create `Hand` with.
+    /// - Throws:
+    ///   - `RangeError.invalidMin` if the given min is &lt; zero.
+    ///   - `RangeError.invalidMax` if the given max is &lt; one or &lt; the specified min.
+    ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
+    public override init(of min: Int, to max: Int, _ cards: [PlayingCard]) throws {
+        
+        try super.init(of: min, to: max, cards)
     }
     
     //=========================================================================//
@@ -58,9 +81,7 @@ public class PlayingCardHand: Hand {
     /// - Returns: A collection of `Kind`s.
     public func getKinds() throws -> [Kind] {
         
-        let pairs = (cards as? [PlayingCard])?.getPairs()
-    
-        return try pairs.map{try $0.values.map{try Kind(of: $0)}}!
+        return try cards.getPairs().map{try Kind(of: $1)}
     }
     
     /// Retrieves all the `Run`s in the `Hand`.
@@ -80,7 +101,7 @@ public class PlayingCardHand: Hand {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: An optional `Flush`.
-    public func getFlush() -> Flush! {
+    public func getFlush() -> Flush? {
         
         // TODO: implement stub
         

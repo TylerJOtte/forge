@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of equally `Rank`ed `PlayingCard`s.
-public class Kind: Hand, HandRank {
+public class Kind: PlayingCardHand, HandRank {
     
     /// The primary name.
     public var title: String { count == 2 ? "Pair" : "\(count) Of A Kind" }

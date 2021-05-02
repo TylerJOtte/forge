@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of sequential `Card`s.
-public class Run: Hand, HandRank {
+public class Run: PlayingCardHand, HandRank {
     
     /// The primary name.
     public let title: String
