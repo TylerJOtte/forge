@@ -182,4 +182,36 @@ class ElementTests: XCTestCase {
         // When/Then
         XCTAssertNotEqual(element1, element2)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             Greater Than                                //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that an `Element` with an alphabetically later title is greater than another `Element` with
+    /// an alphabetically earlier `Element`.
+    func test_isGreaterThan_WithAlphabeticallyLaterTitle_true() {
+        
+        // Given
+        let title1 = "Element Z"
+        let title2 = "Element A"
+        let element1 = Element(named: title1)
+        let element2 = Element(named: title2)
+        
+        // When/Then
+        XCTAssert(element1.isGreaterThan(element2))
+    }
+    
+    /// Tests that an `Element` with an alphabetically later title is greater than another `Element` with
+    /// an alphabetically earlier `Element` using the greater than operator.
+    func test_isGreaterThanOperator_WithAlphabeticallyLaterTitle_true() {
+        
+        // Given
+        let title1 = "Element Z"
+        let title2 = "Element A"
+        let element1 = Element(named: title1)
+        let element2 = Element(named: title2)
+        
+        // When/Then
+        XCTAssertGreaterThan(element1, element2)
+    }
 }
