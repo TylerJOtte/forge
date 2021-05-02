@@ -183,4 +183,35 @@ class ComponentTests: XCTestCase {
         XCTAssertNotEqual(component1, component2)
     }
     
+    //-------------------------------------------------------------------------//
+    //                             Greater Than                                //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Component` with an alphabetically later title is greater than another `Component`
+    /// with an alphabetically earlier title.
+    func test_isGreaterThan_WithAlphabeticallyLaterTitle_true() {
+        
+        // Given
+        let title1 = "Component Z"
+        let title2 = "Component A"
+        let component1 = Component(named: title1)
+        let component2 = Component(named: title2)
+        
+        // When/Then
+        XCTAssert(component1.isGreaterThan(component2))
+    }
+    
+    /// Tests that a `Component` with an alphabetically later title is greater than another `Component`
+    /// with an alphabetically earlier title, using the greater than operator.
+    func test_isGreaterThanOperator_WithAlphabeticallyLaterTitle_true() {
+        
+        // Given
+        let title1 = "Component Z"
+        let title2 = "Component A"
+        let component1 = Component(named: title1)
+        let component2 = Component(named: title2)
+        
+        // When/Then
+        XCTAssertGreaterThan(component1, component2)
+    }
 }
