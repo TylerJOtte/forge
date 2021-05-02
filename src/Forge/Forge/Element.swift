@@ -24,7 +24,7 @@ public class Element: Comparable {
     //=========================================================================//
     
     /// The `Element`'s representable form.
-    internal var description: String { return String(describing: self) }
+    internal var description: String { return String(describing: Element.self) }
     
     //=========================================================================//
     //                                 METHODS                                 //

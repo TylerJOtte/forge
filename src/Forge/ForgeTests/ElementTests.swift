@@ -28,17 +28,36 @@ class ElementTests: XCTestCase {
     //                              Description                                //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the description of an `Element` equals  "Forge.Element".
-    func test_description_ofElement_equalsForgeElement() {
+    /// Tests that the description of an `Element` equals  "Element".
+    func test_description_ofElement_equalsElement() {
         
         // Given
         let element = Element()
-        let expected = "Forge.Element"
+        let expected = "Element"
         
         // When
         let actual = element.description
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    //=========================================================================//
+    //                              COMPARISONS                                //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                Equality                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that two `Element`s with the same descriptions are equal.
+    func test_equals_elementWithSameDescriptions_true() {
+        
+        // Given
+        let element1 = Element()
+        let element2 = Element()
+        
+        // When/Then
+        XCTAssertEqual(element1, element2)
     }
 }
