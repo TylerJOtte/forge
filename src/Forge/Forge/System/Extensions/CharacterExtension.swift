@@ -25,3 +25,4 @@ extension Character {
         return String(self) == String(self).uppercased()
     }
 }
+
