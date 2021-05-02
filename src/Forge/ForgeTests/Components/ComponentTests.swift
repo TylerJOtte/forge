@@ -41,4 +41,19 @@ class ComponentTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that the title of a`Component` equals a given title.
+    func test_title_ofComponent_equalsGivenTitle() {
+        
+        // Given
+        let title = "Title"
+        let component = Component(named: title)
+        let expected = title
+        
+        // When
+        let actual = component.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
