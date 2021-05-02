@@ -51,5 +51,7 @@ public class HandScore: Score {
     public init(with handRanks: [String:[HandRank]])  {
         
         self.handRanks = handRanks
+        
+        super.init()
     }
 }

@@ -20,9 +20,6 @@ import Foundation
 /// same `Suit`.
 public class Nobs: PlayingCardHand, HandRank {
     
-    /// The primary name.
-    public let title: String = "Nobs"
-    
     /// The total # of points.
     public let points: Int = 1
     
@@ -41,6 +38,7 @@ public class Nobs: PlayingCardHand, HandRank {
     ///   - The `HandRank` contains the given `Card`s.
     ///   - The `HandRank`s title is set to `Nobs`.
     ///   - The `HandRank`s points are set to one.
+    ///   - title = "Nobs".
     /// - Parameter cards: The `Card`s to create the `HandRank` with.
     /// - Throws:
     ///   - `ElementsError.insufficientElements` if the given `Card`s

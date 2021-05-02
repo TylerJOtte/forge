@@ -57,10 +57,10 @@ public class MultiRun: Run {
     ///    - The `HandRank` contains the given `Card`s.
     ///    - The `HandRank`s title is set to the given title.
     ///    - The `HandRank`s points are set to according to the sequence length in the given `Card`s.
+    ///    - title = name of calling model.
     /// - Parameters:
     ///    - cards: The `Card`s to create the `HandRank` with.
     ///    - pairs: The # of pairs that the given `Card`s contain.
-    ///    - title: The name of the`HandRank`.
     ///    - groups: True if multiple pair groups allowed, else false.
     /// - Throws:
     /// - Throws:
@@ -75,8 +75,7 @@ public class MultiRun: Run {
     ///       - The given min is less than four.
     ///       -  The # of specified pairs &lt;= zero.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
-    init(of min: Int, _ cards: [PlayingCard], with runs: Int,
-         and pairs: Int, named title: String,
+    init(of min: Int, _ cards: [PlayingCard], with runs: Int, and pairs: Int,
          multiple groups: Bool = true) throws {
         
         let minCards = 4
@@ -96,7 +95,6 @@ public class MultiRun: Run {
         self.runs = runs
         self.pairs = pairs
         
-        try super.init(of: min, cards, with: pairs, named: title,
-                       multiple: groups)
+        try super.init(of: min, cards, with: pairs, multiple: groups)
     }
 }

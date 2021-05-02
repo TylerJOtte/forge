@@ -19,9 +19,6 @@ import Foundation
 /// A `Hand` of `Card`'s hiearchical position.
 public protocol HandRank: PlayingCardHand {
     
-    /// The primary name.
-    var title: String { get }
-    
     /// The total # of points.
     var points: Int { get }
 }

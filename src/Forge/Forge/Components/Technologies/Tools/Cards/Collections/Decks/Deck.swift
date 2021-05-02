@@ -45,11 +45,14 @@ public class Deck: Tool, Cards {
     /// - Postcondition:
     ///   - The `Deck` can hold zero - Int.max `Card`s.
     ///   - The `Deck` is empty.
+    ///   - title = "Deck".
     public override init() {
         
         self.minCards = 0
         self.maxCards = Int.max
         self.cards = [:]
+        
+        super.init()
     }
     
     /// Creates a`Deck`with the given `Card`s and specified `min` & `max`.
@@ -62,6 +65,7 @@ public class Deck: Tool, Cards {
     /// - Postcondition:
     ///   - The `Deck` can hold zero to given max `Card`s.
     ///   - The `Deck` contains the given `Card`s.
+    ///   - title = "Deck".
     /// - Parameters:
     ///   - min: The minimum # of `Card`s allowed in the `Deck`.
     ///   - max: The maximum # of `Card`s allowed in the `Deck`.
@@ -107,6 +111,7 @@ public class Deck: Tool, Cards {
     /// - Postcondition:
     ///   - The `Deck` can hold zero to given max `Card`s.
     ///   - The `Deck` contains the given `Card`s.
+    ///   - title = "Deck".
     /// - Parameters:
     ///   - cards: The `Card`s to create `Deck` with.
     ///   - max: The maximum # of `Card`s allowed in the `Deck.`

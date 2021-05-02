@@ -36,6 +36,7 @@ public class CribbageHand: PlayingCardHand {
     ///   - The `Hand` can hold zero to five `Card`s.
     ///   - The `Hand` contains the given `Card`s.
     ///   - The `Hand`'s cut `Card` is set to the given cut `Card`.
+    ///   - title = "Cribbage Hand".
     /// - Parameters:
     ///    - cards: The `Card`s to create the `Hand` with.
     ///    - cutCard: The `Deck`'s cut `Card`.

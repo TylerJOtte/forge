@@ -19,9 +19,6 @@ import Foundation
 /// A `HandRank` of`PlayingCard`s with points that sum to 15.
 public class Fifteen: PlayingCardHand, HandRank {
     
-    /// The primary name.
-    public let title: String = "Fifteen"
-    
     /// The total # of points.
     public let points: Int = 2
     
@@ -39,6 +36,7 @@ public class Fifteen: PlayingCardHand, HandRank {
     ///   - The `HandRank` contains the given `Card`s.
     ///   - The `HandRank`s title is set to `Fifteen`.
     ///   - The `HandRank`s points are set to two.
+    ///   - title = "Fifteen".
     /// - Parameter cards: The `Card`s to create the`HandRank` with.
     /// - Throws:
     ///   - `ElementsError.insufficientElements` if the given `Card`s contain less than two

@@ -20,7 +20,7 @@ import Foundation
 public class Flush: PlayingCardHand, HandRank {
     
     /// The primary name.
-    public var title: String
+//    public var title: String
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -36,6 +36,7 @@ public class Flush: PlayingCardHand, HandRank {
     ///   - The `HandRank` contains the given `Card`s.
     ///   - The `HandRank`s title is set according to the # and order of `Card`s it holds.
     ///   - The `HandRank`s points are set according to the # of `Card`s it holds.
+    ///   - title = "Flush", "Straight Flush", or "Royal Flush" depdending on the the given `Card`s.
     /// - Parameter cards: The `Card`s to create the `HandRank` with.
     /// - Throws:
     ///   - `ElementsError.insufficientElements` if the given `Card`s
@@ -46,6 +47,7 @@ public class Flush: PlayingCardHand, HandRank {
         let min = 4
         let max = Int.max
         let high = true
+        var title: String
         
         guard (cards.count >= min) else {
             
@@ -70,13 +72,13 @@ public class Flush: PlayingCardHand, HandRank {
                 (cards[4].rank == Rank.ace || cards[4].rank == Rank.one)
                 
                 
-            self.title = isRoyal ? "Royal Flush" : "Straight Flush"
+            title = isRoyal ? "Royal Flush" : "Straight Flush"
             
         } else {
             
-            self.title = "Flush"
+            title = "Flush"
         }
         
-        try super.init(of: min, to: max, cards)
+        try super.init(of: min, to: max, cards, named: title)
     }
 }

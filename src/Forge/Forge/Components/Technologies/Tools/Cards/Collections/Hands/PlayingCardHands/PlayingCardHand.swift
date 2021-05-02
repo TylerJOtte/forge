@@ -32,6 +32,7 @@ public class PlayingCardHand: Hand<PlayingCard> {
     /// - Postcondition:
     ///   - The `Hand` can hold zero to given max `Card`s.
     ///   - The `Hand` contains the given `Card`s.
+    ///   - title = name of calling model.
     /// - Parameters:
     ///   - cards: The `Card`s to create `Hand` with.
     ///   - max: The maximum # of `Card`s allowed in the `Hand`.
@@ -53,6 +54,7 @@ public class PlayingCardHand: Hand<PlayingCard> {
     /// - Postcondition:
     ///   - The `Hand` can hold zero to given max `Card`s.
     ///   - The `Hand` contains the given `Card`s.
+    ///   - title = name of calling model.
     /// - Parameters:
     ///   - min: The minimum # of `Card`s allowed in the `Hand`.
     ///   - max: The maximum # of `Card`s allowed in the `Hand`.
@@ -61,9 +63,36 @@ public class PlayingCardHand: Hand<PlayingCard> {
     ///   - `RangeError.invalidMin` if the given min is &lt; zero.
     ///   - `RangeError.invalidMax` if the given max is &lt; one or &lt; the specified min.
     ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
-    public override init(of min: Int, to max: Int, _ cards: [PlayingCard]) throws {
+    override init(of min: Int, to max: Int, _ cards: [PlayingCard]) throws {
         
         try super.init(of: min, to: max, cards)
+    }
+    
+    /// Creates a`Hand`with the given terms.
+    ///
+    /// - Precondition:
+    ///   - `min` must be >= 0.
+    ///   - `max` must be  >= 1.
+    ///   - `max` must be >= `minCards`.
+    ///   - The # of given `Card`s must be &lt;= `max`.
+    /// - Postcondition:
+    ///   - The `Hand` can hold zero to given max `Card`s.
+    ///   - The `Hand` contains the given `Card`s.
+    ///   - The `Hand`'s title is set to the given title.
+    ///   - title = given title.
+    /// - Parameters:
+    ///   - min: The minimum # of `Card`s allowed in the `Hand`.
+    ///   - max: The maximum # of `Card`s allowed in the `Hand`.
+    ///   - cards: The `Card`s to create `Hand` with.
+    ///   - title: The `Hand`'s primary name.
+    /// - Throws:
+    ///   - `RangeError.invalidMin` if the given min is &lt; zero.
+    ///   - `RangeError.invalidMax` if the given max is &lt; one or &lt; the specified min.
+    ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
+    override init(of min: Int, to max: Int, _ cards: [PlayingCard],
+                  named title: String) throws {
+        
+        try super.init(of: min, to: max, cards, named: title)
     }
     
     //=========================================================================//

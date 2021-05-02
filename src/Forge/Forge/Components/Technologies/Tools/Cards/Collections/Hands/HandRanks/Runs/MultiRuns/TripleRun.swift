@@ -34,6 +34,7 @@ public class TripleRun: MultiRun {
     ///    - The `HandRank` contains the given `Card`s.
     ///    - The `HandRank`s title is set to "Triple Run".
     ///    - The `HandRank`s points are set to according to the sequence length in the given `Card`s.
+    ///    - title = "Triple Run".
     /// - Parameter cards: The `Card`s to create the `HandRank` with.
     /// - Throws:
     ///    - `ElementsError.insufficientElements` if the given `Card`s
@@ -48,10 +49,8 @@ public class TripleRun: MultiRun {
         let min = 5
         let runs = 3
         let pairs = 3
-        let title = "Triple Run"
         let groups = false
 
-        try super.init(of: min, cards, with: runs, and: pairs, named: title,
-                       multiple: groups)
+        try super.init(of: min, cards, with: runs, and: pairs, multiple: groups)
     }
 }

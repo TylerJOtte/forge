@@ -69,6 +69,9 @@
 		B5F29B62263DB81F00082A1A /* PlayingCardHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B61263DB81F00082A1A /* PlayingCardHand.swift */; };
 		B5F29B6A263E0EA400082A1A /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B69263E0EA400082A1A /* Element.swift */; };
 		B5F29B70263E20F400082A1A /* ElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B6F263E20F400082A1A /* ElementTests.swift */; };
+		B5F29B76263E2FFC00082A1A /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B75263E2FFC00082A1A /* SequenceExtension.swift */; };
+		B5F29B7A263E31C600082A1A /* CharacterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B79263E31C600082A1A /* CharacterExtension.swift */; };
+		B5F29B7E263E343800082A1A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B7D263E343800082A1A /* StringExtension.swift */; };
 		B5F2D43C262D16340089403F /* FaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D43B262D16340089403F /* FaceCard.swift */; };
 		B5F2D442262E39380089403F /* PlayingCardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D441262E39380089403F /* PlayingCardError.swift */; };
 		B5F2D44A262E496E0089403F /* NumeralCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D449262E496E0089403F /* NumeralCard.swift */; };
@@ -178,6 +181,9 @@
 		B5F29B61263DB81F00082A1A /* PlayingCardHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardHand.swift; sourceTree = "<group>"; };
 		B5F29B69263E0EA400082A1A /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		B5F29B6F263E20F400082A1A /* ElementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTests.swift; sourceTree = "<group>"; };
+		B5F29B75263E2FFC00082A1A /* SequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension.swift; sourceTree = "<group>"; };
+		B5F29B79263E31C600082A1A /* CharacterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterExtension.swift; sourceTree = "<group>"; };
+		B5F29B7D263E343800082A1A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B5F2D43B262D16340089403F /* FaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCard.swift; sourceTree = "<group>"; };
 		B5F2D441262E39380089403F /* PlayingCardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardError.swift; sourceTree = "<group>"; };
 		B5F2D449262E496E0089403F /* NumeralCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralCard.swift; sourceTree = "<group>"; };
@@ -509,6 +515,9 @@
 			isa = PBXGroup;
 			children = (
 				B5817DA1261A27600022B805 /* ArrayExtension.swift */,
+				B5F29B75263E2FFC00082A1A /* SequenceExtension.swift */,
+				B5F29B79263E31C600082A1A /* CharacterExtension.swift */,
+				B5F29B7D263E343800082A1A /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -817,6 +826,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F29B7A263E31C600082A1A /* CharacterExtension.swift in Sources */,
 				B5F2D462262E4E540089403F /* Six.swift in Sources */,
 				B5817D97261A19DA0022B805 /* HandRank.swift in Sources */,
 				B5F2D47F262E50510089403F /* King.swift in Sources */,
@@ -836,6 +846,7 @@
 				B597384325FEA93000367598 /* Deck.swift in Sources */,
 				B597385A25FEC1CE00367598 /* ElementsError.swift in Sources */,
 				B5F29B59263D99FB00082A1A /* Scoreable.swift in Sources */,
+				B5F29B7E263E343800082A1A /* StringExtension.swift in Sources */,
 				B556681626223DB90045AC2B /* Fifteen.swift in Sources */,
 				B55668472623EAC20045AC2B /* Technology.swift in Sources */,
 				B55668AF262A7A350045AC2B /* TripleRun.swift in Sources */,
@@ -857,6 +868,7 @@
 				B597383F25FE9E6D00367598 /* Cards.swift in Sources */,
 				B5566861262527AC0045AC2B /* Depiction.swift in Sources */,
 				B597383325FE958700367598 /* Elements.swift in Sources */,
+				B5F29B76263E2FFC00082A1A /* SequenceExtension.swift in Sources */,
 				B5817D392617E24B0022B805 /* Rank.swift in Sources */,
 				B5F2D45A262E4D9E0089403F /* Four.swift in Sources */,
 				B5817D9D261A1F7B0022B805 /* Kind.swift in Sources */,

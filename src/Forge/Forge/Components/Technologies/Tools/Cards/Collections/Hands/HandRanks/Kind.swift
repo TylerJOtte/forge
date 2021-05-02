@@ -19,9 +19,6 @@ import Foundation
 /// A `HandRank` of equally `Rank`ed `PlayingCard`s.
 public class Kind: PlayingCardHand, HandRank {
     
-    /// The primary name.
-    public var title: String { count == 2 ? "Pair" : "\(count) Of A Kind" }
-    
     /// The total # of points.
     public var points: Int { count * (count - 1) }
     
@@ -39,6 +36,7 @@ public class Kind: PlayingCardHand, HandRank {
     ///   - The `HandRank` contains the given `Card`s.
     ///   - The `HandRank`s title is set according to the # of `Card`s it holds.
     ///   - The `HandRank`s points are set according to the # of `Card`s it holds.
+    ///   - title = "Pair" if `Kind` contains two `Card`s, else "n Of A Kind" where "n" equals  the count.
     /// - Parameter cards: The `Card`s to create the `HandRank` with.
     /// - Throws:
     ///   - `ElementsError.insufficientElements` if the given `Card`s
@@ -48,6 +46,7 @@ public class Kind: PlayingCardHand, HandRank {
         
         let min = 2
         let max = Int.max
+        var title: String
         
         guard (cards.count >= min) else {
             
@@ -61,6 +60,8 @@ public class Kind: PlayingCardHand, HandRank {
             throw ElementsError.insufficientElements
         }
         
-        try super.init(of: min, to: max, cards)
+        title = cards.count == 2 ? "Pair" : "\(cards.count) Of A Kind"
+        
+        try super.init(of: min, to: max, cards, named: title)
     }
 }

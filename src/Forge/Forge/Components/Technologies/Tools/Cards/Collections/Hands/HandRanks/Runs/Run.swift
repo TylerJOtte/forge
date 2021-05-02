@@ -19,9 +19,6 @@ import Foundation
 /// A `HandRank` of sequential `Card`s.
 public class Run: PlayingCardHand, HandRank {
     
-    /// The primary name.
-    public let title: String
-    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
@@ -36,6 +33,7 @@ public class Run: PlayingCardHand, HandRank {
     ///    - The `HandRank` contains the given `Card`s.
     ///    - The `HandRank`s title is set to "Run".
     ///    - The `HandRank`s points are set to the `count`.
+    ///    - title = "Run".
     /// - Parameter cards: The `Card`s to create the `HandRank` with.
     /// - Throws:
     ///    - `ElementsError.insufficientElements` if the given `Card`s contain less than
@@ -58,8 +56,6 @@ public class Run: PlayingCardHand, HandRank {
             throw ElementsError.areNotSequential
         }
         
-        self.title = "Run"
-  
         try super.init(of: min, to: max, cards)
     }
     
@@ -80,10 +76,10 @@ public class Run: PlayingCardHand, HandRank {
     ///    - The `HandRank` contains the given `Card`s.
     ///    - The `HandRank`s title is set to "Run of `count`".
     ///    - The `HandRank`s points are set to the `count`.
+    ///    - title = name of calling model.
     /// - Parameters:
     ///    - cards: The `Card`s to create the `HandRank` with.
     ///    - pairs: The # of pairs that the given `Card`s contain.
-    ///    - title: The name of the`HandRank`.
     ///    - groups: True if multiple pair groups allowed, else false.
     /// - Throws:
     ///    - `ElementsError.insufficientElements` if the given `Card`s
@@ -96,7 +92,7 @@ public class Run: PlayingCardHand, HandRank {
     ///       -  The # of specified pairs &lt;= zero.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
     init(of min: Int, _ cards: [PlayingCard], with pairs: Int,
-         named title: String, multiple groups: Bool = true) throws {
+         multiple groups: Bool = true) throws {
         
         let minCards = 3
         let max = Int.max
@@ -112,8 +108,6 @@ public class Run: PlayingCardHand, HandRank {
             print("The given Cards are not in sequential order.")
             throw ElementsError.areNotSequential
         }
-        
-        self.title = title
         
         try super.init(of: min, to: max, cards)
     }
