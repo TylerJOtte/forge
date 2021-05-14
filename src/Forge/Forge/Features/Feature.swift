@@ -17,6 +17,6 @@
 import Foundation
 
 /// A descriptive and/or illustrative characteristic.
-public protocol Feature {
+public protocol Feature: Element {
     
 }
