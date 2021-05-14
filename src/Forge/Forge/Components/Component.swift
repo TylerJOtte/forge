@@ -17,6 +17,6 @@
 import Foundation
 
 /// A part of a larger whole.
-public class Component: Element {
+public protocol Component: Element {
     
 }
