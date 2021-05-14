@@ -17,6 +17,6 @@
 import Foundation
 
 /// A process for guiding an `Element`.
-public class Mechanic: Element {
+public protocol Mechanic: Element {
     
 }

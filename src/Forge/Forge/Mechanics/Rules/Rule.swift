@@ -17,6 +17,6 @@
 import Foundation
 
 /// A regulation.
-public class Rule: Mechanic {
+public protocol Rule: Mechanic {
     
 }
