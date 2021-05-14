@@ -17,7 +17,7 @@
 import Foundation
 
 /// An instrument used to perform task.
-public class Tool: Technology {
+public protocol Tool: Technology {
     
 
 }
