@@ -17,6 +17,6 @@
 import Foundation
 
 /// An application of scientific knowledege.
-public class Technology: Component {
+public protocol Technology: Component {
     
 }
