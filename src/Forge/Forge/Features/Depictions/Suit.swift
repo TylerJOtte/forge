@@ -20,10 +20,10 @@ import SwiftUI
 /// A symbol grouping.
 public enum Suit: String, Depiction {
     
-    case null
     case clubs
     case diamonds
     case hearts
+    case null
     case spades
     case stars
 }
