@@ -17,6 +17,6 @@
 import Foundation
 
 /// An asset that can be used in order to function effectively.
-public class Resource: Technology {
+public protocol Resource: Technology {
     
 }
