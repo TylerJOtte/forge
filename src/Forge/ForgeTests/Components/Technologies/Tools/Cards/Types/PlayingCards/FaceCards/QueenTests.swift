@@ -219,11 +219,34 @@ class QueenTests: XCTestCase {
         let king = try King(of: .hearts)
         
         // When/Then
+        XCTAssert(queen.isLessThan(king))
+    }
+    
+    /// Tests that a `Queen` is less than a `King`, using the less than operator.
+    func test_queen_isLessThanKingWithOperator_true() throws {
+     
+        // Given
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
+        
+        // When/Then
         XCTAssertLessThan(queen, king       )
     }
     
     /// Tests that a `Queen` is less than a high `Ace`.
     func test_queen_isLessThanHighAce_true() throws {
+     
+        // Given
+        let isHigh = true
+        let queen = try Queen(of: .hearts)
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssert(queen.isLessThan(highAce))
+    }
+    
+    /// Tests that a `Queen` is less than a high `Ace`, using the less than operator.
+    func test_queen_isLessThanHighAceWithOperator_true() throws {
      
         // Given
         let isHigh = true
@@ -246,11 +269,34 @@ class QueenTests: XCTestCase {
         let card2 = try Queen(of: .hearts)
         
         // When/Then
+        XCTAssert(card1.equals(card2))
+    }
+    
+    /// Tests that a `Queen` equals another `Queen` with the same `Suit`, using the equality operator.
+    func test_queen_equalsQueenWithSameSuitUsingOperator_true() throws {
+     
+        // Given
+        let card1 = try Queen(of: .hearts)
+        let card2 = try Queen(of: .hearts)
+        
+        // When/Then
         XCTAssertEqual(card1, card2)
     }
     
     /// Tests that a `Queen` does not equal another `Queen` with a different `Suit`.
     func test_queen_equalsQueenWithDifferentSuit_false() throws {
+     
+        // Given
+        let card1 = try Queen(of: .hearts)
+        let card2 = try Queen(of: .spades)
+        
+        // When/Then
+        XCTAssertFalse(card1.equals(card2))
+    }
+    
+    /// Tests that a `Queen` does not equal another `Queen` with a different `Suit`, using the equality
+    /// operator.
+    func test_queen_equalsQueenWithDifferentSuitUsingOperator_false() throws {
      
         // Given
         let card1 = try Queen(of: .hearts)
@@ -264,8 +310,8 @@ class QueenTests: XCTestCase {
     //                                  >                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Queen` is greater than a low `Ace`.
-    func test_queen_isGreaterThanLowAce_true() throws {
+    /// Tests that a `Queen` is greater than a low `Ace`, using the greater than operator.
+    func test_queen_isGreaterThanLowAceWithOperator_true() throws {
      
         // Given
         let queen = try Queen(of: .hearts)
@@ -275,8 +321,8 @@ class QueenTests: XCTestCase {
         XCTAssertGreaterThan(queen, ace)
     }
     
-    /// Tests that a `Queen` is greater than a `Jack`.
-    func test_queen_isGreaterThanEight_true() throws {
+    /// Tests that a `Queen` is greater than a `Jack`, using the greater than operator.
+    func test_queen_isGreaterThanEightWithOperator_true() throws {
      
         // Given
         let queen = try Queen(of: .hearts)

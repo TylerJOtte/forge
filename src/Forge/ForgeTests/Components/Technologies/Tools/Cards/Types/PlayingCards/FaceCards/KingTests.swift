@@ -217,6 +217,18 @@ class KingTests: XCTestCase {
         // Given
         let isHigh = true
         let king = try King(of: .hearts)
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssert(king.isLessThan(highAce))
+    }
+    
+    /// Tests that a `King` is less than a high `Ace`, using the less than operator.
+    func test_king_isLessThanHighAceOperator_true() throws {
+     
+        // Given
+        let isHigh = true
+        let king = try King(of: .hearts)
         let ace = try Ace(of: .hearts, and: isHigh)
         
         // When/Then
@@ -235,11 +247,34 @@ class KingTests: XCTestCase {
         let card2 = try King(of: .hearts)
         
         // When/Then
+        XCTAssert(card1.equals(card2))
+    }
+    
+    /// Tests that a `King` equals another `King` with the same `Suit`, using the equality operator.
+    func test_king_equalsKingWithSameSuitUsingOperator_true() throws {
+     
+        // Given
+        let card1 = try King(of: .hearts)
+        let card2 = try King(of: .hearts)
+        
+        // When/Then
         XCTAssertEqual(card1, card2)
     }
     
     /// Tests that a `King` does not equal another `King` with a different `Suit`.
     func test_king_equalsKingWithDifferentSuit_false() throws {
+     
+        // Given
+        let card1 = try King(of: .hearts)
+        let card2 = try King(of: .spades)
+        
+        // When/Then
+        XCTAssertFalse(card1.equals(card2))
+    }
+    
+    /// Tests that a `King` does not equal another `King` with a different `Suit`, using the equality
+    /// operator.
+    func test_king_equalsKingWithDifferentSuitUsingOperator_false() throws {
      
         // Given
         let card1 = try King(of: .hearts)
@@ -253,8 +288,8 @@ class KingTests: XCTestCase {
     //                                  >                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `King` is greater than a low `Ace`.
-    func test_king_isGreaterThanLowAce_true() throws {
+    /// Tests that a `King` is greater than a low `Ace`, using the greater than operator.
+    func test_king_isGreaterThanLowAceWithOperator_true() throws {
      
         // Given
         let king = try King(of: .hearts)
@@ -264,8 +299,8 @@ class KingTests: XCTestCase {
         XCTAssertGreaterThan(king, ace)
     }
     
-    /// Tests that a `King` is greater than a `Queen`.
-    func test_king_isGreaterThanEight_true() throws {
+    /// Tests that a `King` is greater than a `Queen`, using the greater than operator.
+    func test_king_isGreaterThanQueenWithOperator_true() throws {
      
         // Given
         let king = try King(of: .hearts)

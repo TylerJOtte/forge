@@ -219,11 +219,34 @@ class JackTests: XCTestCase {
         let queen = try Queen(of: .hearts)
         
         // When/Then
+        XCTAssert(jack.isLessThan(queen))
+    }
+    
+    /// Tests that a `Jack` is less than a `Queen`, using the less than operator.
+    func test_jack_isLessThanQueenWithOperator_true() throws {
+     
+        // Given
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        
+        // When/Then
         XCTAssertLessThan(jack, queen       )
     }
     
     /// Tests that a `Jack` is less than a high `Ace`.
     func test_jack_isLessThanHighAce_true() throws {
+     
+        // Given
+        let isHigh = true
+        let jack = try Jack(of: .hearts)
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssert(jack.isLessThan(highAce))
+    }
+    
+    /// Tests that a `Jack` is less than a high `Ace`, using the less than operator.
+    func test_jack_isLessThanHighAceWithOperator_true() throws {
      
         // Given
         let isHigh = true
@@ -246,11 +269,34 @@ class JackTests: XCTestCase {
         let card2 = try Jack(of: .hearts)
         
         // When/Then
+        XCTAssert(card1.equals(card2))
+    }
+    
+    /// Tests that a `Jack` equals another `Jack` with the same `Suit`, using the equality operator.
+    func test_jack_equalsJackWithSameSuitUsingOperator_true() throws {
+     
+        // Given
+        let card1 = try Jack(of: .hearts)
+        let card2 = try Jack(of: .hearts)
+        
+        // When/Then
         XCTAssertEqual(card1, card2)
     }
     
     /// Tests that a `Jack` does not equal another `Jack` with a different `Suit`.
     func test_jack_equalsJackWithDifferentSuit_false() throws {
+     
+        // Given
+        let card1 = try Jack(of: .hearts)
+        let card2 = try Jack(of: .spades)
+        
+        // When/Then
+        XCTAssertFalse(card1.equals(card2))
+    }
+    
+    /// Tests that a `Jack` does not equal another `Jack` with a different `Suit`, using the equality
+    /// operator.
+    func test_jack_equalsJackWithDifferentSuitUsingOperator_false() throws {
      
         // Given
         let card1 = try Jack(of: .hearts)
@@ -264,8 +310,8 @@ class JackTests: XCTestCase {
     //                                  >                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Jack` is greater than a low `Ace`.
-    func test_jack_isGreaterThanLowAce_true() throws {
+    /// Tests that a `Jack` is greater than a low `Ace`, using the greater than operator.
+    func test_jack_isGreaterThanLowAceWithOperator_true() throws {
      
         // Given
         let jack = try Jack(of: .hearts)
@@ -275,8 +321,8 @@ class JackTests: XCTestCase {
         XCTAssertGreaterThan(jack, ace)
     }
     
-    /// Tests that a `Jack` is greater than a `Ten`.
-    func test_jack_isGreaterThanEight_true() throws {
+    /// Tests that a `Jack` is greater than a `Ten`, using the greater than operator.
+    func test_jack_isGreaterThanEightWithOperator_true() throws {
      
         // Given
         let jack = try Jack(of: .hearts)
