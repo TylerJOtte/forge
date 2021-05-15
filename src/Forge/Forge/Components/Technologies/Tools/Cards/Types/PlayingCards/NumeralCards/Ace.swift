@@ -15,85 +15,42 @@
 //=============================================================================//
 
 import Foundation
-import SwiftUI
 
-/// A standard French-suited ace `PlayingCard`.
+/// A standard French-suited `ace Rank`ed `PlayingCard`.
 public class Ace: NumeralCard {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
     //=========================================================================//
     
-    /// True if is the high `Card`, else false.
+    /// True if the`Card` has the highest `PlayingCard Rank`, else false.
     public let isHigh: Bool
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates an`Ace` with the given terms.
+    /// Creates an `Ace` with the given terms.
     ///
-    /// - Precondition: The given `Suit` must be `clubs`, `diamonds`, `hearts`, or
-    ///  `spades`.
+    /// - Precondition: The given `Suit` must be a standard `PlayingCard Suit`.
     /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to `ace`.
-    ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to one.
-    ///   - The `Card`s title is set to `Ace` of `{Suit}`.
-    ///   - The `Card`s `Color` is set to
-    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
-    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
-    ///   - The `Card`'s `isHigh` status is set to the given `high` status.
+    ///   - The `Card`'s `Suit` is set to the given `Suit`.
+    ///   - The `Card`'s isHigh status is set to the given isHigh status.
+    ///   - The `Card`'s `Rank` is set to `ace`.
+    ///   - The `Card`'s points are set to 1.
+    ///   - The `Card`'s title is set to "Ace  of `{Suit}`".
     /// - Parameters:
     ///   - suit: The symbol grouping.
-    ///   - high: True if the `ace` is the high `Card`, else false.
-    /// - Throws:
-    ///   -  `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
-    ///   `diamonds`, `hearts`, or `spades`.
-    public init(of suit: Suit = .hearts, is high: Bool = false) throws {
+    ///   - isHigh: True if the`Card` has the highest `PlayingCard Rank`, else false.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
+    public init(of suit: Suit, and isHigh: Bool = false) throws {
         
-        guard (suit.isStandard()) else {
-            
-            print("The given Suit must be clubs, diamonds, hearts, or spades.")
-            throw FeatureError.invalidSuit
-        }
+        let rank = Rank.ace
+        let points = 1
+        let position = isHigh ? 14 : 1
         
-        self.isHigh = high
+        self.isHigh = isHigh
         
-        try super.init(.ace, of: suit)
-    }
- 
-    //=========================================================================//
-    //                                 METHODS                                 //
-    //=========================================================================//
-    
-    /// Determines if the `Element` is  less than the  given `Element`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter card: The `Element` to compare against.
-    /// - Returns: True if the `Element` is  less than the  given `Element`.
-    override func isLessThan(_ element: Element) -> Bool {
-
-        return (element as? PlayingCard).map{ card in
-            
-            return !isHigh && !(card is Ace)
-            
-        } ?? false
-    }
-    
-    /// Determines if the `Element` is  greater  than the  given `Element`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter card: The `Element` to compare against.
-    /// - Returns: True if the `Element` is  greater than the  given `Element`.
-    override func isGreaterThan(_ element: Element) -> Bool {
-
-        return (element as? PlayingCard).map{ card in
-            
-            return isHigh && !(card is Ace)
-            
-        } ?? false
+        try super.init(rank, of: suit, worth: points, at: position)
     }
 }

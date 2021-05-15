@@ -17,30 +17,29 @@
 import Foundation
 import SwiftUI
 
-/// A standard French-suited seven `PlayingCard`.
+/// A standard French-suited `seven Rank`ed `PlayingCard`.
 public class Seven: NumeralCard {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Seven` with the given `Suit`.
+    /// Creates a `Seven` with the given terms.
     ///
-    /// - Precondition: The given `Suit` must be `clubs`, `diamonds`, `hearts`, or
-    ///  `spades`.
+    /// - Precondition: The given `Suit` must be a standard `PlayingCard Suit`.
     /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to `seven`.
-    ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to seven.
-    ///   - The `Card`s title is set to "`Seven` of `{Suit}`.
-    ///   - The `Card`s `Color` is set to
-    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
-    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
-    /// - Parameter suit: The symbol grouping.
-    /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
-    ///   `diamonds`, `hearts`, or `spades`.
+    ///   - The `Card`'s `Suit` is set to the given `Suit`.
+    ///   - The `Card`'s `Rank` is set to `seven`.
+    ///   - The `Card`'s points are set to 7.
+    ///   - The `Card`'s title is set to "Seven of `{Suit}`".
+    /// - Parameters suit: The symbol grouping.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
     public init(of suit: Suit = .hearts) throws {
         
-        try super.init(.seven, of: suit)
+        let rank = Rank.seven
+        let points = 7
+        let position = 7
+        
+        try super.init(rank, of: suit, worth: points, at: position)
     }
 }

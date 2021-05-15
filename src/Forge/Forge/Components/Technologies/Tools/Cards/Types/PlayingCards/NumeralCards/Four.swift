@@ -15,32 +15,30 @@
 //=============================================================================//
 
 import Foundation
-import SwiftUI
 
-/// A standard French-suited four `PlayingCard`.
+/// A standard French-suited `four Rank`ed `PlayingCard`.
 public class Four: NumeralCard {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Four` with the given `Suit`.
+    /// Creates a `Four` with the given terms.
     ///
-    /// - Precondition: The given `Suit` must be `clubs`, `diamonds`, `hearts`, or
-    ///  `spades`.
+    /// - Precondition: The given `Suit` must be a standard `PlayingCard Suit`.
     /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to `four`.
-    ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to four.
-    ///   - The `Card`s title is set to "`Four` of `{Suit}`.
-    ///   - The `Card`s `Color` is set to
-    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
-    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
-    /// - Parameter suit: The symbol grouping.
-    /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
-    ///   `diamonds`, `hearts`, or `spades`.
+    ///   - The `Card`'s `Suit` is set to the given `Suit`.
+    ///   - The `Card`'s `Rank` is set to `four`.
+    ///   - The `Card`'s points are set to 4.
+    ///   - The `Card`'s title is set to "Four  of `{Suit}`".
+    /// - Parameters suit: The symbol grouping.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
     public init(of suit: Suit = .hearts) throws {
         
-        try super.init(.four, of: suit)
+        let rank = Rank.four
+        let points = 4
+        let position = 4
+        
+        try super.init(rank, of: suit, worth: points, at: position)
     }
 }
