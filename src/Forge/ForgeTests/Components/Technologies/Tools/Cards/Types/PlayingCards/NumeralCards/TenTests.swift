@@ -144,6 +144,24 @@ class TenTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Ten`'s position equals 10.
+    func test_position_ofTen_equals10() throws {
+
+        // Given
+        let ten = try Ten(of: .hearts)
+        let expected = 10
+
+        // When
+        let actual = ten.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

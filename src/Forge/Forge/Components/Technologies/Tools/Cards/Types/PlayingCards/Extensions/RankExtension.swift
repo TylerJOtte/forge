@@ -31,7 +31,7 @@ extension Rank {
     func isNumeral() -> Bool {
 
         let min = 2
-        let max = 19
+        let max = 10
         
         return self == .ace || self.isNumeric(from: min, to: max)
     }
@@ -54,5 +54,10 @@ extension Rank {
     func isStandard() -> Bool {
 
         return isNumeral() || isRoyal()
+    }
+    
+    func next(ace high: Bool = false) -> Rank {
+        
+        return Rank.ace
     }
 }

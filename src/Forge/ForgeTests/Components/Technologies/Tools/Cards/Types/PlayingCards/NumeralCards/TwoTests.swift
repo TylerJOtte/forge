@@ -144,6 +144,24 @@ class TwoTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Two`'s position equals 2.
+    func test_position_ofTwo_equals2() throws {
+
+        // Given
+        let two = try Two(of: .hearts)
+        let expected = 2
+
+        // When
+        let actual = two.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

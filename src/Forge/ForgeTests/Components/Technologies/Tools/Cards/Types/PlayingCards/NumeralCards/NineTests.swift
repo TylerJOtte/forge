@@ -144,6 +144,24 @@ class NineTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Nine`'s position equals 9.
+    func test_position_ofNine_equals9() throws {
+
+        // Given
+        let nine = try Nine(of: .hearts)
+        let expected = 9
+
+        // When
+        let actual = nine.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

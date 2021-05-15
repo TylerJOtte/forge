@@ -144,6 +144,24 @@ class KingTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `King`'s position equals 13.
+    func test_position_ofKing_equals13() throws {
+
+        // Given
+        let king = try King(of: .hearts)
+        let expected = 13
+
+        // When
+        let actual = king.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

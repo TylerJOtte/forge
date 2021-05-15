@@ -144,6 +144,24 @@ class JackTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Jack`'s position equals 11.
+    func test_position_ofJack_equals11() throws {
+
+        // Given
+        let jack = try Jack(of: .hearts)
+        let expected = 11
+
+        // When
+        let actual = jack.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

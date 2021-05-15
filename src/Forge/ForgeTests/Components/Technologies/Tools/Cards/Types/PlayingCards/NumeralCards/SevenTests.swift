@@ -144,6 +144,24 @@ class SevenTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Seven`'s position equals 7.
+    func test_position_ofTwo_equals7() throws {
+
+        // Given
+        let seven = try Seven(of: .hearts)
+        let expected = 7
+
+        // When
+        let actual = seven.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

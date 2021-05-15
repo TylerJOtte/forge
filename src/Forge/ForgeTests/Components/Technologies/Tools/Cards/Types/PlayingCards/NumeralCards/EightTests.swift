@@ -144,6 +144,24 @@ class EightTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that an `Eight`'s position equals 8.
+    func test_position_ofEight_equals8() throws {
+
+        // Given
+        let eight = try Eight(of: .hearts)
+        let expected = 8
+
+        // When
+        let actual = eight.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

@@ -144,6 +144,24 @@ class SixTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Six`'s position equals 6.
+    func test_position_ofSix_equals6() throws {
+
+        // Given
+        let six = try Six(of: .hearts)
+        let expected = 6
+
+        // When
+        let actual = six.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

@@ -144,6 +144,24 @@ class QueenTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Queen`'s position equals 12.
+    func test_position_ofQueen_equals12() throws {
+
+        // Given
+        let queen = try Queen(of: .hearts)
+        let expected = 12
+
+        // When
+        let actual = queen.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

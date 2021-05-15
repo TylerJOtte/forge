@@ -144,6 +144,24 @@ class FourTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Four`'s position equals 4.
+    func test_position_ofFour_equals4() throws {
+
+        // Given
+        let four = try Four(of: .hearts)
+        let expected = 4
+
+        // When
+        let actual = four.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

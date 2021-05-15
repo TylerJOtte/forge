@@ -144,6 +144,24 @@ class FiveTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Five`'s position equals 5.
+    func test_position_ofFive_equals5() throws {
+
+        // Given
+        let five = try Five(of: .hearts)
+        let expected = 5
+
+        // When
+        let actual = five.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

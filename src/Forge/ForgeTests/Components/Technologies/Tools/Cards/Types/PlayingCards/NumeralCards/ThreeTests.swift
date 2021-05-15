@@ -144,6 +144,24 @@ class ThreeTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Three`'s position equals 3.
+    func test_position_ofThree_equals3() throws {
+
+        // Given
+        let three = try Three(of: .hearts)
+        let expected = 3
+
+        // When
+        let actual = three.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     

@@ -277,6 +277,39 @@ class AceTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a low `Ace`'s position equals 1.
+    func test_position_ofLowAce_equals1() throws {
+
+        // Given
+        let lowAce = try Ace(of: .hearts)
+        let expected = 1
+
+        // When
+        let actual = lowAce.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that a high `Ace`'s position equals 14.
+    func test_position_ofHighAce_equals14() throws {
+
+        // Given
+        let isHigh = true
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        let expected = 14
+
+        // When
+        let actual = highAce.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
