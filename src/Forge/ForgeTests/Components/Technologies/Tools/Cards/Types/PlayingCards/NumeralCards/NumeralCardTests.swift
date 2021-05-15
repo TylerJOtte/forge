@@ -29,7 +29,7 @@ class NumeralCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that creating a `NumeralCard` with a non-standard numeral `PlayingCard Rank`
-    ///  throws an `invalidRank Error`.
+    /// throws an `invalidRank Error`.
     func test_init_withNonStandardNumeralPlayingCardRank_throwsInvalidRank()
         throws {
 
@@ -86,6 +86,66 @@ class NumeralCardTests: XCTestCase {
         let suit = Suit.hearts
         let points = 1
         let position = 0
+        let expected = RangeError.invalidPosition
+
+        // When
+        XCTAssertThrowsError(try NumeralCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    /// Tests that creating a `NumeralCard` with a position equal to 11 throws an `invalidPosition`
+    /// `Error`.
+    func test_init_withPositionEqualTo11_throwsInvalidPosition() throws {
+
+        // Given
+        let rank = Rank.ace
+        let suit = Suit.hearts
+        let points = 1
+        let position = 11
+        let expected = RangeError.invalidPosition
+
+        // When
+        XCTAssertThrowsError(try NumeralCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    /// Tests that creating a `NumeralCard` with a position equal to 12 throws an `invalidPosition`
+    /// `Error`.
+    func test_init_withPositionEqualTo12_throwsInvalidPosition() throws {
+
+        // Given
+        let rank = Rank.ace
+        let suit = Suit.hearts
+        let points = 1
+        let position = 12
+        let expected = RangeError.invalidPosition
+
+        // When
+        XCTAssertThrowsError(try NumeralCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    /// Tests that creating a `NumeralCard` with a position equal to 13 throws an `invalidPosition`
+    /// `Error`.
+    func test_init_withPositionEqualTo13_throwsInvalidPosition() throws {
+
+        // Given
+        let rank = Rank.ace
+        let suit = Suit.hearts
+        let points = 1
+        let position = 13
         let expected = RangeError.invalidPosition
 
         // When

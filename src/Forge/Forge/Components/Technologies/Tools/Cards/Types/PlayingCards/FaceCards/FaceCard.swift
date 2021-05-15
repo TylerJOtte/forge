@@ -28,7 +28,7 @@ public class FaceCard: PlayingCard {
     /// - Precondition:
     ///   - The given `Rank` must be a standard royal`PlayingCard Rank`.
     ///   - The given `Suit` must be a standard `PlayingCard Suit`.
-    ///   - The given position must be between 1-14.
+    ///   - The given position must be between 11-13.
     /// - Postcondition:
     ///   - The `Card`'s `Rank` is set to the given `Rank`.
     ///   - The `Card`'s `Suit` is set to the given `Suit`.
@@ -51,6 +51,12 @@ public class FaceCard: PlayingCard {
 
             print("The given Rank is not a standard royal PlayingCard Rank.")
             throw DescriptionError.invalidRank
+        }
+        
+        guard (position >= 11 && position <= 13) else {
+
+            print("The given order must be between 11-13.")
+            throw RangeError.invalidPosition
         }
         
         try super.init(rank, of: suit, worth: points, at: position)
