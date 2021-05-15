@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  Score.swift                                                                //
+//  Trait.swift                                                                //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 5/01/21.                                       //
+//  Created by Tyler J. Otte on 5/09/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -14,11 +14,10 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
+
 import Foundation
 
-/// A point total.
-public class Score: Reward, Scoreable {
+/// A characeristic.
+public protocol Trait: Element {
     
-    /// The total # of points.
-    public var points: Int { return 0 }
 }

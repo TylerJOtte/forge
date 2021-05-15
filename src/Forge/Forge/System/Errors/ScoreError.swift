@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  Joker.swift                                                                //
+//  RewardsError.swift                                                         //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/19/21.                                       //
+//  Created by Tyler J. Otte on 4/18/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -15,27 +15,9 @@
 //=============================================================================//
 
 import Foundation
-import SwiftUI
 
-/// A standard French-suited joker `PlayingCard`.
-public class Joker: PlayingCard {
+/// A throwable `Score Error`.
+public enum ScoreError: Error {
     
-    //=========================================================================//
-    //                               CONSTRUCTORS                              //
-    //=========================================================================//
-    
-    /// Creates a`Joker` with the given `Color`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition:
-    ///   - The `Card`s `Rank` is set to ` Joker`.
-    ///   - The `Card`s `Suit` is set to nil.
-    ///   - The `Card`s points are set to 0.
-    ///   - The `Card`s title is set to "`Color Joker`.
-    ///   - The `Card`s `Color` is set to the given `Color`.
-    /// - Parameter color: The primary `Color`.
-    public init(color: Color = Color.red) throws {
-        
-        try super.init(.joker, of: .null, in: color)
-    }
+    case invalidPoints
 }

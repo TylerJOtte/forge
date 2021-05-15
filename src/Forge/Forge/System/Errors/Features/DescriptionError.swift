@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  FeatureError.swift                                                         //
+//  DescriptionError.swift                                                     //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/04/21.                                       //
+//  Created by Tyler J. Otte on 5/12/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -16,10 +16,8 @@
 
 import Foundation
 
-/// A throwable `Feature Error`.
-public enum FeatureError: Error {
+/// A throwable `Description Error`.
+public enum DescriptionError: FeatureError {
     
     case invalidRank
-    case invalidSuit
-    case jokersNotAllowed
 }

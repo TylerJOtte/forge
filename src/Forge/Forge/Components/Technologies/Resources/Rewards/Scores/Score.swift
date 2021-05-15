@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  RewardsError.swift                                                         //
+//  Score.swift                                                                //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/18/21.                                       //
+//  Created by Tyler J. Otte on 5/01/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -16,8 +16,9 @@
 
 import Foundation
 
-/// A throwable `Rewards Error`.
-public enum RewardsError: Error {
-    
-    case invalidPoints
+/// A point total.
+public class Score: Reward, Scoreable {
+
+    /// The total # of points.
+    public var points: Int { return 0 }
 }
