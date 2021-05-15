@@ -17,7 +17,7 @@
 import Foundation
 
 /// A standard French-suited playing `Card`.
-public class PlayingCard: Card, Comparable {
+public class PlayingCard: Card {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -33,7 +33,7 @@ public class PlayingCard: Card, Comparable {
     public let points: Int
     
     /// The `Rank`s order in the hierarchy.
-    private let position: Int
+    internal let position: Int
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -94,29 +94,39 @@ public class PlayingCard: Card, Comparable {
     //                                 METHODS                                 //
     //=========================================================================//
     
-    /// Determines if the given left `PlayingCard` is less than the specified right `PlayingCard`.
+    /// Determines if the `Card` is less than the given `Card`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `PlayingCard` to compare against.
-    ///   - rhs: The `PlayingCard` to compare to.
-    /// - Returns: True if the given left `PlayingCard`s is less, else false.
-    public static func < (lhs: PlayingCard, rhs: PlayingCard) -> Bool {
-
-        return lhs.position < rhs.position
+    /// - Parameters rhs: The `Card` to compare to.
+    /// - Returns: True if the `Card` is less than the given {Model}, else false.
+    public override func isLessThan(_ rhs: Card) -> Bool {
+        
+        var isLessThan = false
+        
+        if let card = rhs as? PlayingCard {
+            
+            isLessThan = position < card.position
+        }
+        
+        return isLessThan
     }
     
-    /// Determines if the given `PlayingCard`s are equal.
+    /// Determines if the `Card` equals the given `Card`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `PlayingCard` to compare against.
-    ///   - rhs: The `PlayingCard` to compare to.
-    /// - Returns: True if the given `PlayingCard`s are equal, else false.
-    public static func == (lhs: PlayingCard, rhs: PlayingCard) -> Bool {
-
-        return lhs.rank == rhs.rank && lhs.suit == rhs.suit
+    /// - Parameters rhs: The `Card` to compare to.
+    /// - Returns: True if the `Card` equals the given `Card`, else false.
+    public override func equals(_ rhs: Card) -> Bool {
+        
+        var equals = false
+        
+        if let card = rhs as? PlayingCard {
+            
+            equals = rank == card.rank && suit == card.suit
+        }
+        
+        return equals
     }
 }

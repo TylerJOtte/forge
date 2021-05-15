@@ -17,7 +17,7 @@
 import Foundation
 
 /// A game `Card`.
-public class Card: Tool {
+public class Card: Tool, Relatable {
 
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -38,5 +38,65 @@ public class Card: Tool {
     public init(named title: String) {
 
         self.title = title
+    }
+    
+    //=========================================================================//
+    //                                 METHODS                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                  <                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the `Card` is less than the given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters rhs: The `Card` to compare to.
+    /// - Returns: True if the `Card` is less than the given {Model}, else false.
+    public func isLessThan(_ rhs: Card) -> Bool {
+        
+        return title < rhs.title
+    }
+    
+    /// Determines if the given left-handside`Card` is less than the specified right-handside `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Card` to compare against.
+    ///   - rhs: The `Card` to compare to.
+    /// - Returns: True if the left-handside`Card` is less than the right-handside `Card`, else false.
+    public static func < (lhs: Card, rhs: Card) -> Bool {
+        
+        return lhs.isLessThan(rhs)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  =                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the `Card` equals the given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters rhs: The `Card` to compare to.
+    /// - Returns: True if the `Card` equals the given `Card`, else false.
+    public func equals(_ rhs: Card) -> Bool {
+        
+        return title == rhs.title
+    }
+    
+    /// Determines if the given left-handside`Card` equals the specified right-handside `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Card` to compare against.
+    ///   - rhs: The `Card` to compare to.
+    /// - Returns: True if the left-handside`Card` equals the right-handside `Card`, else false.
+    public static func == (lhs: Card, rhs: Card) -> Bool {
+        
+        return lhs.equals(rhs)
     }
 }
