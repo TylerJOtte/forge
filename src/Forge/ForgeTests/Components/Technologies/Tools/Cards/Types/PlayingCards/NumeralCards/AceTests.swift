@@ -28,9 +28,10 @@ class AceTests: XCTestCase {
     //                              Invalid Suits                              //
     //-------------------------------------------------------------------------//
 
-    /// Tests that creating a`Ace` with a non-standard `PlayingCard Suit` throws an
+    /// Tests that creating a low`Ace` with a non-standard `PlayingCard Suit` throws an
     /// `invalidSuit Error`.
-    func test_init_withNonStandardPlayingCardSuit_throwsInvalidSuit() throws {
+    func test_initLowAce_withNonStandardPlayingCardSuit_throwsInvalidSuit()
+        throws {
 
         // Given
         let expected = DepictionError.invalidSuit
@@ -42,24 +43,81 @@ class AceTests: XCTestCase {
             XCTAssertEqual(expected, error as? DepictionError)
         }
     }
+    
+    /// Tests that creating a high`Ace` with a non-standard `PlayingCard Suit` throws an
+    /// `invalidSuit Error`.
+    func test_initHighAce_withNonStandardPlayingCardSuit_throwsInvalidSuit()
+        throws {
+
+        // Given
+        let isHigh = true
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try Ace(of: .stars, and: isHigh)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
 
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
+    //                                isHigh                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a default `Ace` is low.
+    func test_defaultAce_isHigh_false() throws {
+
+        // Given
+        let lowAce = try Ace(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(lowAce.isHigh)
+    }
+    
+    /// Tests that an`Ace` created with a high status is high.
+    func test_Ace_isHigh_true() throws {
+
+        // Given
+        let isHigh = true
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssert(highAce.isHigh)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                 Rank                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that an `Ace`'s `Rank` equals `ace`.
-    func test_rank_ofAce_equalsAce() throws {
+    /// Tests that a low `Ace`'s `Rank` equals `ace`.
+    func test_rank_ofLowAce_equalsAce() throws {
 
         // Given
-        let ace = try Ace(of: .hearts)
+        let lowAce = try Ace(of: .hearts)
         let expected = Rank.ace
 
         // When
-        let actual = ace.rank
+        let actual = lowAce.rank
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that a high `Ace`'s `Rank` equals `ace`.
+    func test_rank_ofHighAce_equalsAce() throws {
+
+        // Given
+        let isHigh = true
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        let expected = Rank.ace
+
+        // When
+        let actual = highAce.rank
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -69,57 +127,117 @@ class AceTests: XCTestCase {
     //                                 Suit                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that the `Suit` of an `Ace` created with a `hearts Suit` equals `hearts`.
-    func test_suit_withHearts_equalsHearts() throws {
+    /// Tests that the `Suit` of a low `Ace` created with a `hearts Suit` equals `hearts`.
+    func test_lowAceSuit_withHearts_equalsHearts() throws {
 
         // Given
-        let ace = try Ace(of: .hearts)
+        let lowAce = try Ace(of: .hearts)
         let expected = Suit.hearts
 
         // When
-        let actual = ace.suit
+        let actual = lowAce.suit
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the `Suit` of an `Ace` created with a `diamonds Suit` equals `diamonds`.
-    func test_suit_withDiamonds_equalsDiamonds() throws {
+    /// Tests that the `Suit` of a high `Ace` created with a `hearts Suit` equals `hearts`.
+    func test_highAceSuit_withHearts_equalsHearts() throws {
 
         // Given
-        let ace = try Ace(of: .diamonds)
+        let isHigh = true
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        let expected = Suit.hearts
+
+        // When
+        let actual = highAce.suit
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Suit` of a low `Ace` created with a `diamonds Suit` equals `diamonds`.
+    func test_lowAceSuit_withDiamonds_equalsDiamonds() throws {
+
+        // Given
+        let lowAce = try Ace(of: .diamonds)
         let expected = Suit.diamonds
 
         // When
-        let actual = ace.suit
+        let actual = lowAce.suit
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the `Suit` of an `Ace` created with a `clubs Suit` equals `clubs`.
-    func test_suit_withClubs_equalsClubs() throws {
+    /// Tests that the `Suit` of a high `Ace` created with a `diamonds Suit` equals `diamonds`.
+    func test_highAceSuit_withDiamonds_equalsDiamonds() throws {
 
         // Given
-        let ace = try Ace(of: .clubs)
+        let isHigh = true
+        let highAce = try Ace(of: .diamonds, and: isHigh)
+        let expected = Suit.diamonds
+
+        // When
+        let actual = highAce.suit
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Suit` of a low `Ace` created with a `clubs Suit` equals `clubs`.
+    func test_lowAceSuit_withClubs_equalsClubs() throws {
+
+        // Given
+        let lowAce = try Ace(of: .clubs)
         let expected = Suit.clubs
 
         // When
-        let actual = ace.suit
+        let actual = lowAce.suit
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the `Suit` of an `Ace` created with a `spades Suit` equals `spades`.
-    func test_suit_withSpades_equalsSpades() throws {
+    /// Tests that the `Suit` of a high `Ace` created with a `clubs Suit` equals `clubs`.
+    func test_highAceSuit_withClubs_equalsClubs() throws {
 
         // Given
-        let ace = try Ace(of: .spades)
+        let isHigh = true
+        let highAce = try Ace(of: .clubs, and: isHigh)
+        let expected = Suit.clubs
+
+        // When
+        let actual = highAce.suit
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Suit` of a low`Ace` created with a `spades Suit` equals `spades`.
+    func test_lowAceSuit_withSpades_equalsSpades() throws {
+
+        // Given
+        let lowAce = try Ace(of: .spades)
         let expected = Suit.spades
 
         // When
-        let actual = ace.suit
+        let actual = lowAce.suit
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Suit` of a high `Ace` created with a `spades Suit` equals `spades`.
+    func test_highAceSuit_withSpades_equalsSpades() throws {
+
+        // Given
+        let isHigh = true
+        let highAce = try Ace(of: .spades, and: isHigh)
+        let expected = Suit.spades
+
+        // When
+        let actual = highAce.suit
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -129,15 +247,30 @@ class AceTests: XCTestCase {
     //                                Points                                   //
     //-------------------------------------------------------------------------//
 
-    /// Tests that an `Ace`'s points equals 1.
-    func test_points_ofAce_equals1() throws {
+    /// Tests that a low `Ace`'s points equals 1.
+    func test_points_ofLowAce_equals1() throws {
 
         // Given
-        let ace = try Ace(of: .hearts)
+        let lowAce = try Ace(of: .hearts)
         let expected = 1
 
         // When
-        let actual = ace.points
+        let actual = lowAce.points
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that a high `Ace`'s points equals 1.
+    func test_points_ofHighAce_equals1() throws {
+
+        // Given
+        let isHigh = true
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        let expected = 1
+
+        // When
+        let actual = highAce.points
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -147,57 +280,117 @@ class AceTests: XCTestCase {
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the title of an `Ace` created with a `hearts Suit` equals "Ace Of Hearts".
-    func test_title_withHearts_equalsAceOfHearts() throws {
+    /// Tests that the title of a low `Ace` created with a `hearts Suit` equals "Ace Of Hearts".
+    func test_lowAceTitle_withHearts_equalsAceOfHearts() throws {
 
         // Given
-        let ace = try Ace(of: .hearts)
+        let lowAce = try Ace(of: .hearts)
         let expected = "Ace Of Hearts"
 
         // When
-        let actual = ace.title
+        let actual = lowAce.title
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of an `Ace` created with a `diamonds Suit` equals "Ace Of Diamonds".
-    func test_title_withDiamonds_equalsAceOfDiamonds() throws {
+    /// Tests that the title of a high`Ace` created with a `hearts Suit` equals "Ace Of Hearts".
+    func test_highAceTitle_withHearts_equalsAceOfHearts() throws {
 
         // Given
-        let ace = try Ace(of: .diamonds)
+        let isHigh = true
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        let expected = "Ace Of Hearts"
+
+        // When
+        let actual = highAce.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a low `Ace` created with a `diamonds Suit` equals "Ace Of Diamonds".
+    func test_lowAceTitle_withDiamonds_equalsAceOfDiamonds() throws {
+
+        // Given
+        let lowAce = try Ace(of: .diamonds)
         let expected = "Ace Of Diamonds"
 
         // When
-        let actual = ace.title
+        let actual = lowAce.title
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of an `Ace` created with a `clubs Suit` equals "Ace Of Club".
-    func test_title_withClubs_equalsAceOfClubs() throws {
+    /// Tests that the title of a high `Ace` created with a `diamonds Suit` equals "Ace Of Diamonds".
+    func test_highAceTitle_withDiamonds_equalsAceOfDiamonds() throws {
 
         // Given
-        let ace = try Ace(of: .clubs)
+        let isHigh = true
+        let highAce = try Ace(of: .diamonds, and: isHigh)
+        let expected = "Ace Of Diamonds"
+
+        // When
+        let actual = highAce.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a low `Ace` created with a `clubs Suit` equals "Ace Of Club".
+    func test_lowAceTitle_withClubs_equalsAceOfClubs() throws {
+
+        // Given
+        let lowAce = try Ace(of: .clubs)
         let expected = "Ace Of Clubs"
 
         // When
-        let actual = ace.title
+        let actual = lowAce.title
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of an `Ace` created with a `spades Suit` equals "Ace Of Spades".
-    func test_title_withSpades_equalsAceOfSpades() throws {
+    /// Tests that the title of a high `Ace` created with a `clubs Suit` equals "Ace Of Club".
+    func test_highAceTitle_withClubs_equalsAceOfClubs() throws {
 
         // Given
-        let ace = try Ace(of: .spades)
+        let isHigh = true
+        let highAce = try Ace(of: .clubs, and: isHigh)
+        let expected = "Ace Of Clubs"
+
+        // When
+        let actual = highAce.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a low `Ace` created with a `spades Suit` equals "Ace Of Spades".
+    func test_lowAceTitle_withSpades_equalsAceOfSpades() throws {
+
+        // Given
+        let lowAce = try Ace(of: .spades)
         let expected = "Ace Of Spades"
 
         // When
-        let actual = ace.title
+        let actual = lowAce.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a high `Ace` created with a `spades Suit` equals "Ace Of Spades".
+    func test_highAceTitle_withSpades_equalsAceOfSpades() throws {
+
+        // Given
+        let isHigh = true
+        let highAce = try Ace(of: .spades, and: isHigh)
+        let expected = "Ace Of Spades"
+
+        // When
+        let actual = highAce.title
 
         // Then
         XCTAssertEqual(expected, actual)
