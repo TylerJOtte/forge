@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  Card.swift                                                                 //
+//  SuitExtension.swift                                                        //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 3/14/21.                                       //
+//  Created by Tyler J. Otte on 4/03/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -16,27 +16,36 @@
 
 import Foundation
 
-/// A game `Card`.
-public class Card: Tool {
-
-    //=========================================================================//
-    //                                ATTRIBUTES                               //
-    //=========================================================================//
+/// A `PlayingCard Suit` extension.
+extension Suit {
     
-    /// The primary name.
-    public let title: String
-
-    //=========================================================================//
-    //                               CONSTRUCTORS                              //
-    //=========================================================================//
-    
-    /// Creates a `Card` with the given title.
+    /// Determines if the `Suit` is a red `PlayingCard Suit`.
     ///
     /// - Precondition: None.
-    /// - Postcondition: The `Card`s title is set to the given title.
-    /// - Parameter title: The primary name.
-    public init(named title: String) {
+    /// - Postcondition: None.
+    /// - Returns: True if the `Suit` is a red `PlayingCard Suit`, else false.
+    func isRed() -> Bool {
+        
+        return self == .hearts || self == .diamonds
+    }
+    
+    /// Determines if the `Suit` is a black `PlayingCard Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the `Suit` is a black `PlayingCard Suit`, else false.
+    func isBlack() -> Bool {
+        
+        return self == .clubs || self == .spades
+    }
 
-        self.title = title
+    /// Determines if the `Suit` is a standard French-suited`PlayingCard Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the `Suit` is a standard French-suited`PlayingCard Suit`, else false.
+    func isStandard() -> Bool {
+       
+        return self == .null || isRed() || isBlack()
     }
 }

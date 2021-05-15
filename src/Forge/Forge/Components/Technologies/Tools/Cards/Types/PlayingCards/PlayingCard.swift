@@ -15,10 +15,9 @@
 //=============================================================================//
 
 import Foundation
-import SwiftUI
 
 /// A standard French-suited playing `Card`.
-public class PlayingCard: Card {
+public class PlayingCard: Card, Comparable {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -28,140 +27,96 @@ public class PlayingCard: Card {
     public let rank: Rank
     
     /// The symbol grouping.
-    public let suit: Suit?
+    public let suit: Suit
     
     /// The total # of points.
     public let points: Int
     
-    /// The primary `Color`.
-    public let color: Color
-    
-    /// The standard`Rank` hierarchy.
-    private let hiearchy: [Rank:Int] = [
-    
-        .joker: 0,
-        .ace: 1,
-        .two: 2,
-        .three: 3,
-        .four: 4,
-        .five: 5,
-        .six: 6,
-        .seven: 7,
-        .eight: 8,
-        .nine: 9,
-        .ten: 10,
-        .jack: 11,
-        .queen: 12,
-        .king: 13
-    ]
+    /// The `Rank`s order in the hierarchy.
+    private let position: Int
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a `PlayingCard` with the given `Rank`, `Suit`, & `Color`.
+    /// Creates a `PlayingCard` with the given terms.
     ///
     /// - Precondition:
-    ///   - `Rank` = `ace`..`ten`, `jack`, `queen`, `king`, or `joker`.
-    ///   - `Suit` =`clubs`, `diamonds`, `hearts`, `spades`, or `null`.
-    ///   - `Suit` = `null` if `Rank` equals `joker`.
+    ///   - The given `Rank` must be a standard`PlayingCard Rank`.
+    ///   - The given `Suit` must be a standard `PlayingCard Suit`.
+    ///   - The given position must be between 1-14.
     /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to the given `Rank`.
-    ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to the standard default points for the`Rank`.
-    ///   - The `Card`s title is set to "`Rank` of `Suit`" if not a `joker`, else `Color` Joker.
-    ///   - The `Card`s `Color` is set to
-    ///      -  The given `Color` if the specified `Rank` is a `joker`, or
-    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
-    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
+    ///   - The `Card`'s `Rank` is set to the given `Rank`.
+    ///   - The `Card`'s `Suit` is set to the given `Suit`.
+    ///   - The `Card`'s points are set to the given points.
+    ///   - The `Card`'s position is set to the given position.
+    ///   - The `Card`'s title is set to "`{Rank}` of `{Suit}`".
     /// - Parameters:
     ///   - rank: The hierarchical position.
-    ///   - suit: The color-coded `Symbol`.
-    ///   - color: The primary `Color`.
+    ///   - suit: The symbol grouping.
+    ///   - points: The total # of points.
+    ///   - position: The given `Rank`'s order in the hierarchy.
     /// - Throws:
-    ///   - `FeatureError.invalidRank` if the given `Rank` is not an `ace`, `one`..`ten`,
-    ///     `jack`, `queen`, `king`, or `joker`.
-    ///   - `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`, `diamonds`,
-    ///     `hearts`, `spades`, or `null`.
-    ///   - `PlayingCardError.invalidRankAndSuitCombination` if the given
-    ///      - `Rank` is not a `joker` and the specified `Suit` is `null`, or
-    ///      - `Rank` is a `joker`, and the specified `Suit` is not `null`.
-    init(_ rank: Rank, of suit: Suit = .hearts, in color: Color = .red) throws {
+    ///   - `invalidRank`  if the given `Rank` is not a standard `PlayingCard Rank`.
+    ///   - `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
+    ///   - `invalidPosition`  if the given position is not between 1-14.
+    init(_ rank: Rank, of suit: Suit, worth points: Int,
+         at position: Int) throws {
         
-        guard (rank.isValid()) else {
-            
-            print("The given Rank is not a valid PlayingCard Rank.")
-            throw FeatureError.invalidRank
+        guard (rank.isStandard()) else {
+
+            print("The given Rank is not a standard PlayingCard Rank.")
+            throw DescriptionError.invalidRank
+        }
+
+        guard (suit.isStandard()) else {
+
+            print("The given Suit is not a standard PlayingCard Suit.")
+            throw DepictionError.invalidSuit
         }
         
-        guard (suit.isValid()) else {
-            
-            print("\(suit) is not PlayingCard Suit.")
-            throw FeatureError.invalidSuit
-        }
-        
-        guard ((rank != .joker && suit != .null) ||
-               (rank == .joker && suit == .null)) else {
-            
-            print("The given Rank and Suit is not a valid combination.")
-            throw PlayingCardError.invalidRankAndSuitCombination 
+        guard (position >= 1 && position <= 14) else {
+
+            print("The given order must be between 1-14.")
+            throw RangeError.invalidPosition
         }
         
         self.rank = rank
         self.suit = suit
-        self.points = rank.getPoints()
-        self.color = rank == .joker ? color : suit.isRed() ? .red : .black
-        super.init(named: rank.getTitle(for: suit, color))
+        self.points = points
+        self.position = position
+        let title = "\(rank) Of \(suit)".capitalized
+        
+        super.init(named: title)
     }
     
     //=========================================================================//
     //                                 METHODS                                 //
     //=========================================================================//
     
-    /// Determines if the `Element` is  less than the  given `Element`.
+    /// Determines if the given left `PlayingCard` is less than the specified right `PlayingCard`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter card: The `Element` to compare against.
-    /// - Returns: True if the `Element` is  less than the  given `Element`.
-    override func isLessThan(_ element: Element) -> Bool {
+    /// - Parameters:
+    ///   - lhs: The `PlayingCard` to compare against.
+    ///   - rhs: The `PlayingCard` to compare to.
+    /// - Returns: True if the given left `PlayingCard`s is less, else false.
+    public static func < (lhs: PlayingCard, rhs: PlayingCard) -> Bool {
 
-        return (element as? PlayingCard).map{ card in
-            
-            return (card is Ace && rank != .joker) ? (card as! Ace).isHigh :
-                hiearchy[rank]! < hiearchy[card.rank]!
-            
-        } ?? false
+        return lhs.position < rhs.position
     }
     
-    /// Determines if the `Element` is  equal to the  given `Element`.
+    /// Determines if the given `PlayingCard`s are equal.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter card: The `Element` to compare against.
-    /// - Returns: True if the `Element` is equal to the  given `Element`.
-    override func equals(_ element: Element) -> Bool {
+    /// - Parameters:
+    ///   - lhs: The `PlayingCard` to compare against.
+    ///   - rhs: The `PlayingCard` to compare to.
+    /// - Returns: True if the given `PlayingCard`s are equal, else false.
+    public static func == (lhs: PlayingCard, rhs: PlayingCard) -> Bool {
 
-        return (element as? PlayingCard).map{ card in
-            
-            return rank == card.rank
-            
-        } ?? false
-    }
-    
-    /// Determines if the `Element` is  greater  than the  given `Element`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter card: The `Element` to compare against.
-    /// - Returns: True if the `Element` is  greater than the  given `Element`.
-    override func isGreaterThan(_ element: Element) -> Bool {
-
-        return (element as? PlayingCard).map{ card in
-            
-            return card is Ace ? !(card as! Ace).isHigh :
-                hiearchy[rank]! > hiearchy[card.rank]!
-            
-        } ?? false
+        return lhs.rank == rhs.rank && lhs.suit == rhs.suit
     }
 }

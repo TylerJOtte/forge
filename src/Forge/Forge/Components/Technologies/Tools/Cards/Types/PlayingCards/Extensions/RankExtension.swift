@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  PlayingCardSuit.swift                                                      //
+//  RankExtension.swift                                                        //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/03/21.                                       //
@@ -16,46 +16,43 @@
 
 import Foundation
 
-/// A `PlayingCard Suit` extension.
-extension Suit {
-    
-    /// Determines if the `Suit` is a red `PlayingCard Suit`.
+/// A `PlayingCard Rank` extension.
+extension Rank {
+
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+
+    /// Determines if the `Rank` is a standard numeral `PlayingCard Rank`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: True if the `Suit` is a red `PlayingCard Suit`, else false.
-    func isRed() -> Bool {
+    /// - Returns: True if the `Rank` is a standard numeral `PlayingCard Rank`, else false.
+    func isNumeral() -> Bool {
+
+        let min = 2
+        let max = 19
         
-        return self == .hearts || self == .diamonds
-    }
-    
-    /// Determines if the `Suit` is a black `PlayingCard Suit`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the `Suit` is a black `PlayingCard Suit`, else false.
-    func isBlack() -> Bool {
-        
-        return self == .clubs || self == .spades
+        return self == .ace || self.isNumeric(from: min, to: max)
     }
 
-    /// Determines if the `Suit` is a standard French-suited`PlayingCard Suit`.
+    /// Determines if the `Rank` is a standard royal `PlayingCard Rank`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: True if the `Suit` is a standard French-suited`PlayingCard Suit`, else false.
-    func isStandard() -> Bool {
-       
-        return isRed() || isBlack()
+    /// - Returns: True if the `Rank` is a standard royal`PlayingCard Rank`, else false.
+    func isRoyal() -> Bool {
+
+        return self == .jack || self == .queen || self == .king
     }
-    
-    /// Determines if the `Suit` is a valid `PlayingCard Suit`.
+
+    /// Determines if the `Rank` is a standard French-suited`PlayingCard Rank`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: True if the `Suit` is a valid `PlayingCard Suit`, else false.
-    func isValid() -> Bool {
-        
-        return self == .null || isStandard()
+    /// - Returns: True if the `Rank` is a standard French-suited`PlayingCard Rank`, else false.
+    func isStandard() -> Bool {
+
+        return isNumeral() || isRoyal()
     }
 }
