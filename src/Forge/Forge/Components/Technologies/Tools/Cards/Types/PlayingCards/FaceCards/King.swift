@@ -15,32 +15,30 @@
 //=============================================================================//
 
 import Foundation
-import SwiftUI
 
-/// A standard French-suited king `PlayingCard`.
+/// A standard French-suited `king Rank`ed `PlayingCard`.
 public class King: FaceCard {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`King` with the given `Suit`.
+    /// Creates a `King` with the given terms.
     ///
-    /// - Precondition: The given `Suit` must be `clubs`, `diamonds`, `hearts`, or
-    ///  `spades`.
+    /// - Precondition: The given `Suit` must be a standard `PlayingCard Suit`.
     /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to `king`.
-    ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to 10.
-    ///   - The `Card`s title is set to "`King` of `{Suit}`.
-    ///   - The `Card`s `Color` is set to
-    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
-    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
-    /// - Parameter suit: The symbol grouping.
-    /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
-    ///   `diamonds`, `hearts`, or `spades`.
+    ///   - The `Card`'s `Suit` is set to the given `Suit`.
+    ///   - The `Card`'s `Rank` is set to `king`.
+    ///   - The `Card`'s points are set to 10.
+    ///   - The `Card`'s title is set to "Two  of `{Suit}`".
+    /// - Parameters suit: The symbol grouping.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
     public init(of suit: Suit = .hearts) throws {
         
-        try super.init(.king, of: suit)
+        let rank = Rank.king
+        let points = 10
+        let position = 13
+        
+        try super.init(rank, of: suit, worth: points, at: position)
     }
 }

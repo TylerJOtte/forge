@@ -15,7 +15,6 @@
 //=============================================================================//
 
 import Foundation
-import SwiftUI
 
 /// A standard French-suited face`PlayingCard`.
 public class FaceCard: PlayingCard {
@@ -24,41 +23,36 @@ public class FaceCard: PlayingCard {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a `FaceCard` with the given `Rank` and `Suit`.
+    /// Creates a `FaceCard` with the given terms.
     ///
     /// - Precondition:
-    ///    - The given `Rank` must be a `jack`, `queen`, or `king`.
-    ///    - The given `Suit` must be `clubs`, `diamonds`, `hearts`, or `spades`.
+    ///   - The given `Rank` must be a standard royal`PlayingCard Rank`.
+    ///   - The given `Suit` must be a standard `PlayingCard Suit`.
+    ///   - The given position must be between 1-14.
     /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to the given `Rank`.
-    ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to 10.
-    ///   - The `Card`s title is set to the given "`{Rank}` of `{Suit}`.
-    ///   - The `Card`s `Color` is set to
-    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
-    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
+    ///   - The `Card`'s `Rank` is set to the given `Rank`.
+    ///   - The `Card`'s `Suit` is set to the given `Suit`.
+    ///   - The `Card`'s points are set to the given points.
+    ///   - The `Card`'s position is set to the given position.
+    ///   - The `Card`'s title is set to "`{Rank}` of `{Suit}`".
     /// - Parameters:
     ///   - rank: The hierarchical position.
     ///   - suit: The symbol grouping.
+    ///   - points: The total # of points.
+    ///   - position: The given `Rank`'s order in the hierarchy.
     /// - Throws:
-    ///   - `FeatureError.invalidRank` if the given `Rank` is not a `jack`, `queen`, or
-    ///     `king`.
-    ///   - `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`, `diamonds`,
-    ///     `hearts`, or `spades`.
-    init(_ rank: Rank, of suit: Suit = .hearts) throws {
+    ///   - `invalidRank`  if the given `Rank` is not a standard royal `PlayingCard Rank`.
+    ///   - `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
+    ///   - `invalidPosition`  if the given position is not between 1-14.
+    override init(_ rank: Rank, of suit: Suit, worth points: Int,
+                  at position: Int) throws {
         
         guard (rank.isRoyal()) else {
-            
-            print("The given Rank must be a jack, queen, or king.")
-            throw FeatureError.invalidRank
+
+            print("The given Rank is not a standard royal PlayingCard Rank.")
+            throw DescriptionError.invalidRank
         }
         
-        guard (suit.isStandard()) else {
-            
-            print("The given Suit must be clubs, diamonds, hearts, or spades.")
-            throw FeatureError.invalidSuit
-        }
-        
-        try super.init(rank, of: suit)
+        try super.init(rank, of: suit, worth: points, at: position)
     }
 }

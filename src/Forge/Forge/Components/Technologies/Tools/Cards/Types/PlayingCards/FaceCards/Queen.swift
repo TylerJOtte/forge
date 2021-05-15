@@ -15,32 +15,30 @@
 //=============================================================================//
 
 import Foundation
-import SwiftUI
 
-/// A standard French-suited queen `PlayingCard`.
+/// A standard French-suited `queen Rank`ed `PlayingCard`.
 public class Queen: FaceCard {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Queen` with the given `Suit`.
+    /// Creates a `Queen` with the given terms.
     ///
-    /// - Precondition: The given `Suit` must be `clubs`, `diamonds`, `hearts`, or
-    ///  `spades`.
+    /// - Precondition: The given `Suit` must be a standard `PlayingCard Suit`.
     /// - Postcondition:
-    ///   - The `Card`s `Rank`is set to `queen`.
-    ///   - The `Card`s `Suit` is set to the given `Suit`.
-    ///   - The `Card`s points are set to 10.
-    ///   - The `Card`s title is set to "`Queen` of `{Suit}`.
-    ///   - The `Card`s `Color` is set to
-    ///      - `red` if the if the specified `Suit` is `hearts` or `diamonds`, or
-    ///      - `black` if the the specified `Suit` is `clubs` or `spades`.
-    /// - Parameter suit: The symbol grouping.
-    /// - Throws: `FeatureError.invalidSuit`  if the given `Suit` is not `clubs`,
-    ///   `diamonds`, `hearts`, or `spades`.
+    ///   - The `Card`'s `Suit` is set to the given `Suit`.
+    ///   - The `Card`'s `Rank` is set to `queen`.
+    ///   - The `Card`'s points are set to 10.
+    ///   - The `Card`'s title is set to "Queen  of `{Suit}`".
+    /// - Parameters suit: The symbol grouping.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
     public init(of suit: Suit = .hearts) throws {
         
-        try super.init(.queen, of: suit)
+        let rank = Rank.queen
+        let points = 10
+        let position = 12
+        
+        try super.init(rank, of: suit, worth: points, at: position)
     }
 }
