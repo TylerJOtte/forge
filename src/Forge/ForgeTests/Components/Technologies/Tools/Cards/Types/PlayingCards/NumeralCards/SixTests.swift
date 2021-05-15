@@ -219,11 +219,34 @@ class SixTests: XCTestCase {
         let seven = try Seven(of: .hearts)
         
         // When/Then
+        XCTAssert(six.isLessThan(seven))
+    }
+    
+    /// Tests that a `Six` is less than a `Seven`, using the less than operator.
+    func test_six_isLessThanSevenWithOperator_true() throws {
+     
+        // Given
+        let six = try Six(of: .hearts)
+        let seven = try Seven(of: .hearts)
+        
+        // When/Then
         XCTAssertLessThan(six, seven       )
     }
     
     /// Tests that a `Six` is less than a high `Ace`.
     func test_six_isLessThanHighAce_true() throws {
+     
+        // Given
+        let isHigh = true
+        let six = try Six(of: .hearts)
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssert(six.isLessThan(highAce))
+    }
+    
+    /// Tests that a `Six` is less than a high `Ace`, using the less than operator.
+    func test_six_isLessThanHighAceWithOperator_true() throws {
      
         // Given
         let isHigh = true
@@ -246,11 +269,34 @@ class SixTests: XCTestCase {
         let card2 = try Six(of: .hearts)
         
         // When/Then
+        XCTAssert(card1.equals(card2))
+    }
+    
+    /// Tests that a `Six` equals another `Six` with the same `Suit`, using the equality operator.
+    func test_six_equalsSixWithSameSuitUsingOperator_true() throws {
+     
+        // Given
+        let card1 = try Six(of: .hearts)
+        let card2 = try Six(of: .hearts)
+        
+        // When/Then
         XCTAssertEqual(card1, card2)
     }
     
     /// Tests that a `Six` does not equal another `Six` with a different `Suit`.
     func test_six_equalsSixWithDifferentSuit_false() throws {
+     
+        // Given
+        let card1 = try Six(of: .hearts)
+        let card2 = try Six(of: .spades)
+        
+        // When/Then
+        XCTAssertFalse(card1.equals(card2))
+    }
+    
+    /// Tests that a `Six` does not equal another `Six` with a different `Suit`, using the equality
+    /// operator.
+    func test_six_equalsSixWithDifferentSuitUsingOperator_false() throws {
      
         // Given
         let card1 = try Six(of: .hearts)
@@ -264,8 +310,8 @@ class SixTests: XCTestCase {
     //                                  >                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Six` is greater than a low `Ace`.
-    func test_six_isGreaterThanLowAce_true() throws {
+    /// Tests that a `Six` is greater than a low `Ace`, using the greater than operator.
+    func test_six_isGreaterThanLowAceWithOperator_true() throws {
      
         // Given
         let six = try Six(of: .hearts)
@@ -275,8 +321,8 @@ class SixTests: XCTestCase {
         XCTAssertGreaterThan(six, ace)
     }
     
-    /// Tests that a `Six` is greater than a `Five`.
-    func test_six_isGreaterThanFive_true() throws {
+    /// Tests that a `Six` is greater than a `Five`, using the greater than operator.
+    func test_six_isGreaterThanFiveWithOperator_true() throws {
      
         // Given
         let six = try Six(of: .hearts)

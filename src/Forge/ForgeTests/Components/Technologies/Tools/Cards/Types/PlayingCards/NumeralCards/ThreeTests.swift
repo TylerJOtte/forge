@@ -219,11 +219,34 @@ class ThreeTests: XCTestCase {
         let four = try Four(of: .hearts)
         
         // When/Then
+        XCTAssert(three.isLessThan(four))
+    }
+    
+    /// Tests that a `Three` is less than a `Four`, using the less than operator.
+    func test_three_isLessThanFourWithOperator_true() throws {
+     
+        // Given
+        let three = try Three(of: .hearts)
+        let four = try Four(of: .hearts)
+        
+        // When/Then
         XCTAssertLessThan(three, four)
     }
     
     /// Tests that a `Three` is less than a high `Ace`.
     func test_three_isLessThanHighAce_true() throws {
+     
+        // Given
+        let isHigh = true
+        let three = try Three(of: .hearts)
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssert(three.isLessThan(highAce))
+    }
+    
+    /// Tests that a `Three` is less than a high `Ace`, using the less than operator.
+    func test_three_isLessThanHighAceWithOperator_true() throws {
      
         // Given
         let isHigh = true
@@ -246,11 +269,34 @@ class ThreeTests: XCTestCase {
         let card2 = try Three(of: .hearts)
         
         // When/Then
+        XCTAssert(card1.equals(card2))
+    }
+    
+    /// Tests that a `Three` equals another `Three` with the same `Suit`, using the equality operator.
+    func test_three_equalsThreeWithSameSuitUsingOperator_true() throws {
+     
+        // Given
+        let card1 = try Three(of: .hearts)
+        let card2 = try Three(of: .hearts)
+        
+        // When/Then
         XCTAssertEqual(card1, card2)
     }
     
     /// Tests that a `Three` does not equal another `Three` with a different `Suit`.
     func test_three_equalsThreeWithDifferentSuit_false() throws {
+     
+        // Given
+        let card1 = try Three(of: .hearts)
+        let card2 = try Three(of: .spades)
+        
+        // When/Then
+        XCTAssertFalse(card1.equals(card2))
+    }
+    
+    /// Tests that a `Three` does not equal another `Three` with a different `Suit`, using the equality
+    /// operator.
+    func test_three_equalsThreeWithDifferentSuitUsingOperator_false() throws {
      
         // Given
         let card1 = try Three(of: .hearts)
@@ -264,8 +310,8 @@ class ThreeTests: XCTestCase {
     //                                  >                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Three` is greater than a low `Ace`.
-    func test_three_isGreaterThanLowAce_true() throws {
+    /// Tests that a `Three` is greater than a low `Ace`, using the greater than operator.
+    func test_three_isGreaterThanLowAceWithOperator_true() throws {
      
         // Given
         let three = try Three(of: .hearts)
@@ -275,8 +321,8 @@ class ThreeTests: XCTestCase {
         XCTAssertGreaterThan(three, ace)
     }
     
-    /// Tests that a `Three` is greater than a `Two`.
-    func test_three_isGreaterThanTwo_true() throws {
+    /// Tests that a `Three` is greater than a `Two`, using the greater than operator.
+    func test_three_isGreaterThanTwoWithOperator_true() throws {
      
         // Given
         let three = try Three(of: .hearts)

@@ -215,15 +215,38 @@ class AceTests: XCTestCase {
     func test_lowAce_isLessThanTwo_true() throws {
      
         // Given
-        let ace = try Ace(of: .hearts)
+        let lowAce = try Ace(of: .hearts)
         let two = try Two(of: .hearts)
         
         // When/Then
-        XCTAssertLessThan(ace, two)
+        XCTAssert(lowAce.isLessThan(two))
+    }
+    
+    /// Tests that a low `Ace` is less than a `Two`, using the less than operator.
+    func test_lowAce_isLessThanTwoWithOperator_true() throws {
+     
+        // Given
+        let lowAce = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        
+        // When/Then
+        XCTAssertLessThan(lowAce, two)
     }
     
     /// Tests that a low `Ace` is less than a high `Ace`.
     func test_lowAce_isLessThanHighAce_true() throws {
+     
+        // Given
+        let isHigh = true
+        let lowAce = try Ace(of: .hearts)
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssert(lowAce.isLessThan(highAce))
+    }
+    
+    /// Tests that a low `Ace` is less than a high `Ace`, using the less than operator.
+    func test_lowAce_isLessThanHighAceWithOperator_true() throws {
      
         // Given
         let isHigh = true
@@ -238,8 +261,20 @@ class AceTests: XCTestCase {
     //                                  =                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a low `Ace` equals another low `Ace` with the same `Suit`.
+    /// Tests that a low `Ace` equals another low`Ace` with the same `Suit`.
     func test_lowAce_equalsLowAceWithSameSuit_true() throws {
+     
+        // Given
+        let lowAce1 = try Ace(of: .hearts)
+        let lowAce2 = try Ace(of: .hearts)
+        
+        // When/Then
+        XCTAssert(lowAce1.equals(lowAce2))
+    }
+    
+    /// Tests that a low `Ace` equals another low `Ace` with the same `Suit`, using the equality
+    /// operator.
+    func test_lowAce_equalsLowAceWithSameSuitUsingOperator_true() throws {
      
         // Given
         let lowAce1 = try Ace(of: .hearts)
@@ -258,11 +293,36 @@ class AceTests: XCTestCase {
         let highAce2 = try Ace(of: .hearts, and: isHigh)
         
         // When/Then
+        XCTAssert(highAce1.equals(highAce2))
+    }
+    
+    /// Tests that a high `Ace` equals another high `Ace` with the same `Suit`, using the equality
+    /// operator.
+    func test_highAce_equalsHighAceWithSameSuitUsingperator_true() throws {
+     
+        // Given
+        let isHigh = true
+        let highAce1 = try Ace(of: .hearts, and: isHigh)
+        let highAce2 = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
         XCTAssertEqual(highAce1, highAce2)
     }
     
-    /// Tests that a low `Ace` equals another high `Ace` with the same `Suit`.
+    /// Tests that a low `Ace` equals a high `Ace` with the same `Suit`.
     func test_lowAce_equalsHighAceWithSameSuit_true() throws {
+     
+        // Given
+        let isHigh = true
+        let lowAce = try Ace(of: .hearts)
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssert(lowAce.equals(highAce))
+    }
+    
+    /// Tests that a low `Ace` equals a high `Ace` with the same `Suit`, using the equality operator.
+    func test_lowAce_equalsHighAceWithSameSuitUsingOperator_true() throws {
      
         // Given
         let isHigh = true
@@ -281,11 +341,37 @@ class AceTests: XCTestCase {
         let lowAce2 = try Ace(of: .spades)
         
         // When/Then
+        XCTAssertFalse(lowAce1.equals(lowAce2))
+    }
+    
+    /// Tests that a low `Ace` does not equal another low `Ace` with a different `Suit`, using the equality
+    /// operator.
+    func test_lowAce_equalsLowAceWithDifferentSuitUsingOperator_false() throws {
+     
+        // Given
+        let lowAce1 = try Ace(of: .hearts)
+        let lowAce2 = try Ace(of: .spades)
+        
+        // When/Then
         XCTAssertNotEqual(lowAce1, lowAce2)
     }
     
-    /// Tests that a high `Ace` does not equal another high `Ace` with a different `Suit`.
+    /// Tests that a high `Ace` does not equal another  high`Ace` with a different `Suit`.
     func test_highAce_equalsHighAceWithDifferentSuit_false() throws {
+     
+        // Given
+        let isHigh = true
+        let highAce1 = try Ace(of: .hearts, and: isHigh)
+        let highAce2 = try Ace(of: .spades, and: isHigh)
+        
+        // When/Then
+        XCTAssertFalse(highAce1.equals(highAce2))
+    }
+    
+    /// Tests that a high `Ace` does not equal another high `Ace` with a different `Suit`, using the
+    /// equality operator.
+    func test_highAce_equalsHighAceWithDifferentSuitUsingOperator_false()
+    throws {
      
         // Given
         let isHigh = true
@@ -296,8 +382,21 @@ class AceTests: XCTestCase {
         XCTAssertNotEqual(highAce1, highAce2)
     }
     
-    /// Tests that a low `Ace` does not equal another high `Ace` with a different `Suit`.
+    /// Tests that a low `Ace` does not equal a high `Ace` with a different `Suit`.
     func test_lowAce_equalsHighAceWithDifferentSuit_false() throws {
+     
+        // Given
+        let isHigh = true
+        let lowAce = try Ace(of: .hearts)
+        let highAce = try Ace(of: .spades, and: isHigh)
+        
+        // When/Then
+        XCTAssertFalse(lowAce.equals(highAce))
+    }
+    
+    /// Tests that a low `Ace` does not equal a high `Ace` with a different `Suit`, using the equality
+    /// operator.
+    func test_lowAce_equalsHighAceWithDifferentSuitUsingOperator_false() throws {
      
         // Given
         let isHigh = true
@@ -312,8 +411,8 @@ class AceTests: XCTestCase {
     //                                  >                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a high `Ace` is greater than a low `Ace`.
-    func test_highAce_isGreaterThanLowAce_true() throws {
+    /// Tests that a high `Ace` is greater than a low `Ace`, using the greater than operator.
+    func test_highAce_isGreaterThanLowAceWithOperator_true() throws {
      
         // Given
         let isHigh = true
@@ -324,8 +423,8 @@ class AceTests: XCTestCase {
         XCTAssertGreaterThan(highAce, ace)
     }
     
-    /// Tests that a high `Ace` is greater than a `King`.
-    func test_highAce_isGreaterThanKing_true() throws {
+    /// Tests that a high `Ace` is greater than a `King`, using the greater than operator.
+    func test_highAce_isGreaterThanKingWithOperator_true() throws {
      
         // Given
         let isHigh = true
