@@ -15,7 +15,6 @@
 //=============================================================================//
 
 import XCTest
-import SwiftUI
 @testable import Forge
 
 /// Unit tests for a `Four PlayingCard`.
@@ -24,164 +23,104 @@ class FourTests: XCTestCase {
     //=========================================================================//
     //                             Initialization                              //
     //=========================================================================//
-    
+
     //-------------------------------------------------------------------------//
     //                              Invalid Suits                              //
     //-------------------------------------------------------------------------//
-    
-    /// Tests that creating an `Four` with a non-`PlayingCard Suit` throws a
-    /// `FeatureError.invalidSuit Error`.
-    func test_init_withNonPlayingCardSuit_throws() throws {
-        
+
+    /// Tests that creating a`Four` with a non-standard `PlayingCard Suit` throws an
+    /// `invalidSuit Error`.
+    func test_init_withNonStandardPlayingCardSuit_throwsInvalidSuit() throws {
+
         // Given
-        let expected = FeatureError.invalidSuit
-        
+        let expected = DepictionError.invalidSuit
+
         // When
         XCTAssertThrowsError(try Four(of: .stars)) { error in
-            
+
             // Then
-            XCTAssertEqual(expected, error as? FeatureError)
+            XCTAssertEqual(expected, error as? DepictionError)
         }
     }
-    
+
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the title of an `Four` created with a `clubs Suit` equals "Four Of Clubs".
-    func test_title_withClubs_equalsAceOfClubs() throws {
-        
-        // Given
-        let four = try Four(of: .clubs)
-        let expected = "Four Of Clubs"
-        
-        // When
-        let actual = four.title
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the title of an `Four` created with a `diamonds Suit` equals "Four Of Diamonds".
-    func test_title_withDiamonds_equalsAceOfDiamonds() throws {
-        
-        // Given
-        let four = try Four(of: .diamonds)
-        let expected = "Four Of Diamonds"
-        
-        // When
-        let actual = four.title
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the title of an `Four` created with a `hearts Suit` equals "Four Of Hearts".
-    func test_title_withHearts_equalsAceOfHearts() throws {
-        
-        // Given
-        let four = try Four(of: .hearts)
-        let expected = "Four Of Hearts"
-        
-        // When
-        let actual = four.title
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the title of an `Four` created with a `spades Suit` equals "Four Of Spades".
-    func test_title_withSpades_equalsAceOfSpades() throws {
-        
-        // Given
-        let four = try Four(of: .spades)
-        let expected = "Four Of Spades"
-        
-        // When
-        let actual = four.title
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                                 Rank                                    //
     //-------------------------------------------------------------------------//
-    
-    /// Tests that the `Rank` of an `Four` equals `four`.
-    func test_rank_ofAce_equalsFour() throws {
-        
+
+    /// Tests that a `Four`'s `Rank` equals `four`.
+    func test_rank_ofFour_equalsFour() throws {
+
         // Given
-        let four = try Four()
+        let four = try Four(of: .hearts)
         let expected = Rank.four
-        
+
         // When
         let actual = four.rank
-        
+
         // Then
         XCTAssertEqual(expected, actual)
     }
     
     //-------------------------------------------------------------------------//
-    //                                Suit                                     //
+    //                                 Suit                                    //
     //-------------------------------------------------------------------------//
-    
-    /// Tests that the `Suit` of an `Four` created with a `clubs Suit` equals `clubs`.
-    func test_suit_withClubs_equalsClubs() throws {
-        
-        // Given
-        let four = try Four(of: .clubs)
-        let expected = Suit.clubs
-        
-        // When
-        let actual = four.suit
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the `Suit` of an `Four` created with a `diamonds Suit` equals `diamonds`.
-    func test_suit_withDiamonds_equalsDiamonds() throws {
-        
-        // Given
-        let four = try Four(of: .diamonds)
-        let expected = Suit.diamonds
-        
-        // When
-        let actual = four.suit
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the `Suit` of an `Four` created with a `hearts Suit` equals `hearts`.
+
+    /// Tests that the `Suit` of a `Four` created with a `hearts Suit` equals `hearts`.
     func test_suit_withHearts_equalsHearts() throws {
-        
+
         // Given
         let four = try Four(of: .hearts)
         let expected = Suit.hearts
-        
+
         // When
         let actual = four.suit
-        
+
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the `Suit` of an `Four` created with a `spades Suit` equals `spades`.
+    /// Tests that the `Suit` of a `Four` created with a `diamonds Suit` equals `diamonds`.
+    func test_suit_withDiamonds_equalsDiamonds() throws {
+
+        // Given
+        let four = try Four(of: .diamonds)
+        let expected = Suit.diamonds
+
+        // When
+        let actual = four.suit
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Suit` of a `Four` created with a `clubs Suit` equals `clubs`.
+    func test_suit_withClubs_equalsClubs() throws {
+
+        // Given
+        let four = try Four(of: .clubs)
+        let expected = Suit.clubs
+
+        // When
+        let actual = four.suit
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the `Suit` of a `Four` created with a `spades Suit` equals `spades`.
     func test_suit_withSpades_equalsSpades() throws {
-        
+
         // Given
         let four = try Four(of: .spades)
         let expected = Suit.spades
-        
+
         // When
         let actual = four.suit
-        
+
         // Then
         XCTAssertEqual(expected, actual)
     }
@@ -189,77 +128,77 @@ class FourTests: XCTestCase {
     //-------------------------------------------------------------------------//
     //                                Points                                   //
     //-------------------------------------------------------------------------//
-    
-    /// Tests that the points of an `Four` that is not high equals four.
-    func test_points_ofLowAce_equalsFour() throws {
-        
-        // Given
-        let four = try Four()
-        let expected = 4
-        
-        // When
-        let actual = four.points
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Color                                    //
-    //-------------------------------------------------------------------------//
 
-    /// Tests that the `Color` of an `Four` created with a `clubs Suit` equals `black`.
-    func test_color_withClubs_equalsBlack() throws {
-        
-        // Given
-        let four = try Four(of: .clubs)
-        let expected = Color.black
-        
-        // When
-        let actual = four.color
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the `Color` of an `Four` created with a `diamonds Suit` equals `red`.
-    func test_color_withDiamonds_equalsRed() throws {
-        
-        // Given
-        let four = try Four(of: .diamonds)
-        let expected = Color.red
-        
-        // When
-        let actual = four.color
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the `Color` of an `Four` created with a `hearts Suit` equals `red`.
-    func test_color_withHearts_equalsRed() throws {
-        
+    /// Tests that a `Four`'s points equals 4.
+    func test_points_ofFour_equals4() throws {
+
         // Given
         let four = try Four(of: .hearts)
-        let expected = Color.red
-        
+        let expected = 4
+
         // When
-        let actual = four.color
-        
+        let actual = four.points
+
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the `Color` of an `Four` created with a `spades Suit` equals `black`
-    func test_color_withSpades_equalsBlack() throws {
-        
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a `Four` created with a `hearts Suit` equals "Four Of Hearts".
+    func test_title_withHearts_equalsFourOfHearts() throws {
+
+        // Given
+        let four = try Four(of: .hearts)
+        let expected = "Four Of Hearts"
+
+        // When
+        let actual = four.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a `Four` created with a `diamonds Suit` equals "Four Of Diamonds".
+    func test_title_withDiamonds_equalsFourOfDiamonds() throws {
+
+        // Given
+        let four = try Four(of: .diamonds)
+        let expected = "Four Of Diamonds"
+
+        // When
+        let actual = four.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a `Four` created with a `clubs Suit` equals "Four Of Club".
+    func test_title_withClubs_equalsFourOfClubs() throws {
+
+        // Given
+        let four = try Four(of: .clubs)
+        let expected = "Four Of Clubs"
+
+        // When
+        let actual = four.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a `Four` created with a `spades Suit` equals "Four Of Spades".
+    func test_title_withSpades_equalsFourOfSpades() throws {
+
         // Given
         let four = try Four(of: .spades)
-        let expected = Color.black
-        
+        let expected = "Four Of Spades"
+
         // When
-        let actual = four.color
-        
+        let actual = four.title
+
         // Then
         XCTAssertEqual(expected, actual)
     }
@@ -267,71 +206,82 @@ class FourTests: XCTestCase {
     //=========================================================================//
     //                              COMPARISONS                                //
     //=========================================================================//
-    
+
     //-------------------------------------------------------------------------//
-    //                               Less Than                                 //
+    //                                  <                                      //
     //-------------------------------------------------------------------------//
-
-    /// Tests that a `Four` is less than a high`Ace`.
-    func test_isLessThan_FourAndHighAce_true() throws {
-
-        // Given
-        let high = true
-        let four = try Four()
-        let ace = try Ace(of: .hearts, is: high)
-
-        // When/Then
-        XCTAssertLessThan(four, ace)
-    }
     
-    /// Tests that a`Four` is less than a `Five PlayingCard`.
-    func test_isLessThan_FourAndFive_true() throws {
-
+    /// Tests that a `Four` is less than a `Five`.
+    func test_four_isLessThanFive_true() throws {
+     
         // Given
-        let four = try Four()
-        let five = try Five()
-
+        let four = try Four(of: .hearts)
+        let five = try Five(of: .hearts)
+        
         // When/Then
         XCTAssertLessThan(four, five)
     }
     
-    //-------------------------------------------------------------------------//
-    //                                Equality                                 //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that `Four`s with the same `Suit` are equal.
-    func test_equals_FoursWithSameSuit_true() throws {
-        
+    /// Tests that a `Four` is less than a high `Ace`.
+    func test_four_isLessThanHighAce_true() throws {
+     
         // Given
-        let four1 = try Four(of: .spades)
-        let four2 = try Four(of: .spades)
+        let isHigh = true
+        let four = try Four(of: .hearts)
+        let ace = try Ace(of: .hearts, and: isHigh)
         
         // When/Then
-        XCTAssertEqual(four1, four2)
-    }
-    
-    /// Tests that `Four`s with the different `Suit`s are equal.
-    func test_equals_FoursWithDifferentSuits_true() throws {
-        
-        // Given
-        let four1 = try Four(of: .hearts)
-        let four2 = try Four(of: .spades)
-        
-        // When/Then
-        XCTAssertEqual(four1, four2)
+        XCTAssertLessThan(four, ace)
     }
     
     //-------------------------------------------------------------------------//
-    //                             Greater Than                                //
+    //                                  =                                      //
     //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Four` equals another `Four` with the same `Suit`.
+    func test_four_equalsFourWithSameSuit_true() throws {
+     
+        // Given
+        let card1 = try Four(of: .hearts)
+        let card2 = try Four(of: .hearts)
+        
+        // When/Then
+        XCTAssertEqual(card1, card2)
+    }
+    
+    /// Tests that a `Four` does not equal another `Four` with a different `Suit`.
+    func test_four_equalsFourWithDifferentSuit_false() throws {
+     
+        // Given
+        let card1 = try Four(of: .hearts)
+        let card2 = try Four(of: .spades)
+        
+        // When/Then
+        XCTAssertNotEqual(card1, card2)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  >                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Four` is greater than a low `Ace`.
+    func test_four_isGreaterThanLowAce_true() throws {
+     
+        // Given
+        let four = try Four(of: .hearts)
+        let ace = try Ace(of: .hearts)
+        
+        // When/Then
+        XCTAssertGreaterThan(four, ace)
+    }
     
     /// Tests that a `Four` is greater than a `Three`.
-    func test_isGreaterThan_FourAndThree_true() throws {
-
+    func test_four_isGreaterThanThree_true() throws {
+     
         // Given
-        let four = try Four()
-        let three = try Three()
-
+        let four = try Four(of: .hearts)
+        let three = try Three(of: .hearts)
+        
         // When/Then
         XCTAssertGreaterThan(four, three)
     }
