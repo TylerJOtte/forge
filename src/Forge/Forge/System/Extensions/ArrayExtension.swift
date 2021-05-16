@@ -28,7 +28,7 @@ extension Array where Element: PlayingCard  {
     /// - Returns: True if all `Card`s in the collection have the same `Rank`, else false.
     func areEquallyRanked() -> Bool {
         
-        return !self.contains(where: {$0 != self.first})
+        return !self.contains(where: {$0.rank != self.first?.rank})
     }
     
     /// Determines if all `Card`s in the collection have the same `Suit`.
@@ -64,8 +64,8 @@ extension Array where Element: PlayingCard  {
         
         while (areSequential && card < lastCard) {
             
-            let nextRank = self[card].rank.next(ace: high)
-            let nextCardRank = self[card + 1].rank
+            let nextRank = self[card].position + 1
+            let nextCardRank = self[card + 1].position
             
             areSequential = nextRank == nextCardRank
             card += 1
@@ -133,9 +133,9 @@ extension Array where Element: PlayingCard  {
         
         while (areSequential && card < lastCard) {
             
-            let rank = self[card].rank
-            let nextRank = self[card].rank.next(ace: high)
-            let nextCardRank = self[card + 1].rank
+            let rank = self[card].position
+            let nextRank = self[card].position + 1
+            let nextCardRank = self[card + 1].position
             let isSequential = nextCardRank == nextRank
             let isPair = nextCardRank == rank
             
