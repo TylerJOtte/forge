@@ -39,6 +39,7 @@ public enum Rank: Int, Description {
     case king
     case ace
     case joker
+    case knight
     
     //=========================================================================//
     //                                  METHODS                                //
