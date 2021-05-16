@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  PlayingCard.swift                                                          //
+//  RankedCard.swift                                                           //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 4/02/21.                                       //
+//  Created by Tyler J. Otte on 5/16/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -16,83 +16,68 @@
 
 import Foundation
 
-/// A standard French-suited playing `Card`.
-public class PlayingCard: RankedCard {
-    
+/// A `Rank`ed `Card`.
+public class RankedCard: Card, Rankable, Scoreable {
+
     //=========================================================================//
     //                                ATTRIBUTES                               //
     //=========================================================================//
     
-    /// The symbol grouping.
-    public let suit: Suit
+    /// The hierarchical position.
+    public let rank: Rank
     
+    /// The order within the hierarchy.
+    public let position: Int
+    
+    /// The total # of points.
+    public let points: Int
+
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a `PlayingCard` with the given terms.
+    /// Creates a `RankedCard` with the given terms.
     ///
-    /// - Precondition:
-    ///   - The given `Rank` must be a standard`PlayingCard Rank`.
-    ///   - The given `Suit` must be a standard `PlayingCard Suit`.
-    ///   - The given `Suit` must be `null` if the specified `Rank` is a `joker`.
-    ///   - The given position must be between 1-14.
+    /// - Precondition: None.
     /// - Postcondition:
     ///   - The `Card`'s `Rank` is set to the given `Rank`.
-    ///   - The `Card`'s `Suit` is set to the given `Suit`.
     ///   - The `Card`'s points are set to the given points.
     ///   - The `Card`'s position is set to the given position.
-    ///   - The `Card`'s title is set to "`{Rank}` of `{Suit}`".
     /// - Parameters:
     ///   - rank: The hierarchical position.
-    ///   - suit: The symbol grouping.
-    ///   - points: The total # of points.
     ///   - position: The given `Rank`'s order in the hierarchy.
-    /// - Throws:
-    ///   - `invalidRank`  if the given `Rank` is not a standard `PlayingCard Rank`.
-    ///   - `invalidSuit` if:
-    ///     - The given `Suit` is not a standard `PlayingCard Suit`, or
-    ///     - The given `Suit` is `null` and the specified `Rank` is not a `joker`, or
-    ///     - The given `Suit` is not `null` and the specified `Rank` is a `joker`.
-    ///   - `invalidPosition`  if the given position is not between 1-14.
-    init(_ rank: Rank, of suit: Suit, worth points: Int,
-         at position: Int, with title: String = "") throws {
+    ///   - points: The total # of points.
+    init(_ rank: Rank, at position: Int, worth points: Int,
+         named title: String) {
         
-        guard (rank.isStandard()) else {
-
-            print("The given Rank is not a standard PlayingCard Rank.")
-            throw DescriptionError.invalidRank
-        }
-
-        guard (suit.isStandard()) else {
-
-            print("The given Suit is not a standard PlayingCard Suit.")
-            throw DepictionError.invalidSuit
-        }
+        self.rank = rank
+        self.position = position
+        self.points = points
         
-        guard ((suit == .null && rank == .joker) ||
-               (suit != .null && rank != .joker)) else {
-
-            print("The given Rank & Suit is not a valid combination.")
-            throw DepictionError.invalidSuit
-        }
-        
-        guard (position >= 0 && position <= 14) else {
-
-            print("The given order must be between 1-14.")
-            throw RangeError.invalidPosition
-        }
-        
-        self.suit = suit
-        
-        let title = title == "" ? "\(rank) Of \(suit)".capitalized : title
-        
-        super.init(rank, at: position, worth: points, named: title)
+        super.init(named: title)
     }
     
     //=========================================================================//
     //                                 METHODS                                 //
     //=========================================================================//
+    
+    /// Determines if the `Card` is less than the given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters rhs: The `Card` to compare to.
+    /// - Returns: True if the `Card` is less than the given {Model}, else false.
+    public override func isLessThan(_ rhs: Card) -> Bool {
+        
+        var isLessThan = false
+        
+        if let card = rhs as? RankedCard {
+            
+            isLessThan = position < card.position
+        }
+        
+        return isLessThan
+    }
     
     /// Determines if the `Card` equals the given `Card`.
     ///
@@ -104,9 +89,10 @@ public class PlayingCard: RankedCard {
         
         var equals = false
         
-        if let card = rhs as? PlayingCard {
+        if let card = rhs as? RankedCard {
             
-            equals = rank == card.rank && suit == card.suit
+            equals = rank == card.rank && position == card.position &&
+                points == card.points && super.equals(rhs)
         }
         
         return equals
