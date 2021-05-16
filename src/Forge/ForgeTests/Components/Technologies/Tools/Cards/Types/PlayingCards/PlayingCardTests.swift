@@ -72,6 +72,90 @@ class PlayingCardTests: XCTestCase {
         }
     }
     
+    //                        //
+    // Joker & non-null Suits //
+    //                        //
+    
+    /// Tests that creating a `PlayingCard` with a `hearts PlayingCard Suit` and a `joker`
+    /// `PlayingCard Rank` throws an `invalidSuit Error`.
+    func test_init_withHeartsAndJoker_throwsInvalidSuit() throws {
+
+        // Given
+        let rank = Rank.joker
+        let suit = Suit.hearts
+        let points = 0
+        let position = 0
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try PlayingCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
+    /// Tests that creating a `PlayingCard` with a `diamonds PlayingCard Suit` and a `joker`
+    /// `PlayingCard Rank` throws an `invalidSuit Error`.
+    func test_init_withDiamondsAndJoker_throwsInvalidSuit() throws {
+
+        // Given
+        let rank = Rank.joker
+        let suit = Suit.diamonds
+        let points = 0
+        let position = 0
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try PlayingCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
+    /// Tests that creating a `PlayingCard` with a `clubs PlayingCard Suit` and a `joker`
+    /// `PlayingCard Rank` throws an `invalidSuit Error`.
+    func test_init_withClubsAndJoker_throwsInvalidSuit() throws {
+
+        // Given
+        let rank = Rank.joker
+        let suit = Suit.clubs
+        let points = 0
+        let position = 0
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try PlayingCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
+    /// Tests that creating a `PlayingCard` with a `spades PlayingCard Suit` and a `joker`
+    /// `PlayingCard Rank` throws an `invalidSuit Error`.
+    func test_init_withSpadesAndJoker_throwsInvalidSuit() throws {
+
+        // Given
+        let rank = Rank.joker
+        let suit = Suit.spades
+        let points = 0
+        let position = 0
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try PlayingCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
     //-------------------------------------------------------------------------//
     //                            Invalid Positions                            //
     //-------------------------------------------------------------------------//
