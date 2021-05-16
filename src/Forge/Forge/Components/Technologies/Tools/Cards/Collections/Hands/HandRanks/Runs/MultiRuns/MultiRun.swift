@@ -37,9 +37,6 @@ public class MultiRun: Run {
     /// The total # of points from pairs.
     public var pairPoints: Int { pairs * 2 }
     
-    /// The total # of points.
-    public var points: Int { runPoints + pairPoints }
-    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
@@ -94,6 +91,8 @@ public class MultiRun: Run {
         
         self.runs = runs
         self.pairs = pairs
+        
+        let points = 0 // runPoints + pairPoints
         
         try super.init(of: min, cards, with: pairs, multiple: groups)
     }

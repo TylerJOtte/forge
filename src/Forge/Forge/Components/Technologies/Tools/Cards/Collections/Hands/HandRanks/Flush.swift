@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of equally `Suit`ed `Card`s.
-public class Flush: PlayingCardHand, HandRank {
+public class Flush: HandRank {
     
     /// The primary name.
     public var title: String
@@ -47,6 +47,7 @@ public class Flush: PlayingCardHand, HandRank {
         let min = 4
         let max = Int.max
         let high = true
+        let points = cards.count
         var title: String
         
         guard (cards.count >= min) else {
@@ -81,6 +82,6 @@ public class Flush: PlayingCardHand, HandRank {
         
         self.title = title
         
-        try super.init(of: min, to: max, cards)
+        try super.init(of: min, to: max, cards, worth: points)
     }
 }

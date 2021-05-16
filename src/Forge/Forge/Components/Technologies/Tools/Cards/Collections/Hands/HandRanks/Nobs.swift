@@ -18,10 +18,7 @@ import Foundation
 
 /// A `HandRank` of `PlayingCard`s with a  standard non-`jack Card` & a`jack Card` with
 /// same `Suit`.
-public class Nobs: PlayingCardHand, HandRank {
-    
-    /// The total # of points.
-    public let points: Int = 1
+public class Nobs: HandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -53,6 +50,7 @@ public class Nobs: PlayingCardHand, HandRank {
         let max = 2
         let nonJack = cards.filter{$0.rank != .jack}.first
         let jack = cards.filter{$0.rank == .jack}.first
+        let points = 1
         
         guard (cards.count >= min) else {
             
@@ -85,6 +83,6 @@ public class Nobs: PlayingCardHand, HandRank {
             throw ElementsError.insufficientElements
         }
         
-        try super.init(of: min, to: max, cards)
+        try super.init(of: min, to: max, cards, worth: points)
     }
 }

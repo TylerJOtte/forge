@@ -17,10 +17,7 @@
 import Foundation
 
 /// A `HandRank` of`PlayingCard`s with points that sum to 15.
-public class Fifteen: PlayingCardHand, HandRank {
-    
-    /// The total # of points.
-    public let points: Int = 2
+public class Fifteen: HandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -48,7 +45,7 @@ public class Fifteen: PlayingCardHand, HandRank {
         
         let min = 2
         let max = 5
-        let points = 15
+        let points = 2
         
         guard (cards.count >= min) else {
             
@@ -68,6 +65,6 @@ public class Fifteen: PlayingCardHand, HandRank {
             throw ScoreError.invalidPoints
         }
         
-        try super.init(of: min, to: max, cards)
+        try super.init(of: min, to: max, cards, worth: points)
     }
 }

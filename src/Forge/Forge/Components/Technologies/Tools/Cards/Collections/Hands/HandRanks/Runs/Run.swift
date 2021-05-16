@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of sequential `Card`s.
-public class Run: PlayingCardHand, HandRank {
+public class Run: HandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -43,6 +43,7 @@ public class Run: PlayingCardHand, HandRank {
         
         let min = 3
         let max = Int.max
+        let points = cards.count
         
         guard (cards.count >= min) else {
             
@@ -56,7 +57,7 @@ public class Run: PlayingCardHand, HandRank {
             throw ElementsError.areNotSequential
         }
         
-        try super.init(of: min, to: max, cards)
+        try super.init(of: min, to: max, cards, worth: points)
     }
     
     //=========================================================================//
@@ -96,6 +97,7 @@ public class Run: PlayingCardHand, HandRank {
         
         let minCards = 3
         let max = Int.max
+        let points = cards.count
         
         guard (min >= minCards) else {
             
@@ -109,6 +111,6 @@ public class Run: PlayingCardHand, HandRank {
             throw ElementsError.areNotSequential
         }
         
-        try super.init(of: min, to: max, cards)
+        try super.init(of: min, to: max, cards, worth: points)
     }
 }
