@@ -20,3 +20,15 @@ import Foundation
 public protocol Element {
 
 }
+
+/// Default implementations for a game `Element`.
+extension Element {
+    
+    /// The primary name
+    var title: String {
+        
+        let model = String(describing: type(of: self))
+            
+        return model.splitOnCapitals()
+    }
+}

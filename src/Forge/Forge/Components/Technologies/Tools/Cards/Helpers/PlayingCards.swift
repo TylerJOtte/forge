@@ -45,7 +45,7 @@ class PlayingCards {
         
         guard (suit.isStandard()) else {
             
-            throw FeatureError.invalidSuit
+            throw DepictionError.invalidSuit
         }
         
         return [
@@ -96,15 +96,15 @@ class PlayingCards {
     /// - Returns: An array of `PlayingCard`s.
     static func getCards(with jokers: Bool = false) -> [PlayingCard]? {
 
-        var cards: [PlayingCard] = [] //jokers ? jokerCards : []
+        var cards: [PlayingCard] = []
         
         do {
             
             try cards.append(contentsOf: getCards(of: suits))
             
             if (jokers) {
-                
-                cards.append(try Joker())
+
+                cards.append(try Joker(color: .red))
                 cards.append(try Joker(color: .black))
             }
         

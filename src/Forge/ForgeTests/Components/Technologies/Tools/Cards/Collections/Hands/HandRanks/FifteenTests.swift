@@ -34,7 +34,7 @@ class FifteenTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
-        let ten = try Ten()
+        let ten = try Ten(of: .hearts)
         let cards = [ten]
         let expected = ElementsError.insufficientElements
         
@@ -55,12 +55,12 @@ class FifteenTests: XCTestCase {
     func test_init_withExcessiveCards_returnsNil() throws {
 
         // Given
-        let ace = try Ace()
-        let two = try Two()
-        let three = try Three()
-        let four = try Four()
-        let five = try Five()
-        let six = try Six()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let four = try Four(of: .hearts)
+        let five = try Five(of: .hearts)
+        let six = try Six(of: .hearts)
         let cards = [ace, two, three, four, five, six]
         let expected = ElementsError.excessiveElements
         
@@ -81,16 +81,16 @@ class FifteenTests: XCTestCase {
     func test_init_withUnder15PointsSum_returnsNil() throws {
         
         // Given
-        let ten = try Ten()
-        let five = try Four()
+        let ten = try Ten(of: .hearts)
+        let five = try Four(of: .hearts)
         let cards = [ten, five]
-        let expected = RewardsError.invalidPoints
+        let expected = ScoreError.invalidPoints
         
         // When
         XCTAssertThrowsError(try Fifteen(of: cards)) { error in
             
             // Then
-            XCTAssertEqual(expected, error as? RewardsError)
+            XCTAssertEqual(expected, error as? ScoreError)
         }
     }
     
@@ -103,17 +103,17 @@ class FifteenTests: XCTestCase {
     func test_init_withOver15PointsSum_returnsNil() throws {
         
         // Given
-        let ten = try Ten()
-        let five = try Six()
+        let ten = try Ten(of: .hearts)
+        let five = try Six(of: .hearts)
         let cards = [ten, five]
         
-        let expected = RewardsError.invalidPoints
+        let expected = ScoreError.invalidPoints
         
         // When
         XCTAssertThrowsError(try Fifteen(of: cards)) { error in
             
             // Then
-            XCTAssertEqual(expected, error as? RewardsError)
+            XCTAssertEqual(expected, error as? ScoreError)
         }
     }
     
@@ -129,8 +129,8 @@ class FifteenTests: XCTestCase {
     func test_minCards_ofFifteen_equalsTwo() throws {
         
         // Given
-        let ten = try Ten()
-        let five = try Five()
+        let ten = try Ten(of: .hearts)
+        let five = try Five(of: .hearts)
         let cards = [ten, five]
         let fifteen = try Fifteen(of: cards)
         let expected = 2
@@ -146,8 +146,8 @@ class FifteenTests: XCTestCase {
     func test_maxCards_ofFifteen_equalsFive() throws {
         
         // Given
-        let ten = try Ten()
-        let five = try Five()
+        let ten = try Ten(of: .hearts)
+        let five = try Five(of: .hearts)
         let cards = [ten, five]
         let fifteen = try Fifteen(of: cards)
         let expected = 5
@@ -167,11 +167,11 @@ class FifteenTests: XCTestCase {
     func test_count_ofFifteen_equalsNCardsGiven() throws {
         
         // Given
-        let ace = try Ace()
-        let two = try Two()
-        let three = try Three()
-        let four = try Four()
-        let five = try Five()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let four = try Four(of: .hearts)
+        let five = try Five(of: .hearts)
         let cards = [ace, two, three, four, five]
         let fifteen = try Fifteen(of: cards)
         let expected = 5
@@ -189,17 +189,17 @@ class FifteenTests: XCTestCase {
     
     /// Tests that the title of a`Fifteen` equals "Fifteen".
     func test_title_ofFifteen_equalsFifteen() throws {
-        
+
         // Given
-        let ten = try Ten()
-        let five = try Five()
+        let ten = try Ten(of: .hearts)
+        let five = try Five(of: .hearts)
         let cards = [ten, five]
         let fifteen = try Fifteen(of: cards)
         let expected = "Fifteen"
-        
+
         // When
         let actual = fifteen.title
-        
+
         // Then
         XCTAssertEqual(expected, actual)
     }
@@ -212,8 +212,8 @@ class FifteenTests: XCTestCase {
     func test_points_ofFifteen_equalsTwo() throws {
         
         // Given
-        let ten = try Ten()
-        let five = try Five()
+        let ten = try Ten(of: .hearts)
+        let five = try Five(of: .hearts)
         let cards = [ten, five]
         let fifteen = try Fifteen(of: cards)
         let expected = 2

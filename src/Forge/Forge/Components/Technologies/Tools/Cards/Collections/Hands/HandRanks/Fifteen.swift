@@ -65,7 +65,7 @@ public class Fifteen: PlayingCardHand, HandRank {
         guard (cards.sum() == points) else {
             
             print("The given Cards' points must sum to 15.")
-            throw RewardsError.invalidPoints
+            throw ScoreError.invalidPoints
         }
         
         try super.init(of: min, to: max, cards)
