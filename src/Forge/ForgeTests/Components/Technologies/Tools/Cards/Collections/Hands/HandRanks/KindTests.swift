@@ -34,7 +34,7 @@ class KindTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
-        let ace = try Ace()
+        let ace = try Ace(of: .hearts)
         let cards = [ace]
         let expected = ElementsError.insufficientElements
         
@@ -55,8 +55,8 @@ class KindTests: XCTestCase {
     func test_init_withMultipleRanks_throwsError() throws {
 
         // Given
-        let ace = try Ace()
-        let two = try Two()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
         let cards = [ace, two]
         let expected = ElementsError.insufficientElements
         
@@ -134,23 +134,23 @@ class KindTests: XCTestCase {
     
     /// Tests that the title of a `Kind` with two `Card`s equals "Pair".
     func test_title_withTwoCards_equalsPair() throws {
-        
+
         // Given
         let ace1 = try Ace(of: .clubs)
         let ace2 = try Ace(of: .spades)
         let cards = [ace1, ace2]
         let kind = try Kind(of: cards)
         let expected = "Pair"
-        
+
         // When
         let actual = kind.title
-        
+
         XCTAssertEqual(expected, actual)
     }
     
     /// Tests that the title of a `Kind` with three`Card`s equals "3 Of A Kind".
     func test_title_withThreeCards_equalsThreeOfAKind() throws {
-        
+
         // Given
         let ace1 = try Ace(of: .clubs)
         let ace2 = try Ace(of: .spades)
@@ -158,16 +158,16 @@ class KindTests: XCTestCase {
         let cards = [ace1, ace2, ace3]
         let kind = try Kind(of: cards)
         let expected = "3 Of A Kind"
-        
+
         // When
         let actual = kind.title
-        
+
         XCTAssertEqual(expected, actual)
     }
-    
+
     /// Tests that the title of a `Kind` with four`Card`s equals "4 Of A Kind".
     func test_title_withFourCards_equalsFourOfAKind() throws {
-        
+
         // Given
         let ace1 = try Ace(of: .clubs)
         let ace2 = try Ace(of: .spades)
@@ -176,10 +176,10 @@ class KindTests: XCTestCase {
         let cards = [ace1, ace2, ace3, ace4]
         let kind = try Kind(of: cards)
         let expected = "4 Of A Kind"
-        
+
         // When
         let actual = kind.title
-        
+
         XCTAssertEqual(expected, actual)
     }
     
