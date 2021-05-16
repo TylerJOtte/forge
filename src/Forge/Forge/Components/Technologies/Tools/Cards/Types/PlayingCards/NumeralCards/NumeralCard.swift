@@ -44,7 +44,7 @@ public class NumeralCard: PlayingCard {
     ///   - `invalidRank`  if the given `Rank` is not a standard numeral `PlayingCard Rank`.
     ///   - `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
     ///   - `invalidPosition`  if the given position is not between 1-14.
-    override init(_ rank: Rank, of suit: Suit, worth points: Int,
+    init(_ rank: Rank, of suit: Suit, worth points: Int,
                   at position: Int) throws {
 
         guard (rank.isNumeral()) else {

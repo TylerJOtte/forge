@@ -46,6 +46,6 @@ extension Suit {
     /// - Returns: True if the `Suit` is a standard French-suited`PlayingCard Suit`, else false.
     func isStandard() -> Bool {
        
-        return self == .null || isRed() || isBlack()
+        return isRed() || isBlack() || self == .null
     }
 }

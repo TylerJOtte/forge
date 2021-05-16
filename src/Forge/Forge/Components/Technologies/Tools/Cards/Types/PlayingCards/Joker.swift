@@ -47,9 +47,10 @@ public class Joker: PlayingCard {
         let suit = Suit.null
         let points = 0
         let position = 0
+        let title = "\(color) \(rank)".capitalized
 
         self.color = color
 
-        try super.init(rank, of: suit, worth: points, at: position)
+        try super.init(rank, of: suit, worth: points, at: position, with: title)
     }
 }

@@ -61,7 +61,7 @@ public class PlayingCard: Card {
     ///   - `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
     ///   - `invalidPosition`  if the given position is not between 1-14.
     init(_ rank: Rank, of suit: Suit, worth points: Int,
-         at position: Int) throws {
+         at position: Int, with title: String = "") throws {
         
         guard (rank.isStandard()) else {
 
@@ -75,7 +75,7 @@ public class PlayingCard: Card {
             throw DepictionError.invalidSuit
         }
         
-        guard (position >= 1 && position <= 14) else {
+        guard (position >= 0 && position <= 14) else {
 
             print("The given order must be between 1-14.")
             throw RangeError.invalidPosition
@@ -85,7 +85,7 @@ public class PlayingCard: Card {
         self.suit = suit
         self.points = points
         self.position = position
-        let title = "\(rank) Of \(suit)".capitalized
+        let title = title == "" ? "\(rank) Of \(suit)".capitalized : title
         
         super.init(named: title)
     }

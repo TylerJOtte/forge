@@ -33,7 +33,7 @@ public class Six: NumeralCard {
     ///   - The `Card`'s title is set to "Six of `{Suit}`".
     /// - Parameters suit: The symbol grouping.
     /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
-    public init(of suit: Suit = .hearts) throws {
+    public init(of suit: Suit) throws {
         
         let rank = Rank.six
         let points = 6

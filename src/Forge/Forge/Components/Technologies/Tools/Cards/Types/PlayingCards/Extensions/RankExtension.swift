@@ -53,7 +53,7 @@ extension Rank {
     /// - Returns: True if the `Rank` is a standard French-suited`PlayingCard Rank`, else false.
     func isStandard() -> Bool {
 
-        return isNumeral() || isRoyal()
+        return isNumeral() || isRoyal() || self == .joker
     }
     
     func next(ace high: Bool = false) -> Rank {
