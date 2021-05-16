@@ -34,7 +34,7 @@ class NobsTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
         
         // Given
-        let jack = try Jack()
+        let jack = try Jack(of: .hearts)
         let cards = [jack]
         let expected = ElementsError.insufficientElements
 
@@ -55,9 +55,9 @@ class NobsTests: XCTestCase {
     func test_init_withExcessiveCards_throwsError() throws {
         
         // Given
-        let ace = try Ace()
-        let jack = try Jack()
-        let king = try King()
+        let ace = try Ace(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let king = try King(of: .hearts)
         let cards = [ace, jack, king]
         let expected = ElementsError.excessiveElements
 
@@ -96,8 +96,8 @@ class NobsTests: XCTestCase {
     func test_init_withoutJack_throwsError() throws {
         
         // Given
-        let ace = try Ace()
-        let two = try Two()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
         let cards = [ace, two]
         let expected = ElementsError.insufficientElements
 
@@ -139,8 +139,8 @@ class NobsTests: XCTestCase {
     func test_minCards_ofNobs_equalsTwo() throws {
         
         // Given
-        let ace = try Ace()
-        let jack = try Jack()
+        let ace = try Ace(of: .hearts)
+        let jack = try Jack(of: .hearts)
         let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = 2
@@ -156,8 +156,8 @@ class NobsTests: XCTestCase {
     func test_maxCards_ofNobs_equalsTwo() throws {
         
         // Given
-        let ace = try Ace()
-        let jack = try Jack()
+        let ace = try Ace(of: .hearts)
+        let jack = try Jack(of: .hearts)
         let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = 2
@@ -177,8 +177,8 @@ class NobsTests: XCTestCase {
     func test_count_ofNobs_equalsTwo() throws {
         
         // Given
-        let ace = try Ace()
-        let jack = try Jack()
+        let ace = try Ace(of: .hearts)
+        let jack = try Jack(of: .hearts)
         let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = 2
@@ -198,8 +198,8 @@ class NobsTests: XCTestCase {
     func test_title_ofNobs_equalsNobs() throws {
         
         // Given
-        let ace = try Ace()
-        let jack = try Jack()
+        let ace = try Ace(of: .hearts)
+        let jack = try Jack(of: .hearts)
         let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = "Nobs"
@@ -219,8 +219,8 @@ class NobsTests: XCTestCase {
     func test_points_ofNobs_equalsOne() throws {
         
         // Given
-        let ace = try Ace()
-        let jack = try Jack()
+        let ace = try Ace(of: .hearts)
+        let jack = try Jack(of: .hearts)
         let cards = [ace, jack]
         let nobs = try Nobs(of: cards)
         let expected = 1
