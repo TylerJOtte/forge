@@ -46,13 +46,11 @@ public class Deck: Tool, Cards {
     ///   - The `Deck` can hold zero - Int.max `Card`s.
     ///   - The `Deck` is empty.
     ///   - title = "Deck".
-    public override init() {
+    public init() {
         
         self.minCards = 0
         self.maxCards = Int.max
         self.cards = [:]
-        
-        super.init()
     }
     
     /// Creates a`Deck`with the given `Card`s and specified `min` & `max`.
@@ -99,7 +97,7 @@ public class Deck: Tool, Cards {
         self.minCards = min
         self.maxCards = max
         self.cards = [:]
-        super.init()
+        
         try! add(cards)
     }
     
@@ -132,7 +130,7 @@ public class Deck: Tool, Cards {
         self.minCards = 0
         self.maxCards = max
         self.cards = [:]
-        super.init()
+        
         try! add(cards)
     }
     

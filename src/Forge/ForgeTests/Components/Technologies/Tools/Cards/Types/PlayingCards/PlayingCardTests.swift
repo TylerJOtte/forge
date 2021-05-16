@@ -76,15 +76,15 @@ class PlayingCardTests: XCTestCase {
     //                            Invalid Positions                            //
     //-------------------------------------------------------------------------//
 
-    /// Tests that creating a `PlayingCard` with a position less than 1 throws an `invalidPosition`
+    /// Tests that creating a `PlayingCard` with a position less than 0 throws an `invalidPosition`
     /// `Error`.
-    func test_init_withPositionLessThan1_throwsInvalidPosition() throws {
+    func test_init_withPositionLessThan0_throwsInvalidPosition() throws {
 
         // Given
         let rank = Rank.ace
         let suit = Suit.hearts
         let points = 1
-        let position = 0
+        let position = -1
         let expected = RangeError.invalidPosition
 
         // When

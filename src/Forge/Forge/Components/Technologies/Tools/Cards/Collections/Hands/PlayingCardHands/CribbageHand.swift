@@ -49,18 +49,18 @@ public class CribbageHand: PlayingCardHand {
     public init(with cards: [PlayingCard], and cutCard: PlayingCard) throws {
         
         let max = 4
-        let joker = try Joker()
+        let joker = try Joker(color: .red)
         
         guard (!cards.contains(joker)) else {
-            
+
             print("The given Cards must not contain any Jokers.")
-            throw FeatureError.jokersNotAllowed
+            throw DescriptionError.invalidRank
         }
-        
+
         guard (cutCard != joker) else {
-            
+
             print("The given cut Card must not be a Joker.")
-            throw FeatureError.jokersNotAllowed
+            throw DescriptionError.invalidRank
         }
         
         self.cutCard = cutCard

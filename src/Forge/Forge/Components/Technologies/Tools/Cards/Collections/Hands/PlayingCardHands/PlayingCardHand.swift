@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A `Hand` of `PlayingCard`s.
-public class PlayingCardHand: Hand<PlayingCard> {
+public class PlayingCardHand: Hand {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -39,7 +39,7 @@ public class PlayingCardHand: Hand<PlayingCard> {
     /// - Throws:
     ///   - `RangeError.invalidMax` if the given max is &lt; one.
     ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
-    override init(of cards: [PlayingCard], with max: Int = Int.max) throws {
+    init(of cards: [PlayingCard], with max: Int = Int.max) throws {
         
         try super.init(of: cards, with: max)
     }
@@ -63,7 +63,7 @@ public class PlayingCardHand: Hand<PlayingCard> {
     ///   - `RangeError.invalidMin` if the given min is &lt; zero.
     ///   - `RangeError.invalidMax` if the given max is &lt; one or &lt; the specified min.
     ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
-    override init(of min: Int, to max: Int, _ cards: [PlayingCard]) throws {
+    init(of min: Int, to max: Int, _ cards: [PlayingCard]) throws {
         
         try super.init(of: min, to: max, cards)
     }
@@ -89,7 +89,7 @@ public class PlayingCardHand: Hand<PlayingCard> {
     ///   - `RangeError.invalidMin` if the given min is &lt; zero.
     ///   - `RangeError.invalidMax` if the given max is &lt; one or &lt; the specified min.
     ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
-    override init(of min: Int, to max: Int, _ cards: [PlayingCard],
+    init(of min: Int, to max: Int, _ cards: [PlayingCard],
                   named title: String) throws {
         
         try super.init(of: min, to: max, cards, named: title)
@@ -103,16 +103,16 @@ public class PlayingCardHand: Hand<PlayingCard> {
     //                                 Getters                                 //
     //-------------------------------------------------------------------------//
 
-    /// Retrieves all the `Kind`s in the `Hand`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: A collection of `Kind`s.
-    public func getKinds() throws -> [Kind] {
-        
-        return try cards.getPairs().map{try Kind(of: $1)}
-    }
-    
+//    /// Retrieves all the `Kind`s in the `Hand`.
+//    ///
+//    /// - Precondition: None.
+//    /// - Postcondition: None.
+//    /// - Returns: A collection of `Kind`s.
+//    public func getKinds() throws -> [Kind] {
+//
+//        return try cards.getPairs().map{try Kind(of: $1)}
+//    }
+//
     /// Retrieves all the `Run`s in the `Hand`.
     ///
     /// - Precondition: None.

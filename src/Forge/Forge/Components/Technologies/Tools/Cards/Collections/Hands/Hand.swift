@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Hand` of `Card`s.
-public class Hand<T: Card>: Tool, Cards {
+public class Hand: Cards {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -45,13 +45,11 @@ public class Hand<T: Card>: Tool, Cards {
     /// - Postcondition:
     ///   - The `Hand` can hold zero - Int.max `Card`s.
     ///   - The `Hand` is empty.
-    public override init() {
+    public init() {
         
         self.minCards = 0
         self.maxCards = Int.max
         self.cards = []
-        
-        super.init()
     }
     
     /// Creates a`Hand`with the given `Card`s and specified `max`.
@@ -89,7 +87,6 @@ public class Hand<T: Card>: Tool, Cards {
         self.maxCards = max
         self.cards = []
         
-        super.init()
         try! add(cards)
     }
 
@@ -141,7 +138,7 @@ public class Hand<T: Card>: Tool, Cards {
         self.minCards = min
         self.maxCards = max
         self.cards = []
-        super.init()
+
         try! add(cards)
     }
     
@@ -196,7 +193,7 @@ public class Hand<T: Card>: Tool, Cards {
         self.minCards = min
         self.maxCards = max
         self.cards = []
-        super.init(named: title)
+
         try! add(cards)
     }
     
@@ -234,7 +231,7 @@ public class Hand<T: Card>: Tool, Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find.
     /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: T) -> Bool {
+    public func contains(_ card: Card) -> Bool {
         
         return cards.contains(card)
     }
@@ -249,7 +246,7 @@ public class Hand<T: Card>: Tool, Cards {
     /// - Postcondition: The `Hand` contains the given `Card`.
     /// - Parameter card: The `Card` to add to the `Hand`.
     /// - Throws: `RangeError.isFull` if the `Hand` is full.
-    public func add(_ card: T) throws {
+    public func add(_ card: Card) throws {
         
         guard (!isFull()) else {
             
@@ -273,7 +270,7 @@ public class Hand<T: Card>: Tool, Cards {
     /// - Throws:
     ///   - `ElementsError.isEmpty` if the collection is empty.
     ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
-    public func remove(_ card: T) throws -> T {
+    public func remove(_ card: Card) throws -> Card {
         
         guard (!isEmpty()) else {
             
