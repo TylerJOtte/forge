@@ -14,6 +14,38 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
+/// An extension for common `RankedCard Array` operations.
+extension Array where Element: RankedCard  {
+
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+
+    /// Determines if all the `Card`s in the given collection contain the same`Rank`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if all the `Card`s in the given collection contain the same`Rank`, else false.
+    func areEquallyRanked() -> Bool {
+        
+        return getCardsByRank().count == 1
+    }
+    
+    //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+
+    /// Retrieves all the `Card`s in the given collection by `Rank`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: A dictionary with the `Rank`s keys and their respective `Card`s as the values.
+    func getCardsByRank() -> [Rank:[RankedCard]] {
+        
+        return Dictionary(grouping: self, by: {$0.rank})
+    }
+}
+
 /// An extension for common `PlayingCard Array` operations.
 extension Array where Element: PlayingCard  {
 

@@ -64,6 +64,9 @@
 		B5B899D12651A51300BBF3C2 /* Orderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B899D02651A51300BBF3C2 /* Orderable.swift */; };
 		B5B899D52651A5CE00BBF3C2 /* Rankable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B899D42651A5CE00BBF3C2 /* Rankable.swift */; };
 		B5B899DD2651ACB200BBF3C2 /* RankedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B899DC2651ACB200BBF3C2 /* RankedCard.swift */; };
+		B5BE904E2651B91A005E0A37 /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE904D2651B91A005E0A37 /* Pair.swift */; };
+		B5BE90522651C657005E0A37 /* ThreeOfAKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE90512651C657005E0A37 /* ThreeOfAKind.swift */; };
+		B5BE90562651C6DF005E0A37 /* FourOfAKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE90552651C6DF005E0A37 /* FourOfAKind.swift */; };
 		B5E115A3265050DD00D78307 /* Relatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E115A2265050DD00D78307 /* Relatable.swift */; };
 		B5E115A726508A6C00D78307 /* NumeralCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E115A626508A6C00D78307 /* NumeralCardTests.swift */; };
 		B5E115AD2650910B00D78307 /* FaceCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E115AC2650910B00D78307 /* FaceCardTests.swift */; };
@@ -188,6 +191,9 @@
 		B5B899D02651A51300BBF3C2 /* Orderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orderable.swift; sourceTree = "<group>"; };
 		B5B899D42651A5CE00BBF3C2 /* Rankable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rankable.swift; sourceTree = "<group>"; };
 		B5B899DC2651ACB200BBF3C2 /* RankedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedCard.swift; sourceTree = "<group>"; };
+		B5BE904D2651B91A005E0A37 /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
+		B5BE90512651C657005E0A37 /* ThreeOfAKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeOfAKind.swift; sourceTree = "<group>"; };
+		B5BE90552651C6DF005E0A37 /* FourOfAKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourOfAKind.swift; sourceTree = "<group>"; };
 		B5E115A2265050DD00D78307 /* Relatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relatable.swift; sourceTree = "<group>"; };
 		B5E115A626508A6C00D78307 /* NumeralCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralCardTests.swift; sourceTree = "<group>"; };
 		B5E115AC2650910B00D78307 /* FaceCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCardTests.swift; sourceTree = "<group>"; };
@@ -264,6 +270,9 @@
 			isa = PBXGroup;
 			children = (
 				B5817D9C261A1F7B0022B805 /* Kind.swift */,
+				B5BE904D2651B91A005E0A37 /* Pair.swift */,
+				B5BE90512651C657005E0A37 /* ThreeOfAKind.swift */,
+				B5BE90552651C6DF005E0A37 /* FourOfAKind.swift */,
 			);
 			path = Kinds;
 			sourceTree = "<group>";
@@ -924,6 +933,7 @@
 				B556688326252BEC0045AC2B /* Rule.swift in Sources */,
 				B5F29B4B263D8F0E00082A1A /* Containable.swift in Sources */,
 				B5817D4F2618DE4D0022B805 /* RankExtension.swift in Sources */,
+				B5BE904E2651B91A005E0A37 /* Pair.swift in Sources */,
 				B5F29B55263D991600082A1A /* Score.swift in Sources */,
 				B5817DA2261A27600022B805 /* ArrayExtension.swift in Sources */,
 				B597384325FEA93000367598 /* Deck.swift in Sources */,
@@ -942,6 +952,7 @@
 				B5F2D456262E4D330089403F /* Three.swift in Sources */,
 				B5F2D452262E4C660089403F /* Two.swift in Sources */,
 				B556684D2623EB150045AC2B /* Component.swift in Sources */,
+				B5BE90562651C6DF005E0A37 /* FourOfAKind.swift in Sources */,
 				B5566869262527FE0045AC2B /* Description.swift in Sources */,
 				B5F2D44A262E496E0089403F /* NumeralCard.swift in Sources */,
 				B55668352623D29E0045AC2B /* Nobs.swift in Sources */,
@@ -974,6 +985,7 @@
 				B5F2D477262E4FA00089403F /* Jack.swift in Sources */,
 				B55668B3262B57470045AC2B /* RangeError.swift in Sources */,
 				B55668702625297E0045AC2B /* Environment.swift in Sources */,
+				B5BE90522651C657005E0A37 /* ThreeOfAKind.swift in Sources */,
 				B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */,
 				B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */,
 				B5E115A3265050DD00D78307 /* Relatable.swift in Sources */,

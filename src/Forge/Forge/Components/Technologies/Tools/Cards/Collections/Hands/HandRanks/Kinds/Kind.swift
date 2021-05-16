@@ -16,83 +16,50 @@
 
 import Foundation
 
-/// A `HandRank` of equally `Rank`ed `PlayingCard`s.
-public class Kind: PlayingCardHand, HandRank {
-    
-    ///  The total # of points.
-    public var points: Int { count * (count - 1) }
-    
-    /// The primary name.
-    public var title: String
+/// A `HandRank` of equally `Rank`ed `Card`s.
+public class Kind: HandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
-
-    /// Creates a`Kind`with the given `Card`s.
+    
+    /// Creates a`Kind`with the given terms.
     ///
     /// - Precondition:
-    ///   - The given `Card`s must contain at least two`Card`s.
-    ///   - The given `Card`s must all have the same `Rank`.
+    ///   - `min` must be >= 2.
+    ///   - `max` must be >= `minCards`.
+    ///   - The given `Card`s must contain the specified min to max # of `Card`s.
+    ///   - The given `Card`s must all contain the same `Rank`.
     /// - Postcondition:
-    ///   - The `HandRank` can hold two to`Int.max Card`s.
-    ///   - The `HandRank` contains the given `Card`s.
-    ///   - The `HandRank`s title is set according to the # of `Card`s it holds.
-    ///   - The `HandRank`s points are set according to the # of `Card`s it holds.
-    ///   - title = "Pair" if `Kind` contains two `Card`s, else "n Of A Kind" where "n" equals  the count.
-    /// - Parameter cards: The `Card`s to create the `HandRank` with.
+    ///   - The `Kind` can hold the given min to max # of `Card`s.
+    ///   - The `Kind` contains the given `Card`s.
+    ///   - The `Kind`'s points are set to the sum of `Pair` points found in the given `Card`s.
+    ///   - The `Kind`'s title is set to the name of the model.
+    /// - Parameters:
+    ///   - min: The minimum # of `Card`s allowed in the `Kind`.
+    ///   - max: The maximum # of `Card`s allowed in the `Kind`.
+    ///   - cards: The `Card`s to include in the `Kind`.
     /// - Throws:
-    ///   - `ElementsError.insufficientElements` if the given `Card`s
-    ///      - Contain less than two `Card`s, or
-    ///      - Do not all have the same `Rank`.
-    public init(of cards: [PlayingCard]) throws {
+    ///   - `invalidMin` if the given min is &lt; 2.
+    ///   - `invalidMax` if the given max is &lt; the specified min.
+    ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
+    ///   - `invalidRank` if the given `Card`s do not all contain the same `Rank`.
+    init(of min: Int, to max: Int, _ cards: [RankedCard]) throws {
 
-        let min = 2
-        let max = Int.max
+        guard (min >= 2) else {
 
-        guard (cards.count >= min) else {
-
-            print("The collection must contain at least \(min) Cards.")
-            throw ElementsError.insufficientElements
+            print("Min must be >= 2.")
+            throw RangeError.invalidMin
         }
 
         guard (cards.areEquallyRanked()) else {
 
-            print("The given Cards must all have the same Rank.")
-            throw ElementsError.insufficientElements
+            print("The given Cards must all contain the same Rank.")
+            throw DescriptionError.invalidRank
         }
 
-        self.title = cards.count == 2 ? "Pair" : "\(cards.count) Of A Kind"
+        let points = cards.count * (cards.count - 1)
 
-        try super.init(of: min, to: max, cards)
-    }
-    
-//    /// Determines if all `Card`s in the collection have the same `Rank`.
-//    ///
-//    /// - Precondition: None.
-//    /// - Postcondition: None.
-//    /// - Returns: True if all `Card`s in the collection have the same `Rank`, else false.
-//    func areEquallyRanked() -> Bool {
-//
-//        return !self.contains(where: {$0 != self.first})
-//    }
-
-    public static func < (lhs: Kind, rhs: Kind) -> Bool {
-
-        return lhs.points < rhs.points
-    }
-
-    
-    /// Determines if the given `Card`s are equal.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `Card` to compare against.
-    ///   - rhs: The `Card` to compare to.
-    /// - Returns: True if the given `Card`s are equal, else false.
-    public static func == (lhs: Kind, rhs: Kind) -> Bool {
-
-        return lhs.points == rhs.points
+        try super.init(of: min, to: max, cards, worth: points)
     }
 }
