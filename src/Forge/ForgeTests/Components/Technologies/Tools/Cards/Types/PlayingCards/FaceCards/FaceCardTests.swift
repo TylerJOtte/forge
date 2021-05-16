@@ -27,7 +27,7 @@ class FaceCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
     //                              Invalid Ranks                              //
     //-------------------------------------------------------------------------//
-
+    
     /// Tests that creating a `FaceCard` with a non-standard royal`PlayingCard Rank` throws an
     /// `invalidRank Error`.
     func test_init_withNonStandardRoyalPlayingCardRank_throwsInvalidRank()
@@ -53,6 +53,26 @@ class FaceCardTests: XCTestCase {
     //                              Invalid Suits                              //
     //-------------------------------------------------------------------------//
 
+    /// Tests that creating a`FaceCard` with a`null PlayingCard Suit` throws an `invalidSuit`
+    /// `Error`.
+    func test_init_withNullSuit_throwsInvalidSuit() throws {
+
+        // Given
+        let rank = Rank.king
+        let suit = Suit.null
+        let points = 10
+        let position = 13
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try FaceCard(rank, of: suit, worth: points,
+                                          at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
     /// Tests that creating a `FaceCard` with a non-standard `PlayingCard Suit` throws an
     /// `invalidSuit Error`.
     func test_init_withNonStandardPlayingCardSuit_throwsInvalidSuit() throws {
