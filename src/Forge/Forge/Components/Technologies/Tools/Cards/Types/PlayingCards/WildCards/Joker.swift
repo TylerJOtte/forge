@@ -53,4 +53,26 @@ public class Joker: PlayingCard {
 
         try super.init(rank, of: suit, worth: points, at: position, with: title)
     }
+    
+    //=========================================================================//
+    //                                 METHODS                                 //
+    //=========================================================================//
+    
+    /// Determines if the `Card` equals the given `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters rhs: The `Card` to compare to.
+    /// - Returns: True if the `Card` equals the given `Card`, else false.
+    public override func equals(_ rhs: Card) -> Bool {
+        
+        var equals = false
+        
+        if let card = rhs as? Joker {
+            
+            equals = rank == card.rank && color == card.color
+        }
+        
+        return equals
+    }
 }
