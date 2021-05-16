@@ -34,9 +34,9 @@ class DoubleRunTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
-        let ace = try Ace()
-        let two = try Two()
-        let three = try Three()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
         let cards = [ace, two, three]
         let expected = ElementsError.insufficientElements
         
@@ -57,10 +57,10 @@ class DoubleRunTests: XCTestCase {
     func test_init_withZeroPairs_throwsError() throws {
 
         // Given
-        let ace = try Ace()
-        let two = try Two()
-        let three = try Three()
-        let four = try Four()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let four = try Four(of: .hearts)
         let cards = [ace, two, three, four]
         let expected = ElementsError.invalidDuplicateCount
         
@@ -77,9 +77,9 @@ class DoubleRunTests: XCTestCase {
     func test_init_withExcessivePairs_throwsError() throws {
 
         // Given
-        let jack1 = try Jack()
+        let jack1 = try Jack(of: .hearts)
         let jack2 = try Jack(of: .diamonds)
-        let queen1 = try Queen()
+        let queen1 = try Queen(of: .hearts)
         let queen2 = try Queen(of: .diamonds)
         let cards = [jack1, jack2, queen1, queen2]
         let expected = ElementsError.invalidDuplicateCount
@@ -101,9 +101,9 @@ class DoubleRunTests: XCTestCase {
     func test_init_withNontSequentialCards_throwsError() throws {
 
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, king1, king2, queen]
         let expected = ElementsError.areNotSequential
@@ -128,9 +128,9 @@ class DoubleRunTests: XCTestCase {
     func test_minCards_ofDoubleRun_equalsFour() throws {
         
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -147,9 +147,9 @@ class DoubleRunTests: XCTestCase {
     func test_maxCards_ofDoubleRun_equalsSystemMax() throws {
         
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -170,9 +170,9 @@ class DoubleRunTests: XCTestCase {
     func test_count_ofDoubleRun_equalsNCardsGiven() throws {
         
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -193,9 +193,9 @@ class DoubleRunTests: XCTestCase {
     func test_title_ofDoubleRun_equalsDoubleRun() throws {
         
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -216,9 +216,9 @@ class DoubleRunTests: XCTestCase {
     func test_points_withMinCards_equalsEight() throws {
         
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -235,10 +235,10 @@ class DoubleRunTests: XCTestCase {
     func test_points_withFiveCards_equalsTen() throws {
         
         // Given
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [ten, jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -259,9 +259,9 @@ class DoubleRunTests: XCTestCase {
     func test_runs_ofDoubleRun_equalsTwo() throws {
         
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -282,9 +282,9 @@ class DoubleRunTests: XCTestCase {
     func test_pairs_ofDoubleRun_equalsOne() throws {
         
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -305,9 +305,9 @@ class DoubleRunTests: XCTestCase {
     func test_sequence_withFourCards_equalsThree() throws {
         
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -324,10 +324,10 @@ class DoubleRunTests: XCTestCase {
     func test_sequence_withFiveCards_equalsFour() throws {
         
         // Given
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [ten, jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -348,9 +348,9 @@ class DoubleRunTests: XCTestCase {
     func test_runPoints_withFourCards_equalsSix() throws {
         
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -367,10 +367,10 @@ class DoubleRunTests: XCTestCase {
     func test_runPoints_withFiveCards_equalsEight() throws {
         
         // Given
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [ten, jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
@@ -391,9 +391,9 @@ class DoubleRunTests: XCTestCase {
     func test_pairPoints_ofDoubleRun_equalsTwo() throws {
 
         // Given
-        let jack = try Jack()
-        let queen = try Queen()
-        let king1 = try King()
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen, king1, king2]
         let doubleRun = try DoubleRun(of: cards)
