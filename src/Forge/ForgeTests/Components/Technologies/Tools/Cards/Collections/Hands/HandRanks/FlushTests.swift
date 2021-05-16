@@ -34,9 +34,9 @@ class FlushTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
         let cards = [ten, jack, queen]
         let expected = ElementsError.insufficientElements
         
@@ -53,9 +53,9 @@ class FlushTests: XCTestCase {
     func test_init_withMultipleSuits_throwsError() throws {
 
         // Given
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
         let king = try King(of: .diamonds)
         let cards = [ten, jack, queen, king]
         let expected = ElementsError.insufficientElements
@@ -79,10 +79,10 @@ class FlushTests: XCTestCase {
     /// Tests that the min cards  of a `Flush` equals four.
     func test_minCards_ofFlush_equalsFour() throws {
         
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king = try King()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
         let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = 4
@@ -97,10 +97,10 @@ class FlushTests: XCTestCase {
     /// Tests that the max cards  of a `Flush` equals the system max.
     func test_maxCards_ofFlush_equalsSystemMax() throws {
         
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king = try King()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
         let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = Int.max
@@ -120,10 +120,10 @@ class FlushTests: XCTestCase {
     func test_count_ofFlush_equalsNCardsGiven() throws {
         
         // Given
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king = try King()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
         let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = 4
@@ -140,39 +140,39 @@ class FlushTests: XCTestCase {
     
     /// Tests that the title with four `Card`s equals "Flush".
     func test_title_withFourCards_equalsFlush() throws {
-        
+
         // Given
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king = try King()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
         let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = "Flush"
-        
+
         // When
         let actual = flush.title
-        
+
         // Then
         XCTAssertEqual(expected, actual)
     }
-    
+
     /// Tests that the title with five`Cards` in sequential order equals "Straight Flush".
     func test_title_withFiveSequentialCards_equalsStraightlush() throws {
-        
+
         // Given
-        let nine = try Nine()
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king = try King()
+        let nine = try Nine(of: .hearts)
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
         let cards = [nine, ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = "Straight Flush"
-        
+
         // When
         let actual = flush.title
-        
+
         // Then
         XCTAssertEqual(expected, actual)
     }
@@ -180,21 +180,21 @@ class FlushTests: XCTestCase {
     /// Tests that the title with five`Cards` in sequential order from `.ten` to `.ace` equals
     /// "Royal Flush".
     func test_title_withSequentialTenToAceCards_equalsRoyalFlush() throws {
-        
+
         // Given
-        let high = true
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king = try King()
-        let ace = try Ace(of: .hearts, is: high)
+        let isHigh = true
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
+        let ace = try Ace(of: .hearts, and: isHigh)
         let cards = [ten, jack, queen, king, ace]
         let flush = try Flush(of: cards)
         let expected = "Royal Flush"
-        
+
         // When
         let actual = flush.title
-        
+
         // Then
         XCTAssertEqual(expected, actual)
     }
@@ -206,10 +206,10 @@ class FlushTests: XCTestCase {
     /// Tests that the points of a`Flush` equals N `Card`s given.
     func test_points_ofFlush_equalsNCards() throws {
         
-        let ten = try Ten()
-        let jack = try Jack()
-        let queen = try Queen()
-        let king = try King()
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
         let cards = [ten, jack, queen, king]
         let flush = try Flush(of: cards)
         let expected = 4

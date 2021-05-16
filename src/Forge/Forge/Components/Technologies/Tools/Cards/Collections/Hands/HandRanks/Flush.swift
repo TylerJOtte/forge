@@ -20,7 +20,7 @@ import Foundation
 public class Flush: PlayingCardHand, HandRank {
     
     /// The primary name.
-//    public var title: String
+    public var title: String
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -79,6 +79,8 @@ public class Flush: PlayingCardHand, HandRank {
             title = "Flush"
         }
         
-        try super.init(of: min, to: max, cards, named: title)
+        self.title = title
+        
+        try super.init(of: min, to: max, cards)
     }
 }
