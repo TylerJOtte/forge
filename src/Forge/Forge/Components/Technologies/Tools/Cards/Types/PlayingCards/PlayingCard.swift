@@ -44,6 +44,7 @@ public class PlayingCard: Card {
     /// - Precondition:
     ///   - The given `Rank` must be a standard`PlayingCard Rank`.
     ///   - The given `Suit` must be a standard `PlayingCard Suit`.
+    ///   - The given `Suit` must be `null` if the specified `Rank` is a `joker`.
     ///   - The given position must be between 1-14.
     /// - Postcondition:
     ///   - The `Card`'s `Rank` is set to the given `Rank`.
@@ -58,7 +59,10 @@ public class PlayingCard: Card {
     ///   - position: The given `Rank`'s order in the hierarchy.
     /// - Throws:
     ///   - `invalidRank`  if the given `Rank` is not a standard `PlayingCard Rank`.
-    ///   - `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
+    ///   - `invalidSuit` if:
+    ///     - The given `Suit` is not a standard `PlayingCard Suit`, or
+    ///     - The given `Suit` is `null` and the specified `Rank` is not a `joker`, or
+    ///     - The given `Suit` is not `null` and the specified `Rank` is a `joker`.
     ///   - `invalidPosition`  if the given position is not between 1-14.
     init(_ rank: Rank, of suit: Suit, worth points: Int,
          at position: Int, with title: String = "") throws {
@@ -72,6 +76,13 @@ public class PlayingCard: Card {
         guard (suit.isStandard()) else {
 
             print("The given Suit is not a standard PlayingCard Suit.")
+            throw DepictionError.invalidSuit
+        }
+        
+        guard ((suit == .null && rank == .joker) ||
+               (suit != .null && rank != .joker)) else {
+
+            print("The given Rank & Suit is not a valid combination.")
             throw DepictionError.invalidSuit
         }
         

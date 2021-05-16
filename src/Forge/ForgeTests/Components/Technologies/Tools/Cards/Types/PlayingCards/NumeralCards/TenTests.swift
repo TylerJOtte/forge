@@ -28,6 +28,21 @@ class TenTests: XCTestCase {
     //                              Invalid Suits                              //
     //-------------------------------------------------------------------------//
 
+    /// Tests that creating a`Ten` with a`null PlayingCard Suit` throws an `invalidSuit`
+    /// `Error`.
+    func test_init_withNullSuit_throwsInvalidSuit() throws {
+
+        // Given
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try Ten(of: .null)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
     /// Tests that creating a`Ten` with a non-standard `PlayingCard Suit` throws an
     /// `invalidSuit Error`.
     func test_init_withNonStandardPlayingCardSuit_throwsInvalidSuit() throws {

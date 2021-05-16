@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  SixTests.swift                                                             //
+//  QueenTests.swift                                                           //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/26/21.                                       //
@@ -17,8 +17,8 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for a `Six PlayingCard`.
-class SixTests: XCTestCase {
+/// Unit tests for a `Joker PlayingCard`.
+class JokerTests: XCTestCase {
     
     //=========================================================================//
     //                             Initialization                              //
@@ -28,22 +28,7 @@ class SixTests: XCTestCase {
     //                              Invalid Suits                              //
     //-------------------------------------------------------------------------//
 
-    /// Tests that creating a`Six` with a`null PlayingCard Suit` throws an `invalidSuit`
-    /// `Error`.
-    func test_init_withNullSuit_throwsInvalidSuit() throws {
-
-        // Given
-        let expected = DepictionError.invalidSuit
-
-        // When
-        XCTAssertThrowsError(try Six(of: .null)) { error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DepictionError)
-        }
-    }
-    
-    /// Tests that creating a`Six` with a non-standard `PlayingCard Suit` throws an
+    /// Tests that creating a`Queen` with a non-standard `PlayingCard Suit` throws an
     /// `invalidSuit Error`.
     func test_init_withNonStandardPlayingCardSuit_throwsInvalidSuit() throws {
 
@@ -51,7 +36,7 @@ class SixTests: XCTestCase {
         let expected = DepictionError.invalidSuit
 
         // When
-        XCTAssertThrowsError(try Six(of: .stars)) { error in
+        XCTAssertThrowsError(try Queen(of: .stars)) { error in
 
             // Then
             XCTAssertEqual(expected, error as? DepictionError)
@@ -66,15 +51,15 @@ class SixTests: XCTestCase {
     //                                 Rank                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that a `Six`'s `Rank` equals `six`.
-    func test_rank_ofSix_equalsSix() throws {
+    /// Tests that a `Queen`'s `Rank` equals `queen`.
+    func test_rank_ofQueen_equalsQueen() throws {
 
         // Given
-        let six = try Six(of: .hearts)
-        let expected = Rank.six
+        let queen = try Queen(of: .hearts)
+        let expected = Rank.queen
 
         // When
-        let actual = six.rank
+        let actual = queen.rank
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -84,57 +69,57 @@ class SixTests: XCTestCase {
     //                                 Suit                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that the `Suit` of a `Six` created with a `hearts Suit` equals `hearts`.
+    /// Tests that the `Suit` of a `Queen` created with a `hearts Suit` equals `hearts`.
     func test_suit_withHearts_equalsHearts() throws {
 
         // Given
-        let six = try Six(of: .hearts)
+        let queen = try Queen(of: .hearts)
         let expected = Suit.hearts
 
         // When
-        let actual = six.suit
+        let actual = queen.suit
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the `Suit` of a `Six` created with a `diamonds Suit` equals `diamonds`.
+    /// Tests that the `Suit` of a `Queen` created with a `diamonds Suit` equals `diamonds`.
     func test_suit_withDiamonds_equalsDiamonds() throws {
 
         // Given
-        let six = try Six(of: .diamonds)
+        let queen = try Queen(of: .diamonds)
         let expected = Suit.diamonds
 
         // When
-        let actual = six.suit
+        let actual = queen.suit
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the `Suit` of a `Six` created with a `clubs Suit` equals `clubs`.
+    /// Tests that the `Suit` of a `Queen` created with a `clubs Suit` equals `clubs`.
     func test_suit_withClubs_equalsClubs() throws {
 
         // Given
-        let six = try Six(of: .clubs)
+        let queen = try Queen(of: .clubs)
         let expected = Suit.clubs
 
         // When
-        let actual = six.suit
+        let actual = queen.suit
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the `Suit` of a `Six` created with a `spades Suit` equals `spades`.
+    /// Tests that the `Suit` of a `Queen` created with a `spades Suit` equals `spades`.
     func test_suit_withSpades_equalsSpades() throws {
 
         // Given
-        let six = try Six(of: .spades)
+        let queen = try Queen(of: .spades)
         let expected = Suit.spades
 
         // When
-        let actual = six.suit
+        let actual = queen.suit
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -144,15 +129,15 @@ class SixTests: XCTestCase {
     //                                Points                                   //
     //-------------------------------------------------------------------------//
 
-    /// Tests that a `Six`'s points equals 6.
-    func test_points_ofSix_equals6() throws {
+    /// Tests that a `Queen`'s points equals 10.
+    func test_points_ofQueen_equals10() throws {
 
         // Given
-        let six = try Six(of: .hearts)
-        let expected = 6
+        let queen = try Queen(of: .hearts)
+        let expected = 10
 
         // When
-        let actual = six.points
+        let actual = queen.points
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -162,15 +147,15 @@ class SixTests: XCTestCase {
     //                               Position                                  //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Six`'s position equals 6.
-    func test_position_ofSix_equals6() throws {
+    /// Tests that a `Queen`'s position equals 12.
+    func test_position_ofQueen_equals12() throws {
 
         // Given
-        let six = try Six(of: .hearts)
-        let expected = 6
+        let queen = try Queen(of: .hearts)
+        let expected = 12
 
         // When
-        let actual = six.position
+        let actual = queen.position
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -180,57 +165,57 @@ class SixTests: XCTestCase {
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the title of a `Six` created with a `hearts Suit` equals "Six Of Hearts".
-    func test_title_withHearts_equalsSixOfHearts() throws {
+    /// Tests that the title of a `Queen` created with a `hearts Suit` equals "Queen Of Hearts".
+    func test_title_withHearts_equalsQueenOfHearts() throws {
 
         // Given
-        let six = try Six(of: .hearts)
-        let expected = "Six Of Hearts"
+        let queen = try Queen(of: .hearts)
+        let expected = "Queen Of Hearts"
 
         // When
-        let actual = six.title
+        let actual = queen.title
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of a `Six` created with a `diamonds Suit` equals "Six Of Diamonds".
-    func test_title_withDiamonds_equalsSixOfDiamonds() throws {
+    /// Tests that the title of a `Queen` created with a `diamonds Suit` equals "Queen Of Diamonds".
+    func test_title_withDiamonds_equalsQueenOfDiamonds() throws {
 
         // Given
-        let six = try Six(of: .diamonds)
-        let expected = "Six Of Diamonds"
+        let queen = try Queen(of: .diamonds)
+        let expected = "Queen Of Diamonds"
 
         // When
-        let actual = six.title
+        let actual = queen.title
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of a `Six` created with a `clubs Suit` equals "Six Of Club".
-    func test_title_withClubs_equalsSixOfClubs() throws {
+    /// Tests that the title of a `Queen` created with a `clubs Suit` equals "Queen Of Club".
+    func test_title_withClubs_equalsQueenOfClubs() throws {
 
         // Given
-        let six = try Six(of: .clubs)
-        let expected = "Six Of Clubs"
+        let queen = try Queen(of: .clubs)
+        let expected = "Queen Of Clubs"
 
         // When
-        let actual = six.title
+        let actual = queen.title
 
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of a `Six` created with a `spades Suit` equals "Six Of Spades".
-    func test_title_withSpades_equalsSixOfSpades() throws {
+    /// Tests that the title of a `Queen` created with a `spades Suit` equals "Queen Of Spades".
+    func test_title_withSpades_equalsQueenOfSpades() throws {
 
         // Given
-        let six = try Six(of: .spades)
-        let expected = "Six Of Spades"
+        let queen = try Queen(of: .spades)
+        let expected = "Queen Of Spades"
 
         // When
-        let actual = six.title
+        let actual = queen.title
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -244,96 +229,96 @@ class SixTests: XCTestCase {
     //                                  <                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Six` is less than a `Seven`.
-    func test_six_isLessThanSeven_true() throws {
+    /// Tests that a `Queen` is less than a `King`.
+    func test_queen_isLessThanKing_true() throws {
      
         // Given
-        let six = try Six(of: .hearts)
-        let seven = try Seven(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
         
         // When/Then
-        XCTAssert(six.isLessThan(seven))
+        XCTAssert(queen.isLessThan(king))
     }
     
-    /// Tests that a `Six` is less than a `Seven`, using the less than operator.
-    func test_six_isLessThanSevenWithOperator_true() throws {
+    /// Tests that a `Queen` is less than a `King`, using the less than operator.
+    func test_queen_isLessThanKingWithOperator_true() throws {
      
         // Given
-        let six = try Six(of: .hearts)
-        let seven = try Seven(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
         
         // When/Then
-        XCTAssertLessThan(six, seven       )
+        XCTAssertLessThan(queen, king       )
     }
     
-    /// Tests that a `Six` is less than a high `Ace`.
-    func test_six_isLessThanHighAce_true() throws {
+    /// Tests that a `Queen` is less than a high `Ace`.
+    func test_queen_isLessThanHighAce_true() throws {
      
         // Given
         let isHigh = true
-        let six = try Six(of: .hearts)
+        let queen = try Queen(of: .hearts)
         let highAce = try Ace(of: .hearts, and: isHigh)
         
         // When/Then
-        XCTAssert(six.isLessThan(highAce))
+        XCTAssert(queen.isLessThan(highAce))
     }
     
-    /// Tests that a `Six` is less than a high `Ace`, using the less than operator.
-    func test_six_isLessThanHighAceWithOperator_true() throws {
+    /// Tests that a `Queen` is less than a high `Ace`, using the less than operator.
+    func test_queen_isLessThanHighAceWithOperator_true() throws {
      
         // Given
         let isHigh = true
-        let six = try Six(of: .hearts)
+        let queen = try Queen(of: .hearts)
         let ace = try Ace(of: .hearts, and: isHigh)
         
         // When/Then
-        XCTAssertLessThan(six, ace)
+        XCTAssertLessThan(queen, ace)
     }
     
     //-------------------------------------------------------------------------//
     //                                  =                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Six` equals another `Six` with the same `Suit`.
-    func test_six_equalsSixWithSameSuit_true() throws {
+    /// Tests that a `Queen` equals another `Queen` with the same `Suit`.
+    func test_queen_equalsQueenWithSameSuit_true() throws {
      
         // Given
-        let card1 = try Six(of: .hearts)
-        let card2 = try Six(of: .hearts)
+        let card1 = try Queen(of: .hearts)
+        let card2 = try Queen(of: .hearts)
         
         // When/Then
         XCTAssert(card1.equals(card2))
     }
     
-    /// Tests that a `Six` equals another `Six` with the same `Suit`, using the equality operator.
-    func test_six_equalsSixWithSameSuitUsingOperator_true() throws {
+    /// Tests that a `Queen` equals another `Queen` with the same `Suit`, using the equality operator.
+    func test_queen_equalsQueenWithSameSuitUsingOperator_true() throws {
      
         // Given
-        let card1 = try Six(of: .hearts)
-        let card2 = try Six(of: .hearts)
+        let card1 = try Queen(of: .hearts)
+        let card2 = try Queen(of: .hearts)
         
         // When/Then
         XCTAssertEqual(card1, card2)
     }
     
-    /// Tests that a `Six` does not equal another `Six` with a different `Suit`.
-    func test_six_equalsSixWithDifferentSuit_false() throws {
+    /// Tests that a `Queen` does not equal another `Queen` with a different `Suit`.
+    func test_queen_equalsQueenWithDifferentSuit_false() throws {
      
         // Given
-        let card1 = try Six(of: .hearts)
-        let card2 = try Six(of: .spades)
+        let card1 = try Queen(of: .hearts)
+        let card2 = try Queen(of: .spades)
         
         // When/Then
         XCTAssertFalse(card1.equals(card2))
     }
     
-    /// Tests that a `Six` does not equal another `Six` with a different `Suit`, using the equality
+    /// Tests that a `Queen` does not equal another `Queen` with a different `Suit`, using the equality
     /// operator.
-    func test_six_equalsSixWithDifferentSuitUsingOperator_false() throws {
+    func test_queen_equalsQueenWithDifferentSuitUsingOperator_false() throws {
      
         // Given
-        let card1 = try Six(of: .hearts)
-        let card2 = try Six(of: .spades)
+        let card1 = try Queen(of: .hearts)
+        let card2 = try Queen(of: .spades)
         
         // When/Then
         XCTAssertNotEqual(card1, card2)
@@ -343,25 +328,25 @@ class SixTests: XCTestCase {
     //                                  >                                      //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Six` is greater than a low `Ace`, using the greater than operator.
-    func test_six_isGreaterThanLowAceWithOperator_true() throws {
+    /// Tests that a `Queen` is greater than a low `Ace`, using the greater than operator.
+    func test_queen_isGreaterThanLowAceWithOperator_true() throws {
      
         // Given
-        let six = try Six(of: .hearts)
+        let queen = try Queen(of: .hearts)
         let ace = try Ace(of: .hearts)
         
         // When/Then
-        XCTAssertGreaterThan(six, ace)
+        XCTAssertGreaterThan(queen, ace)
     }
     
-    /// Tests that a `Six` is greater than a `Five`, using the greater than operator.
-    func test_six_isGreaterThanFiveWithOperator_true() throws {
+    /// Tests that a `Queen` is greater than a `Jack`, using the greater than operator.
+    func test_queen_isGreaterThanEightWithOperator_true() throws {
      
         // Given
-        let six = try Six(of: .hearts)
-        let five = try Five(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let jack = try Jack(of: .hearts)
         
         // When/Then
-        XCTAssertGreaterThan(six, five)
+        XCTAssertGreaterThan(queen, jack)
     }
 }

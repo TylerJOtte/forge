@@ -53,6 +53,26 @@ class NumeralCardTests: XCTestCase {
     //                              Invalid Suits                              //
     //-------------------------------------------------------------------------//
 
+    /// Tests that creating a `NumeralCard` with a`null PlayingCard Suit` throws an
+    /// `invalidSuit Error`.
+    func test_init_withNullSuit_throwsInvalidSuit() throws {
+
+        // Given
+        let rank = Rank.ace
+        let suit = Suit.null
+        let points = 1
+        let position = 1
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try NumeralCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
     /// Tests that creating a `NumeralCard` with a non-standard `PlayingCard Suit` throws an
     /// `invalidSuit Error`.
     func test_init_withNonStandardPlayingCardSuit_throwsInvalidSuit() throws {

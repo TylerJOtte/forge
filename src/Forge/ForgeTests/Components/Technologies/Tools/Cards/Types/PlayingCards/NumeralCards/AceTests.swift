@@ -28,6 +28,37 @@ class AceTests: XCTestCase {
     //                              Invalid Suits                              //
     //-------------------------------------------------------------------------//
 
+    /// Tests that creating a low`Ace` with a`null PlayingCard Suit` throws an `invalidSuit`
+    /// `Error`.
+    func test_initLowAce_withNullSuit_throwsInvalidSuit() throws {
+
+        // Given
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try Ace(of: .null)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
+    /// Tests that creating a high`Ace` with a`null PlayingCard Suit` throws an `invalidSuit`
+    /// `Error`.
+    func test_initHighAce_withNullSuit_throwsInvalidSuit() throws {
+
+        // Given
+        let isHigh = true
+        let expected = DepictionError.invalidSuit
+
+        // When
+        XCTAssertThrowsError(try Ace(of: .null, and: isHigh)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
     /// Tests that creating a low`Ace` with a non-standard `PlayingCard Suit` throws an
     /// `invalidSuit Error`.
     func test_initLowAce_withNonStandardPlayingCardSuit_throwsInvalidSuit()
