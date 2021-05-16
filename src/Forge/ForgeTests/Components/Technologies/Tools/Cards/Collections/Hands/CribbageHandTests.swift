@@ -33,12 +33,12 @@ class CribbageHandTests: XCTestCase {
     func test_init_withExcessiveCards_throwsError() throws {
 
         // Given
-        let jackOfHearts = try Jack()
+        let jackOfHearts = try Jack(of: .hearts)
         let fiveOfDiamonds = try Five(of: .diamonds)
         let fiveOfClubs = try Five(of: .clubs)
         let fiveOfSpades = try Five(of: .spades)
-        let aceOfHearts = try Ace()
-        let cutCard = try Five()
+        let aceOfHearts = try Ace(of: .hearts)
+        let cutCard = try Five(of: .hearts)
         let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades,
                      aceOfHearts]
         let expected = ElementsError.excessiveElements
@@ -64,17 +64,17 @@ class CribbageHandTests: XCTestCase {
         let fiveOfDiamonds = try Five(of: .diamonds)
         let fiveOfClubs = try Five(of: .clubs)
         let fiveOfSpades = try Five(of: .spades)
-        let joker = try Joker()
-        let cutCard = try Five()
+        let joker = try Joker(color: .red)
+        let cutCard = try Five(of: .hearts)
         let cards = [fiveOfDiamonds, fiveOfClubs, fiveOfSpades, joker]
-        let expected = FeatureError.jokersNotAllowed
+        let expected = DescriptionError.invalidRank
         
         // When
         XCTAssertThrowsError(try CribbageHand(with: cards, and: cutCard)) {
             error in
             
             // Then
-            XCTAssertEqual(expected, error as? FeatureError)
+            XCTAssertEqual(expected, error as? DescriptionError)
         }
     }
     
@@ -83,20 +83,20 @@ class CribbageHandTests: XCTestCase {
     func test_init_withJokerCutCard_throwsError() throws {
 
         // Given
-        let jackOfHearts = try Jack()
+        let jackOfHearts = try Jack(of: .hearts)
         let fiveOfDiamonds = try Five(of: .diamonds)
         let fiveOfClubs = try Five(of: .clubs)
         let fiveOfSpades = try Five(of: .spades)
-        let cutCard = try Joker()
+        let cutCard = try Joker(color: .red)
         let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
-        let expected = FeatureError.jokersNotAllowed
+        let expected = DescriptionError.invalidRank
         
         // When
         XCTAssertThrowsError(try CribbageHand(with: cards, and: cutCard)) {
             error in
             
             // Then
-            XCTAssertEqual(expected, error as? FeatureError)
+            XCTAssertEqual(expected, error as? DescriptionError)
         }
     }
     
@@ -112,11 +112,11 @@ class CribbageHandTests: XCTestCase {
     func test_minCards_ofCribbageHand_equalsZero() throws {
         
         // Given
-        let jackOfHearts = try Jack()
+        let jackOfHearts = try Jack(of: .hearts)
         let fiveOfDiamonds = try Five(of: .diamonds)
         let fiveOfClubs = try Five(of: .clubs)
         let fiveOfSpades = try Five(of: .spades)
-        let cutCard = try Five()
+        let cutCard = try Five(of: .hearts)
         let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
         let expected = 0
         let cribbageHand = try CribbageHand(with: cards, and: cutCard)
@@ -132,11 +132,11 @@ class CribbageHandTests: XCTestCase {
     func test_maxCards_ofCribbageHand_equalsFour() throws {
         
         // Given
-        let jackOfHearts = try Jack()
+        let jackOfHearts = try Jack(of: .hearts)
         let fiveOfDiamonds = try Five(of: .diamonds)
         let fiveOfClubs = try Five(of: .clubs)
         let fiveOfSpades = try Five(of: .spades)
-        let cutCard = try Five()
+        let cutCard = try Five(of: .hearts)
         let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
         let expected = 4
         let cribbageHand = try CribbageHand(with: cards, and: cutCard)
@@ -156,11 +156,11 @@ class CribbageHandTests: XCTestCase {
     func test_count_ofCribbageHand_equalsNCards() throws {
         
         // Given
-        let jackOfHearts = try Jack()
+        let jackOfHearts = try Jack(of: .hearts)
         let fiveOfDiamonds = try Five(of: .diamonds)
         let fiveOfClubs = try Five(of: .clubs)
         let fiveOfSpades = try Five(of: .spades)
-        let cutCard = try Five()
+        let cutCard = try Five(of: .hearts)
         let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
         let expected = 4
         let cribbageHand = try CribbageHand(with: cards, and: cutCard)
@@ -180,11 +180,11 @@ class CribbageHandTests: XCTestCase {
     func test_cutCard_ofCribbageHand_equalsGivenCutCard() throws {
         
         // Given
-        let jackOfHearts = try Jack()
+        let jackOfHearts = try Jack(of: .hearts)
         let fiveOfDiamonds = try Five(of: .diamonds)
         let fiveOfClubs = try Five(of: .clubs)
         let fiveOfSpades = try Five(of: .spades)
-        let cutCard = try Five()
+        let cutCard = try Five(of: .hearts)
         let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
         let expected = cutCard
         let cribbageHand = try CribbageHand(with: cards, and: cutCard)
