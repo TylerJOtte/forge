@@ -39,8 +39,8 @@ class RunTests: XCTestCase {
     func test_init_withInsufficientCards_throwsError() throws {
 
         // Given
-        let ace = try Ace()
-        let two = try Two()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
         let cards = [ace, two]
         let expected = ElementsError.insufficientElements
         
@@ -61,9 +61,9 @@ class RunTests: XCTestCase {
     func test_init_withNontSequentialCards_throwsError() throws {
 
         // Given
-        let ace = try Ace()
-        let two = try Two()
-        let three = try Three()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
         let cards = [ace, three, two]
         let expected = ElementsError.areNotSequential
         
@@ -85,18 +85,18 @@ class RunTests: XCTestCase {
     
     /// Tests that the title of a `Run` equals "Run".
     func test_title_ofRun_equalsRun() throws {
-        
+
         // Given
-        let ace = try Ace()
-        let two = try Two()
-        let three = try Three()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
         let cards = [ace, two, three]
         let run = try Run(of: cards)
         let expected = "Run"
-        
+
         // When
         let actual = run.title
-        
+
         // Then
         XCTAssertEqual(expected, actual)
     }
@@ -109,9 +109,9 @@ class RunTests: XCTestCase {
     func test_points_ofRun_equalsNCards() throws {
         
         // Given
-        let ace = try Ace()
-        let two = try Two()
-        let three = try Three()
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
         let cards = [ace, two, three]
         let run = try Run(of: cards)
         let expected = run.count
