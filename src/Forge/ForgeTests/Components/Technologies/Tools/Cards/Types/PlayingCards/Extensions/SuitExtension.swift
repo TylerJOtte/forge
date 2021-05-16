@@ -168,4 +168,75 @@ class SuitExtensionTests: XCTestCase {
         XCTAssertFalse(suit.isBlack())
     }
     
+    //-------------------------------------------------------------------------//
+    //                               isStandard                                //
+    //-------------------------------------------------------------------------//
+    
+    //              //
+    // PlayingCards //
+    //              //
+    
+    /// Tests that a `hearts Suit` is a standard `PlayingCard Suit`.
+    func test_hearts_isStandard_true() {
+        
+        // Given
+        let suit = Suit.hearts
+        
+        // When/Then
+        XCTAssert(suit.isStandard())
+    }
+    
+    /// Tests that a `diamonds Suit` is a standard `PlayingCard Suit`.
+    func test_diamonds_isStandard_true() {
+        
+        // Given
+        let suit = Suit.diamonds
+        
+        // When/Then
+        XCTAssert(suit.isStandard())
+    }
+    
+    /// Tests that a `clubs Suit` is a standard `PlayingCard Suit`.
+    func test_clubs_isStandard_true() {
+        
+        // Given
+        let suit = Suit.clubs
+        
+        // When/Then
+        XCTAssert(suit.isStandard())
+    }
+    
+    /// Tests that a `spades Suit` is a standard `PlayingCard Suit`.
+    func test_spades_isStandard_true() {
+        
+        // Given
+        let suit = Suit.spades
+        
+        // When/Then
+        XCTAssert(suit.isStandard())
+    }
+    
+    /// Tests that a `null Suit` is a standard `PlayingCard Suit`.
+    func test_null_isStandard_true() {
+        
+        // Given
+        let suit = Suit.null
+        
+        // When/Then
+        XCTAssert(suit.isStandard())
+    }
+    
+    //                 //
+    // Non-PlayingCard //
+    //                 //
+    
+    /// Tests that a non-`PlayingCard Suit` is not a standard `PlayingCard Suit`.
+    func test_nonPlayingCardSuit_isStandard_false() {
+        
+        // Given
+        let suit = Suit.stars
+        
+        // When/Then
+        XCTAssertFalse(suit.isStandard())
+    }
 }
