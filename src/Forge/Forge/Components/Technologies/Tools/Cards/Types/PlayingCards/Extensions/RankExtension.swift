@@ -55,9 +55,4 @@ extension Rank {
 
         return isNumeral() || isRoyal() || self == .joker
     }
-    
-    func next(ace high: Bool = false) -> Rank {
-        
-        return Rank.ace
-    }
 }
