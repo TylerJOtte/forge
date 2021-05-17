@@ -33,7 +33,7 @@ public class FourOfAKind: Kind {
     ///   - The `FourOfAKind`'s title is set to "Four Of A Kind".
     /// - Parameter cards: The `Card`s to include in the `FourOfAKind`.
     /// - Throws: `invalidRank` if the given `Card`s do not all contain the same `Rank`.
-    public init(_ cards: [RankedCard]) throws {
+    public init(of cards: [RankedCard]) throws {
 
         let min = 4
         let max = 4
