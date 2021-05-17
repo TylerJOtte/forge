@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  PairTests.swift                                                            //
+//  ThreeOfAKindTests.swift                                                    //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 5/16/21.                                       //
@@ -17,8 +17,8 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for a `Pair HandRank`.
-class PairTests: XCTestCase {
+/// Unit tests for a `ThreeOfAKind HandRank`.
+class ThreeOfAKindTests: XCTestCase {
 
     //=========================================================================//
     //                             Initialization                              //
@@ -28,34 +28,38 @@ class PairTests: XCTestCase {
     //                              Invalid Count                              //
     //-------------------------------------------------------------------------//
 
-    /// Tests that creating a `Pair` with less than two`Cards` throws an `invalidCount Error`.
+    /// Tests that creating a `ThreeOfAKind` with less than three`Cards` throws an `invalidCount`
+    /// `Error`.
     func test_init_withInsufficientCards_throwsInvalidCountError() throws {
 
         // Given
-        let card = try Ace(of: .hearts)
-        let cards = [card]
+        let card1 = try Ace(of: .hearts)
+        let card2 = try Ace(of: .spades)
+        let cards = [card1, card2]
         let expected = ElementsError.invalidCount
 
         // When
-        XCTAssertThrowsError(try Pair(of: cards)) { error in
+        XCTAssertThrowsError(try ThreeOfAKind(of: cards)) { error in
 
             // Then
             XCTAssertEqual(expected, error as? ElementsError)
         }
     }
     
-    /// Tests that creating a `Pair` with more than two`Cards` throws an `invalidCount Error`.
+    /// Tests that creating a `ThreeOfAKind` with more than three `Cards` throws an
+    /// `invalidCount Error`.
     func test_init_withExcessiveCards_throwsInvalidCountError() throws {
 
         // Given
         let card1 = try Ace(of: .hearts)
         let card2 = try Ace(of: .spades)
         let card3 = try Ace(of: .diamonds)
-        let cards = [card1, card2, card3]
+        let card4 = try Ace(of: .clubs)
+        let cards = [card1, card2, card3, card4]
         let expected = ElementsError.invalidCount
 
         // When
-        XCTAssertThrowsError(try Pair(of: cards)) { error in
+        XCTAssertThrowsError(try ThreeOfAKind(of: cards)) { error in
 
             // Then
             XCTAssertEqual(expected, error as? ElementsError)
@@ -66,18 +70,19 @@ class PairTests: XCTestCase {
     //                             Multiple Ranks                              //
     //-------------------------------------------------------------------------//
 
-    /// Tests that creating a `Pair` with `Cards`that do not all have the same `Rank` throws an
-    /// `invalidRank Error`.
+    /// Tests that creating a `ThreeOfAKind` with `Cards`that do not all have the same `Rank` throws
+    /// an `invalidRank Error`.
     func test_init_withMultipleRanks_throwsError() throws {
 
         // Given
-        let ace = try Ace(of: .hearts)
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
         let two = try Two(of: .spades)
-        let cards = [ace, two]
+        let cards = [ace1, ace2, two]
         let expected = DescriptionError.invalidRank
 
         // When
-        XCTAssertThrowsError(try Pair(of: cards)) { error in
+        XCTAssertThrowsError(try ThreeOfAKind(of: cards)) { error in
 
             // Then
             XCTAssertEqual(expected, error as? DescriptionError)
@@ -92,18 +97,19 @@ class PairTests: XCTestCase {
     //                                Points                                   //
     //-------------------------------------------------------------------------//
 
-    /// Tests that the points of  a`Pair` equals 2.
-    func test_points_ofPair_equals2() throws {
+    /// Tests that the points of  a`ThreeOfAKind` equals 6.
+    func test_points_ofThreeOfAKind_equals6() throws {
 
         // Given
         let ace1 = try Ace(of: .hearts)
         let ace2 = try Ace(of: .spades)
-        let cards = [ace1, ace2]
-        let pair = try Pair(of: cards)
-        let expected = 2
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
+        let threeOfAKind = try ThreeOfAKind(of: cards)
+        let expected = 6
 
         // When
-        let actual = pair.points
+        let actual = threeOfAKind.points
 
         XCTAssertEqual(expected, actual)
     }
@@ -112,34 +118,36 @@ class PairTests: XCTestCase {
     //                             Min/Max Cards                               //
     //-------------------------------------------------------------------------//
 
-    /// Tests that the min cards  of a `Pair` equals 2.
-    func test_minCards_ofPair_equals2() throws {
+    /// Tests that the min cards  of a `ThreeOfAKind` equals 3.
+    func test_minCards_ofThreeOfAKind_equals3() throws {
 
         // Given
-        let ace1 = try Ace(of: .clubs)
+        let ace1 = try Ace(of: .hearts)
         let ace2 = try Ace(of: .spades)
-        let cards = [ace1, ace2]
-        let pair = try Pair(of: cards)
-        let expected = 2
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
+        let threeOfAKind = try ThreeOfAKind(of: cards)
+        let expected = 3
 
         // When
-        let actual = pair.minCards
+        let actual = threeOfAKind.minCards
 
         XCTAssertEqual(expected, actual)
     }
 
-    /// Tests that the max cards  of a `Pair` equals 2.
-    func test_maxCards_ofPair_equals2() throws {
+    /// Tests that the max cards  of a `ThreeOfAKind` equals 3.
+    func test_maxCards_ofThreeOfAKind_equals3() throws {
 
         // Given
-        let ace1 = try Ace(of: .clubs)
+        let ace1 = try Ace(of: .hearts)
         let ace2 = try Ace(of: .spades)
-        let cards = [ace1, ace2]
-        let pair = try Pair(of: cards)
-        let expected = 2
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
+        let threeOfAKind = try ThreeOfAKind(of: cards)
+        let expected = 3
 
         // When
-        let actual = pair.maxCards
+        let actual = threeOfAKind.maxCards
 
         XCTAssertEqual(expected, actual)
     }
@@ -148,18 +156,19 @@ class PairTests: XCTestCase {
     //                                 Count                                   //
     //-------------------------------------------------------------------------//
 
-    /// Tests that the count of a `Pair` equals 2.
-    func test_count_ofPair_equals2() throws {
+    /// Tests that the count of a `ThreeOfAKind` equals 3.
+    func test_count_ofThreeOfAKind_equals3() throws {
 
         // Given
-        let ace1 = try Ace(of: .clubs)
+        let ace1 = try Ace(of: .hearts)
         let ace2 = try Ace(of: .spades)
-        let cards = [ace1, ace2]
-        let pair = try Pair(of: cards)
-        let expected = 2
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
+        let threeOfAKind = try ThreeOfAKind(of: cards)
+        let expected = 3
 
         // When
-        let actual = pair.count
+        let actual = threeOfAKind.count
 
         XCTAssertEqual(expected, actual)
     }
@@ -168,18 +177,19 @@ class PairTests: XCTestCase {
     //                               Capacity                                   //
     //-------------------------------------------------------------------------//
 
-    /// Tests that the capacity of a `Pair` equals 0.
-    func test_capacity_ofPair_equals0() throws {
+    /// Tests that the capacity of a `ThreeOfAKind` equals 0.
+    func test_capacity_ofThreeOfAKind_equals0() throws {
 
         // Given
-        let ace1 = try Ace(of: .clubs)
+        let ace1 = try Ace(of: .hearts)
         let ace2 = try Ace(of: .spades)
-        let cards = [ace1, ace2]
-        let pair = try Pair(of: cards)
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
+        let threeOfAKind = try ThreeOfAKind(of: cards)
         let expected = 0
 
         // When
-        let actual = pair.capacity
+        let actual = threeOfAKind.capacity
 
         XCTAssertEqual(expected, actual)
     }
@@ -188,18 +198,19 @@ class PairTests: XCTestCase {
     //                                Title                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that the title of a `Pair` equals "Pair".
-    func test_title_ofPair_equalsPair() throws {
+    /// Tests that the title of a `ThreeOfAKind` equals "Three Of A Kind".
+    func test_title_ofThreeOfAKind_equalsThreeOfAKind() throws {
 
         // Given
-        let ace1 = try Ace(of: .clubs)
+        let ace1 = try Ace(of: .hearts)
         let ace2 = try Ace(of: .spades)
-        let cards = [ace1, ace2]
-        let pair = try Pair(of: cards)
-        let expected = "Pair"
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
+        let threeOfAKind = try ThreeOfAKind(of: cards)
+        let expected = "Three Of A Kind"
 
         // When
-        let actual = pair.title
+        let actual = threeOfAKind.title
 
         XCTAssertEqual(expected, actual)
     }

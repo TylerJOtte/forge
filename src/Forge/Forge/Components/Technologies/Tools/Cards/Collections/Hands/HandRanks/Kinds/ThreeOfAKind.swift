@@ -33,7 +33,7 @@ public class ThreeOfAKind: Kind {
     ///   - The `ThreeOfAKind`'s title is set to "Three Of A Kind".
     /// - Parameter cards: The `Card`s to include in the `ThreeOfAKind`.
     /// - Throws: `invalidRank` if the given `Card`s do not all contain the same `Rank`.
-    public init(_ cards: [RankedCard]) throws {
+    public init(of cards: [RankedCard]) throws {
 
         let min = 3
         let max = 3

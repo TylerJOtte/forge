@@ -68,6 +68,7 @@
 		B5BE90522651C657005E0A37 /* ThreeOfAKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE90512651C657005E0A37 /* ThreeOfAKind.swift */; };
 		B5BE90562651C6DF005E0A37 /* FourOfAKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE90552651C6DF005E0A37 /* FourOfAKind.swift */; };
 		B5BE905B2651C987005E0A37 /* PairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE905A2651C987005E0A37 /* PairTests.swift */; };
+		B5BE90612651E844005E0A37 /* ThreeOfAKindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE90602651E844005E0A37 /* ThreeOfAKindTests.swift */; };
 		B5E115A3265050DD00D78307 /* Relatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E115A2265050DD00D78307 /* Relatable.swift */; };
 		B5E115A726508A6C00D78307 /* NumeralCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E115A626508A6C00D78307 /* NumeralCardTests.swift */; };
 		B5E115AD2650910B00D78307 /* FaceCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E115AC2650910B00D78307 /* FaceCardTests.swift */; };
@@ -196,6 +197,7 @@
 		B5BE90512651C657005E0A37 /* ThreeOfAKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeOfAKind.swift; sourceTree = "<group>"; };
 		B5BE90552651C6DF005E0A37 /* FourOfAKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourOfAKind.swift; sourceTree = "<group>"; };
 		B5BE905A2651C987005E0A37 /* PairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairTests.swift; sourceTree = "<group>"; };
+		B5BE90602651E844005E0A37 /* ThreeOfAKindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeOfAKindTests.swift; sourceTree = "<group>"; };
 		B5E115A2265050DD00D78307 /* Relatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relatable.swift; sourceTree = "<group>"; };
 		B5E115A626508A6C00D78307 /* NumeralCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralCardTests.swift; sourceTree = "<group>"; };
 		B5E115AC2650910B00D78307 /* FaceCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCardTests.swift; sourceTree = "<group>"; };
@@ -660,6 +662,7 @@
 			children = (
 				B55668D1262C88EC0045AC2B /* KindTests.swift */,
 				B5BE905A2651C987005E0A37 /* PairTests.swift */,
+				B5BE90602651E844005E0A37 /* ThreeOfAKindTests.swift */,
 			);
 			path = Kinds;
 			sourceTree = "<group>";
@@ -1023,6 +1026,7 @@
 				B5E555BB264E03C900E6BB37 /* RankExtension.swift in Sources */,
 				B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */,
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
+				B5BE90612651E844005E0A37 /* ThreeOfAKindTests.swift in Sources */,
 				B5F2D4BB2636E7820089403F /* TenTests.swift in Sources */,
 				B5E115AD2650910B00D78307 /* FaceCardTests.swift in Sources */,
 				B5F2D4AF2636E5360089403F /* SevenTests.swift in Sources */,
