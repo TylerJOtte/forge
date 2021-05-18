@@ -23,7 +23,7 @@ public class Pair: Kind {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Pair`with the given `Card`s.
+    /// Creates a`Pair` with the given `Card`s.
     ///
     /// - Precondition:
     ///   - The given `Card`s must contain two, and only two`Card`s.

@@ -90,7 +90,7 @@ public class Hand: Cards {
         try! add(cards)
     }
 
-    /// Creates a`Hand`with the given terms.
+    /// Creates a`Hand` with the given terms.
     ///
     /// - Precondition:
     ///   - `min` must be >= 0.

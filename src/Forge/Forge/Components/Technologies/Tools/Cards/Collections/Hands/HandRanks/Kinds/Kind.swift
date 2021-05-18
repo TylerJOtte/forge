@@ -23,7 +23,7 @@ public class Kind: HandRank {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`Kind`with the given terms.
+    /// Creates a`Kind` with the given terms.
     ///
     /// - Precondition:
     ///   - `min` must be >= 2.

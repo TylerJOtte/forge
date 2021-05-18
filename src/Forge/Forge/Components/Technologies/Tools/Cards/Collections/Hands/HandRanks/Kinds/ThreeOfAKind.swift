@@ -23,7 +23,7 @@ public class ThreeOfAKind: Kind {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`ThreeOfAKind`with the given `Card`s.
+    /// Creates a`ThreeOfAKind` with the given `Card`s.
     ///
     /// - Precondition: The given `Card`s must all contain the same `Rank`.
     /// - Postcondition:

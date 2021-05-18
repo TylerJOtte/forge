@@ -30,7 +30,7 @@ public class HandRank: Hand, Scoreable {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`HandRank`with the given terms.
+    /// Creates a`HandRank` with the given terms.
     ///
     /// - Precondition:
     ///   - `min` must be >= 1.

@@ -31,6 +31,30 @@ extension Array where Element: RankedCard  {
         return getCardsByRank().count == 1
     }
     
+    /// Determines if all the `Card`s in the given collection are in sequential order.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if all the `Card`s in the given collection are in sequential order, else false.
+    func areSequential() -> Bool {
+        
+        var areSequential = true
+        var index = 0
+        
+        while (areSequential && index < count - 1)
+        {
+            let card = self[index]
+            let nextCard = self[index + 1]
+            let expected = card.position + 1
+            let actual = nextCard.position
+            
+            areSequential = expected == actual
+            index += 1
+        }
+        
+        return areSequential
+    }
+    
     //=========================================================================//
     //                                 GETTERS                                 //
     //=========================================================================//

@@ -23,7 +23,7 @@ public class FourOfAKind: Kind {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a`FourOfAKind`with the given `Card`s.
+    /// Creates a`FourOfAKind` with the given `Card`s.
     ///
     /// - Precondition: The given `Card`s must all contain the same `Rank`.
     /// - Postcondition:
