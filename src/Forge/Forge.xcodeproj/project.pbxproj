@@ -272,6 +272,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B51DC884266293D3006F4CE8 /* Flushes */ = {
+			isa = PBXGroup;
+			children = (
+				B556689B262659030045AC2B /* FlushTests.swift */,
+			);
+			path = Flushes;
+			sourceTree = "<group>";
+		};
 		B53EEC512648BF9800E88BB6 /* Kinds */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,9 +431,9 @@
 			children = (
 				B5BE90592651C97C005E0A37 /* Kinds */,
 				B55668BC262B92820045AC2B /* Runs */,
+				B51DC884266293D3006F4CE8 /* Flushes */,
 				B556689126252E030045AC2B /* NobsTests.swift */,
 				B556689726253AEA0045AC2B /* FifteenTests.swift */,
-				B556689B262659030045AC2B /* FlushTests.swift */,
 			);
 			path = HandRanks;
 			sourceTree = "<group>";
