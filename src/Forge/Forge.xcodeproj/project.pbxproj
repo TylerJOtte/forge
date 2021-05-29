@@ -561,7 +561,7 @@
 				B5817D96261A19DA0022B805 /* HandRank.swift */,
 				B53EEC512648BF9800E88BB6 /* Kinds */,
 				B55668A7262A763C0045AC2B /* Runs */,
-				B5566811262238350045AC2B /* Flush.swift */,
+				B5BE907E26628F7C005E0A37 /* Flushes */,
 				B556681526223DB90045AC2B /* Fifteen.swift */,
 				B55668342623D29E0045AC2B /* Nobs.swift */,
 			);
@@ -668,6 +668,14 @@
 				B5BE90642651EAD2005E0A37 /* FourOfAKindTests.swift */,
 			);
 			path = Kinds;
+			sourceTree = "<group>";
+		};
+		B5BE907E26628F7C005E0A37 /* Flushes */ = {
+			isa = PBXGroup;
+			children = (
+				B5566811262238350045AC2B /* Flush.swift */,
+			);
+			path = Flushes;
 			sourceTree = "<group>";
 		};
 		B5E115BC26518F1F00D78307 /* WildCards */ = {
