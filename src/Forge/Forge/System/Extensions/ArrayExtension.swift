@@ -28,7 +28,7 @@ extension Array where Element: RankedCard  {
     /// - Returns: True if all the `Card`s in the given collection contain the same`Rank`, else false.
     func areEquallyRanked() -> Bool {
         
-        return getCardsByRank().count == 1
+        return splitByRank().count == 1
     }
     
     /// Determines if all the `Card`s in the given collection are in sequential order.
@@ -63,8 +63,8 @@ extension Array where Element: RankedCard  {
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: A dictionary with the `Rank`s keys and their respective `Card`s as the values.
-    func getCardsByRank() -> [Rank:[RankedCard]] {
+    /// - Returns: A dictionary with the `Rank`s as keys and their respective `Card`s as the values.
+    func splitByRank() -> [Rank:[RankedCard]] {
         
         return Dictionary(grouping: self, by: {$0.rank})
     }
@@ -76,25 +76,15 @@ extension Array where Element: PlayingCard  {
     //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//
-
-    /// Determines if all `Card`s in the collection have the same `Rank`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if all `Card`s in the collection have the same `Rank`, else false.
-    func areEquallyRanked() -> Bool {
-        
-        return !self.contains(where: {$0.rank != self.first?.rank})
-    }
     
-    /// Determines if all `Card`s in the collection have the same `Suit`.
+    /// Determines if all the `Card`s in the given collection contain the same`Suit`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: True if all `Card`s in the collection have the same `Suit`, else false.
+    /// - Returns: True if all the `Card`s in the given collection contain the same`Suit`, else false.
     func areEquallySuited() -> Bool {
         
-        return !self.contains(where: {$0.suit != self.first?.suit})
+        return splitBySuit().count == 1
     }
     
     /// Determines if all `Card`s are in sequential order.
@@ -202,6 +192,11 @@ extension Array where Element: PlayingCard  {
         return areSequential
     }
     
+    //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+
+    
     /// Retrieves the duplicate items in the collection.
     ///
     /// - Precondition: None.
@@ -242,6 +237,16 @@ extension Array where Element: PlayingCard  {
     func getPairCount(from pairs: [Rank:Int]) -> Int {
         
         return pairs.values.reduce(0, +)
+    }
+    
+    /// Splits all the `Card`s in the given collection by `Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: A dictionary with the `Suit`s as keys and their respective `Card`s as the values.
+    func splitBySuit() -> [Suit:[PlayingCard]] {
+        
+        return Dictionary(grouping: self, by: {$0.suit})
     }
     
     //=========================================================================//

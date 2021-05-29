@@ -520,14 +520,13 @@ class Runests: XCTestCase {
     func test_capacity_ofRunWith4Cards_equalsExpected() throws {
 
         // Given
-        let nine = try Nine(of: .hearts)
         let ten = try Ten(of: .hearts)
         let jack = try Jack(of: .hearts)
         let queen = try Queen(of: .hearts)
         let king = try King(of: .hearts)
-        let cards = [nine, ten, jack, queen, king]
+        let cards = [ten, jack, queen, king]
         let run = try Run(of: cards)
-        let expected = 9223372036854775802
+        let expected = 9223372036854775803
 
         // When
         let actual = run.capacity
@@ -540,15 +539,14 @@ class Runests: XCTestCase {
 
         // Given
         let isHigh = true
-        let nine = try Nine(of: .hearts)
         let ten = try Ten(of: .hearts)
         let jack = try Jack(of: .hearts)
         let queen = try Queen(of: .hearts)
         let king = try King(of: .hearts)
         let ace = try Ace(of: .hearts, and: isHigh)
-        let cards = [nine, ten, jack, queen, king, ace]
+        let cards = [ten, jack, queen, king, ace]
         let run = try Run(of: cards)
-        let expected = 9223372036854775801
+        let expected = 9223372036854775802
 
         // When
         let actual = run.capacity

@@ -26,16 +26,16 @@ public class Run: HandRank {
     /// Creates a`Run` with the given `Card`s.
     ///
     /// - Precondition:
-    ///   - The given `Card`s must contain at least 3 `Card`s.
+    ///   - The given `Card`s must contain at least three `Card`s.
     ///   - The given `Card`s must be in sequential order.
     /// - Postcondition:
-    ///   - The `Run` can hold 3 to `Int.max Card`s.
     ///   - The `Run` contains the given `Card`s.
+    ///   - The `Run` can hold three to `Int.max Card`s.
     ///   - The `Run`'s points are set to the # of given `Card`s.
     ///   - The `Run`'s title is set to "Run".
     /// - Parameter cards: The `Card`s to include in the `Run`.
     /// - Throws:
-    ///   - `invalidCount` if the given `Card`s do not contain at least 3 `Card`s.
+    ///   - `invalidCount` if the given `Card`s do not contain at least three `Card`s.
     ///   - `invalidRank` if the given `Card`s are not in sequential order.
     public convenience init(of cards: [RankedCard]) throws {
 

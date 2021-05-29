@@ -19,9 +19,6 @@ import Foundation
 /// A `HandRank` of equally `Suit`ed `Card`s.
 public class Flush: HandRank {
     
-    /// The primary name.
-    public var title: String
-    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
@@ -30,57 +27,27 @@ public class Flush: HandRank {
     ///
     /// - Precondition:
     ///   - The given `Card`s must contain at least four`Card`s.
-    ///   - The given `Card`s must all have the same `Suit`.
+    ///   - The given `Card`s must all contain the same `Suit`.
     /// - Postcondition:
-    ///   - The `HandRank` can hold four to`Int.max Card`s.
-    ///   - The `HandRank` contains the given `Card`s.
-    ///   - The `HandRank`s title is set according to the # and order of `Card`s it holds.
-    ///   - The `HandRank`s points are set according to the # of `Card`s it holds.
-    ///   - title = "Flush", "Straight Flush", or "Royal Flush" depdending on the the given `Card`s.
-    /// - Parameter cards: The `Card`s to create the `HandRank` with.
+    ///   - The `Flush` contains the given `Card`s.
+    ///   - The `Flush` can hold four to`Int.max Card`s.
+    ///   - The `Flush`'s points are set to the # of given `Card`s.
+    ///   - The `Flush`'s title is set to "Flush".
+    /// - Parameter cards: The `Card`s to include in the `Flush`.
     /// - Throws:
-    ///   - `ElementsError.insufficientElements` if the given `Card`s
-    ///      - Contain less than four `Card`s, or
-    ///      - Do not all have the same `Suit`.
+    ///   - `invalidCount` if the given `Card`s do not contain at least four `Card`s.
+    ///   - `invalidSuit` if the given `Card`s do not all contain the same `Suit`.
     public init(of cards: [PlayingCard]) throws {
         
         let min = 4
         let max = Int.max
-        let high = true
         let points = cards.count
-        var title: String
-        
-        guard (cards.count >= min) else {
-            
-            print("The collection must contain at least \(min) Cards.")
-            throw ElementsError.insufficientElements
-        }
-        
+
         guard (cards.areEquallySuited()) else {
             
-            print("The given Cards must all have the same Suit.")
-            throw ElementsError.insufficientElements
+            print("The given Cards must all contain the same Suit.")
+            throw DepictionError.invalidSuit
         }
-        
-        let areSequential = try cards.areSequential(ace: high)
-        let isAStraight = cards.count == 5 && areSequential
-        
-        if (isAStraight) {
-            
-           let isRoyal = cards[0].rank == Rank.ten &&
-                cards[1].rank == Rank.jack && cards[2].rank == Rank.queen &&
-                cards[3].rank == Rank.king &&
-                (cards[4].rank == Rank.ace || cards[4].rank == Rank.one)
-                
-                
-            title = isRoyal ? "Royal Flush" : "Straight Flush"
-            
-        } else {
-            
-            title = "Flush"
-        }
-        
-        self.title = title
         
         try super.init(of: min, to: max, cards, worth: points)
     }
