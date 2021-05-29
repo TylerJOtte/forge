@@ -188,9 +188,9 @@ class Runests: XCTestCase {
     // NumeralCards //
     //              //
     
-    /// Tests that creating a `Run` with high `Ace` to sequential `Numeral Card`s  throws an
+    /// Tests that creating a `Run` with a high `Ace` and low sequential `Numeral Card`s  throws an
     /// `invalidRank Error`.
-    func test_init_withHighAceToSequentialNumeralCards_throwsInvalidRankError()
+    func test_init_withHighAceAndLowSequentialNumeralCards_throwsInvalidRankError()
         throws {
 
         // Given
@@ -210,9 +210,9 @@ class Runests: XCTestCase {
         }
     }
     
-    /// Tests that creating a `Run` with non-sequential `NumeralCard`s throws an `invalidRank`
-    /// `Error`.
-    func test_init_withNonSequentialNumeralCards_throwsInvalidRankError()
+    /// Tests that creating a `Run` with a low `Ace` and non-sequential `NumeralCard`s throws an
+    /// `invalidRank Error`.
+    func test_init_withLowAceAndNonSequentialNumeralCards_throwsInvalidRankError()
         throws {
 
         // Given
@@ -499,7 +499,7 @@ class Runests: XCTestCase {
     //                               Capacity                                  //
     //-------------------------------------------------------------------------//
 
-    /// Tests that the capacity of  a`Run` with three `Card`s equals 3.
+    /// Tests that the capacity of  a`Run` with three `Card`s equals the expected value.
     func test_capacity_ofRunWith3Cards_equalsExpected() throws {
 
         // Given
@@ -516,7 +516,7 @@ class Runests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
 
-    /// Tests that the capacity of  a`Run` with four `Card`s equals 4.
+    /// Tests that the capacity of  a`Run` with four `Card`s equals the expected value..
     func test_capacity_ofRunWith4Cards_equalsExpected() throws {
 
         // Given
@@ -535,7 +535,7 @@ class Runests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
 
-    /// Tests that the capacity of  a`Run` with five `Card`s equals 5.
+    /// Tests that the capacity of  a`Run` with five `Card`s equals the expected value.
     func test_capacity_ofRunWith5Cards_equalsExpected() throws {
 
         // Given
