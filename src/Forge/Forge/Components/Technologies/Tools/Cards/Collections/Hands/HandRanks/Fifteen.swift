@@ -45,6 +45,7 @@ public class Fifteen: HandRank {
         
         let min = 2
         let max = 5
+        let sum = 15
         let points = 2
         
         guard (cards.count >= min) else {
@@ -59,7 +60,7 @@ public class Fifteen: HandRank {
             throw ElementsError.excessiveElements
         }
         
-        guard (cards.sum() == points) else {
+        guard (cards.sum() == sum) else {
             
             print("The given Cards' points must sum to 15.")
             throw ScoreError.invalidPoints

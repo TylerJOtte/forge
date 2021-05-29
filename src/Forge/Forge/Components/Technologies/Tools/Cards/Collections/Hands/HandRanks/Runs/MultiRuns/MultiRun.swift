@@ -91,9 +91,13 @@ public class MultiRun: Run {
         
         self.runs = runs
         self.pairs = pairs
+        let sequence = cards.count - (pairs % 2 == 0 ? pairs :
+                                      Int(ceil(Double(pairs) / 2)))
+        let runPoints = runs * sequence
+        let pairPoints = pairs * 2
+        let points = runPoints + pairPoints
         
-        let points = 0 // runPoints + pairPoints
-        
-        try super.init(of: min, cards, with: pairs, multiple: groups)
+        try super.init(of: min, cards, worth: points, with: pairs,
+                       multiple: groups)
     }
 }
