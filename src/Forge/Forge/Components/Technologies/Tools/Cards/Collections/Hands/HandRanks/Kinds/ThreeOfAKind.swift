@@ -25,14 +25,18 @@ public class ThreeOfAKind: Kind {
     
     /// Creates a`ThreeOfAKind` with the given `Card`s.
     ///
-    /// - Precondition: The given `Card`s must all contain the same `Rank`.
+    /// - Precondition:
+    ///   - The given `Card`s must contain three, and only three `Card`s.
+    ///   - The given `Card`s must all contain the same `Rank`.
     /// - Postcondition:
     ///   - The `ThreeOfAKind` contains the given `Card`s.
     ///   - The `ThreeOfAKind`'s points are set to 6.
     ///   - The `ThreeOfAKind` can only hold three ` Card`s.
     ///   - The `ThreeOfAKind`'s title is set to "Three Of A Kind".
     /// - Parameter cards: The `Card`s to include in the `ThreeOfAKind`.
-    /// - Throws: `invalidRank` if the given `Card`s do not all contain the same `Rank`.
+    /// - Throws:
+    ///   - `invalidCount` if the given `Card`s do not contain three, and only three `Card`s.
+    ///   - `invalidRank` if the given `Card`s do not all contain the same `Rank`.
     public init(of cards: [RankedCard]) throws {
 
         let min = 3

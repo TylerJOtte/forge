@@ -25,14 +25,18 @@ public class FourOfAKind: Kind {
     
     /// Creates a`FourOfAKind` with the given `Card`s.
     ///
-    /// - Precondition: The given `Card`s must all contain the same `Rank`.
+    /// - Precondition:
+    ///   - The given `Card`s must contain four, and only four `Card`s.
+    ///   - The given `Card`s must all contain the same `Rank`.
     /// - Postcondition:
     ///   - The `FourOfAKind` contains the given `Card`s.
     ///   - The `FourOfAKind`'s points are set to 12.
     ///   - The `FourOfAKind` can only hold four ` Card`s.
     ///   - The `FourOfAKind`'s title is set to "Four Of A Kind".
     /// - Parameter cards: The `Card`s to include in the `FourOfAKind`.
-    /// - Throws: `invalidRank` if the given `Card`s do not all contain the same `Rank`.
+    /// - Throws:
+    ///   - `invalidCount` if the given `Card`s do not contain four, and only four `Card`s.
+    ///   - `invalidRank` if the given `Card`s do not all contain the same `Rank`.
     public init(of cards: [RankedCard]) throws {
 
         let min = 4
