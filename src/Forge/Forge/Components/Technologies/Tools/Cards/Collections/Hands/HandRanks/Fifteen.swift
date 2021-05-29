@@ -29,36 +29,20 @@ public class Fifteen: HandRank {
     ///   - The given `Card`s must contain two to five`Card`s.
     ///   - The given `Card`'s points must sum to 15.
     /// - Postcondition:
-    ///   - The `HandRank` can hold two  to five `Card`s.
-    ///   - The `HandRank` contains the given `Card`s.
-    ///   - The `HandRank`s title is set to `Fifteen`.
-    ///   - The `HandRank`s points are set to two.
-    ///   - title = "Fifteen".
-    /// - Parameter cards: The `Card`s to create the`HandRank` with.
+    ///   - The `Fifteen` contains the given `Card`s.
+    ///   - The `Fifteen`'s points are set to 2.
+    ///   - The `Fifteen` can hold two  to five `Card`s.
+    ///   - The `Fifteen`'s title is set to `Fifteen`.
+    /// - Parameter cards: The `Card`s to include in the`Fifteen`.
     /// - Throws:
-    ///   - `ElementsError.insufficientElements` if the given `Card`s contain less than two
-    ///     `Card`s,
-    ///   - `ElementsError.excessiveElements` if the given `Card`s contain more than five
-    ///     `Card`s.
-    ///   - `RewardsError.invalidPoints` if the given `Card`s' sum does not sum to 15.
+    ///   - `invalidCount` if the given `Card`s do not contain two to five `Card`s.
+    ///   - `invalidPoints` if the given `Card`'s points do not sum to 15.
     public init(of cards: [PlayingCard]) throws {
         
         let min = 2
         let max = 5
         let sum = 15
         let points = 2
-        
-        guard (cards.count >= min) else {
-            
-            print("The collection must contain at least \(min) Cards.")
-            throw ElementsError.insufficientElements
-        }
-        
-        guard (cards.count <= max) else {
-            
-            print("The collection must contain at most \(max) Cards.")
-            throw ElementsError.excessiveElements
-        }
         
         guard (cards.sum() == sum) else {
             

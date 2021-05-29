@@ -26,43 +26,32 @@ class FifteenTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                            Insufficient Cards                           //
+    //                              Invalid Count                              //
     //-------------------------------------------------------------------------//
-    
-    /// Tests that creating a `Fifteen` with less than two`PlayingCards` throws an
-    /// `ElementsError.insufficientElements Error`.
-    func test_init_withInsufficientCards_throwsError() throws {
 
-        // Given
-        let ten = try Ten(of: .hearts)
-        let cards = [ten]
-        let expected = ElementsError.insufficientElements
-        
-        // When
-        XCTAssertThrowsError(try Fifteen(of: cards)) { error in
-            
-            // Then
-            XCTAssertEqual(expected, error as? ElementsError)
-        }
-    }
+    // TODO: Currently, no single Card has points that equal 15. The
+    //       invalidPoints Error will be caught before an insufficient Card
+    //       count will be. When enable creating Cards with custom points in the
+    //       future, add a test that ensures an invalidCount Error is thrown when
+    //       creating a Fifteen with one Card worth 15 points.
     
     //-------------------------------------------------------------------------//
     //                             Excessive Cards                             //
     //-------------------------------------------------------------------------//
     
-    /// Tests that creating a `Fifteen` with more than five`PlayingCards` throws an
-    /// `ElementsError.excessiveElements Error`.
-    func test_init_withExcessiveCards_returnsNil() throws {
+    /// Tests that creating a `Fifteen` with more than five`Cards` throws an `invalidCount`
+    /// `Error`.
+    func test_init_withExcessiveCards_throwsInvalidCountError() throws {
 
         // Given
-        let ace = try Ace(of: .hearts)
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .diamonds)
+        let ace3 = try Ace(of: .spades)
+        let ace4 = try Ace(of: .clubs)
         let two = try Two(of: .hearts)
-        let three = try Three(of: .hearts)
-        let four = try Four(of: .hearts)
-        let five = try Five(of: .hearts)
-        let six = try Six(of: .hearts)
-        let cards = [ace, two, three, four, five, six]
-        let expected = ElementsError.excessiveElements
+        let nine = try Nine(of: .hearts)
+        let cards = [ace1, ace2, ace3, ace4, two, nine]
+        let expected = ElementsError.invalidCount
         
         // When
         XCTAssertThrowsError(try Fifteen(of: cards)) { error in
@@ -73,12 +62,12 @@ class FifteenTests: XCTestCase {
     }
 
     //-------------------------------------------------------------------------//
-    //                           Insufficient Points                           //
+    //                              Invalid Points                             //
     //-------------------------------------------------------------------------//
     
-    /// Tests that creating a `Fifteen HandRank` with `PlayingCard`s that have points that sum to
-    /// less than 15 throws a `RewardsError.invalidPoints`.
-    func test_init_withUnder15PointsSum_returnsNil() throws {
+    /// Tests that creating a `Fifteen` with`Cards`that have a point sum less than 15 throws an
+    /// `invalidPoints Error`.
+    func test_init_withLessThan15CardPoints_throwsInvalidPointsError() throws {
         
         // Given
         let ten = try Ten(of: .hearts)
@@ -98,9 +87,9 @@ class FifteenTests: XCTestCase {
     //                            Excessive Points                             //
     //-------------------------------------------------------------------------//
     
-    /// Tests that creating a `Fifteen HandRank` with `PlayingCard`s that have points that sum to
-    /// more than 15 throws a `RewardsError.invalidPoints`.
-    func test_init_withOver15PointsSum_returnsNil() throws {
+    /// Tests that creating a `Fifteen` with`Cards`that have a point sum more than 15 throws an
+    /// `invalidPoints Error`.
+    func test_init_withMOreThan15CardPoints_throwsInvalidPointsError() throws {
         
         // Given
         let ten = try Ten(of: .hearts)
@@ -120,6 +109,27 @@ class FifteenTests: XCTestCase {
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the points of a `Fifteen` equals two.
+    func test_points_ofFifteen_equalsTwo() throws {
+        
+        // Given
+        let ten = try Ten(of: .hearts)
+        let five = try Five(of: .hearts)
+        let cards = [ten, five]
+        let fifteen = try Fifteen(of: cards)
+        let expected = 2
+        
+        // When
+        let actual = fifteen.points
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
     
     //-------------------------------------------------------------------------//
     //                             Min/Max Cards                               //
@@ -184,6 +194,80 @@ class FifteenTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               Capacity                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the capacity of a `Fifteen` with two `Cards` equals 3.
+    func test_capacity_ofFifteenWithTwoCards_equals3() throws {
+
+        // Given
+        let ten = try Ten(of: .hearts)
+        let five = try Five(of: .hearts)
+        let cards = [ten, five]
+        let fifteen = try Fifteen(of: cards)
+        let expected = 3
+
+        // When
+        let actual = fifteen.capacity
+
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the capacity of a `Fifteen` with three`Cards` equals 2.
+    func test_capacity_ofFifteenWithThreeCards_equals2() throws {
+
+        // Given
+        let ten = try Ten(of: .hearts)
+        let four = try Four(of: .hearts)
+        let ace = try Ace(of: .hearts)
+        let cards = [ten, four, ace]
+        let fifteen = try Fifteen(of: cards)
+        let expected = 2
+
+        // When
+        let actual = fifteen.capacity
+
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the capacity of a `Fifteen` with four`Cards` equals 1.
+    func test_capacity_ofFifteenWithFourCards_equals1() throws {
+
+        // Given
+        let nine = try Nine(of: .hearts)
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let cards = [nine, ace, two, three]
+        let fifteen = try Fifteen(of: cards)
+        let expected = 1
+
+        // When
+        let actual = fifteen.capacity
+
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the capacity of a `Fifteen` with five`Cards` equals 0.
+    func test_capacity_ofFifteenWithFiveCards_equals0() throws {
+
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let four = try Four(of: .hearts)
+        let five = try Five(of: .hearts)
+        let cards = [ace, two, three, four, five]
+        let fifteen = try Fifteen(of: cards)
+        let expected = 0
+
+        // When
+        let actual = fifteen.capacity
+
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
@@ -200,27 +284,6 @@ class FifteenTests: XCTestCase {
         // When
         let actual = fifteen.title
 
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Points                                   //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the points of a `Fifteen` equals two.
-    func test_points_ofFifteen_equalsTwo() throws {
-        
-        // Given
-        let ten = try Ten(of: .hearts)
-        let five = try Five(of: .hearts)
-        let cards = [ten, five]
-        let fifteen = try Fifteen(of: cards)
-        let expected = 2
-        
-        // When
-        let actual = fifteen.points
-        
         // Then
         XCTAssertEqual(expected, actual)
     }
