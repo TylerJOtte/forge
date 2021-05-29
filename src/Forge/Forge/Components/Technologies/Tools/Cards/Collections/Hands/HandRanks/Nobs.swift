@@ -16,8 +16,7 @@
 
 import Foundation
 
-/// A `HandRank` of `PlayingCard`s with a  standard non-`jack Card` & a`jack Card` with
-/// same `Suit`.
+/// A `PlayingCard HandRank`s with a `Jack` and a `Card` of the same `Suit`.
 public class Nobs: HandRank {
     
     //=========================================================================//
@@ -27,60 +26,47 @@ public class Nobs: HandRank {
     /// Creates a`Nobs HandRank`with the given `Card`s.
     ///
     /// - Precondition:
-    ///   - The given `Card`s must contain two and only two`Card`s.
-    ///   - The given `Card`'s must contain a standard non-`jack Card`.
-    ///   - The given `Card`'s  must contain a `jack Card` with the same `Suit` as the other.
+    ///   - The given `Card`s must contain two, and only two`Card`s.
+    ///   - The given `Card`s must contain one `Jack`, and one non-`Jack`.
+    ///   - The given `Card`s must both contain the same `Suit`.
     /// - Postcondition:
-    ///   - The `HandRank` can hold two `Card`s.
     ///   - The `HandRank` contains the given `Card`s.
-    ///   - The `HandRank`s title is set to `Nobs`.
-    ///   - The `HandRank`s points are set to one.
-    ///   - title = "Nobs".
-    /// - Parameter cards: The `Card`s to create the `HandRank` with.
+    ///   - The `HandRank`'s points are set to 1.
+    ///   - The `HandRank` can only hold two ` Card`s.
+    ///   - The `HandRank`'s title is set to "Nobs".
+    /// - Parameter cards: The `Card`s to include in the `HandRank`.
     /// - Throws:
-    ///   - `ElementsError.insufficientElements` if the given `Card`s
-    ///      - Contain less than two `Card`s, or
-    ///      - Do not contain a standard non-`jack Card`, or
-    ///      - Do not contain a a `jack Card` with the same `Suit` as the other.
-    ///   - `ElementsError.excessiveElements` if the given `Card`s contain more than five
-    ///     `Card`s.
+    ///   - `invalidCount` if the given `Card`s do not contain two, and only two `Card`s.
+    ///   - `invalidRank` if the given `Card`s do not contain one `Jack` and one non-`Jack`.
+    ///   - `invalidSuit` if the given `Card`s do not both contain the same `Suit`.
     public init(of cards: [PlayingCard]) throws {
         
         let min = 2
         let max = 2
-        let nonJack = cards.filter{$0.rank != .jack}.first
-        let jack = cards.filter{$0.rank == .jack}.first
         let points = 1
         
-        guard (cards.count >= min) else {
-            
-            print("The collection must contain at least \(min) Cards.")
-            throw ElementsError.insufficientElements
+        guard (cards.count == min) else {
+
+            print("The collection must contain \(min), and only \(min) Cards.")
+            throw ElementsError.invalidCount
         }
         
-        guard (cards.count <= max) else {
+        guard (cards.contains(where: {$0 is Jack})) else {
             
-            print("The collection must contain at most \(max) Cards.")
-            throw ElementsError.excessiveElements
+            print("The given Cards must contain a Jack.")
+            throw DescriptionError.invalidRank
         }
         
-        guard (nonJack != nil) else {
+        guard (cards.contains(where: {!($0 is Jack) && !($0 is Joker)})) else {
             
-            print("The given collection must contain a standard non-jack Card.")
-            throw ElementsError.insufficientElements
+            print("The given Cards must contain a non-Jack.")
+            throw DescriptionError.invalidRank
         }
         
-        guard (jack != nil) else {
+        guard (cards.areEquallySuited()) else {
             
-            print("The given collection must contain a jack Card.")
-            throw ElementsError.insufficientElements
-        }
-        
-        guard (jack!.suit == nonJack!.suit) else {
-            
-            print("The given Cards must contain a jack Card with the same Suit "
-                + "as the non-jack Card.")
-            throw ElementsError.insufficientElements
+            print("The given Cards must both contain the same Suit.")
+            throw DepictionError.invalidSuit
         }
         
         try super.init(of: min, to: max, cards, worth: points)
