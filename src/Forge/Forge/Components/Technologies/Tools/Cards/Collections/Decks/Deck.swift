@@ -29,11 +29,14 @@ public class Deck: Tool, Cards {
     /// The maximum # of `Card`s allowed.
     public let maxCards: Int
     
+    /// The `Card`s.
+    private var cards: [String : [Card]]
+    
     /// The total # of `Card`s.
     public var count: Int { return cards.count }
     
-    /// The `Card`s.
-    private var cards: [String : [Card]]
+    /// The `Deck`'s first `Card`.
+    public var first: T? { return cards.first?.value.first }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
