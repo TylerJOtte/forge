@@ -19,8 +19,19 @@ import Foundation
 /// A containable characteristic.
 public protocol Containable {
     
+    //=========================================================================//
+    //                                ATTRIBUTES                               //
+    //=========================================================================//
+    
     /// The type of `Element` that the model contains.
     associatedtype T
+    
+    /// The first `Element`.
+    var first: T? { get }
+
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
     
     /// Determines if the {model} is empty.
     ///
