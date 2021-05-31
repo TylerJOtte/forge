@@ -51,6 +51,6 @@ public class TripleRun: MultiRun {
         let pairs = 3
         let groups = false
 
-        try super.init(of: min, cards, with: runs, and: pairs, multiple: groups)
+        try super.init(of: min, cards)
     }
 }

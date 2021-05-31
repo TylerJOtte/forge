@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Hand` of `Card`'s hiearchical position.
-public class HandRank: Hand, Scoreable {
+public class HandRank<T: RankedCard>: Hand<T>, Scoreable {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -50,7 +50,7 @@ public class HandRank: Hand, Scoreable {
     ///   - `invalidMin` if the given min is &lt; 1.
     ///   - `invalidMax` if the given max is &lt; the specified min.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
-    init(of min: Int, to max: Int, _ cards: [Card], worth points: Int) throws {
+    init(of min: Int, to max: Int, _ cards: [T], worth points: Int) throws {
         
         guard (min >= 1) else {
 

@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of sequentially `Rank`ed `Card`s.
-public class Run: HandRank {
+public class Run: HandRank<RankedCard> {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -129,11 +129,11 @@ public class Run: HandRank {
             throw ElementsError.insufficientElements
         }
 
-        guard (try cards.areSequential(with: pairs, multiple: groups)) else {
-
-            print("The given Cards are not in sequential order.")
-            throw ElementsError.areNotSequential
-        }
+//        guard (try cards.areSequential(with: pairs, multiple: groups)) else {
+//
+//            print("The given Cards are not in sequential order.")
+//            throw ElementsError.areNotSequential
+//        }
 
         try super.init(of: min, to: max, cards, worth: points)
     }

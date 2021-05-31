@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of`PlayingCard`s with points that sum to 15.
-public class Fifteen: HandRank {
+public class Fifteen: HandRank<RankedCard> {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //

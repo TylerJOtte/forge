@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Deck` of `Card`s.
-public class Deck: Tool, Cards {
+public class Deck<T: Card>: Tool, Cards {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -30,7 +30,7 @@ public class Deck: Tool, Cards {
     public let maxCards: Int
     
     /// The `Card`s.
-    private var cards: [String : [Card]]
+    private var cards: [String : [T]]
     
     /// The total # of `Card`s.
     public var count: Int { return cards.count }
@@ -71,7 +71,7 @@ public class Deck: Tool, Cards {
     ///   - min: The minimum # of `Card`s allowed in the `Deck`.
     ///   - max: The maximum # of `Card`s allowed in the `Deck`.
     ///   - cards: The `Card`s to create `Deck` with.
-    public init?(of min: Int, to max: Int, _ cards: [Card]) {
+    public init?(of min: Int, to max: Int, _ cards: [T]) {
         
         guard (min >= 0) else {
             
@@ -116,7 +116,7 @@ public class Deck: Tool, Cards {
     /// - Parameters:
     ///   - cards: The `Card`s to create `Deck` with.
     ///   - max: The maximum # of `Card`s allowed in the `Deck.`
-    public init?(of cards: [Card], with max: Int = Int.max) {
+    public init?(of cards: [T], with max: Int = Int.max) {
         
         guard (cards.count <= max) else {
             
@@ -171,7 +171,7 @@ public class Deck: Tool, Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find key for.
     /// - Returns: True if a key exists for the  given `Card`, else false.
-    private func containsKey(_ card: Card) -> Bool {
+    private func containsKey(_ card: T) -> Bool {
         
         return cards.keys.contains(card.title)
     }
@@ -182,7 +182,7 @@ public class Deck: Tool, Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find.
     /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: Card) -> Bool {
+    public func contains(_ card: T) -> Bool {
         
         return containsKey(card) && cards[card.title]!.count > 0
     }
@@ -197,7 +197,7 @@ public class Deck: Tool, Cards {
     /// - Postcondition: The `Deck` contains the given `Card`.
     /// - Parameter card: The `card` to add to the `Deck`.
     /// - Throws: `RangeError.isFull` if the `Deck` is full.
-    public func add(_ card: Card) throws {
+    public func add(_ card: T) throws {
         
         guard (!isFull()) else {
             
@@ -228,7 +228,7 @@ public class Deck: Tool, Cards {
     /// - Throws:
     ///   - `ElementsError.isEmpty` if the collection is empty.
     ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
-    public func remove(_ card: Card) throws -> Card {
+    public func remove(_ card: T) throws -> T {
         
         guard (!isEmpty()) else {
             

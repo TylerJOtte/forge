@@ -25,7 +25,7 @@ public class HandScore: Score {
     //=========================================================================//
     
     /// The `HandRank`'s that make up the `Hand`'s total points.
-    public var handRanks: [String:[HandRank]]
+    public var handRanks: [String:[HandRank<RankedCard>]]
     
     /// The total # of points.
     public override var points: Int {
@@ -48,7 +48,7 @@ public class HandScore: Score {
     ///   - The `HandScore` contains the given collection's `HandRank`s.
     ///   - The `HandScore`'s points are set according to the given collection's `HandRank`s.
     /// - Parameter handRanks: The`HandRank`s to create the`HandScore` with.
-    public init(with handRanks: [String:[HandRank]])  {
+    public init(with handRanks: [String:[HandRank<RankedCard>]])  {
         
         self.handRanks = handRanks
         

@@ -58,7 +58,7 @@ public class RankedCard: Card, Rankable, Scoreable {
     }
     
     //=========================================================================//
-    //                                 METHODS                                 //
+    //                                 TESTERS                                 //
     //=========================================================================//
     
     /// Determines if the `Card` is less than the given `Card`.
@@ -96,5 +96,23 @@ public class RankedCard: Card, Rankable, Scoreable {
         }
         
         return equals
+    }
+    
+    /// Determines if the `Card` ranks the given `Card` in the hierarchy.
+    ///
+    /// - Parameter card: The `Card` to test.
+    /// - Returns: True if the `Card` ranks the given `Card`in the hierarchy, else false.
+    public func ranks(_ card: RankedCard) -> Bool {
+        
+        return rank == card.rank && position == card.position
+    }
+    
+    /// Determines if the `Card` immediately follows the given`Card` in the hierarchy.
+    ///
+    /// - Parameter card: The `Card` to test.
+    /// - Returns: True if the `Card` immediately follows the given `Card` in the hierarchy, else false.
+    public func follows(_ card: RankedCard) -> Bool {
+        
+        return position == card.position + 1
     }
 }

@@ -26,7 +26,7 @@ public protocol Containable {
     /// The type of `Element` that the model contains.
     associatedtype T
     
-    /// The first `Element`.
+    /// The {model's} first {T}.
     var first: T? { get }
 
     //=========================================================================//

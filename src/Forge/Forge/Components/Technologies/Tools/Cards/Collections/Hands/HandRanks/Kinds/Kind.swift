@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of equally `Rank`ed `Card`s.
-public class Kind: HandRank {
+public class Kind: HandRank<RankedCard> {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //

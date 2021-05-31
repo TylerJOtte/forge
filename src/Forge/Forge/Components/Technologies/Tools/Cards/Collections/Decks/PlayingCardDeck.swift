@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A standard French-suited `Deck` of `PlayingCard`s.
-public class PlayingCardDeck: Deck {
+public class PlayingCardDeck: Deck<PlayingCard> {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //

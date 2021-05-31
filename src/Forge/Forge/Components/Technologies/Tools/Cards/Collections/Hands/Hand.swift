@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Hand` of `Card`s.
-public class Hand: Cards {
+public class Hand<T: Card>: Cards {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -36,7 +36,7 @@ public class Hand: Cards {
     public var count: Int { return cards.count }
     
     /// The `Hand`'s first `Card`.
-    public var first: Card? { return cards.first }
+    public var first: T? { return cards.first }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -185,7 +185,7 @@ public class Hand: Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find.
     /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: Card) -> Bool {
+    public func contains(_ card: T) -> Bool {
         
         return cards.contains(card)
     }
@@ -200,7 +200,7 @@ public class Hand: Cards {
     /// - Postcondition: The `Hand` contains the given `Card`.
     /// - Parameter card: The `Card` to add to the `Hand`.
     /// - Throws: `RangeError.isFull` if the `Hand` is full.
-    public func add(_ card: Card) throws {
+    public func add(_ card: T) throws {
         
         guard (!isFull()) else {
             
@@ -224,7 +224,7 @@ public class Hand: Cards {
     /// - Throws:
     ///   - `ElementsError.isEmpty` if the collection is empty.
     ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
-    public func remove(_ card: Card) throws -> Card {
+    public func remove(_ card: T) throws -> T {
         
         guard (!isEmpty()) else {
             

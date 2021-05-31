@@ -48,6 +48,6 @@ public class DoubleDoubleRun: MultiRun {
         let runs = 4
         let pairs = 2
         
-        try super.init(of: min, cards, with: runs, and: pairs)
+        try super.init(of: min, cards)
     }
 }

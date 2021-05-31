@@ -20,22 +20,22 @@ import Foundation
 public class MultiRun: Run {
     
     /// The total # of runs.
-    public let runs: Int
-    
-    /// The total # of pairs.
-    public let pairs: Int
-    
-    /// The total # of `Card`s in a run.
-    public var sequence: Int { count -
-        
-        (pairs % 2 == 0 ? pairs : Int(ceil(Double(pairs) / 2)))
-    }
-    
-    /// The total # of points from runs.
-    public var runPoints: Int { runs * sequence }
-    
-    /// The total # of points from pairs.
-    public var pairPoints: Int { pairs * 2 }
+//    public let runs: Int
+//
+//    /// The total # of pairs.
+//    public let pairs: Int
+//
+//    /// The total # of `Card`s in a run.
+//    public var sequence: Int { count -
+//
+//        (pairs % 2 == 0 ? pairs : Int(ceil(Double(pairs) / 2)))
+//    }
+//
+//    /// The total # of points from runs.
+//    public var runPoints: Int { runs * sequence }
+//
+//    /// The total # of points from pairs.
+//    public var pairPoints: Int { pairs * 2 }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -72,32 +72,22 @@ public class MultiRun: Run {
     ///       - The given min is less than four.
     ///       -  The # of specified pairs &lt;= zero.
     ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
-    init(of min: Int, _ cards: [PlayingCard], with runs: Int, and pairs: Int,
-         multiple groups: Bool = true) throws {
+    init(of min: Int, _ cards: [PlayingCard]) throws {
         
-        let minCards = 4
+//        guard (min >= 4) else {
+//            
+//            print("The given min must be >= \(minCards).")
+//            throw ElementsError.insufficientElements
+//        }
+//
+//        self.runs = runs
+//        self.pairs = pairs
+//        let sequence = cards.count - (pairs % 2 == 0 ? pairs :
+//                                      Int(ceil(Double(pairs) / 2)))
+//        let runPoints = runs * sequence
+//        let pairPoints = pairs * 2
+//        let points = runPoints + pairPoints
         
-        guard (min >= minCards) else {
-            
-            print("The given min must be >= \(minCards).")
-            throw ElementsError.insufficientElements
-        }
-        
-        guard (cards.count >= min) else {
-            
-            print("The collection must contain at least \(minCards) Cards.")
-            throw ElementsError.insufficientElements
-        }
-        
-        self.runs = runs
-        self.pairs = pairs
-        let sequence = cards.count - (pairs % 2 == 0 ? pairs :
-                                      Int(ceil(Double(pairs) / 2)))
-        let runPoints = runs * sequence
-        let pairPoints = pairs * 2
-        let points = runPoints + pairPoints
-        
-        try super.init(of: min, cards, worth: points, with: pairs,
-                       multiple: groups)
+        try super.init(of: min, cards, worth: 0, with: 0, multiple: false)
     }
 }

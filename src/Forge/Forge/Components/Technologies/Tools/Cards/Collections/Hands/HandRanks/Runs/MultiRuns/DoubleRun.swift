@@ -26,9 +26,9 @@ public class DoubleRun: MultiRun {
     /// Creates a`DoubleRun`with the given `Card`s.
     ///
     /// - Precondition:
-    ///    - The given `Card`s must contain at least four`Card`s.
-    ///    - The given `Card`s must contain one and only one pair.
-    ///    - The given `Card`s must be in sequential order.
+    ///    - The given `Card`s must contain at least four `Card`s.
+    ///    - The given `Card`s must contain one, and only one `Pair`.
+    ///    - The given `Card`'s non-`Pair Card`s must form a `Run` with each `Pair Card`.
     /// - Postcondition:
     ///    - The `HandRank` can hold four to `Int.max Card`s.
     ///    - The `HandRank` contains the given `Card`s.
@@ -45,16 +45,21 @@ public class DoubleRun: MultiRun {
     public init(of cards: [PlayingCard]) throws {
         
         let min = 4
-        let runs = 2
-        let pairs = 1
-        let groups = false
+        let pairCount = 1
+        let pairs = try cards.getPairs()
+        let pair = pairs.first
         
-        guard (cards.count >= min) else {
+        guard (pairs.count == pairCount) else {
             
-            print("The collection must contain at least \(min) Cards.")
-            throw ElementsError.insufficientElements
+            print("The given Cards must contain one, and only one pair.")
+            throw HandRankError.invalidPairCount
         }
         
-        try super.init(of: min, cards, with: runs, and: pairs, multiple: groups)
+        guard (cards.formRun(with: pair)) else {
+            
+            throw HandRankError.invalidPairCount
+        }
+        
+        try super.init(of: min, cards)
     }
 }
