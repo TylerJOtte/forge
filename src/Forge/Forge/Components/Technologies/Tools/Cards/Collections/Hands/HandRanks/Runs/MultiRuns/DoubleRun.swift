@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// A `HandRank` of with two `Run`s and  a pair.
+/// A `HandRank` of  two `Run`s with a `Pair`.
 public class DoubleRun: MultiRun {
     
     //=========================================================================//
@@ -26,38 +26,39 @@ public class DoubleRun: MultiRun {
     /// Creates a`DoubleRun`with the given `Card`s.
     ///
     /// - Precondition:
-    ///    - The given `Card`s must contain at least four `Card`s.
-    ///    - The given `Card`s must contain one, and only one `Pair`.
-    ///    - The given `Card`'s non-`Pair Card`s must form a `Run` with each `Pair Card`.
+    ///   - The given `Card`s must contain at least four `Card`s.
+    ///   - The given `Card`s must contain one, and only one `Pair`.
+    ///   - The given `Card`'s non-`Pair Card`s must form a `Run` with each `Pair Card`.
     /// - Postcondition:
-    ///    - The `HandRank` can hold four to `Int.max Card`s.
-    ///    - The `HandRank` contains the given `Card`s.
-    ///    - The `HandRank`s title is set to "Double Run".
-    ///    - The `HandRank`s points are set to according to the sequence length in the given `Card`s.
-    ///    - title = "Double Run".
-    /// - Parameter cards: The `Card`s to create the `HandRank` with.
+    ///   - The `DoubleRun` contains the given `Card`s.
+    ///   - The `DoubleRun`s points are calculated based on the # of given `Card`s.
+    ///   - The `DoubleRun` can hold four to `Int.max Card`s.
+    ///   - The `DoubleRun`s title is set to "Double Run".
+    /// - Parameter cards:  The `Card`s to include in the `DoubleRun`.
     /// - Throws:
-    ///    - `ElementsError.insufficientElements` if the given `Card`s ontain less than four
-    ///      `Card`s.
-    ///    - `ElementsError.invalidDuplicateCount` if the given `Card`s doesn't contain one
-    ///       and only pair.
-    ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
+    ///   - `invalidCount` if the given `Card`s do not contain at least four `Card`s.
+    ///   - `invalidKindCount` if the given `Card`s do not contain one, and only one `Pair`.
+    ///   - `invalidRun` if the given `Card`'s non-`Pair Card`s do not form a `Run` with each
+    ///     `Pair Card`.
     public init(of cards: [PlayingCard]) throws {
         
         let min = 4
         let pairCount = 1
         let pairs = try cards.getPairs()
         let pair = pairs.first
-        
+
         guard (pairs.count == pairCount) else {
             
-            print("The given Cards must contain one, and only one pair.")
-            throw HandRankError.invalidPairCount
+            print("The given Cards must contain \(pairCount), and only " +
+                  "\(pairCount) Pair.")
+            throw HandRankError.invalidKindCount
         }
         
         guard (cards.formRun(with: pair)) else {
             
-            throw HandRankError.invalidPairCount
+            print("The given Card's non-Pair Cards must form a Run with each " +
+                  "Pair Card.")
+            throw HandRankError.invalidRun
         }
         
         try super.init(of: min, cards)

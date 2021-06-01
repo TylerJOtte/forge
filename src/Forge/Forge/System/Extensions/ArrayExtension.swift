@@ -13,7 +13,50 @@
 //                                                                             //
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
-  
+
+
+/// An extension for common `RankedCard Array` operations.
+extension Array where Element: Scoreable  {
+
+    //=========================================================================//
+    //                               CALCULATORS                               //
+    //=========================================================================//
+    
+    /// Retrieves the sum total of points from all the `Card`s in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The sum total of points from all the `Card`s in the collection.
+    func sumPoints() -> Int {
+        
+        return self.map{$0.points}.reduce(0, +)
+    }
+    
+}
+
+/// An extension for common `RankedCard Array` operations.
+extension Array where Element: Cards {
+
+    //=========================================================================//
+    //                               CALCULATORS                               //
+    //=========================================================================//
+    
+    /// Retrieves the sum total of points from all the `Card`s in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The sum total of points from all the `Card`s in the collection.
+    func sumCounts() -> Int {
+        
+        return self.map{$0.count}.reduce(0, +)
+    }
+    
+}
+
+
+
+
+
 /// An extension for common `RankedCard Array` operations.
 extension Array where Element: RankedCard  {
 
@@ -86,6 +129,55 @@ extension Array where Element: RankedCard  {
         return [pairs, threeOfAKinds, fourOfAKinds].flatMap{$0}
     }
     
+    /// Retrieves the sum total of points from all the `Card`s in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The sum total of points from all the `Card`s in the collection.
+    func getRunCardCount(with kinds: [Kind]) -> Int {
+        
+        return splitBySingleRanks().count + kinds.count
+    }
+    
+    func getRuns(with kinds: [Kind]) throws -> [Run] {
+        
+        var runs: [Run] = []
+        
+        var cardsBySingleRanks = splitBySingleRanks().sorted()
+        
+        var cards = [try Ace(of: .hearts), try Two(of: .hearts), try Three(of: .hearts)]
+        var hand = try Hand(of: cards)
+        
+        
+        for card in hand {
+            
+            
+        }
+        return runs
+    }
+    
+    /// Retrieves the sum total of points from all the `Card`s in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The sum total of points from all the `Card`s in the collection.
+    func getRunPoints(with kinds: [Kind]) -> Int {
+        
+        let kindCardCount = kinds.sumCounts()
+        let runCardCount = getRunCardCount(with: kinds)
+        
+        return runCardCount * kindCardCount
+    }
+    
+    func getRunPoints() throws -> Int {
+        
+        let kinds = try getKinds()
+        let kindPoints = kinds.sumPoints()
+        let runPoints = getRunPoints(with: kinds)
+        
+        return kindPoints + runPoints
+    }
+    
     func splitBySingleRanks() -> [RankedCard] {
 
         let count = 1
@@ -104,7 +196,7 @@ extension Array where Element: RankedCard  {
             if let card = kind?.first {
                 
                 cards.append(card)
-                _ = try Run(of: cards)
+                _ = try Run(of: cards.sorted())
                 formRun = true
             
             }
@@ -115,6 +207,20 @@ extension Array where Element: RankedCard  {
         }
         
         return formRun
+    }
+    
+    func formRuns(with kinds: [Kind]) -> Bool {
+        
+        var formRuns = true
+        var index = 0
+        
+        while (formRuns && index < kinds.count) {
+            
+            formRuns = formRun(with: kinds[index])
+            index += 1
+        }
+        
+        return formRuns
     }
     
     //=========================================================================//
@@ -152,6 +258,21 @@ extension Array where Element: RankedCard  {
         
         return splitByRank().filter{$1.count > count}
     }
+    
+//    //=========================================================================//
+//    //                               CALCULATORS                               //
+//    //=========================================================================//
+//
+//    /// Retrieves the sum total of points from all the `Card`s in the collection.
+//    ///
+//    /// - Precondition: None.
+//    /// - Postcondition: None.
+//    /// - Returns: The sum total of points from all the `Card`s in the collection.
+//    func sum() -> Int {
+//
+//        return self.map{$0.points}.reduce(0, +)
+//    }
+    
 }
 
 /// An extension for common `PlayingCard Array` operations.
@@ -323,19 +444,6 @@ extension Array where Element: PlayingCard  {
         return Dictionary(grouping: self, by: {$0.suit})
     }
     
-    //=========================================================================//
-    //                               CALCULATORS                               //
-    //=========================================================================//
-    
-    /// Retrieves the sum total of points from all the `Card`s in the collection.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The sum total of points from all the `Card`s in the collection.
-    func sum() -> Int {
-        
-        return self.map{$0.points}.reduce(0, +)
-    }
-    
+
 }
 

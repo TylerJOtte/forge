@@ -17,25 +17,7 @@
 import Foundation
 
 /// A `HandRank` of multiple `Run`s with at least one common `Card`.
-public class MultiRun: Run {
-    
-    /// The total # of runs.
-//    public let runs: Int
-//
-//    /// The total # of pairs.
-//    public let pairs: Int
-//
-//    /// The total # of `Card`s in a run.
-//    public var sequence: Int { count -
-//
-//        (pairs % 2 == 0 ? pairs : Int(ceil(Double(pairs) / 2)))
-//    }
-//
-//    /// The total # of points from runs.
-//    public var runPoints: Int { runs * sequence }
-//
-//    /// The total # of points from pairs.
-//    public var pairPoints: Int { pairs * 2 }
+public class MultiRun: HandRank<RankedCard> {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -45,49 +27,31 @@ public class MultiRun: Run {
     ///
     /// - Precondition:
     ///    - The given min must be >= four.
-    ///    - The specified `Card`s must contain the given min`Card`s.
-    ///    - The # of specified pairs must be >= one.
-    ///    - The given `Card`s must contain the specified # of pairs.
-    ///    - The given `Card`s must be in sequential order.
+    ///    - The given `Card`s must contain the specified min # of `Card`s..
     /// - Postcondition:
-    ///    - The `HandRank` can hold four to `Int.max Card`s.
-    ///    - The `HandRank` contains the given `Card`s.
-    ///    - The `HandRank`s title is set to the given title.
-    ///    - The `HandRank`s points are set to according to the sequence length in the given `Card`s.
-    ///    - title = name of calling model.
+    ///    - The `MultiRun` can hold four to `Int.max Card`s.
+    ///    - The `MultiRun` contains the given `Card`s.
+    ///    - The `MultiRun`s points are calculated based on the # of given `Card`s.
+    ///    - The `MultiRun`s title is set to the calling model's name.
     /// - Parameters:
-    ///    - cards: The `Card`s to create the `HandRank` with.
-    ///    - pairs: The # of pairs that the given `Card`s contain.
-    ///    - groups: True if multiple pair groups allowed, else false.
+    ///    - min: The minimun # of `Card`s allowed.
+    ///    - cards: The `Card`s to include in the `MultiRun`.
     /// - Throws:
-    /// - Throws:
-    ///    - `ElementsError.insufficientElements` if the given `Card`s
-    ///       - Contain less than four `Card`s, or
-    ///       - Contain less pairs than the specified # of pairs.
-    ///    - `ElementsError.invalidDuplicateCount` if specified groups is false, and `Card`s
-    ///       contain multiple pair groups.
-    ///    - `ElementsError.excessiveElements` if the given `Card`s contain more  pairs than
-    ///       the specified # of pairs.
-    ///    - `RangeError.invalidMin`if
-    ///       - The given min is less than four.
-    ///       -  The # of specified pairs &lt;= zero.
-    ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
+    ///   -  `invalidMin` if the given min is less than four.
+    ///   - `invalidCount` if the given `Card`s do not contain the specified min # of `Card`s.
     init(of min: Int, _ cards: [PlayingCard]) throws {
         
-//        guard (min >= 4) else {
-//            
-//            print("The given min must be >= \(minCards).")
-//            throw ElementsError.insufficientElements
-//        }
-//
-//        self.runs = runs
-//        self.pairs = pairs
-//        let sequence = cards.count - (pairs % 2 == 0 ? pairs :
-//                                      Int(ceil(Double(pairs) / 2)))
-//        let runPoints = runs * sequence
-//        let pairPoints = pairs * 2
-//        let points = runPoints + pairPoints
+        let minCards = 4
         
-        try super.init(of: min, cards, worth: 0, with: 0, multiple: false)
+        guard (min >= minCards) else {
+
+            print("Min must be >= \(minCards).")
+            throw RangeError.invalidMin
+        }
+        
+        let max = Int.max
+        let points = try cards.getRunPoints()
+        
+        try super.init(of: min, to: max, cards, worth: points)
     }
 }

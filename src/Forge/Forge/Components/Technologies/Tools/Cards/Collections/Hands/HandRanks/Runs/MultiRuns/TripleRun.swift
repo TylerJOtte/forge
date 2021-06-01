@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// A `HandRank` with three `Run`s and a royal pair.
+/// A `HandRank` of three `Run`s with a `ThreeOfAKind`.
 public class TripleRun: MultiRun {
     
     //=========================================================================//
@@ -26,31 +26,42 @@ public class TripleRun: MultiRun {
     /// Creates a`TripleRun`with the given `Card`s.
     ///
     /// - Precondition:
-    ///    - The given `Card`s must contain at least five`Card`s.
-    ///    - The given `Card`s must contain three and only three pairs.
-    ///    - The given `Card`s must be in sequential order.
+    ///   - The given `Card`s must contain at least five `Card`s.
+    ///   - The given `Card`s must contain one, and only one `ThreeOfAKind`.
+    ///   - The given `Card`'s non-`Kind Card`s must form a `Run` with each `Kind Card`.
     /// - Postcondition:
-    ///    - The `HandRank` can hold five to `Int.max Card`s.
-    ///    - The `HandRank` contains the given `Card`s.
-    ///    - The `HandRank`s title is set to "Triple Run".
-    ///    - The `HandRank`s points are set to according to the sequence length in the given `Card`s.
-    ///    - title = "Triple Run".
-    /// - Parameter cards: The `Card`s to create the `HandRank` with.
+    ///   - The `TripleRun` contains the given `Card`s.
+    ///   - The `TripleRun`s points are calculated based on the # of given `Card`s.
+    ///   - The `TripleRun` can hold five to `Int.max Card`s.
+    ///   - The `TripleRun`s title is set to "Triple Run".
+    /// - Parameter cards:  The `Card`s to include in the `TripleRun`.
     /// - Throws:
-    ///    - `ElementsError.insufficientElements` if the given `Card`s
-    ///       - Contain less than five `Card`s, or
-    ///       - Contain less than three pairs.
-    ///      - `ElementsError.invalidDuplicateCount` if specified groups is false, and
-    ///        `Card`s contain multiple pair groups.
-    ///    - `ElementsError.excessiveElements` if the given `Card`s contain more than three pairs.
-    ///    - `ElementsError.areNotSequential` if the given `Card`s are not in sequential order.
+    ///   - `invalidCount` if the given `Card`s do not contain at least five `Card`s.
+    ///   - `invalidKindCount` if the given `Card`s do not contain one, and only one
+    ///     `ThreeOfAKind`.
+    ///   - `invalidRun` if the given `Card`'s non-`Kind Card`s do not form a `Run` with each
+    ///     `Kind Card`.
     public init(of cards: [PlayingCard]) throws {
         
         let min = 5
-        let runs = 3
-        let pairs = 3
-        let groups = false
-
+        let kindCount = 1
+        let kinds = try cards.getThreeOfAKinds()
+        let kind = kinds.first
+        
+        guard (kinds.count == kindCount) else {
+            
+            print("The given Cards must contain \(kindCount), and only " +
+                  "\(kindCount) ThreeOfAKind.")
+            throw HandRankError.invalidKindCount
+        }
+        
+        guard (cards.formRun(with: kind)) else {
+            
+            print("The given Card's non-Kind Cards must form a Run with each " +
+                  "Kind Card.")
+            throw HandRankError.invalidRun
+        }
+        
         try super.init(of: min, cards)
     }
 }
