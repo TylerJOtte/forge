@@ -25,60 +25,6 @@ class Runests: XCTestCase {
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
-    //                              Invalid Min                                //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that creating a `Run` with a min less than 3 throws an `invalidMin Error`.
-    func test_init_withMinLessThan3_throwsInvaliMinError() throws {
-
-        // Given
-        let min = 2
-        let max = 5
-        let isHigh = true
-        let ten = try Ten(of: .hearts)
-        let jack = try Jack(of: .hearts)
-        let queen = try Queen(of: .hearts)
-        let king = try King(of: .hearts)
-        let ace = try Ace(of: .hearts, and: isHigh)
-        let cards = [ten, jack, queen, king, ace]
-        let expected = RangeError.invalidMin
-
-        // When
-        XCTAssertThrowsError(try Run(of: min, to: max, cards)) { error in
-
-            // Then
-            XCTAssertEqual(expected, error as? RangeError)
-        }
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                              Invalid Max                                //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that creating a `Run` with a max less than the given min throws an `invalidMax Error`.
-    func test_init_withMaxLessThanMin_throwsInvaliMaxError() throws {
-
-        // Given
-        let min = 5
-        let max = 4
-        let isHigh = true
-        let ten = try Ten(of: .hearts)
-        let jack = try Jack(of: .hearts)
-        let queen = try Queen(of: .hearts)
-        let king = try King(of: .hearts)
-        let ace = try Ace(of: .hearts, and: isHigh)
-        let cards = [ten, jack, queen, king, ace]
-        let expected = RangeError.invalidMax
-
-        // When
-        XCTAssertThrowsError(try Run(of: min, to: max, cards)) { error in
-
-            // Then
-            XCTAssertEqual(expected, error as? RangeError)
-        }
-    }
-    
-    //-------------------------------------------------------------------------//
     //                              Invalid Count                              //
     //-------------------------------------------------------------------------//
     
@@ -86,8 +32,8 @@ class Runests: XCTestCase {
     // Run Min //
     //         //
     
-    /// Tests that creating a `Run` with less than three`Cards`using the convenience constructor  throws
-    /// an `invalidCount Error`.
+    /// Tests that creating a `Run` with less than three`Cards`using the throws an `invalidCount`
+    /// `Error`.
     func test_convenienceInit_withInsufficientCards_throwsInvalidCountError()
         throws {
 
@@ -99,81 +45,6 @@ class Runests: XCTestCase {
 
         // When
         XCTAssertThrowsError(try Run(of: cards)) { error in
-
-            // Then
-            XCTAssertEqual(expected, error as? ElementsError)
-        }
-    }
-    
-    /// Tests that creating a `Run` with less than three`Cards`using the designated constructor  throws
-    /// an `invalidCount Error`.
-    func test_init_withInsufficientCards_throwsInvalidCountError() throws {
-
-        // Given
-        let min = 3
-        let max = 5
-        let ten = try Ten(of: .hearts)
-        let jack = try Jack(of: .hearts)
-        let cards = [ten, jack]
-        let expected = ElementsError.invalidCount
-
-        // When
-        XCTAssertThrowsError(try Run(of: min, to: max, cards)) { error in
-
-            // Then
-            XCTAssertEqual(expected, error as? ElementsError)
-        }
-    }
-    
-    //           //
-    // Given Min //
-    //           //
-    
-    /// Tests that creating a `Run` with `Cards` less than the given min using the constructor throws an
-    /// `invalidCount Error`.
-    func test_init_withLessThanGivenMin_throwsInvalidCountError() throws {
-
-        // Given
-        let min = 5
-        let max = 5
-        let ten = try Ten(of: .hearts)
-        let jack = try Jack(of: .hearts)
-        let queen = try Queen(of: .hearts)
-        let king = try King(of: .hearts)
-        let cards = [ten, jack, queen, king]
-        let expected = ElementsError.invalidCount
-
-        // When
-        XCTAssertThrowsError(try Run(of: min, to: max, cards)) { error in
-
-            // Then
-            XCTAssertEqual(expected, error as? ElementsError)
-        }
-    }
-    
-    //           //
-    // Given Max //
-    //           //
-
-    /// Tests that creating a `Run` with more than the given max `Cards` throws an `invalidCount`
-    /// `Error`.
-    func test_init_withMoreThanGivenMax_throwsInvalidCountError() throws {
-
-        // Given
-        let min = 5
-        let max = 5
-        let isHigh = true
-        let nine = try Nine(of: .hearts)
-        let ten = try Ten(of: .hearts)
-        let jack = try Jack(of: .hearts)
-        let queen = try Queen(of: .hearts)
-        let king = try King(of: .hearts)
-        let ace = try Ace(of: .hearts, and: isHigh)
-        let cards = [nine, ten, jack, queen, king, ace]
-        let expected = ElementsError.invalidCount
-
-        // When
-        XCTAssertThrowsError(try Run(of: min, to: max, cards)) { error in
 
             // Then
             XCTAssertEqual(expected, error as? ElementsError)

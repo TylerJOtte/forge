@@ -19,5 +19,6 @@ import Foundation
 /// A throwable `HandRank Error`.
 public enum HandRankError: HandError {
     
-    case invalidPairCount
+    case invalidKindCount
+    case invalidRun
 }
