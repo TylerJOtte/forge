@@ -20,8 +20,8 @@ import XCTest
 /// Unit tests for a `Scoreable Array`.
 class ScoreableArrayTests: XCTestCase {
  
-    /// Tests that summing the points of all `NumeralCard`s equals 55.
-    func test_sumPoints_ofNumeralCards_equals50() throws {
+    /// Tests that summing the points of all `NumeralCard`s with a `Suit` equals 55.
+    func test_sumPoints_ofNumeralCardsWithSuit_equals50() throws {
         
         let cards = try PlayingCards.getNumeralCards(with: .hearts)
         let expected = 55
@@ -31,8 +31,8 @@ class ScoreableArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that summing the points of all `FaceCard`s equals 30.
-    func test_sumPoints_ofFaceCards_equals30() throws {
+    /// Tests that summing the points of all `FaceCard`s with a `Suit` equals 30.
+    func test_sumPoints_ofFaceCardsWithSuit_equals30() throws {
         
         let cards = try PlayingCards.getFaceCards(with: .hearts)
         let expected = 30
@@ -42,10 +42,22 @@ class ScoreableArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that summing the points of all standard `PlayingCard`s equals 85.
-    func test_sumPoints_ofStandardPlayingCards_equals85() throws {
+    /// Tests that summing the points of all standard `PlayingCard`s  with a `Suit` equals 85.
+    func test_sumPoints_ofStandardPlayingCardsWithSuit_equals85() throws {
         
-        let cards = try PlayingCards.getStandardCards(with: .hearts)
+        let cards = try PlayingCards.getCards(with: .hearts)
+        let expected = 85
+        
+        let actual = cards.sumPoints()
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that summing the points of all `PlayingCard`s with a `Suit` and `Jokers` equals 85.
+    func test_sumPoints_ofPlayingCardsWithJokers_equals85() throws {
+        
+        let jokers = true
+        let cards = try PlayingCards.getCards(with: .hearts, include: jokers)
         let expected = 85
         
         let actual = cards.sumPoints()

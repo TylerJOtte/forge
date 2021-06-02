@@ -40,7 +40,7 @@ class PlayingCards {
     /// - Parameter suit: The symbol grouping to get `Card`s for.
     /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
     /// - Returns: An array of `NumeralCard`s.
-    static func getNumeralCards(with suit: Suit) throws -> [PlayingCard] {
+    static func getNumeralCards(with suit: Suit) throws -> [NumeralCard] {
         
         return [
             try Ace(of: suit),
@@ -63,47 +63,63 @@ class PlayingCards {
     /// - Parameter suit: The symbol grouping to get `Card`s for.
     /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
     /// - Returns: An array of `FaceCard`s.
-    static func getFaceCards(with suit: Suit) throws -> [PlayingCard] {
+    static func getFaceCards(with suit: Suit) throws -> [FaceCard] {
         
-        return [
-            try Jack(of: suit),
-            try Queen(of: suit),
-            try King(of: suit)
-        ]
+        return [try Jack(of: suit), try Queen(of: suit), try King(of: suit)]
     }
     
-    /// Retrieves all the standard `PlayingCard`s with the given `Suit`.
+    /// Retrieves all the `Joker`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: An array of `Joker`s.
+    static func getJokers() throws -> [Joker] {
+        
+        return [try Joker(color: .red), try Joker(color: .black)]
+    }
+    
+    /// Retrieves all the standard `PlayingCard`s with the given `Suit`, along with `Joker`s if
+    /// specified.
     ///
     /// - Precondition:The given `Suit` must be a standard `PlayingCard Suit`.
     /// - Postcondition: None.
-    /// - Parameter suit: The symbol grouping to get `Card`s for.
+    /// - Parameters:
+    ///   - suit: The symbol grouping to get `Card`s for.
+    ///   - jokers: True if include `Jokers`, else false.
     /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
-    /// - Returns: An array of standard `PlayingCard`s.
-    static func getStandardCards(with suit: Suit) throws -> [PlayingCard] {
+    /// - Returns: An array of `PlayingCard`s.
+    static func getCards(with suit: Suit, include jokers: Bool = false)
+        throws -> [PlayingCard] {
         
-        var cards = try getNumeralCards(with: suit)
+        var cards: [PlayingCard] = []
+        let numeralCards = try getNumeralCards(with: suit)
         let faceCards = try getFaceCards(with: suit)
         
+        cards.append(contentsOf: numeralCards)
         cards.append(contentsOf: faceCards)
+        
+        if (jokers) {
+            
+            cards.append(contentsOf: try getJokers())
+        }
         
         return cards
     }
     
-    /// Retrieves a collection of`PlayingCard`s for each `PlayingCard Rank` per the given `Suit`s.
+    /// Retrieves all the standard `PlayingCard`s for each of the given `Suit`s.
     ///
-    /// - Precondition:`Suit`s' symbols must be a `clover`, `diamond`, `heart`, or `spade`.
+    /// - Precondition:The given `Suit`s must be standard `PlayingCard Suit`s.
     /// - Postcondition: None.
-    /// - Parameter suits: The `Suit`s to get `PlayingCard`s for.
-    /// - Throws: `FeaturesError.invalidSuit` if any of the given `Suit`s are not standard
-    ///   `PlayingCard Suit`s.
-    /// - Returns: An array of `PlayingCard`s.
-    static func getCards(of suits: [Suit]) throws -> [PlayingCard] {
+    /// - Parameter suit: The symbol groupings to get `Card`s for.
+    /// - Throws: `invalidSuit`  if the given `Suit`s are not all standard `PlayingCard Suit`s.
+    /// - Returns: An array of standard `PlayingCard`s.
+    static func getStandardCards(with suits: [Suit]) throws -> [PlayingCard] {
         
         var cards: [PlayingCard] = []
         
         for suit in suits {
             
-            let suitCards = try getStandardCards(with: suit);
+            let suitCards = try getCards(with: suit);
             
             cards.append(contentsOf: suitCards)
         }
@@ -111,20 +127,20 @@ class PlayingCards {
         return cards
     }
     
-    /// Retrieves a collection of`PlayingCard`s for each `PlayingCard Rank` & `Suit` along with
-    /// `joker`s if specified.
+    /// Retrieves all the standard `PlayingCard`s for each `Rank` & `Suit`, along with `Joker`s if
+    /// specified.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Parameter jokers: True if include `joker PlayingCard`s, else false.
     /// - Returns: An array of `PlayingCard`s.
-    static func getCards(with jokers: Bool = false) -> [PlayingCard]? {
+    static func getCards(with jokers: Bool = false) throws -> [PlayingCard] {
 
         var cards: [PlayingCard] = []
         
         do {
             
-            try cards.append(contentsOf: getCards(of: suits))
+            try cards.append(contentsOf: getStandardCards(with: suits))
             
             if (jokers) {
 

@@ -29,26 +29,26 @@ class PlayingDeckTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that creating a`PlayingCardDeck` with `joker`s succeeds.
-    func test_init_withJokers_true() {
+    func test_init_withJokers_true() throws {
         
         // Given
         let jokers = true
         
         // When
-        let actual = PlayingCardDeck(with: jokers)
+        let actual = try PlayingCardDeck(with: jokers)
         
         // Then
         XCTAssert(actual != nil)
     }
     
     /// Tests that creating a`PlayingCardDeck` without `joker`s succeeds.
-    func test_init_withoutJokers_true() {
+    func test_init_withoutJokers_true() throws {
         
         // Given
         let jokers = false
         
         // When
-        let actual = PlayingCardDeck(with: jokers)
+        let actual = try PlayingCardDeck(with: jokers)
         
         // Then
         XCTAssert(actual != nil)
@@ -63,11 +63,11 @@ class PlayingDeckTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the count of a new`PlayingCardDeck` with `joker`s is 54.
-    func test_count_withJokers_equals54() {
+    func test_count_withJokers_equals54() throws {
         
         // Given
         let jokers = true
-        let deck = PlayingCardDeck(with: jokers)!
+        let deck = try PlayingCardDeck(with: jokers)!
         let expected = 54
         
         // When
@@ -78,11 +78,11 @@ class PlayingDeckTests: XCTestCase {
     }
     
     /// Tests that the count of a new`PlayingCardDeck` without `joker`s is 52.
-    func test_count_withoutJokers_equals52() {
+    func test_count_withoutJokers_equals52() throws {
         
         // Given
         let jokers = false
-        let deck = PlayingCardDeck(with: jokers)!
+        let deck = try PlayingCardDeck(with: jokers)!
         let expected = 52
         
         // When
