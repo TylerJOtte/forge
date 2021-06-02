@@ -64,5 +64,28 @@ class ScoreableArrayTests: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that summing the points of all standard `PlayingCard`s  with all `Suit` equals 340.
+    func test_sumPoints_ofStandardPlayingCardsWithAllSuits_equals340() throws {
+        
+        let cards = try PlayingCards.getCards()
+        let expected = 340
+        
+        let actual = cards.sumPoints()
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that summing the points of all `PlayingCard`s  with all `Suit` and `Jokers` equals 340.
+    func test_sumPoints_ofPlayingCardsWithAllSuitsAndJOkers_equals340() throws {
+        
+        let jokers = true
+        let cards = try PlayingCards.getCards(include: jokers)
+        let expected = 340
+        
+        let actual = cards.sumPoints()
+        
+        XCTAssertEqual(expected, actual)
+    }
 }
     

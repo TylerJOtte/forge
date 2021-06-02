@@ -134,7 +134,7 @@ class PlayingCards {
     /// - Postcondition: None.
     /// - Parameter jokers: True if include `joker PlayingCard`s, else false.
     /// - Returns: An array of `PlayingCard`s.
-    static func getCards(with jokers: Bool = false) throws -> [PlayingCard] {
+    static func getCards(include jokers: Bool = false) throws -> [PlayingCard] {
 
         var cards: [PlayingCard] = []
         

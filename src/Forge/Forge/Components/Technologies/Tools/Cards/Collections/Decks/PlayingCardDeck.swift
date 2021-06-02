@@ -46,7 +46,7 @@ public class PlayingCardDeck: Deck<PlayingCard> {
         
         let min = 0
         let max = jokers ? 54 : 52
-        let cards = try PlayingCards.getCards(with: jokers)
+        let cards = try PlayingCards.getCards(include: jokers)
         
         self.includesJokers = jokers
         super.init(of: min, to: max, cards)
