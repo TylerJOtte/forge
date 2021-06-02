@@ -86,6 +86,8 @@
 		B5E115BE265191DE00D78307 /* JokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E115BD265191DE00D78307 /* JokerTests.swift */; };
 		B5E555BB264E03C900E6BB37 /* RankExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E555BA264E03C900E6BB37 /* RankExtension.swift */; };
 		B5E555C9264F4DA800E6BB37 /* Joker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E555C8264F4DA800E6BB37 /* Joker.swift */; };
+		B5ECEAF926684F1D00E478F7 /* PlayingCardArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */; };
+		B5ECEAFF26684F8E00E478F7 /* PlayingCardArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */; };
 		B5F29B25263B7EE200082A1A /* MultiRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B24263B7EE200082A1A /* MultiRun.swift */; };
 		B5F29B2B263B8B8500082A1A /* CribbageHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B2A263B8B8500082A1A /* CribbageHand.swift */; };
 		B5F29B35263B94A300082A1A /* CribbageHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B34263B94A300082A1A /* CribbageHandTests.swift */; };
@@ -224,6 +226,8 @@
 		B5E115BD265191DE00D78307 /* JokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokerTests.swift; sourceTree = "<group>"; };
 		B5E555BA264E03C900E6BB37 /* RankExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankExtension.swift; sourceTree = "<group>"; };
 		B5E555C8264F4DA800E6BB37 /* Joker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joker.swift; sourceTree = "<group>"; };
+		B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardArray.swift; sourceTree = "<group>"; };
+		B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardArrayTests.swift; sourceTree = "<group>"; };
 		B5F29B24263B7EE200082A1A /* MultiRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRun.swift; sourceTree = "<group>"; };
 		B5F29B2A263B8B8500082A1A /* CribbageHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageHand.swift; sourceTree = "<group>"; };
 		B5F29B34263B94A300082A1A /* CribbageHandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageHandTests.swift; sourceTree = "<group>"; };
@@ -749,6 +753,7 @@
 		B5BB5FC126683BC800A88709 /* Arrays */ = {
 			isa = PBXGroup;
 			children = (
+				B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */,
 				B5BB5FC226683BD900A88709 /* ScoreableArray.swift */,
 				B5817DA1261A27600022B805 /* ArrayExtension.swift */,
 			);
@@ -774,6 +779,7 @@
 		B5BB5FCA26683C7200A88709 /* Arrays */ = {
 			isa = PBXGroup;
 			children = (
+				B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */,
 				B5BB5FCB26683C7F00A88709 /* ScoreableArrayTests.swift */,
 			);
 			path = Arrays;
@@ -1087,6 +1093,7 @@
 				B597385A25FEC1CE00367598 /* ElementsError.swift in Sources */,
 				B5F29C222648841800082A1A /* Removable.swift in Sources */,
 				B5F29B59263D99FB00082A1A /* Scoreable.swift in Sources */,
+				B5ECEAF926684F1D00E478F7 /* PlayingCardArray.swift in Sources */,
 				B5F29B7E263E343800082A1A /* StringExtension.swift in Sources */,
 				B556681626223DB90045AC2B /* Fifteen.swift in Sources */,
 				B55668472623EAC20045AC2B /* Technology.swift in Sources */,
@@ -1160,6 +1167,7 @@
 				B5F2D4CA2636F4440089403F /* KingTests.swift in Sources */,
 				B55668C4262B929C0045AC2B /* DoubleDoubleRunTests.swift in Sources */,
 				B5F2D48B2630FE360089403F /* AceTests.swift in Sources */,
+				B5ECEAFF26684F8E00E478F7 /* PlayingCardArrayTests.swift in Sources */,
 				B5F2D4AB2636E47D0089403F /* SixTests.swift in Sources */,
 				B5E555BB264E03C900E6BB37 /* RankExtension.swift in Sources */,
 				B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */,
