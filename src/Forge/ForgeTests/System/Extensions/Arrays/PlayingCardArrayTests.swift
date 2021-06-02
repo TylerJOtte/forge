@@ -46,4 +46,23 @@ class PlayingCardArrayTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //           //
+    // FaceCards //
+    //           //
+
+    /// Tests that splitting all`FaceCard`s with one `Suit` by `Suit` has a count of one.
+    func test_splitBySuit_FaceCardsWithOneSuit_hasCountOfOne() throws {
+        
+        // Given
+        let cards = try PlayingCards.getFaceCards(with: .hearts)
+        let expected = 1
+        
+        // When
+        let cardsBySuit = cards.splitBySuit()
+        let actual = cardsBySuit.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
