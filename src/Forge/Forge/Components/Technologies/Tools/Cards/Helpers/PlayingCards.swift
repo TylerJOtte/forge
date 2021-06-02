@@ -56,36 +56,37 @@ class PlayingCards {
         ]
     }
     
-    /// Retrieves a collection of`PlayingCard`s for each `PlayingCard Rank` per the given `Suit`.
+    /// Retrieves all the `FaceCard`s with the given `Suit`.
     ///
-    /// - Precondition:`Suit`'s symbol must be a `clover`, `diamond`, `heart`, or `spade`.
+    /// - Precondition:The given `Suit` must be a standard `PlayingCard Suit`.
     /// - Postcondition: None.
-    /// - Parameter suit: The `Suit` to get `PlayingCard`s for.
-    /// - Throws: `FeaturesError.invalidSuit` if the given `Suit` is not a standard
-    ///   `PlayingCard Suit`.
-    /// - Returns: An array of `PlayingCard`s.
-    static func getCards(of suit: Suit) throws -> [PlayingCard] {
-        
-        guard (suit.isStandard()) else {
-            
-            throw DepictionError.invalidSuit
-        }
+    /// - Parameter suit: The symbol grouping to get `Card`s for.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
+    /// - Returns: An array of `FaceCard`s.
+    static func getFaceCards(with suit: Suit) throws -> [PlayingCard] {
         
         return [
-            try Ace(of: suit),
-            try Two(of: suit),
-            try Three(of: suit),
-            try Four(of: suit),
-            try Five(of: suit),
-            try Six(of: suit),
-            try Seven(of: suit),
-            try Eight(of: suit),
-            try Nine(of: suit),
-            try Ten(of: suit),
             try Jack(of: suit),
             try Queen(of: suit),
             try King(of: suit)
         ]
+    }
+    
+    /// Retrieves all the standard `PlayingCard`s with the given `Suit`.
+    ///
+    /// - Precondition:The given `Suit` must be a standard `PlayingCard Suit`.
+    /// - Postcondition: None.
+    /// - Parameter suit: The symbol grouping to get `Card`s for.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
+    /// - Returns: An array of standard `PlayingCard`s.
+    static func getCards(with suit: Suit) throws -> [PlayingCard] {
+        
+        var cards = try getNumeralCards(with: suit)
+        let faceCards = try getFaceCards(with: suit)
+        
+        cards.append(contentsOf: faceCards)
+        
+        return cards
     }
     
     /// Retrieves a collection of`PlayingCard`s for each `PlayingCard Rank` per the given `Suit`s.
@@ -102,7 +103,7 @@ class PlayingCards {
         
         for suit in suits {
             
-            let suitCards = try getCards(of: suit);
+            let suitCards = try getCards(with: suit);
             
             cards.append(contentsOf: suitCards)
         }
