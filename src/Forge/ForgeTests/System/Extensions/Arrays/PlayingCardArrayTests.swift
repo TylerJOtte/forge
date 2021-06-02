@@ -65,4 +65,23 @@ class PlayingCardArrayTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //                       //
+    // Standard PlayingCards //
+    //                       //
+    
+    /// Tests that splitting all standard `PlayingCard`s with one `Suit` by `Suit` has a count of one.
+    func test_splitBySuit_StandardPlayingCardsWithOneSuit_hasCountOfOne() throws {
+        
+        // Given
+        let cards = try PlayingCards.getCards(with: .hearts)
+        let expected = 1
+        
+        // When
+        let cardsBySuit = cards.splitBySuit()
+        let actual = cardsBySuit.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
