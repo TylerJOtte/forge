@@ -139,23 +139,7 @@ extension Array where Element: RankedCard  {
         return splitBySingleRanks().count + kinds.count
     }
     
-    func getRuns(with kinds: [Kind]) throws -> [Run] {
-        
-        var runs: [Run] = []
-        
-        var cardsBySingleRanks = splitBySingleRanks().sorted()
-        
-        var cards = [try Ace(of: .hearts), try Two(of: .hearts), try Three(of: .hearts)]
-        var hand = try Hand(of: cards)
-        
-        
-        for card in hand {
-            
-            
-        }
-        return runs
-    }
-    
+ 
     /// Retrieves the sum total of points from all the `Card`s in the collection.
     ///
     /// - Precondition: None.
@@ -201,6 +185,25 @@ extension Array where Element: RankedCard  {
             
             }
         
+        } catch {
+            
+            print(error)
+        }
+        
+        return formRun
+    }
+    
+    func formRun(with cards: [RankedCard?]) -> Bool {
+        
+        var singleRanks = splitBySingleRanks()
+        var formRun = false
+
+        do {
+            
+            singleRanks.append(contentsOf: cards.compactMap{$0})
+            _ = try Run(of: singleRanks.sorted())
+            formRun = true
+            
         } catch {
             
             print(error)

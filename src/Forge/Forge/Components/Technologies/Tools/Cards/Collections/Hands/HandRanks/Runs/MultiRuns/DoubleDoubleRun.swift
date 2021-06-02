@@ -45,6 +45,7 @@ public class DoubleDoubleRun: MultiRun {
         let min = 5
         let pairCount = 2
         let pairs = try cards.getPairs()
+        let pairCards = [pairs.first?.first, pairs.last?.first]
         
         guard (pairs.count == pairCount) else {
             
@@ -53,7 +54,7 @@ public class DoubleDoubleRun: MultiRun {
             throw HandRankError.invalidKindCount
         }
         
-        guard (cards.formRuns(with: pairs)) else {
+        guard (cards.formRun(with: pairCards)) else {
             
             print("The given Card's non-Pair Cards must form a Run with each " +
                   "Pair Card.")

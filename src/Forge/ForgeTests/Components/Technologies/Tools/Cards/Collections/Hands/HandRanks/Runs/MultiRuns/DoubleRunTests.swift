@@ -76,18 +76,6 @@ class DoubleRunTests: XCTestCase {
     /// `ElementsError.excessiveElements Error`.
     func test_init_withExcessivePairs_throwsError() throws {
 
-        var cards = [try Nine(of: .hearts), try Queen(of: .hearts), try King(of: .hearts)]
-        var hand = try Hand(of: cards)
-        print("------------------------------")
-        print("hello")
-        print("------------------------------")
-        
-        for card in hand {
-            
-            print("------------------------------")
-            print(card.rank)
-            print("------------------------------")
-        }
 //        // Given
 //        let jack1 = try Jack(of: .hearts)
 //        let jack2 = try Jack(of: .diamonds)
