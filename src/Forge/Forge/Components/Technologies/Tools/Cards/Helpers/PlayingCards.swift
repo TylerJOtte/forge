@@ -32,6 +32,29 @@ class PlayingCards {
     //=========================================================================//
     //                                 METHODS                                 //
     //=========================================================================//
+
+    /// Retrieves all the `NumeralCard`s with the given `Suit`.
+    ///
+    /// - Precondition:The given `Suit` must be a standard `PlayingCard Suit`.
+    /// - Postcondition: None.
+    /// - Parameter suit: The symbol grouping to get `Card`s for.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
+    /// - Returns: An array of `NumeralCard`s.
+    static func getNumeralCards(with suit: Suit) throws -> [PlayingCard] {
+        
+        return [
+            try Ace(of: suit),
+            try Two(of: suit),
+            try Three(of: suit),
+            try Four(of: suit),
+            try Five(of: suit),
+            try Six(of: suit),
+            try Seven(of: suit),
+            try Eight(of: suit),
+            try Nine(of: suit),
+            try Ten(of: suit)
+        ]
+    }
     
     /// Retrieves a collection of`PlayingCard`s for each `PlayingCard Rank` per the given `Suit`.
     ///

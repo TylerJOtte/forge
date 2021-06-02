@@ -16,25 +16,6 @@
 
 
 /// An extension for common `RankedCard Array` operations.
-extension Array where Element: Scoreable  {
-
-    //=========================================================================//
-    //                               CALCULATORS                               //
-    //=========================================================================//
-    
-    /// Retrieves the sum total of points from all the `Card`s in the collection.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The sum total of points from all the `Card`s in the collection.
-    func sumPoints() -> Int {
-        
-        return self.map{$0.points}.reduce(0, +)
-    }
-    
-}
-
-/// An extension for common `RankedCard Array` operations.
 extension Array where Element: Cards {
 
     //=========================================================================//
