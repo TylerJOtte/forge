@@ -79,7 +79,7 @@ class PlayingCards {
     /// - Parameter suit: The symbol grouping to get `Card`s for.
     /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
     /// - Returns: An array of standard `PlayingCard`s.
-    static func getCards(with suit: Suit) throws -> [PlayingCard] {
+    static func getStandardCards(with suit: Suit) throws -> [PlayingCard] {
         
         var cards = try getNumeralCards(with: suit)
         let faceCards = try getFaceCards(with: suit)
@@ -103,7 +103,7 @@ class PlayingCards {
         
         for suit in suits {
             
-            let suitCards = try getCards(with: suit);
+            let suitCards = try getStandardCards(with: suit);
             
             cards.append(contentsOf: suitCards)
         }
