@@ -25,30 +25,58 @@ class RankedCardArrayTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                            areEquallySuited()                           //
+    //                            areEquallyRanked()                           //
     //-------------------------------------------------------------------------//
     
-    /// Tests that `PlayingCards` with the same `Rank` are equally  `Rank`ed.
-    func test_areEquallySuited_PlayingCardsWithSameRank_true() throws {
+    /// Tests that `RankedCards` with the same `Rank` are equally  `Rank`ed.
+    func test_areEquallySuited_CardsWithSameRank_true() throws {
         
         // Given
-        let ace1 = try Ace(of: .hearts)
-        let ace2 = try Ace(of: .hearts)
-        let cards = [ace1, ace2]
+        let card1 = RankedCard(with: .ace)
+        let card2 = RankedCard(with: .ace)
+        let cards = [card1, card2]
         
         // When/Then
         XCTAssert(cards.areEquallyRanked())
     }
     
-    /// Tests that `PlayingCards` with different `Rank`s are not equally `Rank`ed.
-    func test_areEquallySuited_PlayingCardsWithDifferentRanks_false() throws {
+    /// Tests that `RankedCards` with different `Rank`s are not equally `Rank`ed.
+    func test_areEquallySuited_CardsWithDifferentRanks_false() throws {
         
         // Given
-        let ace = try Ace(of: .hearts)
-        let two = try Two(of: .hearts)
-        let cards = [ace, two]
+        let card1 = RankedCard(with: .ace)
+        let card2 = RankedCard(with: .two)
+        let cards = [card1, card2]
         
         // When/Then
         XCTAssertFalse(cards.areEquallyRanked())
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                              areSequential()                            //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that `RankedCards` with sequential positions are sequential.
+    func test_areSequential_CardsWithSequentialPositions_true() throws {
+        
+        // Given
+        let card1 = RankedCard(with: .ace, at: 1)
+        let card2 = RankedCard(with: .two, at: 2)
+        let cards = [card1, card2]
+        
+        // When/Then
+        XCTAssert(cards.areSequential())
+    }
+    
+    /// Tests that `RankedCards` with non-sequential positions are not sequential.
+    func test_areSequential_CardsWithNonSequentialPositions_false() throws {
+        
+        // Given
+        let card1 = RankedCard(with: .ace, at: 1)
+        let card2 = RankedCard(with: .six, at: 6)
+        let cards = [card1, card2]
+        
+        // When/Then
+        XCTAssertFalse(cards.areSequential())
     }
 }
