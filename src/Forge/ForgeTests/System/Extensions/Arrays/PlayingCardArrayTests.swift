@@ -122,7 +122,7 @@ class PlayingCardArrayTests: XCTestCase {
     //                            areEquallySuited()                           //
     //-------------------------------------------------------------------------//
     
-    /// Tests that `PlayingCards` with the same `Suit` are equally suited.
+    /// Tests that `PlayingCards` with the same `Suit` are equally `Suit`ed.
     func test_areEquallySuited_PlayingCardsWithSameSuit_true() throws {
         
         // Given
@@ -134,7 +134,7 @@ class PlayingCardArrayTests: XCTestCase {
         XCTAssert(cards.areEquallySuited())
     }
     
-    /// Tests that `PlayingCards` with different `Suit`s are not equally suited.
+    /// Tests that `PlayingCards` with different `Suit`s are not equally `Suit`ed.
     func test_areEquallySuited_PlayingCardsWithDifferentSuits_false() throws {
         
         // Given

@@ -88,6 +88,8 @@
 		B5E555C9264F4DA800E6BB37 /* Joker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E555C8264F4DA800E6BB37 /* Joker.swift */; };
 		B5ECEAF926684F1D00E478F7 /* PlayingCardArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */; };
 		B5ECEAFF26684F8E00E478F7 /* PlayingCardArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */; };
+		B5ECEB052668571500E478F7 /* RankedCardArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB042668571500E478F7 /* RankedCardArray.swift */; };
+		B5ECEB0B2668579D00E478F7 /* RankedCardArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */; };
 		B5F29B25263B7EE200082A1A /* MultiRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B24263B7EE200082A1A /* MultiRun.swift */; };
 		B5F29B2B263B8B8500082A1A /* CribbageHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B2A263B8B8500082A1A /* CribbageHand.swift */; };
 		B5F29B35263B94A300082A1A /* CribbageHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B34263B94A300082A1A /* CribbageHandTests.swift */; };
@@ -228,6 +230,8 @@
 		B5E555C8264F4DA800E6BB37 /* Joker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joker.swift; sourceTree = "<group>"; };
 		B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardArray.swift; sourceTree = "<group>"; };
 		B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardArrayTests.swift; sourceTree = "<group>"; };
+		B5ECEB042668571500E478F7 /* RankedCardArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedCardArray.swift; sourceTree = "<group>"; };
+		B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedCardArrayTests.swift; sourceTree = "<group>"; };
 		B5F29B24263B7EE200082A1A /* MultiRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRun.swift; sourceTree = "<group>"; };
 		B5F29B2A263B8B8500082A1A /* CribbageHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageHand.swift; sourceTree = "<group>"; };
 		B5F29B34263B94A300082A1A /* CribbageHandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageHandTests.swift; sourceTree = "<group>"; };
@@ -754,6 +758,7 @@
 			isa = PBXGroup;
 			children = (
 				B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */,
+				B5ECEB042668571500E478F7 /* RankedCardArray.swift */,
 				B5BB5FC226683BD900A88709 /* ScoreableArray.swift */,
 				B5817DA1261A27600022B805 /* ArrayExtension.swift */,
 			);
@@ -781,6 +786,7 @@
 			children = (
 				B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */,
 				B5BB5FCB26683C7F00A88709 /* ScoreableArrayTests.swift */,
+				B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */,
 			);
 			path = Arrays;
 			sourceTree = "<group>";
@@ -1106,6 +1112,7 @@
 				B5F2D456262E4D330089403F /* Three.swift in Sources */,
 				B5F2D452262E4C660089403F /* Two.swift in Sources */,
 				B556684D2623EB150045AC2B /* Component.swift in Sources */,
+				B5ECEB052668571500E478F7 /* RankedCardArray.swift in Sources */,
 				B5BE90562651C6DF005E0A37 /* FourOfAKind.swift in Sources */,
 				B5A50C2D2664350F001717C6 /* ComponentError.swift in Sources */,
 				B5566869262527FE0045AC2B /* Description.swift in Sources */,
@@ -1172,6 +1179,7 @@
 				B5E555BB264E03C900E6BB37 /* RankExtension.swift in Sources */,
 				B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */,
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
+				B5ECEB0B2668579D00E478F7 /* RankedCardArrayTests.swift in Sources */,
 				B5BE90612651E844005E0A37 /* ThreeOfAKindTests.swift in Sources */,
 				B5F2D4BB2636E7820089403F /* TenTests.swift in Sources */,
 				B5E115AD2650910B00D78307 /* FaceCardTests.swift in Sources */,
