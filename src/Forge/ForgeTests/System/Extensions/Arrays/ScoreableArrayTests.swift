@@ -83,7 +83,7 @@ class ScoreableArrayTests: XCTestCase {
     }
     
     /// Tests that summing the points of all standard `PlayingCard`s  with all `Suit` equals 340.
-    func test_sumPoints_ofStandardPlayingCardsWithAllSuits_equals340() throws {
+    func test_sumPoints_ofStandardPlayingCards_equals340() throws {
         
         // Given
         let cards = try PlayingCards.getCards()
@@ -101,7 +101,7 @@ class ScoreableArrayTests: XCTestCase {
     //                  //
     
     /// Tests that summing the points of all `PlayingCard`s with a `Suit` and `Jokers` equals 85.
-    func test_sumPoints_ofPlayingCardsWithJokers_equals85() throws {
+    func test_sumPoints_ofPlayingCardsWithSuitAndJokers_equals85() throws {
         
         // Given
         let jokers = true
@@ -116,7 +116,7 @@ class ScoreableArrayTests: XCTestCase {
     }
     
     /// Tests that summing the points of all `PlayingCard`s  with all `Suit` and `Jokers` equals 340.
-    func test_sumPoints_ofPlayingCardsWithAllSuitsAndJOkers_equals340() throws {
+    func test_sumPoints_ofPlayingCards_equals340() throws {
         
         // Given
         let jokers = true

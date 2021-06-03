@@ -121,4 +121,19 @@ class PlayingCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that splitting all `PlayingCard`s by `Suit` has a count of five.
+    func test_splitBySuit_PlayingCards_hasCountOfFour() throws {
+        
+        // Given
+        let jokers = true
+        let cards = try PlayingCards.getCards(include: jokers)
+        let expected = 5
+        
+        // When
+        let cardsBySuit = cards.splitBySuit()
+        let actual = cardsBySuit.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
