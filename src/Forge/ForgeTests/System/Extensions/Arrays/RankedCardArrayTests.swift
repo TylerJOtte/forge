@@ -197,7 +197,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
     /// for a `Rank` equals one  returns a `Dictionary` with an expected total count.
-    func test_splitByRank_withUniqueRanksAndCountEqualsOne_hasExpectedTotalount()
+    func test_splitByRank_withUniqueRanksAndCountEqualsOne_hasExpectedTotalCount()
         throws {
         
         // Given
@@ -232,6 +232,26 @@ class RankedCardArrayTests: XCTestCase {
         // When
         let rankedCardsByRank = rankedCards.splitByRank(where: count)
         let actual = rankedCardsByRank.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that splitting a `RankedCard Array`with one unique `Rank`  by `Rank`where the given
+    /// count for a `Rank` equals one  returns a `Dictionary` with a total count of one.
+    func test_splitByRank_withOneUniqueRankAndCountEqualsOne_hasTotalCountOfOne()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCard3 = RankedCard(with: .two)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
+        let count = 1
+        let expected = 1
+        
+        // When
+        let rankedCardsByRank = rankedCards.splitByRank(where: count)
+        let actual = rankedCardsByRank.totalCount
         
         XCTAssertEqual(expected, actual)
     }
