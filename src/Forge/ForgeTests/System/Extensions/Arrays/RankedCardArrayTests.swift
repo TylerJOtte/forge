@@ -28,8 +28,8 @@ class RankedCardArrayTests: XCTestCase {
     //                            areEquallyRanked()                           //
     //-------------------------------------------------------------------------//
     
-    /// Tests that `RankedCards` with the same `Rank` are equally  `Rank`ed.
-    func test_areEquallySuited_rankedCardsWithSameRank_true() throws {
+    /// Tests a `RankedCard Array` that only has one `Rank` is equally `Rank`ed.
+    func test_areEquallyRanked_ArrayWithOneRank_true() throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -40,8 +40,8 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssert(rankedCards.areEquallyRanked())
     }
     
-    /// Tests that `RankedCards` with different `Rank`s are not equally `Rank`ed.
-    func test_areEquallySuited_rankedCardsWithDifferentRanks_false() throws {
+    /// Tests a `RankedCard Array` that only has multiple `Rank`s is not equally `Rank`ed.
+    func test_areEquallyRanked_ArrayWithMultipleRanks_false() throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -56,8 +56,9 @@ class RankedCardArrayTests: XCTestCase {
     //                              areSequential()                            //
     //-------------------------------------------------------------------------//
     
-    /// Tests that `RankedCards` with sequential positions are sequential.
-    func test_areSequential_rankedCardsWithSequentialPositions_true() throws {
+    /// Tests that a `RankedCard Array` in which each `RankedCard` has a position that immediately
+    /// follows the position of the previous  `RankedCard` is  sequential.
+    func test_areSequential_ArrayWithSequentialCardPositions_true() throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace, at: 1)
@@ -68,8 +69,9 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssert(rankedCards.areSequential())
     }
     
-    /// Tests that `RankedCards` with non-sequential positions are not sequential.
-    func test_areSequential_rankedCardsWithNonSequentialPositions_false() throws {
+    /// Tests that a `RankedCard Array` which contains a`RankedCard` with a position that does not
+    /// immediately follow the position of the previous  `RankedCard` is not sequential.
+    func test_areSequential_ArrayWithNonSequentialCardPositions_false() throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace, at: 1)
@@ -93,8 +95,8 @@ class RankedCardArrayTests: XCTestCase {
     //           //
     
     /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank` returns a
-    /// `Dictionary` with the expected key count.
-    func test_splitByRank_rankedCardArrayWithUniqueRanks_hasExpectedKeyCount()
+    /// `Dictionary` with an expected key count.
+    func test_splitByRank_ArrayWithUniqueRanks_hasExpectedKeyCount()
         throws {
         
         // Given
@@ -111,8 +113,8 @@ class RankedCardArrayTests: XCTestCase {
     }
     
     /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank` returns a
-    /// `Dictionary` with the expected values count.
-    func test_splitByRank_rankedCardArrayWithUniqueRanks_hasExpectedValuesCount()
+    /// `Dictionary` with an expected total count.
+    func test_splitByRank_ArrayWithUniqueRanks_hasExpectedTotalCount()
         throws {
         
         // Given
@@ -123,14 +125,14 @@ class RankedCardArrayTests: XCTestCase {
         
         // When
         let rankedCardsByRank = rankedCards.splitByRank()
-        let actual = rankedCardsByRank.values.count
+        let actual = rankedCardsByRank.totalCount
         
         XCTAssertEqual(expected, actual)
     }
     
     /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank` returns a
-    /// `Dictionary` with the expected key count.
-    func test_splitByRank_rankedCardArrayWithDuplicateRanks_hasExpectedKeyCount()
+    /// `Dictionary` with an expected key count.
+    func test_splitByRank_ArrayWithDuplicateRanks_hasExpectedKeyCount()
         throws {
         
         // Given
@@ -142,6 +144,24 @@ class RankedCardArrayTests: XCTestCase {
         // When
         let rankedCardsByRank = rankedCards.splitByRank()
         let actual = rankedCardsByRank.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank` returns a
+    /// `Dictionary` with an expected total count.
+    func test_splitByRank_ArrayWithDuplicateRanks_hasExpectedTotalCount()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCards = [rankedCard1, rankedCard2]
+        let expected = 2
+        
+        // When
+        let rankedCardsByRank = rankedCards.splitByRank()
+        let actual = rankedCardsByRank.totalCount
         
         XCTAssertEqual(expected, actual)
     }

@@ -14,7 +14,6 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-
 /// An extension for common `RankedCard Array` operations.
 extension Array where Element: RankedCard  {
     

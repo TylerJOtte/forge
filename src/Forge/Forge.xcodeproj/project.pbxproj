@@ -90,6 +90,7 @@
 		B5ECEAFF26684F8E00E478F7 /* PlayingCardArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */; };
 		B5ECEB052668571500E478F7 /* RankedCardArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB042668571500E478F7 /* RankedCardArray.swift */; };
 		B5ECEB0B2668579D00E478F7 /* RankedCardArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */; };
+		B5ECEB10266BC04B00E478F7 /* CollectionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB0F266BC04B00E478F7 /* CollectionDictionary.swift */; };
 		B5F29B25263B7EE200082A1A /* MultiRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B24263B7EE200082A1A /* MultiRun.swift */; };
 		B5F29B2B263B8B8500082A1A /* CribbageHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B2A263B8B8500082A1A /* CribbageHand.swift */; };
 		B5F29B35263B94A300082A1A /* CribbageHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B34263B94A300082A1A /* CribbageHandTests.swift */; };
@@ -232,6 +233,7 @@
 		B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardArrayTests.swift; sourceTree = "<group>"; };
 		B5ECEB042668571500E478F7 /* RankedCardArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedCardArray.swift; sourceTree = "<group>"; };
 		B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedCardArrayTests.swift; sourceTree = "<group>"; };
+		B5ECEB0F266BC04B00E478F7 /* CollectionDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDictionary.swift; sourceTree = "<group>"; };
 		B5F29B24263B7EE200082A1A /* MultiRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRun.swift; sourceTree = "<group>"; };
 		B5F29B2A263B8B8500082A1A /* CribbageHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageHand.swift; sourceTree = "<group>"; };
 		B5F29B34263B94A300082A1A /* CribbageHandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageHandTests.swift; sourceTree = "<group>"; };
@@ -604,6 +606,7 @@
 		B5817DA0261A27500022B805 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B5ECEB0E266BC01100E478F7 /* Dictionaries */,
 				B5BB5FC126683BC800A88709 /* Arrays */,
 				B5F29B75263E2FFC00082A1A /* SequenceExtension.swift */,
 				B5F29B79263E31C600082A1A /* CharacterExtension.swift */,
@@ -833,6 +836,14 @@
 				B5E115B826518B5700D78307 /* SuitExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B5ECEB0E266BC01100E478F7 /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				B5ECEB0F266BC04B00E478F7 /* CollectionDictionary.swift */,
+			);
+			path = Dictionaries;
 			sourceTree = "<group>";
 		};
 		B5F29B32263B946A00082A1A /* MultiRuns */ = {
@@ -1087,6 +1098,7 @@
 				B5F2D44E262E4AD90089403F /* Ace.swift in Sources */,
 				B55668A4262A70250045AC2B /* DoubleRun.swift in Sources */,
 				B5817D482618BC7D0022B805 /* Suit.swift in Sources */,
+				B5ECEB10266BC04B00E478F7 /* CollectionDictionary.swift in Sources */,
 				B5F2D466262E4E960089403F /* Seven.swift in Sources */,
 				B5F29B25263B7EE200082A1A /* MultiRun.swift in Sources */,
 				B556688326252BEC0045AC2B /* Rule.swift in Sources */,

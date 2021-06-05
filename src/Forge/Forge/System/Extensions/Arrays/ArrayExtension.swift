@@ -33,3 +33,22 @@ extension Array where Element: Cards {
     }
     
 }
+
+/// An extension for common `RankedCard Array` operations.
+extension Array where Element == Int {
+
+    //=========================================================================//
+    //                               CALCULATORS                               //
+    //=========================================================================//
+    
+    /// Retrieves the sum total of points from all the `Card`s in the collection.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The sum total of points from all the `Card`s in the collection.
+    func sum() -> Int {
+        
+        return reduce(0, +)
+    }
+    
+}
