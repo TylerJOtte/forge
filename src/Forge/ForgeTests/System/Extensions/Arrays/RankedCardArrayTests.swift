@@ -90,6 +90,27 @@ class RankedCardArrayTests: XCTestCase {
     //                               getPairs()                                //
     //-------------------------------------------------------------------------//
     
+    /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that cotains only unique
+    /// `Rank`s returns a `Pair Array` with a count of zero.
+    func test_getPairs_withUniqueRanks_returnsZeroPairs() throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCard3 = RankedCard(with: .three)
+        let rankedCard4 = RankedCard(with: .four)
+        let rankedCard5 = RankedCard(with: .five)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
+            rankedCard5]
+        let expected = 0
+        
+        // When
+        let pairs = try rankedCards.getPairs()
+        let actual = pairs.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains only two equally
     /// `RankedCard`s returns a `Pair Array` with a count of one.
     func test_getPairs_withTwoEquallyRankedCards_returnsOnePair() throws {
