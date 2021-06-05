@@ -29,27 +29,27 @@ class RankedCardArrayTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that `RankedCards` with the same `Rank` are equally  `Rank`ed.
-    func test_areEquallySuited_CardsWithSameRank_true() throws {
+    func test_areEquallySuited_rankedCardsWithSameRank_true() throws {
         
         // Given
-        let card1 = RankedCard(with: .ace)
-        let card2 = RankedCard(with: .ace)
-        let cards = [card1, card2]
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCards = [rankedCard1, rankedCard2]
         
         // When/Then
-        XCTAssert(cards.areEquallyRanked())
+        XCTAssert(rankedCards.areEquallyRanked())
     }
     
     /// Tests that `RankedCards` with different `Rank`s are not equally `Rank`ed.
-    func test_areEquallySuited_CardsWithDifferentRanks_false() throws {
+    func test_areEquallySuited_rankedCardsWithDifferentRanks_false() throws {
         
         // Given
-        let card1 = RankedCard(with: .ace)
-        let card2 = RankedCard(with: .two)
-        let cards = [card1, card2]
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCards = [rankedCard1, rankedCard2]
         
         // When/Then
-        XCTAssertFalse(cards.areEquallyRanked())
+        XCTAssertFalse(rankedCards.areEquallyRanked())
     }
     
     //-------------------------------------------------------------------------//
@@ -57,26 +57,55 @@ class RankedCardArrayTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that `RankedCards` with sequential positions are sequential.
-    func test_areSequential_CardsWithSequentialPositions_true() throws {
+    func test_areSequential_rankedCardsWithSequentialPositions_true() throws {
         
         // Given
-        let card1 = RankedCard(with: .ace, at: 1)
-        let card2 = RankedCard(with: .two, at: 2)
-        let cards = [card1, card2]
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .two, at: 2)
+        let rankedCards = [rankedCard1, rankedCard2]
         
         // When/Then
-        XCTAssert(cards.areSequential())
+        XCTAssert(rankedCards.areSequential())
     }
     
     /// Tests that `RankedCards` with non-sequential positions are not sequential.
-    func test_areSequential_CardsWithNonSequentialPositions_false() throws {
+    func test_areSequential_rankedCardsWithNonSequentialPositions_false() throws {
         
         // Given
-        let card1 = RankedCard(with: .ace, at: 1)
-        let card2 = RankedCard(with: .six, at: 6)
-        let cards = [card1, card2]
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .six, at: 6)
+        let rankedCards = [rankedCard1, rankedCard2]
         
         // When/Then
-        XCTAssertFalse(cards.areSequential())
+        XCTAssertFalse(rankedCards.areSequential())
+    }
+    
+    //=========================================================================//
+    //                               SPLITTERS                                 //
+    //=========================================================================//
+
+    //-------------------------------------------------------------------------//
+    //                             splitByRank()                               //
+    //-------------------------------------------------------------------------//
+    
+    //           //
+    // All Ranks //
+    //           //
+    
+    /// Tests that splitting `RankedCard`s with unique `Rank`s  by `Rank` returns the expected count.
+    func test_splitByRank_rankedCardsWithUniqueRanks_returnsExpectedCount()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCards = [rankedCard1, rankedCard2]
+        let expected = 2
+        
+        // When
+        let rankedCardsByRank = rankedCards.splitByRank()
+        let actual = rankedCardsByRank.count
+        
+        XCTAssertEqual(expected, actual)
     }
 }

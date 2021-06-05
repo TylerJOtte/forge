@@ -22,21 +22,21 @@ extension Array where Element: RankedCard  {
     //                                 TESTERS                                 //
     //=========================================================================//
 
-    /// Determines if all the `Card`s in the given collection contain the same`Rank`.
+    /// Determines if all the `RankedCard`s contain the same`Rank`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: True if all the `Card`s in the given collection contain the same`Rank`, else false.
+    /// - Returns: True if all the `RankedCard`s contain the same`Rank`, else false.
     func areEquallyRanked() -> Bool {
         
         return splitByRank().count == 1
     }
     
-    /// Determines if all the `Card`s in the given collection are in sequential order.
+    /// Determines if all the `RankedCard`s are in sequential order.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: True if all the `Card`s in the given collection are in sequential order, else false.
+    /// - Returns: True if all the `RankeCard`s are in sequential order, else false.
     func areSequential() -> Bool {
         
         var areSequential = true
@@ -53,6 +53,67 @@ extension Array where Element: RankedCard  {
         
         return areSequential
     }
+
+    func formRun(with kind: Kind?) -> Bool {
+        
+        var formRun = false
+        var cards = splitBySingleRanks()
+        
+        do {
+            
+            if let card = kind?.first {
+                
+                cards.append(card)
+                _ = try Run(of: cards.sorted())
+                formRun = true
+            
+            }
+        
+        } catch {
+            
+            print(error)
+        }
+        
+        return formRun
+    }
+    
+    func formRun(with cards: [RankedCard?]) -> Bool {
+        
+        var singleRanks = splitBySingleRanks()
+        var formRun = false
+
+        do {
+            
+            singleRanks.append(contentsOf: cards.compactMap{$0})
+            _ = try Run(of: singleRanks.sorted())
+            formRun = true
+            
+        } catch {
+            
+            print(error)
+        }
+        
+        return formRun
+    }
+    
+    func formRuns(with kinds: [Kind]) -> Bool {
+        
+        var formRuns = true
+        var index = 0
+        
+        while (formRuns && index < kinds.count) {
+            
+            formRuns = formRun(with: kinds[index])
+            index += 1
+        }
+        
+        return formRuns
+    }
+    
+    //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+
     
     func getPairs() throws -> [Pair] {
         
@@ -127,94 +188,38 @@ extension Array where Element: RankedCard  {
         
         return cards.flatMap{$0.value}
     }
-
-    func formRun(with kind: Kind?) -> Bool {
-        
-        var formRun = false
-        var cards = splitBySingleRanks()
-        
-        do {
-            
-            if let card = kind?.first {
-                
-                cards.append(card)
-                _ = try Run(of: cards.sorted())
-                formRun = true
-            
-            }
-        
-        } catch {
-            
-            print(error)
-        }
-        
-        return formRun
-    }
-    
-    func formRun(with cards: [RankedCard?]) -> Bool {
-        
-        var singleRanks = splitBySingleRanks()
-        var formRun = false
-
-        do {
-            
-            singleRanks.append(contentsOf: cards.compactMap{$0})
-            _ = try Run(of: singleRanks.sorted())
-            formRun = true
-            
-        } catch {
-            
-            print(error)
-        }
-        
-        return formRun
-    }
-    
-    func formRuns(with kinds: [Kind]) -> Bool {
-        
-        var formRuns = true
-        var index = 0
-        
-        while (formRuns && index < kinds.count) {
-            
-            formRuns = formRun(with: kinds[index])
-            index += 1
-        }
-        
-        return formRuns
-    }
     
     //=========================================================================//
-    //                                 GETTERS                                 //
+    //                               SPLITTERS                                 //
     //=========================================================================//
 
-    /// Retrieves all the `Card`s in the given collection by `Rank`.
+    /// Splits all the `RankedCard`s  by `Rank`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: A dictionary with the `Rank`s as keys and their respective `Card`s as the values.
+    /// - Returns: A dictionary with `Rank` to `RankedCard Array` entries.
     func splitByRank() -> [Rank:[RankedCard]] {
         
         return Dictionary(grouping: self, by: {$0.rank})
     }
     
-    /// Retrieves all the `Card`s in the given collection by `Rank` where equal to the given count.
+    /// Splits all the `RankedCard`s  by `Rank` where a `Rank`'s count is equal to the given count.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter count: The count a `Rank` must have to be included in collection.
-    /// - Returns: A dictionary with the `Rank`s as keys and their respective `Card`s as the values.
+    /// - Parameter count: The count a `Rank` must equal to be included in split.
+    /// - Returns: A dictionary with `Rank` to `RankedCard Array` entries.
     func splitByRank(where count: Int) -> [Rank:[RankedCard]] {
         
         return splitByRank().filter{$1.count == count}
     }
     
-    /// Retrieves all the `Card`s in the given collection by `Rank` where gerater than the given count.
+    /// Splits all the `RankedCard`s  by `Rank` where a `Rank`'s count is greater than the given count.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter count: The count a `Rank` must have to be included in collection.
-    /// - Returns: A dictionary with the `Rank`s as keys and their respective `Card`s as the values.
+    /// - Parameter count: The count a `Rank` must be over  to be included in split.
+    /// - Returns: A dictionary with `Rank` to `RankedCard Array` entries.
     func splitByRank(over count: Int) -> [Rank:[RankedCard]] {
         
         return splitByRank().filter{$1.count > count}
