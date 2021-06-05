@@ -196,7 +196,7 @@ extension Array where Element: RankedCard  {
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: A dictionary with `Rank` to `RankedCard Array` entries.
+    /// - Returns: A dictionary with `Rank:RankedCard Array` entries.
     func splitByRank() -> [Rank:[RankedCard]] {
         
         return Dictionary(grouping: self, by: {$0.rank})
@@ -207,7 +207,7 @@ extension Array where Element: RankedCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Parameter count: The count a `Rank` must equal to be included in split.
-    /// - Returns: A dictionary with `Rank` to `RankedCard Array` entries.
+    /// - Returns: A dictionary with `Rank:RankedCard Array` entries.
     func splitByRank(where count: Int) -> [Rank:[RankedCard]] {
         
         return splitByRank().filter{$1.count == count}
@@ -218,7 +218,7 @@ extension Array where Element: RankedCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Parameter count: The count a `Rank` must be over  to be included in split.
-    /// - Returns: A dictionary with `Rank` to `RankedCard Array` entries.
+    /// - Returns: A dictionary with `Rank:RankedCard Array` entries.
     func splitByRank(over count: Int) -> [Rank:[RankedCard]] {
         
         return splitByRank().filter{$1.count > count}
