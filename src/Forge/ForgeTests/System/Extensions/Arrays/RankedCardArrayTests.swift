@@ -83,6 +83,31 @@ class RankedCardArrayTests: XCTestCase {
     }
     
     //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                               getPairs()                                //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains two equally
+    /// `RankedCard`s returns a `Pair Array` with a count of one.
+    func test_getPairs_withTwoEquallyRankedCards_returnsPairArrayWithCountOfOne() throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCards = [rankedCard1, rankedCard2]
+        let expected = 1
+        
+        // When
+        let pairs = try rankedCards.getPairs()
+        let actual = pairs.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //=========================================================================//
     //                               SPLITTERS                                 //
     //=========================================================================//
 
