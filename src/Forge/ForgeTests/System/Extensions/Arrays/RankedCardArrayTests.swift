@@ -145,6 +145,29 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains multiple `Rank`s
+    /// and only two  duplicate `Rank`s returns a `Pair Array` with a count of two.
+    func test_getPairs_withMultipleRanksAndTwoDuplicates_returnsTwoPairs() throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCard3 = RankedCard(with: .two)
+        let rankedCard4 = RankedCard(with: .three)
+        let rankedCard5 = RankedCard(with: .four)
+        let rankedCard6 = RankedCard(with: .four)
+        let rankedCard7 = RankedCard(with: .five)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
+            rankedCard5, rankedCard6, rankedCard7]
+        let expected = 2
+        
+        // When
+        let pairs = try rankedCards.getPairs()
+        let actual = pairs.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                               SPLITTERS                                 //
     //=========================================================================//
