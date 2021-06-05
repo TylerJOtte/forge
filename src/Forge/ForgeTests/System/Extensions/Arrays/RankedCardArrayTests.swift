@@ -261,7 +261,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank`where the count
     /// for a `Rank` equals a given count returns a `Dictionary` with an expected key count.
-    func test_splitByRank_withDuplicateRanksWhereCount_hasExpectedKeyCount()
+    func test_splitByRank_withDuplicateRanksWhereEqualCount_hasExpectedKeyCount()
         throws {
         
         // Given
@@ -283,7 +283,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank`where the count
     /// for a `Rank` equals a given count returns a `Dictionary` with an expected total count.
-    func test_splitByRank_withDuplicateRanksWhereCount_hasExpectedTotalCount()
+    func test_splitByRank_withDuplicateRanksWhereEqualCount_hasExpectedTotalCount()
         throws {
         
         // Given
@@ -355,7 +355,7 @@ class RankedCardArrayTests: XCTestCase {
     /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
     /// for a `Rank` is greater than zero  returns a `Dictionary` with a key count equal to the `Array`
     /// count.
-    func test_splitByRank_withUniqueRanksWhereCountIsGreaterThanOne_keyCountEqualsArrayCount()
+    func test_splitByRank_withUniqueRanksWhereCountOverZero_keyCountEqualsArrayCount()
         throws {
         
         // Given
@@ -374,7 +374,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
     /// for a `Rank` is greater than one  returns a `Dictionary` with zero keys.
-    func test_splitByRank_withUniqueRanksWhereCountIsGreaterThanOne_hasZeroKeys()
+    func test_splitByRank_withUniqueRanksWhereCountOverZero_hasZeroKeys()
         throws {
         
         // Given
@@ -394,7 +394,7 @@ class RankedCardArrayTests: XCTestCase {
     /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
     /// for a `Rank` is greater than zero  returns a `Dictionary` with a total count equal to the `Array`
     /// count.
-    func test_splitByRank_withUniqueRanksWhereCountIsGreaterThanOne_totalCountEqualsArrayCount()
+    func test_splitByRank_withUniqueRanksWhereCountOverOne_totalCountEqualsArrayCount()
         throws {
         
         // Given
@@ -413,7 +413,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
     /// for a `Rank` is greater than one  returns a `Dictionary` with a total count of zero.
-    func test_splitByRank_withUniqueRanksWhereCountIsGreaterThanOne_totalCountEqualsZero()
+    func test_splitByRank_withUniqueRanksWhereCountOverOne_totalCountEqualsZero()
         throws {
         
         // Given
@@ -422,6 +422,54 @@ class RankedCardArrayTests: XCTestCase {
         let rankedCards = [rankedCard1, rankedCard2]
         let count = 1
         let expected = 0
+        
+        // When
+        let rankedCardsByRank = rankedCards.splitByRank(over: count)
+        let actual = rankedCardsByRank.totalCount
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Duplicate Ranks //
+    
+    /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank`where the count for
+    /// a `Rank` is greater than a given count returns a `Dictionary` with an expected key count.
+    func test_splitByRank_withDuplicateRanksWhereOverCount_hasExpectedKeyCount()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCard3 = RankedCard(with: .two)
+        let rankedCard4 = RankedCard(with: .three)
+        let rankedCard5 = RankedCard(with: .three)
+        let rankedCard6 = RankedCard(with: .three)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4, rankedCard5, rankedCard6]
+        let count = 2
+        let expected = 1
+        
+        // When
+        let rankedCardsByRank = rankedCards.splitByRank(over: count)
+        let actual = rankedCardsByRank.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank`where the count for
+    /// a `Rank` is greater than a given count returns a `Dictionary` with an expected total count.
+    func test_splitByRank_withDuplicateRanksWhereOverCount_hasExpectedTotalCount()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCard3 = RankedCard(with: .two)
+        let rankedCard4 = RankedCard(with: .three)
+        let rankedCard5 = RankedCard(with: .three)
+        let rankedCard6 = RankedCard(with: .three)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4, rankedCard5, rankedCard6]
+        let count = 2
+        let expected = 3
         
         // When
         let rankedCardsByRank = rankedCards.splitByRank(over: count)
