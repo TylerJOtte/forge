@@ -92,8 +92,9 @@ class RankedCardArrayTests: XCTestCase {
     // All Ranks //
     //           //
     
-    /// Tests that splitting `RankedCard`s with unique `Rank`s  by `Rank` returns the expected count.
-    func test_splitByRank_rankedCardsWithUniqueRanks_returnsExpectedCount()
+    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank` has the expected key
+    /// count.
+    func test_splitByRank_rankedCardArrayWithUniqueRanks_hasExpectedKeyCount()
         throws {
         
         // Given
@@ -101,6 +102,24 @@ class RankedCardArrayTests: XCTestCase {
         let rankedCard2 = RankedCard(with: .two)
         let rankedCards = [rankedCard1, rankedCard2]
         let expected = 2
+        
+        // When
+        let rankedCardsByRank = rankedCards.splitByRank()
+        let actual = rankedCardsByRank.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that splitting a `RankedCard Array` with duplicate `Rank`s  by `Rank` has  the expected
+    /// key count.
+    func test_splitByRank_rankedCardArrayWithDuplicateRanks_hasExpectedKeyCount()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCards = [rankedCard1, rankedCard2]
+        let expected = 1
         
         // When
         let rankedCardsByRank = rankedCards.splitByRank()
