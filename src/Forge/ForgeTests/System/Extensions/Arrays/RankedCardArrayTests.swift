@@ -202,7 +202,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
     /// for a `Rank` is greater than one  returns a `Dictionary` with zero keys.
-    func test_splitByRank_withUniqueRanksWhereCountIsGreaterThanOne_hasZeroKeys()
+    func test_splitByRank_withUniqueRanksWhereCountEqualsTwo_hasZeroKeys()
         throws {
         
         // Given
@@ -342,6 +342,50 @@ class RankedCardArrayTests: XCTestCase {
         // When
         let rankedCardsByRank = rankedCards.splitByRank(where: count)
         let actual = rankedCardsByRank.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //                    //
+    // Where > Rank Count //
+    //                    //
+    
+    // Unique Ranks //
+    
+    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
+    /// for a `Rank` is greater than one  returns a `Dictionary` with zero keys.
+    func test_splitByRank_withUniqueRanksWhereCountIsGreaterThanOne_hasZeroKeys()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCards = [rankedCard1, rankedCard2]
+        let count = 1
+        let expected = 0
+        
+        // When
+        let rankedCardsByRank = rankedCards.splitByRank(over: count)
+        let actual = rankedCardsByRank.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
+    /// for a `Rank` is greater than one  returns a `Dictionary` with a total count of zero.
+    func test_splitByRank_withUniqueRanksWhereCountIsGreaterThanOne_totalCountEqualsZero()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCards = [rankedCard1, rankedCard2]
+        let count = 1
+        let expected = 0
+        
+        // When
+        let rankedCardsByRank = rankedCards.splitByRank(over: count)
+        let actual = rankedCardsByRank.totalCount
         
         XCTAssertEqual(expected, actual)
     }
