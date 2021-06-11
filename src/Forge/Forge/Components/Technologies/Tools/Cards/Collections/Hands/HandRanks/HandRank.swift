@@ -62,4 +62,24 @@ public class HandRank<T: RankedCard>: Hand<T>, Scoreable {
         
         try super.init(of: min, to: max, cards)
     }
+    
+    
+    func containsCard(in pair: Pair<T>) -> Bool {
+        
+        return contains(pair.first) || contains(pair.last)
+    }
+    
+    func containsCard(in pairs: [Pair<T>]) -> Bool {
+        
+        var contains = false
+        var pair = 0
+        
+        while (!contains && pair < pairs.count) {
+            
+            contains = containsCard(in: pairs[pair])
+            pair += 1
+        }
+        
+        return contains
+    }
 }

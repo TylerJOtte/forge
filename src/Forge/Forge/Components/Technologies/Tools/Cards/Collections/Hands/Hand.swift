@@ -38,6 +38,9 @@ public class Hand<T: Card>: Cards {
     /// The `Hand`'s first `Card`.
     public var first: T? { return cards.first }
     
+    /// The `Hand`'s last `Card`.
+    public var last: T? { return cards.last }
+    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
@@ -188,6 +191,24 @@ public class Hand<T: Card>: Cards {
     public func contains(_ card: T) -> Bool {
         
         return cards.contains(card)
+    }
+    
+    /// Determines if the given `Card` exists.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card` to find.
+    /// - Returns: True if the given `Card` exists, else false.
+    public func contains(_ card: T?) -> Bool {
+        
+        var containsCard = false
+        
+        if let value = card {
+            
+            containsCard = contains(value)
+        }
+        
+        return containsCard
     }
     
     //-------------------------------------------------------------------------//

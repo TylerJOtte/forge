@@ -29,7 +29,7 @@ public class PlayingCardHand: Hand<PlayingCard> {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: A collection of `Run`s.
-    public func getRuns() -> [Run] {
+    public func getRuns() -> [Run<PlayingCard>] {
         
         // TODO: implement stub
         

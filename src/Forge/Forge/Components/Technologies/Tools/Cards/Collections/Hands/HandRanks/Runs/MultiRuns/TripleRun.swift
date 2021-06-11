@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of three `Run`s with a `ThreeOfAKind`.
-public class TripleRun: MultiRun {
+public class TripleRun<T: RankedCard>: MultiRun<T> {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -41,27 +41,11 @@ public class TripleRun: MultiRun {
     ///     `ThreeOfAKind`.
     ///   - `invalidRun` if the given `Card`'s non-`Kind Card`s do not form a `Run` with each
     ///     `Kind Card`.
-    public init(of cards: [PlayingCard]) throws {
+    public init(of cards: [T]) throws {
         
         let min = 5
-        let kindCount = 1
-        let kinds = try cards.getThreeOfAKinds()
-        let kind = kinds.first
+        let count = 3
         
-        guard (kinds.count == kindCount) else {
-            
-            print("The given Cards must contain \(kindCount), and only " +
-                  "\(kindCount) ThreeOfAKind.")
-            throw HandRankError.invalidKindCount
-        }
-        
-        guard (cards.formRun(with: kind)) else {
-            
-            print("The given Card's non-Kind Cards must form a Run with each " +
-                  "Kind Card.")
-            throw HandRankError.invalidRun
-        }
-        
-        try super.init(of: min, cards)
+        try super.init(of: min, cards, with: count)
     }
 }
