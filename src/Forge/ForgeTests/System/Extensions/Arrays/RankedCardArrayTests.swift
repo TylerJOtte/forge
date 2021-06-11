@@ -189,6 +189,24 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains three  same
+    /// `RankedCard`s returns a `Pair Array` with a count of three.
+    func test_getPairs_withThreeEquallyRankedCards_returnsThreePairs() throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCard3 = RankedCard(with: .ace)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
+        let expected = 3
+        
+        // When
+        let pairs = try rankedCards.getPairs()
+        let actual = pairs.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                               SPLITTERS                                 //
     //=========================================================================//
