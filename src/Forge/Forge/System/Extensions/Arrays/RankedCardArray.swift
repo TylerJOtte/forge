@@ -53,7 +53,7 @@ extension Array where Element: RankedCard  {
         return areSequential
     }
 
-    func formRun(with kind: Kind?) -> Bool {
+    func formRun(with kind: Kind<RankedCard>?) -> Bool {
         
         var formRun = false
         var cards = splitBySingleRanks()
@@ -95,7 +95,7 @@ extension Array where Element: RankedCard  {
         return formRun
     }
     
-    func formRuns(with kinds: [Kind]) -> Bool {
+    func formRuns(with kinds: [Kind<RankedCard>]) -> Bool {
         
         var formRuns = true
         var index = 0
@@ -113,16 +113,41 @@ extension Array where Element: RankedCard  {
     //                                 GETTERS                                 //
     //=========================================================================//
 
-    
-    func getPairs() throws -> [Pair] {
-        
-        let count = 2
-        let cards = splitByRank(where: count)
 
-        return  try cards.map{try Pair(of: $1)}
+    func getPairs() throws -> [Pair<RankedCard>] {
+        
+        let count = 1
+        let cardsByRank = splitByRank(over: count)
+        var pairs: [Pair<RankedCard>] = []
+        
+        for rank in cardsByRank {
+            
+            let cards = rank.value
+            var position = 0
+            
+            while (position < cards.count - 1)
+            {
+                var index = position
+
+                while (index < cards.count - 1) {
+                    
+                    let card = cards[index]
+                    let nextCard = cards[index + 1]
+                    let cards = [card, nextCard]
+                    let pair = try Pair(of: cards)
+                    
+                    pairs.append(pair)
+                    index += 1
+                }
+                
+                position += 1
+            }
+        }
+        
+        return pairs
     }
     
-    func getThreeOfAKinds() throws -> [ThreeOfAKind] {
+    func getThreeOfAKinds() throws -> [ThreeOfAKind<RankedCard>] {
         
         let count = 3
         let cards = splitByRank(where: count)
@@ -130,7 +155,7 @@ extension Array where Element: RankedCard  {
         return try cards.map{try ThreeOfAKind(of: $1)}
     }
     
-    func getFourOfAKinds() throws -> [FourOfAKind] {
+    func getFourOfAKinds() throws -> [FourOfAKind<RankedCard>] {
         
         let count = 4
         let cards = splitByRank(where: count)
@@ -138,7 +163,7 @@ extension Array where Element: RankedCard  {
         return try cards.map{try FourOfAKind(of: $1)}
     }
     
-    func getKinds() throws -> [Kind] {
+    func getKinds() throws -> [Kind<RankedCard>] {
         
         let pairs: [Kind] = try getPairs()
         let threeOfAKinds = try getThreeOfAKinds()
@@ -152,33 +177,75 @@ extension Array where Element: RankedCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: The sum total of points from all the `Card`s in the collection.
-    func getRunCardCount(with kinds: [Kind]) -> Int {
+    func getRunCardCount(with kinds: [Kind<RankedCard>]) -> Int {
         
         return splitBySingleRanks().count + kinds.count
     }
     
- 
-    /// Retrieves the sum total of points from all the `Card`s in the collection.
+    /// Retrieves all the sequences.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: The sum total of points from all the `Card`s in the collection.
-    func getRunPoints(with kinds: [Kind]) -> Int {
+    /// - Returns: An `Array` of `RankedCard Array` sequences.
+    func getSequences() -> [[RankedCard]] {
         
-        let kindCardCount = kinds.sumCounts()
-        let runCardCount = getRunCardCount(with: kinds)
+        let cards = sorted()
+        let lastIndex = cards.count - 1
+        var index = 0
+        var card = cards[index]
+        var sequences = cards.count > 0 ? [[card]] : [[]]
         
-        return runCardCount * kindCardCount
+        while (index < lastIndex) {
+            
+            let nextCard = cards[index + 1]
+            card = cards[index]
+            
+            if (nextCard.follows(card)) {
+                
+                for sequenceIndex in 0..<sequences.count {
+                    
+                    sequences[sequenceIndex].append(nextCard)
+                }
+            
+            } else if (nextCard.ranks(card)) {
+             
+                addBases(with: nextCard, to: &sequences)
+                
+            } else {
+                
+                sequences = [[nextCard]]
+            }
+            
+            index += 1
+        }
+        
+        return sequences
+    }
+
+    func getSequences(over count: Int) throws -> [[RankedCard]] {
+        
+        return try getSequences().filter{$0.count > count}
+    }
+    
+    func getRuns() throws -> [Run<RankedCard>] {
+        
+        let count = 2
+        let sequences = try getSequences(over: count)
+       
+        return try sequences.map{try Run(of: $0)}
     }
     
     func getRunPoints() throws -> Int {
         
-        let kinds = try getKinds()
-        let kindPoints = kinds.sumPoints()
-        let runPoints = getRunPoints(with: kinds)
-        
-        return kindPoints + runPoints
+        return try getRuns().sumPoints()
     }
+    
+    func getPairPoints() throws -> Int {
+        
+        return try getPairs().sumPoints()
+    }
+    
+
     
     func splitBySingleRanks() -> [RankedCard] {
 

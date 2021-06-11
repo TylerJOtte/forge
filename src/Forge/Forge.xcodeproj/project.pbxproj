@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5005F3A2674214F007E6165 /* IntArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5005F392674214F007E6165 /* IntArray.swift */; };
+		B521E230266D520600DB4602 /* EquatableArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */; };
+		B521E236266D670300DB4602 /* HandRankArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E235266D670300DB4602 /* HandRankArray.swift */; };
+		B521E23A266D7DD700DB4602 /* PairArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E239266D7DD700DB4602 /* PairArray.swift */; };
 		B53EEC5F264CA3D400E88BB6 /* DepictionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53EEC5E264CA3D400E88BB6 /* DepictionError.swift */; };
 		B53EEC63264CA3DB00E88BB6 /* DescriptionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53EEC62264CA3DB00E88BB6 /* DescriptionError.swift */; };
 		B53EEC67264CA3ED00E88BB6 /* ElementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53EEC66264CA3ED00E88BB6 /* ElementError.swift */; };
@@ -48,7 +52,7 @@
 		B5817D90261A12CD0022B805 /* PlayingCardDeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D8F261A12CD0022B805 /* PlayingCardDeckTests.swift */; };
 		B5817D97261A19DA0022B805 /* HandRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D96261A19DA0022B805 /* HandRank.swift */; };
 		B5817D9D261A1F7B0022B805 /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D9C261A1F7B0022B805 /* Kind.swift */; };
-		B5817DA2261A27600022B805 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817DA1261A27600022B805 /* ArrayExtension.swift */; };
+		B5817DA2261A27600022B805 /* CardsArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817DA1261A27600022B805 /* CardsArrayExtension.swift */; };
 		B5817DA8261A3E0E0022B805 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817DA7261A3E0E0022B805 /* Run.swift */; };
 		B597383325FE958700367598 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597383225FE958700367598 /* Elements.swift */; };
 		B597383825FE9D5000367598 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597383725FE9D5000367598 /* Card.swift */; };
@@ -103,7 +107,7 @@
 		B5F29B6A263E0EA400082A1A /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B69263E0EA400082A1A /* Element.swift */; };
 		B5F29B76263E2FFC00082A1A /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B75263E2FFC00082A1A /* SequenceExtension.swift */; };
 		B5F29B7A263E31C600082A1A /* CharacterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B79263E31C600082A1A /* CharacterExtension.swift */; };
-		B5F29B7E263E343800082A1A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B7D263E343800082A1A /* StringExtension.swift */; };
+		B5F29B7E263E343800082A1A /* StringSubSequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B7D263E343800082A1A /* StringSubSequenceExtension.swift */; };
 		B5F29C1E264882A300082A1A /* Trait.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29C1D264882A300082A1A /* Trait.swift */; };
 		B5F29C222648841800082A1A /* Removable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29C212648841800082A1A /* Removable.swift */; };
 		B5F2D43C262D16340089403F /* FaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2D43B262D16340089403F /* FaceCard.swift */; };
@@ -147,6 +151,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5005F392674214F007E6165 /* IntArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntArray.swift; sourceTree = "<group>"; };
+		B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableArrayExtension.swift; sourceTree = "<group>"; };
+		B521E235266D670300DB4602 /* HandRankArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRankArray.swift; sourceTree = "<group>"; };
+		B521E239266D7DD700DB4602 /* PairArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairArray.swift; sourceTree = "<group>"; };
 		B53EEC5E264CA3D400E88BB6 /* DepictionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepictionError.swift; sourceTree = "<group>"; };
 		B53EEC62264CA3DB00E88BB6 /* DescriptionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionError.swift; sourceTree = "<group>"; };
 		B53EEC66264CA3ED00E88BB6 /* ElementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementError.swift; sourceTree = "<group>"; };
@@ -188,7 +196,7 @@
 		B5817D8F261A12CD0022B805 /* PlayingCardDeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeckTests.swift; sourceTree = "<group>"; };
 		B5817D96261A19DA0022B805 /* HandRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRank.swift; sourceTree = "<group>"; };
 		B5817D9C261A1F7B0022B805 /* Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
-		B5817DA1261A27600022B805 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		B5817DA1261A27600022B805 /* CardsArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsArrayExtension.swift; sourceTree = "<group>"; };
 		B5817DA7261A3E0E0022B805 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		B597383225FE958700367598 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 		B597383725FE9D5000367598 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -246,7 +254,7 @@
 		B5F29B69263E0EA400082A1A /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		B5F29B75263E2FFC00082A1A /* SequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension.swift; sourceTree = "<group>"; };
 		B5F29B79263E31C600082A1A /* CharacterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterExtension.swift; sourceTree = "<group>"; };
-		B5F29B7D263E343800082A1A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		B5F29B7D263E343800082A1A /* StringSubSequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSubSequenceExtension.swift; sourceTree = "<group>"; };
 		B5F29C1D264882A300082A1A /* Trait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trait.swift; sourceTree = "<group>"; };
 		B5F29C212648841800082A1A /* Removable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Removable.swift; sourceTree = "<group>"; };
 		B5F2D43B262D16340089403F /* FaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCard.swift; sourceTree = "<group>"; };
@@ -610,7 +618,7 @@
 				B5BB5FC126683BC800A88709 /* Arrays */,
 				B5F29B75263E2FFC00082A1A /* SequenceExtension.swift */,
 				B5F29B79263E31C600082A1A /* CharacterExtension.swift */,
-				B5F29B7D263E343800082A1A /* StringExtension.swift */,
+				B5F29B7D263E343800082A1A /* StringSubSequenceExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -761,9 +769,13 @@
 			isa = PBXGroup;
 			children = (
 				B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */,
+				B521E235266D670300DB4602 /* HandRankArray.swift */,
 				B5ECEB042668571500E478F7 /* RankedCardArray.swift */,
 				B5BB5FC226683BD900A88709 /* ScoreableArray.swift */,
-				B5817DA1261A27600022B805 /* ArrayExtension.swift */,
+				B5817DA1261A27600022B805 /* CardsArrayExtension.swift */,
+				B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */,
+				B521E239266D7DD700DB4602 /* PairArray.swift */,
+				B5005F392674214F007E6165 /* IntArray.swift */,
 			);
 			path = Arrays;
 			sourceTree = "<group>";
@@ -1106,13 +1118,14 @@
 				B5817D4F2618DE4D0022B805 /* RankExtension.swift in Sources */,
 				B5BE904E2651B91A005E0A37 /* Pair.swift in Sources */,
 				B5F29B55263D991600082A1A /* Score.swift in Sources */,
-				B5817DA2261A27600022B805 /* ArrayExtension.swift in Sources */,
+				B521E236266D670300DB4602 /* HandRankArray.swift in Sources */,
+				B5817DA2261A27600022B805 /* CardsArrayExtension.swift in Sources */,
 				B597384325FEA93000367598 /* Deck.swift in Sources */,
 				B597385A25FEC1CE00367598 /* ElementsError.swift in Sources */,
 				B5F29C222648841800082A1A /* Removable.swift in Sources */,
 				B5F29B59263D99FB00082A1A /* Scoreable.swift in Sources */,
 				B5ECEAF926684F1D00E478F7 /* PlayingCardArray.swift in Sources */,
-				B5F29B7E263E343800082A1A /* StringExtension.swift in Sources */,
+				B5F29B7E263E343800082A1A /* StringSubSequenceExtension.swift in Sources */,
 				B556681626223DB90045AC2B /* Fifteen.swift in Sources */,
 				B55668472623EAC20045AC2B /* Technology.swift in Sources */,
 				B55668AF262A7A350045AC2B /* TripleRun.swift in Sources */,
@@ -1130,6 +1143,7 @@
 				B5566869262527FE0045AC2B /* Description.swift in Sources */,
 				B5F2D44A262E496E0089403F /* NumeralCard.swift in Sources */,
 				B55668352623D29E0045AC2B /* Nobs.swift in Sources */,
+				B521E230266D520600DB4602 /* EquatableArrayExtension.swift in Sources */,
 				B5F2D47B262E500D0089403F /* Queen.swift in Sources */,
 				B55668D6262CB8FC0045AC2B /* ScoreError.swift in Sources */,
 				B597384925FEAD4100367598 /* Hand.swift in Sources */,
@@ -1158,6 +1172,8 @@
 				B5A50C492664365F001717C6 /* HandRankError.swift in Sources */,
 				B5B899D12651A51300BBF3C2 /* Orderable.swift in Sources */,
 				B5F2D477262E4FA00089403F /* Jack.swift in Sources */,
+				B521E23A266D7DD700DB4602 /* PairArray.swift in Sources */,
+				B5005F3A2674214F007E6165 /* IntArray.swift in Sources */,
 				B55668B3262B57470045AC2B /* RangeError.swift in Sources */,
 				B5A50C3D266435CE001717C6 /* CardsError.swift in Sources */,
 				B5A50C3426643569001717C6 /* TechnologyError.swift in Sources */,

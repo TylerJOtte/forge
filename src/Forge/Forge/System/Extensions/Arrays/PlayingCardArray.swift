@@ -22,21 +22,25 @@ extension Array where Element: PlayingCard  {
     //                                 TESTERS                                 //
     //=========================================================================//
     
-    /// Determines if all the `Card`s in the given collection contain the same`Suit`.
+    /// Determines if all the `PlayingCard`s contain the same`Suit`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: True if all the `Card`s in the given collection contain the same`Suit`, else false.
+    /// - Returns: True if all the `PlayingCard`s contain the same`Suit`, else false.
     func areEquallySuited() -> Bool {
         
         return splitBySuit().count == 1
     }
     
-    /// Splits all the `Card`s in the given collection by `Suit`.
+    //=========================================================================//
+    //                               SPLITTERS                                 //
+    //=========================================================================//
+    
+    /// Splits all the `PlayingCard`s  by `Suit`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: A dictionary with the `Suit`s as keys and their respective `Card`s as the values.
+    /// - Returns: A dictionary with `Suit:PlayingCard Array` entries.
     func splitBySuit() -> [Suit:[PlayingCard]] {
         
         return Dictionary(grouping: self, by: {$0.suit})
