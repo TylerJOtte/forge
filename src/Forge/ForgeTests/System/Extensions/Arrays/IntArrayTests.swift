@@ -28,6 +28,20 @@ class IntArrayTests: XCTestCase {
     //                               sumPoints()                               //
     //-------------------------------------------------------------------------//
     
+    /// Tests that summing all the numbers an `Int Array` with zero elements equals zero.
+    func test_sumPoints_ofEmptyArray_equalsZero() throws {
+        
+        // Given
+        let numbers: [Int] = []
+        let expected = 0
+        
+        // When
+        let actual = numbers.sum()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that summing all the numbers in an `Int Array` equals an expected value.
     func test_sumPoints_ofNumbers_equalsExpected() throws {
         
