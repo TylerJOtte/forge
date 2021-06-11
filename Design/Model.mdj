@@ -17267,7 +17267,7 @@
 																			"fillColor": "#00202a",
 																			"fontColor": "#d2dfe7",
 																			"font": "Arial;13;0",
-																			"left": 914,
+																			"left": 910,
 																			"top": 553,
 																			"height": 13,
 																			"alpha": 1.5707963267948966,
@@ -17290,7 +17290,7 @@
 																			"fillColor": "#00202a",
 																			"fontColor": "#d2dfe7",
 																			"font": "Arial;13;0",
-																			"left": 914,
+																			"left": 910,
 																			"top": 568,
 																			"height": 13,
 																			"alpha": 1.5707963267948966,
@@ -17313,7 +17313,7 @@
 																			"fillColor": "#00202a",
 																			"fontColor": "#d2dfe7",
 																			"font": "Arial;13;0",
-																			"left": 915,
+																			"left": 911,
 																			"top": 523,
 																			"height": 13,
 																			"alpha": -1.5707963267948966,
@@ -17333,7 +17333,7 @@
 																	"tail": {
 																		"$ref": "AAAAAAF5U2zgWrRzXVE="
 																	},
-																	"points": "1094:592;1094:544;736:544;736:466",
+																	"points": "1094:592;1094:544;728:544;728:466",
 																	"showVisibility": true,
 																	"showProperty": false,
 																	"nameLabel": {

@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  StringExtension.swift                                                      //
+//  StringSubSequenceExtension.swift                                           //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 5/01/21.                                       //
@@ -16,31 +16,31 @@
 
 import Foundation
 
-/// An extension for common `String` operations.
-extension String {
-    
-    /// Splits the `String` on capital letters using the given token.
+/// An extension for common `String SubSequence` operations.
+extension String.SubSequence {
+
+    /// Splits on the capital letters using the given token.
     ///
     /// - Precondition: None.
-    /// - Postcondition: The given token is added before each capital letter in the `String`.
-    /// - Parameter token: The token to add before each capital letter in the `String`.
-    /// - Returns: The `String` with the given token added before each capital letter.
+    /// - Postcondition: The given token is added before each capital letter.
+    /// - Parameter token: The token to add before each capital letter.
+    /// - Returns: A `String` with the given token added before each capital letter.
     func splitOnCapitals(using token: String = " ") -> String {
-        
+
         return add(token, before: {$0.isUpperCased})
     }
-    
-    /// Adds the given token before each letter in the `String` where the specified predicate is true.
+
+    /// Adds the given token before each letter where the specified predicate is true.
     ///
     /// - Precondition: None.
     /// - Postcondition: The given token is added before each letter where the predicate is true.
     /// - Parameters:
-    ///    - token: The token to add before each letter where predicate is true.
-    ///    - predicate: The evaluation to perform on the `String`.
-    /// - Returns: The `String` with the given token added before each letter where predicate is true.
+    ///    - token: The token to add before each letter where the predicate is true.
+    ///    - predicate: The evaluation to perform.
+    /// - Returns: A `String` with the given token added before each letter where the predicate is true.
     func add(_ token: String, before predicate: (Iterator.Element) throws ->
                 Bool) rethrows -> String {
-        
+
         return try self
             .split(where: predicate)
             .map{String($0)}

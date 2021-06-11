@@ -28,7 +28,8 @@ extension Element {
     var title: String {
         
         let model = String(describing: type(of: self))
-            
-        return model.splitOnCapitals()
+        let nonParameterizedName = model.split(separator: "<").first ?? ""
+        
+        return nonParameterizedName.splitOnCapitals()
     }
 }
