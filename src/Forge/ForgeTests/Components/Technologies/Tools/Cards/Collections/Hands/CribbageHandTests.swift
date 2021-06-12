@@ -41,7 +41,7 @@ class CribbageHandTests: XCTestCase {
         let cutCard = try Five(of: .hearts)
         let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades,
                      aceOfHearts]
-        let expected = ElementsError.excessiveElements
+        let expected = ElementsError.invalidCount
         
         // When
         XCTAssertThrowsError(try CribbageHand(with: cards, and: cutCard)) {

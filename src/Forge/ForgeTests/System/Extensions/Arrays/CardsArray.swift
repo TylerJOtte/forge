@@ -36,7 +36,7 @@ class CardsArrayTests: XCTestCase {
     func test_sumCounts_ofEmptyArray_equalsZero() throws {
         
         // Given
-        let cards: [Hand<Card>] = []
+        let cards: [Hand] = []
         let expected = 0
         
         // When
@@ -51,13 +51,13 @@ class CardsArrayTests: XCTestCase {
     //       //
     
     /// Tests that summing all the counts  in a `Hand Array` equals an expected value.
-    func test_sumCounts_ofHandArray_equalsExpected() throws {
+    func test_sumCounts_ofHandArray_equalsExpected() {
         
         // Given
         let card = Card(named: "Card 1")
         let cards = [card]
-        let hand1 = try Hand(of: cards)
-        let hand2 = try Hand(of: cards)
+        let hand1 = Hand(of: cards)
+        let hand2 = Hand(of: cards)
         let hands = [hand1, hand2]
         let expected = 2
         
@@ -166,6 +166,51 @@ class CardsArrayTests: XCTestCase {
         
         // When
         let actual = pairs.sumCounts()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // ThreeOfAKinds //
+    
+    /// Tests that summing the counts of an`Array` that contains one `ThreeOfAKind` equals three.
+    func test_sumCounts_ofOneThreeOfAKindArray_equalsThree() throws {
+        
+        // Given
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
+        let kind = try ThreeOfAKind(of: cards)
+        let kinds = [kind]
+        let expected = 3
+        
+        // When
+        let actual = kinds.sumCounts()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that summing the counts of an`Array` that contains two `ThreeOfAKind`s equals six.
+    func test_sumCounts_ofTwoThreeOfAKindArray_equalsSix() throws {
+        
+        // Given
+        let king1 = try King(of: .hearts)
+        let king2 = try King(of: .spades)
+        let king3 = try King(of: .diamonds)
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
+        let ace3 = try Ace(of: .diamonds)
+        let cards1 = [king1, king2, king3]
+        let cards2 = [ace1, ace2, ace3]
+        let kind1 = try ThreeOfAKind(of: cards1)
+        let kind2 = try ThreeOfAKind(of: cards2)
+        let kinds = [kind1, kind2]
+        let expected = 6
+        
+        // When
+        let actual = kinds.sumCounts()
         
         // Then
         XCTAssertEqual(expected, actual)
