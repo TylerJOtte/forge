@@ -21,6 +21,50 @@ import XCTest
 class DeckTests: XCTestCase {
     
     //=========================================================================//
+    //                             Initialization                              //
+    //=========================================================================//
+
+    //-------------------------------------------------------------------------//
+    //                              Invalid Max                                //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that creating a `Deck` with a max less than one throws an `invalidMax Error`.
+    func test_init_withMaxLessThanOne_throwsInvalidMaxError() throws {
+
+        // Given
+        let max = 0
+        let card = Card()
+        let cards = [card]
+        let expected = RangeError.invalidMax
+
+        // When
+        XCTAssertThrowsError(try Deck(of: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    /// Tests that creating a `Deck` with a valid min and a max less than one throws an `invalidMax`
+    /// `Error`.
+    func test_init_withValidMinAndMaxLessThanOne_throwsInvalidMaxError() throws {
+
+        // Given
+        let min = 0
+        let max = 0
+        let card = Card()
+        let cards = [card]
+        let expected = RangeError.invalidMax
+
+        // When
+        XCTAssertThrowsError(try Deck(of: min, to: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    //=========================================================================//
     //                                  Count                                  //
     //=========================================================================//
 

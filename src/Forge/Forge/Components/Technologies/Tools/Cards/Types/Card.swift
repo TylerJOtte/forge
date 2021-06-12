@@ -30,6 +30,15 @@ public class Card: Tool, Relatable {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
+    /// Creates a default `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: The `Card`s title is set to "Card".
+    public init() {
+
+        self.title = "Card"
+    }
+    
     /// Creates a `Card` with the given title.
     ///
     /// - Precondition: None.
