@@ -109,15 +109,62 @@ class DeckTests: XCTestCase {
     //                            Invalid Count                                //
     //-------------------------------------------------------------------------//
     
+    //               //
+    // Less Than Min //
+    //               //
+    
     /// Tests that creating a `Deck` with `Cards` that contain less the given min # of `Card`s throws an
     /// `invalidCount Error`.
-    func test_init_withCardsLessThanMin_throwsInvalidCountError() throws {
+    func test_init_withLessCardsThanMin_throwsInvalidCountError() throws {
 
         // Given
         let min = 2
         let max = 2
         let card = Card()
         let cards = [card]
+        let expected = ElementsError.invalidCount
+
+        // When
+        XCTAssertThrowsError(try Deck(of: min, to: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    //               //
+    // More Than Max //
+    //               //
+    
+    /// Tests that creating a `Deck` with `Cards` that contain more the given max # of `Card`s throws an
+    /// `invalidCount Error`.
+    func test_init_withMoreCardsThanMax_throwsInvalidCountError() throws {
+
+        // Given
+        let max = 1
+        let card1 = Card()
+        let card2 = Card()
+        let cards = [card1, card2]
+        let expected = ElementsError.invalidCount
+
+        // When
+        XCTAssertThrowsError(try Deck(of: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    /// Tests that creating a `Deck` with a min and `Cards` that contain more the given max # of
+    /// `Card`s throws an`invalidCount Error`.
+    func test_init_withMinAndMoreCardsThanMax_throwsInvalidCountError() throws {
+
+        // Given
+        let min = 0
+        let max = 1
+        let card1 = Card()
+        let card2 = Card()
+        let cards = [card1, card2]
         let expected = ElementsError.invalidCount
 
         // When
