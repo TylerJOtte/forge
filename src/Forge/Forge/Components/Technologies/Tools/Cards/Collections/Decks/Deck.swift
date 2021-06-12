@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Deck` of `Card`s.
-public class Deck<T: Card>: Tool, Cards {
+public class Deck: Cards {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -30,13 +30,13 @@ public class Deck<T: Card>: Tool, Cards {
     public let maxCards: Int
     
     /// The `Card`s.
-    private var cards: [String : [T]]
+    private var cards: [String : [Card]]
     
     /// The total # of `Card`s.
     public var count: Int { return cards.count }
     
     /// The `Deck`'s first `Card`.
-    public var first: T? { return cards.first?.value.first }
+    public var first: Card? { return cards.first?.value.first }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -48,7 +48,7 @@ public class Deck<T: Card>: Tool, Cards {
     /// - Postcondition:
     ///   - The `Deck` can hold zero - Int.max `Card`s.
     ///   - The `Deck` is empty.
-    ///   - title = "Deck".
+    ///   - The `Deck`'s title is set to "Deck".
     public init() {
         
         self.minCards = 0
@@ -56,81 +56,93 @@ public class Deck<T: Card>: Tool, Cards {
         self.cards = [:]
     }
     
-    /// Creates a`Deck`with the given `Card`s and specified `min` & `max`.
+    /// Creates a`Deck`with the given terms.
     ///
     /// - Precondition:
-    ///   - `min` must be >= 0.
-    ///   - `max` must be  >= 1.
-    ///   - `max` must be >= `minCards`.
-    ///   - The # of given `Card`s must be &lt;= `max`.
+    ///   - The given max must be  >= 1..
+    ///   - The given `Card`s must contain zero to the specified max # of `Card`s.
     /// - Postcondition:
-    ///   - The `Deck` can hold zero to given max `Card`s.
+    ///   - The `Deck` can hold zero to the given max # of `Card`s.
     ///   - The `Deck` contains the given `Card`s.
-    ///   - title = "Deck".
+    ///   - The `Deck`'s title is set to "Deck".
     /// - Parameters:
-    ///   - min: The minimum # of `Card`s allowed in the `Deck`.
     ///   - max: The maximum # of `Card`s allowed in the `Deck`.
-    ///   - cards: The `Card`s to create `Deck` with.
-    public init?(of min: Int, to max: Int, _ cards: [T]) {
-        
-        guard (min >= 0) else {
-            
-            print("Min must be >= 0.")
-            return nil
-        }
+    ///   - cards: The `Card`s to include in the `Deck`.
+    /// - Throws:
+    ///   - `invalidMax` if the given max is &lt; 1.
+    ///   - `invalidCount` if the given `Card`s contain more than the specified max # of `Card`s.
+    public init(of max: Int,  cards: [Card]) throws {
         
         guard (max >= 1) else {
             
-            print("Max must be >= 1.")
-            return nil
-        }
-        
-        guard (max >= min) else {
-            
-            print("Max must be >= min.")
-            return nil
+            print("The given max must be >= 1.")
+            throw RangeError.invalidMax
         }
         
         guard (cards.count <= max) else {
             
-            print("The # of given Cards must be <= to the specified max.")
-            return nil
+            print("The given Cards can contain at most \(max) Cards.")
+            throw ElementsError.invalidCount
         }
         
-        self.minCards = min
+        self.minCards = 0
         self.maxCards = max
         self.cards = [:]
         
         try! add(cards)
     }
     
-    /// Creates a`Deck`with the given `Card`s and specified `max`.
+    /// Creates a`Deck`with the given terms.
     ///
     /// - Precondition:
-    ///   - The # of given `Card`s must be &lt;= `max`.
-    ///   - `max` must be  >= 1.
+    ///   - The given  min must be >= 0.
+    ///   - The given max must be  >= 1 & >= min.
+    ///   - The given `Card`s must contain the specified min to max # of `Card`s.
     /// - Postcondition:
-    ///   - The `Deck` can hold zero to given max `Card`s.
+    ///   - The `Deck` can hold the given min to max # of `Card`s.
     ///   - The `Deck` contains the given `Card`s.
-    ///   - title = "Deck".
+    ///   - The `Deck`'s title is set to "Deck".
     /// - Parameters:
-    ///   - cards: The `Card`s to create `Deck` with.
-    ///   - max: The maximum # of `Card`s allowed in the `Deck.`
-    public init?(of cards: [T], with max: Int = Int.max) {
+    ///   - min: The minimum # of `Card`s allowed in the `Deck`.
+    ///   - max: The maximum # of `Card`s allowed in the `Deck`.
+    ///   - cards: The `Card`s to include in the `Deck`.
+    /// - Throws:
+    ///   - `invalidMin` if the given min is &lt; 0.
+    ///   - `invalidMax` if the given max is &lt; 1, or &lt; the specified min.
+    ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
+    public init(of min: Int, to max: Int, _ cards: [Card]) throws {
         
-        guard (cards.count <= max) else {
+        guard (min >= 0) else {
             
-            print("The # of given Cards must be <= to the specified max.")
-            return nil
+            print("The given min must be >= 0.")
+            throw RangeError.invalidMin
         }
         
         guard (max >= 1) else {
             
-            print("Max must be >= 1")
-            return nil
+            print("The given max must be >= 1.")
+            throw RangeError.invalidMax
         }
         
-        self.minCards = 0
+        guard (max >= min) else {
+            
+            print("The given max must be >= the specified min.")
+            throw RangeError.invalidMax
+        }
+        
+        guard (cards.count >= min) else {
+
+            print("The given Cards must contain at least \(min) Cards.")
+            throw ElementsError.invalidCount
+        }
+        
+        guard (cards.count <= max) else {
+            
+            print("The given Cards can contain at most \(max) Cards.")
+            throw ElementsError.invalidCount
+        }
+        
+        self.minCards = min
         self.maxCards = max
         self.cards = [:]
         
@@ -182,7 +194,7 @@ public class Deck<T: Card>: Tool, Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find.
     /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: T) -> Bool {
+    public func contains(_ card: Card) -> Bool {
         
         return containsKey(card) && cards[card.title]!.count > 0
     }
@@ -197,7 +209,7 @@ public class Deck<T: Card>: Tool, Cards {
     /// - Postcondition: The `Deck` contains the given `Card`.
     /// - Parameter card: The `card` to add to the `Deck`.
     /// - Throws: `RangeError.isFull` if the `Deck` is full.
-    public func add(_ card: T) throws {
+    public func add(_ card: Card) throws {
         
         guard (!isFull()) else {
             
@@ -228,7 +240,7 @@ public class Deck<T: Card>: Tool, Cards {
     /// - Throws:
     ///   - `ElementsError.isEmpty` if the collection is empty.
     ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
-    public func remove(_ card: T) throws -> T {
+    public func remove(_ card: Card) throws -> Card {
         
         guard (!isEmpty()) else {
             

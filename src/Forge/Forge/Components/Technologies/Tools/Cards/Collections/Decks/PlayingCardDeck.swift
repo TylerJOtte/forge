@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A standard French-suited `Deck` of `PlayingCard`s.
-public class PlayingCardDeck: Deck<PlayingCard> {
+public class PlayingCardDeck: Deck {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -42,13 +42,13 @@ public class PlayingCardDeck: Deck<PlayingCard> {
     /// - Parameters:
     ///   - cards: The `Card`s to create `Deck` with.
     ///   - max: The maximum # of `Card`s allowed in the `Deck.`
-    public init?(with jokers: Bool = false) throws {
+    public init(with jokers: Bool = false) throws {
         
         let min = 0
         let max = jokers ? 54 : 52
         let cards = try PlayingCards.getCards(include: jokers)
         
         self.includesJokers = jokers
-        super.init(of: min, to: max, cards)
+        try super.init(of: min, to: max, cards)
     }
 }
