@@ -24,12 +24,35 @@ public protocol Element {
 /// Default implementations for a game `Element`.
 extension Element {
     
+    //=========================================================================//
+    //                                ATTRIBUTES                               //
+    //=========================================================================//
+    
     /// The primary name
     var title: String {
         
-        let model = String(describing: type(of: self))
-        let nonParameterizedName = model.split(separator: "<").first ?? ""
+        return getModelShortname().splitOnCapitals()
+    }
+    
+    //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+    
+    /// Retrieves the name of the model.
+    ///
+    /// - Returns: A `String` containing the name of the model.
+    private func getModelName() -> String {
         
-        return nonParameterizedName.splitOnCapitals()
+        return String(describing: type(of: self))
+    }
+    
+    /// Retrieves the name of the model without the trailing parameter syntax, if any.
+    ///
+    /// - Returns: A `String.SubSequence` of the model name without the extra syntax.
+    private func getModelShortname() -> String.SubSequence {
+        
+        // Okay to force unwrap as this will never be null.
+        // Eevery module has to have a name.
+        return getModelName().split(separator: "<").first!
     }
 }
