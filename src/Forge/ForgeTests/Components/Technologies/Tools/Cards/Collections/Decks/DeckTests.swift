@@ -176,12 +176,16 @@ class DeckTests: XCTestCase {
     }
     
     //=========================================================================//
-    //                                  Count                                  //
+    //                              PROPERTIES                                 //
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
-    //                                Empty Deck                               //
+    //                                 Count                                   //
     //-------------------------------------------------------------------------//
+    
+    //            //
+    // Empty Deck //
+    //            //
 
     /// Tests that the count of an empty `Deck` is zero.
     func test_count_ofEmptyDeck_isZero() {
@@ -250,9 +254,9 @@ class DeckTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    //-------------------------------------------------------------------------//
-    //                           Partially Filled Deck                         //
-    //-------------------------------------------------------------------------//
+    //                       //
+    // Partially Filled Deck //
+    //                       //
     
     /// Tests that the count of a `Deck` with `Card`s  is > zero.
     func test_count_WithCards_isGreaterThanZero() {
@@ -343,9 +347,9 @@ class DeckTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    //-------------------------------------------------------------------------//
-    //                                 Full Deck                               //
-    //-------------------------------------------------------------------------//
+    //           //
+    // Full Deck //
+    //           //
     
     /// Tests that the count of a full `Deck` equals the max # of `Card`s  allowed.
     func test_count_ofFullDeck_equalsMaxCards() throws {
@@ -364,7 +368,24 @@ class DeckTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
-//
+    
+    //-------------------------------------------------------------------------//
+    //                                 First                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that retrieving the first `Card` of an empty `Deck` returns `nil`.
+    func test_first_ofEmptyDeck_IsNil() {
+        
+        // Given
+        let deck = Deck()
+        
+        // When
+        let first = deck.first
+        
+        // Then
+        XCTAssertNil(first)
+    }
+    
     //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//

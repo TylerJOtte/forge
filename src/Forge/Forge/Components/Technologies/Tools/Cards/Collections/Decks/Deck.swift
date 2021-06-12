@@ -36,7 +36,7 @@ public class Deck: Cards {
     public var count: Int { return cards.totalCount }
     
     /// The `Deck`'s first `Card`.
-    public var first: Card? { return cards.first?.value.first }
+    public var first: Card? { return cards.first?.value.first}
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
