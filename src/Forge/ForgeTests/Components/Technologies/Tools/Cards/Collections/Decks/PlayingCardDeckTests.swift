@@ -28,31 +28,31 @@ class PlayingDeckTests: XCTestCase {
     //                                Success                                  //
     //-------------------------------------------------------------------------//
     
-    /// Tests that creating a`PlayingCardDeck` with `joker`s succeeds.
-    func test_init_withJokers_true() throws {
-        
-        // Given
-        let jokers = true
-        
-        // When
-        let actual = try PlayingCardDeck(with: jokers)
-        
-        // Then
-        XCTAssert(actual != nil)
-    }
-    
-    /// Tests that creating a`PlayingCardDeck` without `joker`s succeeds.
-    func test_init_withoutJokers_true() throws {
-        
-        // Given
-        let jokers = false
-        
-        // When
-        let actual = try PlayingCardDeck(with: jokers)
-        
-        // Then
-        XCTAssert(actual != nil)
-    }
+//    /// Tests that creating a`PlayingCardDeck` with `joker`s succeeds.
+//    func test_init_withJokers_true() throws {
+//
+//        // Given
+//        let jokers = true
+//
+//        // When
+//        let actual = try PlayingCardDeck(with: jokers)
+//
+//        // Then
+//        XCTAssert(actual != nil)
+//    }
+//
+//    /// Tests that creating a`PlayingCardDeck` without `joker`s succeeds.
+//    func test_init_withoutJokers_true() throws {
+//
+//        // Given
+//        let jokers = false
+//
+//        // When
+//        let actual = try PlayingCardDeck(with: jokers)
+//
+//        // Then
+//        XCTAssert(actual != nil)
+//    }
     
     //=========================================================================//
     //                               ATTRIBUTES                                //
@@ -62,33 +62,33 @@ class PlayingDeckTests: XCTestCase {
     //                                 Count                                   //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the count of a new`PlayingCardDeck` with `joker`s is 54.
-    func test_count_withJokers_equals54() throws {
-        
-        // Given
-        let jokers = true
-        let deck = try PlayingCardDeck(with: jokers)!
-        let expected = 54
-        
-        // When
-        let actual = deck.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the count of a new`PlayingCardDeck` without `joker`s is 52.
-    func test_count_withoutJokers_equals52() throws {
-        
-        // Given
-        let jokers = false
-        let deck = try PlayingCardDeck(with: jokers)!
-        let expected = 52
-        
-        // When
-        let actual = deck.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
+//    /// Tests that the count of a new`PlayingCardDeck` with `joker`s is 54.
+//    func test_count_withJokers_equals54() throws {
+//        
+//        // Given
+//        let jokers = true
+//        let deck = try PlayingCardDeck(with: jokers)!
+//        let expected = 54
+//        
+//        // When
+//        let actual = deck.count
+//        
+//        // Then
+//        XCTAssertEqual(expected, actual)
+//    }
+//    
+//    /// Tests that the count of a new`PlayingCardDeck` without `joker`s is 52.
+//    func test_count_withoutJokers_equals52() throws {
+//        
+//        // Given
+//        let jokers = false
+//        let deck = try PlayingCardDeck(with: jokers)!
+//        let expected = 52
+//        
+//        // When
+//        let actual = deck.count
+//        
+//        // Then
+//        XCTAssertEqual(expected, actual)
+//    }
 }

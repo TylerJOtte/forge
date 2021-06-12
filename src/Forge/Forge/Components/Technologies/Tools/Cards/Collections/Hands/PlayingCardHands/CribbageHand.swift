@@ -65,6 +65,6 @@ public class CribbageHand: PlayingCardHand {
         
         self.cutCard = cutCard
         
-        try super.init(of: cards, with: max)
+        try super.init(of: max, cards)
     }
 }

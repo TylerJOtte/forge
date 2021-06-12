@@ -58,8 +58,25 @@ public class Deck: Cards {
     
     /// Creates a`Deck`with the given terms.
     ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Deck` can hold zero to `Int.max Card`s.
+    ///   - The `Deck` contains the given `Card`s.
+    ///   - The `Deck`'s title is set to "Deck".
+    /// - Parameter cards: The `Card`s to include in the `Deck`.
+    public init(of cards: [Card]) {
+        
+        self.minCards = 0
+        self.maxCards = Int.max
+        self.cards = [:]
+        
+        try! add(cards)
+    }
+    
+    /// Creates a`Deck`with the given terms.
+    ///
     /// - Precondition:
-    ///   - The given max must be  >= 1..
+    ///   - The given max must be  >= 1.
     ///   - The given `Card`s must contain zero to the specified max # of `Card`s.
     /// - Postcondition:
     ///   - The `Deck` can hold zero to the given max # of `Card`s.
@@ -71,7 +88,7 @@ public class Deck: Cards {
     /// - Throws:
     ///   - `invalidMax` if the given max is &lt; 1.
     ///   - `invalidCount` if the given `Card`s contain more than the specified max # of `Card`s.
-    public init(of max: Int,  cards: [Card]) throws {
+    public init(of max: Int,  _ cards: [Card]) throws {
         
         guard (max >= 1) else {
             

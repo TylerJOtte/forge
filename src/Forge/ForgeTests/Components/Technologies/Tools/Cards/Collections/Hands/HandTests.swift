@@ -100,26 +100,26 @@ class HandTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the count of a `Hand` with `Card`s  is > zero.
-    func test_count_WithCards_isGreaterThanZero() throws {
+    func test_count_WithCards_isGreaterThanZero() {
         
         // Given
         let title = "Card"
         let card = Card(named: title)
         let cards = [card]
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         
         // When/Then
         XCTAssert(hand.count > 0)
     }
     
     /// Tests that the count of a `Hand` with a given #`Card`s  equals the expected # of `Card`s.
-    func test_count_WithGivenCards_equalsExpected() throws {
+    func test_count_WithGivenCards_equalsExpected() {
         
         // Given
         let title = "Card"
         let card = Card(named: title)
         let cards = [card]
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         let expected = 1
         
         // When
@@ -137,7 +137,7 @@ class HandTests: XCTestCase {
         let card = Card(named: title)
         let cards = [card]
         let max = 2
-        let hand = try Hand(of: cards, with: max)
+        let hand = try Hand(of: max, cards)
         
         // When/Then
         XCTAssert(hand.count < hand.maxCards)
@@ -152,7 +152,7 @@ class HandTests: XCTestCase {
         let card1 = Card(named: title1)
         let card2 = Card(named: title2)
         let cards = [card1]
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         let expected = 2
         
         // When
@@ -177,7 +177,7 @@ class HandTests: XCTestCase {
         let card4 = Card(named: title4)
         let cards1 = [card1, card2]
         let cards2 = [card3, card4]
-        let hand = try Hand(of: cards1)
+        let hand = Hand(of: cards1)
         let expected = 4
         
         // When
@@ -200,7 +200,7 @@ class HandTests: XCTestCase {
         let card = Card(named: title)
         let cards = [card]
         let max = 1
-        let hand = try Hand(of: cards, with: max)
+        let hand = try Hand(of: max, cards)
         let expected = hand.maxCards
         
         // When
@@ -218,24 +218,24 @@ class HandTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that a`Hand`without `Card`s   is empty.
-    func test_isEmpty_withoutCards_true() throws {
+    func test_isEmpty_withoutCards_true() {
         
         // Given
         let cards: [Card] = []
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         
         // When/Then
         XCTAssert(hand.isEmpty())
     }
     
     /// Tests that a`Hand`with `Card`s is not empty.
-    func test_isEmpty_withCards_False() throws {
+    func test_isEmpty_withCards_False() {
         
         // Given
         let title = "Card"
         let card = Card(named: title)
         let cards = [card]
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         
         // When/Then
         XCTAssertFalse(hand.isEmpty())
@@ -261,11 +261,11 @@ class HandTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that a`Hand` without cards  is not full.
-    func test_isFull_withoutCards_False() throws {
+    func test_isFull_withoutCards_False() {
         
         // Given
         let cards: [Card] = []
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         
         // When/Then
         XCTAssertFalse(hand.isFull())
@@ -279,7 +279,7 @@ class HandTests: XCTestCase {
         let card = Card(named: title)
         let cards = [card]
         let max = 2
-        let hand = try Hand(of: cards, with: max)
+        let hand = try Hand(of: max, cards)
         
         // When/Then
         XCTAssertFalse(hand.isFull())
@@ -293,7 +293,7 @@ class HandTests: XCTestCase {
         let card = Card(named: title)
         let cards = [card]
         let max = 1
-        let hand = try Hand(of: cards, with: max)
+        let hand = try Hand(of: max, cards)
         
         // When/Then
         XCTAssert(hand.isFull())
@@ -304,7 +304,7 @@ class HandTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that a `Hand` contains an expected`Card`.
-    func test_contains_card_true() throws {
+    func test_contains_card_true() {
         
         // Given
         let title1 = "Card 1"
@@ -314,7 +314,7 @@ class HandTests: XCTestCase {
         let card2 = Card(named: title2)
         let card3 = Card(named: title3)
         let cards = [card1, card2, card3]
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         let expected = card2
 
         // When/Then
@@ -322,7 +322,7 @@ class HandTests: XCTestCase {
     }
     
     /// Tests that a `Hand` does not contain a given`Card`.
-    func test_contains_card_false() throws {
+    func test_contains_card_false() {
         
         // Given
         let title1 = "Card 1"
@@ -334,7 +334,7 @@ class HandTests: XCTestCase {
         let card3 = Card(named: title3)
         let card4 = Card(named: title4)
         let cards = [card1, card2, card3]
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         let expected = card4
 
         // When/Then
@@ -367,7 +367,7 @@ class HandTests: XCTestCase {
         let card2 = Card(named: title2)
         let card3 = Card(named: title3)
         let cards = [card1, card2, card3]
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         let expected = card2
         
         // When
@@ -392,7 +392,7 @@ class HandTests: XCTestCase {
         let card2 = Card(named: title2)
         let card3 = Card(named: title3)
         let cards = [card1, card2, card3]
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         let expected = card2
         
         // When
@@ -437,7 +437,7 @@ class HandTests: XCTestCase {
         let card3 = Card(named: title3)
         let card4 = Card(named: title4)
         let cards = [card1, card2, card3]
-        let hand = try Hand(of: cards)
+        let hand = Hand(of: cards)
         let expected = ElementsError.notFound
         
         // When
@@ -460,7 +460,7 @@ class HandTests: XCTestCase {
         let card3 = Card(named: title3)
         let cards = [card1, card2]
         let max = 2
-        let hand = try Hand(of: cards, with: max)
+        let hand = try Hand(of: max, cards)
         let expected = RangeError.isFull
         
         // When
@@ -486,7 +486,7 @@ class HandTests: XCTestCase {
         let cards1 = [card1, card2]
         let cards2 = [card3, card4]
         let max = 2
-        let hand = try Hand(of: cards1, with: max)
+        let hand = try Hand(of: max, cards1)
         let expected = RangeError.isFull
         
         // When
@@ -514,7 +514,7 @@ class HandTests: XCTestCase {
         let cards1 = [card1, card2]
         let cards2 = [card3, card4]
         let max = 3
-        let hand = try Hand(of: cards1, with: max)
+        let hand = try Hand(of: max, cards1)
         let expected = RangeError.limitedCapacity
         
         // When

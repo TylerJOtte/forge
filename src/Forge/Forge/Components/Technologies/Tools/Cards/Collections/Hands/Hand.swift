@@ -51,6 +51,7 @@ public class Hand: Cards {
     /// - Postcondition:
     ///   - The `Hand` can hold zero - Int.max `Card`s.
     ///   - The `Hand` is empty.
+    ///   - The `Hand`'s title is set to "Hand".
     public init() {
         
         self.minCards = 0
@@ -58,59 +59,69 @@ public class Hand: Cards {
         self.cards = []
     }
     
-    /// Creates a`Hand`with the given `Card`s and specified `max`.
+    /// Creates a`Hand`with the given terms.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Hand` can hold zero to `Int.max Card`s.
+    ///   - The `Hand` contains the given `Card`s.
+    ///   - The `Hand`'s title is set to "Hand".
+    /// - Parameter cards: The `Card`s to include in the `Hand`.
+    public init(of cards: [Card]) {
+        
+        self.minCards = 0
+        self.maxCards = Int.max
+        self.cards = cards
+    }
+    
+    /// Creates a`Hand`with the given terms.
     ///
     /// - Precondition:
-    ///   - `max` must be  >= 1.
-    ///   - The # of given `Card`s must be &lt;= `max`.
+    ///   - The given max must be  >= 1.
+    ///   - The given `Card`s must contain zero to the specified max # of `Card`s.
     /// - Postcondition:
-    ///   - The `Hand` can hold zero to given max `Card`s.
+    ///   - The `Hand` can hold zero to the given max # of `Card`s.
     ///   - The `Hand` contains the given `Card`s.
-    ///   - title = "Hand".
+    ///   - The `Hand`'s title is set to "Hand".
     /// - Parameters:
-    ///   - cards: The `Card`s to create `Hand` with.
     ///   - max: The maximum # of `Card`s allowed in the `Hand`.
+    ///   - cards: The `Card`s to include in the `Hand`.
     /// - Throws:
-    ///   - `RangeError.invalidMax` if the given max is &lt; one.
-    ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
-    public init(of cards: [Card], with max: Int = Int.max) throws {
-        
-       let min = 0
+    ///   - `invalidMax` if the given max is &lt; 1.
+    ///   - `invalidCount` if the given `Card`s contain more than the specified max # of `Card`s.
+    public init(of max: Int,  _ cards: [Card]) throws {
         
         guard (max >= 1) else {
             
-            print("Max must be >= 1.")
+            print("The given max must be >= 1.")
             throw RangeError.invalidMax
         }
         
         guard (cards.count <= max) else {
             
-            print("The # of given Cards must be <= to the specified max.")
-            throw ElementsError.excessiveElements
+            print("The given Cards can contain at most \(max) Cards.")
+            throw ElementsError.invalidCount
         }
         
-        self.minCards = min
+        self.minCards = 0
         self.maxCards = max
-        self.cards = []
-        
-        try! add(cards)
+        self.cards = cards
     }
 
-    /// Creates a`Hand` with the given terms.
+    /// Creates a`Hand`with the given terms.
     ///
     /// - Precondition:
-    ///   - `min` must be >= 0.
-    ///   - `max` must be  >= 1.
-    ///   - `max` must be >= `minCards`.
+    ///   - The given  min must be >= 0.
+    ///   - The given max must be  >= 1 & >= min.
     ///   - The given `Card`s must contain the specified min to max # of `Card`s.
     /// - Postcondition:
     ///   - The `Hand` can hold the given min to max # of `Card`s.
     ///   - The `Hand` contains the given `Card`s.
-    ///   - The `Hand`'s title is set to the name of the model.
+    ///   - The `Hand`'s title is set to "Hand".
     /// - Parameters:
     ///   - min: The minimum # of `Card`s allowed in the `Hand`.
     ///   - max: The maximum # of `Card`s allowed in the `Hand`.
-    ///   - cards: The `Card`s to include in the `Kind`.
+    ///   - cards: The `Card`s to include in the `Hand`.
     /// - Throws:
     ///   - `invalidMin` if the given min is &lt; 0.
     ///   - `invalidMax` if the given max is &lt; 1, or &lt; the specified min.
@@ -119,39 +130,37 @@ public class Hand: Cards {
         
         guard (min >= 0) else {
             
-            print("Min must be >= 0.")
+            print("The given min must be >= 0.")
             throw RangeError.invalidMin
         }
         
         guard (max >= 1) else {
             
-            print("Max must be >= 1.")
+            print("The given max must be >= 1.")
             throw RangeError.invalidMax
         }
         
         guard (max >= min) else {
             
-            print("Max must be >= min.")
+            print("The given max must be >= the specified min.")
             throw RangeError.invalidMax
         }
         
         guard (cards.count >= min) else {
 
-            print("The collection must contain at least \(min) Cards.")
+            print("The given Cards must contain at least \(min) Cards.")
             throw ElementsError.invalidCount
         }
         
         guard (cards.count <= max) else {
             
-            print("The collection can contain at most \(max) Cards.")
+            print("The given Cards can contain at most \(max) Cards.")
             throw ElementsError.invalidCount
         }
         
         self.minCards = min
         self.maxCards = max
-        self.cards = []
-
-        try! add(cards)
+        self.cards = cards
     }
     
     //=========================================================================//
