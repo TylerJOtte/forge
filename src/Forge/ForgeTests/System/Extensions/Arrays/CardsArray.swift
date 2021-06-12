@@ -59,7 +59,7 @@ class CardsArrayTests: XCTestCase {
         let hand1 = try Hand(of: cards)
         let hand2 = try Hand(of: cards)
         let hands = [hand1, hand2]
-        let expected = 3
+        let expected = 2
         
         // When
         let actual = hands.sumCounts()
@@ -120,6 +120,52 @@ class CardsArrayTests: XCTestCase {
         
         // When
         let actual = decks.sumCounts()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //           //
+    // HandRanks //
+    //           //
+    
+    // Pairs //
+    
+    /// Tests that summing the counts of an`Array` that contains one `Pair` equals two.
+    func test_sumCounts_ofOnePairArray_equalsTwo() throws {
+        
+        // Given
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
+        let cards = [ace1, ace2]
+        let pair = try Pair(of: cards)
+        let pairs = [pair]
+        let expected = 2
+        
+        // When
+        let actual = pairs.sumCounts()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that summing the counts of an`Array` that contains two `Pair`s equals four.
+    func test_sumCounts_ofTwoPairArray_equalsFour() throws {
+        
+        // Given
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
+        let ace3 = try Ace(of: .diamonds)
+        let ace4 = try Ace(of: .clubs)
+        let pairCards1 = [ace1, ace2]
+        let pairCards2 = [ace3, ace4]
+        let pair1 = try Pair(of: pairCards1)
+        let pair2 = try Pair(of: pairCards2)
+        let pairs = [pair1, pair2]
+        let expected = 4
+        
+        // When
+        let actual = pairs.sumCounts()
         
         // Then
         XCTAssertEqual(expected, actual)
