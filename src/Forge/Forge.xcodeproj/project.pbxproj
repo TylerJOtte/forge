@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B5005F3A2674214F007E6165 /* IntArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5005F392674214F007E6165 /* IntArray.swift */; };
 		B5005F4026742DD9007E6165 /* IntArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5005F3F26742DD9007E6165 /* IntArrayTests.swift */; };
+		B5005F4F26743399007E6165 /* ScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5005F4E26743399007E6165 /* ScoreTests.swift */; };
 		B521E230266D520600DB4602 /* EquatableArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */; };
 		B521E236266D670300DB4602 /* HandRankArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E235266D670300DB4602 /* HandRankArray.swift */; };
 		B521E23A266D7DD700DB4602 /* PairArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E239266D7DD700DB4602 /* PairArray.swift */; };
@@ -154,6 +155,7 @@
 /* Begin PBXFileReference section */
 		B5005F392674214F007E6165 /* IntArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntArray.swift; sourceTree = "<group>"; };
 		B5005F3F26742DD9007E6165 /* IntArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntArrayTests.swift; sourceTree = "<group>"; };
+		B5005F4E26743399007E6165 /* ScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTests.swift; sourceTree = "<group>"; };
 		B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableArrayExtension.swift; sourceTree = "<group>"; };
 		B521E235266D670300DB4602 /* HandRankArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRankArray.swift; sourceTree = "<group>"; };
 		B521E239266D7DD700DB4602 /* PairArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairArray.swift; sourceTree = "<group>"; };
@@ -308,6 +310,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5005F4B26743366007E6165 /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				B5005F4D2674338A007E6165 /* Scores */,
+			);
+			path = Rewards;
+			sourceTree = "<group>";
+		};
+		B5005F4C26743380007E6165 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5005F4B26743366007E6165 /* Rewards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B5005F4D2674338A007E6165 /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				B5005F4E26743399007E6165 /* ScoreTests.swift */,
+			);
+			path = Scores;
+			sourceTree = "<group>";
+		};
 		B51DC884266293D3006F4CE8 /* Flushes */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,8 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				B55668462623EAC20045AC2B /* Technology.swift */,
-				B556683D2623E9770045AC2B /* Tools */,
 				B556683C2623E9700045AC2B /* Resources */,
+				B556683D2623E9770045AC2B /* Tools */,
 			);
 			path = Technologies;
 			sourceTree = "<group>";
@@ -440,6 +466,7 @@
 		B556688C26252DB40045AC2B /* Technologies */ = {
 			isa = PBXGroup;
 			children = (
+				B5005F4C26743380007E6165 /* Resources */,
 				B556688D26252DB90045AC2B /* Tools */,
 			);
 			path = Technologies;
@@ -1234,6 +1261,7 @@
 				B5E115BE265191DE00D78307 /* JokerTests.swift in Sources */,
 				B5F2D4992636D9500089403F /* TwoTests.swift in Sources */,
 				B5817D90261A12CD0022B805 /* PlayingCardDeckTests.swift in Sources */,
+				B5005F4F26743399007E6165 /* ScoreTests.swift in Sources */,
 				B5F2D4B72636E6AB0089403F /* NineTests.swift in Sources */,
 				B597386125FED1B900367598 /* CardTests.swift in Sources */,
 				B5E115A726508A6C00D78307 /* NumeralCardTests.swift in Sources */,

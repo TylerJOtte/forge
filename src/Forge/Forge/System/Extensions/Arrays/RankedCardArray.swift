@@ -224,7 +224,7 @@ extension Array where Element: RankedCard  {
 
     func getSequences(over count: Int) throws -> [[RankedCard]] {
         
-        return try getSequences().filter{$0.count > count}
+        return getSequences().filter{$0.count > count}
     }
     
     func getRuns() throws -> [Run<RankedCard>] {
