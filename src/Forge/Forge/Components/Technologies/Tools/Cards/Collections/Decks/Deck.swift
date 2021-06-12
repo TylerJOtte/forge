@@ -33,7 +33,7 @@ public class Deck: Cards {
     private var cards: [String : [Card]]
     
     /// The total # of `Card`s.
-    public var count: Int { return cards.count }
+    public var count: Int { return cards.totalCount }
     
     /// The `Deck`'s first `Card`.
     public var first: Card? { return cards.first?.value.first }
