@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Kind` of four equally `Rank`ed `Card`s.
-public class FourOfAKind<T: RankedCard>: Kind<T> {
+public class FourOfAKind: Kind {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -37,7 +37,7 @@ public class FourOfAKind<T: RankedCard>: Kind<T> {
     /// - Throws:
     ///   - `invalidCount` if the given `Card`s do not contain four, and only four `Card`s.
     ///   - `invalidRank` if the given `Card`s do not all contain the same `Rank`.
-    public init(of cards: [T]) throws {
+    public init(of cards: [RankedCard]) throws {
 
         let min = 4
         let max = 4

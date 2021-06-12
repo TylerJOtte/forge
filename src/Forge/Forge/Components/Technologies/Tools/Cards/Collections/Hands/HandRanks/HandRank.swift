@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Hand` of `Card`'s hiearchical position.
-public class HandRank<T: RankedCard>: Hand<T>, Scoreable {
+public class HandRank: Hand, Scoreable {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -50,7 +50,8 @@ public class HandRank<T: RankedCard>: Hand<T>, Scoreable {
     ///   - `invalidMin` if the given min is &lt; 1.
     ///   - `invalidMax` if the given max is &lt; the specified min.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
-    init(of min: Int, to max: Int, _ cards: [T], worth points: Int) throws {
+    init(of min: Int, to max: Int, _ cards: [RankedCard], worth points: Int)
+        throws {
         
         guard (min >= 1) else {
 
@@ -64,12 +65,12 @@ public class HandRank<T: RankedCard>: Hand<T>, Scoreable {
     }
     
     
-    func containsCard(in pair: Pair<T>) -> Bool {
+    func containsCard(in pair: Pair) -> Bool {
         
         return contains(pair.first) || contains(pair.last)
     }
     
-    func containsCard(in pairs: [Pair<T>]) -> Bool {
+    func containsCard(in pairs: [Pair]) -> Bool {
         
         var contains = false
         var pair = 0

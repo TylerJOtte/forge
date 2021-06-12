@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of`PlayingCard`s with points that sum to 15.
-public class Fifteen<T: RankedCard>: HandRank<T> {
+public class Fifteen: HandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -37,7 +37,7 @@ public class Fifteen<T: RankedCard>: HandRank<T> {
     /// - Throws:
     ///   - `invalidCount` if the given `Card`s do not contain two to five `Card`s.
     ///   - `invalidPoints` if the given `Card`'s points do not sum to 15.
-    public init(of cards: [T]) throws {
+    public init(of cards: [RankedCard]) throws {
         
         let min = 2
         let max = 5

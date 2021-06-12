@@ -16,16 +16,16 @@
 
 
 /// An extension for common `Pair<RankedCard> Array` operations.
-extension Array where Element: Pair<RankedCard> {
+extension Array where Element: Pair {
     
     /// Retrieves all the unique `RankedCard`s.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: An `Array` of unique `RankedCard`s, if any.
-    func getUniqueCards() -> [RankedCard?] {
+    func getUniqueCards() -> [Card?] {
         
-        var cards: [RankedCard?] = []
+        var cards: [Card?] = []
         
         for pair in self {
             

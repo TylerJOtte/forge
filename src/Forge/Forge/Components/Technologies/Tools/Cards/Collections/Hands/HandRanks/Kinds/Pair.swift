@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Kind` of two equally `Rank`ed `Card`s.
-public class Pair<T: RankedCard>: Kind<T> {
+public class Pair: Kind {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -37,7 +37,7 @@ public class Pair<T: RankedCard>: Kind<T> {
     /// - Throws:
     ///   - `invalidCount` if the given `Card`s do not contain two, and only two `Card`s.
     ///   - `invalidRank` if the given `Card`s do not both contain the same `Rank`.
-    public init(of cards: [T]) throws {
+    public init(of cards: [RankedCard]) throws {
 
         let min = 2
         let max = 2

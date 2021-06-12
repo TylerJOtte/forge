@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of three `Run`s with a `ThreeOfAKind`.
-public class TripleRun<T: RankedCard>: MultiRun<T> {
+public class TripleRun: MultiRun {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -41,7 +41,7 @@ public class TripleRun<T: RankedCard>: MultiRun<T> {
     ///     `ThreeOfAKind`.
     ///   - `invalidRun` if the given `Card`'s non-`Kind Card`s do not form a `Run` with each
     ///     `Kind Card`.
-    public init(of cards: [T]) throws {
+    public init(of cards: [RankedCard]) throws {
         
         let min = 5
         let count = 3

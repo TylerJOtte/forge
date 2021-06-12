@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of multiple `Run`s with at least one common `Card`.
-public class MultiRun<T: RankedCard>: HandRank<T> {
+public class MultiRun: HandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -39,14 +39,14 @@ public class MultiRun<T: RankedCard>: HandRank<T> {
     /// - Throws:
     ///   -  `invalidMin` if the given min is less than four.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min # of `Card`s.
-    init(of min: Int, _ cards: [T], with count: Int) throws {
+    init(of min: Int, _ cards: [RankedCard], with count: Int) throws {
         
         let minCards = 4
         let max = Int.max
         let pairs = try cards.getPairs()
         let runs = try cards.getRuns()
         let pairCards = pairs.getUniqueCards()
-        let handRanks: [[HandRank<RankedCard>]] = [pairs, runs]
+        let handRanks: [[HandRank]] = [pairs, runs]
         let points = handRanks.sumPoints()
         
         guard (min >= minCards) else {

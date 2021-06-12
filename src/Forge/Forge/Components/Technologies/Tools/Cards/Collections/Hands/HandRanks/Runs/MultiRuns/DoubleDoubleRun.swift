@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of four `Run`s with two `Pair`s.
-public class DoubleDoubleRun<T: RankedCard>: MultiRun<T> {
+public class DoubleDoubleRun: MultiRun {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -40,7 +40,7 @@ public class DoubleDoubleRun<T: RankedCard>: MultiRun<T> {
     ///   - `invalidKindCount` if the given `Card`s do not contain two, and only two `Pair`s.
     ///   - `invalidRun` if the given `Card`'s non-`Pair Card`s do not form a `Run` with each
     ///     `Pair Card`.
-    public init(of cards: [T]) throws {
+    public init(of cards: [RankedCard]) throws {
         
         let min = 5
         let count = 4

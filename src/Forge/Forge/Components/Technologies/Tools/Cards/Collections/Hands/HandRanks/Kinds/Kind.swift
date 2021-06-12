@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of equally `Rank`ed `Card`s.
-public class Kind<T: RankedCard>: HandRank<T> {
+public class Kind: HandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -44,7 +44,7 @@ public class Kind<T: RankedCard>: HandRank<T> {
     ///   - `invalidMax` if the given max is &lt; the specified min.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
     ///   - `invalidRank` if the given `Card`s do not all contain the same `Rank`.
-    init(of min: Int, to max: Int, _ cards: [T]) throws {
+    init(of min: Int, to max: Int, _ cards: [RankedCard]) throws {
 
         guard (min >= 2) else {
 

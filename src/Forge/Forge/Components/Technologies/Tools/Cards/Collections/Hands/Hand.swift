@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Hand` of `Card`s.
-public class Hand<T: Card>: Cards {
+public class Hand: Cards {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -30,16 +30,16 @@ public class Hand<T: Card>: Cards {
     public let maxCards: Int
     
     /// The `Card`s.
-    private var cards: [T]
+    private var cards: [Card]
     
     /// The total # of `Card`s.
     public var count: Int { return cards.count }
     
     /// The `Hand`'s first `Card`.
-    public var first: T? { return cards.first }
+    public var first: Card? { return cards.first }
     
     /// The `Hand`'s last `Card`.
-    public var last: T? { return cards.last }
+    public var last: Card? { return cards.last }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -73,7 +73,7 @@ public class Hand<T: Card>: Cards {
     /// - Throws:
     ///   - `RangeError.invalidMax` if the given max is &lt; one.
     ///   - `ElementsError.insufficientElements` if the # of given `Card`s > specified max.
-    public init(of cards: [T], with max: Int = Int.max) throws {
+    public init(of cards: [Card], with max: Int = Int.max) throws {
         
        let min = 0
         
@@ -115,7 +115,7 @@ public class Hand<T: Card>: Cards {
     ///   - `invalidMin` if the given min is &lt; 0.
     ///   - `invalidMax` if the given max is &lt; 1, or &lt; the specified min.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
-    public init(of min: Int, to max: Int, _ cards: [T]) throws {
+    public init(of min: Int, to max: Int, _ cards: [Card]) throws {
         
         guard (min >= 0) else {
             
@@ -188,7 +188,7 @@ public class Hand<T: Card>: Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find.
     /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: T) -> Bool {
+    public func contains(_ card: Card) -> Bool {
         
         return cards.contains(card)
     }
@@ -199,7 +199,7 @@ public class Hand<T: Card>: Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find.
     /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: T?) -> Bool {
+    public func contains(_ card: Card?) -> Bool {
         
         var containsCard = false
         
@@ -221,7 +221,7 @@ public class Hand<T: Card>: Cards {
     /// - Postcondition: The `Hand` contains the given `Card`.
     /// - Parameter card: The `Card` to add to the `Hand`.
     /// - Throws: `RangeError.isFull` if the `Hand` is full.
-    public func add(_ card: T) throws {
+    public func add(_ card: Card) throws {
         
         guard (!isFull()) else {
             
@@ -245,7 +245,7 @@ public class Hand<T: Card>: Cards {
     /// - Throws:
     ///   - `ElementsError.isEmpty` if the collection is empty.
     ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
-    public func remove(_ card: T) throws -> T {
+    public func remove(_ card: Card) throws -> Card {
         
         guard (!isEmpty()) else {
             

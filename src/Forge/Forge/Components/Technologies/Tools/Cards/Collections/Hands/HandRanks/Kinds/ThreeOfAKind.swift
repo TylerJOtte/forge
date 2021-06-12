@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Kind` of three equally `Rank`ed `Card`s.
-public class ThreeOfAKind<T: RankedCard>: Kind<T> {
+public class ThreeOfAKind: Kind {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -37,7 +37,7 @@ public class ThreeOfAKind<T: RankedCard>: Kind<T> {
     /// - Throws:
     ///   - `invalidCount` if the given `Card`s do not contain three, and only three `Card`s.
     ///   - `invalidRank` if the given `Card`s do not all contain the same `Rank`.
-    public init(of cards: [T]) throws {
+    public init(of cards: [RankedCard]) throws {
 
         let min = 3
         let max = 3

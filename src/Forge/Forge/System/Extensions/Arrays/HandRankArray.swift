@@ -16,14 +16,14 @@
 
 
 /// An extension for common `HandRank<RankedCard> Array` operations.
-extension Array where Element: HandRank<RankedCard> {
+extension Array where Element: HandRank {
     
     /// Determines if contains all the unique `RankedCard`s in the given `Pair Array`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: True if contains all the unique `RankedCard`s in the `Pair Array`, else false.
-    func containCards(in pairs: [Pair<RankedCard>]) -> Bool {
+    func containCards(in pairs: [Pair]) -> Bool {
      
         var containsPairCards = true
         var handRank = 0
@@ -39,7 +39,7 @@ extension Array where Element: HandRank<RankedCard> {
 }
 
 /// An extension for common `Array<HandRank<RankedCard>> Array` operations.
-extension Array where Element == Array<HandRank<RankedCard>> {
+extension Array where Element == Array<HandRank> {
 
     /// Sums all the `Element`s' points.
     ///

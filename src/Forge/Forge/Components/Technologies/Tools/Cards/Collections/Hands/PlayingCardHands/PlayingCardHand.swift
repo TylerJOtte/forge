@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A `Hand` of `PlayingCard`s.
-public class PlayingCardHand: Hand<PlayingCard> {
+public class PlayingCardHand: Hand {
     
     //-------------------------------------------------------------------------//
     //                                 Getters                                 //
@@ -29,7 +29,7 @@ public class PlayingCardHand: Hand<PlayingCard> {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: A collection of `Run`s.
-    public func getRuns() -> [Run<PlayingCard>] {
+    public func getRuns() -> [Run] {
         
         // TODO: implement stub
         

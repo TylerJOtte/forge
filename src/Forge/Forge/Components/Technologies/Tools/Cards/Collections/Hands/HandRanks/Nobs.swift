@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `PlayingCard HandRank`s with a `Jack` and a `Card` of the same `Suit`.
-public class Nobs: HandRank<PlayingCard> {
+public class Nobs: HandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //

@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of equally `Suit`ed `Card`s.
-public class Flush: HandRank<PlayingCard> {
+public class Flush: HandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
