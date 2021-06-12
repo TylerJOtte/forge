@@ -105,6 +105,29 @@ class DeckTests: XCTestCase {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                            Invalid Count                                //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that creating a `Deck` with `Cards` that contain less the given min # of `Card`s throws an
+    /// `invalidCount Error`.
+    func test_init_withCardsLessThanMin_throwsInvalidCountError() throws {
+
+        // Given
+        let min = 2
+        let max = 2
+        let card = Card()
+        let cards = [card]
+        let expected = ElementsError.invalidCount
+
+        // When
+        XCTAssertThrowsError(try Deck(of: min, to: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
     //=========================================================================//
     //                                  Count                                  //
     //=========================================================================//
