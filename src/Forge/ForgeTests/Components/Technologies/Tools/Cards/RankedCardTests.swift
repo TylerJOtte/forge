@@ -55,6 +55,10 @@ class RankedCardTests: XCTestCase {
     //                                  !=                                     //
     //-------------------------------------------------------------------------//
 
+    //                 //
+    // Different Ranks //
+    //                //
+    
     /// Tests that two `RankedCard`s with all of the same property values, except `Rank`,  are not equal.
     func test_card_equalsCardWithDifferentRank_false() {
      
@@ -73,6 +77,33 @@ class RankedCardTests: XCTestCase {
         // Given
         let rankedCard1 = RankedCard(with: .ace)
         let rankedCard2 = RankedCard(with: .two)
+        
+        // When/Then
+        XCTAssertNotEqual(rankedCard1, rankedCard2)
+    }
+    
+    //                     //
+    // Different Positions //
+    //                     //
+    
+    /// Tests that two `RankedCard`s with all of the same property values, except position,  are not equal.
+    func test_card_equalsCardWithDifferentPosition_false() {
+     
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .ace, at: 2)
+        
+        // When/Then
+        XCTAssertFalse(rankedCard1.equals(rankedCard2))
+    }
+    
+    /// Tests that two `RankedCard`s with all of the same property values, except position, are not equal
+    /// using the equality operator.
+    func test_card_equalsCardWithDifferentPositionWithOperator_false() {
+     
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .ace, at: 2)
         
         // When/Then
         XCTAssertNotEqual(rankedCard1, rankedCard2)
