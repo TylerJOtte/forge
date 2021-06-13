@@ -19,6 +19,32 @@ import XCTest
 
 /// Unit tests for the `Hand` class.
 class HandTests: XCTestCase {
+    
+    //=========================================================================//
+    //                             Initialization                              //
+    //=========================================================================//
+
+    //-------------------------------------------------------------------------//
+    //                              Invalid Min                                //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that creating a `Hand` with a min less than zero throws an `invalidMin Error`.
+    func test_init_withMinLessThanZero_throwsInvalidMinError() throws {
+
+        // Given
+        let min = -1
+        let max = Int.max
+        let card = Card()
+        let cards = [card]
+        let expected = RangeError.invalidMin
+
+        // When
+        XCTAssertThrowsError(try Hand(of: min, to: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
    
     //=========================================================================//
     //                                  Count                                  //
