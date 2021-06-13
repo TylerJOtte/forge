@@ -136,6 +136,7 @@ extension Array where Element: RankedCard  {
         let cards = sorted()
         let lastIndex = cards.count - 1
         var index = 0
+        var sequenceIndex = 0
         var card = cards[index]
         var sequences = cards.count > 0 ? [[card]] : [[]]
         
@@ -146,18 +147,19 @@ extension Array where Element: RankedCard  {
             
             if (nextCard.follows(card)) {
                 
-                for sequenceIndex in 0..<sequences.count {
+                for sequence in sequenceIndex..<sequences.count {
                     
-                    sequences[sequenceIndex].append(nextCard)
+                    sequences[sequence].append(nextCard)
                 }
             
             } else if (nextCard.ranks(card)) {
              
-                addBases(with: nextCard, to: &sequences)
+                addBases(from: sequenceIndex, with: nextCard, to: &sequences)
                 
             } else {
                 
-                sequences = [[nextCard]]
+                sequences.append([nextCard])
+                sequenceIndex += 1
             }
             
             index += 1

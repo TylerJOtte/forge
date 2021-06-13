@@ -24,17 +24,17 @@ public class PlayingCardHand: Hand {
     //                                 Getters                                 //
     //-------------------------------------------------------------------------//
 
-    /// Retrieves all the `Run`s in the `Hand`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: A collection of `Run`s.
-    public func getRuns() -> [Run] {
-        
-        // TODO: implement stub
-        
-        return []
-    }
+//    /// Retrieves all the `Run`s in the `Hand`.
+//    ///
+//    /// - Precondition: None.
+//    /// - Postcondition: None.
+//    /// - Returns: A collection of `Run`s.
+//    public func getRuns() -> [Run] {
+//        
+//        // TODO: implement stub
+//        
+//        return []
+//    }
     
     /// Retrieves a `Flush` in the `Hand`, if any.
     ///

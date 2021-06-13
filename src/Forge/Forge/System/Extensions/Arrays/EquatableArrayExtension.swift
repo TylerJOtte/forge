@@ -20,20 +20,22 @@ extension Array where Element: Equatable {
 
     /// Adds  an `Element Array` to the given `Element Collection` for each of the latter's
     /// collections consistening of all but the last `Element` in the `Collection` along with the
-    /// specified unique `Element`.
+    /// specified unique `Element`, starting from the `Element` at the given position..
     ///
     /// - Precondition: None.
     /// - Postcondition: The given `Element`s contains 0..* new `Element Array`s.
     /// - Parameters:
+    ///   - position: The index position to start from.
     ///   - element: The unique `Element` to add to end of new `Element` array.
     ///   - elements: The `Element Array`s to get unique values in for new `Element Array`.
-    func addBases(with element: Element, to elements: inout [[Element]]) {
+    func addBases(from position: Int, with element: Element,
+                  to elements: inout [[Element]]) {
         
         let startIndex = 0
         let endIndex = (elements.last?.count ?? 0) - 2
         let getBaseElements = endIndex >= 0
         
-        for index in 0..<elements.count {
+        for index in position..<elements.count {
             
             let getPreviousBaseElements = getBaseElements && index > 0
             
