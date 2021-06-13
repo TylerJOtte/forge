@@ -112,7 +112,7 @@ public class Hand: Cards {
     ///
     /// - Precondition:
     ///   - The given  min must be >= 0.
-    ///   - The given max must be  >= 1 & >= min.
+    ///   - The given max must be  >= 1 & >= specified min.
     ///   - The given `Card`s must contain the specified min to max # of `Card`s.
     /// - Postcondition:
     ///   - The `Hand` can hold the given min to max # of `Card`s.

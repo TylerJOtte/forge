@@ -11,6 +11,7 @@
 		B5005F4026742DD9007E6165 /* IntArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5005F3F26742DD9007E6165 /* IntArrayTests.swift */; };
 		B5005F4F26743399007E6165 /* ScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5005F4E26743399007E6165 /* ScoreTests.swift */; };
 		B5005F602674F3F6007E6165 /* CardsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5005F5F2674F3F6007E6165 /* CardsArray.swift */; };
+		B5005F6426762041007E6165 /* HandRankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5005F6326762041007E6165 /* HandRankTests.swift */; };
 		B521E230266D520600DB4602 /* EquatableArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */; };
 		B521E236266D670300DB4602 /* HandRankArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E235266D670300DB4602 /* HandRankArray.swift */; };
 		B521E23A266D7DD700DB4602 /* PairArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E239266D7DD700DB4602 /* PairArray.swift */; };
@@ -158,6 +159,7 @@
 		B5005F3F26742DD9007E6165 /* IntArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntArrayTests.swift; sourceTree = "<group>"; };
 		B5005F4E26743399007E6165 /* ScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTests.swift; sourceTree = "<group>"; };
 		B5005F5F2674F3F6007E6165 /* CardsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsArray.swift; sourceTree = "<group>"; };
+		B5005F6326762041007E6165 /* HandRankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRankTests.swift; sourceTree = "<group>"; };
 		B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableArrayExtension.swift; sourceTree = "<group>"; };
 		B521E235266D670300DB4602 /* HandRankArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRankArray.swift; sourceTree = "<group>"; };
 		B521E239266D7DD700DB4602 /* PairArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairArray.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 				B51DC884266293D3006F4CE8 /* Flushes */,
 				B556689126252E030045AC2B /* NobsTests.swift */,
 				B556689726253AEA0045AC2B /* FifteenTests.swift */,
+				B5005F6326762041007E6165 /* HandRankTests.swift */,
 			);
 			path = HandRanks;
 			sourceTree = "<group>";
@@ -1268,6 +1271,7 @@
 				B5005F4F26743399007E6165 /* ScoreTests.swift in Sources */,
 				B5F2D4B72636E6AB0089403F /* NineTests.swift in Sources */,
 				B597386125FED1B900367598 /* CardTests.swift in Sources */,
+				B5005F6426762041007E6165 /* HandRankTests.swift in Sources */,
 				B5E115A726508A6C00D78307 /* NumeralCardTests.swift in Sources */,
 				B5BB5FCC26683C7F00A88709 /* ScoreableArrayTests.swift in Sources */,
 				B5F2D4B32636E5F20089403F /* EightTests.swift in Sources */,

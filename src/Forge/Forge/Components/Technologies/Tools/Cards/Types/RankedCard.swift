@@ -36,6 +36,24 @@ public class RankedCard: Card, Rankable, Scoreable {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
 
+    /// Creates a default `RankedCard`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Card`'s `Rank` is set to `one`.
+    ///   - The `Card`'s position is set to 1.
+    ///   - The `Card`'s points are set to 1.
+    ///   - The `Card`'s title is set to`One`.
+    override public init() {
+        
+        self.rank = .one
+        self.position = 1
+        self.points = 1
+        let title = String(describing: rank).capitalized
+        
+        super.init(named: title)
+    }
+    
     /// Creates a `RankedCard` with the given `Rank`.
     ///
     /// - Precondition: None.

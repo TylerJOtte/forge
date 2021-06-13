@@ -33,8 +33,8 @@ public class HandRank: Hand, Scoreable {
     /// Creates a`HandRank` with the given terms.
     ///
     /// - Precondition:
-    ///   - `min` must be >= 1.
-    ///   - `max` must be >= `minCards`.
+    ///   - The given  min must be >= 1.
+    ///   - The given max must be  >= min.
     ///   - The given `Card`s must contain the specified min to max # of `Card`s.
     /// - Postcondition:
     ///   - The `HandRank` can hold the given min to max # of `Card`s.
