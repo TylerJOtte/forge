@@ -99,12 +99,35 @@ public class RankedCard: Card, Rankable, Scoreable {
     /// - Precondition: None.
     /// - Postcondition:
     ///   - The `Card`'s `Rank` is set to the given `Rank`.
+    ///   - The `Card`'s position is set to the given position.
+    ///   - The `Card`'s points are set to the given points.
+    ///   - The `Card`'s title is set to the given `Rank`.
+    /// - Parameters:
+    ///   - rank: The hierarchical position.
+    ///   - position: The given `Rank`'s order in the hierarchy.
+    ///   - points: The total # of points.
+    public init(with rank: Rank, at position: Int, worth points: Int) {
+        
+        self.rank = rank
+        self.position = position
+        self.points = points
+        let title = String(describing: rank).capitalized
+        
+        super.init(named: title)
+    }
+    
+    /// Creates a `RankedCard` with the given terms.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Card`'s `Rank` is set to the given `Rank`.
     ///   - The `Card`'s points are set to the given points.
     ///   - The `Card`'s position is set to the given position.
     /// - Parameters:
     ///   - rank: The hierarchical position.
     ///   - position: The given `Rank`'s order in the hierarchy.
     ///   - points: The total # of points.
+    ///   - title: The `Card`'s primary name.
     public init(_ rank: Rank, at position: Int, worth points: Int,
          named title: String) {
         
