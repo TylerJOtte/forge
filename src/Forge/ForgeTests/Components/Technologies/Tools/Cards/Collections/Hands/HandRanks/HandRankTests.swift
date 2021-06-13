@@ -47,4 +47,26 @@ class HandRankTests: XCTestCase {
             XCTAssertEqual(expected, error as? RangeError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that creating a `HandRank` with points contains the given points.
+    func test_init_withPoints_containGivenPoints() throws {
+
+        // Given
+        let min = 1
+        let max = 1
+        let card = RankedCard()
+        let cards = [card]
+        let points = 1
+        let expected = 1
+
+        // When
+        let handRank = try HandRank(of: min, to: max, cards, worth: points)
+        let actual = handRank.points
+
+        XCTAssertEqual(expected, actual)
+    }
 }
