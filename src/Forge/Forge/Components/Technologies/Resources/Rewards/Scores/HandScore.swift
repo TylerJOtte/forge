@@ -28,14 +28,7 @@ public class HandScore: Score {
     public var handRanks: [String:[HandRank]]
     
     /// The total # of points.
-    public override var points: Int {
-    
-        // Get the point sum for each HandRank
-        let sums = handRanks.mapValues{$0.map{$0.points}.reduce(0, +)}
-        
-        // Sum all the HandRank points
-        return sums.values.reduce(0, +)
-    }
+    public override var points: Int { handRanks.sumPoints() }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //

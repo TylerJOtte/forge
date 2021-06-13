@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  CollectionDictionary.swift                                                 //
+//  HandRankDictionary.swift                                                   //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 6/02/21.                                       //
+//  Created by Tyler J. Otte on 6/14/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -14,9 +14,16 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `Dictionary`operations where the value of an entry is a `Collection`.
-extension Dictionary where Value: Collection {
+/// An extension for common `Dictionary`operations where the value of an entry is a `HandRank`.
+extension Dictionary where Value == [HandRank] {
     
-    /// The total count of all `Collection` values
-    var totalCount: Int { map{$1.count}.sum() }
+    /// Sums all the values' points.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: The sum of all the values' points.
+    func sumPoints() -> Int {
+        
+        return Array(values).sumPoints()
+    }
 }

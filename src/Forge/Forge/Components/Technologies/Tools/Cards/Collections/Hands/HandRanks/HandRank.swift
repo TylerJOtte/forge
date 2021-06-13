@@ -64,12 +64,27 @@ public class HandRank: Hand, Scoreable {
         try super.init(of: min, to: max, cards)
     }
     
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
     
+    /// Determines if contains one of the given `Pair`'s `Card`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter pair: The `Pair` to test with.
+    /// - Returns: True if contains one of the given `Pair`'s `Card`'s, else false.
     func containsCard(in pair: Pair) -> Bool {
         
         return contains(pair.first) || contains(pair.last)
     }
     
+    /// Determines if contains one of the given `Pair`s' `Card`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter pairs: The `Pair`s to test with.
+    /// - Returns: True if contains one of the given `Pair`s' `Card`'s, else false.
     func containsCard(in pairs: [Pair]) -> Bool {
         
         var contains = false
