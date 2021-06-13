@@ -165,7 +165,7 @@ extension Array where Element: RankedCard  {
             index += 1
         }
         
-        return sequences
+        return sequences.filter{$0.count > 1}
     }
 
     func getSequences(over count: Int) throws -> [[RankedCard]] {

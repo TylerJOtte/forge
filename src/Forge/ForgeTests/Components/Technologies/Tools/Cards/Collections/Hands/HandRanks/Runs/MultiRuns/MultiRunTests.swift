@@ -151,4 +151,34 @@ class MultiRunTests: XCTestCase {
             XCTAssertEqual(expected, error as? HandRankError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             Invalid Runs                                //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that creating a `MultiRun` with `Run`s that do not contain all the `Pair Card`s throws an
+    /// `invalidRun Error`.
+    func test_init_withRunsNotContainingAllPairCards_throwsInvalidMinError()
+        throws {
+
+        // Given
+        let min = 5
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
+        let king2 = try King(of: .spades)
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
+        let cards = [jack, queen, king1, king2, ace1, ace2]
+        let count = 4
+        let expected = HandRankError.invalidRun
+
+        // When
+        XCTAssertThrowsError(try MultiRun(of: min, cards, with: count)) {
+            error in
+
+            // Then
+            XCTAssertEqual(expected, error as? HandRankError)
+        }
+    }
 }

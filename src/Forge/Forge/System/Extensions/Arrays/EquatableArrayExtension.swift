@@ -32,12 +32,12 @@ extension Array where Element: Equatable {
                   to elements: inout [[Element]]) {
         
         let startIndex = 0
-        let endIndex = (elements.last?.count ?? 0) - 2
-        let getBaseElements = endIndex >= 0
-        
+
         for index in position..<elements.count {
             
-            let getPreviousBaseElements = getBaseElements && index > 0
+            let endIndex = elements[index].count - 2
+            let getBaseElements = endIndex >= 0
+            let getPreviousBaseElements = getBaseElements && index > position
             
             let previousBase = getPreviousBaseElements ?
                 elements[index - 1][startIndex...endIndex] : []
@@ -49,6 +49,7 @@ extension Array where Element: Equatable {
                 
                 base.append(element)
                 elements.append(Array(base))
+                
             }
         }
     }
