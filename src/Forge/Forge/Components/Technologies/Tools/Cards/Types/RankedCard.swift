@@ -128,7 +128,7 @@ public class RankedCard: Card, Rankable, Scoreable {
     ///   - position: The given `Rank`'s order in the hierarchy.
     ///   - points: The total # of points.
     ///   - title: The `Card`'s primary name.
-    public init(_ rank: Rank, at position: Int, worth points: Int,
+    public init(with rank: Rank, at position: Int, worth points: Int,
          named title: String) {
         
         self.rank = rank

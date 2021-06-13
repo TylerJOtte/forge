@@ -87,7 +87,7 @@ public class PlayingCard: RankedCard {
         
         let title = title == "" ? "\(rank) Of \(suit)".capitalized : title
         
-        super.init(rank, at: position, worth: points, named: title)
+        super.init(with: rank, at: position, worth: points, named: title)
     }
     
     //=========================================================================//

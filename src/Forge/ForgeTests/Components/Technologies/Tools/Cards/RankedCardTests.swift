@@ -135,4 +135,31 @@ class RankedCardTests: XCTestCase {
         // When/Then
         XCTAssertNotEqual(rankedCard1, rankedCard2)
     }
+    
+    //                 //
+    // Different Title //
+    //                 //
+    
+    /// Tests that two `RankedCard`s with all of the same property values, except title,  are not equal.
+    func test_card_equalsCardWithDifferentTitle_false() {
+     
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1, worth: 1, named: "Ace")
+        let rankedCard2 = RankedCard(with: .ace, at: 1, worth: 1, named: "One")
+        
+        // When/Then
+        XCTAssertFalse(rankedCard1.equals(rankedCard2))
+    }
+    
+    /// Tests that two `RankedCard`s with all of the same property values, except title, are not equal
+    /// using the equality operator.
+    func test_card_equalsCardWithDifferentTitleWithOperator_false() {
+     
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1, worth: 1, named: "Ace")
+        let rankedCard2 = RankedCard(with: .ace, at: 1, worth: 1, named: "One")
+        
+        // When/Then
+        XCTAssertNotEqual(rankedCard1, rankedCard2)
+    }
 }
