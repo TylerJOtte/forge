@@ -45,6 +45,46 @@ class HandTests: XCTestCase {
             XCTAssertEqual(expected, error as? RangeError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                              Invalid Max                                //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that creating a `Hand` with a max less than one throws an `invalidMax Error`.
+    func test_init_withMaxLessThanOne_throwsInvalidMaxError() throws {
+
+        // Given
+        let max = 0
+        let card = Card()
+        let cards = [card]
+        let expected = RangeError.invalidMax
+
+        // When
+        XCTAssertThrowsError(try Hand(of: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    /// Tests that creating a `Hand` with a valid min and a max less than one throws an `invalidMax`
+    /// `Error`.
+    func test_init_withValidMinAndMaxLessThanOne_throwsInvalidMaxError() throws {
+
+        // Given
+        let min = 0
+        let max = 0
+        let card = Card()
+        let cards = [card]
+        let expected = RangeError.invalidMax
+
+        // When
+        XCTAssertThrowsError(try Hand(of: min, to: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
    
     //=========================================================================//
     //                                  Count                                  //
