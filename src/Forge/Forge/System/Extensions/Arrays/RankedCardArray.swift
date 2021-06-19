@@ -139,12 +139,47 @@ extension Array where Element: RankedCard  {
         return threeOfAKinds
     }
     
+    /// Retrieves all the contained `FourOfAKind`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: An `Array` of all the contained `FourOfAKind`s.
     func getFourOfAKinds() -> [FourOfAKind] {
         
-        let count = 4
-        let cards = splitByRank(where: count)
+        let count = 3
+        let cardsByRank = splitByRank(over: count)
+        var fourOfAKinds: [FourOfAKind] = []
         
-        return cards.map{try! FourOfAKind(of: $1)}
+        for rank in cardsByRank {
+            
+            let rankCards = rank.value
+            var position = 0
+            
+            while (position < rankCards.count - 3)
+            {
+                var index = position
+
+                while (index < rankCards.count - 3) {
+                    
+                    let card1 = rankCards[index]
+                    let card2 = rankCards[index + 1]
+                    let card3 = rankCards[index + 2]
+                    let card4 = rankCards[index + 3]
+                    let cards = [card1, card2, card3, card4]
+                    
+                    // Okay to force unwrap - cards will always form a
+                    // FourOfAKind
+                    let fourOfAKind = try! FourOfAKind(of: cards)
+                    
+                    fourOfAKinds.append(fourOfAKind)
+                    index += 1
+                }
+                
+                position += 1
+            }
+        }
+        
+        return fourOfAKinds
     }
     
     func getKinds() -> [Kind] {
