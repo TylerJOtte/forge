@@ -20,6 +20,7 @@
 		B521E236266D670300DB4602 /* HandRankArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E235266D670300DB4602 /* HandRankArray.swift */; };
 		B521E23A266D7DD700DB4602 /* PairArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E239266D7DD700DB4602 /* PairArray.swift */; };
 		B52D25D3267E60D000E00F04 /* SuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D25D2267E60D000E00F04 /* SuitTests.swift */; };
+		B52D25DA267E705900E00F04 /* PlayingCardHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D25D9267E705900E00F04 /* PlayingCardHandTests.swift */; };
 		B53EEC5F264CA3D400E88BB6 /* DepictionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53EEC5E264CA3D400E88BB6 /* DepictionError.swift */; };
 		B53EEC63264CA3DB00E88BB6 /* DescriptionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53EEC62264CA3DB00E88BB6 /* DescriptionError.swift */; };
 		B53EEC67264CA3ED00E88BB6 /* ElementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53EEC66264CA3ED00E88BB6 /* ElementError.swift */; };
@@ -174,6 +175,7 @@
 		B521E235266D670300DB4602 /* HandRankArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRankArray.swift; sourceTree = "<group>"; };
 		B521E239266D7DD700DB4602 /* PairArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairArray.swift; sourceTree = "<group>"; };
 		B52D25D2267E60D000E00F04 /* SuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitTests.swift; sourceTree = "<group>"; };
+		B52D25D9267E705900E00F04 /* PlayingCardHandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardHandTests.swift; sourceTree = "<group>"; };
 		B53EEC5E264CA3D400E88BB6 /* DepictionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepictionError.swift; sourceTree = "<group>"; };
 		B53EEC62264CA3DB00E88BB6 /* DescriptionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionError.swift; sourceTree = "<group>"; };
 		B53EEC66264CA3ED00E88BB6 /* ElementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementError.swift; sourceTree = "<group>"; };
@@ -365,6 +367,15 @@
 				B52D25D2267E60D000E00F04 /* SuitTests.swift */,
 			);
 			path = Depictions;
+			sourceTree = "<group>";
+		};
+		B52D25D8267E704200E00F04 /* PlayingCardHands */ = {
+			isa = PBXGroup;
+			children = (
+				B52D25D9267E705900E00F04 /* PlayingCardHandTests.swift */,
+				B5F29B34263B94A300082A1A /* CribbageHandTests.swift */,
+			);
+			path = PlayingCardHands;
 			sourceTree = "<group>";
 		};
 		B53EEC512648BF9800E88BB6 /* Kinds */ = {
@@ -647,7 +658,7 @@
 			isa = PBXGroup;
 			children = (
 				B597385525FEB76E00367598 /* HandTests.swift */,
-				B5F29B34263B94A300082A1A /* CribbageHandTests.swift */,
+				B52D25D8267E704200E00F04 /* PlayingCardHands */,
 				B556688F26252DDA0045AC2B /* HandRanks */,
 			);
 			path = Hands;
@@ -1293,6 +1304,7 @@
 				B5F2D4BB2636E7820089403F /* TenTests.swift in Sources */,
 				B5E115AD2650910B00D78307 /* FaceCardTests.swift in Sources */,
 				B5F2D4AF2636E5360089403F /* SevenTests.swift in Sources */,
+				B52D25DA267E705900E00F04 /* PlayingCardHandTests.swift in Sources */,
 				B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */,
 				B5F2D49F2636E0970089403F /* ThreeTests.swift in Sources */,
 				B5BE905B2651C987005E0A37 /* PairTests.swift in Sources */,

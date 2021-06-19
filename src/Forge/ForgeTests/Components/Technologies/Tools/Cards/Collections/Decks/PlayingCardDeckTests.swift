@@ -17,7 +17,7 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for the `PlayingCardDeck` class.
+/// Unit tests for a `PlayingCardDeck`.
 class PlayingDeckTests: XCTestCase {
     
     //=========================================================================//
