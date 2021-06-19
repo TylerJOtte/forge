@@ -196,4 +196,27 @@ class NumeralCardTests: XCTestCase {
             XCTAssertEqual(expected, error as? RangeError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a new `NumeralCard` equals the given "`Rank` of `Suit`".
+    func test_title_ofNewNumeralCard_equalsGivenRankOfSuit() throws {
+        
+        // Given
+        let rank = Rank.ace
+        let suit = Suit.hearts
+        let points = 1
+        let position = 1
+        let numeralCard = try NumeralCard(rank, of: suit, worth: points,
+                                          at: position)
+        let expected = "Ace Of Hearts"
+        
+        // When
+        let actual = numeralCard.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
