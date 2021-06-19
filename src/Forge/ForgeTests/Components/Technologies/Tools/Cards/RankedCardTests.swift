@@ -42,8 +42,8 @@ class RankedCardTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of a new `RankedCard` with a given `Rank` equals the given `Rank`'s  name,
-    /// capitalized.
+    /// Tests that the title of a new `RankedCard` created with a `Rank` equals the given `Rank`'s
+    /// name, capitalized.
     func test_title_ofNewRankedCardWithRank_equalsRankCapitalized() {
         
         // Given
@@ -58,8 +58,8 @@ class RankedCardTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of a new `RankedCard` with a given `Rank` and position equals the given
-    /// `Rank`'s name capitalized.
+    /// Tests that the title of a new `RankedCard` created with a `Rank` and position equals the given
+    /// `Rank`'s name, capitalized.
     func test_title_ofNewRankedCardWithRankAndPosition_equalsRankCapitalized() {
         
         // Given
@@ -75,8 +75,8 @@ class RankedCardTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of a new `RankedCard` with a given `Rank`, position, and points equals the
-    /// given `Rank`'s name capitalized.
+    /// Tests that the title of a new `RankedCard` created with a `Rank`, position, and points equals the
+    /// given `Rank`'s name, capitalized.
     func test_title_ofNewRankedCardWithRankPositionAndPoints_equalsRankCapitalized() {
         
         // Given
@@ -93,7 +93,7 @@ class RankedCardTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of a new `RankedCard` with a given `Rank` and title equals the given title.
+    /// Tests that the title of a new `RankedCard` created with a `Rank` and title equals the given title.
     func test_title_ofNewRankedCardWithRankAndTitle_equalsGivenTitle() {
         
         // Given

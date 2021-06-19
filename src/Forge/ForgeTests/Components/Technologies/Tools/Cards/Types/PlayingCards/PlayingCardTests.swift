@@ -199,4 +199,48 @@ class PlayingCardTests: XCTestCase {
             XCTAssertEqual(expected, error as? RangeError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a new `PlayingCard` created without a title equals the given
+    /// "`Rank` of `Suit`".
+    func test_title_ofNewPlayingCardWithoutTitle_equalsGivenRankOfSuit() throws {
+        
+        // Given
+        let rank = Rank.ace
+        let suit = Suit.hearts
+        let points = 1
+        let position = 13
+        let playingCard = try PlayingCard(rank, of: suit, worth: points,
+                                          at: position)
+        let expected = "Ace Of Hearts"
+        
+        // When
+        let actual = playingCard.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a new `PlayingCard` created with a title equals the given title.
+    func test_title_ofNewPlayingCardWithTitle_equalsGivenTitle() throws {
+        
+        // Given
+        let rank = Rank.ace
+        let suit = Suit.hearts
+        let points = 1
+        let position = 13
+        let title = "High Ace"
+        let playingCard = try PlayingCard(rank, of: suit, worth: points,
+                                          at: position, with: title)
+        let expected = title
+        
+        // When
+        let actual = playingCard.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }

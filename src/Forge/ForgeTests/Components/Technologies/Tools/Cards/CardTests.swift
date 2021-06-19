@@ -42,8 +42,8 @@ class CardTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the title of a`Card` equals a given title.
-    func test_title_ofCard_equalsGivenTitle() {
+    /// Tests that the title of a`Card` created with a title equals the given title.
+    func test_title_ofNewCardWithTitle_equalsGivenTitle() {
         
         // Given
         let title = "Title"
