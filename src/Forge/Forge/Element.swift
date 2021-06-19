@@ -32,7 +32,9 @@ extension Element {
     var title: String {
         
         let name = isClass() ? getMetatypeName() : getInstanceName()
-        let shortName = getShortname(from: name)
+        let shortName = getShortname(from: name)! // Okay to force unwrap this as
+                                                  // instance or metatype name
+                                                  // will never be nil.
         
         return shortName.splitOnCapitals()
     }
@@ -53,15 +55,12 @@ extension Element {
     //                                 GETTERS                                 //
     //=========================================================================//
     
-    /// Retrieves the name of the instance.
+    /// Retrieves the name of the instance, capitalized.
     ///
-    /// - Parameter capitalized: True if return the instance name as capitalized, else false.
-    /// - Returns: A `String` containing the name of the instance.
-    private func getInstanceName(_ capitalized: Bool = true) -> String {
+    /// - Returns: A `String` containing the name of the instance, capitalized.
+    private func getInstanceName() -> String {
         
-        let instanceName = String(describing: self)
-        
-        return capitalized ? instanceName.capitalized : instanceName
+        return String(describing: self).capitalized
     }
     
     /// Retrieves the name of the model.
@@ -76,8 +75,8 @@ extension Element {
     ///
     /// - Parameter name: The name to get shortname for.
     /// - Returns: A `String.SubSequence` of the given name without extra syntax, if any.
-    private func getShortname(from name: String) -> String.SubSequence {
+    private func getShortname(from name: String) -> String.SubSequence? {
         
-        return name.split(separator: "<").first ?? ""
+        return name.split(separator: "<").first
     }
 }
