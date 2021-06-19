@@ -28,26 +28,26 @@ class TripleRunTests: XCTestCase {
     //-------------------------------------------------------------------------//
     //                            Insufficient Cards                           //
     //-------------------------------------------------------------------------//
-//
-//    /// Tests that creating a `TripleRun` with less than five `PlayingCards` throws an
-//    /// `ElementsError.insufficientElements Error`.
-//    func test_init_tripleRunWithInsufficientCards_returnsNil() throws {
-//
-//        // Given
-//        let jack = try Jack(of: .hearts)
-//        let queen = try Queen(of: .hearts)
-//        let king1 = try King(of: .hearts)
-//        let king2 = try King(of: .diamonds)
-//        let cards = [jack, queen, king1, king2]
-//        let expected = ElementsError.insufficientElements
-//
-//        // When
-//        XCTAssertThrowsError(try TripleRun(of: cards)) { error in
-//
-//            // Then
-//            XCTAssertEqual(expected, error as? ElementsError)
-//        }
-//    }
+
+    /// Tests that creating a `TripleRun` with less than five `PlayingCards` throws an
+    /// `invalidCount Error`.
+    func test_init_tripleRunWithInsufficientCards_returnsNil() throws {
+
+        // Given
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen, king1, king2]
+        let expected = ElementsError.invalidCount
+
+        // When
+        XCTAssertThrowsError(try TripleRun(of: cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
 
     //-------------------------------------------------------------------------//
     //                           Incorrect Pair Count                          //
@@ -79,13 +79,16 @@ class TripleRunTests: XCTestCase {
     func test_init_withExcessivePairs_throwsError() throws {
 
         // Given
+        let isHigh = true
         let jack1 = try Jack(of: .hearts)
         let jack2 = try Jack(of: .diamonds)
         let queen1 = try Queen(of: .hearts)
         let queen2 = try Queen(of: .diamonds)
         let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
-        let cards = [jack1, jack2, queen1, queen2, king1, king2]
+        let ace1 = try Ace(of: .hearts, and: isHigh)
+        let ace2 = try Ace(of: .spades, and: isHigh)
+        let cards = [jack1, jack2, queen1, queen2, king1, king2, ace1, ace2]
         let expected = HandRankError.invalidKindCount
 
         // When

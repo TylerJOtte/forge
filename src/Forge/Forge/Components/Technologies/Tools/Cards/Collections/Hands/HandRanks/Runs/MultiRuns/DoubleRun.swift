@@ -43,8 +43,8 @@ public class DoubleRun: MultiRun {
     public init(of cards: [RankedCard]) throws {
         
         let min = 4
-        let count = 2
+        let pairs = 1
         
-        try super.init(of: min, cards, with: count)
+        try super.init(of: min, cards, with: pairs)
     }
 }

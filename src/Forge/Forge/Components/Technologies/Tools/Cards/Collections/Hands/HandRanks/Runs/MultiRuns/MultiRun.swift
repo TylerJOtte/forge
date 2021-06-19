@@ -39,13 +39,14 @@ public class MultiRun: HandRank {
     /// - Throws:
     ///   -  `invalidMin` if the given min is less than four.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min # of `Card`s.
-    init(of min: Int, _ cards: [RankedCard], with count: Int) throws {
+    init(of min: Int, _ cards: [RankedCard], with pairCount: Int) throws {
         
         let minCards = 4
         let max = Int.max
         let pairs = try cards.getPairs()
         let runs = try cards.getRuns()
-        let pairCards = pairs.getUniqueCards()
+        let runCount = pairs.getUniqueCards().count
+        let count = pairCount
         let handRanks: [[HandRank]] = [pairs, runs]
         let points = handRanks.sumPoints()
         
@@ -55,14 +56,14 @@ public class MultiRun: HandRank {
             throw RangeError.invalidMin
         }
 
-        guard (pairCards.count == count) else {
+        guard (pairs.count == pairCount) else {
             
             print("The given Cards must contain \(count), and only " +
                   "\(count) Pair.")
             throw HandRankError.invalidKindCount
         }
         
-        guard (runs.count == count) else {
+        guard (runs.count == runCount) else {
             
             print("The given Cards must contain \(count), and only " +
                   "\(count) Pair.")

@@ -88,7 +88,7 @@ class MultiRunTests: XCTestCase {
         let king1 = try King(of: .hearts)
         let king2 = try King(of: .spades)
         let cards = [jack, queen1, queen2, king1, king2]
-        let count = 2
+        let count = 1
         let expected = HandRankError.invalidKindCount
 
         // When
@@ -114,7 +114,7 @@ class MultiRunTests: XCTestCase {
         let king1 = try King(of: .hearts)
         let king2 = try King(of: .spades)
         let cards = [ten, queen, king1, king2]
-        let count = 2
+        let count = 1
         let expected = HandRankError.invalidRun
 
         // When
@@ -140,7 +140,7 @@ class MultiRunTests: XCTestCase {
         let king1 = try King(of: .hearts)
         let king2 = try King(of: .spades)
         let cards = [ace, two, three, jack, queen, king1, king2]
-        let count = 2
+        let count = 1
         let expected = HandRankError.invalidRun
 
         // When
@@ -163,14 +163,16 @@ class MultiRunTests: XCTestCase {
 
         // Given
         let min = 5
-        let jack = try Jack(of: .hearts)
-        let queen = try Queen(of: .hearts)
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let seven = try Seven(of: .hearts)
+        let eight = try Eight(of: .hearts)
+        let nine = try Nine(of: .hearts)
         let king1 = try King(of: .hearts)
         let king2 = try King(of: .spades)
-        let ace1 = try Ace(of: .hearts)
-        let ace2 = try Ace(of: .spades)
-        let cards = [jack, queen, king1, king2, ace1, ace2]
-        let count = 4
+        let cards = [ace, two, three, seven, eight, nine, king1, king2]
+        let count = 1
         let expected = HandRankError.invalidRun
 
         // When
