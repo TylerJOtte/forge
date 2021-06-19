@@ -57,7 +57,11 @@ extension Array where Element: RankedCard  {
     //                                 GETTERS                                 //
     //=========================================================================//
 
-
+    /// Retrieves all the contained `Pair`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: An `Array` of all the contained `Pair`s.
     func getPairs() -> [Pair] {
         
         let count = 1
@@ -66,21 +70,22 @@ extension Array where Element: RankedCard  {
         
         for rank in cardsByRank {
             
-            let cards = rank.value
+            let rankCards = rank.value
             var position = 0
             
-            while (position < cards.count - 1)
+            while (position < rankCards.count - 1)
             {
                 var index = position
 
-                while (index < cards.count - 1) {
+                while (index < rankCards.count - 1) {
                     
-                    let card = cards[index]
-                    let nextCard = cards[index + 1]
+                    let card = rankCards[index]
+                    let nextCard = rankCards[index + 1]
                     let cards = [card, nextCard]
-                    let pair = try! Pair(of: cards) // Okay to force unwrap -
-                                                    // cards will always form
-                                                    // a Pair
+                    
+                    // Okay to force unwrap - cards will always form a Pair
+                    let pair = try! Pair(of: cards)
+                    
                     pairs.append(pair)
                     index += 1
                 }
@@ -99,10 +104,39 @@ extension Array where Element: RankedCard  {
     /// - Returns: An `Array` of all the contained `ThreeOfAKind`s.
     func getThreeOfAKinds() -> [ThreeOfAKind] {
         
-        let count = 3
-        let cards = splitByRank(where: count)
+        let count = 2
+        let cardsByRank = splitByRank(over: count)
+        var threeOfAKinds: [ThreeOfAKind] = []
         
-        return cards.map{try! ThreeOfAKind(of: $1)}
+        for rank in cardsByRank {
+            
+            let rankCards = rank.value
+            var position = 0
+            
+            while (position < rankCards.count - 2)
+            {
+                var index = position
+
+                while (index < rankCards.count - 2) {
+                    
+                    let card1 = rankCards[index]
+                    let card2 = rankCards[index + 1]
+                    let card3 = rankCards[index + 2]
+                    let cards = [card1, card2, card3]
+                    
+                    // Okay to force unwrap - cards will always form a
+                    // ThreeOfAKind
+                    let threeOfAKind = try! ThreeOfAKind(of: cards)
+                    
+                    threeOfAKinds.append(threeOfAKind)
+                    index += 1
+                }
+                
+                position += 1
+            }
+        }
+        
+        return threeOfAKinds
     }
     
     func getFourOfAKinds() -> [FourOfAKind] {

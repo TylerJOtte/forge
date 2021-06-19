@@ -90,9 +90,9 @@ class RankedCardArrayTests: XCTestCase {
     //                               getPairs()                                //
     //-------------------------------------------------------------------------//
     
-    /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that cotains only unique
-    /// `Rank`s returns a `Pair Array` with a count of zero.
-    func test_getPairs_withUniqueRanks_returnsZeroPairs() {
+    /// Tests that retrieving the`Pair`s in a `RankedCard Array` that cotains unique `Rank`s returns
+    /// an empty `Array`.
+    func test_getPairs_withUniqueRanks_returnsEmptyArray() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -102,16 +102,14 @@ class RankedCardArrayTests: XCTestCase {
         let rankedCard5 = RankedCard(with: .five)
         let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
             rankedCard5]
-        let expected = 0
         
         // When
         let pairs = rankedCards.getPairs()
-        let actual = pairs.count
         
-        XCTAssertEqual(expected, actual)
+        XCTAssert(pairs.isEmpty)
     }
     
-    /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains only two equally
+    /// Tests that retrieving the the `Pair`s in a `RankedCard Array` that contains only two equally
     /// `RankedCard`s returns a `Pair Array` with a count of one.
     func test_getPairs_withTwoEquallyRankedCards_returnsOnePair() {
         
@@ -211,9 +209,9 @@ class RankedCardArrayTests: XCTestCase {
     //                            getThreeOfAKinds()                           //
     //-------------------------------------------------------------------------//
     
-    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that has zero
-    /// `ThreeOfAKind`s returns an empty `Kind Array`.
-    func test_getThreeOfAKinds_withZeroThreeOfAKindsCards_returnsEmptyKindArray() {
+    /// Tests that retrieving the`ThreeOfAKind`s in a `RankedCard Array` that cotains unique
+    /// `Rank`s returns an empty `Array`.
+    func test_getThreeOfAKinds_withUniqueRanks_returnsEmptyArray() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -226,6 +224,25 @@ class RankedCardArrayTests: XCTestCase {
         
         // Then
         XCTAssert(threeOfAKinds.isEmpty)
+    }
+    
+    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that contains only three
+    /// equally `RankedCard`s returns a `ThreeOfAKind Array` with a count of one.
+    func test_getThreeOfAKinds_wit_returnsKindArrayWithOneThreeOfAKind() {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCard3 = RankedCard(with: .ace)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
+        let expected = 1
+        
+        // When
+        let threeOfAKinds = rankedCards.getThreeOfAKinds()
+        let actual = threeOfAKinds.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //=========================================================================//
