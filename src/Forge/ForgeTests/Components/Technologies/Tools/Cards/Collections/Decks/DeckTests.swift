@@ -180,10 +180,61 @@ class DeckTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the title of a default `Deck` equals "Deck".
-    func test_title_ofDefaultDeck_equalsDeck() throws {
+    func test_title_ofDefaultDeck_equalsDeck() {
         
         // Given
         let deck = Deck()
+        let expected = "Deck"
+        
+        // When
+        let actual = deck.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a `Deck` created with `Card`s equals "Deck".
+    func test_title_ofNewDeckWithCards_equalsDeck() {
+        
+        // Given
+        let card = Card()
+        let cards = [card]
+        let deck = Deck(of: cards)
+        let expected = "Deck"
+        
+        // When
+        let actual = deck.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a `Deck` created with a max and `Card`s equals "Deck".
+    func test_title_ofNewDeckWithMaxAndCards_equalsDeck() throws {
+        
+        // Given
+        let max = 54
+        let card = Card()
+        let cards = [card]
+        let deck = try Deck(of: max, cards)
+        let expected = "Deck"
+        
+        // When
+        let actual = deck.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a `Deck` created with a range and `Card`s equals "Deck".
+    func test_title_ofNewDeckWithRangeAndCards_equalsDeck() throws {
+        
+        // Given
+        let min = 0
+        let max = 54
+        let card = Card()
+        let cards = [card]
+        let deck = try Deck(of: min, to: max, cards)
         let expected = "Deck"
         
         // When
