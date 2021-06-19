@@ -42,6 +42,76 @@ class RankedCardTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that the title of a new `RankedCard` with a given `Rank` equals the given `Rank`'s  name,
+    /// capitalized.
+    func test_title_ofNewRankedCardWithRank_equalsRankCapitalized() {
+        
+        // Given
+        let rank = Rank.ace
+        let rankedCard = RankedCard(with: rank)
+        let expected = "Ace"
+        
+        // When
+        let actual = rankedCard.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a new `RankedCard` with a given `Rank` and position equals the given
+    /// `Rank`'s name capitalized.
+    func test_title_ofNewRankedCardWithRankAndPosition_equalsRankCapitalized() {
+        
+        // Given
+        let rank = Rank.ace
+        let position = 1
+        let rankedCard = RankedCard(with: rank, at: position)
+        let expected = "Ace"
+        
+        // When
+        let actual = rankedCard.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a new `RankedCard` with a given `Rank`, position, and points equals the
+    /// given `Rank`'s name capitalized.
+    func test_title_ofNewRankedCardWithRankPositionAndPoints_equalsRankCapitalized() {
+        
+        // Given
+        let rank = Rank.ace
+        let position = 1
+        let points = 1
+        let rankedCard = RankedCard(with: rank, at: position, worth: points)
+        let expected = "Ace"
+        
+        // When
+        let actual = rankedCard.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a new `RankedCard` with a given `Rank` and title equals the given title.
+    func test_title_ofNewRankedCardWithRankAndTitle_equalsGivenTitle() {
+        
+        // Given
+        let rank = Rank.ace
+        let position = 13
+        let points = 1
+        let title = "High Ace"
+        let rankedCard = RankedCard(with: rank, at: position, worth: points,
+                                    named: title)
+        let expected = title
+        
+        // When
+        let actual = rankedCard.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              COMPARISONS                                //
     //=========================================================================//
