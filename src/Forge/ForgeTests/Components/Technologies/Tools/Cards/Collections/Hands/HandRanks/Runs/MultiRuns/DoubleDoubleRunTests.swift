@@ -122,6 +122,32 @@ class DoubleDoubleRunTests: XCTestCase {
 //        }
 //    }
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a new `DoubleDoubleRun`created with `Card`s equals
+    /// "Double Double Run".
+    func test_title_ofNewDoubleDoubleRunWithCards_equalsDoubleDoubleRun()
+        throws {
+
+        // Given
+        let jack = try Jack(of: .hearts)
+        let queen1 = try Queen(of: .hearts)
+        let queen2 = try Queen(of: .diamonds)
+        let king1 = try King(of: .hearts)
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, king1, king2]
+        let doubleDoubleRun = try DoubleDoubleRun(of: cards)
+        let expected = "Double Double Run"
+
+        // When
+        let actual = doubleDoubleRun.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
@@ -190,31 +216,6 @@ class DoubleDoubleRunTests: XCTestCase {
         // When
         let actual = doubleDoubleRun.count
         
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-
-
-    /// Tests that the title of a `DoubleDoubleRun` equals "Double Double Run".
-    func test_title_ofDoubleDoubleRun_equalsDoubleDoubleRun() throws {
-
-        // Given
-        let jack = try Jack(of: .hearts)
-        let queen1 = try Queen(of: .hearts)
-        let queen2 = try Queen(of: .diamonds)
-        let king1 = try King(of: .hearts)
-        let king2 = try King(of: .diamonds)
-        let cards = [jack, queen1, queen2, king1, king2]
-        let doubleDoubleRun = try DoubleDoubleRun(of: cards)
-        let expected = "Double Double Run"
-
-        // When
-        let actual = doubleDoubleRun.title
-
         // Then
         XCTAssertEqual(expected, actual)
     }

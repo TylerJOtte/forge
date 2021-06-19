@@ -71,6 +71,29 @@ class FlushTests: XCTestCase {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a new`Flush` creatd with `Card`s equals "Flush".
+    func test_title_ofNewFlushWithCards_equalsFlush() throws {
+
+        // Given
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
+        let cards = [ten, jack, queen, king]
+        let flush = try Flush(of: cards)
+        let expected = "Flush"
+
+        // When
+        let actual = flush.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
@@ -178,29 +201,6 @@ class FlushTests: XCTestCase {
         // When
         let actual = flush.capacity
 
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the title of a `Flush` equals "Flush".
-    func test_title_ofFlush_equalsFlush() throws {
-
-        // Given
-        let ten = try Ten(of: .hearts)
-        let jack = try Jack(of: .hearts)
-        let queen = try Queen(of: .hearts)
-        let king = try King(of: .hearts)
-        let cards = [ten, jack, queen, king]
-        let flush = try Flush(of: cards)
-        let expected = "Flush"
-
-        // When
-        let actual = flush.title
-
-        // Then
         XCTAssertEqual(expected, actual)
     }
 }

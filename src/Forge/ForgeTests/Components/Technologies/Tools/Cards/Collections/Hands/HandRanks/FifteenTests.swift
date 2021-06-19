@@ -106,6 +106,27 @@ class FifteenTests: XCTestCase {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a new`Fifteen`created with `Card`s equals "Fifteen".
+    func test_title_ofNewFifteenWithCards_equalsFifteen() throws {
+
+        // Given
+        let ten = try Ten(of: .hearts)
+        let five = try Five(of: .hearts)
+        let cards = [ten, five]
+        let fifteen = try Fifteen(of: cards)
+        let expected = "Fifteen"
+
+        // When
+        let actual = fifteen.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
@@ -264,27 +285,6 @@ class FifteenTests: XCTestCase {
         // When
         let actual = fifteen.capacity
 
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the title of a`Fifteen` equals "Fifteen".
-    func test_title_ofFifteen_equalsFifteen() throws {
-
-        // Given
-        let ten = try Ten(of: .hearts)
-        let five = try Five(of: .hearts)
-        let cards = [ten, five]
-        let fifteen = try Fifteen(of: cards)
-        let expected = "Fifteen"
-
-        // When
-        let actual = fifteen.title
-
-        // Then
         XCTAssertEqual(expected, actual)
     }
 }

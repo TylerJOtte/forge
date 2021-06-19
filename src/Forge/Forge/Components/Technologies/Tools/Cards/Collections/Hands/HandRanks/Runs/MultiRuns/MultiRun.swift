@@ -65,8 +65,7 @@ public class MultiRun: HandRank {
         
         guard (runs.count == runCount) else {
             
-            print("The given Cards must contain \(count), and only " +
-                  "\(count) Pair.")
+            print("The given Cards must contain \(runCount) runs.")
             throw HandRankError.invalidRun
         }
         

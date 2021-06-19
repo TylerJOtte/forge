@@ -183,4 +183,30 @@ class MultiRunTests: XCTestCase {
             XCTAssertEqual(expected, error as? HandRankError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a new `MultiRun`created with a min, `Card`s, and `Pair` count  equals
+    /// "Multi Run".
+    func test_title_ofNewMultiRunWithMinCardsAndPairCount_equalsMultiRun()
+        throws {
+
+        // Given
+        let min = 4
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
+        let two  = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let cards = [ace1, ace2, two, three]
+        let pairs = 1
+        let kind = try MultiRun(of: min, cards, with: pairs)
+        let expected = "Multi Run"
+
+        // When
+        let actual = kind.title
+
+        XCTAssertEqual(expected, actual)
+    }
 }

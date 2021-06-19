@@ -115,6 +115,29 @@ class DoubleRunTests: XCTestCase {
 //            XCTAssertEqual(expected, error as? ElementsError)
 //        }
 //    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a new `DoubleRun` created with `Card`s equals "Double Run".
+    func test_title_ofNewDoubleRunWithCards_equalsDoubleRun() throws {
+
+        // Given
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
+        let king2 = try King(of: .diamonds)
+        let cards = [jack, queen, king1, king2]
+        let doubleRun = try DoubleRun(of: cards)
+        let expected = "Double Run"
+
+        // When
+        let actual = doubleRun.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 
     //=========================================================================//
     //                              PROPERTIES                                 //
@@ -180,29 +203,6 @@ class DoubleRunTests: XCTestCase {
 
         // When
         let actual = doubleRun.count
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that the title of a `DoubleRun` equals "Double Run".
-    func test_title_ofDoubleRun_equalsDoubleRun() throws {
-
-        // Given
-        let jack = try Jack(of: .hearts)
-        let queen = try Queen(of: .hearts)
-        let king1 = try King(of: .hearts)
-        let king2 = try King(of: .diamonds)
-        let cards = [jack, queen, king1, king2]
-        let doubleRun = try DoubleRun(of: cards)
-        let expected = "Double Run"
-
-        // When
-        let actual = doubleRun.title
 
         // Then
         XCTAssertEqual(expected, actual)

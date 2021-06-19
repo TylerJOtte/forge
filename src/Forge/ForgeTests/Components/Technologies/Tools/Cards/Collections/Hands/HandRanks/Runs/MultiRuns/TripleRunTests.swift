@@ -123,6 +123,30 @@ class TripleRunTests: XCTestCase {
 //            XCTAssertEqual(expected, error as? ElementsError)
 //        }
 //    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a new `TripleRun` created with `Card`s equals "Triple Run".
+    func test_title_ofNewTripleRunWithCards_equalsTripleRun() throws {
+
+        // Given
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        let king1 = try King(of: .hearts)
+        let king2 = try King(of: .diamonds)
+        let king3 = try King(of: .clubs)
+        let cards = [jack, queen, king1, king2, king3]
+        let tripleRun = try TripleRun(of: cards)
+        let expected = "Triple Run"
+
+        // When
+        let actual = tripleRun.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 
     //=========================================================================//
     //                              PROPERTIES                                 //
@@ -191,30 +215,6 @@ class TripleRunTests: XCTestCase {
 
         // When
         let actual = tripleRun.count
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that the title of a `TripleRun` equals "Triple Run".
-    func test_title_ofTripleRun_equalsTripleRun() throws {
-
-        // Given
-        let jack = try Jack(of: .hearts)
-        let queen = try Queen(of: .hearts)
-        let king1 = try King(of: .hearts)
-        let king2 = try King(of: .diamonds)
-        let king3 = try King(of: .clubs)
-        let cards = [jack, queen, king1, king2, king3]
-        let tripleRun = try TripleRun(of: cards)
-        let expected = "Triple Run"
-
-        // When
-        let actual = tripleRun.title
 
         // Then
         XCTAssertEqual(expected, actual)

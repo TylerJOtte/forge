@@ -45,7 +45,7 @@ extension Array where Element: Equatable {
             var base = getBaseElements ?
                 elements[index][startIndex...endIndex] : []
  
-            if (base.last != previousBase.last) {
+            if (base.last != previousBase.last || base.isEmpty) {
                 
                 base.append(element)
                 elements.append(Array(base))
