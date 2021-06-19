@@ -354,6 +354,31 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving the `FourOfAKinds`s in a `RankedCard Array` that contains only eight
+    /// `RankedCard`s with two `Rank`s of the same count  returns a `FourOfKind Array` with a
+    ///  count of two.
+    func test_getFourOfAKinds_withEightRankedCardsOfTwoRanksWithSameCount_returnsTwoFourOfAKinds() {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCard3 = RankedCard(with: .ace)
+        let rankedCard4 = RankedCard(with: .ace)
+        let rankedCard5 = RankedCard(with: .two)
+        let rankedCard6 = RankedCard(with: .two)
+        let rankedCard7 = RankedCard(with: .two)
+        let rankedCard8 = RankedCard(with: .two)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
+                           rankedCard5, rankedCard6, rankedCard7, rankedCard8]
+        let expected = 2
+        
+        // When
+        let fourOfAKinds = rankedCards.getFourOfAKinds()
+        let actual = fourOfAKinds.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                               SPLITTERS                                 //
     //=========================================================================//
