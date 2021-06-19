@@ -21,12 +21,26 @@ import XCTest
 class CardTests: XCTestCase {
     
     //=========================================================================//
-    //                              PROPERTIES                                 //
+    //                             Initialization                              //
     //=========================================================================//
-    
+
     //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a default `Card` equals "Card".
+    func test_title_ofDefaultCard_equalsCard() {
+        
+        // Given
+        let card = Card()
+        let expected = "Card"
+        
+        // When
+        let actual = card.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
     
     /// Tests that the title of a`Card` equals a given title.
     func test_title_ofCard_equalsGivenTitle() {
