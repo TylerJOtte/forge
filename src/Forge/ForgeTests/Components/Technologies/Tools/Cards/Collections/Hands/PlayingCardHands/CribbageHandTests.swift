@@ -100,6 +100,30 @@ class CribbageHandTests: XCTestCase {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a `CribbageHand` equals "Cribbage Hand".
+    func test_title_ofCribbageHand_equalsCribbageHand() throws {
+        
+        // Given
+        let fiveOfHearts = try Five(of: .hearts)
+        let fiveOfSpades = try Five(of: .spades)
+        let fiveOfDiamonds = try Five(of: .diamonds)
+        let jackOfClubs = try Jack(of: .clubs)
+        let cards = [fiveOfHearts, fiveOfSpades, fiveOfDiamonds, jackOfClubs]
+        let cutCard = try Five(of: .clubs)
+        let cribbageHand = try CribbageHand(with: cards, and: cutCard)
+        let expected = "Cribbage Hand"
+        
+        // When
+        let actual = cribbageHand.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//

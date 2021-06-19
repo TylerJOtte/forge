@@ -28,7 +28,7 @@ class PlayingCardHandTests: XCTestCase {
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the title of a default `PlayingCardHand` equals "Playing Card Hand"..
+    /// Tests that the title of a default `PlayingCardHand` equals "Playing Card Hand".
     func test_title_ofDefaultPlayingCardHand_equalsPlayingCardHand() {
         
         // Given
