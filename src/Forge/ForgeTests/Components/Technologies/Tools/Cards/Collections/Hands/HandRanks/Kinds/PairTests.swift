@@ -63,6 +63,26 @@ class PairTests: XCTestCase {
     }
 
     //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a new `Pair`created with `Card`s equals "Pair".
+    func test_title_ofNewPairWithCards_equalsPair() throws {
+
+        // Given
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let cards = [ace1, ace2]
+        let pair = try Pair(of: cards)
+        let expected = "Pair"
+
+        // When
+        let actual = pair.title
+
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             Multiple Ranks                              //
     //-------------------------------------------------------------------------//
 
@@ -180,26 +200,6 @@ class PairTests: XCTestCase {
 
         // When
         let actual = pair.capacity
-
-        XCTAssertEqual(expected, actual)
-    }
-
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that the title of a `Pair` equals "Pair".
-    func test_title_ofPair_equalsPair() throws {
-
-        // Given
-        let ace1 = try Ace(of: .clubs)
-        let ace2 = try Ace(of: .spades)
-        let cards = [ace1, ace2]
-        let pair = try Pair(of: cards)
-        let expected = "Pair"
-
-        // When
-        let actual = pair.title
 
         XCTAssertEqual(expected, actual)
     }

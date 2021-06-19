@@ -89,6 +89,27 @@ class ThreeOfAKindTests: XCTestCase {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a new `ThreeOfAKind` created with `Card`s equals "Three Of A Kind".
+    func test_title_ofNewThreeOfAKindWithCards_equalsThreeOfAKind() throws {
+
+        // Given
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
+        let ace3 = try Ace(of: .diamonds)
+        let cards = [ace1, ace2, ace3]
+        let threeOfAKind = try ThreeOfAKind(of: cards)
+        let expected = "Three Of A Kind"
+
+        // When
+        let actual = threeOfAKind.title
+
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
@@ -190,27 +211,6 @@ class ThreeOfAKindTests: XCTestCase {
 
         // When
         let actual = threeOfAKind.capacity
-
-        XCTAssertEqual(expected, actual)
-    }
-
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that the title of a `ThreeOfAKind` equals "Three Of A Kind".
-    func test_title_ofThreeOfAKind_equalsThreeOfAKind() throws {
-
-        // Given
-        let ace1 = try Ace(of: .hearts)
-        let ace2 = try Ace(of: .spades)
-        let ace3 = try Ace(of: .diamonds)
-        let cards = [ace1, ace2, ace3]
-        let threeOfAKind = try ThreeOfAKind(of: cards)
-        let expected = "Three Of A Kind"
-
-        // When
-        let actual = threeOfAKind.title
 
         XCTAssertEqual(expected, actual)
     }

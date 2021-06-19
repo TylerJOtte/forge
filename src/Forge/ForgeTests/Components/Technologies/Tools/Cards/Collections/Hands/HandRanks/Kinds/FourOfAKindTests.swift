@@ -92,6 +92,28 @@ class FourOfAKindTests: XCTestCase {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a new `FourOfAKind` created with `Card`s equals "Four Of A Kind".
+    func test_title_ofNewFourOfAKindWithCards_equalsFourOfAKind() throws {
+
+        // Given
+        let ace1 = try Ace(of: .hearts)
+        let ace2 = try Ace(of: .spades)
+        let ace3 = try Ace(of: .diamonds)
+        let ace4 = try Ace(of: .clubs)
+        let cards = [ace1, ace2, ace3, ace4]
+        let fourOfAKind = try FourOfAKind(of: cards)
+        let expected = "Four Of A Kind"
+
+        // When
+        let actual = fourOfAKind.title
+
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
@@ -198,28 +220,6 @@ class FourOfAKindTests: XCTestCase {
 
         // When
         let actual = fourOfAKind.capacity
-
-        XCTAssertEqual(expected, actual)
-    }
-
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that the title of a `FourOfAKind` equals "Four Of A Kind".
-    func test_title_ofFourOfAKind_equalsFourOfAKind() throws {
-
-        // Given
-        let ace1 = try Ace(of: .hearts)
-        let ace2 = try Ace(of: .spades)
-        let ace3 = try Ace(of: .diamonds)
-        let ace4 = try Ace(of: .clubs)
-        let cards = [ace1, ace2, ace3, ace4]
-        let fourOfAKind = try FourOfAKind(of: cards)
-        let expected = "Four Of A Kind"
-
-        // When
-        let actual = fourOfAKind.title
 
         XCTAssertEqual(expected, actual)
     }

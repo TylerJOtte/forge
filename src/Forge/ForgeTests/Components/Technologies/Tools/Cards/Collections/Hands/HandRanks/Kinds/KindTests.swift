@@ -68,4 +68,26 @@ class KindTests: XCTestCase {
             XCTAssertEqual(expected, error as? RangeError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that the title of a new `Kind`created with a range and `Card`s equals "Kind".
+    func test_title_ofNewKindWithRangeAndCards_equalsPair() throws {
+
+        // Given
+        let min = 2
+        let max = 2
+        let ace1 = try Ace(of: .clubs)
+        let ace2 = try Ace(of: .spades)
+        let cards = [ace1, ace2]
+        let kind = try Kind(of: min, to: max, cards)
+        let expected = "Kind"
+
+        // When
+        let actual = kind.title
+
+        XCTAssertEqual(expected, actual)
+    }
 }

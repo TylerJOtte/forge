@@ -128,6 +128,27 @@ class NobsTests: XCTestCase {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a new`Nobs` created with `Card`s equals "Nobs".
+    func test_title_ofNewNobsWithCards_equalsNobs() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let cards = [ace, jack]
+        let nobs = try Nobs(of: cards)
+        let expected = "Nobs"
+        
+        // When
+        let actual = nobs.title
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
@@ -229,27 +250,6 @@ class NobsTests: XCTestCase {
         // When
         let actual = nobs.capacity
 
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the title of`Nobs` equals "Nobs".
-    func test_title_ofNobs_equalsNobs() throws {
-        
-        // Given
-        let ace = try Ace(of: .hearts)
-        let jack = try Jack(of: .hearts)
-        let cards = [ace, jack]
-        let nobs = try Nobs(of: cards)
-        let expected = "Nobs"
-        
-        // When
-        let actual = nobs.title
-        
-        // Then
         XCTAssertEqual(expected, actual)
     }
 }
