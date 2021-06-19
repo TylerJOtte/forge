@@ -39,6 +39,7 @@ public class PlayingCardDeck: Deck {
     ///   - The `Deck` can hold zero to 54 `PlayingCard`s if `jokers` included, else zero to 52.
     ///   - The `Deck` contains a `PlayingCard` for each standard `PlayingCard Rank` &
     ///    `Suit`, along with `joker Card`s if specified.
+    ///   - The `Deck`'s title is set to "Playing Card Deck".
     /// - Parameters:
     ///   - cards: The `Card`s to create `Deck` with.
     ///   - max: The maximum # of `Card`s allowed in the `Deck.`

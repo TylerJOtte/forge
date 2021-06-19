@@ -25,6 +25,43 @@ class PlayingDeckTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a `PlayingCardDeck` created without `Joker`s equals
+    /// "Playing Card Deck".
+    func test_title_ofNewPlayingCardDeckWithoutJokers_equalsPlayingCardDeck()
+        throws {
+        
+        // Given
+        let playingCardDeck = try PlayingCardDeck()
+        let expected = "Playing Card Deck"
+        
+        // When
+        let actual = playingCardDeck.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the title of a `PlayingCardDeck` created with `Joker`s equals
+    /// "Playing Card Deck".
+    func test_title_ofNewPlayingCardDeckWithJokers_equalsPlayingCardDeck()
+        throws {
+        
+        // Given
+        let jokers = true
+        let playingCardDeck = try PlayingCardDeck(with: jokers)
+        let expected = "Playing Card Deck"
+        
+        // When
+        let actual = playingCardDeck.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                Success                                  //
     //-------------------------------------------------------------------------//
     
