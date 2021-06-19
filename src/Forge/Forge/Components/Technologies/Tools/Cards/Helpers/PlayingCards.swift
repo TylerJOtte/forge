@@ -138,19 +138,13 @@ class PlayingCards {
 
         var cards: [PlayingCard] = []
         
-        do {
-            
-            try cards.append(contentsOf: getStandardCards(with: suits))
-            
-            if (jokers) {
-
-                cards.append(try Joker(color: .red))
-                cards.append(try Joker(color: .black))
-            }
+        try cards.append(contentsOf: getStandardCards(with: suits))
         
-        } catch {
-            
-            print("Error. Failed to retrieve all PlayingCards.")
+        if (jokers) {
+
+            cards.append(try Joker(color: .red))
+            cards.append(try Joker(color: .black))
+        
         }
         
         return cards

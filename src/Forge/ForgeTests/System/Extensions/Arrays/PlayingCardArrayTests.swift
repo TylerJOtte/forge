@@ -87,7 +87,7 @@ class PlayingCardArrayTests: XCTestCase {
     
     /// Tests that splitting all `PlayingCard`s with one `Suit`and `Jokers` by `Suit` has a count of
     /// two.
-    func test_splitBySuit_PlayingCardsWithOneSuitAndJOkers_hasCountOfTwo() throws {
+    func test_splitBySuit_PlayingCardsWithOneSuitAndJokers_hasCountOfTwo() throws {
         
         // Given
         let jokers = true
