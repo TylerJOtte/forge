@@ -70,6 +70,29 @@ class HandRankTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a `HandRank` equals "HandRank".
+    func test_title_ofHandRank_equalsHandRank() throws {
+        
+        // Given
+        let min = 1
+        let max = 1
+        let rankedCard = RankedCard()
+        let cards = [rankedCard]
+        let points = rankedCard.points
+        let handRank = try HandRank(of: min, to: max, cards, worth: points)
+        let expected = "Hand Rank"
+        
+        // When
+        let actual = handRank.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//
