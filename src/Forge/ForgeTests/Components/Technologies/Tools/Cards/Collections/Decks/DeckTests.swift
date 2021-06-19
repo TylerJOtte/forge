@@ -175,6 +175,24 @@ class DeckTests: XCTestCase {
         }
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a default `Deck` equals "Deck".
+    func test_title_ofDefaultDeck_equalsDeck() throws {
+        
+        // Given
+        let deck = Deck()
+        let expected = "Deck"
+        
+        // When
+        let actual = deck.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
