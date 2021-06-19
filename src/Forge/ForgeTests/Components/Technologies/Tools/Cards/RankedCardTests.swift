@@ -21,6 +21,28 @@ import XCTest
 class RankedCardTests: XCTestCase {
     
     //=========================================================================//
+    //                             Initialization                              //
+    //=========================================================================//
+
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a default `RankedCard` equals "One".
+    func test_title_ofDefaultRankedCard_equalsOne() {
+        
+        // Given
+        let rankedCard = RankedCard()
+        let expected = "One"
+        
+        // When
+        let actual = rankedCard.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //=========================================================================//
     //                              COMPARISONS                                //
     //=========================================================================//
     
