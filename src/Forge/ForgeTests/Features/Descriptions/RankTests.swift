@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  ScoreTests.swift                                                           //
+//  RankTests.swift                                                            //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 6/11/21.                                       //
+//  Created by Tyler J. Otte on 6/19/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -17,29 +17,29 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for a `Score`.
-class ScoreTests: XCTestCase {
-    
+/// Unit tests for a `Rank`.
+class RankTests: XCTestCase {
+ 
     //=========================================================================//
-    //                              PROPERTIES                                 //
+    //                             Initialization                              //
     //=========================================================================//
-    
+
     //-------------------------------------------------------------------------//
-    //                                Points                                   //
+    //                                 Title                                   //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the points for a default `Score` equal zero.
-    func test_points_ofDefaultScore_equalZero() {
+    /// Tests that the title of a new `Rank` equals its capitalized name.
+    func test_title_ofNewRank_equalsCapitalizedName() {
         
         // Given
-        let score = Score()
-        let expected = 0
-        let title = score.title
+        let rank = Rank.ace
+        let expected = "Ace"
         
         // When
-        let actual = score.points
+        let actual = rank.title
 
         // Then
         XCTAssertEqual(expected, actual)
     }
 }
+    

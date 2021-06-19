@@ -31,28 +31,53 @@ extension Element {
     /// The primary name
     var title: String {
         
-        return getModelShortname().splitOnCapitals()
+        let name = isClass() ? getMetatypeName() : getInstanceName()
+        let shortName = getShortname(from: name)
+        
+        return shortName.splitOnCapitals()
+    }
+    
+    //=========================================================================//
+    //                                  TESTERS                                //
+    //=========================================================================//
+    
+    /// Determines if the current instance is a `Class Type`.
+    ///
+    /// - Returns: True if the given instance is a `Class Type`, else false.
+    private func isClass() -> Bool {
+        
+        return type(of: self) is AnyClass
     }
     
     //=========================================================================//
     //                                 GETTERS                                 //
     //=========================================================================//
     
+    /// Retrieves the name of the instance.
+    ///
+    /// - Parameter capitalized: True if return the instance name as capitalized, else false.
+    /// - Returns: A `String` containing the name of the instance.
+    private func getInstanceName(_ capitalized: Bool = true) -> String {
+        
+        let instanceName = String(describing: self)
+        
+        return capitalized ? instanceName.capitalized : instanceName
+    }
+    
     /// Retrieves the name of the model.
     ///
     /// - Returns: A `String` containing the name of the model.
-    private func getModelName() -> String {
+    private func getMetatypeName() -> String {
         
         return String(describing: type(of: self))
     }
     
-    /// Retrieves the name of the model without the trailing parameter syntax, if any.
+    /// Retrieves a version of the given name without extra syntax (e.g., generic parameters), if any.
     ///
-    /// - Returns: A `String.SubSequence` of the model name without the extra syntax.
-    private func getModelShortname() -> String.SubSequence {
+    /// - Parameter name: The name to get shortname for.
+    /// - Returns: A `String.SubSequence` of the given name without extra syntax, if any.
+    private func getShortname(from name: String) -> String.SubSequence {
         
-        // Okay to force unwrap as this will never be null.
-        // Eevery module has to have a name.
-        return getModelName().split(separator: "<").first!
+        return name.split(separator: "<").first ?? ""
     }
 }
