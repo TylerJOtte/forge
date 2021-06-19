@@ -92,7 +92,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that cotains only unique
     /// `Rank`s returns a `Pair Array` with a count of zero.
-    func test_getPairs_withUniqueRanks_returnsZeroPairs() throws {
+    func test_getPairs_withUniqueRanks_returnsZeroPairs() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -105,7 +105,7 @@ class RankedCardArrayTests: XCTestCase {
         let expected = 0
         
         // When
-        let pairs = try rankedCards.getPairs()
+        let pairs = rankedCards.getPairs()
         let actual = pairs.count
         
         XCTAssertEqual(expected, actual)
@@ -113,7 +113,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains only two equally
     /// `RankedCard`s returns a `Pair Array` with a count of one.
-    func test_getPairs_withTwoEquallyRankedCards_returnsOnePair() throws {
+    func test_getPairs_withTwoEquallyRankedCards_returnsOnePair() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -122,7 +122,7 @@ class RankedCardArrayTests: XCTestCase {
         let expected = 1
         
         // When
-        let pairs = try rankedCards.getPairs()
+        let pairs = rankedCards.getPairs()
         let actual = pairs.count
         
         XCTAssertEqual(expected, actual)
@@ -130,7 +130,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains multiple `Rank`s
     /// and only one duplicate `Rank` returns a `Pair Array` with a count of one.
-    func test_getPairs_withMultipleRanksAndOneDuplicate_returnsOnePair() throws {
+    func test_getPairs_withMultipleRanksAndOneDuplicate_returnsOnePair() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -141,7 +141,7 @@ class RankedCardArrayTests: XCTestCase {
         let expected = 1
         
         // When
-        let pairs = try rankedCards.getPairs()
+        let pairs = rankedCards.getPairs()
         let actual = pairs.count
         
         XCTAssertEqual(expected, actual)
@@ -149,7 +149,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains only four
     /// `RankedCard`s with two `Rank`s returns a `Pair Array` with a count of two.
-    func test_getPairs_withFourRankedCardsAndTwoRanks_returnsTwoPairs() throws {
+    func test_getPairs_withFourRankedCardsAndTwoRanks_returnsTwoPairs() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -160,7 +160,7 @@ class RankedCardArrayTests: XCTestCase {
         let expected = 2
         
         // When
-        let pairs = try rankedCards.getPairs()
+        let pairs = rankedCards.getPairs()
         let actual = pairs.count
         
         XCTAssertEqual(expected, actual)
@@ -168,7 +168,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains multiple `Rank`s
     /// and only two  duplicate `Rank`s returns a `Pair Array` with a count of two.
-    func test_getPairs_withMultipleRanksAndTwoDuplicates_returnsTwoPairs() throws {
+    func test_getPairs_withMultipleRanksAndTwoDuplicates_returnsTwoPairs() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -183,7 +183,7 @@ class RankedCardArrayTests: XCTestCase {
         let expected = 2
         
         // When
-        let pairs = try rankedCards.getPairs()
+        let pairs = rankedCards.getPairs()
         let actual = pairs.count
         
         XCTAssertEqual(expected, actual)
@@ -191,7 +191,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains three  same
     /// `RankedCard`s returns a `Pair Array` with a count of three.
-    func test_getPairs_withThreeEquallyRankedCards_returnsThreePairs() throws {
+    func test_getPairs_withThreeEquallyRankedCards_returnsThreePairs() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -201,10 +201,31 @@ class RankedCardArrayTests: XCTestCase {
         let expected = 3
         
         // When
-        let pairs = try rankedCards.getPairs()
+        let pairs = rankedCards.getPairs()
         let actual = pairs.count
         
         XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                            getThreeOfAKinds()                           //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that has zero
+    /// `ThreeOfAKind`s returns an empty `Kind Array`.
+    func test_getThreeOfAKinds_withZeroThreeOfAKindsCards_returnsEmptyKindArray() {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCard3 = RankedCard(with: .three)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
+        
+        // When
+        let threeOfAKinds = rankedCards.getThreeOfAKinds()
+        
+        // Then
+        XCTAssert(threeOfAKinds.isEmpty)
     }
     
     //=========================================================================//

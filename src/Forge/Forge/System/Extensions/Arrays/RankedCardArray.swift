@@ -58,7 +58,7 @@ extension Array where Element: RankedCard  {
     //=========================================================================//
 
 
-    func getPairs() throws -> [Pair] {
+    func getPairs() -> [Pair] {
         
         let count = 1
         let cardsByRank = splitByRank(over: count)
@@ -78,8 +78,9 @@ extension Array where Element: RankedCard  {
                     let card = cards[index]
                     let nextCard = cards[index + 1]
                     let cards = [card, nextCard]
-                    let pair = try Pair(of: cards)
-                    
+                    let pair = try! Pair(of: cards) // Okay to force unwrap -
+                                                    // cards will always form
+                                                    // a Pair
                     pairs.append(pair)
                     index += 1
                 }
@@ -100,34 +101,24 @@ extension Array where Element: RankedCard  {
         
         let count = 3
         let cards = splitByRank(where: count)
-        var threeOfAKinds: [ThreeOfAKind]
         
-        do {
-            
-            threeOfAKinds = try cards.map{try ThreeOfAKind(of: $1)}
-        
-        } catch {
-        
-            threeOfAKinds = []
-        }
-        
-        return threeOfAKinds
+        return cards.map{try! ThreeOfAKind(of: $1)}
     }
     
-    func getFourOfAKinds() throws -> [FourOfAKind] {
+    func getFourOfAKinds() -> [FourOfAKind] {
         
         let count = 4
         let cards = splitByRank(where: count)
         
-        return try cards.map{try FourOfAKind(of: $1)}
+        return cards.map{try! FourOfAKind(of: $1)}
     }
     
-    func getKinds() throws -> [Kind] {
+    func getKinds() -> [Kind] {
         
-        let pairs: [Kind] = try getPairs()
+        let pairs: [Kind] = getPairs()
         let threeOfAKinds = getThreeOfAKinds()
-        let fourOfAKinds = try getFourOfAKinds()
-
+        let fourOfAKinds = getFourOfAKinds()
+        
         return [pairs, threeOfAKinds, fourOfAKinds].flatMap{$0}
     }
     
