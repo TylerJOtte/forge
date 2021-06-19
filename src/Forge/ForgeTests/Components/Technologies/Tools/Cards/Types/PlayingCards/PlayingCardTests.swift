@@ -205,7 +205,7 @@ class PlayingCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that the title of a new `PlayingCard` created without a title equals the given
-    /// "`Rank` of `Suit`".
+    /// "`Rank` Of `Suit`".
     func test_title_ofNewPlayingCardWithoutTitle_equalsGivenRankOfSuit() throws {
         
         // Given

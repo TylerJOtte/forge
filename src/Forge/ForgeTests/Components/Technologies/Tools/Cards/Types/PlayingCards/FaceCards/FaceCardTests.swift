@@ -136,4 +136,26 @@ class FaceCardTests: XCTestCase {
             XCTAssertEqual(expected, error as? RangeError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Title                                    //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the title of a new `FaceCard` equals the given "`Rank` Of `Suit`".
+    func test_title_ofNewFaceCard_equalsGivenRankOfSuit() throws {
+        
+        // Given
+        let rank = Rank.king
+        let suit = Suit.hearts
+        let points = 10
+        let position = 13
+        let faceCard = try FaceCard(rank, of: suit, worth: points, at: position)
+        let expected = "King Of Hearts"
+        
+        // When
+        let actual = faceCard.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }

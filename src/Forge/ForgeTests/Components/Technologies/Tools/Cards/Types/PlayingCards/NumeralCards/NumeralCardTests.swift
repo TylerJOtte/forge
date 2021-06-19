@@ -201,7 +201,7 @@ class NumeralCardTests: XCTestCase {
     //                                Title                                    //
     //-------------------------------------------------------------------------//
     
-    /// Tests that the title of a new `NumeralCard` equals the given "`Rank` of `Suit`".
+    /// Tests that the title of a new `NumeralCard` equals the given "`Rank` Of `Suit`".
     func test_title_ofNewNumeralCard_equalsGivenRankOfSuit() throws {
         
         // Given
