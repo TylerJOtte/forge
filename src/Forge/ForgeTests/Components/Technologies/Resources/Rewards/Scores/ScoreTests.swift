@@ -34,7 +34,6 @@ class ScoreTests: XCTestCase {
         // Given
         let score = Score()
         let expected = 0
-        let title = score.title
         
         // When
         let actual = score.points

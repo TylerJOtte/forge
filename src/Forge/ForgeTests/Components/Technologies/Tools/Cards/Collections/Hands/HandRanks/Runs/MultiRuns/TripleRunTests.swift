@@ -48,14 +48,15 @@ class TripleRunTests: XCTestCase {
             XCTAssertEqual(expected, error as? ElementsError)
         }
     }
-
+    
     //-------------------------------------------------------------------------//
-    //                           Incorrect Pair Count                          //
+    //                      Incorrect ThreeOfAKind Count                       //
     //-------------------------------------------------------------------------//
 
-    /// Tests that creating a `TripleRun` with two pairs throws an
-    /// `ElementsError.insufficientElements Error`.
-    func test_init_withZeroPairs_throwsError() throws {
+    /// Tests that creating a `TripleRun` with `Card`s that do not contain any `ThreeOfAKind`s
+    /// throws an `invalidThreeOfAKindCount Error`.
+    func test_init_withCardsContainingZeroThreeOfAKinds_throwsInvalidKindCount()
+        throws {
 
         // Given
         let jack = try Jack(of: .hearts)
@@ -64,7 +65,7 @@ class TripleRunTests: XCTestCase {
         let king1 = try King(of: .hearts)
         let king2 = try King(of: .diamonds)
         let cards = [jack, queen1, queen2, king1, king2]
-        let expected = HandRankError.invalidKindCount
+        let expected = HandRankError.invalidThreeOfAKindCount
 
         // When
         XCTAssertThrowsError(try TripleRun(of: cards)) { error in
@@ -73,23 +74,22 @@ class TripleRunTests: XCTestCase {
             XCTAssertEqual(expected, error as? HandRankError)
         }
     }
-
-    /// Tests that creating a `TripleRun` with more than three pairs throws an
-    /// `ElementsError.excessiveElements Error`.
-    func test_init_withExcessivePairs_throwsError() throws {
+    
+    /// Tests that creating a `TripleRun` with `Card`s that contain more than one `ThreeOfAKind`
+    /// throws an `invalidThreeOfAKindCount Error`.
+    func test_init_withCardsContainingExcessiveThreeOfAKinds_throwsInvalidKindCount()
+        throws {
 
         // Given
-        let isHigh = true
-        let jack1 = try Jack(of: .hearts)
-        let jack2 = try Jack(of: .diamonds)
+        let jack = try Jack(of: .hearts)
         let queen1 = try Queen(of: .hearts)
-        let queen2 = try Queen(of: .diamonds)
+        let queen2 = try Queen(of: .spades)
+        let queen3 = try Queen(of: .diamonds)
         let king1 = try King(of: .hearts)
-        let king2 = try King(of: .diamonds)
-        let ace1 = try Ace(of: .hearts, and: isHigh)
-        let ace2 = try Ace(of: .spades, and: isHigh)
-        let cards = [jack1, jack2, queen1, queen2, king1, king2, ace1, ace2]
-        let expected = HandRankError.invalidKindCount
+        let king2 = try King(of: .spades)
+        let king3 = try King(of: .diamonds)
+        let cards = [jack, queen1, queen2, queen3, king1, king2, king3]
+        let expected = HandRankError.invalidThreeOfAKindCount
 
         // When
         XCTAssertThrowsError(try TripleRun(of: cards)) { error in

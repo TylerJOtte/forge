@@ -21,4 +21,5 @@ public enum HandRankError: HandError {
     
     case invalidKindCount
     case invalidRun
+    case invalidThreeOfAKindCount
 }

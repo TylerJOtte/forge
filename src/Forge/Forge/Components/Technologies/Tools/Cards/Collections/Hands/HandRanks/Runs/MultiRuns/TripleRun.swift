@@ -27,7 +27,7 @@ public class TripleRun: MultiRun {
     ///
     /// - Precondition:
     ///   - The given `Card`s must contain at least five `Card`s.
-    ///   - The given `Card`s must contain only one `ThreeOfAKind`, and no other `Kind`s.
+    ///   - The given `Card`s must contain one, and only one `ThreeOfAKind`.
     ///   - The given `Card`'s non-`Kind Card`s must form a `Run` with each `Kind Card`.
     /// - Postcondition:
     ///   - The `TripleRun` contains the given `Card`s.
@@ -46,12 +46,19 @@ public class TripleRun: MultiRun {
         let min = 5
         let threeOfAKinds = 1
         let pairs = 3
-        let runs = 3
+//        let runs = 3
         
         guard (cards.count >= min) else {
 
             print("The given Cards must contain at least \(min) Cards.")
             throw ElementsError.invalidCount
+        }
+        
+        guard (cards.getThreeOfAKinds().count == threeOfAKinds) else {
+            
+            print("The given Cards must contain \(threeOfAKinds) " +
+                  "ThreeOfAKind and only \(threeOfAKinds) ThreeOfAKind.")
+            throw HandRankError.invalidThreeOfAKindCount
         }
     
         try super.init(of: min, cards, with: pairs)

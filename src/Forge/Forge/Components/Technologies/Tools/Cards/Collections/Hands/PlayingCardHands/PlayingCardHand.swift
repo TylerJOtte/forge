@@ -36,31 +36,31 @@ public class PlayingCardHand: Hand {
 //        return []
 //    }
     
-    /// Retrieves a `Flush` in the `Hand`, if any.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: An optional `Flush`.
-    public func getFlush() -> Flush? {
-        
-        // TODO: implement stub
-        
-        return nil
-    }
+//    /// Retrieves a `Flush` in the `Hand`, if any.
+//    ///
+//    /// - Precondition: None.
+//    /// - Postcondition: None.
+//    /// - Returns: An optional `Flush`.
+//    public func getFlush() -> Flush? {
+//
+//        // TODO: implement stub
+//
+//        return nil
+//    }
     
     //-------------------------------------------------------------------------//
     //                               Calculators                               //
     //-------------------------------------------------------------------------//
     
-    /// Retrieves the `Hand`'s `Score`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The `Hand`'s `Score`.
-    public func Count() -> HandScore {
-        
-        // TODO: implement stub
-        
-        return HandScore(with: [:])
-    }
+//    /// Retrieves the `Hand`'s `Score`.
+//    ///
+//    /// - Precondition: None.
+//    /// - Postcondition: None.
+//    /// - Returns: The `Hand`'s `Score`.
+//    public func Count() -> HandScore {
+//
+//        // TODO: implement stub
+//
+//        return HandScore(with: [:])
+//    }
 }

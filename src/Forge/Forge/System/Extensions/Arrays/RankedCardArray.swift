@@ -91,12 +91,27 @@ extension Array where Element: RankedCard  {
         return pairs
     }
     
-    func getThreeOfAKinds() throws -> [ThreeOfAKind] {
+    /// Retrieves all the contained `ThreeOfAKind`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: An `Array` of all the contained `ThreeOfAKind`s.
+    func getThreeOfAKinds() -> [ThreeOfAKind] {
         
         let count = 3
         let cards = splitByRank(where: count)
+        var threeOfAKinds: [ThreeOfAKind]
         
-        return try cards.map{try ThreeOfAKind(of: $1)}
+        do {
+            
+            threeOfAKinds = try cards.map{try ThreeOfAKind(of: $1)}
+        
+        } catch {
+        
+            threeOfAKinds = []
+        }
+        
+        return threeOfAKinds
     }
     
     func getFourOfAKinds() throws -> [FourOfAKind] {
@@ -110,7 +125,7 @@ extension Array where Element: RankedCard  {
     func getKinds() throws -> [Kind] {
         
         let pairs: [Kind] = try getPairs()
-        let threeOfAKinds = try getThreeOfAKinds()
+        let threeOfAKinds = getThreeOfAKinds()
         let fourOfAKinds = try getFourOfAKinds()
 
         return [pairs, threeOfAKinds, fourOfAKinds].flatMap{$0}

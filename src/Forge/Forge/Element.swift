@@ -45,6 +45,8 @@ extension Element {
     
     /// Determines if the current instance is a `Class Type`.
     ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
     /// - Returns: True if the given instance is a `Class Type`, else false.
     private func isClass() -> Bool {
         
@@ -57,6 +59,8 @@ extension Element {
     
     /// Retrieves the name of the instance, capitalized.
     ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
     /// - Returns: A `String` containing the name of the instance, capitalized.
     private func getInstanceName() -> String {
         
@@ -65,6 +69,8 @@ extension Element {
     
     /// Retrieves the name of the model.
     ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
     /// - Returns: A `String` containing the name of the model.
     private func getMetatypeName() -> String {
         
@@ -73,6 +79,8 @@ extension Element {
     
     /// Retrieves a version of the given name without extra syntax (e.g., generic parameters), if any.
     ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
     /// - Parameter name: The name to get shortname for.
     /// - Returns: A `String.SubSequence` of the given name without extra syntax, if any.
     private func getShortname(from name: String) -> String.SubSequence? {
