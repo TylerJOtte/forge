@@ -32,7 +32,7 @@ class CollectionDictionaryExtensionTests: XCTestCase {
     // totalCount //
     //            //
     
-    /// Tests that an empty `Dictionary` has a total count of zero.
+    /// Tests that the total count of an empty `Dictionary` equals zero.
     func test_totalCount_withEmptyDictionary_equalsZero() throws {
         
         // Given
@@ -46,35 +46,41 @@ class CollectionDictionaryExtensionTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that a `Dictionary` with one `Key` and an empty `Collection`  has a total count of
-    /// zero.
-    func test_totalCount_withOneKeyAndEmptyCollection_equalsZero() throws {
+    /// Tests that the total count of a `Dictionary` with all entries containing empty `Collection`s
+    /// equals zero.
+    func test_totalCount_withEmptyCollections_equalsZero() throws {
         
         // Given
+        let key1 = Rank.ace
+        let key2 = Rank.two
+        let value1: [RankedCard] = []
+        let value2: [RankedCard] = []
         let expected = 0
-        let key = Rank.ace
-        let value: [RankedCard] = []
 
         // When
-        let dictionary = [key: value]
+        let dictionary = [key1: value1, key2: value2]
         let actual = dictionary.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that a `Dictionary` with one `Key` and a `Collection` with one value  has a total
-    /// count of one.
-    func test_totalCount_withOneKeyAndCollectionWithOneValue_equalsOne() throws {
+    /// Tests that the total count of a `Dictionary` with entries containing empty and filled
+    /// `Collection`s equals the sum of all the `Collection`s' counts.
+    func test_totalCount_withEmptyAndFilledCollections_equalsCollectionCountsSum()
+        throws {
         
         // Given
-        let expected = 1
-        let key = Rank.ace
-        let rankedCard = RankedCard()
-        let value: [RankedCard] = [rankedCard]
+        let key1 = Rank.ace
+        let key2 = Rank.two
+        let key3 = Rank.three
+        let value1 = [RankedCard()]
+        let value2: [RankedCard] = []
+        let value3 = [RankedCard(), RankedCard(), RankedCard()]
+        let expected = 4
         
         // When
-        let dictionary = [key: value]
+        let dictionary = [key1: value1, key2: value2, key3: value3]
         let actual = dictionary.totalCount
         
         // Then
