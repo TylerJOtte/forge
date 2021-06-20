@@ -111,6 +111,25 @@ class PlayingCards {
         return cards
     }
     
+    /// Retrieves all the standard `PlayingCard`s with the given `Suit`.
+    ///
+    /// - Precondition:The given `Suit` must be a standard `PlayingCard Suit`.
+    /// - Postcondition: None.
+    /// - Parameter suit: The symbol grouping to get `Card`s for.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
+    /// - Returns: An array of `NumeralCard`s.
+    static func getStandardCards(with suit: Suit) throws -> [PlayingCard] {
+        
+        let numeralCards = try getNumeralCards(with: suit)
+        let faceCards = try getFaceCards(with: suit)
+        var standardCards: [PlayingCard] = []
+        
+        standardCards.append(contentsOf: numeralCards)
+        standardCards.append(contentsOf: faceCards)
+        
+        return standardCards
+    }
+    
     /// Retrieves all the `Joker`s.
     ///
     /// - Precondition: None.
