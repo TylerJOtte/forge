@@ -33,7 +33,7 @@ class CollectionDictionaryExtensionTests: XCTestCase {
     //            //
     
     /// Tests that the total count of an empty `Dictionary` equals zero.
-    func test_totalCount_withEmptyDictionary_equalsZero() throws {
+    func test_totalCount_withEmptyDictionary_equalsZero() {
         
         // Given
         let expected = 0
@@ -48,7 +48,7 @@ class CollectionDictionaryExtensionTests: XCTestCase {
     
     /// Tests that the total count of a `Dictionary` with all entries containing empty `Collection`s
     /// equals zero.
-    func test_totalCount_withEmptyCollections_equalsZero() throws {
+    func test_totalCount_withEmptyCollections_equalsZero() {
         
         // Given
         let key1 = Rank.ace
@@ -67,8 +67,7 @@ class CollectionDictionaryExtensionTests: XCTestCase {
     
     /// Tests that the total count of a `Dictionary` with entries containing empty and filled
     /// `Collection`s equals the sum of all the `Collection`s' counts.
-    func test_totalCount_withEmptyAndFilledCollections_equalsCollectionCountsSum()
-        throws {
+    func test_totalCount_withEmptyAndFilledCollections_equalsValueCountsSum() {
         
         // Given
         let key1 = Rank.ace
