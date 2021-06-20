@@ -57,6 +57,10 @@ extension Array where Element: RankedCard  {
     //                                 GETTERS                                 //
     //=========================================================================//
 
+    //-------------------------------------------------------------------------//
+    //                                  Kinds                                  //
+    //-------------------------------------------------------------------------//
+    
     /// Retrieves all the contained `Pair`s.
     ///
     /// - Precondition: None.
@@ -191,16 +195,6 @@ extension Array where Element: RankedCard  {
         return [pairs, threeOfAKinds, fourOfAKinds].flatMap{$0}
     }
     
-    /// Retrieves the sum total of points from all the `Card`s in the collection.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The sum total of points from all the `Card`s in the collection.
-    func getRunCardCount(with kinds: [Kind]) -> Int {
-        
-        return splitBySingleRanks().count + kinds.count
-    }
-    
     /// Retrieves all the sequences.
     ///
     /// - Precondition: None.
@@ -261,9 +255,9 @@ extension Array where Element: RankedCard  {
         return try getRuns().sumPoints()
     }
     
-    func getPairPoints() throws -> Int {
+    func getPairPoints() -> Int {
         
-        return try getPairs().sumPoints()
+        return getPairs().sumPoints()
     }
     
 
