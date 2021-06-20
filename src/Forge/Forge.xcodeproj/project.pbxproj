@@ -885,6 +885,7 @@
 		B5BB5FC126683BC800A88709 /* Arrays */ = {
 			isa = PBXGroup;
 			children = (
+				B5005F392674214F007E6165 /* IntArray.swift */,
 				B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */,
 				B521E235266D670300DB4602 /* HandRankArray.swift */,
 				B5ECEB042668571500E478F7 /* RankedCardArray.swift */,
@@ -892,7 +893,6 @@
 				B5817DA1261A27600022B805 /* CardsArrayExtension.swift */,
 				B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */,
 				B521E239266D7DD700DB4602 /* PairArray.swift */,
-				B5005F392674214F007E6165 /* IntArray.swift */,
 			);
 			path = Arrays;
 			sourceTree = "<group>";
@@ -919,11 +919,11 @@
 		B5BB5FCA26683C7200A88709 /* Arrays */ = {
 			isa = PBXGroup;
 			children = (
-				B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */,
-				B5BB5FCB26683C7F00A88709 /* ScoreableArrayTests.swift */,
-				B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */,
-				B5005F3F26742DD9007E6165 /* IntArrayTests.swift */,
 				B5005F5F2674F3F6007E6165 /* CardsArray.swift */,
+				B5005F3F26742DD9007E6165 /* IntArrayTests.swift */,
+				B5ECEAFE26684F8E00E478F7 /* PlayingCardArrayTests.swift */,
+				B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */,
+				B5BB5FCB26683C7F00A88709 /* ScoreableArrayTests.swift */,
 			);
 			path = Arrays;
 			sourceTree = "<group>";
