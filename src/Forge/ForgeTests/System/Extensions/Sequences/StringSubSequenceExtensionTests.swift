@@ -14,6 +14,7 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
+import Foundation
 import XCTest
 @testable import Forge
 
@@ -21,11 +22,11 @@ import XCTest
 class StringSubSequenceExtensionTests: XCTestCase {
  
     //=========================================================================//
-    //                                 SPLITTERS                               //
+    //                                SPLITTERS                                //
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                             splitOnCapitals()                           //
+    //                            splitOnCapitals()                            //
     //-------------------------------------------------------------------------//
 
     /// Tests that splitting on the capitals with a titlecased `String.SubSequence` returns a `String`
@@ -74,7 +75,7 @@ class StringSubSequenceExtensionTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting on the capitals with a lowercased `String.SubSequence` and toaken returns
+    /// Tests that splitting on the capitals with a lowercased `String.SubSequence` and a token returns
     /// a `String` without the given token inserted .
     func test_splitOnCapitals_withLowercasedValueAndToken_hasNoToken() {
         
@@ -85,6 +86,33 @@ class StringSubSequenceExtensionTests: XCTestCase {
         
         // When
         let actual = subSequence.splitOnCapitals(using: token)
+         
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //=========================================================================//
+    //                                   ADDERS                                //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                    add()                                //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that adding a space before each captial letter in a`String.SubSequence` returns a
+    /// `String` with a space before each capital letter.
+    func test_add_withTokenAndIsUppercasedPredicate_hasSpacesPreCapitals()
+        throws {
+        
+        // Given
+        let subSequence: String.SubSequence = "FourOfAKind"
+        let token = " "
+        let predicate: (String.Iterator.Element) throws -> Bool =
+                       {$0.isUppercased}
+        let expected = "Four Of A Kind"
+        
+        // When
+        let actual = try subSequence.add(token, before: predicate)
         
         // Then
         XCTAssertEqual(expected, actual)
