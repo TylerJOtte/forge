@@ -45,5 +45,20 @@ class CollectionDictionaryExtensionTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that a `Dictionary` with one `Key` and an empty `Collection`  has a total count of
+    /// zero.
+    func test_totalCount_withOneKeyAndEmptyCollection_equalsZero() throws {
+        
+        // Given
+        let expected = 0
+        
+        // When
+        let dictionary: [Rank:[RankedCard]] = [.ace:[]]
+        let actual = dictionary.totalCount
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
     
