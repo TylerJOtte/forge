@@ -186,15 +186,6 @@ extension Array where Element: RankedCard  {
         return fourOfAKinds
     }
     
-    func getKinds() -> [Kind] {
-        
-        let pairs: [Kind] = getPairs()
-        let threeOfAKinds = getThreeOfAKinds()
-        let fourOfAKinds = getFourOfAKinds()
-        
-        return [pairs, threeOfAKinds, fourOfAKinds].flatMap{$0}
-    }
-    
     /// Retrieves all the sequences.
     ///
     /// - Precondition: None.
@@ -248,26 +239,6 @@ extension Array where Element: RankedCard  {
         let sequences = try getSequences(over: count)
        
         return try sequences.map{try Run(of: $0)}
-    }
-    
-    func getRunPoints() throws -> Int {
-        
-        return try getRuns().sumPoints()
-    }
-    
-    func getPairPoints() -> Int {
-        
-        return getPairs().sumPoints()
-    }
-    
-
-    
-    func splitBySingleRanks() -> [RankedCard] {
-
-        let count = 1
-        let cards = splitByRank(where: count)
-        
-        return cards.flatMap{$0.value}
     }
     
     //=========================================================================//

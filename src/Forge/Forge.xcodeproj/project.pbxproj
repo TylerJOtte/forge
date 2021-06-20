@@ -750,11 +750,11 @@
 			isa = PBXGroup;
 			children = (
 				B5F29B69263E0EA400082A1A /* Element.swift */,
-				B556688826252C970045AC2B /* System */,
-				B556686E2625296F0045AC2B /* Environments */,
 				B556683F2623E9B70045AC2B /* Components */,
+				B556686E2625296F0045AC2B /* Environments */,
 				B5817D422618B1150022B805 /* Features */,
 				B556687926252AC10045AC2B /* Mechanics */,
+				B556688826252C970045AC2B /* System */,
 				B59A44A825FE934200857EB5 /* Forge.h */,
 				B59A44A925FE934200857EB5 /* Info.plist */,
 			);
@@ -764,9 +764,9 @@
 		B59A44B225FE934200857EB5 /* ForgeTests */ = {
 			isa = PBXGroup;
 			children = (
+				B556688B26252DAE0045AC2B /* Components */,
 				B5BC068E267E2EB50083DFB3 /* Features */,
 				B5BB5FC826683C6900A88709 /* System */,
-				B556688B26252DAE0045AC2B /* Components */,
 				B59A44B525FE934200857EB5 /* Info.plist */,
 			);
 			path = ForgeTests;

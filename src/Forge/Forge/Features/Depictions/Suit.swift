@@ -18,7 +18,7 @@ import Foundation
 import SwiftUI
 
 /// A symbol grouping.
-public enum Suit: String, Depiction {
+public enum Suit: Depiction {
     
     case clubs
     case diamonds

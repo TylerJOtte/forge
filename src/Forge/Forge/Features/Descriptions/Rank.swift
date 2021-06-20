@@ -46,15 +46,15 @@ public enum Rank: Int, Description {
     //                                  TESTERS                                //
     //=========================================================================//
 
-    /// Determines if the `Rank` is a numeric `Rank` between the given range.
+    /// Determines if the `Rank` is a raw value between the given range.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Parameters:
-    ///   - min: The minimum numeric `Rank` possible.
-    ///   - max: The maximum numeric `Rank` possible.
+    ///   - min: The minimum raw value to include.
+    ///   - max: The maximum raw value to include.
     /// - Returns: True if the`Rank` is a numeric `Rank` between the given range, else false.
-    func isNumeric(from min: Int, to max: Int) -> Bool {
+    internal func hasRawValue(from min: Int, to max: Int) -> Bool {
 
         return self.rawValue >= min && self.rawValue <= max
     }

@@ -41,5 +41,37 @@ class RankTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //=========================================================================//
+    //                                TESTERS                                  //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                             hasRawValue()                               //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Rank` has a raw value within a range.
+    func test_hasRawValue_inRange_true() {
+        
+        // Given
+        let rank = Rank.two
+        let min = 2
+        let max = 10
+        
+        // When/Then
+        XCTAssert(rank.hasRawValue(from: min, to: max))
+    }
+    
+    /// Tests that a `Rank` does not have a raw value within a range.
+    func test_hasRawValue_inRange_false() {
+        
+        // Given
+        let rank = Rank.ace
+        let min = 2
+        let max = 10
+        
+        // When/Then
+        XCTAssertFalse(rank.hasRawValue(from: min, to: max))
+    }
 }
     

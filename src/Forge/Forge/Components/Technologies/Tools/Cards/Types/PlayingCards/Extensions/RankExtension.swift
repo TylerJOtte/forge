@@ -33,7 +33,7 @@ extension Rank {
         let min = 2
         let max = 10
         
-        return self == .ace || self.isNumeric(from: min, to: max)
+        return self == .ace || self.hasRawValue(from: min, to: max)
     }
 
     /// Determines if the `Rank` is a standard royal `PlayingCard Rank`.
