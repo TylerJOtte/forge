@@ -92,7 +92,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the`Pair`s in a `RankedCard Array` that cotains unique `Rank`s returns
     /// an empty `Array`.
-    func test_getPairs_withUniqueRanks_returnsEmptyArray() {
+    func test_getPairs_withUniqueRanks_returnsEmpty() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -111,7 +111,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the the `Pair`s in a `RankedCard Array` that contains only two equally
     /// `RankedCard`s returns a `Pair Array` with a count of one.
-    func test_getPairs_withTwoEquallyRankedCards_returnsOnePair() {
+    func test_getPairs_withTwoEquallyRankedCards_returnsOne() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -128,7 +128,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the `Pair`s in a `RankedCard Array` that contains multiple `Rank`s and
     /// only one duplicate `Rank` returns a `Pair Array` with a count of one.
-    func test_getPairs_withMultipleRanksAndOneDuplicate_returnsOnePair() {
+    func test_getPairs_withMultipleRanksAndOneDuplicate_returnsOne() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -148,7 +148,7 @@ class RankedCardArrayTests: XCTestCase {
     /// Tests that retrieving the `Pair`s in a `RankedCard Array` that contains only four
     /// `RankedCard`s with two `Rank`s of the same count  returns a `Pair Array` with a count of
     /// two.
-    func test_getPairs_withFourRankedCardsAndTwoRanks_returnsTwoPairs() {
+    func test_getPairs_withFourRankedCardsAndTwoRanks_returnsTwo() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -165,9 +165,10 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains multiple `Rank`s
-    /// and only two  duplicate `Rank`s returns a `Pair Array` with a count of two.
-    func test_getPairs_withMultipleRanksAndTwoDuplicates_returnsTwoPairs() {
+    /// Tests that retrieving the `Pair`s in a `RankedCard Array` that contains multiple `Rank`s and
+    /// two different sets of duplicate `Rank`s with a count of two each returns a `Pair Array` with a
+    /// count of two.
+    func test_getPairs_withMultipleRanksAndDiffferentDuplicates_returnsTwo() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -190,7 +191,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the total `Pair`s in a `RankedCard Array` that contains three  same
     /// `RankedCard`s returns a `Pair Array` with a count of three.
-    func test_getPairs_withThreeEquallyRankedCards_returnsThreePairs() {
+    func test_getPairs_withThreeEquallyRankedCards_returnsThree() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -212,7 +213,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the`ThreeOfAKind`s in a `RankedCard Array` that cotains unique
     /// `Rank`s returns an empty `Array`.
-    func test_getThreeOfAKinds_withUniqueRanks_returnsEmptyArray() {
+    func test_getThreeOfAKinds_withUniqueRanks_returnsEmpty() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -229,7 +230,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that contains only three
     /// equally `RankedCard`s returns a `ThreeOfAKind Array` with a count of one.
-    func test_getThreeOfAKinds_withThreeEquallyRankedCards_returnsOneThreeOfAKind() {
+    func test_getThreeOfAKinds_withThreeEquallyRankedCards_returnsOne() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -248,7 +249,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that contains multiple
     /// `Rank`s and only two duplicate `Rank`s returns a `ThreeOfAKind Array` with a count of one.
-    func test_getThreeOfAKinds_withMultipleRanksAndTwoDuplicates_returnsOneThreeOfAKind() {
+    func test_getThreeOfAKinds_withMultipleRanksAndTwoDuplicates_returnsOne() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -270,7 +271,7 @@ class RankedCardArrayTests: XCTestCase {
     /// Tests that retrieving the `ThreeOfAKinds`s in a `RankedCard Array` that contains only six
     /// `RankedCard`s with two `Rank`s of the same count  returns a `ThreeOfKind Array` with a
     ///  count of two.
-    func test_getThreeOfAKinds_withSixRankedCardsOfTwoRanksWithSameCount_returnsTwoThreeOfAKinds() {
+    func test_getThreeOfAKinds_withSixRankedCardsOfTwoRanksWithSameCount_returnsTwo() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -290,13 +291,40 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that contains multiple
+    /// `Rank`s and two different sets of duplicate `Rank`s with a count of three each returns a
+    /// `ThreeOfAKind Array` with a count of two.
+    func test_getThreeOfAKind_withMultipleRanksAndDifferentDuplicates_returnsTwo() {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .two)
+        let rankedCard3 = RankedCard(with: .two)
+        let rankedCard4 = RankedCard(with: .two)
+        let rankedCard5 = RankedCard(with: .three)
+        let rankedCard6 = RankedCard(with: .four)
+        let rankedCard7 = RankedCard(with: .four)
+        let rankedCard8 = RankedCard(with: .four)
+        let rankedCard9 = RankedCard(with: .five)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
+                           rankedCard5, rankedCard6, rankedCard7, rankedCard8,
+                           rankedCard9]
+        let expected = 2
+        
+        // When
+        let threeOfKinds = rankedCards.getThreeOfAKinds()
+        let actual = threeOfKinds.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                             getFourOfAKinds()                           //
     //-------------------------------------------------------------------------//
     
     /// Tests that retrieving the`FourOfAKind`s in a `RankedCard Array` that cotains unique
     /// `Rank`s returns an empty `Array`.
-    func test_getFourOfAKinds_withUniqueRanks_returnsEmptyArray() {
+    func test_getFourOfAKinds_withUniqueRanks_returnsEmpty() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -314,7 +342,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Array` that contains only four
     /// equally `RankedCard`s returns a `FourOfAKind Array` with a count of one.
-    func test_getFourOfAKinds_withFourEquallyRankedCards_returnsOneFourOfAKind() {
+    func test_getFourOfAKinds_withFourEquallyRankedCards_returnsOne() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -334,7 +362,7 @@ class RankedCardArrayTests: XCTestCase {
     
     /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Array` that contains multiple
     /// `Rank`s and only three duplicate `Rank`s returns a `FourOfAKind Array` with a count of one.
-    func test_getFourOfAKinds_withMultipleRanksAndThreeDuplicates_returnsOneFourOfAKind() {
+    func test_getFourOfAKinds_withMultipleRanksAndThreeDuplicates_returnsOne() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
@@ -357,7 +385,7 @@ class RankedCardArrayTests: XCTestCase {
     /// Tests that retrieving the `FourOfAKinds`s in a `RankedCard Array` that contains only eight
     /// `RankedCard`s with two `Rank`s of the same count  returns a `FourOfKind Array` with a
     ///  count of two.
-    func test_getFourOfAKinds_withEightRankedCardsOfTwoRanksWithSameCount_returnsTwoFourOfAKinds() {
+    func test_getFourOfAKinds_withEightRankedCardsOfTwoRanksWithSameCount_returnsTwo() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
