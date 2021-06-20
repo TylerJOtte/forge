@@ -162,8 +162,8 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 13
         
         // When
-        let faceCards = try PlayingCards.getStandardCards(with: suit)
-        let actual = faceCards.count
+        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let actual = standardCards.count
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -186,6 +186,24 @@ class PlayingCardsHelperTests: XCTestCase {
             // Then
             XCTAssertEqual(expected, error as? DepictionError)
         }
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                               getJokers()                               //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that retrieving all `Joker`s returns two `Joker`s.
+    func test_getJokers_returnsTwoJokers() throws {
+
+        // Given
+        let expected = 2
+        
+        // When
+        let jokers = try PlayingCards.getJokers()
+        let actual = jokers.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //-------------------------------------------------------------------------//
