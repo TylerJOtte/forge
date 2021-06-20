@@ -41,4 +41,23 @@ class HandRankArrayDictionaryExtensionTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that summing the points of a `Dictionary` with all entries containing empty `HandRank`
+    /// `Array`s equals zero.
+    func test_sumPoint_withEmptyHandRankArrays_equalsZero() throws {
+        
+        // Given
+        let key1 = "Pair"
+        let key2 = "Run"
+        let value1: [HandRank] = []
+        let value2: [HandRank] = []
+        let expected = 0
+
+        // When
+        let dictionary = [key1: value1, key2: value2]
+        let actual = dictionary.sumPoints()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
