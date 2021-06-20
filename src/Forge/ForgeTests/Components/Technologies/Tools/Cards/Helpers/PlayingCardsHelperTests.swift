@@ -427,7 +427,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with four `Suit`s returns 52
     /// `PlayingCard`s.
-    func test_getStandarCards_withFourSuits_returns52PlayingCards() throws {
+    func test_getStandardCards_withFourSuits_returns52PlayingCards() throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -500,8 +500,8 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving all `PlayingCard`s with `Suit`s that contain an invalid `Suit` throws an
-    /// `invalidSuit Error`.
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with `Suit`s that contain an
+    /// invalid `Suit` throws an `invalidSuit Error`.
     func test_getAllCards_withInvalidSuits_throwsInvalidSuitError() throws {
 
         // Given
@@ -517,5 +517,94 @@ class PlayingCardsHelperTests: XCTestCase {
             // Then
             XCTAssertEqual(expected, error as? DepictionError)
         }
+    }
+    
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with the default `Suit`s returns 54
+    /// `PlayingCard`s.
+    func test_getAllCards_withDefaultSuits_returns54PlayingCards() throws {
+
+        // Given
+        let expected = 54
+        
+        // When
+        let cards = try PlayingCards.getAllCards()
+        let actual = cards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with one `Suit` returns 15
+    /// `PlayingCard`s.
+    func test_getAllCards_withOneSuit_returns15PlayingCards() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let suits = [suit]
+        let expected = 15
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suits)
+        let actual = cards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with two `Suit`s returns 28
+    /// `PlayingCard`s.
+    func test_getAllCards_withTwoSuits_returns28PlayingCards() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suits = [suit1, suit2]
+        let expected = 28
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suits)
+        let actual = cards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with three `Suit`s returns 41
+    /// `PlayingCard`s.
+    func test_getAllCards_withThreeSuits_returns41PlayingCards() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suits = [suit1, suit2, suit3]
+        let expected = 41
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suits)
+        let actual = cards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with four `Suit`s returns 54
+    /// `PlayingCard`s.
+    func test_getAllCards_withFourSuits_returns54PlayingCards() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.clubs
+        let suits = [suit1, suit2, suit3, suit4]
+        let expected = 54
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suits)
+        let actual = cards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
 }
