@@ -79,6 +79,90 @@ class PlayingCardsHelperTests: XCTestCase {
         }
     }
     
+    /// Tests that retrieving all`NumeralCard`s with the default `Suit`s returns 40 `NumeralCard`s.
+    func test_getNumeralCards_withDefaultSuits_returns40NumeralCards() throws {
+
+        // Given
+        let expected = 40
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards()
+        let actual = numeralCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with one `Suit` returns ten `NumeralCard`s.
+    func test_getNumeralCards_withOneSuit_returnsTenNumeralCards() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let suits = [suit]
+        let expected = 10
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+        let actual = numeralCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with two `Suit`s returns 20 `NumeralCard`s.
+    func test_getNumeralCards_withTwoSuits_returns20NumeralCards() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suits = [suit1, suit2]
+        let expected = 20
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+        let actual = numeralCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with three `Suit`s returns 30 `NumeralCard`s.
+    func test_getNumeralCards_withThreeSuits_returns30NumeralCards() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suits = [suit1, suit2, suit3]
+        let expected = 30
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+        let actual = numeralCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with four `Suit`s returns 40 `NumeralCard`s.
+    func test_getNumeralCards_withFourSuits_returns40NumeralCards() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.clubs
+        let suits = [suit1, suit2, suit3, suit4]
+        let expected = 40
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+        let actual = numeralCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                              getFaceCards()                             //
     //-------------------------------------------------------------------------//
