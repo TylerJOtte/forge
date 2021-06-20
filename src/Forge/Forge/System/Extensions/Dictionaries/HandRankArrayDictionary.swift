@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  HandRankDictionary.swift                                                   //
+//  HandRankArrayDictionary.swift                                              //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 6/14/21.                                       //
@@ -14,7 +14,8 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `Dictionary`operations where the value of an entry is a `HandRank`.
+/// An extension for common `Dictionary`operations where the value of an entry is a
+/// `HandRank Array`.
 extension Dictionary where Value == [HandRank] {
     
     /// Sums all the `Element`s' points.
