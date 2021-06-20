@@ -62,7 +62,7 @@ class PlayingCards {
     /// - Postcondition: None.
     /// - Parameter suit: The symbol groupings to get `Card`s for.
     /// - Throws: `invalidSuit`  if the given `Suit`s are not all standard `PlayingCard Suit`s.
-    /// - Returns: An array of `FaceCard`s.
+    /// - Returns: An array of `NumeralCard`s.
     static func getNumeralCards(with suits: [Suit] = suits) throws ->
         [NumeralCard] {
         
@@ -117,7 +117,7 @@ class PlayingCards {
     /// - Postcondition: None.
     /// - Parameter suit: The symbol grouping to get `Card`s for.
     /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
-    /// - Returns: An array of `NumeralCard`s.
+    /// - Returns: An array of `PlayingCard`s.
     static func getStandardCards(with suit: Suit) throws -> [PlayingCard] {
         
         let numeralCards = try getNumeralCards(with: suit)
@@ -138,6 +138,27 @@ class PlayingCards {
     static func getJokers() throws -> [Joker] {
         
         return [try Joker(color: .red), try Joker(color: .black)]
+    }
+    
+    /// Retrieves all the `PlayingCard`s with the given `Suit`, including `Joker`s.
+    ///
+    /// - Precondition:The given `Suit` must be a standard `PlayingCard Suit`.
+    /// - Postcondition: None.
+    /// - Parameter suit: The symbol grouping to get `Card`s for.
+    /// - Throws: `invalidSuit`  if the given `Suit` is not a standard `PlayingCard Suit`.
+    /// - Returns: An array of `PlayingCard`s.
+    static func getAllCards(with suit: Suit) throws -> [PlayingCard] {
+        
+        let numeralCards = try getNumeralCards(with: suit)
+        let faceCards = try getFaceCards(with: suit)
+        let jokers = try getJokers()
+        var cards: [PlayingCard] = []
+        
+        cards.append(contentsOf: numeralCards)
+        cards.append(contentsOf: faceCards)
+        cards.append(contentsOf: jokers)
+        
+        return cards
     }
     
     /// Retrieves all the standard `PlayingCard`s with the given `Suit`, along with `Joker`s if

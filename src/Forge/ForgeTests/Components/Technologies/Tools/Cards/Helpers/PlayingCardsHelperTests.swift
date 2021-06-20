@@ -85,4 +85,25 @@ class PlayingCardsHelperTests: XCTestCase {
             XCTAssertEqual(expected, error as? DepictionError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                              getAllCards()                              //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that retrieving all`PlayingCard`s, `Joker`s included, with an invalid `Suit` throws an
+    /// `invalidSuit Error`.
+    func test_getAllCards_withInvalidSuit_throwsInvalidSuitError() throws {
+
+        // Given
+        let suit = Suit.stars
+        let expected = DepictionError.invalidSuit
+        
+        // When
+        XCTAssertThrowsError(try PlayingCards.getAllCards(with: suit)) {
+            error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
 }
