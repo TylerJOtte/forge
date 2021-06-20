@@ -56,6 +56,28 @@ class PlayingCards {
         ]
     }
     
+    /// Retrieves all the `NumeralCard`s for each of the given `Suit`s.
+    ///
+    /// - Precondition:The given `Suit`s must be standard `PlayingCard Suit`s.
+    /// - Postcondition: None.
+    /// - Parameter suit: The symbol groupings to get `Card`s for.
+    /// - Throws: `invalidSuit`  if the given `Suit`s are not all standard `PlayingCard Suit`s.
+    /// - Returns: An array of `FaceCard`s.
+    static func getNumeralCards(with suits: [Suit] = suits) throws ->
+        [NumeralCard] {
+        
+        var cards: [NumeralCard] = []
+        
+        for suit in suits {
+            
+            let suitCards = try getNumeralCards(with: suit);
+            
+            cards.append(contentsOf: suitCards)
+        }
+        
+        return cards
+    }
+    
     /// Retrieves all the `FaceCard`s with the given `Suit`.
     ///
     /// - Precondition:The given `Suit` must be a standard `PlayingCard Suit`.
