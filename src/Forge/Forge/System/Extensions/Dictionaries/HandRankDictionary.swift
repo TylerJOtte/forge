@@ -17,11 +17,11 @@
 /// An extension for common `Dictionary`operations where the value of an entry is a `HandRank`.
 extension Dictionary where Value == [HandRank] {
     
-    /// Sums all the values' points.
+    /// Sums all the `Element`s' points.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: The sum of all the values' points.
+    /// - Returns: The sum of all the `Element`s' points.
     func sumPoints() -> Int {
         
         return Array(values).sumPoints()
