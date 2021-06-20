@@ -82,6 +82,10 @@ class PlayingCards {
         return cards
     }
     
+    //-------------------------------------------------------------------------//
+    //                                   FaceCards                             //
+    //-------------------------------------------------------------------------//
+    
     /// Retrieves all the `FaceCard`s with the given `Suit`.
     ///
     /// - Precondition:The given `Suit` must be a standard `PlayingCard Suit`.
