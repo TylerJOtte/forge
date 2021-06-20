@@ -217,6 +217,90 @@ class PlayingCardsHelperTests: XCTestCase {
         }
     }
     
+    /// Tests that retrieving all`FaceCard`s with the default `Suit`s returns 12 `FaceCard`s.
+    func test_getFaceCards_withDefaultSuits_returns12FaceCards() throws {
+
+        // Given
+        let expected = 12
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards()
+        let actual = faceCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`FaceCard`s with one `Suit` returns three `FaceCard`s.
+    func test_getFaceCards_withOneSuit_returnsThreeFaceCards() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let suits = [suit]
+        let expected = 3
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suits)
+        let actual = faceCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`FaceCard`s with two `Suit`s returns six `FaceCard`s.
+    func test_getFaceCards_withTwoSuits_returnsSixFaceCards() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suits = [suit1, suit2]
+        let expected = 6
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suits)
+        let actual = faceCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`FaceCard`s with three `Suit`s returns nine `FaceCard`s.
+    func test_getFaceCards_withThreeSuits_returnsNineFaceCards() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suits = [suit1, suit2, suit3]
+        let expected = 9
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suits)
+        let actual = faceCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`FaceCard`s with four `Suit`s returns 12 `FaceCard`s.
+    func test_getFaceCards_withFourSuits_returns12FaceCards() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.clubs
+        let suits = [suit1, suit2, suit3, suit4]
+        let expected = 12
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suits)
+        let actual = faceCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                           getStandardCards()                             //
     //-------------------------------------------------------------------------//
