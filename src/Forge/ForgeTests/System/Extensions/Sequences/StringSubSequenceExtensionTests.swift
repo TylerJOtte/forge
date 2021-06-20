@@ -99,9 +99,9 @@ class StringSubSequenceExtensionTests: XCTestCase {
     //                                    add()                                //
     //-------------------------------------------------------------------------//
 
-    /// Tests that adding a space before each captial letter in a`String.SubSequence` returns a
-    /// `String` with a space before each capital letter.
-    func test_add_withTokenAndIsUppercasedPredicate_hasSpacesPreCapitals()
+    /// Tests that adding a space before each captial letter in a titlecased `String.SubSequence`
+    /// returns a `String` with a space before each capital letter.
+    func test_add_spacesToTitlecasedValueBeforeCapitals_hasSpacesPreCapitals()
         throws {
         
         // Given
@@ -110,6 +110,25 @@ class StringSubSequenceExtensionTests: XCTestCase {
         let predicate: (String.Iterator.Element) throws -> Bool =
                        {$0.isUppercased}
         let expected = "Four Of A Kind"
+        
+        // When
+        let actual = try subSequence.add(token, before: predicate)
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that adding a space before each captial letter in a`String.SubSequence` that has no
+    /// capital letters returns a `String` without spaces.
+    func test_add_spacesToLowercasedValueBeforeCapitals_hasSpacesPreCapitals()
+        throws {
+        
+        // Given
+        let subSequence: String.SubSequence = "doublerun"
+        let token = " "
+        let predicate: (String.Iterator.Element) throws -> Bool =
+                       {$0.isUppercased}
+        let expected = "doublerun"
         
         // When
         let actual = try subSequence.add(token, before: predicate)
