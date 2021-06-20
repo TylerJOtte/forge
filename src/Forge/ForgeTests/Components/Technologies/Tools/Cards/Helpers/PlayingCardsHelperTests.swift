@@ -226,4 +226,20 @@ class PlayingCardsHelperTests: XCTestCase {
             XCTAssertEqual(expected, error as? DepictionError)
         }
     }
+    
+    /// Tests that retrieving all `PlayingCard`s with a `Suit`, `Joker`s included,  returns 15
+    /// `PlayingCard`s.
+    func test_getAllCards_withSuit_returns15PlayingCards() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let expected = 15
+        
+        // When
+        let standardCards = try PlayingCards.getAllCards(with: suit)
+        let actual = standardCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
