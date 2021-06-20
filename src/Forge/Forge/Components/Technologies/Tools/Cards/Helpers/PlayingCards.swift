@@ -68,6 +68,27 @@ class PlayingCards {
         return [try Jack(of: suit), try Queen(of: suit), try King(of: suit)]
     }
     
+    /// Retrieves all the `FaceCard`s for each of the given `Suit`s.
+    ///
+    /// - Precondition:The given `Suit`s must be standard `PlayingCard Suit`s.
+    /// - Postcondition: None.
+    /// - Parameter suit: The symbol groupings to get `Card`s for.
+    /// - Throws: `invalidSuit`  if the given `Suit`s are not all standard `PlayingCard Suit`s.
+    /// - Returns: An array of `FaceCard`s.
+    static func getFaceCards(with suits: [Suit] = suits) throws -> [FaceCard] {
+        
+        var cards: [FaceCard] = []
+        
+        for suit in suits {
+            
+            let suitCards = try getFaceCards(with: suit);
+            
+            cards.append(contentsOf: suitCards)
+        }
+        
+        return cards
+    }
+    
     /// Retrieves all the `Joker`s.
     ///
     /// - Precondition: None.

@@ -66,6 +66,21 @@ class PlayingCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that splitting all `FaceCard`s by `Suit` has a count of four.
+    func test_splitBySuit_AllFaceCards_hasCountOfFour() throws {
+        
+        // Given
+        let cards = try PlayingCards.getFaceCards()
+        let expected = 4
+        
+        // When
+        let cardsBySuit = cards.splitBySuit()
+        let actual = cardsBySuit.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //        //
     // Jokers //
     //        //
@@ -105,7 +120,7 @@ class PlayingCardArrayTests: XCTestCase {
     }
     
     /// Tests that splitting all standard `PlayingCard`s by `Suit` has a count of four.
-    func test_splitBySuit_StandardPlayingCards_hasCountOfFour() throws {
+    func test_splitBySuit_AllStandardPlayingCards_hasCountOfFour() throws {
         
         // Given
         let cards = try PlayingCards.getCards()
@@ -141,7 +156,7 @@ class PlayingCardArrayTests: XCTestCase {
     }
     
     /// Tests that splitting all `PlayingCard`s by `Suit` has a count of five.
-    func test_splitBySuit_PlayingCards_hasCountOfFive() throws {
+    func test_splitBySuit_AllPlayingCards_hasCountOfFive() throws {
         
         // Given
         let jokers = true
