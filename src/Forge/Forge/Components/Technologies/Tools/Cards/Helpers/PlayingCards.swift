@@ -30,9 +30,13 @@ class PlayingCards {
     static let suits: [Suit] = [.clubs, .diamonds, .hearts, .spades]
     
     //=========================================================================//
-    //                                 METHODS                                 //
+    //                                  GETTERS                                //
     //=========================================================================//
 
+    //-------------------------------------------------------------------------//
+    //                                NumeralCards                             //
+    //-------------------------------------------------------------------------//
+    
     /// Retrieves all the `NumeralCard`s with the given `Suit`.
     ///
     /// - Precondition:The given `Suit` must be a standard `PlayingCard Suit`.

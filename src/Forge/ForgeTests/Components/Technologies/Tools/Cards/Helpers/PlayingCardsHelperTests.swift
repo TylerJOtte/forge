@@ -45,6 +45,25 @@ class PlayingCardsHelperTests: XCTestCase {
         }
     }
     
+    /// Tests that retrieving all`NumeralCard`s with `Suit`s that contain an invalid `Suit` throws an
+    /// `invalidSuit Error`.
+    func test_getNumeralCards_withInvalidSuits_throwsInvalidSuitError() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.stars
+        let suits = [suit1, suit2]
+        let expected = DepictionError.invalidSuit
+        
+        // When
+        XCTAssertThrowsError(try PlayingCards.getNumeralCards(with: suits)) {
+            error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
     //-------------------------------------------------------------------------//
     //                              getFaceCards()                             //
     //-------------------------------------------------------------------------//
