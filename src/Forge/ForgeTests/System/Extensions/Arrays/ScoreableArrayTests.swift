@@ -72,7 +72,7 @@ class ScoreableArrayTests: XCTestCase {
     func test_sumPoints_ofStandardPlayingCardsWithSuit_equals85() throws {
         
         // Given
-        let cards = try PlayingCards.getCards(with: .hearts)
+        let cards = try PlayingCards.getStandardCards(with: .hearts)
         let expected = 85
         
         // When
@@ -86,7 +86,7 @@ class ScoreableArrayTests: XCTestCase {
     func test_sumPoints_ofStandardPlayingCards_equals340() throws {
         
         // Given
-        let cards = try PlayingCards.getCards()
+        let cards = try PlayingCards.getStandardCards()
         let expected = 340
         
         // When
@@ -104,8 +104,7 @@ class ScoreableArrayTests: XCTestCase {
     func test_sumPoints_ofPlayingCardsWithSuitAndJokers_equals85() throws {
         
         // Given
-        let jokers = true
-        let cards = try PlayingCards.getCards(with: .hearts, include: jokers)
+        let cards = try PlayingCards.getAllCards(with: .hearts)
         let expected = 85
         
         // When
@@ -119,8 +118,7 @@ class ScoreableArrayTests: XCTestCase {
     func test_sumPoints_ofPlayingCards_equals340() throws {
         
         // Given
-        let jokers = true
-        let cards = try PlayingCards.getCards(include: jokers)
+        let cards = try PlayingCards.getAllCards()
         let expected = 340
         
         // When

@@ -43,7 +43,7 @@ public class MultiRun: HandRank {
         
         let minCards = 4
         let max = Int.max
-        let pairs = try cards.getPairs()
+        let pairs = cards.getPairs()
         let runs = try cards.getRuns()
         let runCount = pairs.getUniqueCards().count
         let count = pairCount

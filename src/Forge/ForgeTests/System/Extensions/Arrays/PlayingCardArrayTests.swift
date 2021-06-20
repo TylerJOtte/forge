@@ -123,7 +123,7 @@ class PlayingCardArrayTests: XCTestCase {
     func test_splitBySuit_StandardPlayingCardsWithOneSuit_hasCountOfOne() throws {
         
         // Given
-        let cards = try PlayingCards.getCards(with: .hearts)
+        let cards = try PlayingCards.getStandardCards(with: .hearts)
         let expected = 1
         
         // When
@@ -138,7 +138,7 @@ class PlayingCardArrayTests: XCTestCase {
     func test_splitBySuit_AllStandardPlayingCards_hasCountOfFour() throws {
         
         // Given
-        let cards = try PlayingCards.getCards()
+        let cards = try PlayingCards.getStandardCards()
         let expected = 4
         
         // When
@@ -158,8 +158,7 @@ class PlayingCardArrayTests: XCTestCase {
     func test_splitBySuit_PlayingCardsWithOneSuitAndJokers_hasCountOfTwo() throws {
         
         // Given
-        let jokers = true
-        let cards = try PlayingCards.getCards(with: .hearts, include: jokers)
+        let cards = try PlayingCards.getAllCards(with: .hearts)
         let expected = 2
         
         // When
@@ -174,8 +173,7 @@ class PlayingCardArrayTests: XCTestCase {
     func test_splitBySuit_AllPlayingCards_hasCountOfFive() throws {
         
         // Given
-        let jokers = true
-        let cards = try PlayingCards.getCards(include: jokers)
+        let cards = try PlayingCards.getAllCards()
         let expected = 5
         
         // When
