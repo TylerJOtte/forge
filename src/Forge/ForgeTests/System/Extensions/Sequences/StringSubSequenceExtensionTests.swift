@@ -58,4 +58,19 @@ class StringSubSequenceExtensionTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that splitting on the capitals with a lowercased `String.SubSequence` returns a `String`
+    /// without any spaces.
+    func test_splitOnCapitals_withLowercasedValue_returnsNonSpacedString() {
+        
+        // Given
+        let subSequence: String.SubSequence = "doublerun"
+        let expected = "doublerun"
+        
+        // When
+        let actual = subSequence.splitOnCapitals()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
