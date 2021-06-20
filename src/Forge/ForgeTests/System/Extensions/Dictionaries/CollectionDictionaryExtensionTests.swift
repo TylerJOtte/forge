@@ -39,7 +39,7 @@ class CollectionDictionaryExtensionTests: XCTestCase {
         let expected = 0
         
         // When
-        let dictionary: [Rank:[RankedCard]] = [:]
+        let dictionary: [Rank: [RankedCard]] = [:]
         let actual = dictionary.totalCount
         
         // Then
@@ -52,9 +52,29 @@ class CollectionDictionaryExtensionTests: XCTestCase {
         
         // Given
         let expected = 0
+        let key = Rank.ace
+        let value: [RankedCard] = []
+
+        // When
+        let dictionary = [key: value]
+        let actual = dictionary.totalCount
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that a `Dictionary` with one `Key` and a `Collection` with one value  has a total
+    /// count of one.
+    func test_totalCount_withOneKeyAndCollectionWithOneValue_equalsOne() throws {
+        
+        // Given
+        let expected = 1
+        let key = Rank.ace
+        let rankedCard = RankedCard()
+        let value: [RankedCard] = [rankedCard]
         
         // When
-        let dictionary: [Rank:[RankedCard]] = [.ace:[]]
+        let dictionary = [key: value]
         let actual = dictionary.totalCount
         
         // Then
