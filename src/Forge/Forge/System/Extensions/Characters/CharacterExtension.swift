@@ -20,7 +20,7 @@ import Foundation
 extension Character {
     
     /// True if instance is upercased, else false.
-    var isUpperCased: Bool {
+    var isUppercased: Bool {
         
         return String(self) == String(self).uppercased()
     }

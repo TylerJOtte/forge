@@ -27,7 +27,7 @@ extension String.SubSequence {
     /// - Returns: A `String` with the given token added before each capital letter.
     func splitOnCapitals(using token: String = " ") -> String {
 
-        return add(token, before: {$0.isUpperCased})
+        return add(token, before: {$0.isUppercased})
     }
 
     /// Adds the given token before each letter where the specified predicate is true.
