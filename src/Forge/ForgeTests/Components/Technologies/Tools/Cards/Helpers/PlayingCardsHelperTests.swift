@@ -46,7 +46,7 @@ class PlayingCardsHelperTests: XCTestCase {
     }
     
     /// Tests that retrieving all`NumeralCard`s with a `Suit` returns ten `NumeralCard`s.
-    func test_getNumeralCards_withSuit_throwsInvalidSuitError() throws {
+    func test_getNumeralCards_withSuit_returnsTenNumeralCards() throws {
 
         // Given
         let suit = Suit.hearts
@@ -97,6 +97,21 @@ class PlayingCardsHelperTests: XCTestCase {
             // Then
             XCTAssertEqual(expected, error as? DepictionError)
         }
+    }
+    
+    /// Tests that retrieving all`FaceCard`s with a `Suit` returns three `FaceCard`s.
+    func test_getFaceCards_withSuit_returnsThreeFaceCards() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let expected = 3
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        let actual = faceCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     /// Tests that retrieving all`FaceCard`s with `Suit`s that contain an invalid `Suit` throws an
