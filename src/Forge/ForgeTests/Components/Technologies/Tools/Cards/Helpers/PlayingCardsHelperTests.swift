@@ -45,6 +45,21 @@ class PlayingCardsHelperTests: XCTestCase {
         }
     }
     
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns ten `NumeralCard`s.
+    func test_getNumeralCards_withSuit_throwsInvalidSuitError() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let expected = 10
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that retrieving all`NumeralCard`s with `Suit`s that contain an invalid `Suit` throws an
     /// `invalidSuit Error`.
     func test_getNumeralCards_withInvalidSuits_throwsInvalidSuitError() throws {
