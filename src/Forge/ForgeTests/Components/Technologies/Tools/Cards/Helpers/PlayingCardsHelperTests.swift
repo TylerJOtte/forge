@@ -154,6 +154,21 @@ class PlayingCardsHelperTests: XCTestCase {
         }
     }
     
+    /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns 13 `PlayingCard`s.
+    func test_getStandardCards_withSuit_returns13PlayingCards() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let expected = 13
+        
+        // When
+        let faceCards = try PlayingCards.getStandardCards(with: suit)
+        let actual = faceCards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that retrieving all standard`PlayingCard`s with `Suit`s that contain an invalid `Suit`
     /// throws an `invalidSuit Error`.
     func test_getStandardCards_withInvalidSuits_throwsInvalidSuitError() throws {
