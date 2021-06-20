@@ -44,4 +44,24 @@ class PlayingCardsHelperTests: XCTestCase {
             XCTAssertEqual(expected, error as? DepictionError)
         }
     }
+    
+    //-------------------------------------------------------------------------//
+    //                              getFaceCards()                             //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that retrieving all`FaceCard`s with an invalid `Suit` throws an `invalidSuit Error`.
+    func test_getFaceCards_withInvalidSuit_throwsInvalidSuitError() throws {
+
+        // Given
+        let suit = Suit.stars
+        let expected = DepictionError.invalidSuit
+        
+        // When
+        XCTAssertThrowsError(try PlayingCards.getFaceCards(with: suit)) {
+            error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
 }
