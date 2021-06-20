@@ -21,7 +21,7 @@ import XCTest
 class PlayingCardArrayTests: XCTestCase {
     
     //=========================================================================//
-    //                                 TESTERS                                 //
+    //                                SPLITTERS                                //
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
@@ -31,7 +31,7 @@ class PlayingCardArrayTests: XCTestCase {
     //              //
     // NumeralCards //
     //              //
-
+    
     /// Tests that splitting all`NumeralCard`s with one `Suit` by `Suit` has a count of one.
     func test_splitBySuit_NumeralCardsWithOneSuit_hasCountOfOne() throws {
         
@@ -185,6 +185,10 @@ class PlayingCardArrayTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
     
     //-------------------------------------------------------------------------//
     //                            areEquallySuited()                           //
