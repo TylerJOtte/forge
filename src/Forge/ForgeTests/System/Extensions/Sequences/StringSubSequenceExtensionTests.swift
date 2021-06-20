@@ -21,11 +21,11 @@ import XCTest
 class StringSubSequenceExtensionTests: XCTestCase {
  
     //=========================================================================//
-    //                             Initialization                              //
+    //                                 SPLITTERS                               //
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                               sumPoints()                               //
+    //                             splitOnCapitals()                           //
     //-------------------------------------------------------------------------//
 
     /// Tests that splitting on the capitals with a titlecased `String.SubSequence` returns a `String`
@@ -38,6 +38,22 @@ class StringSubSequenceExtensionTests: XCTestCase {
         
         // When
         let actual = subSequence.splitOnCapitals()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that splitting on the capitals with a titlecased `String.SubSequence` and a token returns a
+    /// `String` with the given token before each capital letter.
+    func test_splitOnCapitals_withTitlecaseAndToken_returnsTokenBeforeCapitals() {
+        
+        // Given
+        let subSequence: String.SubSequence = "FourOfAKind"
+        let token = "-"
+        let expected = "Four-Of-A-Kind"
+        
+        // When
+        let actual = subSequence.splitOnCapitals(using: token)
         
         // Then
         XCTAssertEqual(expected, actual)
