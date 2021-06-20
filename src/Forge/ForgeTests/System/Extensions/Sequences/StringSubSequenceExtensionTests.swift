@@ -30,7 +30,7 @@ class StringSubSequenceExtensionTests: XCTestCase {
 
     /// Tests that splitting on the capitals with a titlecased `String.SubSequence` returns a `String`
     /// with a space before each capital letter by default.
-    func test_splitOnCapitals_withTitlecasedValue_returnsSpacesBeforeCapitals() {
+    func test_splitOnCapitals_withTitlecasedValue_hasSpacesPreCapitals() {
         
         // Given
         let subSequence: String.SubSequence = "FourOfAKind"
@@ -45,7 +45,7 @@ class StringSubSequenceExtensionTests: XCTestCase {
     
     /// Tests that splitting on the capitals with a titlecased `String.SubSequence` and a token returns a
     /// `String` with the given token before each capital letter.
-    func test_splitOnCapitals_withTitlecaseAndToken_returnsTokenBeforeCapitals() {
+    func test_splitOnCapitals_withTitlecasedValueAndToken_hasTokenPreCapitals() {
         
         // Given
         let subSequence: String.SubSequence = "FourOfAKind"
@@ -61,7 +61,7 @@ class StringSubSequenceExtensionTests: XCTestCase {
     
     /// Tests that splitting on the capitals with a lowercased `String.SubSequence` returns a `String`
     /// without any spaces.
-    func test_splitOnCapitals_withLowercasedValue_returnsNonSpacedString() {
+    func test_splitOnCapitals_withLowercasedValue_hasNoSpaces() {
         
         // Given
         let subSequence: String.SubSequence = "doublerun"
@@ -69,6 +69,22 @@ class StringSubSequenceExtensionTests: XCTestCase {
         
         // When
         let actual = subSequence.splitOnCapitals()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that splitting on the capitals with a lowercased `String.SubSequence` and toaken returns
+    /// a `String` without the given token inserted .
+    func test_splitOnCapitals_withLowercasedValueAndToken_hasNoToken() {
+        
+        // Given
+        let subSequence: String.SubSequence = "doublerun"
+        let token = "-"
+        let expected = "doublerun"
+        
+        // When
+        let actual = subSequence.splitOnCapitals(using: token)
         
         // Then
         XCTAssertEqual(expected, actual)
