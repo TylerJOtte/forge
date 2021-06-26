@@ -422,6 +422,63 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all`FaceCard`s with a `Suit` returns `FaceCard`s that only contain one
+    /// `Jack`.
+    func test_getFaceCards_withSuit_returnsCardsWithOnlyOneJack() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let jack = try Jack(of: suit)
+        let expected = 1
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        let cardsByRank = faceCards.splitByRank()
+        let jacks = cardsByRank[jack.rank]
+        let actual = jacks?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`FaceCard`s with a `Suit` returns `FaceCard`s that only contain one
+    /// `Queen`.
+    func test_getFaceCards_withSuit_returnsCardsWithOnlyOneQueen() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let queen = try Queen(of: suit)
+        let expected = 1
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        let cardsByRank = faceCards.splitByRank()
+        let queens = cardsByRank[queen.rank]
+        let actual = queens?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`FaceCard`s with a `Suit` returns `FaceCard`s that only contain one
+    /// `King`.
+    func test_getFaceCards_withSuit_returnsCardsWithOnlyOneKing() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let king = try King(of: suit)
+        let expected = 1
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        let cardsByRank = faceCards.splitByRank()
+        let kings = cardsByRank[king.rank]
+        let actual = kings?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that retrieving all`FaceCard`s with a `Suit` returns `FaceCard`s that are equally
     /// `Suit`ed.
     func test_getFaceCards_withSuit_returnsEquallySuitedFaceCards() throws {
