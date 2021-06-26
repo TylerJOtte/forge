@@ -28,6 +28,10 @@ class PlayingCardsHelperTests: XCTestCase {
     //                             getNumeralCards()                           //
     //-------------------------------------------------------------------------//
     
+    //               //
+    // With One Suit //
+    //               //
+    
     /// Tests that retrieving all`NumeralCard`s with an invalid `Suit` throws an `invalidSuit`
     /// `Error`.
     func test_getNumeralCards_withInvalidSuit_throwsInvalidSuitError() throws {
@@ -59,6 +63,24 @@ class PlayingCardsHelperTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that are
+    /// equally `Suit`ed.
+    func test_getNumeralCards_withSuit_returnsEquallySuitedNumeralCards() throws {
+
+        // Given
+        let suit = Suit.hearts
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        
+        // Then
+        XCTAssert(numeralCards.areEquallySuited())
+    }
+    
+    //                     //
+    // With Multiple Suits //
+    //                     //
     
     /// Tests that retrieving all`NumeralCard`s with `Suit`s that contain an invalid `Suit` throws an
     /// `invalidSuit Error`.
@@ -167,6 +189,10 @@ class PlayingCardsHelperTests: XCTestCase {
     //                              getFaceCards()                             //
     //-------------------------------------------------------------------------//
     
+    //               //
+    // With One Suit //
+    //               //
+    
     /// Tests that retrieving all`FaceCard`s with an invalid `Suit` throws an `invalidSuit Error`.
     func test_getFaceCards_withInvalidSuit_throwsInvalidSuitError() throws {
 
@@ -197,6 +223,24 @@ class PlayingCardsHelperTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that retrieving all`FaceCard`s with a `Suit` returns `FaceCard`s that are equally
+    /// `Suit`ed.
+    func test_getFaceCards_withSuit_returnsEquallySuitedFaceCards() throws {
+
+        // Given
+        let suit = Suit.hearts
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        
+        // Then
+        XCTAssert(faceCards.areEquallySuited())
+    }
+    
+    //                     //
+    // With Multiple Suits //
+    //                     //
     
     /// Tests that retrieving all`FaceCard`s with `Suit`s that contain an invalid `Suit` throws an
     /// `invalidSuit Error`.
@@ -305,6 +349,10 @@ class PlayingCardsHelperTests: XCTestCase {
     //                           getStandardCards()                             //
     //-------------------------------------------------------------------------//
     
+    //               //
+    // With One Suit //
+    //               //
+    
     /// Tests that retrieving all standard `PlayingCard`s with an invalid `Suit` throws an
     /// `invalidSuit Error`.
     func test_getStandardCards_withInvalidSuit_throwsInvalidSuitError() throws {
@@ -336,6 +384,24 @@ class PlayingCardsHelperTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
+    /// are equally `Suit`ed.
+    func test_getStandardCards_withSuit_returnsEquallySuitedPlayingCards() throws {
+
+        // Given
+        let suit = Suit.hearts
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        
+        // Then
+        XCTAssert(standardCards.areEquallySuited())
+    }
+    
+    //                     //
+    // With Multiple Suits //
+    //                     //
     
     /// Tests that retrieving all standard`PlayingCard`s with `Suit`s that contain an invalid `Suit`
     /// throws an `invalidSuit Error`.
@@ -467,6 +533,10 @@ class PlayingCardsHelperTests: XCTestCase {
     //                              getAllCards()                              //
     //-------------------------------------------------------------------------//
     
+    //               //
+    // With One Suit //
+    //               //
+    
     /// Tests that retrieving all`PlayingCard`s, `Joker`s included, with an invalid `Suit` throws an
     /// `invalidSuit Error`.
     func test_getAllCards_withInvalidSuit_throwsInvalidSuitError() throws {
@@ -499,6 +569,26 @@ class PlayingCardsHelperTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    /// Tests that retrieving all`PlayingCard`s with a `Suit` returns `PlayingCard`s that contain
+    /// only two `Suit`s.
+    func test_getAllCards_withSuit_returnsPlayingCardsWithOnlyTwoSuits() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let expected = 2
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suit)
+        let actual = cards.splitBySuit().count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //                     //
+    // With Multiple Suits //
+    //                     //
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with `Suit`s that contain an
     /// invalid `Suit` throws an `invalidSuit Error`.
