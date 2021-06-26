@@ -29,6 +29,8 @@ class PlayingCards {
                        
     static let suits: [Suit] = [.clubs, .diamonds, .hearts, .spades]
     
+    static let allSuits: [Suit] = [.clubs, .diamonds, .hearts, .spades, .null]
+    
     //=========================================================================//
     //                                  GETTERS                                //
     //=========================================================================//

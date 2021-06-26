@@ -66,7 +66,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that are
     /// equally `Suit`ed.
-    func test_getNumeralCards_withSuit_returnsEquallySuitedNumeralCards() throws {
+    func test_getNumeralCards_withSuit_returnsEquallySuitedNumeralCards()
+        throws {
 
         // Given
         let suit = Suit.hearts
@@ -132,7 +133,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all`NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
     /// contain only four  `Suit`s.
-    func test_getNumeralCards_withDefaultSuits_returnsCardsWithOnlyFourSuits() throws {
+    func test_getNumeralCards_withDefaultSuits_returnsCardsWithOnlyFourSuits()
+        throws {
 
         // Given
         let expected = 4
@@ -143,6 +145,21 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contains the standard  `Suit`s.
+    func test_getNumeralCards_withDefaultSuit_returnsCardsWithOnlyStandardSuits()
+        throws {
+
+        // Given
+        let expected = PlayingCards.suits
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards()
+
+        // Then
+        XCTAssert(numeralCards.contain(only: expected))
     }
     
     /// Tests that retrieving all`NumeralCard`s with one `Suit` returns ten `NumeralCard`s.
@@ -163,7 +180,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all`NumeralCard`s with one `Suit`s returns `NumeralCard`s that
     /// contain only one `Suit`.
-    func test_getNumeralCards_witOneSuit_returnsCardsWithOnlyOneSuit() throws {
+    func test_getNumeralCards_withOneSuit_returnsCardsWithOnlyOneSuit() throws {
 
         // Given
         let suit = Suit.hearts
@@ -176,6 +193,23 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with one `Suit`s returns `NumeralCard`s that
+    /// only contain the given  `Suit`.
+    func test_getNumeralCards_withOneSuit_returnsCardsWithOnlyGivenSuit()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let suits = [suit]
+        let expected = suits
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+
+        // Then
+        XCTAssert(numeralCards.contain(only: expected))
     }
     
     /// Tests that retrieving all`NumeralCard`s with two `Suit`s returns 20 `NumeralCard`s.
@@ -197,7 +231,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all`NumeralCard`s with two `Suit`s returns `NumeralCard`s that
     /// contain only two  `Suit`s.
-    func test_getNumeralCards_withTwoSuits_returnsCardsWithOnlyTwoSuits() throws {
+    func test_getNumeralCards_withTwoSuits_returnsCardsWithOnlyTwoSuits()
+        throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -211,6 +246,24 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with two `Suit`s returns `NumeralCard`s that only
+    /// contain the given  `Suit`s.
+    func test_getNumeralCards_withTwoSuits_returnsCardsWithOnlyGivenSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suits = [suit1, suit2]
+        let expected = suits
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+
+        // Then
+        XCTAssert(numeralCards.contain(only: expected))
     }
     
     /// Tests that retrieving all`NumeralCard`s with three `Suit`s returns 30 `NumeralCard`s.
@@ -233,7 +286,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all`NumeralCard`s with three `Suit`s returns `NumeralCard`s that
     /// contain only three  `Suit`s.
-    func test_getNumeralCards_withThreeSuits_returnsCardsWithOnlyThreeSuits() throws {
+    func test_getNumeralCards_withThreeSuits_returnsCardsWithOnlyThreeSuits()
+        throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -248,6 +302,25 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with three `Suit`s returns `NumeralCard`s that only
+    /// contain the given  `Suit`s.
+    func test_getNumeralCards_withThreeSuits_returnsCardsWithOnlyGivenSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suits = [suit1, suit2, suit3]
+        let expected = suits
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+
+        // Then
+        XCTAssert(numeralCards.contain(only: expected))
     }
     
     /// Tests that retrieving all`NumeralCard`s with four `Suit`s returns 40 `NumeralCard`s.
@@ -271,7 +344,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all`NumeralCard`s with four `Suit`s returns `NumeralCard`s that
     /// contain only four  `Suit`s.
-    func test_getNumeralCards_withFourSuits_returnsCardsWithOnlyFourSuits() throws {
+    func test_getNumeralCards_withFourSuits_returnsCardsWithOnlyFourSuits()
+        throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -287,6 +361,26 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with four `Suit`s returns `NumeralCard`s that only
+    /// contain the given  `Suit`s.
+    func test_getNumeralCards_withFourSuits_returnsCardsWithOnlyGivenSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.clubs
+        let suits = [suit1, suit2, suit3, suit4]
+        let expected = suits
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+
+        // Then
+        XCTAssert(numeralCards.contain(only: expected))
     }
     
     //-------------------------------------------------------------------------//
@@ -410,6 +504,21 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all `FaceCard`s with the default `Suit`s returns `FaceCard`s that only
+    /// contains the standard  `Suit`s.
+    func test_getFaceCards_withDefaultSuit_returnsCardsWithOnlyStandardSuits()
+        throws {
+
+        // Given
+        let expected = PlayingCards.suits
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards()
+
+        // Then
+        XCTAssert(faceCards.contain(only: expected))
+    }
+    
     /// Tests that retrieving all`FaceCard`s with one `Suit` returns three `FaceCard`s.
     func test_getFaceCards_withOneSuit_returnsThreeFaceCards() throws {
 
@@ -441,6 +550,23 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `FaceCard`s with one `Suit` returns `FaceCard`s that only contain
+    /// the given  `Suit`.
+    func test_getFaceCards_withOneSuit_returnsCardsWithOnlyGivenSuit()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let suits = [suit]
+        let expected = suits
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suits)
+
+        // Then
+        XCTAssert(faceCards.contain(only: expected))
     }
     
     /// Tests that retrieving all`FaceCard`s with two `Suit`s returns six `FaceCard`s.
@@ -478,6 +604,24 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all `FaceCard`s with two `Suit`s returns `FaceCard`s that only contain
+    /// the given  `Suit`.
+    func test_getFaceCards_withTwoSuits_returnsCardsWithOnlyGivenSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suits = [suit1, suit2]
+        let expected = suits
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suits)
+
+        // Then
+        XCTAssert(faceCards.contain(only: expected))
+    }
+    
     /// Tests that retrieving all`FaceCard`s with three `Suit`s returns nine `FaceCard`s.
     func test_getFaceCards_withThreeSuits_returnsNineFaceCards() throws {
 
@@ -498,7 +642,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `FaceCard`s with three `Suit`s returns `FaceCard`s that contain only
     /// three `Suit`s.
-    func test_getFaceCards_withThreeSuits_returnsCardsWithOnlyThreeSuits() throws {
+    func test_getFaceCards_withThreeSuits_returnsCardsWithOnlyThreeSuits()
+        throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -513,6 +658,25 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `FaceCard`s with three `Suit`s returns `FaceCard`s that only contain
+    /// the given  `Suit`s.
+    func test_getFaceCards_withThreeSuits_returnsCardsWithOnlyGivenSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suits = [suit1, suit2, suit3]
+        let expected = suits
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suits)
+
+        // Then
+        XCTAssert(faceCards.contain(only: expected))
     }
     
     /// Tests that retrieving all`FaceCard`s with four `Suit`s returns 12 `FaceCard`s.
@@ -553,6 +717,26 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `FaceCard`s with four `Suit`s returns `FaceCard`s that only contain
+    /// the given  `Suit`s.
+    func test_getFaceCards_withFourSuits_returnsCardsWithOnlyGivenSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.clubs
+        let suits = [suit1, suit2, suit3, suit4]
+        let expected = suits
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suits)
+
+        // Then
+        XCTAssert(faceCards.contain(only: expected))
     }
     
     //-------------------------------------------------------------------------//
@@ -597,7 +781,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// are equally `Suit`ed.
-    func test_getStandardCards_withSuit_returnsEquallySuitedPlayingCards() throws {
+    func test_getStandardCards_withSuit_returnsEquallySuitedPlayingCards()
+        throws {
 
         // Given
         let suit = Suit.hearts
@@ -678,6 +863,21 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all Standard `PlayingCard`s with the default `Suit`s returns
+    /// `PlayingCard`s that only contains the standard  `Suit`s.
+    func test_getStandardCards_withDefaultSuit_returnsCardsWithOnlyStandardSuits()
+        throws {
+
+        // Given
+        let expected = PlayingCards.suits
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards()
+
+        // Then
+        XCTAssert(standardCards.contain(only: expected))
+    }
+    
     /// Tests that retrieving all standard `PlayingCard`s with one `Suit` returns 13
     /// `PlayingCard`s.
     func test_getStandardCards_withOneSuit_returns13PlayingCards() throws {
@@ -712,6 +912,23 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all standard `PlayingCard`s with one `Suit` returns `PlayingCard`s
+    /// that only contain the given  `Suit`.
+    func test_getStandardCards_withOneSuit_returnsCardsWithOnlyGivenSuit()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let suits = [suit]
+        let expected = suits
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards(with: suits)
+
+        // Then
+        XCTAssert(standardCards.contain(only: expected))
+    }
+    
     /// Tests that retrieving all standard `PlayingCard`s with two `Suit`s returns 26
     /// `PlayingCard`s.
     func test_getStandardCards_withTwoSuits_returns26PlayingCards() throws {
@@ -732,7 +949,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with two `Suit`s returns `PlayingCard`s
     /// that contain only two `Suit`s.
-    func test_getStandardCards_witTwoSuits_returnsCardsWithOnlyTwoSuits() throws {
+    func test_getStandardCards_witTwoSuits_returnsCardsWithOnlyTwoSuits()
+        throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -746,6 +964,24 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all standard `PlayingCard`s with two `Suit`s returns `PlayingCard`s
+    /// that only contain the given  `Suit`s.
+    func test_getStandardCards_withTwoSuits_returnsCardsWithOnlyGivenSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suits = [suit1, suit2]
+        let expected = suits
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards(with: suits)
+
+        // Then
+        XCTAssert(standardCards.contain(only: expected))
     }
     
     /// Tests that retrieving all standard `PlayingCard`s with three `Suit`s returns 39
@@ -769,7 +1005,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with three `Suit`s returns `PlayingCard`s
     /// that contain only three `Suit`s.
-    func test_getStandardCards_withThreeSuits_returnsCardsWithOnlyThreeSuits() throws {
+    func test_getStandardCards_withThreeSuits_returnsCardsWithOnlyThreeSuits()
+        throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -784,6 +1021,25 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all standard `PlayingCard`s with three `Suit`s returns `PlayingCard`s
+    /// that only contain the given  `Suit`s.
+    func test_getStandardCards_withThreeSuits_returnsCardsWithOnlyGivenSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suits = [suit1, suit2, suit3]
+        let expected = suits
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards(with: suits)
+
+        // Then
+        XCTAssert(standardCards.contain(only: expected))
     }
     
     /// Tests that retrieving all standard `PlayingCard`s with four `Suit`s returns 52
@@ -825,6 +1081,26 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all standard `PlayingCard`s with four `Suit`s returns `PlayingCard`s
+    /// that only contain the given  `Suit`s.
+    func test_getStandardCards_withFourSuits_returnsCardsWithOnlyGivenSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.clubs
+        let suits = [suit1, suit2, suit3, suit4]
+        let expected = suits
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards(with: suits)
+
+        // Then
+        XCTAssert(standardCards.contain(only: expected))
     }
 
     //-------------------------------------------------------------------------//
@@ -932,7 +1208,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s with a `Suit` returns `PlayingCard`s that only
     /// contains the given and `null Suit`s.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyGivenAndNullSuit() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyGivenAndNullSuit()
+        throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -1000,6 +1277,21 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all `PlayingCard`s with the default `Suit`s returns `PlayingCard`s that
+    /// only contain the standard and `null Suit`s.
+    func test_getAllCards_withDefaultSuit_returnsCardsWithOnlyStandardAndNullSuits()
+        throws {
+
+        // Given
+        let expected = PlayingCards.allSuits
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards()
+
+        // Then
+        XCTAssert(standardCards.contain(only: expected))
+    }
+    
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with one `Suit` returns 15
     /// `PlayingCard`s.
     func test_getAllCards_withOneSuit_returns15PlayingCards() throws {
@@ -1034,6 +1326,24 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with one `Suit`s returns
+    /// `PlayingCard`s that only contain the given and `null Suit`s.
+    func test_getAllCards_withOneSuit_returnsCardsWithOnlyGivenAndNullSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.null
+        let suits = [suit1]
+        let expected = [suit1, suit2]
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suits)
+
+        // Then
+        XCTAssert(cards.contain(only: expected))
+    }
+    
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with two `Suit`s returns 28
     /// `PlayingCard`s.
     func test_getAllCards_withTwoSuits_returns28PlayingCards() throws {
@@ -1054,7 +1364,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s with two `Suit`s returns `PlayingCard`s that
     /// contain only three `Suit`s.
-    func test_getAllCards_witTwoSuits_returnsCardsWithOnlyThreeSuits() throws {
+    func test_getAllCards_withTwoSuits_returnsCardsWithOnlyThreeSuits() throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -1068,6 +1378,25 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with two `Suit`s returns
+    /// `PlayingCard`s that only contain the given  and `null Suit`s.
+    func test_getAllCards_withTwoSuits_returnsCardsWithOnlyGivenAndNullSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.null
+        let suits = [suit1, suit2]
+        let expected = [suit1, suit2, suit3]
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suits)
+
+        // Then
+        XCTAssert(cards.contain(only: expected))
     }
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with three `Suit`s returns 41
@@ -1091,7 +1420,8 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s with three `Suit`s returns `PlayingCard`s that
     /// contain only four `Suit`s.
-    func test_getAllCards_withThreeSuits_returnsCardsWithOnlyFourSuits() throws {
+    func test_getAllCards_withThreeSuits_returnsCardsWithOnlyFourSuits()
+        throws {
 
         // Given
         let suit1 = Suit.hearts
@@ -1106,6 +1436,26 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with three `Suit`s returns
+    /// `PlayingCard`s that only contain the given  and `null Suit`s.
+    func test_getAllCards_withThreeSuits_returnsCardsWithOnlyGivenAndNullSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.null
+        let suits = [suit1, suit2, suit3]
+        let expected = [suit1, suit2, suit3, suit4]
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suits)
+
+        // Then
+        XCTAssert(cards.contain(only: expected))
     }
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with four `Suit`s returns 54
@@ -1146,5 +1496,26 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with four `Suit`s returns
+    /// `PlayingCard`s that only contain the given  and `null Suit`s.
+    func test_getAllCards_withFourSuits_returnsCardsWithOnlyGivenAndNullSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.clubs
+        let suit5 = Suit.null
+        let suits = [suit1, suit2, suit3, suit4]
+        let expected = [suit1, suit2, suit3, suit4, suit5]
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suits)
+
+        // Then
+        XCTAssert(cards.contain(only: expected))
     }
 }
