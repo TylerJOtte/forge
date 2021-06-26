@@ -78,6 +78,21 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssert(numeralCards.areEquallySuited())
     }
     
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain the given  `Suit`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyGivenSuit() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let expected = suit
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+
+        // Then
+        XCTAssert(numeralCards.contain(only: expected))
+    }
+    
     //                     //
     // With Multiple Suits //
     //                     //
@@ -327,6 +342,21 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssert(faceCards.areEquallySuited())
     }
     
+    /// Tests that retrieving all`FaceCard`s with a `Suit` returns `FaceCard`s that only contain the
+    /// given  `Suit`.
+    func test_getFaceCards_withSuit_returnsCardsWithOnlyGivenSuit() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let expected = suit
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suit)
+
+        // Then
+        XCTAssert(faceCards.contain(only: expected))
+    }
+    
     //                     //
     // With Multiple Suits //
     //                     //
@@ -504,6 +534,27 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all `FaceCard`s with four `Suit`s returns `FaceCard`s that contain only
+    /// four `Suit`s.
+    func test_getFaceCards_withFourSuits_returnsCardsWithOnlyFourSuits()
+        throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.clubs
+        let suits = [suit1, suit2, suit3, suit4]
+        let expected = 4
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards(with: suits)
+        let actual = faceCards.splitBySuit().count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                           getStandardCards()                             //
     //-------------------------------------------------------------------------//
@@ -556,6 +607,21 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssert(standardCards.areEquallySuited())
+    }
+    
+    /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
+    /// only contains the given  `Suit`.
+    func test_getStandardCards_withSuit_returnsCardsWithOnlyGivenSuit() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let expected = suit
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards(with: suit)
+
+        // Then
+        XCTAssert(standardCards.contain(only: expected))
     }
     
     //                     //
@@ -740,9 +806,9 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving all `FaceCard`s with four `Suit`s returns `FaceCard`s that contain only
-    /// four `Suit`s.
-    func test_getFaceCards_withFourSuits_returnsCardsWithOnlyFourSuits()
+    /// Tests that retrieving all standard `PlayingCard`s with four `Suit`s returns `PlayingCard`s
+    /// that contain only four `Suit`s.
+    func test_getStandardCards_withFourSuits_returnsCardsWithOnlyFourSuits()
         throws {
 
         // Given
@@ -754,8 +820,8 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 4
         
         // When
-        let faceCards = try PlayingCards.getFaceCards(with: suits)
-        let actual = faceCards.splitBySuit().count
+        let standardCards = try PlayingCards.getStandardCards(with: suits)
+        let actual = standardCards.splitBySuit().count
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -794,25 +860,17 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving all standard `PlayingCard`s with four `Suit`s returns `PlayingCard`s
-    /// that contain only four `Suit`s.
-    func test_getStandardCards_withFourSuits_returnsCardsWithOnlyFourSuits()
-        throws {
+    /// Tests that retrieving all`Jokers`s returns `Jokers`s that contain only `null Suit`s.
+    func test_getJokers_returnsCardsWithOnlyNullSuits() throws {
 
         // Given
-        let suit1 = Suit.hearts
-        let suit2 = Suit.spades
-        let suit3 = Suit.diamonds
-        let suit4 = Suit.clubs
-        let suits = [suit1, suit2, suit3, suit4]
-        let expected = 4
+        let expected = Suit.null
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suits)
-        let actual = standardCards.splitBySuit().count
+        let jokers = try PlayingCards.getJokers()
         
         // Then
-        XCTAssertEqual(expected, actual)
+        XCTAssert(jokers.contain(only: expected))
     }
     
     //-------------------------------------------------------------------------//
@@ -870,6 +928,22 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `PlayingCard`s with a `Suit` returns `PlayingCard`s that only
+    /// contains the given and `null Suit`s.
+    func test_getAllCards_withSuit_returnsCardsWithOnlyGivenAndNullSuit() throws {
+
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.null
+        let expected = [suit1, suit2]
+        
+        // When
+        let cards = try PlayingCards.getAllCards(with: suit1)
+
+        // Then
+        XCTAssert(cards.contain(only: expected))
     }
     
     //                     //

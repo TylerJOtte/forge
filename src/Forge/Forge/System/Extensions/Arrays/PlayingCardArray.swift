@@ -32,8 +32,75 @@ extension Array where Element: PlayingCard  {
         return splitBySuit().count == 1
     }
     
+    /// Determines if only contains the given `Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter suit: The `Suit` to test.
+    /// - Returns: True if only contains the given `Suit`, else false.
+    func contain(other suit: Suit) -> Bool {
+        
+        return count > 0 && getSuits().contains(where: {$0 != suit})
+    }
+    
+    /// Determines if only contains the given `Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter suit: The `Suit` to test.
+    /// - Returns: True if only contains the given `Suit`, else false.
+    func contain(only suit: Suit) -> Bool {
+        
+        return count > 0 && !contain(other: suit)
+    }
+    
+    /// Determines if only contains the given `Suit`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter suits: The `Suit`s to test.
+    /// - Returns: True if only contains the given `Suit`s, else false.
+    func contain(only suits: [Suit]) -> Bool {
+        
+        var containOnlySuits = false
+        
+        if (count > 1) {
+            
+            let expected = Set(suits)
+            let actual = getSuits()
+            var suit = 0
+            var containsSuit = true
+            
+            while (containsSuit && suit < actual.count) {
+                
+                let nextSuit = actual[suit]
+                
+                containsSuit = expected.contains(nextSuit)
+                suit += 1
+            }
+            
+            containOnlySuits = containsSuit
+        }
+        
+        return containOnlySuits
+    }
+    
     //=========================================================================//
-    //                               SPLITTERS                                 //
+    //                                 GETTERS                                 //
+    //=========================================================================//
+    
+    /// Retrieves all the unique `Suit`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: An `Array` with all the unique `Suit`s.
+    func getSuits() -> [Suit] {
+        
+        return Array<Suit>(splitBySuit().keys)
+    }
+    
+    //=========================================================================//
+    //                                SPLITTERS                                //
     //=========================================================================//
     
     /// Splits all the `PlayingCard`s  by `Suit`.
