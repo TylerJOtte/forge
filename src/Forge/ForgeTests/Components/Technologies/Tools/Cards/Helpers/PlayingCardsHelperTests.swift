@@ -364,6 +364,22 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all`FaceCard`s with the default `Suit`s returns `FaceCard`s that contain
+    /// only four  `Suit`s.
+    func test_getFaceCards_withDefaultSuits_returnsCardsWithOnlyFourSuits()
+        throws {
+
+        // Given
+        let expected = 4
+        
+        // When
+        let faceCards = try PlayingCards.getFaceCards()
+        let actual = faceCards.splitBySuit().count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that retrieving all`FaceCard`s with one `Suit` returns three `FaceCard`s.
     func test_getFaceCards_withOneSuit_returnsThreeFaceCards() throws {
 
@@ -526,6 +542,22 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all standard `PlayingCard`s with the default `Suit`s returns
+    /// `PlayingCard`s that contain only four  `Suit`s.
+    func test_getStandardCards_withDefaultSuits_returnsCardsWithOnlyFourSuits()
+        throws {
+
+        // Given
+        let expected = 4
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards()
+        let actual = standardCards.splitBySuit().count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that retrieving all standard `PlayingCard`s with one `Suit` returns 13
     /// `PlayingCard`s.
     func test_getStandardCards_withOneSuit_returns13PlayingCards() throws {
@@ -613,6 +645,21 @@ class PlayingCardsHelperTests: XCTestCase {
         // When
         let jokers = try PlayingCards.getJokers()
         let actual = jokers.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`Jokers`s returns `FaceCard`s that contain only one `Suit`.
+    func test_getJokers_returnsCardsWithOnlyOneSuit()
+        throws {
+
+        // Given
+        let expected = 1
+        
+        // When
+        let jokers = try PlayingCards.getJokers()
+        let actual = jokers.splitBySuit().count
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -708,6 +755,22 @@ class PlayingCardsHelperTests: XCTestCase {
         // When
         let cards = try PlayingCards.getAllCards()
         let actual = cards.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`PlayingCard`s with the default `Suit`s returns `PlayingCard`s
+    /// that contain only five  `Suit`s.
+    func test_getAllCards_withDefaultSuits_returnsCardsWithOnlyFiveSuits()
+        throws {
+
+        // Given
+        let expected = 5
+        
+        // When
+        let cards = try PlayingCards.getAllCards()
+        let actual = cards.splitBySuit().count
         
         // Then
         XCTAssertEqual(expected, actual)
