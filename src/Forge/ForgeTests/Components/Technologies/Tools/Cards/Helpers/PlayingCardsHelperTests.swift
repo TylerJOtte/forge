@@ -64,6 +64,196 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Ace`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneAce() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let ace = try Ace(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let aces = cardsByRank[ace.rank]
+        let actual = aces?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Two`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTwo() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let two = try Two(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let twos = cardsByRank[two.rank]
+        let actual = twos?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Three`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneThree() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let three = try Three(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let threes = cardsByRank[three.rank]
+        let actual = threes?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Four`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFour() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let four = try Four(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let fours = cardsByRank[four.rank]
+        let actual = fours?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Five`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFive() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let five = try Five(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let fives = cardsByRank[five.rank]
+        let actual = fives?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Six`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSix() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let six = try Six(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let sixes = cardsByRank[six.rank]
+        let actual = sixes?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Seven`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSeven() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let seven = try Seven(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let sevens = cardsByRank[seven.rank]
+        let actual = sevens?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Eight`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneEight() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let eight = try Eight(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let eights = cardsByRank[eight.rank]
+        let actual = eights?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Nine`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneNine() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let nine = try Nine(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let nines = cardsByRank[nine.rank]
+        let actual = nines?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that only
+    /// contain one `Ten`.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTen() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let ten = try Ten(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let cardsByRank = numeralCards.splitByRank()
+        let tens = cardsByRank[ten.rank]
+        let actual = tens?.count
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that retrieving all`NumeralCard`s with a `Suit` returns `NumeralCard`s that are
     /// equally `Suit`ed.
     func test_getNumeralCards_withSuit_returnsEquallySuitedNumeralCards()
