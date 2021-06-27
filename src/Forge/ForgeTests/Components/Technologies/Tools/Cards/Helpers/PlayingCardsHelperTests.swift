@@ -287,6 +287,10 @@ class PlayingCardsHelperTests: XCTestCase {
         }
     }
     
+    // Default Suits //
+    // ~~~~~~~~~~~~~ //
+    
+    
     /// Tests that retrieving all`NumeralCard`s with the default `Suit`s returns 40 `NumeralCard`s.
     func test_getNumeralCards_withDefaultSuits_returns40NumeralCards() throws {
 
@@ -297,6 +301,746 @@ class PlayingCardsHelperTests: XCTestCase {
         let numeralCards = try PlayingCards.getNumeralCards()
         let actual = numeralCards.count
         
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Aces //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Ace` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneAceOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let aceOfHearts = try Ace(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: aceOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Ace` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneAceOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let aceOfSpades = try Ace(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: aceOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Ace` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneAceOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let aceOfDiamonds = try Ace(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: aceOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Ace` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneAceOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let aceOfClubs = try Ace(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: aceOfClubs)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Twos //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Two` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTwoOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let twoOfHearts = try Two(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: twoOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Two` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTwoOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let twoOfSpades = try Two(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: twoOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Two` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTwoOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let twoOfDiamonds = try Two(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: twoOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Two` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTwoOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let twoOfClubs = try Two(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: twoOfClubs)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Threes //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Three` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneThreeOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let threeOfHearts = try Three(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: threeOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Three` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneThreeOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let threeOfSpades = try Three(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: threeOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Three` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneThreeOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let threeOfDiamonds = try Three(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: threeOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Three` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneThreeOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let threeOfClubs = try Three(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: threeOfClubs)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Fours //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Four` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFourOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let fourOfHearts = try Four(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: fourOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Four` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFourOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let fourOfSpades = try Four(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: fourOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Four` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFourOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let fourOfDiamonds = try Four(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: fourOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Four` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFourOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let fourOfClubs = try Four(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: fourOfClubs)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Fives //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Five` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFiveOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let fiveOfHearts = try Five(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: fiveOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Five` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFiveOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let fiveOfSpades = try Five(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: fiveOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Five` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFiveOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let fiveOfDiamonds = try Five(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: fiveOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Five` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFiveOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let fiveOfClubs = try Five(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: fiveOfClubs)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Sixes //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Six` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSixOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let sixOfHearts = try Six(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: sixOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Six` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSixOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let sixOfSpades = try Six(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: sixOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Six` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSixOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let sixOfDiamonds = try Six(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: sixOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Six` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSixOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let sixOfClubs = try Six(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: sixOfClubs)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Sevens //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Seven` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSevenOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let sevenOfHearts = try Seven(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: sevenOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Seven` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSevenOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let sevenOfSpades = try Seven(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: sevenOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Seven` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSevenOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let sevenOfDiamonds = try Seven(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: sevenOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Seven` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSevenOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let sevenOfClubs = try Seven(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: sevenOfClubs)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Eights //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Eight` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneEightOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let eightOfHearts = try Eight(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: eightOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Eight` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneEightOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let eightOfSpades = try Eight(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: eightOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Eight` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneEightOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let eightOfDiamonds = try Eight(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: eightOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Eight` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneEightOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let eightOfClubs = try Eight(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: eightOfClubs)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Nines //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Nine` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneNineOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let nineOfHearts = try Nine(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: nineOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Nine` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneNineOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let nineOfSpades = try Nine(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: nineOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Nine` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneNineOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let nineOfDiamonds = try Nine(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: nineOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Nine` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneNineOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let nineOfClubs = try Nine(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: nineOfClubs)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Tens //
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Ten` of `heart`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTenOfHearts()
+        throws {
+
+        // Given
+        let suit = Suit.hearts
+        let tenOfHearts = try Ten(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: tenOfHearts)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Ten` of `spade`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTenOfSpades()
+        throws {
+
+        // Given
+        let suit = Suit.spades
+        let tenOfSpades = try Ten(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: tenOfSpades)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Ten` of `diamond`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTenOfDiamonds()
+        throws {
+
+        // Given
+        let suit = Suit.diamonds
+        let tenOfDiamonds = try Ten(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: tenOfDiamonds)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns `NumeralCard`s that
+    /// only contain one `Ten` of `club`s.
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTenOfClubs()
+        throws {
+
+        // Given
+        let suit = Suit.clubs
+        let tenOfClubs = try Ten(of: suit)
+        let expected = 1
+        
+        // When
+        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let actual = numeralCards.getCount(of: tenOfClubs)
+
         // Then
         XCTAssertEqual(expected, actual)
     }
