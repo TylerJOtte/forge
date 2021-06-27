@@ -2403,6 +2403,217 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    // Jacks //
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one`Jack` of `heart`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneJackOfHearts() throws {
+
+         // Given
+         let suit = Suit.hearts
+         let jackOfHearts = try Jack(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: jackOfHearts)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `Jack` of `spade`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneJackOfSpades() throws {
+
+         // Given
+         let suit = Suit.spades
+         let jackOfSpades = try Jack(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: jackOfSpades)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `Jack` of `diamond`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneJackOfDiamonds() throws {
+
+         // Given
+         let suit = Suit.diamonds
+         let jackOfDiamonds = try Jack(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: jackOfDiamonds)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `Jack` of `club`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneJackOfClubs() throws {
+
+         // Given
+         let suit = Suit.clubs
+         let jackOfClubs = try Jack(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: jackOfClubs)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     // Queens //
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `Queen` of `heart`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneQueenOfHearts() throws {
+
+         // Given
+         let suit = Suit.hearts
+         let queenOfHearts = try Queen(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: queenOfHearts)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `Queen` of `spade`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneQueenOfSpades() throws {
+
+         // Given
+         let suit = Suit.spades
+         let queenOfSpades = try Queen(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: queenOfSpades)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `Queen` of `diamond`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneQueenOfDiamonds() throws {
+
+         // Given
+         let suit = Suit.diamonds
+         let queenOfDiamonds = try Queen(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: queenOfDiamonds)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `Queen` of `club`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneQueenOfClubs() throws {
+
+         // Given
+         let suit = Suit.clubs
+         let queenOfClubs = try Queen(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: queenOfClubs)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     // Kings //
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `King` of `heart`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneKingOfHearts() throws {
+
+         // Given
+         let suit = Suit.hearts
+         let kingOfHearts = try King(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: kingOfHearts)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `King` of `spade`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneKingOfSpades() throws {
+
+         // Given
+         let suit = Suit.spades
+         let kingOfSpades = try King(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: kingOfSpades)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one
+     /// `King` of `diamond`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneKingOfDiamonds() throws {
+
+         // Given
+         let suit = Suit.diamonds
+         let kingOfDiamonds = try King(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: kingOfDiamonds)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+     
+     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with a `Suit` returns  `PlayingCard`s
+    ///  that only contain one `King` of `club`s.
+     func test_getAllCards_withSuit_returnsCardsWithOnlyOneKingOfClubs() throws {
+
+         // Given
+         let suit = Suit.clubs
+         let kingOfClubs = try King(of: suit)
+         let expected = 1
+         
+         // When
+         let cards = try PlayingCards.getAllCards(with: suit)
+         let actual = cards.getCount(of: kingOfClubs)
+
+         // Then
+         XCTAssertEqual(expected, actual)
+     }
+    
     /// Tests that retrieving all`PlayingCard`s with the default `Suit`s returns `PlayingCard`s
     /// that contain only five  `Suit`s.
     func test_getAllCards_withDefaultSuits_returnsCardsWithOnlyFiveSuits()
