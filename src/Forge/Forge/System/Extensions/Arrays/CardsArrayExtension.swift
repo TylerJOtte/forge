@@ -31,5 +31,4 @@ extension Array where Element: Cards {
         
         return self.map{$0.count}.reduce(0, +)
     }
-    
 }

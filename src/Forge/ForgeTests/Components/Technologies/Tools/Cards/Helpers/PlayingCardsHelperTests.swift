@@ -1615,32 +1615,34 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving all`Jokers`s returns `FaceCard`s that contain only one `Suit`.
-    func test_getJokers_returnsCardsWithOnlyOneSuit()
-        throws {
+    /// Tests that retrieving all`Joker`s returns with only one red `Joker`..
+    func test_getJokers_returnsCardsWithOnlyOneRedJoker_true() throws {
 
         // Given
+        let redJoker = try Joker(color: .red)
         let expected = 1
         
         // When
-        let jokers = try PlayingCards.getJokers()
-        let actual = jokers.splitBySuit().count
+        let cards = try PlayingCards.getJokers()
+        let actual = cards.getCount(of: redJoker)
         
         // Then
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving all`Jokers`s returns `Jokers`s that contain only `null Suit`s.
-    func test_getJokers_returnsCardsWithOnlyNullSuits() throws {
+    /// Tests that retrieving all`Joker`s returns with only one black `Joker`..
+    func test_getJokers_returnsCardsWithOnlyOneBlackJoker_true() throws {
 
         // Given
-        let expected = Suit.null
+        let blackJoker = try Joker(color: .black)
+        let expected = 1
         
         // When
-        let jokers = try PlayingCards.getJokers()
+        let cards = try PlayingCards.getJokers()
+        let actual = cards.getCount(of: blackJoker)
         
         // Then
-        XCTAssert(jokers.contain(only: expected))
+        XCTAssertEqual(expected, actual)
     }
     
     //-------------------------------------------------------------------------//

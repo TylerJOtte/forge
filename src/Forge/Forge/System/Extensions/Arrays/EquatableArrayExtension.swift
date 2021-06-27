@@ -18,6 +18,24 @@
 /// An extension for common `Equatable Array` operations.
 extension Array where Element: Equatable {
 
+    //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+
+    
+    /// Retrieves the # of `Element`s that equal the given `Element`.
+    ///
+    /// - Parameter element: The `Element` to compare to.
+    /// - Returns: An interge representing the total count of the given `Element`.
+    func getCount(of element: Element) -> Int {
+        
+        return self.filter({$0 == element}).count
+    }
+    
+    //=========================================================================//
+    //                                  ADDERS                                 //
+    //=========================================================================//
+    
     /// Adds  an `Element Array` to the given `Element Collection` for each of the latter's
     /// collections consistening of all but the last `Element` in the `Collection` along with the
     /// specified unique `Element`, starting from the `Element` at the given position..

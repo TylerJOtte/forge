@@ -896,14 +896,14 @@
 		B5BB5FC126683BC800A88709 /* Arrays */ = {
 			isa = PBXGroup;
 			children = (
-				B5005F392674214F007E6165 /* IntArray.swift */,
-				B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */,
-				B521E235266D670300DB4602 /* HandRankArray.swift */,
-				B5ECEB042668571500E478F7 /* RankedCardArray.swift */,
-				B5BB5FC226683BD900A88709 /* ScoreableArray.swift */,
 				B5817DA1261A27600022B805 /* CardsArrayExtension.swift */,
 				B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */,
+				B521E235266D670300DB4602 /* HandRankArray.swift */,
+				B5005F392674214F007E6165 /* IntArray.swift */,
 				B521E239266D7DD700DB4602 /* PairArray.swift */,
+				B5ECEAF826684F1D00E478F7 /* PlayingCardArray.swift */,
+				B5ECEB042668571500E478F7 /* RankedCardArray.swift */,
+				B5BB5FC226683BD900A88709 /* ScoreableArray.swift */,
 			);
 			path = Arrays;
 			sourceTree = "<group>";
