@@ -75,9 +75,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let aces = cardsByRank[ace.rank]
-        let actual = aces?.count
+        let actual = numeralCards.getCount(of: ace)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -94,9 +92,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let twos = cardsByRank[two.rank]
-        let actual = twos?.count
+        let actual = numeralCards.getCount(of: two)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -113,9 +109,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let threes = cardsByRank[three.rank]
-        let actual = threes?.count
+        let actual = numeralCards.getCount(of: three)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -132,9 +126,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let fours = cardsByRank[four.rank]
-        let actual = fours?.count
+        let actual = numeralCards.getCount(of: four)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -151,9 +143,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let fives = cardsByRank[five.rank]
-        let actual = fives?.count
+        let actual = numeralCards.getCount(of: five)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -170,9 +160,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let sixes = cardsByRank[six.rank]
-        let actual = sixes?.count
+        let actual = numeralCards.getCount(of: six)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -189,9 +177,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let sevens = cardsByRank[seven.rank]
-        let actual = sevens?.count
+        let actual = numeralCards.getCount(of: seven)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -208,9 +194,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let eights = cardsByRank[eight.rank]
-        let actual = eights?.count
+        let actual = numeralCards.getCount(of: eight)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -227,9 +211,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let nines = cardsByRank[nine.rank]
-        let actual = nines?.count
+        let actual = numeralCards.getCount(of: nine)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -246,9 +228,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let numeralCards = try PlayingCards.getNumeralCards(with: suit)
-        let cardsByRank = numeralCards.splitByRank()
-        let tens = cardsByRank[ten.rank]
-        let actual = tens?.count
+        let actual = numeralCards.getCount(of: ten)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -623,9 +603,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let faceCards = try PlayingCards.getFaceCards(with: suit)
-        let cardsByRank = faceCards.splitByRank()
-        let jacks = cardsByRank[jack.rank]
-        let actual = jacks?.count
+        let actual = faceCards.getCount(of: jack)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -642,9 +620,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let faceCards = try PlayingCards.getFaceCards(with: suit)
-        let cardsByRank = faceCards.splitByRank()
-        let queens = cardsByRank[queen.rank]
-        let actual = queens?.count
+        let actual = faceCards.getCount(of: queen)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -661,9 +637,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let faceCards = try PlayingCards.getFaceCards(with: suit)
-        let cardsByRank = faceCards.splitByRank()
-        let kings = cardsByRank[king.rank]
-        let actual = kings?.count
+        let actual = faceCards.getCount(of: king)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1037,9 +1011,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let aces = cardsByRank[ace.rank]
-        let actual = aces?.count
+        let actual = standardCards.getCount(of: ace)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1056,9 +1028,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let twos = cardsByRank[two.rank]
-        let actual = twos?.count
+        let actual = standardCards.getCount(of: two)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1075,9 +1045,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let threes = cardsByRank[three.rank]
-        let actual = threes?.count
+        let actual = standardCards.getCount(of: three)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1094,9 +1062,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let fours = cardsByRank[four.rank]
-        let actual = fours?.count
+        let actual = standardCards.getCount(of: four)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1113,9 +1079,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let fives = cardsByRank[five.rank]
-        let actual = fives?.count
+        let actual = standardCards.getCount(of: five)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1132,9 +1096,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let sixes = cardsByRank[six.rank]
-        let actual = sixes?.count
+        let actual = standardCards.getCount(of: six)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1151,9 +1113,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let sevens = cardsByRank[seven.rank]
-        let actual = sevens?.count
+        let actual = standardCards.getCount(of: seven)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1170,9 +1130,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let eights = cardsByRank[eight.rank]
-        let actual = eights?.count
+        let actual = standardCards.getCount(of: eight)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1189,9 +1147,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let nines = cardsByRank[nine.rank]
-        let actual = nines?.count
+        let actual = standardCards.getCount(of: nine)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1208,9 +1164,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let tens = cardsByRank[ten.rank]
-        let actual = tens?.count
+        let actual = standardCards.getCount(of: ten)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1227,9 +1181,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let jacks = cardsByRank[jack.rank]
-        let actual = jacks?.count
+        let actual = standardCards.getCount(of: jack)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1246,9 +1198,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let queens = cardsByRank[queen.rank]
-        let actual = queens?.count
+        let actual = standardCards.getCount(of: queen)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1265,9 +1215,23 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let standardCards = try PlayingCards.getStandardCards(with: suit)
-        let cardsByRank = standardCards.splitByRank()
-        let kings = cardsByRank[king.rank]
-        let actual = kings?.count
+        let actual = standardCards.getCount(of: king)
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
+    /// contain zero `Joker`s.
+    func test_getStandardCards_withSuit_returnsCardsWithZeroJokers() throws {
+
+        // Given
+        let suit = Suit.hearts
+        let expected = 0
+        
+        // When
+        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let actual = standardCards.filter{$0 is Joker}.count
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1697,9 +1661,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let aces = cardsByRank[ace.rank]
-        let actual = aces?.count
+        let actual = cards.getCount(of: ace)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1716,9 +1678,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let twos = cardsByRank[two.rank]
-        let actual = twos?.count
+        let actual = cards.getCount(of: two)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1735,9 +1695,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let threes = cardsByRank[three.rank]
-        let actual = threes?.count
+        let actual = cards.getCount(of: three)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1754,9 +1712,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let fours = cardsByRank[four.rank]
-        let actual = fours?.count
+        let actual = cards.getCount(of: four)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1773,9 +1729,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let fives = cardsByRank[five.rank]
-        let actual = fives?.count
+        let actual = cards.getCount(of: five)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1792,9 +1746,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let sixes = cardsByRank[six.rank]
-        let actual = sixes?.count
+        let actual = cards.getCount(of: six)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1811,9 +1763,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let sevens = cardsByRank[seven.rank]
-        let actual = sevens?.count
+        let actual = cards.getCount(of: seven)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1830,9 +1780,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let eights = cardsByRank[eight.rank]
-        let actual = eights?.count
+        let actual = cards.getCount(of: eight)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1849,9 +1797,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let nines = cardsByRank[nine.rank]
-        let actual = nines?.count
+        let actual = cards.getCount(of: nine)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1868,9 +1814,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let tens = cardsByRank[ten.rank]
-        let actual = tens?.count
+        let actual = cards.getCount(of: ten)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1887,9 +1831,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let jacks = cardsByRank[jack.rank]
-        let actual = jacks?.count
+        let actual = cards.getCount(of: jack)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1906,9 +1848,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let queens = cardsByRank[queen.rank]
-        let actual = queens?.count
+        let actual = cards.getCount(of: queen)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1925,9 +1865,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let cardsByRank = cards.splitByRank()
-        let kings = cardsByRank[king.rank]
-        let actual = kings?.count
+        let actual = cards.getCount(of: king)
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -1963,8 +1901,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let redJokers = cards.filter{$0 == redJoker}
-        let actual = redJokers.count
+        let actual = cards.getCount(of: redJoker)
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -1981,8 +1918,7 @@ class PlayingCardsHelperTests: XCTestCase {
         
         // When
         let cards = try PlayingCards.getAllCards(with: suit)
-        let blackJokers = cards.filter{$0 == blackJoker}
-        let actual = blackJokers.count
+        let actual = cards.getCount(of: blackJoker)
         
         // Then
         XCTAssertEqual(expected, actual)
