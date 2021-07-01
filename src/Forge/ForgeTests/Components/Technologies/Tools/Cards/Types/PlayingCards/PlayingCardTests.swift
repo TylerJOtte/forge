@@ -448,4 +448,20 @@ class PlayingCardTests: XCTestCase {
         // When/Then
         XCTAssertNotEqual(aceOfHearts, aceOfSpades)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `PlayingCard` `Rank`s another `PlayingCard` with the same `Rank` and
+    /// position.
+    func test_ranks_RankedCardWithSameRankAndPosition_true() throws {
+     
+        // Given
+        let ace1 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let ace2 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        
+        // When/Then
+        XCTAssert(ace1.ranks(ace2))
+    }
 }
