@@ -545,4 +545,23 @@ class RankedCardTests: XCTestCase {
         // When/Then
         XCTAssertNotEqual(rankedCard1, rankedCard2)
     }
+    
+    //=========================================================================//
+    //                               TESTERS                                   //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `RankedCard` `Rank`s another `RankedCard` with the same `Rank` and position.
+    func test_ranks_RankedCardWithSameRankAndPosition_true() {
+     
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .ace, at: 1)
+        
+        // When/Then
+        XCTAssert(rankedCard1.ranks(rankedCard2))
+    }
 }

@@ -114,20 +114,4 @@ class CardTests: XCTestCase {
         // When/Then
         XCTAssertEqual(card1, card2)
     }
-    
-    //-------------------------------------------------------------------------//
-    //                                  >                                      //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that a `Card` with an alphabetically later starting title is greater than another `Card` with an
-    /// alphabetically earlier starting title.
-    func test_laterTitledCard_isGreaterThanEarlierTitledCard_true() {
-     
-        // Given
-        let cardA = Card(named: "Card A")
-        let cardB = Card(named: "Card B")
-        
-        // When/Then
-        XCTAssertGreaterThan(cardB, cardA)
-    }
 }
