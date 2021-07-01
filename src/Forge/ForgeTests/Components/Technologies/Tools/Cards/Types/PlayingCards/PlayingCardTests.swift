@@ -374,7 +374,7 @@ class PlayingCardTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that two `PlayingCard`s with the same `Rank` and `Suit` are equal.
-    func test_equals_PlayingCardWithSamePropertyValues_true() throws {
+    func test_equals_PlayingCardWithSameRankAndSuit_true() throws {
      
         // Given
         let ace1 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
@@ -386,7 +386,7 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that two `PlayingCard`s with the same `Rank` and `Suit` are equal, using the equality
     /// operator.
-    func test_equals_PlayingCardWithSamePropertyValuesWithOperator_true()
+    func test_equals_PlayingCardWithSameRankAndSuitUsingOperator_true()
         throws {
      
         // Given
@@ -395,5 +395,33 @@ class PlayingCardTests: XCTestCase {
         
         // When/Then
         XCTAssertEqual(ace1, ace2)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  !=                                     //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that two `PlayingCard`s with the same `Rank` and different `Suit`s are not equal.
+    func test_equals_PlayingCardWithSameRankAndDifferentSuit_false() throws {
+     
+        // Given
+        let aceOfHearts = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let aceOfSpades = try PlayingCard(.ace, of: .spades, worth: 1, at: 1)
+        
+        // When/Then
+        XCTAssertFalse(aceOfHearts.equals(aceOfSpades))
+    }
+    
+    /// Tests that two `PlayingCard`s with the same `Rank` and different `Suit`s are not equal,
+    /// using the equality operator.
+    func test_equals_PlayingCardWithSameRankAndDifferentSuitUsingOperator_true()
+        throws {
+     
+        // Given
+        let aceOfHearts = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let aceOfSpades = try PlayingCard(.ace, of: .spades, worth: 1, at: 1)
+        
+        // When/Then
+        XCTAssertNotEqual(aceOfHearts, aceOfSpades)
     }
 }
