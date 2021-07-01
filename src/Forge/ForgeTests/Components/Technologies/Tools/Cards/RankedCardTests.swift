@@ -113,7 +113,7 @@ class RankedCardTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Title                                    //
+    //                                 Rank                                    //
     //-------------------------------------------------------------------------//
     
     /// Tests that the `Rank` of a default `RankedCard` equals `one`.
@@ -195,6 +195,94 @@ class RankedCardTests: XCTestCase {
         
         // When
         let actual = rankedCard.rank
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                               Position                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the position of a default `RankedCard` equals one..
+    func test_position_ofDefaultRankedCard_equalsOne() {
+        
+        // Given
+        let rankedCard = RankedCard()
+        let expected = 1
+        
+        // When
+        let actual = rankedCard.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the position of a new `RankedCard` created with only a `Rank` equals zero.
+    func test_position_ofNewRankedCardWithRank_equalsZero() {
+        
+        // Given
+        let rank = Rank.ace
+        let rankedCard = RankedCard(with: rank)
+        let expected = 0
+        
+        // When
+        let actual = rankedCard.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the position of a new `RankedCard` created with a `Rank` and position equals the given
+    /// position.
+    func test_position_ofNewRankedCardWithRankAndPosition_equalsGivenPosition() {
+        
+        // Given
+        let rank = Rank.ace
+        let position = 1
+        let rankedCard = RankedCard(with: rank, at: position)
+        let expected = position
+        
+        // When
+        let actual = rankedCard.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the position of a new `RankedCard` created with a `Rank`, position, and points equals
+    /// the given position.
+    func test_position_ofNewRankedCardWithRankPositionAndPoints_equalsGivenPosition() {
+        
+        // Given
+        let rank = Rank.ace
+        let position = 1
+        let points = 1
+        let rankedCard = RankedCard(with: rank, at: position, worth: points)
+        let expected = position
+        
+        // When
+        let actual = rankedCard.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the position of a new `RankedCard` created with a `Rank` and title equals the given
+    /// position.
+    func test_position_ofNewRankedCardWithRankAndTitle_equalsGivenPosition() {
+        
+        // Given
+        let rank = Rank.ace
+        let position = 13
+        let points = 1
+        let title = "High Ace"
+        let rankedCard = RankedCard(with: rank, at: position, worth: points,
+                                    named: title)
+        let expected = position
+        
+        // When
+        let actual = rankedCard.position
 
         // Then
         XCTAssertEqual(expected, actual)
