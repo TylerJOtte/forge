@@ -36,7 +36,7 @@ public class PlayingCard: RankedCard {
     ///   - The given `Rank` must be a standard`PlayingCard Rank`.
     ///   - The given `Suit` must be a standard `PlayingCard Suit`.
     ///   - The given `Suit` must be `null` if the specified `Rank` is a `joker`.
-    ///   - The given position must be between 1-14.
+    ///   - The given position must be between 0-14.
     /// - Postcondition:
     ///   - The `Card`'s `Rank` is set to the given `Rank`.
     ///   - The `Card`'s `Suit` is set to the given `Suit`.

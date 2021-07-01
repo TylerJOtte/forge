@@ -58,7 +58,7 @@ class CardTests: XCTestCase {
     }
     
     //=========================================================================//
-    //                              COMPARISONS                                //
+    //                               TESTERS                                   //
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
@@ -108,8 +108,8 @@ class CardTests: XCTestCase {
     func test_card_equalsCardWithSameTitleWithOperator_true() {
      
         // Given
-        let card1 = Card(named: "Card A")
-        let card2 = Card(named: "Card B")
+        let card1 = Card(named: "Card")
+        let card2 = Card(named: "Card")
         
         // When/Then
         XCTAssertEqual(card1, card2)
