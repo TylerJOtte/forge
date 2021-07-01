@@ -335,4 +335,37 @@ class PlayingCardTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //=========================================================================//
+    //                               TESTERS                                   //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                  <                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `PlayingCard` with a lesser position  is less than another `PlayingCard` with a
+    /// greater position.
+    func test_isLessThan_PlayingCardWithLesserPosition_true() throws {
+     
+        // Given
+        let lowAce = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let highAce = try PlayingCard(.ace, of: .hearts, worth: 1, at: 13)
+        
+        // When/Then
+        XCTAssert(lowAce.isLessThan(highAce))
+    }
+    
+    /// Tests that a `RankedCard` with a lesser position  is less than another `RakedCard` with a greater
+    /// position, using the less than operator.
+    func test_isLessThan_RankedCardWithLesserPositionUsingOperator_true()
+        throws {
+     
+        // Given
+        let lowAce = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let highAce = try PlayingCard(.ace, of: .hearts, worth: 1, at: 13)
+        
+        // When/Then
+        XCTAssertLessThan(lowAce, highAce)
+    }
 }
