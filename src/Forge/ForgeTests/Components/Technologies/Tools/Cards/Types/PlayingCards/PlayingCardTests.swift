@@ -368,4 +368,32 @@ class PlayingCardTests: XCTestCase {
         // When/Then
         XCTAssertLessThan(lowAce, highAce)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                  ==                                     //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that two `PlayingCard`s with the same `Rank` and `Suit` are equal.
+    func test_equals_PlayingCardWithSamePropertyValues_true() throws {
+     
+        // Given
+        let ace1 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let ace2 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        
+        // When/Then
+        XCTAssert(ace1.equals(ace2))
+    }
+    
+    /// Tests that two `PlayingCard`s with the same `Rank` and `Suit` are equal, using the equality
+    /// operator.
+    func test_equals_PlayingCardWithSamePropertyValuesWithOperator_true()
+        throws {
+     
+        // Given
+        let ace1 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let ace2 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        
+        // When/Then
+        XCTAssertEqual(ace1, ace2)
+    }
 }
