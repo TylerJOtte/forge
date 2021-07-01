@@ -32,6 +32,16 @@ extension Array where Element: Equatable {
         return self.filter({$0 == element}).count
     }
     
+    /// Retrieves the # of `Element`s that equal the given `Element`.
+    ///
+    /// - Parameter element: The `Element` to compare to.
+    /// - Returns: An interge representing the total count of the given `Element`.
+    func getCount2(of element: Element) -> Int {
+        
+
+        return self.filter{$0 is Element.Type}.count
+    }
+    
     //=========================================================================//
     //                                  ADDERS                                 //
     //=========================================================================//

@@ -57,6 +57,20 @@ extension Array where Element: RankedCard  {
     //                                 GETTERS                                 //
     //=========================================================================//
 
+    //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+
+    
+    /// Retrieves the # of `RankedCard`s that contain the given `Rank`.
+    ///
+    /// - Parameter rank: The `Rank` to compare to.
+    /// - Returns: An integer representing the total count of the given `Rank`.
+    func getCount(of rank: Rank) -> Int {
+        
+        return self.filter({$0.rank == rank}).count
+    }
+    
     //-------------------------------------------------------------------------//
     //                                  Kinds                                  //
     //-------------------------------------------------------------------------//
