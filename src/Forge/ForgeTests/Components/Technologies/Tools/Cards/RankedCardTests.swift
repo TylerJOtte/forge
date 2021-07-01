@@ -614,4 +614,16 @@ class RankedCardTests: XCTestCase {
         // When/Then
         XCTAssertFalse(ace.follows(one))
     }
+    
+    /// Tests that a `RankedCard` with a position two or more greater than another `RankedCard`does
+    /// not follow  it.
+    func test_follows_RankedCardWithPositionTwoPlusGreater_false() {
+     
+        // Given
+        let ace = RankedCard(with: .ace, at: 1)
+        let three = RankedCard(with: .three, at: 3)
+        
+        // When/Then
+        XCTAssertFalse(three.follows(ace))
+    }
 }
