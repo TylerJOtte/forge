@@ -380,6 +380,34 @@ class RankedCardTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
+    //                                  <                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `RankedCard` with a lesser position  is less than another `RakedCard` with a greater
+    /// position.
+    func test_isLessThan_RankedCardWithLesserPosition_true() {
+     
+        // Given
+        let lowAce = RankedCard(with: .ace, at: 1)
+        let highAce = RankedCard(with: .ace, at: 13)
+        
+        // When/Then
+        XCTAssert(lowAce.isLessThan(highAce))
+    }
+    
+    /// Tests that a `RankedCard` with a lesser position  is less than another `RakedCard` with a greater
+    /// position, using the less than operator.
+    func test_isLessThan_RankedCardWithLesserPositionUsingOperator_true() {
+     
+        // Given
+        let lowAce = RankedCard(with: .ace, at: 1)
+        let highAce = RankedCard(with: .ace, at: 13)
+        
+        // When/Then
+        XCTAssertLessThan(lowAce, highAce)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                  ==                                     //
     //-------------------------------------------------------------------------//
 
@@ -410,6 +438,33 @@ class RankedCardTests: XCTestCase {
     //                                  !=                                     //
     //-------------------------------------------------------------------------//
 
+    //                 //
+    // Different Title //
+    //                 //
+    
+    /// Tests that two `RankedCard`s with all of the same property values, except title,  are not equal.
+    func test_card_equalsCardWithDifferentTitle_false() {
+     
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1, worth: 1, named: "Ace")
+        let rankedCard2 = RankedCard(with: .ace, at: 1, worth: 1, named: "One")
+        
+        // When/Then
+        XCTAssertFalse(rankedCard1.equals(rankedCard2))
+    }
+    
+    /// Tests that two `RankedCard`s with all of the same property values, except title, are not equal
+    /// using the equality operator.
+    func test_card_equalsCardWithDifferentTitleWithOperator_false() {
+     
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1, worth: 1, named: "Ace")
+        let rankedCard2 = RankedCard(with: .ace, at: 1, worth: 1, named: "One")
+        
+        // When/Then
+        XCTAssertNotEqual(rankedCard1, rankedCard2)
+    }
+    
     //                 //
     // Different Ranks //
     //                //
@@ -486,33 +541,6 @@ class RankedCardTests: XCTestCase {
         // Given
         let rankedCard1 = RankedCard(with: .ace, at: 1, worth: 1)
         let rankedCard2 = RankedCard(with: .ace, at: 1, worth: 2)
-        
-        // When/Then
-        XCTAssertNotEqual(rankedCard1, rankedCard2)
-    }
-    
-    //                 //
-    // Different Title //
-    //                 //
-    
-    /// Tests that two `RankedCard`s with all of the same property values, except title,  are not equal.
-    func test_card_equalsCardWithDifferentTitle_false() {
-     
-        // Given
-        let rankedCard1 = RankedCard(with: .ace, at: 1, worth: 1, named: "Ace")
-        let rankedCard2 = RankedCard(with: .ace, at: 1, worth: 1, named: "One")
-        
-        // When/Then
-        XCTAssertFalse(rankedCard1.equals(rankedCard2))
-    }
-    
-    /// Tests that two `RankedCard`s with all of the same property values, except title, are not equal
-    /// using the equality operator.
-    func test_card_equalsCardWithDifferentTitleWithOperator_false() {
-     
-        // Given
-        let rankedCard1 = RankedCard(with: .ace, at: 1, worth: 1, named: "Ace")
-        let rankedCard2 = RankedCard(with: .ace, at: 1, worth: 1, named: "One")
         
         // When/Then
         XCTAssertNotEqual(rankedCard1, rankedCard2)
