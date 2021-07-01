@@ -288,6 +288,93 @@ class RankedCardTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the points of a default `RankedCard` equals one.
+    func test_points_ofDefaultRankedCard_equalsOne() {
+        
+        // Given
+        let rankedCard = RankedCard()
+        let expected = 1
+        
+        // When
+        let actual = rankedCard.points
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the points of a new `RankedCard` created with only a `Rank` equals zero.
+    func test_points_ofNewRankedCardWithRank_equalsZero() {
+        
+        // Given
+        let rank = Rank.ace
+        let rankedCard = RankedCard(with: rank)
+        let expected = 0
+        
+        // When
+        let actual = rankedCard.points
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the points of a new `RankedCard` created with a `Rank` and position equals zero.
+    func test_points_ofNewRankedCardWithRankAndPosition_equalsZero() {
+        
+        // Given
+        let rank = Rank.ace
+        let position = 1
+        let rankedCard = RankedCard(with: rank, at: position)
+        let expected = 0
+        
+        // When
+        let actual = rankedCard.points
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the points of a new `RankedCard` created with a `Rank`, position, and points equals
+    /// the given points.
+    func test_position_ofNewRankedCardWithRankPositionAndPoints_equalsGivenPoints() {
+        
+        // Given
+        let rank = Rank.ace
+        let position = 1
+        let points = 1
+        let rankedCard = RankedCard(with: rank, at: position, worth: points)
+        let expected = points
+        
+        // When
+        let actual = rankedCard.points
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the points of a new `RankedCard` created with a `Rank` and title equals the given
+    /// points.
+    func test_position_ofNewRankedCardWithRankAndTitle_equalsGivenPoints() {
+        
+        // Given
+        let rank = Rank.ace
+        let position = 13
+        let points = 1
+        let title = "High Ace"
+        let rankedCard = RankedCard(with: rank, at: position, worth: points,
+                                    named: title)
+        let expected = points
+        
+        // When
+        let actual = rankedCard.points
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                              COMPARISONS                                //
     //=========================================================================//
