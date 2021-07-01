@@ -424,4 +424,28 @@ class PlayingCardTests: XCTestCase {
         // When/Then
         XCTAssertNotEqual(aceOfHearts, aceOfSpades)
     }
+    
+    /// Tests that two `PlayingCard`s with different `Rank`s and the same `Suit` are not equal.
+    func test_equals_PlayingCardWithDifferentRankAndSameSuit_false() throws {
+     
+        // Given
+        let aceOfHearts = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let aceOfSpades = try PlayingCard(.ace, of: .spades, worth: 1, at: 1)
+        
+        // When/Then
+        XCTAssertFalse(aceOfHearts.equals(aceOfSpades))
+    }
+    
+    /// Tests that two `PlayingCard`s with different `Rank`s and the same `Suit` are not equal,
+    /// using the equality operator.
+    func test_equals_PlayingCardWithDifferentRankAndSameSuitUsingOperator_true()
+        throws {
+     
+        // Given
+        let aceOfHearts = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let aceOfSpades = try PlayingCard(.two, of: .hearts, worth: 1, at: 1)
+        
+        // When/Then
+        XCTAssertNotEqual(aceOfHearts, aceOfSpades)
+    }
 }
