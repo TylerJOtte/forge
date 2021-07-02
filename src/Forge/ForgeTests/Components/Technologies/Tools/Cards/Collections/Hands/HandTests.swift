@@ -214,6 +214,72 @@ class HandTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                               maxCards                                  //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that the max cards of a default `Hand` equals the system max.
+    func test_maxCards_ofDefaultHand_equalsSystemMax() {
+        
+        // Given
+        let hand = Hand()
+        let expected = Int.max
+        
+        // When
+        let actual = hand.maxCards
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the max cards of a `Hand` created with `Card`s equals the system max.
+    func test_maxCards_ofNewHandWithCards_equalsSystemMax() {
+        
+        // Given
+        let cards = [Card()]
+        let hand = Hand(of: cards)
+        let expected = Int.max
+        
+        // When
+        let actual = hand.maxCards
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the max cards of a `Hand` created with a max and `Card`s equals the given max.
+    func test_maxCards_ofNewHandWithMaxAndCards_equalsGivenMax() throws {
+        
+        // Given
+        let max = 5
+        let cards = [Card()]
+        let hand = try Hand(of: max, cards)
+        let expected = max
+        
+        // When
+        let actual = hand.maxCards
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that the max cards of a `Hand` created with a range and `Card`s equals the given max.
+    func test_maxCards_ofNewHandWithRangeAndCards_equalsGivenMax() throws {
+        
+        // Given
+        let min = 1
+        let max = 5
+        let cards = [Card()]
+        let hand = try Hand(of: min, to: max, cards)
+        let expected = max
+        
+        // When
+        let actual = hand.maxCards
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
    
     //=========================================================================//
     //                                  Count                                  //
