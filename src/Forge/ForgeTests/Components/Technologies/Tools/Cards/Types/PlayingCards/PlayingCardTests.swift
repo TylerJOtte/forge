@@ -455,7 +455,7 @@ class PlayingCardTests: XCTestCase {
     
     /// Tests that a `PlayingCard` `Rank`s another `PlayingCard` with the same `Rank` and
     /// position.
-    func test_ranks_RankedCardWithSameRankAndPosition_true() throws {
+    func test_ranks_PlayingCardWithSameRankAndPosition_true() throws {
      
         // Given
         let ace1 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
@@ -463,5 +463,67 @@ class PlayingCardTests: XCTestCase {
         
         // When/Then
         XCTAssert(ace1.ranks(ace2))
+    }
+    
+    /// Tests that a `PlayingCard` does not `Rank`s another `PlayingCard` with the same `Rank`
+    /// and different position.
+    func test_ranks_PlayingCardWithSameRankAndDifferentPosition_false() throws {
+     
+        // Given
+        let lowAce = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let highAce = try PlayingCard(.ace, of: .hearts, worth: 1, at: 3)
+        
+        // When/Then
+        XCTAssertFalse(lowAce.ranks(highAce))
+    }
+    
+    /// Tests that a `PlayingCard` does not `Rank`s another `PlayingCard` with a different `Rank`
+    /// and same position.
+    func test_ranks_RankedCardWithDifferentRankAndSamePosition_false() throws {
+     
+        // Given
+        let king = try PlayingCard(.king, of: .hearts, worth: 1, at: 13)
+        let highAce = try PlayingCard(.ace, of: .hearts, worth: 1, at: 13)
+        
+        // When/Then
+        XCTAssertFalse(king.ranks(highAce))
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                              follow()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `PlayingCard` with a lesser position than another `PlayingCard` does not follow it.
+    func test_follows_PlayingCardWithLesserPosition_false() throws {
+     
+        // Given
+        let lowAce = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let king = try PlayingCard(.king, of: .hearts, worth: 1, at: 13)
+        
+        // When/Then
+        XCTAssertFalse(lowAce.follows(king))
+    }
+    
+    /// Tests that a `PlayingCard` with the same position as another `PlayingCard` does not follow it.
+    func test_follows_PlayingCardWithSamePosition_false() throws {
+     
+        // Given
+        let ace1 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let ace2 = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        
+        // When/Then
+        XCTAssertFalse(ace1.follows(ace2))
+    }
+    
+    /// Tests that a `PlayingCard` with a position two or more greater than another `PlayingCard`
+    /// does not follow  it.
+    func test_follows_PlayingCardWithPositionTwoPlusGreater_false() throws {
+     
+        // Given
+        let ace = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let three = try PlayingCard(.three, of: .hearts, worth: 3, at: 3)
+        
+        // When/Then
+        XCTAssertFalse(three.follows(ace))
     }
 }
