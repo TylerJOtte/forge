@@ -526,4 +526,15 @@ class PlayingCardTests: XCTestCase {
         // When/Then
         XCTAssertFalse(three.follows(ace))
     }
+    
+    /// Tests that a `PlayingCard` with a position one greater than another `PlayingCard` follows it.
+    func test_follows_PlayingCardWithPositionOneGreater_false() throws {
+     
+        // Given
+        let ace = try PlayingCard(.ace, of: .hearts, worth: 1, at: 1)
+        let two = try PlayingCard(.two, of: .hearts, worth: 2, at: 2)
+        
+        // When/Then
+        XCTAssert(two.follows(ace))
+    }
 }
