@@ -559,6 +559,21 @@ class HandTests: XCTestCase {
     // Equals System Max //
     // ~~~~~~~~~~~~~~~~~ //
     
+    /// Tests that the max cards of a `Hand` created with empty `Card`s equals the system max.
+    func test_maxCards_ofNewHandWithEmptyCards_equalsSystemMax() {
+        
+        // Given
+        let cards: [Card] = []
+        let hand = Hand(of: cards)
+        let expected = Int.max
+        
+        // When
+        let actual = hand.maxCards
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that the max cards of a `Hand` created with `Card`s equals the system max.
     func test_maxCards_ofNewHandWithCards_equalsSystemMax() {
         
@@ -566,6 +581,25 @@ class HandTests: XCTestCase {
         let cards = [Card()]
         let hand = Hand(of: cards)
         let expected = Int.max
+        
+        // When
+        let actual = hand.maxCards
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Equals Count //
+    // ~~~~~~~~~~~~ //
+    
+    /// Tests that the max cards of a `Hand` created with full `Card`s equals the count.
+    func test_maxCards_ofNewHandWithFullCards_equalsCount() throws {
+        
+        // Given
+        let max = 1
+        let cards = [Card()]
+        let hand = try Hand(of: max, cards)
+        let expected = hand.count
         
         // When
         let actual = hand.maxCards
@@ -596,8 +630,8 @@ class HandTests: XCTestCase {
     // With Max and Cards //
     //                    //
     
-    // Equals System Max //
-    // ~~~~~~~~~~~~~~~~~ //
+    // Equals Given Max //
+    // ~~~~~~~~~~~~~~~~ //
     
     /// Tests that the max cards of a `Hand` created with a max and `Card`s equals the given max.
     func test_maxCards_ofNewHandWithMaxAndCards_equalsGivenMax() throws {
@@ -607,6 +641,25 @@ class HandTests: XCTestCase {
         let cards = [Card()]
         let hand = try Hand(of: max, cards)
         let expected = max
+        
+        // When
+        let actual = hand.maxCards
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Equals Count //
+    // ~~~~~~~~~~~~ //
+    
+    /// Tests that the max cards of a `Hand` created with a max and full `Card`s equals the count.
+    func test_maxCards_ofNewHandWithMaxAndFullCards_equalsCount() throws {
+        
+        // Given
+        let max = 1
+        let cards = [Card()]
+        let hand = try Hand(of: max, cards)
+        let expected = hand.count
         
         // When
         let actual = hand.maxCards
@@ -638,8 +691,8 @@ class HandTests: XCTestCase {
     // With Range And Cards //
     //                      //
     
-    // Equals System Max //
-    // ~~~~~~~~~~~~~~~~~ //
+    // Equals Given Max //
+    // ~~~~~~~~~~~~~~~~ //
     
     /// Tests that the max cards of a `Hand` created with a range and `Card`s equals the given max.
     func test_maxCards_ofNewHandWithRangeAndCards_equalsGivenMax() throws {
@@ -650,6 +703,26 @@ class HandTests: XCTestCase {
         let cards = [Card()]
         let hand = try Hand(of: min, to: max, cards)
         let expected = max
+        
+        // When
+        let actual = hand.maxCards
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Equals Count //
+    // ~~~~~~~~~~~~ //
+    
+    /// Tests that the max cards of a `Hand` created with a range and full `Card`s equals the count.
+    func test_maxCards_ofNewHandWithRangeAndFullCards_equalsCount() throws {
+        
+        // Given
+        let min = 1
+        let max = 2
+        let cards = [Card(), Card()]
+        let hand = try Hand(of: min, to: max, cards)
+        let expected = hand.count
         
         // When
         let actual = hand.maxCards
