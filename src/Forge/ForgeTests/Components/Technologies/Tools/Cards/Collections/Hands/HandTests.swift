@@ -1372,6 +1372,17 @@ class HandTests: XCTestCase {
         XCTAssert(hand.isEmpty())
     }
     
+    /// Tests that a `Hand` created with `Card`s is not empty.
+    func test_isEmpty_newHandWithCards_false() {
+        
+        // Given
+        let cards = [Card()]
+        let hand = Hand(of: cards)
+        
+        // When/Then
+        XCTAssertFalse(hand.isEmpty())
+    }
+    
     //                    //
     // With Max and Cards //
     //                    //
@@ -1386,6 +1397,18 @@ class HandTests: XCTestCase {
         
         // When/Then
         XCTAssert(hand.isEmpty())
+    }
+    
+    /// Tests that a `Hand` created with a max and `Card`s is not empty.
+    func test_isEmpty_newHandWithMaxAndCards_false() throws {
+        
+        // Given
+        let max = 5
+        let cards = [Card()]
+        let hand = try Hand(of: max, cards)
+        
+        // When/Then
+        XCTAssertFalse(hand.isEmpty())
     }
     
     //                      //
@@ -1403,6 +1426,19 @@ class HandTests: XCTestCase {
         
         // When/Then
         XCTAssert(hand.isEmpty())
+    }
+    
+    /// Tests that a `Hand` created with a range and `Card`s is not empty.
+    func test_isEmpty_newHandWithRangeAndCards_false() throws {
+        
+        // Given
+        let min = 0
+        let max = 5
+        let cards = [Card()]
+        let hand = try Hand(of: min, to: max, cards)
+        
+        // When/Then
+        XCTAssertFalse(hand.isEmpty())
     }
     
     //-------------------------------------------------------------------------//
