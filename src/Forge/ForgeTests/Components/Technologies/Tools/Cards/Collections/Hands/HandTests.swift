@@ -1017,7 +1017,7 @@ class HandTests: XCTestCase {
     // Equals nil //
     // ~~~~~~~~~~ //
     
-    /// Tests that the first `Card` of a `Hand` created with a max empty `Card`s equals `nil`.
+    /// Tests that the first `Card` of a `Hand` created with a max  and empty `Card`s equals `nil`.
     func test_first_ofNewHandWithMaxAndEmptyCards_equalsNil() throws {
         
         // Given
@@ -1053,6 +1053,96 @@ class HandTests: XCTestCase {
 
         // Then
         XCTAssertNil(first)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  last                                   //
+    //-------------------------------------------------------------------------//
+    
+    //         //
+    // Default //
+    //         //
+    
+    // Equals nil //
+    // ~~~~~~~~~~ //
+    
+    /// Tests that the last `Card` in a default `Hand` equals `nil`.
+    func test_last_ofDefaultHand_equalsNil() {
+        
+        // Given
+        let hand = Hand()
+        
+        // When
+        let last = hand.last
+        
+        // Then
+        XCTAssertNil(last)
+    }
+    
+    //            //
+    // With Cards //
+    //            //
+    
+    // Equals nil //
+    // ~~~~~~~~~~ //
+    
+    /// Tests that the last`Card` of `Hand` created with empty `Card`s equals `nil`.
+    func test_last_ofNewHandWithEmptyCards_equalsNil() {
+        
+        // Given
+        let cards: [Card] = []
+        let hand = Hand(of: cards)
+        
+        // When
+        let last = hand.last
+
+        // Then
+        XCTAssertNil(last)
+    }
+    
+    //                    //
+    // With Max and Cards //
+    //                    //
+    
+    // Equals nil //
+    // ~~~~~~~~~~ //
+    
+    /// Tests that the last `Card` of a `Hand` created with a max and empty `Card`s equals `nil`.
+    func test_last_ofNewHandWithMaxAndEmptyCards_equalsNil() throws {
+        
+        // Given
+        let max = 5
+        let cards: [Card] = []
+        let hand = try Hand(of: max, cards)
+        
+        // When
+        let last = hand.last
+
+        // Then
+        XCTAssertNil(last)
+    }
+    
+    //                      //
+    // With Range And Cards //
+    //                      //
+    
+    // Equals nil //
+    // ~~~~~~~~~~ //
+    
+    /// Tests that the last `Card` of a `Hand` created with a range and empty `Card`sequals `nil`.
+    func test_last_ofNewHandWithRangeAndEmptyCards_equalsNil() throws {
+        
+        // Given
+        let min = 0
+        let max = 5
+        let cards: [Card] = []
+        let hand = try Hand(of: min, to: max, cards)
+        
+        // When
+        let last = hand.last
+
+        // Then
+        XCTAssertNil(last)
     }
    
     //=========================================================================//
