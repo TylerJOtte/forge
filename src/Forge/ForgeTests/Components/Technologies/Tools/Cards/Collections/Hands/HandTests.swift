@@ -1014,7 +1014,7 @@ class HandTests: XCTestCase {
     // ~~~~~~~~~~~~~~~ //
     
     /// Tests that the first `Card` of `Hand` created with `Card`s equals the expected value.
-    func test_first_ofNewHandWithEmptyCards_equalsExpected() {
+    func test_first_ofNewHandWithCards_equalsExpected() {
         
         // Given
         let card1 = Card(named: "Card 1")
@@ -1023,6 +1023,24 @@ class HandTests: XCTestCase {
         let cards = [card1, card2, card3]
         let hand = Hand(of: cards)
         let expected = card1
+        
+        // When
+        let actual = hand.first
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Equals last //
+    // ~~~~~~~~~~~ //
+    
+    /// Tests that the first `Card` of `Hand` created with one`Card` equals the last `Card`.
+    func test_first_ofNewHandWithOneCard_equalsLast() {
+        
+        // Given
+        let cards = [Card()]
+        let hand = Hand(of: cards)
+        let expected = hand.last
         
         // When
         let actual = hand.first
@@ -1053,9 +1071,12 @@ class HandTests: XCTestCase {
         XCTAssertNil(first)
     }
     
+    // Equals Expected //
+    // ~~~~~~~~~~~~~~~ //
+    
     /// Tests that the first `Card` of a `Hand` created with a max  and empty `Card`s equals the
     /// expected value.
-    func test_first_ofNewHandWithMaxAndEmptyCards_equalsExpected() throws {
+    func test_first_ofNewHandWithMaxAndCards_equalsExpected() throws {
         
         // Given
         let max = 5
@@ -1065,6 +1086,25 @@ class HandTests: XCTestCase {
         let cards = [card1, card2, card3]
         let hand = try Hand(of: max, cards)
         let expected = card1
+        
+        // When
+        let actual = hand.first
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Equals last //
+    // ~~~~~~~~~~~ //
+    
+    /// Tests that the first `Card` of a `Hand` created with a max  and one`Card` equals the last `Card`.
+    func test_first_ofNewHandWithMaxAndOneCard_equalsLast() throws {
+        
+        // Given
+        let max = 5
+        let cards = [Card()]
+        let hand = try Hand(of: max, cards)
+        let expected = hand.last
         
         // When
         let actual = hand.first
@@ -1096,9 +1136,12 @@ class HandTests: XCTestCase {
         XCTAssertNil(first)
     }
     
+    // Equals Expected //
+    // ~~~~~~~~~~~~~~~ //
+    
     /// Tests that the first `Card` of a `Hand` created with a range and empty `Card`s equals the
     /// expected value.
-    func test_first_ofNewHandWithRangeAndEmptyCards_equalsExpected() throws {
+    func test_first_ofNewHandWithRangeAndCards_equalsExpected() throws {
         
         // Given
         let min = 0
@@ -1109,6 +1152,27 @@ class HandTests: XCTestCase {
         let cards = [card1, card2, card3]
         let hand = try Hand(of: min, to: max, cards)
         let expected = card1
+        
+        // When
+        let actual = hand.first
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Equals last //
+    // ~~~~~~~~~~~ //
+    
+    /// Tests that the first `Card` of a `Hand` created with a range and one`Card` equals the last
+    /// `Card`.
+    func test_first_ofNewHandWithRangeAndOneCard_equalsLast() throws {
+        
+        // Given
+        let min = 0
+        let max = 5
+        let cards = [Card()]
+        let hand = try Hand(of: min, to: max, cards)
+        let expected = hand.last
         
         // When
         let actual = hand.first
@@ -1166,7 +1230,7 @@ class HandTests: XCTestCase {
     // ~~~~~~~~~~~~~~~ //
     
     /// Tests that the last `Card` of `Hand` created with `Card`s equals the expected value.
-    func test_last_ofNewHandWithEmptyCards_equalsExpected() {
+    func test_last_ofNewHandWithCards_equalsExpected() {
         
         // Given
         let card1 = Card(named: "Card 1")
@@ -1205,10 +1269,12 @@ class HandTests: XCTestCase {
         XCTAssertNil(last)
     }
     
+    // Equals Expected //
+    // ~~~~~~~~~~~~~~~ //
     
     /// Tests that the last`Card` of a `Hand` created with a max  and empty `Card`s equals the
     /// expected value.
-    func test_last_ofNewHandWithMaxAndEmptyCards_equalsExpected() throws {
+    func test_last_ofNewHandWithMaxAndCards_equalsExpected() throws {
         
         // Given
         let max = 5
@@ -1249,9 +1315,12 @@ class HandTests: XCTestCase {
         XCTAssertNil(last)
     }
     
+    // Equals Expected //
+    // ~~~~~~~~~~~~~~~ //
+    
     /// Tests that the last `Card` of a `Hand` created with a range and empty `Card`s equals the
     /// expected value.
-    func test_last_ofNewHandWithRangeAndEmptyCards_equalsExpected() throws {
+    func test_last_ofNewHandWithRangeAndCards_equalsExpected() throws {
         
         // Given
         let min = 0
