@@ -1338,206 +1338,31 @@ class HandTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
-   
-    //=========================================================================//
-    //                                  Count                                  //
-    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                isEmpty()                                //
+    //-------------------------------------------------------------------------//
+    
+    //         //
+    // Default //
+    //         //
+    
+    /// Tests that a default `Hand` is empty.
+    func test_isEmpty_withDefaultHand_true() {
+        
+        // Given
+        let hand = Hand()
+        
+        // When/Then
+        XCTAssert(hand.isEmpty())
+    }
+    
+    //            //
+    // With Cards //
+    //            //
 
-    //-------------------------------------------------------------------------//
-    //                                Empty Hand                               //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the count of an empty `Hand` is zero.
-    func test_count_ofEmptyHand_isZero() throws {
-        
-        // Given
-        let cards: [Card] = []
-        let hand = Hand(of: cards)
-        let expected = 0
-        
-        // When
-        let actual = hand.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the count of an empty`Hand` equals the min # of `Card`s  allowed.
-    func test_count_ofEmptyHand_equalsMinCards() throws {
-        
-        // Given
-        let cards: [Card] = []
-        let hand = Hand(of: cards)
-        let expected = hand.minCards
-        
-        // When
-        let actual = hand.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the count of an empty`Hand` with an added `Card` equals one.
-    func test_emptyHandCount_withAddedCard_equalsOne() throws {
-        
-        // Given
-        let title = "Card"
-        let card = Card(named: title)
-        let hand = Hand()
-        let expected = 1
-        
-        // When
-        try hand.add(card)
-        let actual = hand.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the count of an empty`Hand` with added `Card`s equals the given `Card`s count.
-    func test_emptyHandCount_withAddedCards_equalsGivenCardsCount() throws {
-        
-        // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let cards = [card1, card2]
-        let hand = Hand()
-        let expected = 2
-        
-        // When
-        try hand.add(cards)
-        let actual = hand.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                           Partially Filled Hand                         //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the count of a `Hand` with `Card`s  is > zero.
-    func test_count_WithCards_isGreaterThanZero() {
-        
-        // Given
-        let title = "Card"
-        let card = Card(named: title)
-        let cards = [card]
-        let hand = Hand(of: cards)
-        
-        // When/Then
-        XCTAssert(hand.count > 0)
-    }
-    
-    /// Tests that the count of a `Hand` with a given #`Card`s  equals the expected # of `Card`s.
-    func test_count_WithGivenCards_equalsExpected() {
-        
-        // Given
-        let title = "Card"
-        let card = Card(named: title)
-        let cards = [card]
-        let hand = Hand(of: cards)
-        let expected = 1
-        
-        // When
-        let actual = hand.count
-        
-        // When/Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the count of a `Hand` with `Card`s  is less than the max # of `Card`s allowed.
-    func test_count_WithCards_isLessThanMaxCards() throws {
-        
-        // Given
-        let title = "Card"
-        let card = Card(named: title)
-        let cards = [card]
-        let max = 2
-        let hand = try Hand(of: max, cards)
-        
-        // When/Then
-        XCTAssert(hand.count < hand.maxCards)
-    }
-    
-    /// Tests that the count of a`Hand` with`Card`s increments by one after adding a `Card` to it.
-    func test_count_withAddedCard_IncrementsByOne() throws {
-        
-        // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let cards = [card1]
-        let hand = Hand(of: cards)
-        let expected = 2
-        
-        // When
-        try hand.add(card2)
-        let actual = hand.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the count of a`Hand` with`Card`s increments by the # of `Card`s added to it.
-    func test_count_withAddedCards_IncrementsByGivenCardsCount() throws {
-        
-        // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let title4 = "Card 4"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
-        let card4 = Card(named: title4)
-        let cards1 = [card1, card2]
-        let cards2 = [card3, card4]
-        let hand = Hand(of: cards1)
-        let expected = 4
-        
-        // When
-        try hand.add(cards2)
-        let actual = hand.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                 Full Hand                               //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the count of a full `Hand` equals the max # of `Card`s  allowed.
-    func test_count_ofFullHand_equalsMaxCards() throws {
-        
-        // Given
-        let title = "Card"
-        let card = Card(named: title)
-        let cards = [card]
-        let max = 1
-        let hand = try Hand(of: max, cards)
-        let expected = hand.maxCards
-        
-        // When
-        let actual = hand.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    //=========================================================================//
-    //                                 TESTERS                                 //
-    //=========================================================================//
-    
-    //-------------------------------------------------------------------------//
-    //                                 Is Empty                                //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that a`Hand`without `Card`s   is empty.
-    func test_isEmpty_withoutCards_true() {
+    /// Tests that a `Hand` created with empty `Card`s is empty.
+    func test_isEmpty_newHandWithEmptyCards_true() {
         
         // Given
         let cards: [Card] = []
@@ -1547,33 +1372,42 @@ class HandTests: XCTestCase {
         XCTAssert(hand.isEmpty())
     }
     
-    /// Tests that a`Hand`with `Card`s is not empty.
-    func test_isEmpty_withCards_False() {
+    //                    //
+    // With Max and Cards //
+    //                    //
+    
+    /// Tests that a `Hand` created with a max and empty `Card`s is empty.
+    func test_isEmpty_newHandWithMaxAndEmptyCards_true() throws {
         
         // Given
-        let title = "Card"
-        let card = Card(named: title)
-        let cards = [card]
-        let hand = Hand(of: cards)
+        let max = 5
+        let cards: [Card] = []
+        let hand = try Hand(of: max, cards)
         
         // When/Then
-        XCTAssertFalse(hand.isEmpty())
+        XCTAssert(hand.isEmpty())
     }
-//
-//    /// Tests that adding a `Card` to an empty` Hand`with is not empty.
-//    func test_isEmpty_addCardToEmptyHand_False() throws {
-//
-//        // Given
-//        let title = "Card"
-//        let card = Card(named: title)
-//        let hand = Hand()
-//
-//        // When
-//        try hand.add(card)
-//
-//        // Then
-//        XCTAssertFalse(hand.isEmpty())
-//    }
+    
+    //                      //
+    // With Range And Cards //
+    //                      //
+    
+    /// Tests that a `Hand` created with a range and empty `Card`s is empty.
+    func test_isEmpty_newHandWithRangeAndEmptyCards_true() throws {
+        
+        // Given
+        let min = 0
+        let max = 5
+        let cards: [Card] = []
+        let hand = try Hand(of: min, to: max, cards)
+        
+        // When/Then
+        XCTAssert(hand.isEmpty())
+    }
+    
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
     
     //-------------------------------------------------------------------------//
     //                                 Is Full                                 //
