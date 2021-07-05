@@ -1010,6 +1010,27 @@ class HandTests: XCTestCase {
         XCTAssertNil(first)
     }
     
+    // Equals Expected //
+    // ~~~~~~~~~~~~~~~ //
+    
+    /// Tests that the first `Card` of `Hand` created with `Card`s equals the expected value.
+    func test_first_ofNewHandWithEmptyCards_equalsExpected() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)
+        let expected = card1
+        
+        // When
+        let actual = hand.first
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //                    //
     // With Max and Cards //
     //                    //
@@ -1030,6 +1051,26 @@ class HandTests: XCTestCase {
 
         // Then
         XCTAssertNil(first)
+    }
+    
+    /// Tests that the first `Card` of a `Hand` created with a max  and empty `Card`s equals the
+    /// expected value.
+    func test_first_ofNewHandWithMaxAndEmptyCards_equalsExpected() throws {
+        
+        // Given
+        let max = 5
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let hand = try Hand(of: max, cards)
+        let expected = card1
+        
+        // When
+        let actual = hand.first
+
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //                      //
@@ -1053,6 +1094,27 @@ class HandTests: XCTestCase {
 
         // Then
         XCTAssertNil(first)
+    }
+    
+    /// Tests that the first `Card` of a `Hand` created with a range and empty `Card`s equals the
+    /// expected value.
+    func test_first_ofNewHandWithRangeAndEmptyCards_equalsExpected() throws {
+        
+        // Given
+        let min = 0
+        let max = 5
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let hand = try Hand(of: min, to: max, cards)
+        let expected = card1
+        
+        // When
+        let actual = hand.first
+
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //-------------------------------------------------------------------------//
