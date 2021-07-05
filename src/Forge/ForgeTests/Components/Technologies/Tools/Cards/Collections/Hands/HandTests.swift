@@ -1405,53 +1405,57 @@ class HandTests: XCTestCase {
         XCTAssert(hand.isEmpty())
     }
     
-    //=========================================================================//
-    //                                 TESTERS                                 //
-    //=========================================================================//
-    
     //-------------------------------------------------------------------------//
-    //                                 Is Full                                 //
+    //                                 isFull()                                //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a`Hand` without cards  is not full.
-    func test_isFull_withoutCards_False() {
-        
-        // Given
-        let cards: [Card] = []
-        let hand = Hand(of: cards)
-        
-        // When/Then
-        XCTAssertFalse(hand.isFull())
-    }
+    //         //
+    // Default //
+    //         //
     
-    /// Tests that a`Hand`with`Card`s less than the max allowed is not full.
-    func test_isFull_withCardsLessThanMax_false() throws {
+    
+    //            //
+    // With Cards //
+    //            //
+
+    
+    //                    //
+    // With Max and Cards //
+    //                    //
+    
+    /// Tests that a `Hand` created with a max and full `Card`s is full.
+    func test_isFull_newHandWithMaxAndFullCards_true() throws {
         
         // Given
-        let title = "Card"
-        let card = Card(named: title)
-        let cards = [card]
         let max = 2
-        let hand = try Hand(of: max, cards)
-        
-        // When/Then
-        XCTAssertFalse(hand.isFull())
-    }
-    
-    /// Tests that a`Hand`with the max # of `Card`s  is full.
-    func test_isFull_withMaxCards_true() throws {
-        
-        // Given
-        let title = "Card"
-        let card = Card(named: title)
-        let cards = [card]
-        let max = 1
+        let cards = [Card(), Card()]
         let hand = try Hand(of: max, cards)
         
         // When/Then
         XCTAssert(hand.isFull())
     }
     
+    //                      //
+    // With Range And Cards //
+    //                      //
+    
+    /// Tests that a `Hand` created with a range and full `Card`s is full.
+    func test_isFull_newHandWithRangeAndFullCards_true() throws {
+        
+        // Given
+        let min = 0
+        let max = 2
+        let cards = [Card(), Card()]
+        let hand = try Hand(of: min, to: max, cards)
+        
+        // When/Then
+        XCTAssert(hand.isFull())
+    }
+    
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+
     //-------------------------------------------------------------------------//
     //                                Contains                                 //
     //-------------------------------------------------------------------------//
