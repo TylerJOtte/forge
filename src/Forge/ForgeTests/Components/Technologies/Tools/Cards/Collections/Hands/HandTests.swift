@@ -1498,8 +1498,8 @@ class HandTests: XCTestCase {
     // With Partial Cards //
     // ~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that a `Hand` created with `Card`s is not full.
-    func test_isFull_newHandWithCards_false() {
+    /// Tests that a `Hand` created with partial `Card`s is not full.
+    func test_isFull_newHandWithPartialCards_false() {
         
         // Given
         let cards = [Card()]
@@ -1522,6 +1522,21 @@ class HandTests: XCTestCase {
         // Given
         let max = 2
         let cards: [Card] = []
+        let hand = try Hand(of: max, cards)
+        
+        // When/Then
+        XCTAssertFalse(hand.isFull())
+    }
+    
+    // With Partial Cards //
+    // ~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Hand` created with a max and partial `Card`s is not full.
+    func test_isFull_newHandWithMaxAndPartialCards_false() throws {
+        
+        // Given
+        let max = 2
+        let cards = [Card()]
         let hand = try Hand(of: max, cards)
         
         // When/Then
@@ -1557,6 +1572,22 @@ class HandTests: XCTestCase {
         let min = 0
         let max = 2
         let cards: [Card] = []
+        let hand = try Hand(of: min, to: max, cards)
+        
+        // When/Then
+        XCTAssertFalse(hand.isFull())
+    }
+    
+    // With Partial Cards //
+    // ~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Hand` created with a range and partial `Card`s is not full.
+    func test_isFull_newHandWithRangeAndPartialCards_false() throws {
+        
+        // Given
+        let min = 0
+        let max = 2
+        let cards = [Card()]
         let hand = try Hand(of: min, to: max, cards)
         
         // When/Then
