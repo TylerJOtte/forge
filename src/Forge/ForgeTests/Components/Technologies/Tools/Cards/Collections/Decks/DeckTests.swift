@@ -711,11 +711,35 @@ class DeckTests: XCTestCase {
         let card2 = Card(named: "Card 2")
         let cards = [card1]
         let deck = Deck(of: cards)
-        let expected = 2
+        let originalCount = deck.count
+        let expected = cards.count
         
         // When
         try deck.add(card2)
-        let actual = deck.count
+        let actual = deck.count - originalCount
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that adding `Card`s to a `Deck` increments the count by the # of given `Card`s.
+    func test_add_cardsIncrementsCountByGivenNCards_true() throws {
+    
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards = [card1, card2, card3]
+        let newCards = [card4, card5]
+        let deck = Deck(of: cards)
+        let originalCount = deck.count
+        let expected = newCards.count
+        
+        // When
+        try deck.add(newCards)
+        let actual = deck.count - originalCount
         
         // Then
         XCTAssertEqual(expected, actual)

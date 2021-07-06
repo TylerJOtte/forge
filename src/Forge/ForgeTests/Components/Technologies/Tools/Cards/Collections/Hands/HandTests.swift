@@ -1984,11 +1984,12 @@ class HandTests: XCTestCase {
         let card2 = Card(named: "Card 2")
         let cards = [card1]
         let hand = Hand(of: cards)
-        let expected = 2
+        let originalCount = hand.count
+        let expected = cards.count
         
         // When
         try hand.add(card2)
-        let actual = hand.count
+        let actual = hand.count - originalCount
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -2006,11 +2007,13 @@ class HandTests: XCTestCase {
         let cards = [card1, card2, card3]
         let newCards = [card4, card5]
         let hand = Hand(of: cards)
-        let expected = 5
+        let originalCount = hand.count
+        let expected = newCards.count
         
         // When
         try hand.add(newCards)
-        let actual = hand.count
+        let actual = hand.count - originalCount
+        
         
         // Then
         XCTAssertEqual(expected, actual)
