@@ -52,6 +52,27 @@ extension Cards {
         return cards.count <= capacity
     }
     
+    /// Determines if all `Card`s in the given collection exist.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card`s to find.
+    /// - Returns: True if all `Card`s in the given collection exist, else false.
+    public func contains(_ cards: [T]) -> Bool {
+        
+        var containsCards = true
+        var card = 0
+        
+        while (containsCards && card < cards.count) {
+            
+            containsCards = contains(cards[card])
+            
+            card += 1
+        }
+        
+        return containsCards
+    }
+    
     /// Adds the given collection of `Card`s.
     ///
     /// - Precondition:
@@ -78,5 +99,43 @@ extension Cards {
             
             try add(card)
         }
+    }
+    
+    /// Removes all instances of the given `Card`s.
+    ///
+    /// - Precondition:
+    ///   - It cannot be empty.
+    ///   - All of the given `Card`s must exist.
+    /// - Postcondition: Zero instances of the given `Card`s exist.
+    /// - Parameter card: The `Card`s to remove from the collection.
+    /// - Throws:
+    ///   - `isEmpty` if is empty.
+    ///   - `notFound` if one of the given `Card`s does not exist.
+    public func remove(_ cards: [T]) throws -> [T] {
+        
+        guard (!isEmpty()) else {
+            
+            print("No Cards exist.")
+            throw ElementsError.isEmpty
+        }
+        
+        guard (contains(cards)) else {
+            
+            print("Not all of the given Cards exist.")
+            throw ElementsError.notFound
+        }
+        
+        var card = 0
+        var removedCards: [T] = []
+        
+        while (!isEmpty() && card < cards.count) {
+            
+            let removedCard = try remove(cards[card])
+            
+            removedCards.append(removedCard)
+            card += 1
+        }
+        
+        return removedCards
     }
 }

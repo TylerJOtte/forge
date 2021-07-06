@@ -1823,12 +1823,15 @@ class HandTests: XCTestCase {
     //                                Contains                                 //
     //-------------------------------------------------------------------------//
     
+    //             //
+    // Added Cards //
+    //             //
+    
     /// Tests that a `Hand` contains a `Card` that was added to it.
     func test_contains_addedCard_true() throws {
 
         // Given
-        let title = "Card"
-        let card = Card(named: title)
+        let card = Card()
         let hand = Hand()
 
         // When
@@ -1837,26 +1840,60 @@ class HandTests: XCTestCase {
         // Then
         XCTAssert(hand.contains(card))
     }
+    
+    /// Tests that a `Hand` contains the `Card`s that were added to it.
+    func test_contains_addedCards_true() throws {
 
-    /// Tests that a `Hand` does not contains a `Card` that was removed from it.
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)
+
+        // When
+        try hand.add(cards)
+
+        // Then
+        XCTAssert(hand.contains(cards))
+    }
+    
+    //               //
+    // Removed Cards //
+    //               //
+
+    /// Tests that a `Hand` does not contain a `Card` that was removed from it.
     func test_contains_removedCard_false() throws {
         
         // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
         let cards = [card1, card2, card3]
         let hand = Hand(of: cards)
-        let expected = card2
         
         // When
-        let actual = try hand.remove(expected)
+        let removedCard = try hand.remove(card2)
         
         // Then
-        XCTAssertFalse(hand.contains(actual))
+        XCTAssertFalse(hand.contains(removedCard))
+    }
+    
+    /// Tests that a `Hand` does not contain the `Card`s that were removed from it.
+    func test_contains_removedCards_false() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)
+
+        // When
+        let removedCards = try hand.remove(cards)
+
+        // Then
+        XCTAssertFalse(hand.contains(removedCards))
     }
     
     //=========================================================================//
