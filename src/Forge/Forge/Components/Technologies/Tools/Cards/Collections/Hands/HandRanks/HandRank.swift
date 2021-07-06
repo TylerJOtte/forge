@@ -76,7 +76,14 @@ public class HandRank: Hand, Scoreable {
     /// - Returns: True if contains one of the given `Pair`'s `Card`'s, else false.
     func containsCard(in pair: Pair) -> Bool {
         
-        return contains(pair.first) || contains(pair.last)
+        var containsCard = false
+        
+        if let firstCard = pair.first, let secondCard = pair.last {
+            
+            containsCard = contains(firstCard) || contains(secondCard)
+        }
+        
+        return containsCard
     }
     
     /// Determines if contains one of the given `Pair`s' `Card`s.

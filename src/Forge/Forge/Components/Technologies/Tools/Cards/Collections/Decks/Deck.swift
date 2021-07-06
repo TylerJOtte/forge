@@ -35,9 +35,6 @@ public class Deck: Cards {
     /// The total # of `Card`s.
     public var count: Int { return cards.totalCount }
     
-    /// The `Deck`'s first `Card`.
-    public var first: Card? { return cards.first?.value.first}
-    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
@@ -181,7 +178,7 @@ public class Deck: Cards {
     /// - Returns: True if the collection is empty, else false.
     public func isEmpty() -> Bool {
         
-        return cards.count == 0
+        return count == 0
     }
     
     /// Determines if the collection is full.
@@ -191,7 +188,7 @@ public class Deck: Cards {
     /// - Returns: True if the collection is full else false.
     public func isFull() -> Bool {
         
-        return cards.count == maxCards
+        return count == maxCards
     }
     
     /// Determines if a key exists for the given`Card`.

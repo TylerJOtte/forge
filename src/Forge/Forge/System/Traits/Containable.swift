@@ -17,7 +17,7 @@
 import Foundation
 
 /// A containable characteristic.
-public protocol Containable {
+public protocol Containable: Trait {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -27,7 +27,7 @@ public protocol Containable {
     associatedtype T
     
     /// The {model's} first {T}.
-    var first: T? { get }
+//    var first: T? { get }
 
     //=========================================================================//
     //                                 TESTERS                                 //

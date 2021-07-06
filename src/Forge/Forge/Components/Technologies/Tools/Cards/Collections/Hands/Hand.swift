@@ -18,7 +18,7 @@ import Foundation
 
 /// A `Hand` of `Card`s.
 public class Hand: Cards {
-    
+
     //=========================================================================//
     //                                ATTRIBUTES                               //
     //=========================================================================//
@@ -37,7 +37,7 @@ public class Hand: Cards {
     
     /// The `Hand`'s first `Card`.
     public var first: Card? { return cards.first }
-    
+
     /// The `Hand`'s last `Card`.
     public var last: Card? { return cards.last }
     
@@ -202,23 +202,23 @@ public class Hand: Cards {
         return cards.contains(card)
     }
     
-    /// Determines if the given `Card` exists.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter card: The `Card` to find.
-    /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: Card?) -> Bool {
-        
-        var containsCard = false
-        
-        if let value = card {
-            
-            containsCard = contains(value)
-        }
-        
-        return containsCard
-    }
+//    /// Determines if the given `Card` exists.
+//    ///
+//    /// - Precondition: None.
+//    /// - Postcondition: None.
+//    /// - Parameter card: The `Card` to find.
+//    /// - Returns: True if the given `Card` exists, else false.
+//    public func contains(_ card: Card?) -> Bool {
+//
+//        var containsCard = false
+//
+//        if let value = card {
+//
+//            containsCard = contains(value)
+//        }
+//
+//        return containsCard
+//    }
     
     //-------------------------------------------------------------------------//
     //                                  Adders                                 //
