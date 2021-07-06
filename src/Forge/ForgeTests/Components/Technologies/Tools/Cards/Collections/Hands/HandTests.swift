@@ -1904,15 +1904,30 @@ class HandTests: XCTestCase {
     func test_remove_card_true() throws {
         
         // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
         let cards = [card1, card2, card3]
         let hand = Hand(of: cards)
         let expected = card2
+        
+        // When
+        let actual = try hand.remove(expected)
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that removing `Card`s from a `Hand` returns the expected `Card`s.
+    func test_remove_cards_true() throws {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)
+        let expected = cards
         
         // When
         let actual = try hand.remove(expected)
