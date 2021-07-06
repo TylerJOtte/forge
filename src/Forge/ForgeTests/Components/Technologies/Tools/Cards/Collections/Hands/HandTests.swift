@@ -1692,6 +1692,18 @@ class HandTests: XCTestCase {
     // Default //
     //         //
     
+    /// Tests that a default `Hand` does not contain a `Card`.
+    func test_contains_cardWithDefaultHand_false() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let hand = Hand()
+        let expected = card1
+
+        // When/Then
+        XCTAssertFalse(hand.contains(expected))
+    }
+    
     //            //
     // With Cards //
     //            //
@@ -1700,12 +1712,9 @@ class HandTests: XCTestCase {
     func test_contains_cardWithCards_true() {
         
         // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
         let cards = [card1, card2, card3]
         let hand = Hand(of: cards)
         let expected = card2
@@ -1713,28 +1722,58 @@ class HandTests: XCTestCase {
         // When/Then
         XCTAssert(hand.contains(expected))
     }
+    
+    /// Tests that a `Hand`created with `Card`s does not contain a `Card`.
+    func test_contains_cardWithCards_false() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)
+        let expected = card4
+
+        // When/Then
+        XCTAssertFalse(hand.contains(expected))
+    }
 
     //                    //
     // With Max and Cards //
     //                    //
     
-    /// Tests that a `Hand`created with a max and `Card`s contains an expected`Card`.
+    /// Tests that a `Hand`created with a max and `Card`s contains an expected `Card`.
     func test_contains_cardWithMaxAndCards_true() throws {
         
         // Given
         let max = 5
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
         let cards = [card1, card2, card3]
         let hand = try Hand(of: max, cards)
         let expected = card2
 
         // When/Then
         XCTAssert(hand.contains(expected))
+    }
+    
+    /// Tests that a `Hand`created with a max and `Card`s does not contain a `Card`.
+    func test_contains_cardWithMaxAndCards_false() throws {
+        
+        // Given
+        let max = 5
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3]
+        let hand = try Hand(of: max, cards)
+        let expected = card4
+
+        // When/Then
+        XCTAssertFalse(hand.contains(expected))
     }
     
     //                      //
@@ -1747,18 +1786,33 @@ class HandTests: XCTestCase {
         // Given
         let min = 3
         let max = 5
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
         let cards = [card1, card2, card3]
         let hand = try Hand(of: min, to: max, cards)
         let expected = card2
 
         // When/Then
         XCTAssert(hand.contains(expected))
+    }
+    
+    /// Tests that a `Hand`created with a range and `Card`s does not contain a `Card`.
+    func test_contains_cardWithRangeAndCards_false() throws {
+        
+        // Given
+        let min = 3
+        let max = 5
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3]
+        let hand = try Hand(of: min, to: max, cards)
+        let expected = card4
+
+        // When/Then
+        XCTAssertFalse(hand.contains(expected))
     }
     
     //=========================================================================//
@@ -1768,44 +1822,6 @@ class HandTests: XCTestCase {
     //-------------------------------------------------------------------------//
     //                                Contains                                 //
     //-------------------------------------------------------------------------//
-    
-    /// Tests that a `Hand` contains an expected`Card`.
-    func test_contains_card_true() {
-        
-        // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
-        let cards = [card1, card2, card3]
-        let hand = Hand(of: cards)
-        let expected = card2
-
-        // When/Then
-        XCTAssert(hand.contains(expected))
-    }
-    
-    /// Tests that a `Hand` does not contain a given`Card`.
-    func test_contains_card_false() {
-        
-        // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let title4 = "Card 4"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
-        let card4 = Card(named: title4)
-        let cards = [card1, card2, card3]
-        let hand = Hand(of: cards)
-        let expected = card4
-
-        // When/Then
-        XCTAssertFalse(hand.contains(expected))
-    }
     
     /// Tests that a `Hand` contains a `Card` that was added to it.
     func test_contains_addedCard_true() throws {
