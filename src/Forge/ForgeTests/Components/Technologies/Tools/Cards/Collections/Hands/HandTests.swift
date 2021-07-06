@@ -1972,6 +1972,28 @@ class HandTests: XCTestCase {
         }
     }
     
+    //                  //
+    // Increments Count //
+    //                  //
+    
+    /// Tests that adding a `Card` to a `Hand` increments the count by one.
+    func test_add_cardIncrementsCountByOne_true() throws {
+    
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let cards = [card1]
+        let hand = Hand(of: cards)
+        let expected = 2
+        
+        // When
+        try hand.add(card2)
+        let actual = hand.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                                 REMOVERS                                //
     //=========================================================================//

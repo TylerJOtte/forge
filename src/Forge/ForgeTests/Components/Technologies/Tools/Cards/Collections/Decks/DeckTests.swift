@@ -703,17 +703,18 @@ class DeckTests: XCTestCase {
     // Increments Count //
     //                  //
     
-    /// Tests that adding the same `Card` to a `Deck` increments the count by one.
-    func test_add_sameCardIncrementsCount_true() throws {
+    /// Tests that adding a `Card` to a `Deck` increments the count by one.
+    func test_add_cardIncrementsCountByOne_true() throws {
     
         // Given
-        let card = Card()
-        let cards = [card]
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let cards = [card1]
         let deck = Deck(of: cards)
         let expected = 2
         
         // When
-        try deck.add(card)
+        try deck.add(card2)
         let actual = deck.count
         
         // Then
