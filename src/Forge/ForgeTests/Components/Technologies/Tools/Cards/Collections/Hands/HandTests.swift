@@ -1820,7 +1820,7 @@ class HandTests: XCTestCase {
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
-    //                                Contains                                 //
+    //                               contains()                                //
     //-------------------------------------------------------------------------//
     
     //             //
@@ -1897,8 +1897,128 @@ class HandTests: XCTestCase {
     }
     
     //=========================================================================//
+    //                                  ADDERS                                 //
+    //=========================================================================//
+    
+    //              //
+    // Throws Error //
+    //              //
+    
+    /// Tests that adding a `Card` to a full `Hand` throws an `isFull` error.
+    func test_add_cardToFullHand_throwsIsFullError() throws {
+        
+        // Given
+        let max = 3
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3]
+        let hand = try Hand(of: max, cards)
+        let expected = RangeError.isFull
+        
+        // When
+        XCTAssertThrowsError(try hand.add(card4)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    /// Tests that adding `Card`s to a full `Hand` throws an `isFull` error.
+    func test_add_cardsToFullHand_throwsIsFullError() throws {
+        
+        // Given
+        let max = 3
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards = [card1, card2, card3]
+        let newCards = [card4, card5]
+        let hand = try Hand(of: max, cards)
+        let expected = RangeError.isFull
+        
+        // When
+        XCTAssertThrowsError(try hand.add(newCards)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    /// Tests that adding more `Card`s than the capacity to a `Hand` throws a `limitedCapacity`
+    /// error.
+    func test_add_moreCardsThanCapacity_throwsLimitedCapacityError() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards = [card1, card2, card3]
+        let newCards = [card4, card5]
+        let hand = try Hand(of: max, cards)
+        let expected = RangeError.limitedCapacity
+        
+        // When
+        XCTAssertThrowsError(try hand.add(newCards)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    //=========================================================================//
     //                                 REMOVERS                                //
     //=========================================================================//
+    
+    //              //
+    // Throws Error //
+    //              //
+    
+    /// Tests that removing a `Card` from an empty `Hand` throws an `isEmpty Error`.
+    func test_remove_cardFromEmptyHand_throwsIsEmptyError() throws {
+
+        // Given
+        let card = Card()
+        let hand = Hand()
+        let expected = ElementsError.isEmpty
+
+        // When
+        XCTAssertThrowsError(try hand.remove(card)) { (error) in
+
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    /// Tests that removing a `Card` from a `Hand`that does not contain it throws a `notFound` error.
+    func test_remove_nonContainedCard_throwsNotFoundError() throws {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)
+        let expected = ElementsError.notFound
+        
+        // When
+        XCTAssertThrowsError(try hand.remove(card4)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    //                        //
+    // Removes Expected Cards //
+    //                        //
     
     /// Tests that removing a `Card` from a `Hand` returns the expected `Card`.
     func test_remove_card_true() throws {
@@ -1934,127 +2054,5 @@ class HandTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
-    }
-    
-    //=========================================================================//
-    //                                Throwers                                 //
-    //=========================================================================//
-    
-    /// Tests that removing  a `Card` from an empty `Hand` throws an `iEmpty Error`.
-    func test__removeFromEmptyHand_throwsIsEmptyError() throws {
-
-        // Given
-        let card = Card()
-        let hand = Hand()
-        let expected = ElementsError.isEmpty
-
-        // When
-        XCTAssertThrowsError(try hand.remove(card)) { (error) in
-
-            // Then
-            XCTAssertEqual(expected, error as? ElementsError)
-        }
-    }
-
-    /// Tests that removing `Card`s from a `Hand`that does not contain it throws an
-    /// `ElementsError.notFound` error.
-    func test_throwsNotFoundError_removeNonExistentCard_true() throws {
-        
-        // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let title4 = "Card 4"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
-        let card4 = Card(named: title4)
-        let cards = [card1, card2, card3]
-        let hand = Hand(of: cards)
-        let expected = ElementsError.notFound
-        
-        // When
-        XCTAssertThrowsError(try hand.remove(card4)) { (error) in
-            
-            // Then
-            XCTAssertEqual(expected, error as? ElementsError)
-        }
-    }
-    
-    /// Tests that adding a `Card` to a full `Hand` throws an `RangeError.isFull` error.
-    func test_throwsIsFullError_addCardToFullHand_true() throws {
-        
-        // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
-        let cards = [card1, card2]
-        let max = 2
-        let hand = try Hand(of: max, cards)
-        let expected = RangeError.isFull
-        
-        // When
-        XCTAssertThrowsError(try hand.add(card3)) { (error) in
-            
-            // Then
-            XCTAssertEqual(expected, error as? RangeError)
-        }
-    }
-    
-    /// Tests that adding `Card`s to a full `Hand` throws an `RangeError.isFull` error.
-    func test_throwsIsFullError_addCardsToFullHand_true() throws {
-        
-        // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let title4 = "Card 4"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
-        let card4 = Card(named: title4)
-        let cards1 = [card1, card2]
-        let cards2 = [card3, card4]
-        let max = 2
-        let hand = try Hand(of: max, cards1)
-        let expected = RangeError.isFull
-        
-        // When
-        XCTAssertThrowsError(try hand.add(cards2)) { (error) in
-            
-            // Then
-            XCTAssertEqual(expected, error as? RangeError)
-        }
-    }
-    
-    /// Tests that adding `Card`s to a `Hand`greater than its capacity throws an
-    /// `RangeError.limitedCapacity` error.
-    func test_throwsInsufficientCapacityError_addMoreCardsThanCapacity_true()
-        throws {
-        
-        // Given
-        let title1 = "Card 1"
-        let title2 = "Card 2"
-        let title3 = "Card 3"
-        let title4 = "Card 4"
-        let card1 = Card(named: title1)
-        let card2 = Card(named: title2)
-        let card3 = Card(named: title3)
-        let card4 = Card(named: title4)
-        let cards1 = [card1, card2]
-        let cards2 = [card3, card4]
-        let max = 3
-        let hand = try Hand(of: max, cards1)
-        let expected = RangeError.limitedCapacity
-        
-        // When
-        XCTAssertThrowsError(try hand.add(cards2)) { (error) in
-            
-            // Then
-            XCTAssertEqual(expected, error as? RangeError)
-        }
     }
 }
