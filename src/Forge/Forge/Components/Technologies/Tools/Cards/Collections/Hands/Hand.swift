@@ -220,6 +220,27 @@ public class Hand: Cards {
         return containsCard
     }
     
+    /// Determines if all `Card`s in the given collection exist.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter card: The `Card`s to find.
+    /// - Returns: True if all `Card`s in the given collection exist, else false.
+    public func contains(_ cards: [Card]) -> Bool {
+        
+        var containsCards = true
+        var card = 0
+        
+        while(containsCards && card < cards.count) {
+            
+            containsCards = contains(cards[card])
+            
+            card += 1
+        }
+        
+        return containsCards
+    }
+    
     //-------------------------------------------------------------------------//
     //                                  Adders                                 //
     //-------------------------------------------------------------------------//

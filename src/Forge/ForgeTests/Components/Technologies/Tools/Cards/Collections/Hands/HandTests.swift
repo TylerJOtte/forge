@@ -966,6 +966,76 @@ class HandTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                                 cards                                   //
+    //-------------------------------------------------------------------------//
+    
+    //            //
+    // With Cards //
+    //            //
+    
+    // Contains Given Cards //
+    // ~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that the `Card`s of a `Hand` created with `Card`s contains the given `Card`s.
+    func test_cards_ofNewHandWithCards_containsGivenCards_() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)
+
+        // When/Then
+        XCTAssert(hand.contains(cards))
+    }
+    
+    //                    //
+    // With Max and Cards //
+    //                    //
+    
+    // Contains Given Cards //
+    // ~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that the`Card`s of a `Hand` created with a max and `Card`s contains the given `Card`s.
+    func test_cards_ofNewHandWithMaxAndCards_equalsGivenCardsCount() throws {
+        
+        // Given
+        let max = 5
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let hand = try Hand(of: max, cards)
+
+        // When/Then
+        XCTAssert(hand.contains(cards))
+    }
+    
+    //                      //
+    // With Range And Cards //
+    //                      //
+    
+    // Contains Given Cards //
+    // ~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that the`Card`s  of a `Hand` created with a range and `Card`s contains the given `Card`s.
+    func test_cards_ofNewHandWithRangeAndCards_equalsGivenCardsCount() throws {
+        
+        // Given
+        let min = 1
+        let max = 5
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let hand = try Hand(of: min, to: max, cards)
+        
+        // When/Then
+        XCTAssert(hand.contains(cards))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                 first                                   //
     //-------------------------------------------------------------------------//
     
@@ -1378,8 +1448,8 @@ class HandTests: XCTestCase {
     // With Partial Cards //
     // ~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that a `Hand` created with `Card`s is not empty.
-    func test_isEmpty_newHandWithCards_false() {
+    /// Tests that a `Hand` created with partial `Card`s is not empty.
+    func test_isEmpty_newHandWithPartialCards_false() {
         
         // Given
         let cards = [Card()]
@@ -1411,8 +1481,8 @@ class HandTests: XCTestCase {
     // With Partial Cards //
     // ~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that a `Hand` created with a max and `Card`s is not empty.
-    func test_isEmpty_newHandWithMaxAndCards_false() throws {
+    /// Tests that a `Hand` created with a max and partial `Card`s is not empty.
+    func test_isEmpty_newHandWithMaxAndPartialCards_false() throws {
         
         // Given
         let max = 5
@@ -1446,8 +1516,8 @@ class HandTests: XCTestCase {
     // With Partial Cards //
     // ~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that a `Hand` created with a range and `Card`s is not empty.
-    func test_isEmpty_newHandWithRangeAndCards_false() throws {
+    /// Tests that a `Hand` created with a range and partial `Card`s is not empty.
+    func test_isEmpty_newHandWithRangeAndPartialCards_false() throws {
         
         // Given
         let min = 0
