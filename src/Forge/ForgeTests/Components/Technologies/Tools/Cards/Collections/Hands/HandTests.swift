@@ -969,6 +969,10 @@ class HandTests: XCTestCase {
     //                                 cards                                   //
     //-------------------------------------------------------------------------//
     
+    //         //
+    // Default //
+    //         //
+    
     //            //
     // With Cards //
     //            //
@@ -993,7 +997,7 @@ class HandTests: XCTestCase {
     //                    //
     // With Max and Cards //
     //                    //
-    
+
     // Contains Given Cards //
     // ~~~~~~~~~~~~~~~~~~~~ //
     
@@ -1015,7 +1019,7 @@ class HandTests: XCTestCase {
     //                      //
     // With Range And Cards //
     //                      //
-    
+
     // Contains Given Cards //
     // ~~~~~~~~~~~~~~~~~~~~ //
     
@@ -1678,6 +1682,83 @@ class HandTests: XCTestCase {
         
         // When/Then
         XCTAssert(hand.isFull())
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Contains                                 //
+    //-------------------------------------------------------------------------//
+    
+    //         //
+    // Default //
+    //         //
+    
+    //            //
+    // With Cards //
+    //            //
+    
+    /// Tests that a `Hand`created with `Card`s contains an expected`Card`.
+    func test_contains_cardWithCards_true() {
+        
+        // Given
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
+        let cards = [card1, card2, card3]
+        let hand = Hand(of: cards)
+        let expected = card2
+
+        // When/Then
+        XCTAssert(hand.contains(expected))
+    }
+
+    //                    //
+    // With Max and Cards //
+    //                    //
+    
+    /// Tests that a `Hand`created with a max and `Card`s contains an expected`Card`.
+    func test_contains_cardWithMaxAndCards_true() throws {
+        
+        // Given
+        let max = 5
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
+        let cards = [card1, card2, card3]
+        let hand = try Hand(of: max, cards)
+        let expected = card2
+
+        // When/Then
+        XCTAssert(hand.contains(expected))
+    }
+    
+    //                      //
+    // With Range And Cards //
+    //                      //
+    
+    /// Tests that a `Hand`created with a range and `Card`s contains an expected`Card`.
+    func test_contains_cardWithRangeAndCards_true() throws {
+        
+        // Given
+        let min = 3
+        let max = 5
+        let title1 = "Card 1"
+        let title2 = "Card 2"
+        let title3 = "Card 3"
+        let card1 = Card(named: title1)
+        let card2 = Card(named: title2)
+        let card3 = Card(named: title3)
+        let cards = [card1, card2, card3]
+        let hand = try Hand(of: min, to: max, cards)
+        let expected = card2
+
+        // When/Then
+        XCTAssert(hand.contains(expected))
     }
     
     //=========================================================================//
