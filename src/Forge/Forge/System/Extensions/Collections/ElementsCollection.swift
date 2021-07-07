@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  CardsArrayExtension.swift                                                       //
+//  ElementsCollection.swift                                                   //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/04/21.                                       //
@@ -15,20 +15,9 @@
 //=============================================================================//
 
 
-/// An extension for common `Cards Array` operations.
-extension Array where Element: Cards {
+/// An extension for common `Elements Collection` operations.
+extension Collection where Element: Elements {
 
-    //=========================================================================//
-    //                               CALCULATORS                               //
-    //=========================================================================//
-    
-    /// Sums all the `Element`s' counts.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The sum of all the `Element`s' counts.
-    func sumCounts() -> Int {
-        
-        return self.map{$0.count}.reduce(0, +)
-    }
+    /// The sum total of each `Element`'s count.
+    var totalCount: Int { return map{$0.count}.sum }
 }

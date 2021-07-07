@@ -14,21 +14,38 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `Scoreable Array` operations.
-extension Array where Element: Scoreable  {
-
-    //=========================================================================//
-    //                               CALCULATORS                               //
-    //=========================================================================//
-    
-    /// Sums all the `Element`s' points.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The sum of all the `Element`s' points, or 0 if empty.
-    func sumPoints() -> Int {
-        
-        return self.map{$0.points}.reduce(0, +)
-    }
-    
-}
+///// An extension for common `Scoreable Array` operations.
+//extension Array where Element: Scoreable  {
+//
+//    //=========================================================================//
+//    //                               CALCULATORS                               //
+//    //=========================================================================//
+//
+//    /// Sums all the `Element`s' points.
+//    ///
+//    /// - Precondition: None.
+//    /// - Postcondition: None.
+//    /// - Returns: The sum of all the `Element`s' points, or 0 if empty.
+//    func sumPoints() -> Int {
+//
+//        return map{$0.points}.sum()
+//    }
+//}
+//
+///// An extension for common `Scoreable Array` operations.
+//extension Collection where Iterator.Element: Collection, Iterator.Element.Iterator.Element: Scoreable {
+//
+//    //=========================================================================//
+//    //                               CALCULATORS                               //
+//    //=========================================================================//
+//
+//    /// Sums all the `Element`s' points.
+//    ///
+//    /// - Precondition: None.
+//    /// - Postcondition: None.
+//    /// - Returns: The sum of all the `Element`s' points, or 0 if empty.
+//    func sumPoints() -> Int {
+//
+//        return map{$0.map{$0.points}.sum()}.sum()
+//    }
+//}

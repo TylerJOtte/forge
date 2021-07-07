@@ -16,15 +16,15 @@
 
 /// An extension for common `Dictionary`operations where the value of an entry is a
 /// `HandRank Array`.
-extension Dictionary where Value == [HandRank] {
+extension Dictionary where Value: Collection, Value.Element: Scoreable {
     
     /// Sums all the `Element`s' points.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: The sum of all the `Element`s' points.
-    func sumPoints() -> Int {
+    var points: Int {
         
-        return Array(values).sumPoints()
+        return Array(values).totalPoints
     }
 }

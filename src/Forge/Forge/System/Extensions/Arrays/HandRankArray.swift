@@ -37,18 +37,3 @@ extension Array where Element: HandRank {
         return containsPairCards
     }
 }
-
-/// An extension for common `Array<HandRank<RankedCard>> Array` operations.
-extension Array where Element == Array<HandRank> {
-
-    /// Sums all the `Element`s' points.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The sum of all the `Element`s' points.
-    func sumPoints() -> Int {
-        
-        return self.map{$0.sumPoints()}.reduce(0, +)
-    }
-}
-

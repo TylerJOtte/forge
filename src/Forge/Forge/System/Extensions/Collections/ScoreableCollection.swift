@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  CollectionDictionary.swift                                                 //
+//  ScoreableCollection.swift                                                  //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 6/02/21.                                       //
+//  Created by Tyler J. Otte on 7/07/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -14,9 +14,16 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `Dictionary`operations where the value of an entry is a `Collection`.
-extension Dictionary where Value: Collection {
+/// An extension for common `Scoreable Collection` operations.
+extension Collection where Element: Scoreable  {
+ 
+    /// The sum total of each `Element`'s points.
+    var totalPoints: Int { return map{$0.points}.sum }
+}
+
+/// An extension for common `Collection` of `Scoreable Collection `s operations.
+extension Collection where Element: Collection, Element.Element: Scoreable {
     
-    /// The total count of all `Collection` values
-    var totalCount: Int { map{$1.count}.sum }
+    /// The sum total of each `Element`'s total points.
+    var totalPoints: Int { return map{$0.totalPoints}.sum }
 }

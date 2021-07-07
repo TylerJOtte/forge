@@ -40,7 +40,7 @@ class ScoreableArrayTests: XCTestCase {
         let expected = 55
         
         // When
-        let actual = cards.sumPoints()
+        let actual = cards.totalPoints
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -58,7 +58,7 @@ class ScoreableArrayTests: XCTestCase {
         let expected = 30
         
         // When
-        let actual = cards.sumPoints()
+        let actual = cards.totalPoints
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -76,7 +76,7 @@ class ScoreableArrayTests: XCTestCase {
         let expected = 85
         
         // When
-        let actual = cards.sumPoints()
+        let actual = cards.totalPoints
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -90,7 +90,7 @@ class ScoreableArrayTests: XCTestCase {
         let expected = 340
         
         // When
-        let actual = cards.sumPoints()
+        let actual = cards.totalPoints
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -108,7 +108,7 @@ class ScoreableArrayTests: XCTestCase {
         let expected = 85
         
         // When
-        let actual = cards.sumPoints()
+        let actual = cards.totalPoints
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -122,7 +122,7 @@ class ScoreableArrayTests: XCTestCase {
         let expected = 340
         
         // When
-        let actual = cards.sumPoints()
+        let actual = cards.totalPoints
         
         // Then
         XCTAssertEqual(expected, actual)

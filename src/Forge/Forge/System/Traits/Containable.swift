@@ -26,9 +26,9 @@ public protocol Containable: Trait {
     /// The type of `Element` that the model contains.
     associatedtype T
     
-    /// The {model's} first {T}.
-//    var first: T? { get }
-
+    /// The total # of `Element`s.
+    var count: Int { get }
+    
     //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//

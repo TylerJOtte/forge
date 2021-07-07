@@ -36,7 +36,7 @@ class HandRankArrayDictionaryExtensionTests: XCTestCase {
         let expected = 0
         
         // When
-        let actual = dictionary.sumPoints()
+        let actual = dictionary.points
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -55,7 +55,7 @@ class HandRankArrayDictionaryExtensionTests: XCTestCase {
         let expected = 0
 
         // When
-        let actual = dictionary.sumPoints()
+        let actual = dictionary.points
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -87,7 +87,7 @@ class HandRankArrayDictionaryExtensionTests: XCTestCase {
         let expected = 8
         
         // When
-        let actual = dictionary.sumPoints()
+        let actual = dictionary.points
         
         // Then
         XCTAssertEqual(expected, actual)

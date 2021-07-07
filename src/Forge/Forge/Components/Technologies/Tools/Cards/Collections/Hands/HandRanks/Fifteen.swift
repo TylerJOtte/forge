@@ -44,7 +44,7 @@ public class Fifteen: HandRank {
         let sum = 15
         let points = 2
         
-        guard (cards.sumPoints() == sum) else {
+        guard (cards.totalPoints == sum) else {
             
             print("The given Cards' points must sum to 15.")
             throw ScoreError.invalidPoints

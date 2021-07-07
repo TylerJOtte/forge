@@ -40,7 +40,7 @@ class CardsArrayTests: XCTestCase {
         let expected = 0
         
         // When
-        let actual = cards.sumCounts()
+        let actual = cards.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -62,7 +62,7 @@ class CardsArrayTests: XCTestCase {
         let expected = 2
         
         // When
-        let actual = hands.sumCounts()
+        let actual = hands.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -83,7 +83,7 @@ class CardsArrayTests: XCTestCase {
         let expected = 104
         
         // When
-        let actual = decks.sumCounts()
+        let actual = decks.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -101,7 +101,7 @@ class CardsArrayTests: XCTestCase {
         let expected = 108
         
         // When
-        let actual = decks.sumCounts()
+        let actual = decks.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -119,7 +119,7 @@ class CardsArrayTests: XCTestCase {
         let expected = 106
         
         // When
-        let actual = decks.sumCounts()
+        let actual = decks.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -143,7 +143,7 @@ class CardsArrayTests: XCTestCase {
         let expected = 2
         
         // When
-        let actual = pairs.sumCounts()
+        let actual = pairs.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -165,7 +165,7 @@ class CardsArrayTests: XCTestCase {
         let expected = 4
         
         // When
-        let actual = pairs.sumCounts()
+        let actual = pairs.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -186,7 +186,7 @@ class CardsArrayTests: XCTestCase {
         let expected = 3
         
         // When
-        let actual = kinds.sumCounts()
+        let actual = kinds.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -210,7 +210,7 @@ class CardsArrayTests: XCTestCase {
         let expected = 6
         
         // When
-        let actual = kinds.sumCounts()
+        let actual = kinds.totalCount
         
         // Then
         XCTAssertEqual(expected, actual)

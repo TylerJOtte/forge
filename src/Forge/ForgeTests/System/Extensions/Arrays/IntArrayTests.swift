@@ -36,7 +36,7 @@ class IntArrayTests: XCTestCase {
         let expected = 0
         
         // When
-        let actual = numbers.sum()
+        let actual = numbers.sum
         
         // Then
         XCTAssertEqual(expected, actual)
@@ -50,7 +50,7 @@ class IntArrayTests: XCTestCase {
         let expected = 55
         
         // When
-        let actual = numbers.sum()
+        let actual = numbers.sum
         
         // Then
         XCTAssertEqual(expected, actual)

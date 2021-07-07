@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  CollectionDictionary.swift                                                 //
+//  IntCollection.swift                                                        //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 6/02/21.                                       //
+//  Created by Tyler J. Otte on 7/07/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -14,9 +14,11 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `Dictionary`operations where the value of an entry is a `Collection`.
-extension Dictionary where Value: Collection {
-    
-    /// The total count of all `Collection` values
-    var totalCount: Int { map{$1.count}.sum }
+
+
+/// An extension for common `Int Collection` operations.
+extension Collection where Element == Int {
+
+    /// The sum total of all `Element`s.
+    var sum: Int { return reduce(0, +) }
 }

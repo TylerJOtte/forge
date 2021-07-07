@@ -28,7 +28,7 @@ public class HandScore: Score {
     public var handRanks: [String:[HandRank]]
     
     /// The total # of points.
-    public override var points: Int { handRanks.sumPoints() }
+    public override var points: Int { handRanks.points }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //

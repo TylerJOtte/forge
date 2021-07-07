@@ -48,7 +48,7 @@ public class MultiRun: HandRank {
         let runCount = pairs.getUniqueCards().count
         let count = pairCount
         let handRanks: [[HandRank]] = [pairs, runs]
-        let points = handRanks.sumPoints()
+        let points = handRanks.totalPoints
         
         guard (min >= minCards) else {
 
