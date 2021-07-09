@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  IntArrayTests.swift                                                        //
+//  IntCollectionTests.swift                                                   //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 6/02/21.                                       //
@@ -17,8 +17,8 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for an `Int Array`.
-class IntArrayTests: XCTestCase {
+/// Unit tests for an `Int Collection`.
+class IntCollectionTests: XCTestCase {
  
     //=========================================================================//
     //                               CALCULATORS                               //
@@ -28,8 +28,8 @@ class IntArrayTests: XCTestCase {
     //                               sumPoints()                               //
     //-------------------------------------------------------------------------//
     
-    /// Tests that summing all the numbers an `Int Array` with zero elements equals zero.
-    func test_sumPoints_ofEmptyArray_equalsZero() throws {
+    /// Tests that the sum of a `Collection` without any numbers equals zero.
+    func test_sum_withoutNumbers_equalsZero() throws {
         
         // Given
         let numbers: [Int] = []
@@ -42,8 +42,8 @@ class IntArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that summing all the numbers in an `Int Array` equals an expected value.
-    func test_sumPoints_ofNumbers_equalsExpected() throws {
+    /// Tests that the sum of a `Collection`with numbers equals an expected value.
+    func test_sum_withNumbers_equalsExpected() throws {
         
         // Given
         let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
