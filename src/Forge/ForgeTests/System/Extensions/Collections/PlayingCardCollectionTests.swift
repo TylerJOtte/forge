@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  PlayingCardArrayTests.swift                                                //
+//  PlayingCardCollectionTests.swift                                           //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 6/02/21.                                       //
@@ -17,8 +17,81 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for a `PlayingCard Array`.
-class PlayingCardArrayTests: XCTestCase {
+/// Unit tests for a `PlayingCard Collection`.
+class PlayingCardCollectionTests: XCTestCase {
+    
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                            areEquallySuited()                           //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Collection` of `PlayingCards` that all contain the same `Suit` are equally
+    /// `Suit`ed.
+    func test_areEquallySuited_PlayingCardsThatAllContainSameSuit_true() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssert(cards.areEquallySuited())
+    }
+    
+    /// Tests that a `Collection` of `PlayingCards` with varioius `Suit`s are not equally
+    /// `Suit`ed.
+    func test_areEquallySuited_PlayingCardsWithVariousSuits_false() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .spades)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssertFalse(cards.areEquallySuited())
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                contains()                               //
+    //-------------------------------------------------------------------------//
+    
+    //                    //
+    // Contains Only Suit //
+    //                    //
+    
+    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` contains only that given
+    /// `Suit`.
+    func test_containsOnlySuit_withPlayingCardsOfOneSuitAndSameGivenSuit_true()
+        throws {
+        
+        // Given
+        let suit = Suit.hearts
+        let ace = try Ace(of: suit)
+        let two = try Two(of: suit)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssert(cards.contain(only: suit))
+    }
+    
+    /// Tests that a `Collection` of `PlayingCards` with various `Suit`s does not contain only one
+    /// given `Suit`.
+    func test_containsOnlySuit_withPlayingCardsOfVariousSuitsAndGivenSuit_false()
+        throws {
+        
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit2)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(only: suit1))
+    }
     
     //=========================================================================//
     //                                SPLITTERS                                //
@@ -182,37 +255,5 @@ class PlayingCardArrayTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
-    }
-    
-    //=========================================================================//
-    //                                 TESTERS                                 //
-    //=========================================================================//
-    
-    //-------------------------------------------------------------------------//
-    //                            areEquallySuited()                           //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that `PlayingCards` with the same `Suit` are equally `Suit`ed.
-    func test_areEquallySuited_PlayingCardsWithSameSuit_true() throws {
-        
-        // Given
-        let ace = try Ace(of: .hearts)
-        let two = try Two(of: .hearts)
-        let cards = [ace, two]
-        
-        // When/Then
-        XCTAssert(cards.areEquallySuited())
-    }
-    
-    /// Tests that `PlayingCards` with different `Suit`s are not equally `Suit`ed.
-    func test_areEquallySuited_PlayingCardsWithDifferentSuits_false() throws {
-        
-        // Given
-        let ace = try Ace(of: .hearts)
-        let two = try Two(of: .spades)
-        let cards = [ace, two]
-        
-        // When/Then
-        XCTAssertFalse(cards.areEquallySuited())
     }
 }

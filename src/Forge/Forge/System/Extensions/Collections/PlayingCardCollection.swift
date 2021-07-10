@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  PlayingCardArray.swift                                                     //
+//  PlayingCardCollection.swift                                                //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 6/02/21.                                       //
@@ -15,8 +15,8 @@
 //=============================================================================//
 
 
-/// An extension for common `PlayingCard Array` operations.
-extension Array where Element: PlayingCard  {
+/// An extension for common `PlayingCard Collection` operations.
+extension Collection where Element: PlayingCard  {
 
     //=========================================================================//
     //                                 TESTERS                                 //
