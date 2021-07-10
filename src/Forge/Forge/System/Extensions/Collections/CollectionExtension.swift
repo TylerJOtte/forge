@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  Collection.swift                                                           //
+//  CollectionExtension.swift                                                  //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 7/10/21.                                       //
@@ -15,7 +15,7 @@
 //=============================================================================//
 
 
-/// An extension for common `Collection` operations.
+/// An `extension` for common `Collection` operations.
 extension Collection {
 
     /// Retrieves all the `Element`s that do not exist in the given `Collection`.
