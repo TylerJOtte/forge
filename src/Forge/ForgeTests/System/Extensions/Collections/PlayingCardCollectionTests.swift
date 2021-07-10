@@ -58,9 +58,69 @@ class PlayingCardCollectionTests: XCTestCase {
     //                                contains()                               //
     //-------------------------------------------------------------------------//
     
+    //                     //
+    // Contains Other Suit //
+    //                     //
+    
+    /// Tests that a `Collection` of empty `PlayingCards` does not contains other `Suit`s than the
+    /// given `Suit`.
+    func test_containsOtherSuit_withEmptyPlayingCardsAndGivenSuit_false()
+        throws {
+        
+        // Given
+        let suit = Suit.hearts
+        let cards: [PlayingCard] = []
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(other: suit))
+    }
+    
+    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` does not contain `Suit`
+    /// other than the given `Suit`.
+    func test_containsOtherSuit_withPlayingCardsOfOneSuitAndSameGivenSuit_false()
+        throws {
+        
+        // Given
+        let suit = Suit.hearts
+        let ace = try Ace(of: suit)
+        let two = try Two(of: suit)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(other: suit))
+    }
+    
+    /// Tests that a `Collection` of `PlayingCards` with various `Suit`s contains other `Suit`s
+    /// than the given `Suit`.
+    func test_containsOtherSuit_withPlayingCardsOfVariousSuitsAndGivenSuit_true()
+        throws {
+        
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit2)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssert(cards.contain(other: suit1))
+    }
+    
     //                    //
     // Contains Only Suit //
     //                    //
+    
+    /// Tests that a `Collection` of empty `PlayingCards` does not only the given `Suit`.
+    func test_containsOnlySuit_withEmptyPlayingCardsAndGivenSuit_false()
+        throws {
+        
+        // Given
+        let suit = Suit.hearts
+        let cards: [PlayingCard] = []
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(only: suit))
+    }
     
     /// Tests that a `Collection` of `PlayingCards` with only one `Suit` contains only that given
     /// `Suit`.
