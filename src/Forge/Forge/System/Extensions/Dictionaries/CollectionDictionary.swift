@@ -17,6 +17,9 @@
 /// An extension for common `Dictionary`operations where the value of an entry is a `Collection`.
 extension Dictionary where Value: Collection {
     
+    /// A collection of all `Element`s from all `Value`s.
+    var allValueElements: [Value.Element] { allValues.flatMap{$0} }
+    
     /// The total count of all `Collection` values
     var totalCount: Int { map{$1.count}.sum }
 }

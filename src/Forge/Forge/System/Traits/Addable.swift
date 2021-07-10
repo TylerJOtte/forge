@@ -17,7 +17,7 @@
 import Foundation
 
 /// An addable characteristic.
-public protocol Addable: Containable {
+public protocol Addable: Filterable {
     
     /// Adds the given `T`.
     ///

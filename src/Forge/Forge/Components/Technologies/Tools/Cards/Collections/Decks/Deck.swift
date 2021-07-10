@@ -18,7 +18,7 @@ import Foundation
 
 /// A `Deck` of `Card`s.
 public class Deck: Cards {
-    
+
     //=========================================================================//
     //                                ATTRIBUTES                               //
     //=========================================================================//
@@ -211,6 +211,22 @@ public class Deck: Cards {
     public func contains(_ card: Card) -> Bool {
         
         return containsKey(card) && cards[card.title]!.count > 0
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                 Filters                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Retrieves all the `Card`s that do not exist in the given `Collection`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter cards: The `Collection` to filter by.
+    /// - Returns: An `Array` of `Card`s that do not exist in the given `Collection`.
+    public func except<Cards>(_ cards: Cards) -> [Card] where Cards : Collection,
+        Cards.Element == Card {
+        
+        return self.cards.allValueElements.except(cards)
     }
     
     //-------------------------------------------------------------------------//

@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  HandRankArrayDictionary.swift                                              //
+//  Dictionary.swift                                                           //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 6/14/21.                                       //
+//  Created by Tyler J. Otte on 7/07/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -14,14 +14,9 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `Dictionary`operations where the value of an entry is a
-/// `HandRank Array`.
-extension Dictionary where Value: Collection, Value.Element: Scoreable {
+/// An extension for common `Dictionary`operations.
+extension Dictionary {
     
-    /// Sums all the `Element`s' points.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: The sum of all the `Element`s' points.
-    var points: Int { return allValues.totalPoints }
+    /// A `Collection` of all `Value`s.
+    var allValues: [Self.Value] { Array(values) }
 }

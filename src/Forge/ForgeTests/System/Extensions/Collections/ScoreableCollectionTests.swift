@@ -46,8 +46,9 @@ class ScoreableCollectionTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that the total points of an empty `Collection<Scoreable> Collection` equals zero.
-    func test_totalPoints_withEmptyScoreableCollectionCollection_equalsZero() {
+    /// Tests that the total points of an empty `Collection` of `Scoreable Collection`s equals
+    /// zero.
+    func test_totalPoints_withEmptyCollectionOfScoreableCollections_equalsZero() {
         
         // Given
         let collection: [[RankedCard]] = []
@@ -64,8 +65,10 @@ class ScoreableCollectionTests: XCTestCase {
     // With Empty Elements //
     //                     //
     
-    /// Tests that the total points with all empty `Collection<Scoreable>` elements equals zero.
-    func test_totalPoints_withEmptyCollectionElements_equalsZero() {
+    /// Tests that the total points with a `Collection` of all empty `Scoreable Collection`s equals
+    /// zero.
+    func test_totalPoints_withCollectionOfEmptyScoreableCollections_equalsZero()
+        {
         
         // Given
         let element1: [RankedCard] = []
@@ -85,8 +88,8 @@ class ScoreableCollectionTests: XCTestCase {
     // With Elements  //
     //                //
     
-    /// Tests that the total points with `Scoreable Elements` equals an expected value.
-    func test_totalPoints_withScoreableElements_equalsExpected() {
+    /// Tests that the total points of a `Scoreable Collection`s equals an expected value.
+    func test_totalPoints_withScoreableCollection_equalsExpected() {
         
         // Given
         let collection = [RankedCard(), RankedCard(), RankedCard()]
@@ -103,9 +106,9 @@ class ScoreableCollectionTests: XCTestCase {
     // With Empty And Non-Empty Elements //
     //                                   //
     
-    /// Tests that the total points with empty and non-empty `Collection<Scoreable> Elements`
-    /// equals an expected value.
-    func test_totalPoints_withEmptyAndNonEmptyCollectionElements_equalsExpected()
+    /// Tests that the total points of a `Colleection` with empty and non-empty `Scoreable`
+    /// `Collection`s equals an expected value.
+    func test_totalPoints_withCollectionOfScoreableCollections_equalsExpected()
         {
         
         // Given

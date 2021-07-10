@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  HandRankArrayDictionary.swift                                              //
+//  Collection.swift                                                           //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 6/14/21.                                       //
+//  Created by Tyler J. Otte on 7/10/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -14,14 +14,21 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `Dictionary`operations where the value of an entry is a
-/// `HandRank Array`.
-extension Dictionary where Value: Collection, Value.Element: Scoreable {
-    
-    /// Sums all the `Element`s' points.
+
+/// An extension for common `Collection` operations.
+extension Collection {
+
+    /// Retrieves all the `Element`s that do not exist in the given `Collection`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: The sum of all the `Element`s' points.
-    var points: Int { return allValues.totalPoints }
+    /// - Parameter collection: The `Collection` to filter by.
+    /// - Returns: An `Array` of `Element`s that do not exist in the given `Collection`.
+    public func except<T>(_ collection: T) -> [Self.Element] where
+        T: Collection,
+        T.Element == Self.Element,
+        Self.Element: Equatable {
+        
+        return filter{!collection.contains($0)}
+    }
 }

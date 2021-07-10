@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  PairArray.swift                                                            //
+//  Filterable.swift                                                           //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 6/06/21.                                       //
+//  Created by Tyler J. Otte on 7/10/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -14,27 +14,16 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
+import Foundation
 
-/// An extension for common `Pair<RankedCard> Array` operations.
-extension Array where Element: Pair {
+/// A filterable `Trait`.
+public protocol Filterable: Containable {
     
-    /// Retrieves all the unique `RankedCard`s.
+    /// Retrieves all the `{T}`s that do not exist in the given `Collection`.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: An `Array` of unique `RankedCard`s, if any.
-    func getUniqueCards() -> [Card?] {
-        
-        var cards: [Card?] = []
-        
-        for pair in self {
-            
-            let pairCards = [pair.first, pair.last]
-            let uniqueCards = pairCards.filter{!cards.contains($0)}
-            
-            cards.append(contentsOf: uniqueCards)
-        }
-        
-        return cards
-    }
+    /// - Parameter {u}: The `Collection` to filter by.
+    /// - Returns: An `Array` of `{T}`s that do not exist in the given `Collection`.
+    func except<U>(_ u: U) -> [T] where U: Collection, U.Element == T
 }

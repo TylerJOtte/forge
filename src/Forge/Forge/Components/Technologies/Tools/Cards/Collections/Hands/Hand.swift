@@ -202,23 +202,21 @@ public class Hand: Cards {
         return cards.contains(card)
     }
     
-//    /// Determines if the given `Card` exists.
-//    ///
-//    /// - Precondition: None.
-//    /// - Postcondition: None.
-//    /// - Parameter card: The `Card` to find.
-//    /// - Returns: True if the given `Card` exists, else false.
-//    public func contains(_ card: Card?) -> Bool {
-//
-//        var containsCard = false
-//
-//        if let value = card {
-//
-//            containsCard = contains(value)
-//        }
-//
-//        return containsCard
-//    }
+    //-------------------------------------------------------------------------//
+    //                                 Filters                                 //
+    //-------------------------------------------------------------------------//
+    
+    /// Retrieves all the `Card`s that do not exist in the given `Collection`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter cards: The `Collection` to filter by.
+    /// - Returns: An `Array` of `Card`s that do not exist in the given `Collection`.
+    public func except<Cards>(_ cards: Cards) -> [Card] where Cards : Collection,
+        Cards.Element == Card {
+        
+        return self.cards.except(cards)
+    }
     
     //-------------------------------------------------------------------------//
     //                                  Adders                                 //

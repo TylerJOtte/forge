@@ -16,7 +16,7 @@
 
 
 /// An extension for common `Elements Collection` operations.
-extension Collection where Element: Elements {
+extension Collection where Element: Containable {
 
     /// The sum total of each `Element`'s count.
     var totalCount: Int { return map{$0.count}.sum }

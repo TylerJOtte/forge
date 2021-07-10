@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// A containable characteristic.
+/// A containable `Trait`.
 public protocol Containable: Trait {
     
     //=========================================================================//

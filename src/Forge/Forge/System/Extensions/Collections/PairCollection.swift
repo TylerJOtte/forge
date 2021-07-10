@@ -1,9 +1,9 @@
 //=============================================================================//
 //                                                                             //
-//  HandRankArrayDictionary.swift                                              //
+//  PairCollection.swift                                                       //
 //  Forge                                                                      //
 //                                                                             //
-//  Created by Tyler J. Otte on 6/14/21.                                       //
+//  Created by Tyler J. Otte on 6/06/21.                                       //
 //-----------------------------------------------------------------------------//
 //                                                                             //
 // This source file is part of the Forge framework project.                    //
@@ -14,14 +14,24 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `Dictionary`operations where the value of an entry is a
-/// `HandRank Array`.
-extension Dictionary where Value: Collection, Value.Element: Scoreable {
+
+/// An extension for common `Pair Collection` operations.
+extension Collection where Element: Pair {
     
-    /// Sums all the `Element`s' points.
+    /// Retrieves all the unique `RankedCard`s.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: The sum of all the `Element`s' points.
-    var points: Int { return allValues.totalPoints }
+    /// - Returns: An `Array` of unique `RankedCard`s, if any.
+    func getUniqueCards() -> [Card] {
+        
+        var cards: [Card] = []
+        
+        for pair in self {
+
+            cards.append(contentsOf: pair.except(cards))
+        }
+        
+        return cards
+    }
 }
