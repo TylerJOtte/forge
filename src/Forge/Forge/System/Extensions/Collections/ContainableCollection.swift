@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  ElementsCollection.swift                                                   //
+//  ContainableCollection.swift                                                //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 4/04/21.                                       //
@@ -15,7 +15,7 @@
 //=============================================================================//
 
 
-/// An extension for common `Elements Collection` operations.
+/// An extension for common `Containable Collection` operations.
 extension Collection where Element: Containable {
 
     /// The sum total of each `Element`'s count.

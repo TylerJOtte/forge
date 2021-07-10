@@ -17,7 +17,7 @@
 import Foundation
 
 /// A containable `Trait`.
-public protocol Containable: Trait {
+public protocol Containable: Relatable {
     
     //=========================================================================//
     //                                ATTRIBUTES                               //

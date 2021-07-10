@@ -171,6 +171,66 @@ public class Hand: Cards {
     //                                 Testers                                 //
     //-------------------------------------------------------------------------//
     
+    //-------------------------------------------------------------------------//
+    //                                  <                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the `Hand` is less than the given `Hand`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters rhs: The `Hand` to compare to.
+    /// - Returns: True if the `Hand` is less than the given `Hand` else false.
+    public func isLessThan(_ rhs: Hand) -> Bool {
+        
+        // TODO: Implement stub
+        
+        return false
+    }
+    
+    /// Determines if the given left-handside`Hand` is less than the specified right-handside `Hand`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Hand` to compare against.
+    ///   - rhs: The `Hand` to compare to.
+    /// - Returns: True if the left-handside`Hand` is less than the right-handside `Hand`, else false.
+    public static func < (lhs: Hand, rhs: Hand) -> Bool {
+        
+        return lhs.isLessThan(rhs)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  =                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the `Hand` equals the given `Hand`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters rhs: The `Hand` to compare to.
+    /// - Returns: True if the `Hand` equals the given `Hand`, else false.
+    public func equals(_ rhs: Hand) -> Bool {
+        
+        // TODO: Implement stub
+        
+        return false
+    }
+    
+    /// Determines if the given left-handside`Hand` equals the specified right-handside `Hand`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Hand` to compare against.
+    ///   - rhs: The `Hand` to compare to.
+    /// - Returns: True if the left-handside`Hand` equals the right-handside `Hand`, else false.
+    public static func == (lhs: Hand, rhs: Hand) -> Bool {
+        
+        return lhs.equals(rhs)
+    }
+    
     /// Determines if the collection is empty.
     ///
     /// - Precondition: None.

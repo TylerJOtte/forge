@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  PairCollection.swift                                                       //
+//  FilterableCollection.swift                                                 //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 6/06/21.                                       //
@@ -15,23 +15,20 @@
 //=============================================================================//
 
 
-/// An extension for common `Pair Collection` operations.
-extension Collection where Element: Pair {
+/// An extension for common `Filterable Collection` operations.
+extension Collection where Element: Filterable {
     
-    /// Retrieves all the unique `RankedCard`s.
+    /// Retrieves all the unique sub`Element`s between all the `Element`s.
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: An `Array` of unique `RankedCard`s, if any.
-    func getUniqueCards() -> [Card] {
+    /// - Returns: An `Array` of unique sub`Element`s, if any.
+    func getUniqueSubElements() -> [Element.T] {
         
-        var cards: [Card] = []
+        var elements: [Element.T] = []
         
-        for pair in self {
+        forEach{elements.append(contentsOf: $0.except(elements))}
 
-            cards.append(contentsOf: pair.except(cards))
-        }
-        
-        return cards
+        return elements
     }
 }

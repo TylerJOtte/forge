@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  ElementsCollectionTests.swift                                              //
+//  ContainableCollectionTests.swift                                           //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 7/07/21.                                       //
@@ -17,8 +17,8 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for an `Elements Collection`.
-class ElementsCollectionTests: XCTestCase {
+/// Unit tests for an `Containable Collection`.
+class ContainableCollectionTests: XCTestCase {
  
     //=========================================================================//
     //                                PROPERTIES                               //

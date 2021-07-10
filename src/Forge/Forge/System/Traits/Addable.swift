@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// An addable characteristic.
+/// An addable `Trait`.
 public protocol Addable: Filterable {
     
     /// Adds the given `T`.
