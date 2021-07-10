@@ -62,27 +62,19 @@ extension Collection where Element: PlayingCard  {
     /// - Returns: True if only contains the given `Suit`s, else false.
     func contain(only suits: [Suit]) -> Bool {
         
-        var containOnlySuits = false
-        
-        if (count > 1) {
+        var containsOnlySuits = false
+
+        if (count > 0 && suits.count > 0) {
             
             let expected = Set(suits)
             let actual = getSuits()
-            var suit = 0
-            var containsSuit = true
+            let otherSuits = actual.except(expected)
+            let containEqualCounts = expected.count == actual.count
             
-            while (containsSuit && suit < actual.count) {
-                
-                let nextSuit = actual[suit]
-                
-                containsSuit = expected.contains(nextSuit)
-                suit += 1
-            }
-            
-            containOnlySuits = containsSuit
+            containsOnlySuits = containEqualCounts && otherSuits.count == 0
         }
-        
-        return containOnlySuits
+
+        return containsOnlySuits
     }
     
     //=========================================================================//

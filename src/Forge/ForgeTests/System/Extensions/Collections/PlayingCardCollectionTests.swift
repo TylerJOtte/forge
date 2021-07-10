@@ -62,9 +62,12 @@ class PlayingCardCollectionTests: XCTestCase {
     // Contains Other Suit //
     //                     //
     
+    // Empty PlayingCards //
+    // ~~~~~~~~~~~~~~~~~~ //
+    
     /// Tests that a `Collection` of empty `PlayingCards` does not contains other `Suit`s than the
     /// given `Suit`.
-    func test_containsOtherSuit_withEmptyPlayingCardsAndGivenSuit_false()
+    func test_containsOtherSuit_withEmptyPlayingCardsAndSuit_false()
         throws {
         
         // Given
@@ -75,9 +78,12 @@ class PlayingCardCollectionTests: XCTestCase {
         XCTAssertFalse(cards.contain(other: suit))
     }
     
-    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` does not contain `Suit`
-    /// other than the given `Suit`.
-    func test_containsOtherSuit_withPlayingCardsOfOneSuitAndSameGivenSuit_false()
+    // PlayingCards With One Suit //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` does not contain a `Suit`
+    /// other than a given `Suit` that equals the `PlayingCard`'s only `Suit`.
+    func test_containsOtherSuit_withPlayingCardsOfOneSuitAndEqualSuit_false()
         throws {
         
         // Given
@@ -90,9 +96,28 @@ class PlayingCardCollectionTests: XCTestCase {
         XCTAssertFalse(cards.contain(other: suit))
     }
     
+    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` contains a `Suit` other
+    /// than a given `Suit` that does not equal the `PlayingCard`'s only `Suit`.
+    func test_containsOtherSuit_withPlayingCardsOfOneSuitAndInequalSuit_true()
+        throws {
+        
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit1)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssert(cards.contain(other: suit2))
+    }
+    
+    // PlayingCards With Various Suits //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
     /// Tests that a `Collection` of `PlayingCards` with various `Suit`s contains other `Suit`s
-    /// than the given `Suit`.
-    func test_containsOtherSuit_withPlayingCardsOfVariousSuitsAndGivenSuit_true()
+    /// than a given `Suit`.
+    func test_containsOtherSuit_withPlayingCardsOfVariousSuitsAndSuit_true()
         throws {
         
         // Given
@@ -110,8 +135,11 @@ class PlayingCardCollectionTests: XCTestCase {
     // Contains Only Suit //
     //                    //
     
-    /// Tests that a `Collection` of empty `PlayingCards` does not only the given `Suit`.
-    func test_containsOnlySuit_withEmptyPlayingCardsAndGivenSuit_false()
+    // Empty PlayingCards //
+    // ~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Collection` of empty `PlayingCards` does not contain only the given `Suit`.
+    func test_containsOnlySuit_withEmptyPlayingCardsAndSuit_false()
         throws {
         
         // Given
@@ -122,9 +150,12 @@ class PlayingCardCollectionTests: XCTestCase {
         XCTAssertFalse(cards.contain(only: suit))
     }
     
-    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` contains only that given
-    /// `Suit`.
-    func test_containsOnlySuit_withPlayingCardsOfOneSuitAndSameGivenSuit_true()
+    // PlayingCards With One Suit //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` contains only a given
+    /// `Suit` that equals  the `PlayingCard`'s only `Suit`.
+    func test_containsOnlySuit_withPlayingCardsOfOneSuitAndEqualSuit_true()
         throws {
         
         // Given
@@ -137,9 +168,28 @@ class PlayingCardCollectionTests: XCTestCase {
         XCTAssert(cards.contain(only: suit))
     }
     
-    /// Tests that a `Collection` of `PlayingCards` with various `Suit`s does not contain only one
+    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` does not contains a given
+    /// `Suit` that does not equal the `PlayingCard`'s only `Suit`.
+    func test_containsOnlySuit_withPlayingCardsOfOneSuitAndInequalSuit_false()
+        throws {
+        
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit1)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(only: suit2))
+    }
+    
+    // PlayingCards With Various Suits //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Collection` of `PlayingCards` with various `Suit`s does not contain only a
     /// given `Suit`.
-    func test_containsOnlySuit_withPlayingCardsOfVariousSuitsAndGivenSuit_false()
+    func test_containsOnlySuit_withPlayingCardsOfVariousSuitsAndSuit_false()
         throws {
         
         // Given
@@ -151,6 +201,129 @@ class PlayingCardCollectionTests: XCTestCase {
         
         // When/Then
         XCTAssertFalse(cards.contain(only: suit1))
+    }
+    
+    //                     //
+    // Contains Only Suits //
+    //                     //
+    
+    // Empty PlayingCards //
+    // ~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Collection` of empty `PlayingCards` does not only contain a given
+    /// `Collection` of empty `Suit`s`.
+    func test_containsOnlySuits_withEmptyPlayingCardsAndEmptySuits_false()
+        throws {
+        
+        // Given
+        let suits: [Suit] = []
+        let cards: [PlayingCard] = []
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(only: suits))
+    }
+    
+    /// Tests that a `Collection` of empty `PlayingCards` does not only contain a given
+    /// `Collection` of `Suit`s`.
+    func test_containsOnlySuits_withEmptyPlayingCardsAndSuits_false()
+        throws {
+        
+        // Given
+        let suits = [Suit.hearts, Suit.spades]
+        let cards: [PlayingCard] = []
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(only: suits))
+    }
+    
+    /// Tests that a `Collection` of `PlayingCards` does not only contain a given `Collection` of
+    /// empty `Suit`s`.
+    func test_containsOnlySuits_withPlayingCardsAndEmptySuits_false()
+        throws {
+        
+        // Given
+        let suits: [Suit] = []
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(only: suits))
+    }
+    
+    // PlayingCards With One Suit //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` contains only a given
+    /// `Collection` of `Suit`s where each `Suit` equals the `PlayingCard`'s only `Suit`.
+    func test_containsOnlySuits_withPlayingCardsOfOneSuitAndEqualSuits_true()
+        throws {
+        
+        // Given
+        let suit = Suit.hearts
+        let suits = [suit, suit]
+        let ace = try Ace(of: suit)
+        let two = try Two(of: suit)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssert(cards.contain(only: suits))
+    }
+    
+    /// Tests that a `Collection` of `PlayingCards` with only one `Suit` does not only contain a
+    /// given `Collection` of various `Suit`s.
+    func test_containsOnlySuits_withPlayingCardsOfOneSuitAndVariousSuits_false()
+        throws {
+        
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suits = [suit1, suit2]
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit1)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(only: suits))
+    }
+    
+    // PlayingCards With Various Suits //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Collection` of `PlayingCards` with various `Suit`s contains only a given
+    /// `Collection` of various `Suit`s that equal the `Suit`s in the `PlayingCard`'s `Suit`s.
+    func test_containsOnlySuits_withPlayingCardsOVariousAndEqualSuits_true()
+        throws {
+        
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suits = [suit1, suit2]
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit2)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssert(cards.contain(only: suits))
+    }
+    
+    /// Tests that a `Collection` of `PlayingCards` with various `Suit`s does not only contain a
+    /// given `Collection` of various `Suit`s that do not all equal the `Suit`s in the
+    /// `PlayingCard`'s `Suit`s.
+    func test_containsOnlySuits_withPlayingCardsOfVariousAndInequalSuits_false()
+        throws {
+        
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suits = [suit1, suit2, suit3]
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit2)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssertFalse(cards.contain(only: suits))
     }
     
     //=========================================================================//

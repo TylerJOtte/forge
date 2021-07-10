@@ -4070,7 +4070,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = PlayingCards.allSuits
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = try PlayingCards.getAllCards()
 
         // Then
         XCTAssert(standardCards.contain(only: expected))
