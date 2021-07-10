@@ -327,6 +327,36 @@ class PlayingCardCollectionTests: XCTestCase {
     }
     
     //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                getSuits()                               //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that retrieving the `Suit`s in a `Collection` of `PlayingCard`s with duplicate `Suit`s
+    /// returns a `Collection` of only the unique `Suit`s in the `PlayingCard`s.
+    func test_getSuits_withPlayingCardsOfDuplicateSuits_returnsUniqueSuits()
+        throws {
+        
+        // Given
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit2)
+        let three = try Three(of: suit1)
+        let four = try Four(of: suit2)
+        let playingCards = [ace, two, three, four]
+        let expected = [suit1, suit2]
+        
+        // When
+        let actual = playingCards.getSuits()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //=========================================================================//
     //                                SPLITTERS                                //
     //=========================================================================//
     
