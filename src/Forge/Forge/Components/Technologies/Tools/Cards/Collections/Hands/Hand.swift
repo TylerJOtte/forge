@@ -175,7 +175,7 @@ public class Hand: Cards {
     /// - Returns: True if the `Hand` equals the given `Hand`, else false.
     public func equals(_ rhs: Hand) -> Bool {
         
-        return cards.contains(only: rhs.cards)
+        return count == rhs.count && cards.sorted() == rhs.cards.sorted()
     }
     
     /// Determines if the given `Card` exists.

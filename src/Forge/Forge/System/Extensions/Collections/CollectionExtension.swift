@@ -49,6 +49,34 @@ extension Collection {
         return containsOnlyCollectionElements
     }
     
+    /// Determines if only contains the given `Collection`'s `Element`s
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter collection: The `Collection` of `Element`s to test.
+    /// - Returns: True if only contains the given `Collection`'s `Element`s, else false.
+    func contains<K,V>(only collection: Dictionary<K,V>) -> Bool where
+        Self == Dictionary<K,V>,
+        V: Hashable {
+        
+        var containsOnlyCollectionElements = false
+
+        if (count > 0 && collection.count > 0) {
+
+            let expected = Set(collection.allValues)
+            let actual = self.allValues
+
+            if (actual.count == expected.count) {
+
+                let otherElements = actual.except(expected)
+
+                containsOnlyCollectionElements = otherElements.count == 0
+            }
+        }
+
+        return containsOnlyCollectionElements
+    }
+    
     //=========================================================================//
     //                                 FILTERS                                 //
     //=========================================================================//

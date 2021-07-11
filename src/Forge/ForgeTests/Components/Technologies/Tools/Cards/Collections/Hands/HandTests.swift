@@ -1823,7 +1823,7 @@ class HandTests: XCTestCase {
     //                                  ==                                     //
     //-------------------------------------------------------------------------//
 
-    /// Tests that two `Hand`s that contain the same `Card`s in a different orders are equal.
+    /// Tests that a `Hand`equals another `Hand` with the same `Card`s in a different order.
     func test_equals_handWithSameCardsInDifferentOrder_true() {
      
         // Given
@@ -1840,7 +1840,7 @@ class HandTests: XCTestCase {
         XCTAssert(hand1.equals(hand2))
     }
     
-    /// Tests that two `Hand`s that contain the same `Card`s  in a different order are equal, using the
+    /// Tests that a `Hand`equals another `Hand` with the same `Card`s in a different order, using the
     /// equality operator.
     func test_equals_handWithSameCardsInDifferentOrderWithEqualityOperator_true()
         {
