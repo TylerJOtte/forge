@@ -75,6 +75,10 @@ extension Array where Element: RankedCard  {
     //                                  Kinds                                  //
     //-------------------------------------------------------------------------//
     
+    //       //
+    // Pairs //
+    //       //
+    
     /// Retrieves all the contained `Pair`s.
     ///
     /// - Precondition: None.
@@ -114,6 +118,10 @@ extension Array where Element: RankedCard  {
         
         return pairs
     }
+    
+    //               //
+    // ThreeOfAKinds //
+    //               //
     
     /// Retrieves all the contained `ThreeOfAKind`s.
     ///
@@ -157,6 +165,10 @@ extension Array where Element: RankedCard  {
         return threeOfAKinds
     }
     
+    //              //
+    // FourOfAKinds //
+    //              //
+    
     /// Retrieves all the contained `FourOfAKind`s.
     ///
     /// - Precondition: None.
@@ -199,6 +211,14 @@ extension Array where Element: RankedCard  {
         
         return fourOfAKinds
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Sequences                                //
+    //-------------------------------------------------------------------------//
+    
+    //               //
+    // All Sequences //
+    //               //
     
     /// Retrieves all the sequences.
     ///
@@ -250,10 +270,33 @@ extension Array where Element: RankedCard  {
         return sequences
     }
 
+    //            //
+    // Over Count //
+    //            //
+    
+    /// Retrieves all the sequences that have a count greater than the given value.
+    ///
+    /// - Precondition: The given count must be >= 1.
+    /// - Postcondition: None.
+    /// - Parameter count: The # of `RankedCards` in a sequence to filter for.
+    /// - Throws: `invalidMin` if the given count &lt; 1.
+    /// - Returns: An `Array` of sequential `RankedCard Array`s with counts > the given count.
     func getSequences(over count: Int) throws -> [[RankedCard]] {
+        
+        let min = 1
+        
+        guard (count >= min) else {
+            
+            print("The given count must be >= \(min)")
+            throw RangeError.invalidMin
+        }
         
         return getSequences().filter{$0.count > count}
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                  Runs                                  //
+    //-------------------------------------------------------------------------//
     
     func getRuns() throws -> [Run] {
         
@@ -264,7 +307,7 @@ extension Array where Element: RankedCard  {
     }
     
     //=========================================================================//
-    //                               SPLITTERS                                 //
+    //                                SPLITTERS                                //
     //=========================================================================//
 
     /// Splits all the `RankedCard`s  by `Rank`.

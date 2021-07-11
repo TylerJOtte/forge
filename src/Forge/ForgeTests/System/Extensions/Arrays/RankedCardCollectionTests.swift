@@ -704,6 +704,31 @@ class RankedCardCollectionTests: XCTestCase {
     // Over Given Count //
     //                  //
     
+    // Invalid Count //
+    // ~~~~~~~~~~~~~ //
+    
+    /// Tests that rerieving the # of sequences over an invalid count in a `RankedCard Collecction`
+    /// throws an `invalidMin Error`.
+    func test_getSequencesOverCount_withInvalidCount_throwsInvalidMinError()
+        throws {
+
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .two, at: 2)
+        let rankedCard3 = RankedCard(with: .three, at: 3)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
+        let count = 0
+        let expected = RangeError.invalidMin
+        
+        // When
+        XCTAssertThrowsError(try rankedCards.getSequences(over: count)) {
+            error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
     // With Empty Collection //
     // ~~~~~~~~~~~~~~~~~~~~~ //
     

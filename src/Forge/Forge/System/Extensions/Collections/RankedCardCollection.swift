@@ -14,6 +14,8 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
+import Foundation
+
 /// An extension for common `RankedCard Collection` operations.
 extension Collection where Element: RankedCard  {
     
