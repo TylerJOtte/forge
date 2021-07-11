@@ -168,5 +168,126 @@ class CollectionExtensionTests: XCTestCase {
         // Then
         XCTAssert(elements.isEmpty)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                              containsOnly()                             //
+    //-------------------------------------------------------------------------//
+    
+    //                        //
+    // With Empty Collections //
+    //                        //
+    
+    // Both Empty //
+    // ~~~~~~~~~~ //
+    
+    /// Tests that an empty `Collection` does not only contain the `Element`s of another empty
+    /// `Collection`.
+    func test_containsOnly_withEmptyCollections_false() throws {
+        
+        // Given
+        let collection1: [Card] = []
+        let collection2: [Card] = []
+        
+        // When/Then
+        XCTAssertFalse(collection1.contains(only: collection2))
+    }
+    
+    // Empty Base //
+    // ~~~~~~~~~~ //
+    
+    /// Tests that an empty `Collection` does not only contain the `Element`s of another
+    /// `Collection`.
+    func test_containsOnly_withEmptyBaseAndCollection_false() throws {
+        
+        // Given
+        let collection1: [Card] = []
+        let collection2 = [Card(), Card(), Card()]
+        
+        // When/Then
+        XCTAssertFalse(collection1.contains(only: collection2))
+    }
+    
+    // Empty Other //
+    // ~~~~~~~~~~~ //
+    
+    /// Tests that `Collection` does not only contain the `Element`s of another empty
+    /// `Collection`.
+    func test_containsOnly_withBaseAndEmptyCollection_false() throws {
+        
+        // Given
+        let collection1 = [Card(named: "Card 1"), Card(named: "Card 2")]
+        let collection2: [Card] = []
+        
+        // When/Then
+        XCTAssertFalse(collection1.contains(only: collection2))
+    }
+    
+    //               //
+    // With Elements //
+    //               //
+    
+    // With One Element //
+    // ~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Collection` with only one `Element` contains only a given `Collection` of
+    /// `Element`s where each `Element` equals the base `Collection`'s only `Element`.
+    func test_containsOnly_withOneElementBaseAndEqualElements_true() throws {
+        
+        // Given
+        let element = Card()
+        let collection1 = [element]
+        let collection2 = [element, element]
+        
+        // When/Then
+        XCTAssert(collection1.contains(only: collection2))
+    }
+    
+    /// Tests that a `Collection` with only one `Element` does not only contain a given
+    /// `Collection` of various `Element`s.
+    func test_containsOnly_withOneElementBaseAndVariousElements_false() throws {
+        
+        // Given
+        let element1 = Card(named: "Card 1")
+        let element2 = Card(named: "Card 2")
+        let collection1 = [element1]
+        let collection2 = [element1, element2]
+        
+        // When/Then
+        XCTAssertFalse(collection1.contains(only: collection2))
+    }
+    
+    // With Various Elements //
+    // ~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that a `Collection` with various `Element`s contains only a given `Collection` of
+    /// `Element`s where each `Element` equals one of the base `Collection`'s  `Element`s.
+    func test_containsOnly_withVariousElementsBaseAndEqualElements_true()
+        throws {
+        
+        // Given
+        let element1 = Card(named: "Card 1")
+        let element2 = Card(named: "Card 2")
+        let collection1 = [element1, element2]
+        let collection2 = [element1, element2, element1, element2]
+        
+        // When/Then
+        XCTAssert(collection1.contains(only: collection2))
+    }
+    
+    /// Tests that a `Collection` with various `Element`s does not only contain a given
+    /// `Collection` where not all `Element`s equal an `Element` in the base `Collection`.
+    func test_containsOnly_withVariousElementsBaseAndInequalElements_false()
+        throws {
+        
+        // Given
+        let element1 = Card(named: "Card 1")
+        let element2 = Card(named: "Card 2")
+        let element3 = Card(named: "Card 3")
+        let collection1 = [element1, element2]
+        let collection2 = [element1, element2, element3]
+        
+        // When/Then
+        XCTAssertFalse(collection1.contains(only: collection2))
+    }
 }
     
