@@ -298,12 +298,28 @@ extension Array where Element: RankedCard  {
     //                                  Runs                                  //
     //-------------------------------------------------------------------------//
     
-    func getRuns() throws -> [Run] {
+    /// Retrieves all the `Run`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: An `Array` of `Run`s.
+    func getRuns() -> [Run] {
         
-        let count = 2
-        let sequences = try getSequences(over: count)
-       
-        return try sequences.map{try Run(of: $0)}
+        var runs: [Run]
+        
+        do {
+            
+            let count = 2
+            let sequences = try getSequences(over: count)
+           
+            runs = try sequences.map{try Run(of: $0)}
+        
+        } catch {
+            
+            runs = []
+        }
+   
+        return runs
     }
     
     //=========================================================================//

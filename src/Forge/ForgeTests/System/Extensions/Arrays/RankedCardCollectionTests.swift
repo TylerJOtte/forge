@@ -627,7 +627,7 @@ class RankedCardCollectionTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                            getSequences()                               //
+    //                               getSequences()                            //
     //-------------------------------------------------------------------------//
     
     //               //
@@ -637,7 +637,7 @@ class RankedCardCollectionTests: XCTestCase {
     // With Empty Collection //
     // ~~~~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that rerieving the # of sequences in an empty `RankedCard Collection` returns an empty
+    /// Tests that rerieving the sequences in an empty `RankedCard Collection` returns an empty
     /// `Collection`.
     func test_getSequences_withEmptyCollection_returnsEmpty() {
         
@@ -654,7 +654,7 @@ class RankedCardCollectionTests: XCTestCase {
     // With All Non-Sequential RankedCards //
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that rerieving the # of sequences in a `RankedCard Collection` that contains all
+    /// Tests that rerieving the sequences in a `RankedCard Collection` that contains all
     /// non-sequential `RankedCard`s returns an empty `Collection`.
     func test_getSequences_withAllNonSequentialRankedCards_returnsEmpty() {
         
@@ -707,7 +707,7 @@ class RankedCardCollectionTests: XCTestCase {
     // Invalid Count //
     // ~~~~~~~~~~~~~ //
     
-    /// Tests that rerieving the # of sequences over an invalid count in a `RankedCard Collecction`
+    /// Tests that rerieving the sequences over an invalid count in a `RankedCard Collecction`
     /// throws an `invalidMin Error`.
     func test_getSequencesOverCount_withInvalidCount_throwsInvalidMinError()
         throws {
@@ -732,8 +732,8 @@ class RankedCardCollectionTests: XCTestCase {
     // With Empty Collection //
     // ~~~~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that rerieving the # of sequences over a given count in an empty `RankedCard`
-    /// `Collection` returns an empty `Collection`.
+    /// Tests that rerieving the sequences over a given count in an empty `RankedCard Collection`
+    /// returns an empty `Collection`.
     func test_getSequencesOverCount_withEmptyCollection_returnsEmpty() throws {
         
         // Given
@@ -750,8 +750,8 @@ class RankedCardCollectionTests: XCTestCase {
     // With All Non-Sequential RankedCards //
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that rerieving the # of sequences over a given count  in a `RankedCard Collection`
-    /// that contains all non-sequential `RankedCard`s returns an empty `Collection`.
+    /// Tests that rerieving the sequences over a given count  in a `RankedCard Collection` that
+    /// contains all non-sequential `RankedCard`s returns an empty `Collection`.
     func test_getSequencesOverCount_withAllNonSequentialCards_returnsEmpty()
         throws {
         
@@ -801,12 +801,53 @@ class RankedCardCollectionTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    //-------------------------------------------------------------------------//
+    //                                 getRuns()                               //
+    //-------------------------------------------------------------------------//
+    
+    // With Empty Collection //
+    // ~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that rerieving the `Run`s an empty `RankedCard Collection` returns an empty
+    /// `Collection`.
+    func test_getRuns_withEmptyCollection_returnsEmpty() {
+        
+        // Given
+        let rankedCards: [RankedCard] = []
+        
+        // When
+        let runs = rankedCards.getRuns()
+        
+        // Then
+        XCTAssert(runs.isEmpty)
+    }
+    
+    // With All Non-Sequential RankedCards //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that rerieving the `Run`s in a `RankedCard Collection` that contains all non-sequential
+    /// `RankedCard`s returns an empty `Collection`.
+    func test_getRuns_withAllNonSequentialRankedCards_returnsEmpty() {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .three, at: 3)
+        let rankedCard3 = RankedCard(with: .five, at: 5)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
+        
+        // When
+        let runs = rankedCards.getRuns()
+        
+        // Then
+        XCTAssert(runs.isEmpty)
+    }
+    
     //=========================================================================//
-    //                               SPLITTERS                                 //
+    //                                SPLITTERS                                //
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
-    //                             splitByRank()                               //
+    //                              splitByRank()                              //
     //-------------------------------------------------------------------------//
     
     //           //
