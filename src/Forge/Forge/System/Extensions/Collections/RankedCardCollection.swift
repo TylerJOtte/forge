@@ -258,7 +258,22 @@ extension Collection where Element: RankedCard  {
         return sequences.filter{$0.count > 1}
     }
 
+    
+    /// Retrieves all the sequences that have a count greater than the given value.
+    ///
+    /// - Precondition: The given count must be >= 1.
+    /// - Parameter count: The min # of `RankedCard`s in a sequence to filter for.
+    /// - Throws: `invalidMin` if the given count is &lt; 1.
+    /// - Returns: An `Array` of sequential `RankedCard Array`s with counts >= than given count.
     func getSequences(over count: Int) throws -> [[RankedCard]] {
+        
+        let min = 1
+        
+        guard (count >= min) else {
+            
+            print("The given count must be >= \(min).")
+            throw RangeError.invalidMin
+        }
         
         return getSequences().filter{$0.count > count}
     }

@@ -627,12 +627,15 @@ class RankedCardCollectionTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                            getSequences()                                //
+    //                            getSequences()                               //
     //-------------------------------------------------------------------------//
     
-    //                       //
+    //               //
+    // All Sequences //
+    //               //
+    
     // With Empty Collection //
-    //                       //
+    // ~~~~~~~~~~~~~~~~~~~~~ //
     
     /// Tests that rerieving the # of sequences in an empty `RankedCard Collection` returns an empty
     /// `Collection`.
@@ -648,9 +651,8 @@ class RankedCardCollectionTests: XCTestCase {
         XCTAssert(sequences.isEmpty)
     }
     
-    //                                     //
     // With All Non-Sequential RankedCards //
-    //                                     //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
     
     /// Tests that rerieving the # of sequences in a `RankedCard Collection` that contains all
     /// non-sequential `RankedCard`s returns an empty `Collection`.
@@ -669,9 +671,8 @@ class RankedCardCollectionTests: XCTestCase {
         XCTAssert(sequences.isEmpty)
     }
     
-    //                                                                  //
     // With Non-Sequential RankedCards & Various Sequential RankedCards //
-    //                                                                  //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
     
     /// Tests that rerieving the sequences in a `RankedCard Collection` that contains non-sequential
     /// `RankedCard`s and various sequential `RankedCard` returns a `Collection` with the
@@ -697,6 +698,50 @@ class RankedCardCollectionTests: XCTestCase {
         
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    //                  //
+    // Over Given Count //
+    //                  //
+    
+    // With Empty Collection //
+    // ~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that rerieving the # of sequences over a given count in an empty `RankedCard`
+    /// `Collection` returns an empty `Collection`.
+    func test_getSequencesOverCount_withEmptyCollection_returnsEmpty() throws {
+        
+        // Given
+        let rankedCards: [RankedCard] = []
+        let count = 1
+        
+        // When
+        let sequences = try rankedCards.getSequences(over: count)
+        
+        // Then
+        XCTAssert(sequences.isEmpty)
+    }
+    
+    // With All Non-Sequential RankedCards //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that rerieving the # of sequences over a given count  in a `RankedCard Collection`
+    /// that contains all non-sequential `RankedCard`s returns an empty `Collection`.
+    func test_getSequencesOverCount_withAllNonSequentialCards_returnsEmpty()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .three, at: 3)
+        let rankedCard3 = RankedCard(with: .five, at: 5)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
+        let count = 1
+        
+        // When
+        let sequences = try rankedCards.getSequences(over: count)
+        
+        // Then
+        XCTAssert(sequences.isEmpty)
     }
     
     //=========================================================================//
