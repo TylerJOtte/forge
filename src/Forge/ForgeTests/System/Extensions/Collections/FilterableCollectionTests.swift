@@ -68,6 +68,35 @@ class FilterableCollectionTests: XCTestCase {
     // With Elements //
     //               //
     
+    /// Tests that retrieving the unique sub-`Element`s of a `Filterable Collection` where all
+    /// sub-`Element`s are unqique returns all sub-`Element`s.
+    func test_getUniqueSubElements_withAllUniqueSubElements_returnAllSubElements()
+        throws {
+        
+        // Given
+        let subElement1 = try Ace(of: .hearts)
+        let subElement2 =  try Ace(of: .spades)
+        let subElement3 = try Ace(of: .diamonds)
+        let subElement4 = try Ace(of: .clubs)
+        let subElement5 = try Two(of: .hearts)
+        let subElement6 = try Two(of: .clubs)
+        let subElements1 = [subElement1, subElement2]
+        let subElements2 = [subElement3, subElement4]
+        let subElements3 = [subElement5, subElement6]
+        let element1 = try Pair(of: subElements1)
+        let element2 = try Pair(of: subElements2)
+        let element3 = try Pair(of: subElements3)
+        let collection = [element1, element2, element3]
+        let expected = [subElement1, subElement2, subElement3, subElement4,
+                        subElement5, subElement6]
+        
+        // When
+        let actual = collection.getUniqueSubElements()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     /// Tests that retrieving the unique sub-`Element`s of a `Filterable Collection` where the
     /// `Element`s contain common sub-`Element`s returns only the expected values.
     func test_getUniqueSubElements_withCommonSubElements_returnsExpected()
