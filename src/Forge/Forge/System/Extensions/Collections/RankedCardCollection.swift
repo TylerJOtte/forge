@@ -75,6 +75,10 @@ extension Collection where Element: RankedCard  {
     //                                  Kinds                                  //
     //-------------------------------------------------------------------------//
     
+    //       //
+    // Pairs //
+    //       //
+    
     /// Retrieves all the contained `Pair`s.
     ///
     /// - Precondition: None.
@@ -114,6 +118,10 @@ extension Collection where Element: RankedCard  {
         
         return pairs
     }
+    
+    //               //
+    // ThreeOfAKinds //
+    //               //
     
     /// Retrieves all the contained `ThreeOfAKind`s.
     ///
@@ -157,6 +165,10 @@ extension Collection where Element: RankedCard  {
         return threeOfAKinds
     }
     
+    //              //
+    // FourOfAKinds //
+    //              //
+    
     /// Retrieves all the contained `FourOfAKind`s.
     ///
     /// - Precondition: None.
@@ -199,6 +211,10 @@ extension Collection where Element: RankedCard  {
         
         return fourOfAKinds
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Sequences                                //
+    //-------------------------------------------------------------------------//
     
     /// Retrieves all the sequences.
     ///
@@ -246,6 +262,10 @@ extension Collection where Element: RankedCard  {
         
         return getSequences().filter{$0.count > count}
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                   Runs                                  //
+    //-------------------------------------------------------------------------//
     
     func getRuns() throws -> [Run] {
         

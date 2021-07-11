@@ -18,7 +18,7 @@ import XCTest
 @testable import Forge
 
 /// Unit tests for a `RankedCard Collection`.
-class RankedCardArrayTests: XCTestCase {
+class RankedCardCollectionTests: XCTestCase {
     
     //=========================================================================//
     //                                 TESTERS                                 //
@@ -92,7 +92,7 @@ class RankedCardArrayTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                getCount()                                //
+    //                                getCount()                               //
     //-------------------------------------------------------------------------//
     
     /// Tests that retrieving the total # of a`Rank` in a `RankedCard Collection` that does not
@@ -164,8 +164,12 @@ class RankedCardArrayTests: XCTestCase {
     //                               getPairs()                                //
     //-------------------------------------------------------------------------//
     
-    /// Tests that retrieving the`Pair`s in a `RankedCard Array` that cotains unique `Rank`s returns
-    /// an empty `Array`.
+    //                   //
+    // With Unique Ranks //
+    //                   //
+    
+    /// Tests that retrieving the`Pair`s in a `RankedCard Collection` that contains unique `Rank`s
+    /// returns an empty `Collection`.
     func test_getPairs_withUniqueRanks_returnsEmpty() {
         
         // Given
@@ -183,8 +187,12 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssert(pairs.isEmpty)
     }
     
-    /// Tests that retrieving the the `Pair`s in a `RankedCard Array` that contains only two equally
-    /// `RankedCard`s returns a `Pair Array` with a count of one.
+    //                               //
+    // With One Rank & One Duplicate //
+    //                               //
+    
+    /// Tests that retrieving the the `Pair`s in a `RankedCard Collection` that contains only two
+    /// equally `RankedCard`s returns a `Pair Collection` with a count of one.
     func test_getPairs_withTwoEquallyRankedCards_returnsOne() {
         
         // Given
@@ -200,8 +208,34 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `Pair`s in a `RankedCard Array` that contains multiple `Rank`s and
-    /// only one duplicate `Rank` returns a `Pair Array` with a count of one.
+    //                                     //
+    // With One Rank & Multiple Duplicates //
+    //                                     //
+    
+    /// Tests that retrieving the `Pair`s in a `RankedCard Collection` that contains only three
+    /// `RankedCard`s of all the same `Rank` returns a `Pair Collection` with a count of three.
+    func test_getPairs_withThreeEquallyRankedCards_returnsThree() {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCard3 = RankedCard(with: .ace)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
+        let expected = 3
+        
+        // When
+        let pairs = rankedCards.getPairs()
+        let actual = pairs.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //                                          //
+    // With Multiple Ranks & Only One Duplicate //
+    //                                          //
+    
+    /// Tests that retrieving the `Pair`s in a `RankedCard Collection` that contains multiple
+    /// `Rank`s and only one duplicate `Rank` returns a `Pair Collection` with a count of one.
     func test_getPairs_withMultipleRanksAndOneDuplicate_returnsOne() {
         
         // Given
@@ -219,9 +253,13 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `Pair`s in a `RankedCard Array` that contains only four
-    /// `RankedCard`s with two `Rank`s of the same count  returns a `Pair Array` with a count of
-    /// two.
+    //                                                //
+    // With Multiple Ranks & Multiple/Only Duplicates //
+    //                                                //
+    
+    /// Tests that retrieving the `Pair`s in a `RankedCard Collection` that contains only four
+    /// `RankedCard`s with two `Rank`s of the same count  returns a `Pair Collection` with a
+    /// count of two.
     func test_getPairs_withFourRankedCardsAndTwoRanks_returnsTwo() {
         
         // Given
@@ -239,9 +277,13 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `Pair`s in a `RankedCard Array` that contains multiple `Rank`s and
-    /// two different sets of duplicate `Rank`s with a count of two each returns a `Pair Array` with a
-    /// count of two.
+    //                                           //
+    // With Multiple Ranks & Multiple Duplicates //
+    //                                           //
+    
+    /// Tests that retrieving the `Pair`s in a `RankedCard Collection` that contains multiple
+    /// `Rank`s and two different sets of duplicate `Rank`s with a count of two each returns a `Pair`
+    /// `Collection` with a count of two.
     func test_getPairs_withMultipleRanksAndDiffferentDuplicates_returnsTwo() {
         
         // Given
@@ -263,30 +305,16 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `Pair`s in a `RankedCard Array` that contains only three
-    /// `RankedCard`s of all the same `Rank` returns a `Pair Array` with a count of three.
-    func test_getPairs_withThreeEquallyRankedCards_returnsThree() {
-        
-        // Given
-        let rankedCard1 = RankedCard(with: .ace)
-        let rankedCard2 = RankedCard(with: .ace)
-        let rankedCard3 = RankedCard(with: .ace)
-        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
-        let expected = 3
-        
-        // When
-        let pairs = rankedCards.getPairs()
-        let actual = pairs.count
-        
-        XCTAssertEqual(expected, actual)
-    }
-    
     //-------------------------------------------------------------------------//
     //                            getThreeOfAKinds()                           //
     //-------------------------------------------------------------------------//
     
-    /// Tests that retrieving the`ThreeOfAKind`s in a `RankedCard Array` that cotains unique
-    /// `Rank`s returns an empty `Array`.
+    //                   //
+    // With Unique Ranks //
+    //                   //
+    
+    /// Tests that retrieving the`ThreeOfAKind`s in a `RankedCard Collection` that contains
+    /// unique `Rank`s returns an empty `Collection`.
     func test_getThreeOfAKinds_withUniqueRanks_returnsEmpty() {
         
         // Given
@@ -302,8 +330,12 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssert(threeOfAKinds.isEmpty)
     }
     
-    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that contains only three
-    /// equally `RankedCard`s returns a `ThreeOfAKind Array` with a count of one.
+    //                               //
+    // With One Rank & One Duplicate //
+    //                               //
+    
+    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Collection` that contains only
+    /// three equally `RankedCard`s returns a `ThreeOfAKind Collection` with a count of one.
     func test_getThreeOfAKinds_withThreeEquallyRankedCards_returnsOne() {
         
         // Given
@@ -321,8 +353,37 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that contains multiple
-    /// `Rank`s and only two duplicate `Rank`s returns a `ThreeOfAKind Array` with a count of one.
+    //                                     //
+    // With One Rank & Multiple Duplicates //
+    //                                     //
+    
+    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Collection` that contains only
+    /// four `RankedCard`s of all the same `Rank` returns a ` ThreeOfAKind Collection` with a
+    /// count of three.
+    func test_getThreeOfAKinds_withFourEquallyRankedCards_returnsThree() {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCard3 = RankedCard(with: .ace)
+        let rankedCard4 = RankedCard(with: .ace)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4]
+        let expected = 3
+        
+        // When
+        let threeOfAKinds = rankedCards.getThreeOfAKinds()
+        let actual = threeOfAKinds.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //                                          //
+    // With Multiple Ranks & Only One Duplicate //
+    //                                          //
+    
+    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Collection` that contains
+    /// multiple `Rank`s and only two duplicate `Rank`s returns a `ThreeOfAKind Collection` with
+    /// a count of one.
     func test_getThreeOfAKinds_withMultipleRanksAndTwoDuplicates_returnsOne() {
         
         // Given
@@ -342,9 +403,13 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `ThreeOfAKinds`s in a `RankedCard Array` that contains only six
-    /// `RankedCard`s with two `Rank`s of the same count  returns a `ThreeOfKind Array` with a
-    ///  count of two.
+    //                                                //
+    // With Multiple Ranks & Multiple/Only Duplicates //
+    //                                                //
+    
+    /// Tests that retrieving the `ThreeOfAKinds`s in a `RankedCard Collection` that contains only
+    /// six `RankedCard`s with two `Rank`s of the same count  returns a `ThreeOfKind`
+    /// Collection` with a count of two.
     func test_getThreeOfAKinds_withSixRankedCardsOfTwoRanksWithSameCount_returnsTwo() {
         
         // Given
@@ -365,9 +430,13 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that contains multiple
-    /// `Rank`s and two different sets of duplicate `Rank`s with a count of three each returns a
-    /// `ThreeOfAKind Array` with a count of two.
+    //                                           //
+    // With Multiple Ranks & Multiple Duplicates //
+    //                                           //
+    
+    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Collection` that contains
+    /// multiple `Rank`s and two different sets of duplicate `Rank`s with a count of three each returns a
+    /// `ThreeOfAKind Collection` with a count of two.
     func test_getThreeOfAKind_withMultipleRanksAndDifferentDuplicates_returnsTwo() {
         
         // Given
@@ -392,32 +461,16 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `ThreeOfAKind`s in a `RankedCard Array` that contains only four
-    /// `RankedCard`s of all the same `Rank` returns a ` ThreeOfAKind Array` with a count of
-    /// three.
-    func test_getThreeOfAKinds_withFourEquallyRankedCards_returnsThree() {
-        
-        // Given
-        let rankedCard1 = RankedCard(with: .ace)
-        let rankedCard2 = RankedCard(with: .ace)
-        let rankedCard3 = RankedCard(with: .ace)
-        let rankedCard4 = RankedCard(with: .ace)
-        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4]
-        let expected = 3
-        
-        // When
-        let threeOfAKinds = rankedCards.getThreeOfAKinds()
-        let actual = threeOfAKinds.count
-        
-        XCTAssertEqual(expected, actual)
-    }
-    
     //-------------------------------------------------------------------------//
     //                             getFourOfAKinds()                           //
     //-------------------------------------------------------------------------//
     
-    /// Tests that retrieving the`FourOfAKind`s in a `RankedCard Array` that cotains unique
-    /// `Rank`s returns an empty `Array`.
+    //                   //
+    // With Unique Ranks //
+    //                   //
+    
+    /// Tests that retrieving the`FourOfAKind`s in a `RankedCard Collection` that contains unique
+    /// `Rank`s returns an empty `Collection`.
     func test_getFourOfAKinds_withUniqueRanks_returnsEmpty() {
         
         // Given
@@ -434,8 +487,12 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssert(fourOfAKinds.isEmpty)
     }
     
-    /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Array` that contains only four
-    /// equally `RankedCard`s returns a `FourOfAKind Array` with a count of one.
+    //                               //
+    // With One Rank & One Duplicate //
+    //                               //
+    
+    /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Collection` that contains only
+    /// four equally `RankedCard`s returns a `FourOfAKind Collection` with a count of one.
     func test_getFourOfAKinds_withFourEquallyRankedCards_returnsOne() {
         
         // Given
@@ -454,8 +511,39 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Array` that contains multiple
-    /// `Rank`s and only three duplicate `Rank`s returns a `FourOfAKind Array` with a count of one.
+    //                                     //
+    // With One Rank & Multiple Duplicates //
+    //                                     //
+    
+    /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Collection` that contains only
+    /// five `RankedCard`s of all the same `Rank` returns a ` FourOfAKind Collection` with a
+    /// count of three.
+    func test_getFourOfAKinds_withFiveEquallyRankedCards_returnsThree() {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace)
+        let rankedCard2 = RankedCard(with: .ace)
+        let rankedCard3 = RankedCard(with: .ace)
+        let rankedCard4 = RankedCard(with: .ace)
+        let rankedCard5 = RankedCard(with: .ace)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
+                           rankedCard5]
+        let expected = 3
+        
+        // When
+        let fourOfAKinds = rankedCards.getFourOfAKinds()
+        let actual = fourOfAKinds.count
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //                                          //
+    // With Multiple Ranks & Only One Duplicate //
+    //                                          //
+    
+    /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Collection` that contains multiple
+    /// `Rank`s and only three duplicate `Rank`s returns a `FourOfAKind Collection` with a count
+    /// of one.
     func test_getFourOfAKinds_withMultipleRanksAndThreeDuplicates_returnsOne() {
         
         // Given
@@ -476,9 +564,13 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `FourOfAKinds`s in a `RankedCard Array` that contains only eight
-    /// `RankedCard`s with two `Rank`s of the same count  returns a `FourOfKind Array` with a
-    ///  count of two.
+    //                                                //
+    // With Multiple Ranks & Multiple/Only Duplicates //
+    //                                                //
+    
+    /// Tests that retrieving the `FourOfAKinds`s in a `RankedCard Collection` that contains only
+    /// eight `RankedCard`s with two `Rank`s of the same count  returns a `FourOfKind`
+    /// `Collection` with a count of two.
     func test_getFourOfAKinds_withEightRankedCardsOfTwoRanksWithSameCount_returnsTwo() {
         
         // Given
@@ -501,9 +593,13 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Array` that contains multiple
+    //                                           //
+    // With Multiple Ranks & Multiple Duplicates //
+    //                                           //
+    
+    /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Collection` that contains multiple
     /// `Rank`s and two different sets of duplicate `Rank`s with a count of four each returns a
-    /// `FourOfAKind Array` with a count of two.
+    /// `FourOfAKind Collection` with a count of two.
     func test_getFourOfAKinds_withMultipleRanksAndDifferentDuplicates_returnsTwo() {
         
         // Given
@@ -530,26 +626,47 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that retrieving the `FourOfAKind`s in a `RankedCard Array` that contains only five
-    /// `RankedCard`s of all the same `Rank` returns a ` FourOfAKind Array` with a count of
-    /// three.
-    func test_getFourOfAKinds_withFiveEquallyRankedCards_returnsThree() {
+    //-------------------------------------------------------------------------//
+    //                            getSequences()                                //
+    //-------------------------------------------------------------------------//
+    
+    //                       //
+    // With Empty Collection //
+    //                       //
+    
+    /// Tests that rerieving the # of sequences in an empty `RankedCard Collection` returns an empty
+    /// `Collection`.
+    func test_getSequences_withEmptyCollection_returnsEmpty() {
+        
+        // Given
+        let rankedCards: [RankedCard] = []
+        
+        // When
+        let sequences = rankedCards.getSequences()
+        
+        // Then
+        XCTAssert(sequences.isEmpty)
+    }
+    
+    //                                     //
+    // With All Non-Sequential RankedCards //
+    //                                     //
+    
+    /// Tests that rerieving the # of sequences in a `RankedCard Collection` that contains all
+    /// non-sequential `RankedCard`s returns an empty `Collection`.
+    func test_getSequences_withAllNonSequentialRankedCards_returnsEmpty() {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
-        let rankedCard2 = RankedCard(with: .ace)
-        let rankedCard3 = RankedCard(with: .ace)
-        let rankedCard4 = RankedCard(with: .ace)
-        let rankedCard5 = RankedCard(with: .ace)
-        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
-                           rankedCard5]
-        let expected = 3
+        let rankedCard2 = RankedCard(with: .three)
+        let rankedCard3 = RankedCard(with: .five)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
         
         // When
-        let fourOfAKinds = rankedCards.getFourOfAKinds()
-        let actual = fourOfAKinds.count
+        let sequences = rankedCards.getSequences()
         
-        XCTAssertEqual(expected, actual)
+        // Then
+        XCTAssert(sequences.isEmpty)
     }
     
     //=========================================================================//
@@ -565,15 +682,20 @@ class RankedCardArrayTests: XCTestCase {
     //           //
     
     // Unique Ranks //
+    // ~~~~~~~~~~~~ //
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank` returns a
-    /// `Dictionary` with a key count equal to the `Array` count.
-    func test_splitByRank_withUniqueRanks_keyCountEqualsArrayCount() throws {
+    // Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank` returns a
+    /// `Dictionary` with a key count equal to the `Collection` count.
+    func test_splitByRank_withUniqueRanks_keyCountEqualsCollectionCount()
+        throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
         let rankedCard2 = RankedCard(with: .two)
-        let rankedCards = [rankedCard1, rankedCard2]
+        let rankedCard3 = RankedCard(with: .three)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
         let expected = rankedCards.count
         
         // When
@@ -583,14 +705,18 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank` returns a
-    /// `Dictionary` with total count equal to the `Array` count.
-    func test_splitByRank_withUniqueRanks_totalCountEqualsArrayCount() throws {
+    // Total Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank` returns a
+    /// `Dictionary` with total count equal to the `Collection` count.
+    func test_splitByRank_withUniqueRanks_totalCountEqualsCollectionCount()
+        throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
         let rankedCard2 = RankedCard(with: .two)
-        let rankedCards = [rankedCard1, rankedCard2]
+        let rankedCard3 = RankedCard(with: .three)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
         let expected = rankedCards.count
         
         // When
@@ -601,8 +727,11 @@ class RankedCardArrayTests: XCTestCase {
     }
     
     // Duplicate Ranks //
+    // ~~~~~~~~~~~~~~~ //
     
-    /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank` returns a
+    // Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with duplicate `Rank`s  by `Rank` returns a
     /// `Dictionary` with an expected key count.
     func test_splitByRank_withDuplicateRanks_hasExpectedKeyCount() throws {
         
@@ -623,9 +752,11 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank` returns a
-    /// `Dictionary` with a total count equal to the `Array` count.
-    func test_splitByRank_withDuplicateRanks_totalCountEqualsArrayCount()
+    // Total Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with duplicate `Rank`s  by `Rank` returns a
+    /// `Dictionary` with a total count equal to the `Collection` count.
+    func test_splitByRank_withDuplicateRanks_totalCountEqualsCollectionCount()
         throws {
         
         // Given
@@ -650,16 +781,21 @@ class RankedCardArrayTests: XCTestCase {
     //                        //
     
     // Unique Ranks //
+    // ~~~~~~~~~~~~ //
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
-    /// for a `Rank` equals one  returns a `Dictionary` with a key count equal to the `Array` count.
-    func test_splitByRank_withUniqueRanksWhereCountIsOne_KeyCountEqualsArrayCount()
+    // Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank`where the
+    /// given count for a `Rank` equals one returns a `Dictionary` with a key count equal to the
+    /// `Collection` count.
+    func test_splitByRank_withUniqueRanksWhereCountIsOne_KeyCountEqualsCollectionCount()
         throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
         let rankedCard2 = RankedCard(with: .two)
-        let rankedCards = [rankedCard1, rankedCard2]
+        let rankedCard3 = RankedCard(with: .three)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
         let count = 1
         let expected = rankedCards.count
         
@@ -670,15 +806,16 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
-    /// for a `Rank` is greater than one  returns a `Dictionary` with zero keys.
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank`where the
+    /// given count for a `Rank` is greater than one  returns a `Dictionary` with zero keys.
     func test_splitByRank_withUniqueRanksWhereCountEqualsTwo_hasZeroKeys()
         throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
         let rankedCard2 = RankedCard(with: .two)
-        let rankedCards = [rankedCard1, rankedCard2]
+        let rankedCard3 = RankedCard(with: .three)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
         let count = 2
         let expected = 0
         
@@ -689,15 +826,19 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
-    /// for a `Rank` equals one  returns a `Dictionary` with a total count equal to the `Array` count.
-    func test_splitByRank_withUniqueRanksWhereCountIsOne_totalCountEqualsArrayCount()
+    // Total Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank`where the
+    /// given count for a `Rank` equals one  returns a `Dictionary` with a total count equal to the
+    /// `Collection` count.
+    func test_splitByRank_withUniqueRanksWhereCountIsOne_totalCountEqualsCollectionCount()
         throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
         let rankedCard2 = RankedCard(with: .two)
-        let rankedCards = [rankedCard1, rankedCard2]
+        let rankedCard3 = RankedCard(with: .three)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
         let count = 1
         let expected = rankedCards.count
         
@@ -708,15 +849,16 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
-    /// for a `Rank` is greater than one  returns a `Dictionary` with total count of zero.
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank`where the
+    /// given count for a `Rank` is greater than one  returns a `Dictionary` with total count of zero.
     func test_splitByRank_withUniqueRanksWhereCountEqualsTwo_totalCountEqualsZero()
         throws {
         
         // Given
         let rankedCard1 = RankedCard(with: .ace)
         let rankedCard2 = RankedCard(with: .two)
-        let rankedCards = [rankedCard1, rankedCard2]
+        let rankedCard3 = RankedCard(with: .three)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
         let count = 2
         let expected = 0
         
@@ -728,9 +870,12 @@ class RankedCardArrayTests: XCTestCase {
     }
     
     // Duplicate Ranks //
+    // ~~~~~~~~~~~~~~~ //
     
-    /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank`where the count
-    /// for a `Rank` equals a given count returns a `Dictionary` with an expected key count.
+    // Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with duplicate `Rank`s  by `Rank`where the
+    /// count for a `Rank` equals a given count returns a `Dictionary` with an expected key count.
     func test_splitByRank_withDuplicateRanksWhereEqualCount_hasExpectedKeyCount()
         throws {
         
@@ -751,8 +896,10 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank`where the count
-    /// for a `Rank` equals a given count returns a `Dictionary` with an expected total count.
+    // Total Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with duplicate `Rank`s  by `Rank`where the
+    /// count for a `Rank` equals a given count returns a `Dictionary` with an expected total count.
     func test_splitByRank_withDuplicateRanksWhereEqualCount_hasExpectedTotalCount()
         throws {
         
@@ -774,9 +921,12 @@ class RankedCardArrayTests: XCTestCase {
     }
     
     // Only Duplicate Ranks //
+    // ~~~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that splitting a `RankedCard Array`with only  duplicate `Rank`s  by `Rank`where the
-    /// given count for a `Rank` equals one  returns a `Dictionary` with zero keys.
+    // Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with only  duplicate `Rank`s  by `Rank`where
+    /// the given count for a `Rank` equals one  returns a `Dictionary` with zero keys.
     func test_splitByRank_withOnlyDuplicateRanksWhereCountEqualsOne_hasZeroKeys()
         throws {
         
@@ -796,8 +946,10 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with only duplicate `Rank`s  by `Rank`where the
-    /// given count for a `Rank` equals one  returns a `Dictionary` with a total count of zero.
+    // Total Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with only duplicate `Rank`s  by `Rank`where
+    /// the given count for a `Rank` equals one  returns a `Dictionary` with a total count of zero.
     func test_splitByRank_withOnlyDuplicateRanksWhereCountEqualsOne_totalCountEqualsZero() throws {
         
         // Given
@@ -821,11 +973,14 @@ class RankedCardArrayTests: XCTestCase {
     //                    //
     
     // Unique Ranks //
+    // ~~~~~~~~~~~~ //
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
-    /// for a `Rank` is greater than zero  returns a `Dictionary` with a key count equal to the `Array`
-    /// count.
-    func test_splitByRank_withUniqueRanksWhereCountOverZero_keyCountEqualsArrayCount()
+    // Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank`where the
+    /// given count for a `Rank` is greater than zero  returns a `Dictionary` with a key count equal to
+    /// the `Collection` count.
+    func test_splitByRank_withUniqueRanksWhereCountOverZero_keyCountEqualsCollectionCount()
         throws {
         
         // Given
@@ -842,8 +997,8 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
-    /// for a `Rank` is greater than one  returns a `Dictionary` with zero keys.
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank`where the
+    /// given count for a `Rank` is greater than one  returns a `Dictionary` with zero keys.
     func test_splitByRank_withUniqueRanksWhereCountOverZero_hasZeroKeys()
         throws {
         
@@ -861,10 +1016,12 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
-    /// for a `Rank` is greater than zero  returns a `Dictionary` with a total count equal to the `Array`
-    /// count.
-    func test_splitByRank_withUniqueRanksWhereCountOverOne_totalCountEqualsArrayCount()
+    // Total Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank`where the
+    /// given count for a `Rank` is greater than zero  returns a `Dictionary` with a total count equal to
+    /// the `Collection` count.
+    func test_splitByRank_withUniqueRanksWhereCountOverOne_totalCountEqualsCollectionCount()
         throws {
         
         // Given
@@ -881,8 +1038,8 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with unique `Rank`s  by `Rank`where the given count
-    /// for a `Rank` is greater than one  returns a `Dictionary` with a total count of zero.
+    /// Tests that splitting a `RankedCard Collection`with unique `Rank`s  by `Rank`where the
+    /// given count for a `Rank` is greater than one  returns a `Dictionary` with a total count of zero.
     func test_splitByRank_withUniqueRanksWhereCountOverOne_totalCountEqualsZero()
         throws {
         
@@ -901,9 +1058,13 @@ class RankedCardArrayTests: XCTestCase {
     }
     
     // Duplicate Ranks //
+    // ~~~~~~~~~~~~~~~ //
     
-    /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank`where the count for
-    /// a `Rank` is greater than a given count returns a `Dictionary` with an expected key count.
+    // Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with duplicate `Rank`s  by `Rank`where the
+    /// count for a `Rank` is greater than a given count returns a `Dictionary` with an expected key
+    /// count.
     func test_splitByRank_withDuplicateRanksWhereOverCount_hasExpectedKeyCount()
         throws {
         
@@ -925,8 +1086,11 @@ class RankedCardArrayTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    /// Tests that splitting a `RankedCard Array`with duplicate `Rank`s  by `Rank`where the count for
-    /// a `Rank` is greater than a given count returns a `Dictionary` with an expected total count.
+    // Total Count //
+    
+    /// Tests that splitting a `RankedCard Collection`with duplicate `Rank`s  by `Rank`where the
+    /// count for a `Rank` is greater than a given count returns a `Dictionary` with an expected total
+    /// count.
     func test_splitByRank_withDuplicateRanksWhereOverCount_hasExpectedTotalCount()
         throws {
         

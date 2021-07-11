@@ -207,39 +207,47 @@ extension Array where Element: RankedCard  {
     /// - Returns: An `Array` of `RankedCard Array` sequences.
     func getSequences() -> [[RankedCard]] {
         
-        let cards = sorted()
-        let lastIndex = cards.count - 1
-        var index = 0
-        var sequenceIndex = 0
-        var card = cards[index]
-        var sequences = cards.count > 0 ? [[card]] : [[]]
+        var sequences: [[Element]] = []
         
-        while (index < lastIndex) {
+        if (count > 0) {
             
-            let nextCard = cards[index + 1]
-            card = cards[index]
+            let cards = sorted()
+            let lastIndex = cards.count - 1
+            var index = 0
+            var sequenceIndex = 0
+            var card = cards[index]
             
-            if (nextCard.follows(card)) {
+            sequences.append([card])
+            
+            while (index < lastIndex) {
                 
-                for sequence in sequenceIndex..<sequences.count {
+                let nextCard = cards[index + 1]
+                card = cards[index]
+                
+                if (nextCard.follows(card)) {
                     
-                    sequences[sequence].append(nextCard)
+                    for sequence in sequenceIndex..<sequences.count {
+                        
+                        sequences[sequence].append(nextCard)
+                    }
+                
+                } else if (nextCard.ranks(card)) {
+                 
+                    addBases(from: sequenceIndex, with: nextCard, to: &sequences)
+                    
+                } else {
+                    
+                    sequences.append([nextCard])
+                    sequenceIndex += 1
                 }
-            
-            } else if (nextCard.ranks(card)) {
-             
-                addBases(from: sequenceIndex, with: nextCard, to: &sequences)
                 
-            } else {
-                
-                sequences.append([nextCard])
-                sequenceIndex += 1
+                index += 1
             }
             
-            index += 1
+            sequences = sequences.filter{$0.count > 1}
         }
         
-        return sequences.filter{$0.count > 1}
+        return sequences
     }
 
     func getSequences(over count: Int) throws -> [[RankedCard]] {
