@@ -113,7 +113,7 @@
 		B5ECEAF926684F1D00E478F7 /* PlayingCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAF826684F1D00E478F7 /* PlayingCardCollection.swift */; };
 		B5ECEAFF26684F8E00E478F7 /* PlayingCardCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAFE26684F8E00E478F7 /* PlayingCardCollectionTests.swift */; };
 		B5ECEB052668571500E478F7 /* RankedCardArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB042668571500E478F7 /* RankedCardArray.swift */; };
-		B5ECEB0B2668579D00E478F7 /* RankedCardArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */; };
+		B5ECEB0B2668579D00E478F7 /* RankedCardCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB0A2668579D00E478F7 /* RankedCardCollectionTests.swift */; };
 		B5ECEB10266BC04B00E478F7 /* CollectionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB0F266BC04B00E478F7 /* CollectionDictionary.swift */; };
 		B5F29B25263B7EE200082A1A /* MultiRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B24263B7EE200082A1A /* MultiRun.swift */; };
 		B5F29B2B263B8B8500082A1A /* CribbageHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B2A263B8B8500082A1A /* CribbageHand.swift */; };
@@ -280,7 +280,7 @@
 		B5ECEAF826684F1D00E478F7 /* PlayingCardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardCollection.swift; sourceTree = "<group>"; };
 		B5ECEAFE26684F8E00E478F7 /* PlayingCardCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardCollectionTests.swift; sourceTree = "<group>"; };
 		B5ECEB042668571500E478F7 /* RankedCardArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedCardArray.swift; sourceTree = "<group>"; };
-		B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedCardArrayTests.swift; sourceTree = "<group>"; };
+		B5ECEB0A2668579D00E478F7 /* RankedCardCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RankedCardCollectionTests.swift; path = ../Arrays/RankedCardCollectionTests.swift; sourceTree = "<group>"; };
 		B5ECEB0F266BC04B00E478F7 /* CollectionDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDictionary.swift; sourceTree = "<group>"; };
 		B5F29B24263B7EE200082A1A /* MultiRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRun.swift; sourceTree = "<group>"; };
 		B5F29B2A263B8B8500082A1A /* CribbageHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageHand.swift; sourceTree = "<group>"; };
@@ -391,6 +391,7 @@
 				B516F60626967509008E8757 /* ContainableCollectionTests.swift */,
 				B5005F3F26742DD9007E6165 /* IntCollectionTests.swift */,
 				B5ECEAFE26684F8E00E478F7 /* PlayingCardCollectionTests.swift */,
+				B5ECEB0A2668579D00E478F7 /* RankedCardCollectionTests.swift */,
 				B5BB5FCB26683C7F00A88709 /* ScoreableCollectionTests.swift */,
 			);
 			path = Collections;
@@ -949,20 +950,11 @@
 			isa = PBXGroup;
 			children = (
 				B516F60526967455008E8757 /* Collections */,
-				B5BB5FCA26683C7200A88709 /* Arrays */,
 				B533DB7A267F761600326DA9 /* Characters */,
 				B533DB81267F7C5D00326DA9 /* Dictionaries */,
 				B533DB94267F915700326DA9 /* Sequences */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B5BB5FCA26683C7200A88709 /* Arrays */ = {
-			isa = PBXGroup;
-			children = (
-				B5ECEB0A2668579D00E478F7 /* RankedCardArrayTests.swift */,
-			);
-			path = Arrays;
 			sourceTree = "<group>";
 		};
 		B5BC068E267E2EB50083DFB3 /* Features */ = {
@@ -1393,7 +1385,7 @@
 				B5F2D4A32636E27D0089403F /* FourTests.swift in Sources */,
 				B597385625FEB76E00367598 /* HandTests.swift in Sources */,
 				B5BC0691267E2EE70083DFB3 /* RankTests.swift in Sources */,
-				B5ECEB0B2668579D00E478F7 /* RankedCardArrayTests.swift in Sources */,
+				B5ECEB0B2668579D00E478F7 /* RankedCardCollectionTests.swift in Sources */,
 				B5BE90612651E844005E0A37 /* ThreeOfAKindTests.swift in Sources */,
 				B5F2D4BB2636E7820089403F /* TenTests.swift in Sources */,
 				B516F63B269A24B1008E8757 /* CollectionExtensionTests.swift in Sources */,

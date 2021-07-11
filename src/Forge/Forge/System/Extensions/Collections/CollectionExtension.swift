@@ -18,19 +18,9 @@
 /// An `extension` for common `Collection` operations.
 extension Collection {
 
-    /// Retrieves all the `Element`s that do not exist in the given `Collection`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter collection: The `Collection` to filter by.
-    /// - Returns: An `Array` of `Element`s that do not exist in the given `Collection`.
-    public func except<T>(_ collection: T) -> [Self.Element] where
-        T: Collection,
-        T.Element == Self.Element,
-        Self.Element: Equatable {
-        
-        return filter{!collection.contains($0)}
-    }
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
     
     /// Determines if only contains the given `Collection`'s `Element`s
     ///
@@ -57,5 +47,23 @@ extension Collection {
         }
 
         return containsOnlyCollectionElements
+    }
+    
+    //=========================================================================//
+    //                                 FILTERS                                 //
+    //=========================================================================//
+    
+    /// Retrieves all the `Element`s that do not exist in the given `Collection`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter collection: The `Collection` to filter by.
+    /// - Returns: An `Array` of `Element`s that do not exist in the given `Collection`.
+    public func except<T>(_ collection: T) -> [Self.Element] where
+        T: Collection,
+        T.Element == Self.Element,
+        Self.Element: Equatable {
+        
+        return filter{!collection.contains($0)}
     }
 }

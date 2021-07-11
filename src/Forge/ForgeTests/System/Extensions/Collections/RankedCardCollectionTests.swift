@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  RankedCardArrayTests.swift                                                 //
+//  RankedCardCollectionTests.swift                                            //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 6/02/21.                                       //
@@ -17,8 +17,8 @@
 import XCTest
 @testable import Forge
 
-/// Unit tests for a `RankedCard Array`.
-class RankedCardArrayTests: XCTestCase {
+/// Unit tests for a `RankedCard Collection`.
+class RankedCardCollectionTests: XCTestCase {
     
     //=========================================================================//
     //                                 TESTERS                                 //
