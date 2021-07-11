@@ -292,7 +292,7 @@ class PlayingCardCollectionTests: XCTestCase {
     
     /// Tests that a `Collection` of `PlayingCards` with various `Suit`s contains only a given
     /// `Collection` of various `Suit`s that equal the `Suit`s in the `PlayingCard`'s `Suit`s.
-    func test_containsOnlySuits_withPlayingCardsOVariousAndEqualSuits_true()
+    func test_containsOnlySuits_withPlayingCardsOfVariousAndEqualSuits_true()
         throws {
         
         // Given
@@ -336,8 +336,7 @@ class PlayingCardCollectionTests: XCTestCase {
     
     /// Tests that retrieving the `Suit`s in a `Collection` of `PlayingCard`s with duplicate `Suit`s
     /// returns a `Collection` of only the unique `Suit`s in the `PlayingCard`s.
-    func test_getSuits_withPlayingCardsOfDuplicateSuits_returnsUniqueSuits()
-        throws {
+    func test_getSuits_withDuplicateSuits_returnsUniqueSuits() throws {
         
         // Given
         let suit1 = Suit.hearts
@@ -353,7 +352,7 @@ class PlayingCardCollectionTests: XCTestCase {
         let actual = playingCards.getSuits()
         
         // Then
-        XCTAssertEqual(expected, actual)
+        XCTAssert(actual.contains(only: expected))
     }
     
     //=========================================================================//
@@ -364,159 +363,52 @@ class PlayingCardCollectionTests: XCTestCase {
     //                              splitBySuit()                              //
     //-------------------------------------------------------------------------//
     
-    //              //
-    // NumeralCards //
-    //              //
-    
-    /// Tests that splitting all`NumeralCard`s with one `Suit` by `Suit` has a count of one.
-    func test_splitBySuit_NumeralCardsWithOneSuit_hasCountOfOne() throws {
+    /// Tests that splitting a `Collection` of `PlayingCard`s with duplicate `Suit`s by `Suit`
+    /// returns a `Collection` of only the unique `Suit`s in the `PlayingCard`s.
+    func test_splitBySuit_withDuplicateSuits_returnsUniqueSuits() throws {
         
         // Given
-        let cards = try PlayingCards.getNumeralCards(with: .hearts)
-        let expected = 1
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit2)
+        let three = try Three(of: suit1)
+        let four = try Four(of: suit2)
+        let playingCards = [ace, two, three, four]
+        let expected = [suit1, suit2]
         
         // When
-        let cardsBySuit = cards.splitBySuit()
-        let actual = cardsBySuit.count
+        let cards = playingCards.splitBySuit()
+        let actual = cards.allKeys
         
         // Then
-        XCTAssertEqual(expected, actual)
+        XCTAssert(actual.contains(only: expected))
     }
     
-    /// Tests that splitting all `NumeralCard`s by `Suit` has a count of four.
-    func test_splitBySuit_AllNumeralCards_hasCountOfFour() throws {
+    /// Tests that splitting a `Collection` of `PlayingCard`s with a duplicate `Suit` by `Suit`
+    /// returns a `Collection` with the expected `PlayingCard` for the duplicate `Suit`.
+    func test_splitBySuit_withDuplicateSuit_returnsExpectedDuplicateCards()
+        throws {
         
         // Given
-        let cards = try PlayingCards.getNumeralCards()
-        let expected = 4
+        let suit1 = Suit.hearts
+        let suit2 = Suit.spades
+        let suit3 = Suit.diamonds
+        let suit4 = Suit.clubs
+        let ace = try Ace(of: suit1)
+        let two = try Two(of: suit2)
+        let three = try Three(of: suit3)
+        let four = try Four(of: suit3)
+        let five = try Five(of: suit4)
+        let playingCards = [ace, two, three, four, five]
+        let expected = [three, four]
         
         // When
-        let cardsBySuit = cards.splitBySuit()
-        let actual = cardsBySuit.count
+        let cards = playingCards.splitBySuit()
+        if let actual = cards[suit3] {
         
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //           //
-    // FaceCards //
-    //           //
-
-    /// Tests that splitting all`FaceCard`s with one `Suit` by `Suit` has a count of one.
-    func test_splitBySuit_FaceCardsWithOneSuit_hasCountOfOne() throws {
-        
-        // Given
-        let cards = try PlayingCards.getFaceCards(with: .hearts)
-        let expected = 1
-        
-        // When
-        let cardsBySuit = cards.splitBySuit()
-        let actual = cardsBySuit.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that splitting all `FaceCard`s by `Suit` has a count of four.
-    func test_splitBySuit_AllFaceCards_hasCountOfFour() throws {
-        
-        // Given
-        let cards = try PlayingCards.getFaceCards()
-        let expected = 4
-        
-        // When
-        let cardsBySuit = cards.splitBySuit()
-        let actual = cardsBySuit.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //        //
-    // Jokers //
-    //        //
-
-    /// Tests that splitting all`Joker`s  by `Suit` has a count of one.
-    func test_splitBySuit_AllJokers_hasCountOfOne() throws {
-        
-        // Given
-        let cards = try PlayingCards.getJokers()
-        let expected = 1
-        
-        // When
-        let cardsBySuit = cards.splitBySuit()
-        let actual = cardsBySuit.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //                       //
-    // Standard PlayingCards //
-    //                       //
-    
-    /// Tests that splitting all standard `PlayingCard`s with one `Suit` by `Suit` has a count of one.
-    func test_splitBySuit_StandardPlayingCardsWithOneSuit_hasCountOfOne() throws {
-        
-        // Given
-        let cards = try PlayingCards.getStandardCards(with: .hearts)
-        let expected = 1
-        
-        // When
-        let cardsBySuit = cards.splitBySuit()
-        let actual = cardsBySuit.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that splitting all standard `PlayingCard`s by `Suit` has a count of four.
-    func test_splitBySuit_AllStandardPlayingCards_hasCountOfFour() throws {
-        
-        // Given
-        let cards = try PlayingCards.getStandardCards()
-        let expected = 4
-        
-        // When
-        let cardsBySuit = cards.splitBySuit()
-        let actual = cardsBySuit.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //                  //
-    // All PlayingCards //
-    //                  //
-    
-    /// Tests that splitting all `PlayingCard`s with one `Suit`and `Jokers` by `Suit` has a count of
-    /// two.
-    func test_splitBySuit_PlayingCardsWithOneSuitAndJokers_hasCountOfTwo() throws {
-        
-        // Given
-        let cards = try PlayingCards.getAllCards(with: .hearts)
-        let expected = 2
-        
-        // When
-        let cardsBySuit = cards.splitBySuit()
-        let actual = cardsBySuit.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that splitting all `PlayingCard`s by `Suit` has a count of five.
-    func test_splitBySuit_AllPlayingCards_hasCountOfFive() throws {
-        
-        // Given
-        let cards = try PlayingCards.getAllCards()
-        let expected = 5
-        
-        // When
-        let cardsBySuit = cards.splitBySuit()
-        let actual = cardsBySuit.count
-        
-        // Then
-        XCTAssertEqual(expected, actual)
+            // Then
+            XCTAssert(actual.contains(only: expected))
+        }
     }
 }

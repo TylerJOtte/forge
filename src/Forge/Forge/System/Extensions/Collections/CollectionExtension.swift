@@ -31,4 +31,31 @@ extension Collection {
         
         return filter{!collection.contains($0)}
     }
+    
+    /// Determines if only contains the given `Collection`'s `Element`s
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter collection: The `Collection` of `Element`s to test.
+    /// - Returns: True if only contains the given `Collection`'s `Element`s, else false.
+    func contains<T>(only collection: T) -> Bool where T: Collection,
+                                                      T.Element == Self.Element,
+                                                      Self.Element: Hashable {
+        var containsOnlyCollectionElements = false
+
+        if (count > 0 && collection.count > 0) {
+            
+            let expected = Set(collection)
+            let actual = self
+            
+            if (actual.count == expected.count) {
+                
+                let otherElements = actual.except(expected)
+                
+                containsOnlyCollectionElements = otherElements.count == 0
+            }
+        }
+
+        return containsOnlyCollectionElements
+    }
 }

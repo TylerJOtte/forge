@@ -68,10 +68,13 @@ extension Collection where Element: PlayingCard  {
             
             let expected = Set(suits)
             let actual = getSuits()
-            let otherSuits = actual.except(expected)
-            let containEqualCounts = expected.count == actual.count
             
-            containsOnlySuits = containEqualCounts && otherSuits.count == 0
+            if (actual.count == expected.count) {
+                
+                let otherSuits = actual.except(expected)
+                
+                containsOnlySuits = otherSuits.count == 0
+            }
         }
 
         return containsOnlySuits
@@ -88,7 +91,7 @@ extension Collection where Element: PlayingCard  {
     /// - Returns: An `Array` with all the unique `Suit`s.
     func getSuits() -> [Suit] {
         
-        return Array<Suit>(splitBySuit().keys)
+        return splitBySuit().allKeys
     }
     
     //=========================================================================//

@@ -16,6 +16,9 @@
 
 /// An extension for common `Dictionary`operations.
 extension Dictionary {
+
+    /// A `Collection` of all `Key`s.
+    var allKeys: [Self.Key] { Array(keys) }
     
     /// A `Collection` of all `Value`s.
     var allValues: [Self.Value] { Array(values) }

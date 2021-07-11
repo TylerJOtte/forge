@@ -17,8 +17,64 @@
 import Foundation
 
 /// A point total.
-public class Score: Reward, Scoreable {
+public class Score: Reward, Scoreable, Relatable {
 
     /// The total # of points.
     public var points: Int { return 0 }
+    
+    //-------------------------------------------------------------------------//
+    //                                  <                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the `Score` is less than the given `Score`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters rhs: The `Score` to compare to.
+    /// - Returns: True if the `Score` is less than the given {Model}, else false.
+    public func isLessThan(_ rhs: Score) -> Bool {
+        
+        return points < rhs.points
+    }
+    
+    /// Determines if the given left-handside`Score` is less than the specified right-handside `Score`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Score` to compare against.
+    ///   - rhs: The `Score` to compare to.
+    /// - Returns: True if the left-handside`Score` is less than the right-handside `Score`, else false.
+    public static func < (lhs: Score, rhs: Score) -> Bool {
+        
+        return lhs.isLessThan(rhs)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  =                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the `Score` equals the given `Score`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters rhs: The `Score` to compare to.
+    /// - Returns: True if the `Score` equals the given `Score`, else false.
+    public func equals(_ rhs: Score) -> Bool {
+        
+        return points == rhs.points
+    }
+    
+    /// Determines if the given left-handside`Score` equals the specified right-handside `Score`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Score` to compare against.
+    ///   - rhs: The `Score` to compare to.
+    /// - Returns: True if the left-handside`Score` equals the right-handside `Score`, else false.
+    public static func == (lhs: Score, rhs: Score) -> Bool {
+        
+        return lhs.equals(rhs)
+    }
 }
