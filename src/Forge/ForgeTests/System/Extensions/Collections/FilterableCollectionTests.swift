@@ -32,7 +32,7 @@ class FilterableCollectionTests: XCTestCase {
     // With Empty Collection //
     //                       //
     
-    /// Tests that retrieving the unique sub-`Elements` of an empty `Filterable Collection`
+    /// Tests that retrieving the unique sub-`Element`s of an empty `Filterable Collection`
     /// returns an empty `Collection.`
     func test_getUniqueSubElements_withEmptyCollection_returnsEmpty() {
         
@@ -50,7 +50,7 @@ class FilterableCollectionTests: XCTestCase {
     // With Empty Elements //
     //                     //
     
-    /// Tests that retrieving the unique sub-`Elements` of a `Filterable Collection` with
+    /// Tests that retrieving the unique sub-`Element`s of a `Filterable Collection` with
     /// `Element`s that are all empty returns an empty `Collection.`
     func test_getUniqueSubElements_withEmptyElements_returnsEmpty() {
         
@@ -62,6 +62,38 @@ class FilterableCollectionTests: XCTestCase {
         
         // Then
         XCTAssert(subElements.isEmpty)
+    }
+    
+    //               //
+    // With Elements //
+    //               //
+    
+    /// Tests that retrieving the unique sub-`Element`s of a `Filterable Collection` where the
+    /// `Element`s contain common sub-`Element`s returns only the expected values.
+    func test_getUniqueSubElements_withCommonSubElements_returnsExpected()
+        throws {
+        
+        // Given
+        let subElement1 = try Ace(of: .hearts)
+        let subElement2 =  try Ace(of: .spades)
+        let subElement3 = try Ace(of: .hearts)
+        let subElement4 = try Ace(of: .diamonds)
+        let subElement5 = try Ace(of: .hearts)
+        let subElement6 = try Ace(of: .clubs)
+        let subElements1 = [subElement1, subElement2]
+        let subElements2 = [subElement3, subElement4]
+        let subElements3 = [subElement5, subElement6]
+        let element1 = try Pair(of: subElements1)
+        let element2 = try Pair(of: subElements2)
+        let element3 = try Pair(of: subElements3)
+        let collection = [element1, element2, element3]
+        let expected = [subElement1, subElement2, subElement4, subElement6]
+        
+        // When
+        let actual = collection.getUniqueSubElements()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
 }
     
