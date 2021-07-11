@@ -657,9 +657,9 @@ class RankedCardCollectionTests: XCTestCase {
     func test_getSequences_withAllNonSequentialRankedCards_returnsEmpty() {
         
         // Given
-        let rankedCard1 = RankedCard(with: .ace)
-        let rankedCard2 = RankedCard(with: .three)
-        let rankedCard3 = RankedCard(with: .five)
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .three, at: 3)
+        let rankedCard3 = RankedCard(with: .five, at: 5)
         let rankedCards = [rankedCard1, rankedCard2, rankedCard3]
         
         // When
@@ -667,6 +667,114 @@ class RankedCardCollectionTests: XCTestCase {
         
         // Then
         XCTAssert(sequences.isEmpty)
+    }
+    
+    //                                                             //
+    // With Non-Sequential RankedCards & One Sequential RankedCard //
+    //                                                             //
+    
+    // Count //
+    // ~~~~~ //
+    
+    // Two Sequential RankedCards //
+    
+    /// Tests that rerieving the # of sequences in a `RankedCard Collection` that contains
+    /// non-sequential `RankedCard`s and one sequential `RankedCard` returns a `Collection`
+    /// with one sequence.
+    func test_getSequences_withNonSequentialAndSequentialRankedCard_returnsOne()
+        {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .three, at: 3)
+        let rankedCard3 = RankedCard(with: .four, at: 4)
+        let rankedCard4 = RankedCard(with: .six, at: 6)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4]
+        let expected = 1
+        
+        // When
+        let sequences = rankedCards.getSequences()
+        let actual = sequences.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Three Sequential RankedCards //
+    
+    /// Tests that rerieving the # of sequences in a `RankedCard Collection` that contains
+    /// non-sequential `RankedCard`s and sequential `RankedCard`s returns a `Collection`
+    /// with one sequence.
+    func test_getSequences_withNonSequentialAndSequentialRankedCards_returnsOne()
+        {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .three, at: 3)
+        let rankedCard3 = RankedCard(with: .four, at: 4)
+        let rankedCard4 = RankedCard(with: .five, at: 5)
+        let rankedCard5 = RankedCard(with: .seven, at: 7)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
+                           rankedCard5]
+        let expected = 1
+        
+        // When
+        let sequences = rankedCards.getSequences()
+        let actual = sequences.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //        //
+    // Values //
+    // ~~~~~~ //
+    
+    // Two Sequential RankedCards //
+    
+    /// Tests that rerieving the sequences in a `RankedCard Collection` that contains non-sequential
+    /// `RankedCard`s and one sequential `RankedCard` returns a `Collection` with the
+    /// expeccted sequence.
+    func test_getSequences_withNonSequentialAndSequentialCard_returnsExpected()
+        {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .three, at: 3)
+        let rankedCard3 = RankedCard(with: .four, at: 4)
+        let rankedCard4 = RankedCard(with: .six, at: 6)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4]
+        let expected = [[rankedCard2, rankedCard3]]
+        
+        // When
+        let actual = rankedCards.getSequences()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    // Three Sequential RankedCards //
+    
+    /// Tests that rerieving thesequences in a `RankedCard Collection` that contains non-sequential
+    /// `RankedCard`s and sequential `RankedCard`s returns a `Collection` with one sequence.
+    func test_getSequences_withNonSequentialAndSequentialCards_returnsExpected()
+        {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .three, at: 3)
+        let rankedCard3 = RankedCard(with: .four, at: 4)
+        let rankedCard4 = RankedCard(with: .five, at: 5)
+        let rankedCard5 = RankedCard(with: .seven, at: 7)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
+                           rankedCard5]
+        let expected = [[rankedCard2, rankedCard3, rankedCard4]]
+        
+        // When
+        let actual = rankedCards.getSequences()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //=========================================================================//
