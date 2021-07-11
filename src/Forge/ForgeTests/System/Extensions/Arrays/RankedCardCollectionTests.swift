@@ -769,6 +769,38 @@ class RankedCardCollectionTests: XCTestCase {
         XCTAssert(sequences.isEmpty)
     }
     
+    // With Non-Sequential RankedCards & Various Sequential RankedCards //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that rerieving the sequences in a `RankedCard Collection` that contains non-sequential
+    /// `RankedCard`s and various sequential `RankedCard` returns a `Collection` with the
+    /// expected sequences.
+    func test_getSequencesOverCount_withVariousSequentialCards_returnsExpected()
+        throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .three, at: 3)
+        let rankedCard3 = RankedCard(with: .four, at: 4)
+        let rankedCard4 = RankedCard(with: .six, at: 6)
+        let rankedCard5 = RankedCard(with: .eight, at: 8)
+        let rankedCard6 = RankedCard(with: .nine, at: 9)
+        let rankedCard7 = RankedCard(with: .ten, at: 10)
+        let rankedCard8 = RankedCard(with: .queen, at: 12)
+        let rankedCard9 = RankedCard(with: .king, at: 13)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
+                           rankedCard5, rankedCard6, rankedCard7, rankedCard8,
+                           rankedCard9]
+        let expected = [[rankedCard5, rankedCard6, rankedCard7]]
+        let count = 2
+        
+        // When
+        let actual = try rankedCards.getSequences(over: count)
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //=========================================================================//
     //                               SPLITTERS                                 //
     //=========================================================================//
