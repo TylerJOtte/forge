@@ -1883,7 +1883,7 @@ class HandTests: XCTestCase {
     
     /// Tests that a `Hand` does not equal another `Hand` with a different `Card`, using the equality
     /// operator.
-    func test_equals_handWithDifferentCardUsingEqualityOperator_true() {
+    func test_equals_handWithDifferentCardUsingEqualityOperator_false() {
      
         // Given
         let card1 = Card(named: "Card 1")

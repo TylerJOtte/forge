@@ -1487,6 +1487,47 @@ class DeckTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                                  !=                                     //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Deck` does not equal another `Deck` with a different `Card`.
+    func test_equals_deckWithADifferentCard_false() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card1, card2, card3, card5]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssertFalse(deck1.equals(deck2))
+    }
+    
+    /// Tests that a `Deck` does not equal another `Deck` with a different `Card`, using the equality
+    /// operator.
+    func test_equals_deckWithDifferentCardUsingEqualityOperator_false() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card1, card2, card3, card5]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssertNotEqual(deck1, deck2)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                               contains()                                //
     //-------------------------------------------------------------------------//
     
