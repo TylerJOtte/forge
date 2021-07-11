@@ -164,42 +164,8 @@ public class Deck: Cards {
     }
     
     //=========================================================================//
-    //                                 METHODS                                 //
+    //                                 TESTERS                                 //
     //=========================================================================//
-    
-    //-------------------------------------------------------------------------//
-    //                                 Testers                                 //
-    //-------------------------------------------------------------------------//
-    
-    //-------------------------------------------------------------------------//
-    //                                  <                                      //
-    //-------------------------------------------------------------------------//
-    
-    /// Determines if the `Deck` is less than the given `Deck`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters rhs: The `Deck` to compare to.
-    /// - Returns: True if the `Deck` is less than the given `Deck`, else false.
-    public func isLessThan(_ rhs: Deck) -> Bool {
-        
-        // TODO: Implement stub
-        
-        return false
-    }
-    
-    /// Determines if the given left-handside`Deck` is less than the specified right-handside `Deck`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `Deck` to compare against.
-    ///   - rhs: The `Deck` to compare to.
-    /// - Returns: True if the left-handside`Deck` is less than the right-handside `Deck`, else false.
-    public static func < (lhs: Deck, rhs: Deck) -> Bool {
-        
-        return lhs.isLessThan(rhs)
-    }
     
     //-------------------------------------------------------------------------//
     //                                  =                                      //
@@ -213,43 +179,14 @@ public class Deck: Cards {
     /// - Returns: True if the `Deck` equals the given `Deck`, else false.
     public func equals(_ rhs: Deck) -> Bool {
         
-        // TODO: Implement stub
-        
-        return false
+        return title == rhs.title && minCards == rhs.minCards &&
+            maxCards == rhs.maxCards && capacity == rhs.capacity &&
+            cards == rhs.cards
     }
     
-    /// Determines if the given left-handside`Deck` equals the specified right-handside `Deck`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `Deck` to compare against.
-    ///   - rhs: The `Deck` to compare to.
-    /// - Returns: True if the left-handside`Deck` equals the right-handside `Deck`, else false.
-    public static func == (lhs: Deck, rhs: Deck) -> Bool {
-        
-        return lhs.equals(rhs)
-    }
-    
-    /// Determines if the collection is empty.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the collection is empty, else false.
-    public func isEmpty() -> Bool {
-        
-        return count == 0
-    }
-    
-    /// Determines if the collection is full.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the collection is full else false.
-    public func isFull() -> Bool {
-        
-        return count == maxCards
-    }
+    //-------------------------------------------------------------------------//
+    //                                 contains()                              //
+    //-------------------------------------------------------------------------//
     
     /// Determines if a key exists for the given`Card`.
     ///
@@ -273,9 +210,9 @@ public class Deck: Cards {
         return containsKey(card) && cards[card.title]!.count > 0
     }
     
-    //-------------------------------------------------------------------------//
-    //                                 Filters                                 //
-    //-------------------------------------------------------------------------//
+    //=========================================================================//
+    //                                 FILTERS                                 //
+    //=========================================================================//
     
     /// Retrieves all the `Card`s that do not exist in the given `Collection`.
     ///
@@ -289,9 +226,9 @@ public class Deck: Cards {
         return self.cards.allValueElements.except(cards)
     }
     
-    //-------------------------------------------------------------------------//
-    //                                  Adders                                 //
-    //-------------------------------------------------------------------------//
+    //=========================================================================//
+    //                                  ADDERS                                 //
+    //=========================================================================//
     
     /// Adds the given `Card`.
     ///
@@ -316,9 +253,9 @@ public class Deck: Cards {
         }
     }
     
-    //-------------------------------------------------------------------------//
-    //                                 Removers                                //
-    //-------------------------------------------------------------------------//
+    //=========================================================================//
+    //                                 REMOVERS                                //
+    //=========================================================================//
     
     /// Removes the first istance of the given `Card` from the collection.
     ///

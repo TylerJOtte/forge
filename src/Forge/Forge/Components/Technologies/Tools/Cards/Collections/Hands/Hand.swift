@@ -164,46 +164,8 @@ public class Hand: Cards {
     }
     
     //=========================================================================//
-    //                                 METHODS                                 //
+    //                                 TESTERS                                 //
     //=========================================================================//
-    
-    //-------------------------------------------------------------------------//
-    //                                 Testers                                 //
-    //-------------------------------------------------------------------------//
-    
-    //-------------------------------------------------------------------------//
-    //                                  <                                      //
-    //-------------------------------------------------------------------------//
-    
-    /// Determines if the `Hand` is less than the given `Hand`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters rhs: The `Hand` to compare to.
-    /// - Returns: True if the `Hand` is less than the given `Hand` else false.
-    public func isLessThan(_ rhs: Hand) -> Bool {
-        
-        // TODO: Implement stub
-        
-        return false
-    }
-    
-    /// Determines if the given left-handside`Hand` is less than the specified right-handside `Hand`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `Hand` to compare against.
-    ///   - rhs: The `Hand` to compare to.
-    /// - Returns: True if the left-handside`Hand` is less than the right-handside `Hand`, else false.
-    public static func < (lhs: Hand, rhs: Hand) -> Bool {
-        
-        return lhs.isLessThan(rhs)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                  =                                      //
-    //-------------------------------------------------------------------------//
     
     /// Determines if the `Hand` equals the given `Hand`.
     ///
@@ -213,42 +175,9 @@ public class Hand: Cards {
     /// - Returns: True if the `Hand` equals the given `Hand`, else false.
     public func equals(_ rhs: Hand) -> Bool {
         
-        // TODO: Implement stub
-        
-        return false
-    }
-    
-    /// Determines if the given left-handside`Hand` equals the specified right-handside `Hand`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameters:
-    ///   - lhs: The `Hand` to compare against.
-    ///   - rhs: The `Hand` to compare to.
-    /// - Returns: True if the left-handside`Hand` equals the right-handside `Hand`, else false.
-    public static func == (lhs: Hand, rhs: Hand) -> Bool {
-        
-        return lhs.equals(rhs)
-    }
-    
-    /// Determines if the collection is empty.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the collection is empty, else false.
-    public func isEmpty() -> Bool {
-        
-        return cards.count == 0
-    }
-    
-    /// Determines if the collection is full.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Returns: True if the collection is full else false.
-    public func isFull() -> Bool {
-        
-        return cards.count == maxCards
+        return title == rhs.title && minCards == rhs.minCards &&
+            maxCards == rhs.maxCards && capacity == rhs.capacity &&
+            cards == rhs.cards
     }
     
     /// Determines if the given `Card` exists.
@@ -262,9 +191,9 @@ public class Hand: Cards {
         return cards.contains(card)
     }
     
-    //-------------------------------------------------------------------------//
-    //                                 Filters                                 //
-    //-------------------------------------------------------------------------//
+    //=========================================================================//
+    //                                 FILTERS                                 //
+    //=========================================================================//
     
     /// Retrieves all the `Card`s that do not exist in the given `Collection`.
     ///
@@ -278,9 +207,9 @@ public class Hand: Cards {
         return self.cards.except(cards)
     }
     
-    //-------------------------------------------------------------------------//
-    //                                  Adders                                 //
-    //-------------------------------------------------------------------------//
+    //=========================================================================//
+    //                                  ADDERS                                 //
+    //=========================================================================//
     
     /// Adds the given `Card`.
     ///
@@ -298,9 +227,9 @@ public class Hand: Cards {
         cards.append(card)
     }
     
-    //-------------------------------------------------------------------------//
-    //                                 Removers                                //
-    //-------------------------------------------------------------------------//
+    //=========================================================================//
+    //                                 REMOVERS                                //
+    //=========================================================================//
     
     /// Removes the first instance of the given `Card` from the collection.
     ///

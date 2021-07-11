@@ -34,9 +34,85 @@ public protocol Cards: Tool, Elements where T: Card {
 
 extension Cards {
     
+    //=========================================================================//
+    //                                ATTRIBUTES                               //
+    //=========================================================================//
+    
     /// The total # of `Card`s that can be added to the collection.
     var capacity: Int { return maxCards - count }
     
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                  =                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the given left-handside`Cards` equals the specified right-handside `Cards`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Cards` to compare against.
+    ///   - rhs: The `Cards` to compare to.
+    /// - Returns: True if the left-handside`Cards` equals the right-handside `Cards`, else false.
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        
+        return lhs.equals(rhs)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  <                                      //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the `Cards` is less than the given `Cards`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters rhs: The `Cards` to compare to.
+    /// - Returns: True if the `Cards` is less than the given `Cards` else false.
+    public func isLessThan(_ rhs: Self) -> Bool {
+        
+        return count < rhs.count
+    }
+    
+    /// Determines if the given left-handside`Cards` is less than the specified right-handside `Cards`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - lhs: The `Cards` to compare against.
+    ///   - rhs: The `Cards` to compare to.
+    /// - Returns: True if the left-handside`Hand` is less than the right-handside `Cards`, else false.
+    public static func < (lhs: Self, rhs: Self) -> Bool {
+        
+        return lhs.isLessThan(rhs)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  isLevel()                              //
+    //-------------------------------------------------------------------------//
+    
+    /// Determines if the collection is empty.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the collection is empty, else false.
+    public func isEmpty() -> Bool {
+        
+        return count == 0
+    }
+    
+    /// Determines if the collection is full.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the collection is full else false.
+    public func isFull() -> Bool {
+        
+        return count == maxCards
+    }
     
     /// Determines if the collection has capacity to add all of the given `Card`s.
     ///
@@ -48,6 +124,10 @@ extension Cards {
         
         return cards.count <= capacity
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                 contains()                              //
+    //-------------------------------------------------------------------------//
     
     /// Determines if all `Card`s in the given collection exist.
     ///
@@ -69,6 +149,10 @@ extension Cards {
         
         return containsCards
     }
+    
+    //=========================================================================//
+    //                                  ADDERS                                 //
+    //=========================================================================//
     
     /// Adds the given collection of `Card`s.
     ///
@@ -97,6 +181,10 @@ extension Cards {
             try add(card)
         }
     }
+    
+    //=========================================================================//
+    //                                 REMOVERS                                //
+    //=========================================================================//
     
     /// Removes all instances of the given `Card`s.
     ///

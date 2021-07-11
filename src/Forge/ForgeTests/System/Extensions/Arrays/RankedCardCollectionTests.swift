@@ -675,7 +675,7 @@ class RankedCardCollectionTests: XCTestCase {
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
     
     /// Tests that rerieving the sequences in a `RankedCard Collection` that contains non-sequential
-    /// `RankedCard`s and various sequential `RankedCard` returns a `Collection` with the
+    /// `RankedCard`s and various sequential `RankedCard`s returns a `Collection` with the
     /// expected sequences.
     func test_getSequences_withVariousSequentialRankedCards_returnsExpected() {
         
@@ -773,7 +773,7 @@ class RankedCardCollectionTests: XCTestCase {
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
     
     /// Tests that rerieving the sequences in a `RankedCard Collection` that contains non-sequential
-    /// `RankedCard`s and various sequential `RankedCard` returns a `Collection` with the
+    /// `RankedCard`s and various sequential `RankedCard`s returns a `Collection` with the
     /// expected sequences.
     func test_getSequencesOverCount_withVariousSequentialCards_returnsExpected()
         throws {
@@ -840,6 +840,40 @@ class RankedCardCollectionTests: XCTestCase {
         
         // Then
         XCTAssert(runs.isEmpty)
+    }
+    
+    // With Non-Sequential RankedCards & Various Sequential RankedCards //
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that rerieving the`Run`s in a `RankedCard Collection` that contains non-sequential
+    /// `RankedCard`s and various sequential `RankedCard`s returns a `Collection` with the
+    /// expected `Run`s.
+    func test_getRuns_withVariousSequentialRankedCards_returnsExpected() throws {
+        
+        // Given
+        let rankedCard1 = RankedCard(with: .ace, at: 1)
+        let rankedCard2 = RankedCard(with: .three, at: 3)
+        let rankedCard3 = RankedCard(with: .four, at: 4)
+        let rankedCard4 = RankedCard(with: .five, at: 5)
+        let rankedCard5 = RankedCard(with: .seven, at: 7)
+        let rankedCard6 = RankedCard(with: .nine, at: 9)
+        let rankedCard7 = RankedCard(with: .ten, at: 10)
+        let rankedCard8 = RankedCard(with: .jack, at: 11)
+        let rankedCard9 = RankedCard(with: .king, at: 13)
+        let rankedCards = [rankedCard1, rankedCard2, rankedCard3, rankedCard4,
+                           rankedCard5, rankedCard6, rankedCard7, rankedCard8,
+                           rankedCard9]
+        let runCards1 = [rankedCard2, rankedCard3, rankedCard4]
+        let runCards2 = [rankedCard6, rankedCard7, rankedCard8]
+        let run1 = try Run(of: runCards1)
+        let run2 = try Run(of: runCards2)
+        let expected = [run1, run2]
+        
+        // When
+        let actual = rankedCards.getRuns()
+        
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //=========================================================================//
