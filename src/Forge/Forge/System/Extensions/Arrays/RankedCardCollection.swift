@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  RankedCardArray.swift                                                      //
+//  RankedCardCollection.swift                                                 //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 6/02/21.                                       //
@@ -14,8 +14,8 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-/// An extension for common `RankedCard Array` operations.
-extension Array where Element: RankedCard  {
+/// An extension for common `RankedCard Collection` operations.
+extension Collection where Element: RankedCard  {
     
     //=========================================================================//
     //                                 TESTERS                                 //
@@ -38,13 +38,14 @@ extension Array where Element: RankedCard  {
     /// - Returns: True if all the `RankeCard`s are in sequential order, else false.
     func areSequential() -> Bool {
         
+        let rankedCards = Array(self)
         var areSequential = true
         var index = 0
         
         while (areSequential && index < count - 1)
         {
-            let card = self[index]
-            let nextCard = self[index + 1]
+            let card = rankedCards[index]
+            let nextCard = rankedCards[index + 1]
 
             areSequential = nextCard.follows(card)
             index += 1

@@ -1,6 +1,6 @@
 //=============================================================================//
 //                                                                             //
-//  EquatableArrayExtension.swift                                              //
+//  EquatableCollection.swift                                                  //
 //  Forge                                                                      //
 //                                                                             //
 //  Created by Tyler J. Otte on 6/06/21.                                       //
@@ -15,8 +15,8 @@
 //=============================================================================//
 
 
-/// An extension for common `Equatable Array` operations.
-extension Array where Element: Equatable {
+/// An extension for common `Equatable Collection` operations.
+extension Collection where Element: Equatable {
 
     //=========================================================================//
     //                                 GETTERS                                 //

@@ -21,7 +21,7 @@
 		B516F6272699F889008E8757 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B516F6262699F889008E8757 /* CollectionExtension.swift */; };
 		B516F62D269A04F1008E8757 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B516F62C269A04F1008E8757 /* Dictionary.swift */; };
 		B516F63B269A24B1008E8757 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B516F63A269A24B1008E8757 /* CollectionExtensionTests.swift */; };
-		B521E230266D520600DB4602 /* EquatableArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */; };
+		B521E230266D520600DB4602 /* EquatableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E22F266D520600DB4602 /* EquatableCollection.swift */; };
 		B521E236266D670300DB4602 /* HandRankArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E235266D670300DB4602 /* HandRankArray.swift */; };
 		B521E23A266D7DD700DB4602 /* FilterableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521E239266D7DD700DB4602 /* FilterableCollection.swift */; };
 		B52D25D3267E60D000E00F04 /* SuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D25D2267E60D000E00F04 /* SuitTests.swift */; };
@@ -61,6 +61,7 @@
 		B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668C7262B92A30045AC2B /* TripleRunTests.swift */; };
 		B55668D2262C88EC0045AC2B /* KindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668D1262C88EC0045AC2B /* KindTests.swift */; };
 		B55668D6262CB8FC0045AC2B /* ScoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668D5262CB8FC0045AC2B /* ScoreError.swift */; };
+		B56ED7A7269B8F47003A4474 /* FilterableCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ED7A6269B8F47003A4474 /* FilterableCollectionTests.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
 		B5817D482618BC7D0022B805 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D472618BC7D0022B805 /* Suit.swift */; };
@@ -112,7 +113,7 @@
 		B5E555C9264F4DA800E6BB37 /* Joker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E555C8264F4DA800E6BB37 /* Joker.swift */; };
 		B5ECEAF926684F1D00E478F7 /* PlayingCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAF826684F1D00E478F7 /* PlayingCardCollection.swift */; };
 		B5ECEAFF26684F8E00E478F7 /* PlayingCardCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAFE26684F8E00E478F7 /* PlayingCardCollectionTests.swift */; };
-		B5ECEB052668571500E478F7 /* RankedCardArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB042668571500E478F7 /* RankedCardArray.swift */; };
+		B5ECEB052668571500E478F7 /* RankedCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB042668571500E478F7 /* RankedCardCollection.swift */; };
 		B5ECEB0B2668579D00E478F7 /* RankedCardCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB0A2668579D00E478F7 /* RankedCardCollectionTests.swift */; };
 		B5ECEB10266BC04B00E478F7 /* CollectionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB0F266BC04B00E478F7 /* CollectionDictionary.swift */; };
 		B5F29B25263B7EE200082A1A /* MultiRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29B24263B7EE200082A1A /* MultiRun.swift */; };
@@ -185,7 +186,7 @@
 		B516F6262699F889008E8757 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		B516F62C269A04F1008E8757 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		B516F63A269A24B1008E8757 /* CollectionExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensionTests.swift; sourceTree = "<group>"; };
-		B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableArrayExtension.swift; sourceTree = "<group>"; };
+		B521E22F266D520600DB4602 /* EquatableCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableCollection.swift; sourceTree = "<group>"; };
 		B521E235266D670300DB4602 /* HandRankArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRankArray.swift; sourceTree = "<group>"; };
 		B521E239266D7DD700DB4602 /* FilterableCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterableCollection.swift; sourceTree = "<group>"; };
 		B52D25D2267E60D000E00F04 /* SuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitTests.swift; sourceTree = "<group>"; };
@@ -225,6 +226,7 @@
 		B55668C7262B92A30045AC2B /* TripleRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleRunTests.swift; sourceTree = "<group>"; };
 		B55668D1262C88EC0045AC2B /* KindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindTests.swift; sourceTree = "<group>"; };
 		B55668D5262CB8FC0045AC2B /* ScoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreError.swift; sourceTree = "<group>"; };
+		B56ED7A6269B8F47003A4474 /* FilterableCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterableCollectionTests.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		B5817D472618BC7D0022B805 /* Suit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suit.swift; sourceTree = "<group>"; };
@@ -279,7 +281,7 @@
 		B5E555C8264F4DA800E6BB37 /* Joker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joker.swift; sourceTree = "<group>"; };
 		B5ECEAF826684F1D00E478F7 /* PlayingCardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardCollection.swift; sourceTree = "<group>"; };
 		B5ECEAFE26684F8E00E478F7 /* PlayingCardCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardCollectionTests.swift; sourceTree = "<group>"; };
-		B5ECEB042668571500E478F7 /* RankedCardArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedCardArray.swift; sourceTree = "<group>"; };
+		B5ECEB042668571500E478F7 /* RankedCardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RankedCardCollection.swift; path = ../Arrays/RankedCardCollection.swift; sourceTree = "<group>"; };
 		B5ECEB0A2668579D00E478F7 /* RankedCardCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RankedCardCollectionTests.swift; path = ../Arrays/RankedCardCollectionTests.swift; sourceTree = "<group>"; };
 		B5ECEB0F266BC04B00E478F7 /* CollectionDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDictionary.swift; sourceTree = "<group>"; };
 		B5F29B24263B7EE200082A1A /* MultiRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRun.swift; sourceTree = "<group>"; };
@@ -376,9 +378,11 @@
 			children = (
 				B516F6262699F889008E8757 /* CollectionExtension.swift */,
 				B5817DA1261A27600022B805 /* ContainableCollection.swift */,
+				B521E22F266D520600DB4602 /* EquatableCollection.swift */,
 				B521E239266D7DD700DB4602 /* FilterableCollection.swift */,
 				B516F5F726966532008E8757 /* IntCollection.swift */,
 				B5ECEAF826684F1D00E478F7 /* PlayingCardCollection.swift */,
+				B5ECEB042668571500E478F7 /* RankedCardCollection.swift */,
 				B516F5F12696646B008E8757 /* ScoreableCollection.swift */,
 			);
 			path = Collections;
@@ -389,6 +393,7 @@
 			children = (
 				B516F63A269A24B1008E8757 /* CollectionExtensionTests.swift */,
 				B516F60626967509008E8757 /* ContainableCollectionTests.swift */,
+				B56ED7A6269B8F47003A4474 /* FilterableCollectionTests.swift */,
 				B5005F3F26742DD9007E6165 /* IntCollectionTests.swift */,
 				B5ECEAFE26684F8E00E478F7 /* PlayingCardCollectionTests.swift */,
 				B5ECEB0A2668579D00E478F7 /* RankedCardCollectionTests.swift */,
@@ -931,9 +936,7 @@
 		B5BB5FC126683BC800A88709 /* Arrays */ = {
 			isa = PBXGroup;
 			children = (
-				B521E22F266D520600DB4602 /* EquatableArrayExtension.swift */,
 				B521E235266D670300DB4602 /* HandRankArray.swift */,
-				B5ECEB042668571500E478F7 /* RankedCardArray.swift */,
 			);
 			path = Arrays;
 			sourceTree = "<group>";
@@ -1311,13 +1314,13 @@
 				B5F2D456262E4D330089403F /* Three.swift in Sources */,
 				B5F2D452262E4C660089403F /* Two.swift in Sources */,
 				B556684D2623EB150045AC2B /* Component.swift in Sources */,
-				B5ECEB052668571500E478F7 /* RankedCardArray.swift in Sources */,
+				B5ECEB052668571500E478F7 /* RankedCardCollection.swift in Sources */,
 				B5BE90562651C6DF005E0A37 /* FourOfAKind.swift in Sources */,
 				B5A50C2D2664350F001717C6 /* ComponentError.swift in Sources */,
 				B5566869262527FE0045AC2B /* Description.swift in Sources */,
 				B5F2D44A262E496E0089403F /* NumeralCard.swift in Sources */,
 				B55668352623D29E0045AC2B /* Nobs.swift in Sources */,
-				B521E230266D520600DB4602 /* EquatableArrayExtension.swift in Sources */,
+				B521E230266D520600DB4602 /* EquatableCollection.swift in Sources */,
 				B5F2D47B262E500D0089403F /* Queen.swift in Sources */,
 				B55668D6262CB8FC0045AC2B /* ScoreError.swift in Sources */,
 				B597384925FEAD4100367598 /* Hand.swift in Sources */,
@@ -1373,6 +1376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56ED7A7269B8F47003A4474 /* FilterableCollectionTests.swift in Sources */,
 				B556689C262659030045AC2B /* FlushTests.swift in Sources */,
 				B533DB9F267FB4D000326DA9 /* PlayingCardsHelperTests.swift in Sources */,
 				B55668D2262C88EC0045AC2B /* KindTests.swift in Sources */,
