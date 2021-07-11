@@ -1820,6 +1820,46 @@ class HandTests: XCTestCase {
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
+    //                                  ==                                     //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that two `Hand`s that contain the same `Card`s in a different orders are equal.
+    func test_equals_handWithSameCardsInDifferentOrder_true() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card4, card3, card2, card1]
+        let hand1 = Hand(of: cards1)
+        let hand2 = Hand(of: cards2)
+        
+        // When/Then
+        XCTAssert(hand1.equals(hand2))
+    }
+    
+    /// Tests that two `Hand`s that contain the same `Card`s  in a different order are equal, using the
+    /// equality operator.
+    func test_equals_handWithSameCardsInDifferentOrderWithEqualityOperator_true()
+        {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card4, card3, card2, card1]
+        let hand1 = Hand(of: cards1)
+        let hand2 = Hand(of: cards2)
+        
+        // When/Then
+        XCTAssertEqual(hand1, hand2)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                               contains()                                //
     //-------------------------------------------------------------------------//
     

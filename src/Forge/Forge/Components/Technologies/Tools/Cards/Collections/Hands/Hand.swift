@@ -54,23 +54,23 @@ public class Hand: Cards {
     ///   - The `Hand`'s title is set to "Hand".
     public init() {
         
-        self.minCards = 0
-        self.maxCards = Int.max
-        self.cards = []
+        minCards = 0
+        maxCards = Int.max
+        cards = []
     }
     
     /// Creates a`Hand`with the given terms.
     ///
     /// - Precondition: None.
     /// - Postcondition:
-    ///   - The `Hand` can hold zero to `Int.max Card`s.
+    ///   - The `Hand` caån hold zero to `Int.max Card`s.
     ///   - The `Hand` contains the given `Card`s.
     ///   - The `Hand`'s title is set to "Hand".
     /// - Parameter cards: The `Card`s to include in the `Hand`.
     public init(of cards: [Card]) {
         
-        self.minCards = 0
-        self.maxCards = Int.max
+        minCards = 0
+        maxCards = Int.max
         self.cards = cards
     }
     
@@ -103,7 +103,7 @@ public class Hand: Cards {
             throw ElementsError.invalidCount
         }
         
-        self.minCards = 0
+        minCards = 0
         self.maxCards = max
         self.cards = cards
     }
@@ -175,9 +175,7 @@ public class Hand: Cards {
     /// - Returns: True if the `Hand` equals the given `Hand`, else false.
     public func equals(_ rhs: Hand) -> Bool {
         
-        return title == rhs.title && minCards == rhs.minCards &&
-            maxCards == rhs.maxCards && capacity == rhs.capacity &&
-            cards == rhs.cards
+        return cards.contains(only: rhs.cards)
     }
     
     /// Determines if the given `Card` exists.
