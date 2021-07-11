@@ -1860,6 +1860,47 @@ class HandTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                                  !=                                     //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Hand` does not equal another `Hand` with a different `Card`.
+    func test_equals_handWithADifferentCard_false() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card1, card2, card3, card5]
+        let hand1 = Hand(of: cards1)
+        let hand2 = Hand(of: cards2)
+        
+        // When/Then
+        XCTAssertFalse(hand1.equals(hand2))
+    }
+    
+    /// Tests that a `Hand` does not equal another `Hand` with a different `Card`, using the equality
+    /// operator.
+    func test_equals_handWithDifferentCardUsingEqualityOperator_true() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card1, card2, card3, card5]
+        let hand1 = Hand(of: cards1)
+        let hand2 = Hand(of: cards2)
+        
+        // When/Then
+        XCTAssertNotEqual(hand1, hand2)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                               contains()                                //
     //-------------------------------------------------------------------------//
     
