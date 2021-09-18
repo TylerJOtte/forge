@@ -366,6 +366,32 @@ class SevenTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Seven` `Rank`s another `Seven`.
+    func test_seven_ranksSeven_true() throws {
+     
+        // Given
+        let sevenOfHearts = try Seven(of: .hearts)
+        let sevenOfSpades = try Seven(of: .spades)
+        
+        // When/Then
+        XCTAssert(sevenOfHearts.ranks(sevenOfSpades))
+    }
+    
+    /// Tests that a `Seven` does not `Rank` an `Eight`.
+    func test_seven_ranksEight_false() throws {
+     
+        // Given
+        let seven = try Seven(of: .hearts)
+        let eight = try Eight(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(seven.ranks(eight))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             follows()                                   //
     //-------------------------------------------------------------------------//
     

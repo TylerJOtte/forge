@@ -694,6 +694,56 @@ class AceTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a low `Ace` `Rank`s another low `Ace`.
+    func test_lowAce_ranksLowAce_true() throws {
+     
+        // Given
+        let lowAce1 = try Ace(of: .hearts)
+        let lowAce2 = try Ace(of: .hearts)
+        
+        // When/Then
+        XCTAssert(lowAce1.ranks(lowAce2))
+    }
+    
+    /// Tests that a high `Ace` `Rank`s another high `Ace`.
+    func test_highAce_ranksHighAce_true() throws {
+     
+        // Given
+        let isHigh = true
+        let highAce1 = try Ace(of: .hearts, and: isHigh)
+        let highAce2 = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssert(highAce1.ranks(highAce2))
+    }
+    
+    /// Tests that a low `Ace` does not `Rank` a `Two`.
+    func test_lowAce_ranksTwo_false() throws {
+     
+        // Given
+        let lowAce = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(lowAce.ranks(two))
+    }
+    
+    /// Tests that a low `Ace` does not `Rank` a high `Ace`.
+    func test_lowAce_ranksHighAce_false() throws {
+     
+        // Given
+        let isHigh = true
+        let lowAce = try Ace(of: .hearts)
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssertFalse(lowAce.ranks(highAce))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             follows()                                   //
     //-------------------------------------------------------------------------//
     

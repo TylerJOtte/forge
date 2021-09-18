@@ -264,4 +264,30 @@ class JokerTests: XCTestCase {
         // When/Then
         XCTAssertNotEqual(card1, card2)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Joker` `Rank`s another `Joker`.
+    func test_joker_ranksJoker_true() throws {
+     
+        // Given
+        let redJoker = try Joker(color: .red)
+        let blackJoker = try Joker(color: .black)
+        
+        // When/Then
+        XCTAssert(redJoker.ranks(blackJoker))
+    }
+    
+    /// Tests that a `Joker` does not `Rank` a low `Ace`.
+    func test_joker_ranksLowhAce_false() throws {
+     
+        // Given
+        let joker = try Joker(color: .red)
+        let lowAce = try Ace(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(joker.ranks(lowAce))
+    }
 }

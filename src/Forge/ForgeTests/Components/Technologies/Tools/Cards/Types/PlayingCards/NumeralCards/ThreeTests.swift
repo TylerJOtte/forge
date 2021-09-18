@@ -366,6 +366,32 @@ class ThreeTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Three` `Rank`s another `Three`.
+    func test_three_ranksThree_true() throws {
+     
+        // Given
+        let threeOfHearts = try Three(of: .hearts)
+        let threeOfSpades = try Three(of: .spades)
+        
+        // When/Then
+        XCTAssert(threeOfHearts.ranks(threeOfSpades))
+    }
+    
+    /// Tests that a `Three` does not `Rank` a `Four`.
+    func test_three_ranksFour_false() throws {
+     
+        // Given
+        let three = try Three(of: .hearts)
+        let four = try Four(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(three.ranks(four))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             follows()                                   //
     //-------------------------------------------------------------------------//
     

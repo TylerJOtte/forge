@@ -344,6 +344,33 @@ class KingTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `King` `Rank`s another `King`.
+    func test_king_ranksKing_true() throws {
+     
+        // Given
+        let kingOfHearts = try King(of: .hearts)
+        let kingOfSpades = try King(of: .spades)
+        
+        // When/Then
+        XCTAssert(kingOfHearts.ranks(kingOfSpades))
+    }
+    
+    /// Tests that a `King` does not `Rank` a high `Ace`.
+    func test_king_ranksHighAce_false() throws {
+     
+        // Given
+        let king = try King(of: .hearts)
+        let isHigh = true
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        
+        // When/Then
+        XCTAssertFalse(king.ranks(highAce))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             follows()                                   //
     //-------------------------------------------------------------------------//
     

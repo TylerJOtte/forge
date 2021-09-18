@@ -366,6 +366,32 @@ class QueenTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Queen` `Rank`s another `Queen`.
+    func test_queen_ranksQueen_true() throws {
+     
+        // Given
+        let queenOfHearts = try Queen(of: .hearts)
+        let queenOfSpades = try Queen(of: .spades)
+        
+        // When/Then
+        XCTAssert(queenOfHearts.ranks(queenOfSpades))
+    }
+    
+    /// Tests that a `Queen` does not `Rank` a `King`.
+    func test_queen_ranksKing_false() throws {
+     
+        // Given
+        let queen = try Queen(of: .hearts)
+        let king = try King(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(queen.ranks(king))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             follows()                                   //
     //-------------------------------------------------------------------------//
     

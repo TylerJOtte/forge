@@ -366,6 +366,32 @@ class JackTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Jack` `Rank`s another `Jack`.
+    func test_jack_ranksJack_true() throws {
+     
+        // Given
+        let jackOfHearts = try Jack(of: .hearts)
+        let jackOfSpades = try Jack(of: .spades)
+        
+        // When/Then
+        XCTAssert(jackOfHearts.ranks(jackOfSpades))
+    }
+    
+    /// Tests that a `Jack` does not `Rank` a `Queen`.
+    func test_jack_ranksQueen_false() throws {
+     
+        // Given
+        let jack = try Jack(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(jack.ranks(queen))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             follows()                                   //
     //-------------------------------------------------------------------------//
     

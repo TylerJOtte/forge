@@ -366,6 +366,32 @@ class FiveTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Five` `Rank`s another `Five`.
+    func test_five_ranksFive_true() throws {
+     
+        // Given
+        let fiveOfHearts = try Five(of: .hearts)
+        let fiveOfSpades = try Five(of: .spades)
+        
+        // When/Then
+        XCTAssert(fiveOfHearts.ranks(fiveOfSpades))
+    }
+    
+    /// Tests that a `Five` does not `Rank` a `Six`.
+    func test_five_ranksSix_false() throws {
+     
+        // Given
+        let five = try Five(of: .hearts)
+        let six = try Six(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(five.ranks(six))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             follows()                                   //
     //-------------------------------------------------------------------------//
     

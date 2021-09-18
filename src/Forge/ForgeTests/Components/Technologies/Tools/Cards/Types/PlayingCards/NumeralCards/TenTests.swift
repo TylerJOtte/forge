@@ -366,6 +366,32 @@ class TenTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Ten` `Rank`s another `Ten`.
+    func test_ten_ranksTen_true() throws {
+     
+        // Given
+        let tenOfHearts = try Ten(of: .hearts)
+        let tenOfSpades = try Ten(of: .spades)
+        
+        // When/Then
+        XCTAssert(tenOfHearts.ranks(tenOfSpades))
+    }
+    
+    /// Tests that a `Ten` does not `Rank` a `Jack`.
+    func test_ten_ranksJack_false() throws {
+     
+        // Given
+        let ten = try Ten(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(ten.ranks(jack))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             follows()                                   //
     //-------------------------------------------------------------------------//
     

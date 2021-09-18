@@ -366,6 +366,32 @@ class EightTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                               ranks()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that an `Eight` `Rank`s another `Eight`.
+    func test_eight_ranksEight_true() throws {
+     
+        // Given
+        let eightOfHearts = try Eight(of: .hearts)
+        let eightOfSpades = try Eight(of: .spades)
+        
+        // When/Then
+        XCTAssert(eightOfHearts.ranks(eightOfSpades))
+    }
+    
+    /// Tests that an `Eight` does not `Rank` a `Nine`.
+    func test_eight_ranksNine_false() throws {
+     
+        // Given
+        let eight = try Eight(of: .hearts)
+        let nine = try Nine(of: .hearts)
+        
+        // When/Then
+        XCTAssertFalse(eight.ranks(nine))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                             follows()                                   //
     //-------------------------------------------------------------------------//
     
