@@ -1564,6 +1564,48 @@ class DeckTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                                  isLevel()                              //
+    //-------------------------------------------------------------------------//
+    
+    //           //
+    // isEmpty() //
+    //           //
+    
+    // Adding Cards //
+    // ~~~~~~~~~~~~ //
+    
+    /// Tests that an empty `Deck` is not empty after adding  a `Card` to it.
+    func test_isEmpty_afterAddCard_false() throws {
+
+        // Given
+        let card = Card()
+        let deck = Deck()
+
+        // When
+        try deck.add(card)
+
+        // Then
+        XCTAssertFalse(deck.isEmpty())
+    }
+    
+    /// Tests that an empty `Deck` is not empty after adding `Cards` to it.
+    func test_isEmpty_afterAddCards_false() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck()
+
+        // When
+        try deck.add(cards)
+
+        // Then
+        XCTAssertFalse(deck.isEmpty())
+    }
+    
+    //-------------------------------------------------------------------------//
     //                               contains()                                //
     //-------------------------------------------------------------------------//
     
