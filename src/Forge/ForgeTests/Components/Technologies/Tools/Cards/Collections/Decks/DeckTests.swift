@@ -1791,6 +1791,44 @@ class DeckTests: XCTestCase {
         XCTAssertFalse(deck.isFull())
     }
     
+    // Removing Cards //
+    // ~~~~~~~~~~~~~~ //
+    
+    /// Tests that a full `Deck` is not full after removing  a `Card` from it.
+    func test_isFull_afterRemoveCard_false() throws {
+
+        // Given
+        let max = 1
+        let card = Card()
+        let cards = [card]
+        let deck = try Deck(of: max, cards)
+
+        // When
+        _ = try deck.remove(card)
+
+        // Then
+        XCTAssertFalse(deck.isFull())
+    }
+    
+    /// Tests that a full `Deck` is not full after removing  `Cards` from it.
+    func test_isFull_afterRemoveCards_false() throws {
+
+        // Given
+        let max = 3
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card1, card2]
+        let deck = try Deck(of: max, cards1)
+
+        // When
+        _ = try deck.remove(cards2)
+
+        // Then
+        XCTAssertFalse(deck.isFull())
+    }
+    
     //-------------------------------------------------------------------------//
     //                               contains()                                //
     //-------------------------------------------------------------------------//
