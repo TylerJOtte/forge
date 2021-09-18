@@ -1600,6 +1600,50 @@ class DeckTests: XCTestCase {
         XCTAssertFalse(deck.contains(removedCards))
     }
     
+    //            //
+    // Duplicates //
+    //            //
+    
+    /// Tests that a `Deck` still contains a `Card` after removing a duplicate of it.
+    func test_contains_cardAfterRemovingDuplicate_true() throws {
+        
+        // Given
+        let duplicateCard1 = Card(named: "Card 1")
+        let duplicateCard2 = Card(named: "Card 1")
+        let card3 = Card(named: "Card 2")
+        let cards = [duplicateCard1, duplicateCard2, card3]
+        let deck = Deck(of: cards)
+        
+        // When
+        _ = try deck.remove(duplicateCard2)
+        
+        // Then
+        XCTAssert(deck.contains(duplicateCard2))
+    }
+    
+    //            //
+    // Duplicates //
+    //            //
+    
+    /// Tests that a `Deck` does not contain any instance of a `Card` that is a duplicate after removing
+    /// all instances of it.
+    func test_contains_cardAfterRemovingDuplicates_true() throws {
+        
+        // Given
+        let duplicateCard1 = Card(named: "Card 1")
+        let duplicateCard2 = Card(named: "Card 1")
+        let card3 = Card(named: "Card 2")
+        let cards1 = [duplicateCard1, duplicateCard2, card3]
+        let cards2 = [duplicateCard2]
+        let deck = Deck(of: cards1)
+        
+        // When
+        _ = try deck.remove(cards2)
+        
+        // Then
+        XCTAssertFalse(deck.contains(duplicateCard1))
+    }
+    
     //=========================================================================//
     //                                  ADDERS                                 //
     //=========================================================================//

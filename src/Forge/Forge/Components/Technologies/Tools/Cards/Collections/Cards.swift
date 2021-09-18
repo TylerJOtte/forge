@@ -212,12 +212,19 @@ extension Cards {
         
         var card = 0
         var removedCards: [T] = []
+        let expectedCards = Set(cards)
         
-        while (!isEmpty() && card < cards.count) {
+        while (!isEmpty() && card < expectedCards.count) {
             
-            let removedCard = try remove(cards[card])
+            let expectedCard = cards[card]
             
-            removedCards.append(removedCard)
+            while (contains(expectedCard)) {
+                
+                let removedCard = try remove(expectedCard)
+                
+                removedCards.append(removedCard)
+            }
+
             card += 1
         }
         
