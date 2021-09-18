@@ -1657,6 +1657,26 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isEmpty())
     }
     
+    /// Tests that a `Deck`with only duplicate`Cards` is empty after removing a given set of `Cards`
+    /// that only contain one instance of each duplicate `Card`.
+    func test_isEmpty_afterRemoveDuplicateCards_true() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 1")
+        let card3 = Card(named: "Card 2")
+        let card4 = Card(named: "Card 2")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card2, card3]
+        let deck = Deck(of: cards1)
+
+        // When
+        _ = try deck.remove(cards2)
+
+        // Then
+        XCTAssert(deck.isEmpty())
+    }
+    
     //-------------------------------------------------------------------------//
     //                               contains()                                //
     //-------------------------------------------------------------------------//
