@@ -84,88 +84,6 @@ class DeckTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-    
-    //         //
-    // Default //
-    //         //
-    
-    /// Tests that the title of a default `Deck` equals "Deck".
-    func test_title_ofDefaultDeck_equalsDeck() {
-        
-        // Given
-        let deck = Deck()
-        let expected = "Deck"
-        
-        // When
-        let actual = deck.title
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //            //
-    // With Cards //
-    //            //
-    
-    /// Tests that the title of a `Deck` created with `Card`s equals "Deck".
-    func test_title_ofNewDeckWithCards_equalsDeck() {
-        
-        // Given
-        let cards = [Card()]
-        let deck = Deck(of: cards)
-        let expected = "Deck"
-        
-        // When
-        let actual = deck.title
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //                    //
-    // With Max and Cards //
-    //                    //
-    
-    /// Tests that the title of a `Deck` created with a max and `Card`s equals "Deck".
-    func test_title_ofNewDeckWithMaxAndCards_equalsDeck() throws {
-        
-        // Given
-        let max = 5
-        let cards = [Card()]
-        let deck = try Deck(of: max, cards)
-        let expected = "Deck"
-        
-        // When
-        let actual = deck.title
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //                      //
-    // With Range And Cards //
-    //                      //
-    
-    /// Tests that the title of a `Deck` created with a range and `Card`s equals "Deck".
-    func test_title_ofNewDeckWithRangeAndCards_equalsDeck() throws {
-        
-        // Given
-        let min = 0
-        let max = 5
-        let cards = [Card()]
-        let deck = try Deck(of: min, to: max, cards)
-        let expected = "Deck"
-        
-        // When
-        let actual = deck.title
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                               minCards                                  //
     //-------------------------------------------------------------------------//
     
@@ -677,6 +595,76 @@ class DeckTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                                 cards                                   //
+    //-------------------------------------------------------------------------//
+    
+    //            //
+    // With Cards //
+    //            //
+    
+    // Contains Given Cards //
+    // ~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that the `Card`s of a `Deck` created with `Card`s contains the given `Card`s.
+    func test_cards_ofNewDeckWithCards_containsGivenCards_() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)
+
+        // When/Then
+        XCTAssert(deck.contains(cards))
+    }
+    
+    //                    //
+    // With Max and Cards //
+    //                    //
+
+    // Contains Given Cards //
+    // ~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that the`Card`s of a `Deck` created with a max and `Card`s contains the given `Card`s.
+    func test_cards_ofNewDeckWithMaxAndCards_equalsGivenCardsCount() throws {
+        
+        // Given
+        let max = 5
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = try Deck(of: max, cards)
+
+        // When/Then
+        XCTAssert(deck.contains(cards))
+    }
+    
+    //                      //
+    // With Range And Cards //
+    //                      //
+
+    // Contains Given Cards //
+    // ~~~~~~~~~~~~~~~~~~~~ //
+    
+    /// Tests that the`Card`s  of a `Deck` created with a range and `Card`s contains the given `Card`s.
+    func test_cards_ofNewDeckWithRangeAndCards_equalsGivenCardsCount() throws {
+        
+        // Given
+        let min = 1
+        let max = 5
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = try Deck(of: min, to: max, cards)
+        
+        // When/Then
+        XCTAssert(deck.contains(cards))
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                 count                                   //
     //-------------------------------------------------------------------------//
     
@@ -966,77 +954,85 @@ class DeckTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                 cards                                   //
+    //                                Title                                    //
     //-------------------------------------------------------------------------//
     
     //         //
     // Default //
     //         //
     
+    /// Tests that the title of a default `Deck` equals "Deck".
+    func test_title_ofDefaultDeck_equalsDeck() {
+        
+        // Given
+        let deck = Deck()
+        let expected = "Deck"
+        
+        // When
+        let actual = deck.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //            //
     // With Cards //
     //            //
     
-    // Contains Given Cards //
-    // ~~~~~~~~~~~~~~~~~~~~ //
-    
-    /// Tests that the `Card`s of a `Deck` created with `Card`s contains the given `Card`s.
-    func test_cards_ofNewDeckWithCards_containsGivenCards_() {
+    /// Tests that the title of a `Deck` created with `Card`s equals "Deck".
+    func test_title_ofNewDeckWithCards_equalsDeck() {
         
         // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
+        let cards = [Card()]
         let deck = Deck(of: cards)
+        let expected = "Deck"
+        
+        // When
+        let actual = deck.title
 
-        // When/Then
-        XCTAssert(deck.contains(cards))
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //                    //
     // With Max and Cards //
     //                    //
-
-    // Contains Given Cards //
-    // ~~~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that the`Card`s of a `Deck` created with a max and `Card`s contains the given `Card`s.
-    func test_cards_ofNewDeckWithMaxAndCards_equalsGivenCardsCount() throws {
+    /// Tests that the title of a `Deck` created with a max and `Card`s equals "Deck".
+    func test_title_ofNewDeckWithMaxAndCards_equalsDeck() throws {
         
         // Given
         let max = 5
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
+        let cards = [Card()]
         let deck = try Deck(of: max, cards)
+        let expected = "Deck"
+        
+        // When
+        let actual = deck.title
 
-        // When/Then
-        XCTAssert(deck.contains(cards))
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //                      //
     // With Range And Cards //
     //                      //
-
-    // Contains Given Cards //
-    // ~~~~~~~~~~~~~~~~~~~~ //
     
-    /// Tests that the`Card`s  of a `Deck` created with a range and `Card`s contains the given `Card`s.
-    func test_cards_ofNewDeckWithRangeAndCards_equalsGivenCardsCount() throws {
+    /// Tests that the title of a `Deck` created with a range and `Card`s equals "Deck".
+    func test_title_ofNewDeckWithRangeAndCards_equalsDeck() throws {
         
         // Given
-        let min = 1
+        let min = 0
         let max = 5
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
+        let cards = [Card()]
         let deck = try Deck(of: min, to: max, cards)
+        let expected = "Deck"
         
-        // When/Then
-        XCTAssert(deck.contains(cards))
+        // When
+        let actual = deck.title
+
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //-------------------------------------------------------------------------//
@@ -1744,6 +1740,25 @@ class DeckTests: XCTestCase {
 
         // When
         XCTAssertThrowsError(try deck.remove(card)) { (error) in
+
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    /// Tests that removing a `Card` from an empty `Deck` throws an `isEmpty Error`.
+    func test_remove_cardsFromEmptyDeck_throwsIsEmptyError() throws {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck()
+        let expected = ElementsError.isEmpty
+        
+        // When
+        XCTAssertThrowsError(try deck.remove(cards)) { (error) in
 
             // Then
             XCTAssertEqual(expected, error as? ElementsError)
