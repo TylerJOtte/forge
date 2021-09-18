@@ -364,4 +364,19 @@ class JackTests: XCTestCase {
         // When/Then
         XCTAssertGreaterThan(jack, ten)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             follows()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Jack` follows a `Ten`.
+    func test_jack_followsATen_true() throws {
+     
+        // Given
+        let jack = try Jack(of: .hearts)
+        let ten = try Ten(of: .hearts)
+        
+        // When/Then
+        XCTAssert(jack.follows(ten))
+    }
 }

@@ -364,4 +364,19 @@ class QueenTests: XCTestCase {
         // When/Then
         XCTAssertGreaterThan(queen, jack)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             follows()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Queen` follows a `Jack`.
+    func test_queen_followsAJack_true() throws {
+     
+        // Given
+        let queen = try Queen(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        
+        // When/Then
+        XCTAssert(queen.follows(jack))
+    }
 }

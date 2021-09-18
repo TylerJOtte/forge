@@ -342,4 +342,19 @@ class KingTests: XCTestCase {
         // When/Then
         XCTAssertGreaterThan(king, queen)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             follows()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `King` follows a `Queen`.
+    func test_king_followsAQueen_true() throws {
+     
+        // Given
+        let king = try King(of: .hearts)
+        let queen = try Queen(of: .hearts)
+        
+        // When/Then
+        XCTAssert(king.follows(queen))
+    }
 }

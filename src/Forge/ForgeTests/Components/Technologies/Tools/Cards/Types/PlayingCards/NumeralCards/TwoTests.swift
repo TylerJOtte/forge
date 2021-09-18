@@ -353,4 +353,19 @@ class TwoTests: XCTestCase {
         // When/Then
         XCTAssertGreaterThan(two, ace)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             follows()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a `Two` follows a low `Ace`.
+    func test_two_followsALowAce_true() throws {
+     
+        // Given
+        let two = try Two(of: .hearts)
+        let lowAce = try Ace(of: .hearts)
+        
+        // When/Then
+        XCTAssert(two.follows(lowAce))
+    }
 }

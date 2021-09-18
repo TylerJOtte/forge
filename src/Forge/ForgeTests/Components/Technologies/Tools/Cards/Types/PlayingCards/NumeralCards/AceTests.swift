@@ -692,4 +692,31 @@ class AceTests: XCTestCase {
         // When/Then
         XCTAssertGreaterThan(highAce, king)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             follows()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that a low `Ace` follows a `Joker`.
+    func test_lowAce_followsAJoker_true() throws {
+     
+        // Given
+        let lowAce = try Ace(of: .hearts)
+        let joker = try Joker(color: .red)
+        
+        // When/Then
+        XCTAssert(lowAce.follows(joker))
+    }
+    
+    /// Tests that a high `Ace` follows a `King`.
+    func test_highAce_followsAKing_true() throws {
+     
+        // Given
+        let isHigh = true
+        let highAce = try Ace(of: .hearts, and: isHigh)
+        let king = try King(of: .hearts)
+        
+        // When/Then
+        XCTAssert(highAce.follows(king))
+    }
 }

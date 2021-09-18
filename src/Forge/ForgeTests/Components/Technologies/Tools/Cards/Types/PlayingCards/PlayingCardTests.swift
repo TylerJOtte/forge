@@ -354,7 +354,7 @@ class PlayingCardTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                              follow()                                   //
+    //                             follows()                                   //
     //-------------------------------------------------------------------------//
     
     /// Tests that a `PlayingCard` with a lesser position than another `PlayingCard` does not follow it.

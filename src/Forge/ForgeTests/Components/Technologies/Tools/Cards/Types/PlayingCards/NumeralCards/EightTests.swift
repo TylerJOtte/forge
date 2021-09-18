@@ -364,4 +364,19 @@ class EightTests: XCTestCase {
         // When/Then
         XCTAssertGreaterThan(eight, seven)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                             follows()                                   //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that an `Eight` follows a `Seven`.
+    func test_eight_followsASeven_true() throws {
+     
+        // Given
+        let eight = try Eight(of: .hearts)
+        let seven = try Seven(of: .hearts)
+        
+        // When/Then
+        XCTAssert(eight.follows(seven))
+    }
 }
