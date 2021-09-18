@@ -1746,7 +1746,7 @@ class DeckTests: XCTestCase {
         }
     }
     
-    /// Tests that removing a `Card` from an empty `Deck` throws an `isEmpty Error`.
+    /// Tests that removing `Cards` from an empty `Deck` throws an `isEmpty Error`.
     func test_remove_cardsFromEmptyDeck_throwsIsEmptyError() throws {
         
         // Given
@@ -1779,6 +1779,29 @@ class DeckTests: XCTestCase {
         
         // When
         XCTAssertThrowsError(try deck.remove(card4)) { (error) in
+            
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    /// Tests that removing `Cards` from a `Deck`that does not contain them throws a `notFound` error.
+    func test_remove_nonContainedCards_throwsNotFoundError() throws {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let card6 = Card(named: "Card 6")
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card4, card5, card6]
+        let deck = Deck(of: cards1)
+        let expected = ElementsError.notFound
+        
+        // When
+        XCTAssertThrowsError(try deck.remove(cards2)) { (error) in
             
             // Then
             XCTAssertEqual(expected, error as? ElementsError)
