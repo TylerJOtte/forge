@@ -179,7 +179,8 @@ public class Deck: Cards {
     /// - Returns: True if the `Deck` equals the given `Deck`, else false.
     public func equals(_ rhs: Deck) -> Bool {
         
-        return count == rhs.count && cards.allValueElements.sorted() == rhs.cards.allValueElements.sorted()
+        return count == rhs.count && cards.allValueElements.sorted() ==
+            rhs.cards.allValueElements.sorted()
     }
     
     //-------------------------------------------------------------------------//

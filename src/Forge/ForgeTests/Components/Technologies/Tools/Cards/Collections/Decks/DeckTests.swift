@@ -1443,6 +1443,46 @@ class DeckTests: XCTestCase {
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
+    //                                    <                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Deck`is less than  another `Deck` that contains more `Card`s.
+    func test_isLessThan_deckWithMoreCards_true() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card1, card2, card3, card4]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssert(deck1.isLessThan(deck2))
+    }
+    
+    /// Tests that a `Deck`is less than  another `Deck` that contains more `Card`s, .using the less than
+    /// operator.
+    func test_isLessThan_deckWithMoreCardsUsingLessThanOperator_true()
+        {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card1, card2, card3, card4]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssertLessThan(deck1, deck2)
+    }
+    
+    //-------------------------------------------------------------------------//
     //                                  ==                                     //
     //-------------------------------------------------------------------------//
 
@@ -1621,10 +1661,6 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.contains(duplicateCard2))
     }
     
-    //            //
-    // Duplicates //
-    //            //
-    
     /// Tests that a `Deck` does not contain any instance of a `Card` that is a duplicate after removing
     /// all instances of it.
     func test_contains_cardAfterRemovingDuplicates_true() throws {
@@ -1642,6 +1678,31 @@ class DeckTests: XCTestCase {
         
         // Then
         XCTAssertFalse(deck.contains(duplicateCard1))
+    }
+    
+    //=========================================================================//
+    //                                 FILTERS                                 //
+    //=========================================================================//
+    
+    /// Tests that retreiving all the `Cards` that don't exist in a given collection returns the expected
+    /// `Cards`.
+    func test_except_cardsEqualsExpected_true() throws {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card1, card4]
+        let deck = Deck(of: cards1)
+        let expected = [card2, card3]
+        
+        // When
+        let actual = deck.except(cards2)
+
+        // Then
+        XCTAssertEqual(expected, actual)
     }
     
     //=========================================================================//
