@@ -1739,6 +1739,22 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isFull())
     }
     
+    /// Tests that a `Deck` is not full  after adding  a `Card` to it.
+    func test_isFull_afterAddCard_false() throws {
+
+        // Given
+        let max = 2
+        let card = Card()
+        let cards: [Card] = []
+        let deck = try Deck(of: max, cards)
+
+        // When
+        try deck.add(card)
+
+        // Then
+        XCTAssertFalse(deck.isFull())
+    }
+    
     /// Tests that a `Deck` is full  after adding `Cards` to it.
     func test_isFull_afterAddCards_true() throws {
 
@@ -1755,6 +1771,24 @@ class DeckTests: XCTestCase {
 
         // Then
         XCTAssert(deck.isFull())
+    }
+    
+    /// Tests that a `Deck` is not full  after adding `Cards` to it.
+    func test_isFull_afterAddCards_false() throws {
+
+        // Given
+        let max = 3
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let cards1: [Card] = []
+        let cards2 = [card1, card2]
+        let deck = try Deck(of: max, cards1)
+
+        // When
+        try deck.add(cards2)
+
+        // Then
+        XCTAssertFalse(deck.isFull())
     }
     
     //-------------------------------------------------------------------------//
