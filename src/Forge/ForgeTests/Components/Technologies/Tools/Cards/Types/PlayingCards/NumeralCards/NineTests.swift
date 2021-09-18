@@ -63,24 +63,6 @@ class NineTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                 Rank                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `Nine`'s `Rank` equals `nine`.
-    func test_rank_ofNine_equalsNine() throws {
-
-        // Given
-        let nine = try Nine(of: .hearts)
-        let expected = Rank.nine
-
-        // When
-        let actual = nine.rank
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                                 Suit                                    //
     //-------------------------------------------------------------------------//
 
@@ -141,18 +123,18 @@ class NineTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Points                                   //
+    //                                 Rank                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that a `Nine`'s points equals 9.
-    func test_points_ofNine_equals9() throws {
+    /// Tests that a `Nine`'s `Rank` equals `nine`.
+    func test_rank_ofNine_equalsNine() throws {
 
         // Given
         let nine = try Nine(of: .hearts)
-        let expected = 9
+        let expected = Rank.nine
 
         // When
-        let actual = nine.points
+        let actual = nine.rank
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -171,6 +153,24 @@ class NineTests: XCTestCase {
 
         // When
         let actual = nine.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Nine`'s points equals 9.
+    func test_points_ofNine_equals9() throws {
+
+        // Given
+        let nine = try Nine(of: .hearts)
+        let expected = 9
+
+        // When
+        let actual = nine.points
 
         // Then
         XCTAssertEqual(expected, actual)

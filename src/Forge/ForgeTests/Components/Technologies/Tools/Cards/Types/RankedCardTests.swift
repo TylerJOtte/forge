@@ -586,7 +586,7 @@ class RankedCardTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                              follow()                                   //
+    //                               follows()                                 //
     //-------------------------------------------------------------------------//
     
     /// Tests that a `RankedCard` with a lesser position than another `RankedCard` does not follow it.

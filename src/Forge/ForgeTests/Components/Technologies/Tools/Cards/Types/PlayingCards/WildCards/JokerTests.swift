@@ -24,7 +24,7 @@ class JokerTests: XCTestCase {
     //=========================================================================//
     //                              PROPERTIES                                 //
     //=========================================================================//
-
+    
     //-------------------------------------------------------------------------//
     //                                Color                                    //
     //-------------------------------------------------------------------------//
@@ -39,24 +39,6 @@ class JokerTests: XCTestCase {
 
         // When
         let actual = joker.color
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                 Rank                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `Joker`'s `Rank` equals `joker`.
-    func test_rank_ofJoker_equalsJoker() throws {
-
-        // Given
-        let joker = try Joker(color: .red)
-        let expected = Rank.joker
-
-        // When
-        let actual = joker.rank
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -93,25 +75,25 @@ class JokerTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
-
+    
     //-------------------------------------------------------------------------//
-    //                                Points                                   //
+    //                                 Rank                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that a `Joker`'s points equals 0.
-    func test_points_ofJoker_equals0() throws {
+    /// Tests that a `Joker`'s `Rank` equals `joker`.
+    func test_rank_ofJoker_equalsJoker() throws {
 
         // Given
         let joker = try Joker(color: .red)
-        let expected = 0
+        let expected = Rank.joker
 
         // When
-        let actual = joker.points
+        let actual = joker.rank
 
         // Then
         XCTAssertEqual(expected, actual)
     }
-
+    
     //-------------------------------------------------------------------------//
     //                               Position                                  //
     //-------------------------------------------------------------------------//
@@ -129,7 +111,25 @@ class JokerTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
 
+    /// Tests that a `Joker`'s points equals 0.
+    func test_points_ofJoker_equals0() throws {
+
+        // Given
+        let joker = try Joker(color: .red)
+        let expected = 0
+
+        // When
+        let actual = joker.points
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
     //-------------------------------------------------------------------------//
     //                                Title                                    //
     //-------------------------------------------------------------------------//

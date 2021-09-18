@@ -23,30 +23,6 @@ class PlayingCardTests: XCTestCase {
     //=========================================================================//
     //                             Initialization                              //
     //=========================================================================//
-
-    //-------------------------------------------------------------------------//
-    //                              Invalid Ranks                              //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that creating a `PlayingCard` with a non-standard`PlayingCard Rank` throws an
-    /// `invalidRank Error`.
-    func test_init_withNonStandardPlayingCardRank_throwsInvalidRank() throws {
-
-        // Given
-        let rank = Rank.one
-        let suit = Suit.hearts
-        let points = 1
-        let position = 1
-        let expected = DescriptionError.invalidRank
-
-        // When
-        XCTAssertThrowsError(try PlayingCard(rank, of: suit, worth: points,
-                                             at: position)) { error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DescriptionError)
-        }
-    }
     
     //-------------------------------------------------------------------------//
     //                              Invalid Suits                              //
@@ -157,6 +133,30 @@ class PlayingCardTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
+    //                              Invalid Ranks                              //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that creating a `PlayingCard` with a non-standard`PlayingCard Rank` throws an
+    /// `invalidRank Error`.
+    func test_init_withNonStandardPlayingCardRank_throwsInvalidRank() throws {
+
+        // Given
+        let rank = Rank.one
+        let suit = Suit.hearts
+        let points = 1
+        let position = 1
+        let expected = DescriptionError.invalidRank
+
+        // When
+        XCTAssertThrowsError(try PlayingCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DescriptionError)
+        }
+    }
+    
+    //-------------------------------------------------------------------------//
     //                            Invalid Positions                            //
     //-------------------------------------------------------------------------//
 
@@ -198,142 +198,6 @@ class PlayingCardTests: XCTestCase {
             // Then
             XCTAssertEqual(expected, error as? RangeError)
         }
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the title of a new `PlayingCard` created without a title equals the given
-    /// "`Rank` Of `Suit`".
-    func test_title_ofNewPlayingCardWithoutTitle_equalsGivenRankOfSuit() throws {
-        
-        // Given
-        let rank = Rank.ace
-        let suit = Suit.hearts
-        let points = 1
-        let position = 13
-        let playingCard = try PlayingCard(rank, of: suit, worth: points,
-                                          at: position)
-        let expected = "Ace Of Hearts"
-        
-        // When
-        let actual = playingCard.title
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    /// Tests that the title of a new `PlayingCard` created with a title equals the given title.
-    func test_title_ofNewPlayingCardWithTitle_equalsGivenTitle() throws {
-        
-        // Given
-        let rank = Rank.ace
-        let suit = Suit.hearts
-        let points = 1
-        let position = 13
-        let title = "High Ace"
-        let playingCard = try PlayingCard(rank, of: suit, worth: points,
-                                          at: position, with: title)
-        let expected = title
-        
-        // When
-        let actual = playingCard.title
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                 Rank                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the `Rank` of a new `PlayingCard` equals the given `Rank`.
-    func test_rank_ofNewPlayingCard_equalsGivenRank() throws {
-        
-        // Given
-        let rank = Rank.ace
-        let suit = Suit.hearts
-        let points = 1
-        let position = 1
-        let playingCard = try PlayingCard(rank, of: suit, worth: points,
-                                          at: position)
-        let expected = rank
-        
-        // When
-        let actual = playingCard.rank
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                               Position                                  //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the position of a new `PlayingCard` equals the given position.
-    func test_position_ofNewPlayingCard_equalsGivenPosition() throws {
-        
-        // Given
-        let rank = Rank.ace
-        let suit = Suit.hearts
-        let points = 1
-        let position = 1
-        let playingCard = try PlayingCard(rank, of: suit, worth: points,
-                                          at: position)
-        let expected = position
-        
-        // When
-        let actual = playingCard.position
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Points                                   //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the points of a new `PlayingCard` equals the given points.
-    func test_points_ofNewPlayingCard_equalsGivenPoints() throws {
-        
-        // Given
-        let rank = Rank.ace
-        let suit = Suit.hearts
-        let points = 1
-        let position = 1
-        let playingCard = try PlayingCard(rank, of: suit, worth: points,
-                                          at: position)
-        let expected = points
-        
-        // When
-        let actual = playingCard.points
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                 Suit                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the `Suit` of a new `PlayingCard` equals the given `Suit`.
-    func test_suit_ofNewPlayingCard_equalsGivenSuit() throws {
-        
-        // Given
-        let rank = Rank.ace
-        let suit = Suit.hearts
-        let points = 1
-        let position = 1
-        let playingCard = try PlayingCard(rank, of: suit, worth: points,
-                                          at: position)
-        let expected = suit
-        
-        // When
-        let actual = playingCard.suit
-
-        // Then
-        XCTAssertEqual(expected, actual)
     }
     
     //=========================================================================//

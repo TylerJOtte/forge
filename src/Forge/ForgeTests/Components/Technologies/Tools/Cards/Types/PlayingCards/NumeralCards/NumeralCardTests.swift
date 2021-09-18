@@ -25,31 +25,6 @@ class NumeralCardTests: XCTestCase {
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
-    //                              Invalid Ranks                              //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that creating a `NumeralCard` with a non-standard numeral `PlayingCard Rank`
-    /// throws an `invalidRank Error`.
-    func test_init_withNonStandardNumeralPlayingCardRank_throwsInvalidRank()
-        throws {
-
-        // Given
-        let rank = Rank.jack
-        let suit = Suit.hearts
-        let points = 1
-        let position = 1
-        let expected = DescriptionError.invalidRank
-
-        // When
-        XCTAssertThrowsError(try NumeralCard(rank, of: suit, worth: points,
-                                             at: position)) { error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DescriptionError)
-        }
-    }
-    
-    //-------------------------------------------------------------------------//
     //                              Invalid Suits                              //
     //-------------------------------------------------------------------------//
 
@@ -90,6 +65,31 @@ class NumeralCardTests: XCTestCase {
 
             // Then
             XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                              Invalid Ranks                              //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that creating a `NumeralCard` with a non-standard numeral `PlayingCard Rank`
+    /// throws an `invalidRank Error`.
+    func test_init_withNonStandardNumeralPlayingCardRank_throwsInvalidRank()
+        throws {
+
+        // Given
+        let rank = Rank.jack
+        let suit = Suit.hearts
+        let points = 1
+        let position = 1
+        let expected = DescriptionError.invalidRank
+
+        // When
+        XCTAssertThrowsError(try NumeralCard(rank, of: suit, worth: points,
+                                             at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DescriptionError)
         }
     }
     
@@ -195,28 +195,5 @@ class NumeralCardTests: XCTestCase {
             // Then
             XCTAssertEqual(expected, error as? RangeError)
         }
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the title of a new `NumeralCard` equals the given "`Rank` Of `Suit`".
-    func test_title_ofNewNumeralCard_equalsGivenRankOfSuit() throws {
-        
-        // Given
-        let rank = Rank.ace
-        let suit = Suit.hearts
-        let points = 1
-        let position = 1
-        let numeralCard = try NumeralCard(rank, of: suit, worth: points,
-                                          at: position)
-        let expected = "Ace Of Hearts"
-        
-        // When
-        let actual = numeralCard.title
-
-        // Then
-        XCTAssertEqual(expected, actual)
     }
 }

@@ -237,7 +237,6 @@ class PlayingCardsHelperTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-    
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain the given  `Suit`.
     func test_getNumeralCards_withSuit_returnsCardsWithOnlyGivenSuit() throws {

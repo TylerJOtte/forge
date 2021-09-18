@@ -811,8 +811,6 @@
 		B597384C25FEB05B00367598 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				B597386025FED1B900367598 /* CardTests.swift */,
-				B5005F71267686A7007E6165 /* RankedCardTests.swift */,
 				B533DB9D267FB46B00326DA9 /* Helpers */,
 				B597385F25FED1AB00367598 /* Types */,
 				B556688E26252DCC0045AC2B /* Collections */,
@@ -823,6 +821,8 @@
 		B597385F25FED1AB00367598 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				B597386025FED1B900367598 /* CardTests.swift */,
+				B5005F71267686A7007E6165 /* RankedCardTests.swift */,
 				B5F2D4882630FE130089403F /* PlayingCards */,
 			);
 			path = Types;

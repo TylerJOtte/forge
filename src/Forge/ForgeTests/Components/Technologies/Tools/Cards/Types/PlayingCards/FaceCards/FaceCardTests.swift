@@ -25,31 +25,6 @@ class FaceCardTests: XCTestCase {
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
-    //                              Invalid Ranks                              //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that creating a `FaceCard` with a non-standard royal`PlayingCard Rank` throws an
-    /// `invalidRank Error`.
-    func test_init_withNonStandardRoyalPlayingCardRank_throwsInvalidRank()
-        throws {
-
-        // Given
-        let rank = Rank.ace
-        let suit = Suit.hearts
-        let points = 1
-        let position = 1
-        let expected = DescriptionError.invalidRank
-
-        // When
-        XCTAssertThrowsError(try FaceCard(rank, of: suit, worth: points,
-                                          at: position)) { error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DescriptionError)
-        }
-    }
-    
-    //-------------------------------------------------------------------------//
     //                              Invalid Suits                              //
     //-------------------------------------------------------------------------//
 
@@ -90,6 +65,31 @@ class FaceCardTests: XCTestCase {
 
             // Then
             XCTAssertEqual(expected, error as? DepictionError)
+        }
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                              Invalid Ranks                              //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that creating a `FaceCard` with a non-standard royal`PlayingCard Rank` throws an
+    /// `invalidRank Error`.
+    func test_init_withNonStandardRoyalPlayingCardRank_throwsInvalidRank()
+        throws {
+
+        // Given
+        let rank = Rank.ace
+        let suit = Suit.hearts
+        let points = 1
+        let position = 1
+        let expected = DescriptionError.invalidRank
+
+        // When
+        XCTAssertThrowsError(try FaceCard(rank, of: suit, worth: points,
+                                          at: position)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DescriptionError)
         }
     }
     
@@ -135,27 +135,5 @@ class FaceCardTests: XCTestCase {
             // Then
             XCTAssertEqual(expected, error as? RangeError)
         }
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                Title                                    //
-    //-------------------------------------------------------------------------//
-    
-    /// Tests that the title of a new `FaceCard` equals the given "`Rank` Of `Suit`".
-    func test_title_ofNewFaceCard_equalsGivenRankOfSuit() throws {
-        
-        // Given
-        let rank = Rank.king
-        let suit = Suit.hearts
-        let points = 10
-        let position = 13
-        let faceCard = try FaceCard(rank, of: suit, worth: points, at: position)
-        let expected = "King Of Hearts"
-        
-        // When
-        let actual = faceCard.title
-
-        // Then
-        XCTAssertEqual(expected, actual)
     }
 }

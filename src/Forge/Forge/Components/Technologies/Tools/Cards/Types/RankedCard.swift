@@ -181,6 +181,8 @@ public class RankedCard: Card, Rankable, Scoreable {
     
     /// Determines if the `Card` ranks the given `Card` in the hierarchy.
     ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
     /// - Parameter card: The `Card` to test.
     /// - Returns: True if the `Card` ranks the given `Card`in the hierarchy, else false.
     public func ranks(_ card: RankedCard) -> Bool {
@@ -189,7 +191,9 @@ public class RankedCard: Card, Rankable, Scoreable {
     }
     
     /// Determines if the `Card` immediately follows the given`Card` in the hierarchy.
-    ///
+    /// 
+    /// - Precondition: None.
+    /// - Postcondition: None.
     /// - Parameter card: The `Card` to test.
     /// - Returns: True if the `Card` immediately follows the given `Card` in the hierarchy, else false.
     public func follows(_ card: RankedCard) -> Bool {

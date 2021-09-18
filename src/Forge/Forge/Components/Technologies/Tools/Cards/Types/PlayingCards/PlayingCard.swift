@@ -54,7 +54,7 @@ public class PlayingCard: RankedCard {
     ///     - The given `Suit` is not a standard `PlayingCard Suit`, or
     ///     - The given `Suit` is `null` and the specified `Rank` is not a `joker`, or
     ///     - The given `Suit` is not `null` and the specified `Rank` is a `joker`.
-    ///   - `invalidPosition`  if the given position is not between 1-14.
+    ///   - `invalidPosition`  if the given position is not between 0-14.
     init(_ rank: Rank, of suit: Suit, worth points: Int,
          at position: Int, with title: String = "") throws {
         
@@ -106,7 +106,8 @@ public class PlayingCard: RankedCard {
         
         if let card = rhs as? PlayingCard {
             
-            equals = rank == card.rank && suit == card.suit
+            equals = rank == card.rank && suit == card.suit && position ==
+                card.position
         }
         
         return equals

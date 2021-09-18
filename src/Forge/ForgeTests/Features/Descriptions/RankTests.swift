@@ -51,7 +51,7 @@ class RankTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that a below range `Rank` does not have a raw value within a range.
-    func test_hasRawValue_withBelowRangeRankfalse() {
+    func test_hasRawValue_withBelowRangeRank_false() {
         
         // Given
         let rank = Rank.ace

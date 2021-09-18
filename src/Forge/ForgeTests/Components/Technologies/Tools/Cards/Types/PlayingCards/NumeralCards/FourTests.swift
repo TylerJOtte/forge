@@ -63,24 +63,6 @@ class FourTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                 Rank                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `Four`'s `Rank` equals `four`.
-    func test_rank_ofFour_equalsFour() throws {
-
-        // Given
-        let four = try Four(of: .hearts)
-        let expected = Rank.four
-
-        // When
-        let actual = four.rank
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                                 Suit                                    //
     //-------------------------------------------------------------------------//
 
@@ -141,18 +123,18 @@ class FourTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Points                                   //
+    //                                 Rank                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that a `Four`'s points equals 4.
-    func test_points_ofFour_equals4() throws {
+    /// Tests that a `Four`'s `Rank` equals `four`.
+    func test_rank_ofFour_equalsFour() throws {
 
         // Given
         let four = try Four(of: .hearts)
-        let expected = 4
+        let expected = Rank.four
 
         // When
-        let actual = four.points
+        let actual = four.rank
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -171,6 +153,24 @@ class FourTests: XCTestCase {
 
         // When
         let actual = four.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Four`'s points equals 4.
+    func test_points_ofFour_equals4() throws {
+
+        // Given
+        let four = try Four(of: .hearts)
+        let expected = 4
+
+        // When
+        let actual = four.points
 
         // Then
         XCTAssertEqual(expected, actual)

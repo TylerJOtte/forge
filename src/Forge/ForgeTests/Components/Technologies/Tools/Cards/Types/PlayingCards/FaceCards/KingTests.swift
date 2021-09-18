@@ -63,24 +63,6 @@ class KingTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                 Rank                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `King`'s `Rank` equals `king`.
-    func test_rank_ofKing_equalsKing() throws {
-
-        // Given
-        let king = try King(of: .hearts)
-        let expected = Rank.king
-
-        // When
-        let actual = king.rank
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                                 Suit                                    //
     //-------------------------------------------------------------------------//
 
@@ -141,18 +123,18 @@ class KingTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Points                                   //
+    //                                 Rank                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that a `King`'s points equals 10.
-    func test_points_ofKing_equals10() throws {
+    /// Tests that a `King`'s `Rank` equals `king`.
+    func test_rank_ofKing_equalsKing() throws {
 
         // Given
         let king = try King(of: .hearts)
-        let expected = 10
+        let expected = Rank.king
 
         // When
-        let actual = king.points
+        let actual = king.rank
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -171,6 +153,24 @@ class KingTests: XCTestCase {
 
         // When
         let actual = king.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `King`'s points equals 10.
+    func test_points_ofKing_equals10() throws {
+
+        // Given
+        let king = try King(of: .hearts)
+        let expected = 10
+
+        // When
+        let actual = king.points
 
         // Then
         XCTAssertEqual(expected, actual)

@@ -63,24 +63,6 @@ class JackTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                 Rank                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `Jack`'s `Rank` equals `jack`.
-    func test_rank_ofJack_equalsJack() throws {
-
-        // Given
-        let jack = try Jack(of: .hearts)
-        let expected = Rank.jack
-
-        // When
-        let actual = jack.rank
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                                 Suit                                    //
     //-------------------------------------------------------------------------//
 
@@ -141,18 +123,18 @@ class JackTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Points                                   //
+    //                                 Rank                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that a `Jack`'s points equals 10.
-    func test_points_ofJack_equals10() throws {
+    /// Tests that a `Jack`'s `Rank` equals `jack`.
+    func test_rank_ofJack_equalsJack() throws {
 
         // Given
         let jack = try Jack(of: .hearts)
-        let expected = 10
+        let expected = Rank.jack
 
         // When
-        let actual = jack.points
+        let actual = jack.rank
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -171,6 +153,24 @@ class JackTests: XCTestCase {
 
         // When
         let actual = jack.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Jack`'s points equals 10.
+    func test_points_ofJack_equals10() throws {
+
+        // Given
+        let jack = try Jack(of: .hearts)
+        let expected = 10
+
+        // When
+        let actual = jack.points
 
         // Then
         XCTAssertEqual(expected, actual)

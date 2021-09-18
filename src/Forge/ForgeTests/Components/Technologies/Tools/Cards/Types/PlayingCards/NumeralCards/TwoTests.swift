@@ -63,24 +63,6 @@ class TwoTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                 Rank                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `Two`'s `Rank` equals `two`.
-    func test_rank_ofTwo_equalsTwo() throws {
-
-        // Given
-        let two = try Two(of: .hearts)
-        let expected = Rank.two
-
-        // When
-        let actual = two.rank
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                                 Suit                                    //
     //-------------------------------------------------------------------------//
 
@@ -141,18 +123,18 @@ class TwoTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Points                                   //
+    //                                 Rank                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that a `Two`'s points equals 2.
-    func test_points_ofTwo_equals2() throws {
+    /// Tests that a `Two`'s `Rank` equals `two`.
+    func test_rank_ofTwo_equalsTwo() throws {
 
         // Given
         let two = try Two(of: .hearts)
-        let expected = 2
+        let expected = Rank.two
 
         // When
-        let actual = two.points
+        let actual = two.rank
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -171,6 +153,24 @@ class TwoTests: XCTestCase {
 
         // When
         let actual = two.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Two`'s points equals 2.
+    func test_points_ofTwo_equals2() throws {
+
+        // Given
+        let two = try Two(of: .hearts)
+        let expected = 2
+
+        // When
+        let actual = two.points
 
         // Then
         XCTAssertEqual(expected, actual)

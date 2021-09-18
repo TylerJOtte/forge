@@ -63,24 +63,6 @@ class SevenTests: XCTestCase {
     //=========================================================================//
     
     //-------------------------------------------------------------------------//
-    //                                 Rank                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `Seven`'s `Rank` equals `seven`.
-    func test_rank_ofSeven_equalsSeven() throws {
-
-        // Given
-        let seven = try Seven(of: .hearts)
-        let expected = Rank.seven
-
-        // When
-        let actual = seven.rank
-
-        // Then
-        XCTAssertEqual(expected, actual)
-    }
-    
-    //-------------------------------------------------------------------------//
     //                                 Suit                                    //
     //-------------------------------------------------------------------------//
 
@@ -141,18 +123,18 @@ class SevenTests: XCTestCase {
     }
     
     //-------------------------------------------------------------------------//
-    //                                Points                                   //
+    //                                 Rank                                    //
     //-------------------------------------------------------------------------//
 
-    /// Tests that a `Seven`'s points equals 7.
-    func test_points_ofSeven_equals7() throws {
+    /// Tests that a `Seven`'s `Rank` equals `seven`.
+    func test_rank_ofSeven_equalsSeven() throws {
 
         // Given
         let seven = try Seven(of: .hearts)
-        let expected = 7
+        let expected = Rank.seven
 
         // When
-        let actual = seven.points
+        let actual = seven.rank
 
         // Then
         XCTAssertEqual(expected, actual)
@@ -171,6 +153,24 @@ class SevenTests: XCTestCase {
 
         // When
         let actual = seven.position
+
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                Points                                   //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Seven`'s points equals 7.
+    func test_points_ofSeven_equals7() throws {
+
+        // Given
+        let seven = try Seven(of: .hearts)
+        let expected = 7
+
+        // When
+        let actual = seven.points
 
         // Then
         XCTAssertEqual(expected, actual)

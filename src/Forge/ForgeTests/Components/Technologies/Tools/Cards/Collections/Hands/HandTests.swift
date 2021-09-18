@@ -1863,6 +1863,10 @@ class HandTests: XCTestCase {
     //                                  !=                                     //
     //-------------------------------------------------------------------------//
 
+    //                                  //
+    // With Same Count & Different Card //
+    //                                  //
+    
     /// Tests that a `Hand` does not equal another `Hand` with a different `Card`.
     func test_equals_handWithADifferentCard_false() {
      
