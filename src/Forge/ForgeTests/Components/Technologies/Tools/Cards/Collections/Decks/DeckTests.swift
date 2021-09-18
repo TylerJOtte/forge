@@ -1847,4 +1847,48 @@ class DeckTests: XCTestCase {
         // Then
         XCTAssertEqual(expected, actual)
     }
+    
+    //                  //
+    // Decrements Count //
+    //                  //
+    
+    /// Tests that removing  a `Card` from a `Deck` decrements the count by one.
+    func test_remove_cardDecrementsCountByOne_true() throws {
+    
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let cards = [card1, card2]
+        let deck = Deck(of: cards)
+        let originalCount = deck.count
+        let expected = originalCount - 1
+        
+        // When
+        _ = try deck.remove(card2)
+        let actual = deck.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that removing `Card`s from a `Deck` decrements the count by the # of given `Card`s.
+    func test_remove_cardsDecrementsCountByGivenNCards_true() throws {
+    
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card2, card3]
+        let deck = Deck(of: cards1)
+        let originalCount = deck.count
+        let expected = originalCount - cards2.count
+        
+        // When
+        _ = try deck.remove(cards2)
+        let actual = deck.count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
 }
