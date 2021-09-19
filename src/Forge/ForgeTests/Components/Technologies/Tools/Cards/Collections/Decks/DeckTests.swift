@@ -87,6 +87,26 @@ class DeckTests: XCTestCase {
         }
     }
     
+    /// Tests that creating a `Deck` with a valid min and a max less than the given min  throws an
+    /// `invalidMax Error`.
+    func test_init_withValidMinAndMaxLessThanMin_throwsInvalidMaxError() throws {
+
+        // Given
+        let min = 2
+        let max = 1
+        let card1 = Card()
+        let card2 = Card()
+        let cards = [card1, card2]
+        let expected = RangeError.invalidMax
+
+        // When
+        XCTAssertThrowsError(try Deck(of: min, to: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
     //               //
     // Invalid Count //
     //               //
