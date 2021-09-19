@@ -2004,6 +2004,23 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.hasCapacity(for: cards2))
     }
     
+    /// Tests that a`Deck` created with a max and set of `Cards` does not have capacity for a given
+    /// collection of `Cards`.
+    func test_hasCapacity_newDeckOfMaxCards_false() throws {
+        
+        // Given
+        let max = 2
+        let card1 = Card()
+        let card2 = Card()
+        let card3 = Card()
+        let cards1 = [card1]
+        let cards2 = [card2, card3]
+        let deck = try Deck(of: max, cards1)
+        
+        // When/Then
+        XCTAssertFalse(deck.hasCapacity(for: cards2))
+    }
+    
     //                      //
     // With Range And Cards //
     //                      //
@@ -2023,6 +2040,25 @@ class DeckTests: XCTestCase {
         
         // When/Then
         XCTAssert(deck.hasCapacity(for: cards2))
+    }
+    
+    
+    /// Tests that a`Deck` created with a range and set of `Cards` does not have capacity for a given
+    /// collection of `Cards`.
+    func test_hasCapacity_newDeckOfRangeCards_false() throws {
+        
+        // Given
+        let min = 1
+        let max = 2
+        let card1 = Card()
+        let card2 = Card()
+        let card3 = Card()
+        let cards1 = [card1]
+        let cards2 = [card2, card3]
+        let deck = try Deck(of: min, to: max, cards1)
+        
+        // When/Then
+        XCTAssertFalse(deck.hasCapacity(for: cards2))
     }
     
     //=========================================================================//
