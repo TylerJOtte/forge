@@ -2105,6 +2105,53 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.hasCapacity(for: cards3))
     }
     
+    //               //
+    // Removed Cards //
+    //               //
+    
+    /// Tests that a full `Deck` has capacity  for a given collection of `Cards` after removing a `Card`
+    /// from it.
+    func test_hasCapacity_afterRemovingCard_true() throws {
+        
+        // Given
+        let max = 2
+        let card1 = Card()
+        let card2 = Card()
+        let card3 = Card()
+        let cards1 = [card1, card2]
+        let cards2 = [card3]
+        let deck = try Deck(of: max, cards1)
+        
+        // When
+        _ = try deck.remove(card2)
+        
+        //Then
+        XCTAssert(deck.hasCapacity(for: cards2))
+    }
+    
+    /// Tests that a full `Deck` has capacity  for a given collection of `Cards` after removing `Cards`
+    /// from it.
+    func test_hasCapacity_afterRemovingCards_true() throws {
+        
+        // Given
+        let max = 3
+        let card1 = Card()
+        let card2 = Card()
+        let card3 = Card()
+        let card4 = Card()
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card2, card3]
+        let cards3 = [card4]
+        let deck = try Deck(of: max, cards1)
+        
+        // When
+        _ = try deck.remove(cards2)
+        
+        //Then
+        XCTAssert(deck.hasCapacity(for: cards3))
+    }
+
+    
     //=========================================================================//
     //                                 FILTERS                                 //
     //=========================================================================//
