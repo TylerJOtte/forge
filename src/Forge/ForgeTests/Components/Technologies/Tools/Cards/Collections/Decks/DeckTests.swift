@@ -25,9 +25,13 @@ class DeckTests: XCTestCase {
     //=========================================================================//
 
     //-------------------------------------------------------------------------//
-    //                              Invalid Min                                //
+    //                                 Errors                                  //
     //-------------------------------------------------------------------------//
 
+    //             //
+    // Invalid Min //
+    //             //
+    
     /// Tests that creating a `Deck` with a min less than zero throws an `invalidMin Error`.
     func test_init_withMinLessThanZero_throwsInvalidMinError() throws {
 
@@ -45,9 +49,9 @@ class DeckTests: XCTestCase {
         }
     }
     
-    //-------------------------------------------------------------------------//
-    //                              Invalid Max                                //
-    //-------------------------------------------------------------------------//
+    //             //
+    // Invalid Max //
+    //             //
 
     /// Tests that creating a `Deck` with a max less than one throws an `invalidMax Error`.
     func test_init_withMaxLessThanOne_throwsInvalidMaxError() throws {
@@ -80,6 +84,51 @@ class DeckTests: XCTestCase {
 
             // Then
             XCTAssertEqual(expected, error as? RangeError)
+        }
+    }
+    
+    //               //
+    // Invalid Count //
+    //               //
+    
+    /// Tests that creating a `Deck` with a max and a collection of `Cards` that contain more `Cards`
+    /// than the given max throws an `invalidCount Error`.
+    func test_init_withMaxAndMoreCardsThanGivenMax_throwsInvalidCountError()
+        throws {
+
+        // Given
+        let max = 1
+        let card1 = Card()
+        let card2 = Card()
+        let cards = [card1, card2]
+        let expected = ElementsError.invalidCount
+
+        // When
+        XCTAssertThrowsError(try Deck(of: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
+        }
+    }
+    
+    /// Tests that creating a `Deck` with a range  and a collection of `Cards` that contain more `Cards`
+    /// than the given max throws an `invalidCount Error`.
+    func test_init_withRangeAndMoreCardsThanGivenMax_throwsInvalidCountError()
+        throws {
+
+        // Given
+        let min = 1
+        let max = 1
+        let card1 = Card()
+        let card2 = Card()
+        let cards = [card1, card2]
+        let expected = ElementsError.invalidCount
+
+        // When
+        XCTAssertThrowsError(try Deck(of: min, to: max, cards)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? ElementsError)
         }
     }
     
@@ -1035,6 +1084,131 @@ class DeckTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+
+    //-------------------------------------------------------------------------//
+    //                                    <                                    //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Deck`is less than  another `Deck` that contains more `Card`s.
+    func test_isLessThan_deckWithMoreCards_true() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card1, card2, card3, card4]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssert(deck1.isLessThan(deck2))
+    }
+    
+    /// Tests that a `Deck`is less than  another `Deck` that contains more `Card`s, .using the less than
+    /// operator.
+    func test_isLessThan_deckWithMoreCardsUsingLessThanOperator_true()
+        {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card1, card2, card3, card4]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssertLessThan(deck1, deck2)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  ==                                     //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Deck`equals another `Deck` with the same `Card`s in a different order.
+    func test_equals_deckWithSameCardsInDifferentOrder_true() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card4, card3, card2, card1]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssert(deck1.equals(deck2))
+    }
+    
+    /// Tests that a `Deck`equals another `Deck` with the same `Card`s in a different order, using the
+    /// equality operator.
+    func test_equals_deckWithSameCardsInDifferentOrderWithEqualityOperator_true()
+        {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card4, card3, card2, card1]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssertEqual(deck1, deck2)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                                  !=                                     //
+    //-------------------------------------------------------------------------//
+
+    /// Tests that a `Deck` does not equal another `Deck` with a different `Card`.
+    func test_equals_deckWithADifferentCard_false() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card1, card2, card3, card5]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssertFalse(deck1.equals(deck2))
+    }
+    
+    /// Tests that a `Deck` does not equal another `Deck` with a different `Card`, using the equality
+    /// operator.
+    func test_equals_deckWithDifferentCardUsingEqualityOperator_false() {
+     
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card1, card2, card3, card5]
+        let deck1 = Deck(of: cards1)
+        let deck2 = Deck(of: cards2)
+        
+        // When/Then
+        XCTAssertNotEqual(deck1, deck2)
+    }
+    
     //-------------------------------------------------------------------------//
     //                                isEmpty()                                //
     //-------------------------------------------------------------------------//
@@ -1152,6 +1326,153 @@ class DeckTests: XCTestCase {
         let deck = try Deck(of: min, to: max, cards)
         
         // When/Then
+        XCTAssertFalse(deck.isEmpty())
+    }
+    
+    //              //
+    // Adding Cards //
+    //              //
+    
+    /// Tests that an empty `Deck` is not empty after adding  a `Card` to it.
+    func test_isEmpty_afterAddCard_false() throws {
+
+        // Given
+        let card = Card()
+        let deck = Deck()
+
+        // When
+        try deck.add(card)
+
+        // Then
+        XCTAssertFalse(deck.isEmpty())
+    }
+    
+    /// Tests that an empty `Deck` is not empty after adding `Cards` to it.
+    func test_isEmpty_afterAddCards_false() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck()
+
+        // When
+        try deck.add(cards)
+
+        // Then
+        XCTAssertFalse(deck.isEmpty())
+    }
+    
+    //                //
+    // Removing Cards //
+    //                //
+    
+    /// Tests that a `Deck`with one `Card` is empty after removing  a `Card` from it.
+    func test_isEmpty_afterRemoveCard_true() throws {
+
+        // Given
+        let card = Card(named: "Card 1")
+        let cards = [card]
+        let deck = Deck(of: cards)
+
+        // When
+        _ = try deck.remove(card)
+
+        // Then
+        XCTAssert(deck.isEmpty())
+    }
+    
+    /// Tests that a `Deck`with multiple `Cards` is not empty after removing  a `Card` from it.
+    func test_isEmpty_afterRemoveCard_false() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)
+
+        // When
+        _ = try deck.remove(card1)
+
+        // Then
+        XCTAssertFalse(deck.isEmpty())
+    }
+    
+    /// Tests that a `Deck`with multiple `Cards` is empty after removing  `Cards` from it.
+    func test_isEmpty_afterRemoveCards_true() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)
+
+        // When
+        _ = try deck.remove(cards)
+
+        // Then
+        XCTAssert(deck.isEmpty())
+    }
+    
+    /// Tests that a `Deck`with multiple `Cards` is not empty after removing  `Cards` from it.
+    func test_isEmpty_afterRemoveCards_false() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card1, card2]
+        let deck = Deck(of: cards1)
+
+        // When
+        _ = try deck.remove(cards2)
+
+        // Then
+        XCTAssertFalse(deck.isEmpty())
+    }
+    
+    /// Tests that a `Deck`with only duplicate`Cards` is empty after removing a given set of `Cards`
+    /// that only contain one instance of each duplicate `Card`.
+    func test_isEmpty_afterRemoveDuplicateCards_true() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 1")
+        let card3 = Card(named: "Card 2")
+        let card4 = Card(named: "Card 2")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card2, card3]
+        let deck = Deck(of: cards1)
+
+        // When
+        _ = try deck.remove(cards2)
+
+        // Then
+        XCTAssert(deck.isEmpty())
+    }
+    
+    /// Tests that a `Deck`with duplicate`Cards` is not empty after removing a given set of `Cards`
+    /// that only contain one instance of each duplicate `Card`.
+    func test_isEmpty_afterRemoveDuplicateCards_false() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 2")
+        let card4 = Card(named: "Card 3")
+        let card5 = Card(named: "Card 3")
+        let cards1 = [card1, card2, card3, card4, card5]
+        let cards2 = [card3, card4]
+        let deck = Deck(of: cards1)
+
+        // When
+        _ = try deck.remove(cards2)
+
+        // Then
         XCTAssertFalse(deck.isEmpty())
     }
     
@@ -1306,9 +1627,121 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isFull())
     }
     
+    //              //
+    // Adding Cards //
+    //              //
+    
+    /// Tests that a `Deck` is full  after adding  a `Card` to it.
+    func test_isFull_afterAddCard_true() throws {
+
+        // Given
+        let max = 1
+        let card = Card()
+        let cards: [Card] = []
+        let deck = try Deck(of: max, cards)
+
+        // When
+        try deck.add(card)
+
+        // Then
+        XCTAssert(deck.isFull())
+    }
+    
+    /// Tests that a `Deck` is not full  after adding  a `Card` to it.
+    func test_isFull_afterAddCard_false() throws {
+
+        // Given
+        let max = 2
+        let card = Card()
+        let cards: [Card] = []
+        let deck = try Deck(of: max, cards)
+
+        // When
+        try deck.add(card)
+
+        // Then
+        XCTAssertFalse(deck.isFull())
+    }
+    
+    /// Tests that a `Deck` is full  after adding `Cards` to it.
+    func test_isFull_afterAddCards_true() throws {
+
+        // Given
+        let max = 2
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let cards1: [Card] = []
+        let cards2 = [card1, card2]
+        let deck = try Deck(of: max, cards1)
+
+        // When
+        try deck.add(cards2)
+
+        // Then
+        XCTAssert(deck.isFull())
+    }
+    
+    /// Tests that a `Deck` is not full  after adding `Cards` to it.
+    func test_isFull_afterAddCards_false() throws {
+
+        // Given
+        let max = 3
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let cards1: [Card] = []
+        let cards2 = [card1, card2]
+        let deck = try Deck(of: max, cards1)
+
+        // When
+        try deck.add(cards2)
+
+        // Then
+        XCTAssertFalse(deck.isFull())
+    }
+    
+    //                //
+    // Removing Cards //
+    //                //
+    
+    /// Tests that a full `Deck` is not full after removing  a `Card` from it.
+    func test_isFull_afterRemoveCard_false() throws {
+
+        // Given
+        let max = 1
+        let card = Card()
+        let cards = [card]
+        let deck = try Deck(of: max, cards)
+
+        // When
+        _ = try deck.remove(card)
+
+        // Then
+        XCTAssertFalse(deck.isFull())
+    }
+    
+    /// Tests that a full `Deck` is not full after removing  `Cards` from it.
+    func test_isFull_afterRemoveCards_false() throws {
+
+        // Given
+        let max = 3
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards1 = [card1, card2, card3]
+        let cards2 = [card1, card2]
+        let deck = try Deck(of: max, cards1)
+
+        // When
+        _ = try deck.remove(cards2)
+
+        // Then
+        XCTAssertFalse(deck.isFull())
+    }
+    
     //-------------------------------------------------------------------------//
-    //                                Contains                                 //
+    //                               contains()                                //
     //-------------------------------------------------------------------------//
+    
     
     //         //
     // Default //
@@ -1436,402 +1869,6 @@ class DeckTests: XCTestCase {
         // When/Then
         XCTAssertFalse(deck.contains(expected))
     }
-    
-
-    //=========================================================================//
-    //                                 TESTERS                                 //
-    //=========================================================================//
-
-    //-------------------------------------------------------------------------//
-    //                                    <                                    //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `Deck`is less than  another `Deck` that contains more `Card`s.
-    func test_isLessThan_deckWithMoreCards_true() {
-     
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let card4 = Card(named: "Card 4")
-        let cards1 = [card1, card2, card3]
-        let cards2 = [card1, card2, card3, card4]
-        let deck1 = Deck(of: cards1)
-        let deck2 = Deck(of: cards2)
-        
-        // When/Then
-        XCTAssert(deck1.isLessThan(deck2))
-    }
-    
-    /// Tests that a `Deck`is less than  another `Deck` that contains more `Card`s, .using the less than
-    /// operator.
-    func test_isLessThan_deckWithMoreCardsUsingLessThanOperator_true()
-        {
-     
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let card4 = Card(named: "Card 4")
-        let cards1 = [card1, card2, card3]
-        let cards2 = [card1, card2, card3, card4]
-        let deck1 = Deck(of: cards1)
-        let deck2 = Deck(of: cards2)
-        
-        // When/Then
-        XCTAssertLessThan(deck1, deck2)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                  ==                                     //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `Deck`equals another `Deck` with the same `Card`s in a different order.
-    func test_equals_deckWithSameCardsInDifferentOrder_true() {
-     
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let card4 = Card(named: "Card 4")
-        let cards1 = [card1, card2, card3, card4]
-        let cards2 = [card4, card3, card2, card1]
-        let deck1 = Deck(of: cards1)
-        let deck2 = Deck(of: cards2)
-        
-        // When/Then
-        XCTAssert(deck1.equals(deck2))
-    }
-    
-    /// Tests that a `Deck`equals another `Deck` with the same `Card`s in a different order, using the
-    /// equality operator.
-    func test_equals_deckWithSameCardsInDifferentOrderWithEqualityOperator_true()
-        {
-     
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let card4 = Card(named: "Card 4")
-        let cards1 = [card1, card2, card3, card4]
-        let cards2 = [card4, card3, card2, card1]
-        let deck1 = Deck(of: cards1)
-        let deck2 = Deck(of: cards2)
-        
-        // When/Then
-        XCTAssertEqual(deck1, deck2)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                  !=                                     //
-    //-------------------------------------------------------------------------//
-
-    /// Tests that a `Deck` does not equal another `Deck` with a different `Card`.
-    func test_equals_deckWithADifferentCard_false() {
-     
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let card4 = Card(named: "Card 4")
-        let card5 = Card(named: "Card 5")
-        let cards1 = [card1, card2, card3, card4]
-        let cards2 = [card1, card2, card3, card5]
-        let deck1 = Deck(of: cards1)
-        let deck2 = Deck(of: cards2)
-        
-        // When/Then
-        XCTAssertFalse(deck1.equals(deck2))
-    }
-    
-    /// Tests that a `Deck` does not equal another `Deck` with a different `Card`, using the equality
-    /// operator.
-    func test_equals_deckWithDifferentCardUsingEqualityOperator_false() {
-     
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let card4 = Card(named: "Card 4")
-        let card5 = Card(named: "Card 5")
-        let cards1 = [card1, card2, card3, card4]
-        let cards2 = [card1, card2, card3, card5]
-        let deck1 = Deck(of: cards1)
-        let deck2 = Deck(of: cards2)
-        
-        // When/Then
-        XCTAssertNotEqual(deck1, deck2)
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                                  isLevel()                              //
-    //-------------------------------------------------------------------------//
-    
-    //           //
-    // isEmpty() //
-    //           //
-    
-    // Adding Cards //
-    // ~~~~~~~~~~~~ //
-    
-    /// Tests that an empty `Deck` is not empty after adding  a `Card` to it.
-    func test_isEmpty_afterAddCard_false() throws {
-
-        // Given
-        let card = Card()
-        let deck = Deck()
-
-        // When
-        try deck.add(card)
-
-        // Then
-        XCTAssertFalse(deck.isEmpty())
-    }
-    
-    /// Tests that an empty `Deck` is not empty after adding `Cards` to it.
-    func test_isEmpty_afterAddCards_false() throws {
-
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = Deck()
-
-        // When
-        try deck.add(cards)
-
-        // Then
-        XCTAssertFalse(deck.isEmpty())
-    }
-    
-    // Removing Cards //
-    // ~~~~~~~~~~~~~~ //
-    
-    /// Tests that a `Deck`with one `Card` is empty after removing  a `Card` from it.
-    func test_isEmpty_afterRemoveCard_true() throws {
-
-        // Given
-        let card = Card(named: "Card 1")
-        let cards = [card]
-        let deck = Deck(of: cards)
-
-        // When
-        _ = try deck.remove(card)
-
-        // Then
-        XCTAssert(deck.isEmpty())
-    }
-    
-    /// Tests that a `Deck`with multiple `Cards` is not empty after removing  a `Card` from it.
-    func test_isEmpty_afterRemoveCard_false() throws {
-
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = Deck(of: cards)
-
-        // When
-        _ = try deck.remove(card1)
-
-        // Then
-        XCTAssertFalse(deck.isEmpty())
-    }
-    
-    /// Tests that a `Deck`with multiple `Cards` is empty after removing  `Cards` from it.
-    func test_isEmpty_afterRemoveCards_true() throws {
-
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = Deck(of: cards)
-
-        // When
-        _ = try deck.remove(cards)
-
-        // Then
-        XCTAssert(deck.isEmpty())
-    }
-    
-    /// Tests that a `Deck`with multiple `Cards` is not empty after removing  `Cards` from it.
-    func test_isEmpty_afterRemoveCards_false() throws {
-
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards1 = [card1, card2, card3]
-        let cards2 = [card1, card2]
-        let deck = Deck(of: cards1)
-
-        // When
-        _ = try deck.remove(cards2)
-
-        // Then
-        XCTAssertFalse(deck.isEmpty())
-    }
-    
-    /// Tests that a `Deck`with only duplicate`Cards` is empty after removing a given set of `Cards`
-    /// that only contain one instance of each duplicate `Card`.
-    func test_isEmpty_afterRemoveDuplicateCards_true() throws {
-
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 1")
-        let card3 = Card(named: "Card 2")
-        let card4 = Card(named: "Card 2")
-        let cards1 = [card1, card2, card3, card4]
-        let cards2 = [card2, card3]
-        let deck = Deck(of: cards1)
-
-        // When
-        _ = try deck.remove(cards2)
-
-        // Then
-        XCTAssert(deck.isEmpty())
-    }
-    
-    /// Tests that a `Deck`with duplicate`Cards` is not empty after removing a given set of `Cards`
-    /// that only contain one instance of each duplicate `Card`.
-    func test_isEmpty_afterRemoveDuplicateCards_false() throws {
-
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 2")
-        let card4 = Card(named: "Card 3")
-        let card5 = Card(named: "Card 3")
-        let cards1 = [card1, card2, card3, card4, card5]
-        let cards2 = [card3, card4]
-        let deck = Deck(of: cards1)
-
-        // When
-        _ = try deck.remove(cards2)
-
-        // Then
-        XCTAssertFalse(deck.isEmpty())
-    }
-    
-    //          //
-    // isFull() //
-    //          //
-    
-    // Adding Cards //
-    // ~~~~~~~~~~~~ //
-    
-    /// Tests that a `Deck` is full  after adding  a `Card` to it.
-    func test_isFull_afterAddCard_true() throws {
-
-        // Given
-        let max = 1
-        let card = Card()
-        let cards: [Card] = []
-        let deck = try Deck(of: max, cards)
-
-        // When
-        try deck.add(card)
-
-        // Then
-        XCTAssert(deck.isFull())
-    }
-    
-    /// Tests that a `Deck` is not full  after adding  a `Card` to it.
-    func test_isFull_afterAddCard_false() throws {
-
-        // Given
-        let max = 2
-        let card = Card()
-        let cards: [Card] = []
-        let deck = try Deck(of: max, cards)
-
-        // When
-        try deck.add(card)
-
-        // Then
-        XCTAssertFalse(deck.isFull())
-    }
-    
-    /// Tests that a `Deck` is full  after adding `Cards` to it.
-    func test_isFull_afterAddCards_true() throws {
-
-        // Given
-        let max = 2
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let cards1: [Card] = []
-        let cards2 = [card1, card2]
-        let deck = try Deck(of: max, cards1)
-
-        // When
-        try deck.add(cards2)
-
-        // Then
-        XCTAssert(deck.isFull())
-    }
-    
-    /// Tests that a `Deck` is not full  after adding `Cards` to it.
-    func test_isFull_afterAddCards_false() throws {
-
-        // Given
-        let max = 3
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let cards1: [Card] = []
-        let cards2 = [card1, card2]
-        let deck = try Deck(of: max, cards1)
-
-        // When
-        try deck.add(cards2)
-
-        // Then
-        XCTAssertFalse(deck.isFull())
-    }
-    
-    // Removing Cards //
-    // ~~~~~~~~~~~~~~ //
-    
-    /// Tests that a full `Deck` is not full after removing  a `Card` from it.
-    func test_isFull_afterRemoveCard_false() throws {
-
-        // Given
-        let max = 1
-        let card = Card()
-        let cards = [card]
-        let deck = try Deck(of: max, cards)
-
-        // When
-        _ = try deck.remove(card)
-
-        // Then
-        XCTAssertFalse(deck.isFull())
-    }
-    
-    /// Tests that a full `Deck` is not full after removing  `Cards` from it.
-    func test_isFull_afterRemoveCards_false() throws {
-
-        // Given
-        let max = 3
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards1 = [card1, card2, card3]
-        let cards2 = [card1, card2]
-        let deck = try Deck(of: max, cards1)
-
-        // When
-        _ = try deck.remove(cards2)
-
-        // Then
-        XCTAssertFalse(deck.isFull())
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                               contains()                                //
-    //-------------------------------------------------------------------------//
     
     //             //
     // Added Cards //
@@ -2151,7 +2188,6 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.hasCapacity(for: cards3))
     }
 
-    
     //=========================================================================//
     //                                 FILTERS                                 //
     //=========================================================================//
