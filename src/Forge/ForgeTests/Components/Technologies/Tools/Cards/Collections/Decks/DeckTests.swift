@@ -1946,6 +1946,85 @@ class DeckTests: XCTestCase {
         XCTAssertFalse(deck.contains(duplicateCard1))
     }
     
+    //-------------------------------------------------------------------------//
+    //                              hasCapacity()                              //
+    //-------------------------------------------------------------------------//
+    
+    //         //
+    // Default //
+    //         //
+    
+    /// Tests that a default `Deck` has capacity for a given collection of `Cards`.
+    func test_hasCapacity_newDefaultDeck_true() {
+        
+        // Given
+        let card = Card()
+        let cards = [card]
+        let deck = Deck()
+        
+        // When/Then
+        XCTAssert(deck.hasCapacity(for: cards))
+    }
+    
+    //            //
+    // With Cards //
+    //            //
+    
+    /// Tests that a`Deck` created with a set of `Cards` has capacity for a given collection of `Cards`.
+    func test_hasCapacity_newDeckOfCards_true() {
+        
+        // Given
+        let card1 = Card()
+        let card2 = Card()
+        let cards1 = [card1]
+        let cards2 = [card2]
+        let deck = Deck(of: cards1)
+        
+        // When/Then
+        XCTAssert(deck.hasCapacity(for: cards2))
+    }
+    
+    //                    //
+    // With Max and Cards //
+    //                    //
+    
+    /// Tests that a`Deck` created with a max and set of `Cards` has capacity for a given collection of
+    /// `Cards`.
+    func test_hasCapacity_newDeckOfMaxCards_true() throws {
+        
+        // Given
+        let max = 2
+        let card1 = Card()
+        let card2 = Card()
+        let cards1 = [card1]
+        let cards2 = [card2]
+        let deck = try Deck(of: max, cards1)
+        
+        // When/Then
+        XCTAssert(deck.hasCapacity(for: cards2))
+    }
+    
+    //                      //
+    // With Range And Cards //
+    //                      //
+    
+    /// Tests that a`Deck` created with a range and set of `Cards` has capacity for a given collection of
+    /// `Cards`.
+    func test_hasCapacity_newDeckOfRangeCards_true() throws {
+        
+        // Given
+        let min = 1
+        let max = 2
+        let card1 = Card()
+        let card2 = Card()
+        let cards1 = [card1]
+        let cards2 = [card2]
+        let deck = try Deck(of: min, to: max, cards1)
+        
+        // When/Then
+        XCTAssert(deck.hasCapacity(for: cards2))
+    }
+    
     //=========================================================================//
     //                                 FILTERS                                 //
     //=========================================================================//
