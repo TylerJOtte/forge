@@ -236,6 +236,38 @@ class DeckTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    //         //
+    // Testers //
+    //         //
+    
+    // contains //
+    // ~~~~~~~~ //
+    
+    /// Tests that a default `Deck` does not contain a `Card`.
+    func test_contains_cardWithDefaultDeck_false() {
+        
+        // Given
+        let card = Card()
+        let deck = Deck()
+
+        // When/Then
+        XCTAssertFalse(deck.contains(card))
+    }
+    
+    /// Tests that a default `Deck` does not contain a given collection of `Cards`.
+    func test_contains_cardsWithDefaultDeck_false() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck()
+
+        // When/Then
+        XCTAssertFalse(deck.contains(cards))
+    }
+    
     //-------------------------------------------------------------------------//
     //                               With Cards                                //
     //-------------------------------------------------------------------------//
@@ -493,20 +525,6 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isEmpty())
     }
     
-    /// Tests that the `Card`s of a `Deck` created with `Card`s contains the given `Card`s.
-    func test_cards_ofNewDeckWithCards_containsGivenCards_() {
-        
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = Deck(of: cards)
-
-        // When/Then
-        XCTAssert(deck.contains(cards))
-    }
-    
     // count //
     // ~~~~~ //
     
@@ -629,6 +647,99 @@ class DeckTests: XCTestCase {
 
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    //         //
+    // Testers //
+    //         //
+    
+    // contains //
+    // ~~~~~~~~ //
+    
+    /// Tests that a `Deck`created with empty `Card`s does not contain a `Card`.
+    func test_contains_cardWithNewDeckOfEmptyCards_false() {
+        
+        // Given
+        let card = Card()
+        let cards: [Card] = []
+        let deck = Deck(of: cards)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(card))
+    }
+    
+    /// Tests that a `Deck` created with empty `Cards` does not contain a given collection of `Cards`.
+    func test_contains_cardsWithNewDeckOfEmptyCards_false() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards1 = [card1, card2, card3]
+        let cards2: [Card] = []
+        let deck = Deck(of: cards2)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(cards1))
+    }
+    
+    /// Tests that a `Deck`created with `Card`s contains an expected`Card`.
+    func test_contains_cardWithNewDeckOfCards_true() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)
+
+        // When/Then
+        XCTAssert(deck.contains(card2))
+    }
+    
+    /// Tests that a `Deck`created with `Card`s contains a given collection of `Cards`.
+    func test_contains_cardsWithNewDeckOfCards_true() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)
+
+        // When/Then
+        XCTAssert(deck.contains(cards))
+    }
+    
+    /// Tests that a `Deck`created with `Card`s does not contain a `Card`.
+    func test_contains_cardWithNewDeckOfCards_false() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(card4))
+    }
+    
+    /// Tests that a `Deck`created with `Card`s does not contain a given collection of `Cards`.
+    func test_contains_cardsWithNewDeckOfCards_false() {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2]
+        let cards2 = [card3, card4]
+        let deck = Deck(of: cards1)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(cards2))
     }
 
     //-------------------------------------------------------------------------//
@@ -1086,21 +1197,6 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isEmpty())
     }
     
-    /// Tests that the`Card`s of a `Deck` created with a max and `Card`s contains the given `Card`s.
-    func test_cards_ofNewDeckWithMaxAndCards_equalsGivenCardsCount() throws {
-        
-        // Given
-        let max = 5
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = try Deck(of: max, cards)
-
-        // When/Then
-        XCTAssert(deck.contains(cards))
-    }
-    
     /// Tests that a`Deck` created with a max and full `Card`s is full.
     func test_cards_ofNewDeckWithMaxAndFullCards_isFull() throws {
         
@@ -1318,6 +1414,176 @@ class DeckTests: XCTestCase {
 
         // Then
         XCTAssertEqual(expected, actual)
+    }
+    
+    //         //
+    // Testers //
+    //         //
+    
+    // contains //
+    // ~~~~~~~~ //
+    
+    /// Tests that a `Deck`created with a max and empty `Card`s does not contain a `Card`.
+    func test_contains_cardWithNewMaxDeckOfEmptyCards_false() throws {
+        
+        // Given
+        let max = 4
+        let card = Card()
+        let cards: [Card] = []
+        let deck = try Deck(of: max, cards)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(card))
+    }
+    
+    /// Tests that a `Deck` created with a max and empty `Cards` does not contain a given collection of
+    /// `Cards`.
+    func test_contains_cardsWithNewMaxDeckOfEmptyCards_false() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards1 = [card1, card2, card3]
+        let cards2: [Card] = []
+        let deck = try Deck(of: max, cards2)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(cards1))
+    }
+    
+    /// Tests that a `Deck`created with a max and `Card`s contains an expected`Card`.
+    func test_contains_cardWithNewMaxDeckOfCards_true() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = try Deck(of: max, cards)
+
+        // When/Then
+        XCTAssert(deck.contains(card2))
+    }
+    
+    /// Tests that a `Deck`created with a max and `Card`s contains a given collection of `Cards`.
+    func test_contains_cardsWithNewMaxDeckOfCards_true() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = try Deck(of: max, cards)
+
+        // When/Then
+        XCTAssert(deck.contains(cards))
+    }
+    
+    /// Tests that a `Deck`created with a max and `Card`s does not contain a `Card`.
+    func test_contains_cardWithNewMaxDeckOfCards_false() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3]
+        let deck = try Deck(of: max, cards)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(card4))
+    }
+    
+    /// Tests that a `Deck`created with a max and `Card`s does not contain a given collection of
+    /// `Cards`.
+    func test_contains_cardsWithNewMaxDeckOfCards_false() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2]
+        let cards2 = [card3, card4]
+        let deck = try Deck(of: max, cards1)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(cards2))
+    }
+    
+    /// Tests that a `Deck`created with a max and full `Card`s contains an expected`Card`.
+    func test_contains_cardWithNewMaxDeckOfFullCards_true() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3, card4]
+        let deck = try Deck(of: max, cards)
+
+        // When/Then
+        XCTAssert(deck.contains(card2))
+    }
+    
+    /// Tests that a `Deck`created with a max and full `Card`s contains a given collection of `Cards`.
+    func test_contains_cardsWithNewMaxDeckOfFullCards_true() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3, card4]
+        let deck = try Deck(of: max, cards)
+
+        // When/Then
+        XCTAssert(deck.contains(cards))
+    }
+    
+    /// Tests that a `Deck`created with a max and full `Card`s does not contain a `Card`.
+    func test_contains_cardWithNewMaxDeckOfFullCards_false() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards = [card1, card2, card3, card4]
+        let deck = try Deck(of: max, cards)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(card5))
+    }
+    
+    /// Tests that a `Deck`created with a max and full `Card`s does not contain a given collection of
+    /// `Cards`.
+    func test_contains_cardsWithNewMaxDeckOfFullCards_false() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let card6 = Card(named: "Card 6")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card5, card6]
+        let deck = try Deck(of: max, cards1)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(cards2))
     }
     
     //-------------------------------------------------------------------------//
@@ -1969,21 +2235,6 @@ class DeckTests: XCTestCase {
         XCTAssert(deck.isEmpty())
     }
     
-    /// Tests that the`Card`s  of a `Deck` created with a range and `Card`s contains the given `Card`s.
-    func test_cards_ofNewDeckWithRangeAndCards_equalsGivenCardsCount() throws {
-        
-        // Given
-        let min = 0
-        let max = 2
-        let card1 = Card()
-        let card2 = Card()
-        let cards = [card1, card2]
-        let deck = try Deck(of: min, to: max, cards)
-        
-        // When/Then
-        XCTAssert(deck.contains(cards))
-    }
-    
     /// Tests that a`Deck` created with a range and full`Card`s is full
     func test_cards_ofNewDeckWithRangeAndFullCards_isFull() throws {
         
@@ -2221,6 +2472,186 @@ class DeckTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    //         //
+    // Testers //
+    //         //
+    
+    // contains //
+    // ~~~~~~~~ //
+    
+    /// Tests that a `Deck`created with a range and empty `Card`s does not contain a `Card`.
+    func test_contains_cardWithNewRangedDeckOfEmptyCards_false() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card = Card()
+        let cards: [Card] = []
+        let deck = try Deck(of: min, to: max, cards)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(card))
+    }
+    
+    /// Tests that a `Deck` created with a range and empty `Cards` does not contain a given collection of
+    /// `Cards`.
+    func test_contains_cardsWithNewRangedDeckOfEmptyCards_false() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards1 = [card1, card2, card3]
+        let cards2: [Card] = []
+        let deck = try Deck(of: min, to: max, cards2)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(cards1))
+    }
+    
+    /// Tests that a `Deck`created with a range and `Card`s contains an expected`Card`.
+    func test_contains_cardWithNewRangedDeckOfCards_true() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = try Deck(of: min, to: max, cards)
+
+        // When/Then
+        XCTAssert(deck.contains(card2))
+    }
+    
+    /// Tests that a `Deck`created with a range and `Card`s contains a given collection of `Cards`.
+    func test_contains_cardsWithNewRangedDeckOfCards_true() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = try Deck(of: min, to: max, cards)
+
+        // When/Then
+        XCTAssert(deck.contains(cards))
+    }
+    
+    /// Tests that a `Deck`created with a range and `Card`s does not contain a `Card`.
+    func test_contains_cardWithNewRangedDeckOfCards_false() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3]
+        let deck = try Deck(of: min, to: max, cards)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(card4))
+    }
+    
+    /// Tests that a `Deck`created with a range  and `Card`s does not contain a given collection of
+    /// `Cards`.
+    func test_contains_cardsWithNewRangedDeckOfCards_false() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards1 = [card1, card2]
+        let cards2 = [card3, card4]
+        let deck = try Deck(of: min, to: max, cards1)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(cards2))
+    }
+    
+    /// Tests that a `Deck`created with a range and full `Card`s contains an expected`Card`.
+    func test_contains_cardWithNewRangedDeckOfFullCards_true() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3, card4]
+        let deck = try Deck(of: min, to: max, cards)
+
+        // When/Then
+        XCTAssert(deck.contains(card2))
+    }
+    
+    /// Tests that a `Deck`created with a range and full `Card`s contains a given collection of `Cards`.
+    func test_contains_cardsWithNewRangedDeckOfFullCards_true() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let cards = [card1, card2, card3, card4]
+        let deck = try Deck(of: min, to: max, cards)
+
+        // When/Then
+        XCTAssert(deck.contains(cards))
+    }
+    
+    /// Tests that a `Deck`created with a range and full `Card`s does not contain a `Card`.
+    func test_contains_cardWithNewRangedDeckOfFullCards_false() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let cards = [card1, card2, card3, card4]
+        let deck = try Deck(of: min, to: max, cards)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(card5))
+    }
+    
+    /// Tests that a `Deck`created with a range and full `Card`s does not contain a given collection of
+    /// `Cards`.
+    func test_contains_cardsWithNewRangedDeckOfFullCards_false() throws {
+        
+        // Given
+        let min = 0
+        let max = 4
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let card4 = Card(named: "Card 4")
+        let card5 = Card(named: "Card 5")
+        let card6 = Card(named: "Card 6")
+        let cards1 = [card1, card2, card3, card4]
+        let cards2 = [card5, card6]
+        let deck = try Deck(of: min, to: max, cards1)
+
+        // When/Then
+        XCTAssertFalse(deck.contains(cards2))
+    }
+    
     //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//
@@ -2344,6 +2775,123 @@ class DeckTests: XCTestCase {
         
         // When/Then
         XCTAssertNotEqual(deck1, deck2)
+    }
+    
+    //-------------------------------------------------------------------------//
+    //                               contains()                                //
+    //-------------------------------------------------------------------------//
+    
+    //             //
+    // Added Cards //
+    //             //
+    
+    /// Tests that a `Deck` contains a `Card` that was added to it.
+    func test_contains_addedCard_true() throws {
+
+        // Given
+        let card = Card()
+        let deck = Deck()
+
+        // When
+        try deck.add(card)
+
+        // Then
+        XCTAssert(deck.contains(card))
+    }
+    
+    /// Tests that a `Deck` contains the `Card`s that were added to it.
+    func test_contains_addedCards_true() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)
+
+        // When
+        try deck.add(cards)
+
+        // Then
+        XCTAssert(deck.contains(cards))
+    }
+    
+    //               //
+    // Removed Cards //
+    //               //
+
+    /// Tests that a `Deck` does not contain a `Card` that was removed from it.
+    func test_contains_removedCard_false() throws {
+        
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)
+        
+        // When
+        let removedCard = try deck.remove(card2)
+        
+        // Then
+        XCTAssertFalse(deck.contains(removedCard))
+    }
+    
+    /// Tests that a `Deck` does not contain the `Card`s that were removed from it.
+    func test_contains_removedCards_false() throws {
+
+        // Given
+        let card1 = Card(named: "Card 1")
+        let card2 = Card(named: "Card 2")
+        let card3 = Card(named: "Card 3")
+        let cards = [card1, card2, card3]
+        let deck = Deck(of: cards)
+
+        // When
+        let removedCards = try deck.remove(cards)
+
+        // Then
+        XCTAssertFalse(deck.contains(removedCards))
+    }
+    
+    //            //
+    // Duplicates //
+    //            //
+    
+    /// Tests that a `Deck` still contains a `Card` after removing a duplicate of it.
+    func test_contains_cardAfterRemovingDuplicate_true() throws {
+        
+        // Given
+        let duplicateCard1 = Card(named: "Card 1")
+        let duplicateCard2 = Card(named: "Card 1")
+        let card3 = Card(named: "Card 2")
+        let cards = [duplicateCard1, duplicateCard2, card3]
+        let deck = Deck(of: cards)
+        
+        // When
+        _ = try deck.remove(duplicateCard2)
+        
+        // Then
+        XCTAssert(deck.contains(duplicateCard2))
+    }
+    
+    /// Tests that a `Deck` does not contain any instance of a `Card` that is a duplicate after removing
+    /// all instances of it.
+    func test_contains_cardAfterRemovingDuplicates_true() throws {
+        
+        // Given
+        let duplicateCard1 = Card(named: "Card 1")
+        let duplicateCard2 = Card(named: "Card 1")
+        let card3 = Card(named: "Card 2")
+        let cards1 = [duplicateCard1, duplicateCard2, card3]
+        let cards2 = [duplicateCard2]
+        let deck = Deck(of: cards1)
+        
+        // When
+        _ = try deck.remove(cards2)
+        
+        // Then
+        XCTAssertFalse(deck.contains(duplicateCard1))
     }
     
     //-------------------------------------------------------------------------//
@@ -2873,251 +3421,6 @@ class DeckTests: XCTestCase {
 
         // Then
         XCTAssertFalse(deck.isFull())
-    }
-    
-    //-------------------------------------------------------------------------//
-    //                               contains()                                //
-    //-------------------------------------------------------------------------//
-    
-    
-    //         //
-    // Default //
-    //         //
-    
-    /// Tests that a default `Deck` does not contain a `Card`.
-    func test_contains_cardWithDefaultDeck_false() {
-        
-        // Given
-        let card1 = Card(named: "Card 1")
-        let deck = Deck()
-        let expected = card1
-
-        // When/Then
-        XCTAssertFalse(deck.contains(expected))
-    }
-    
-    //            //
-    // With Cards //
-    //            //
-    
-    /// Tests that a `Deck`created with `Card`s contains an expected`Card`.
-    func test_contains_cardWithCards_true() {
-        
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = Deck(of: cards)
-        let expected = card2
-
-        // When/Then
-        XCTAssert(deck.contains(expected))
-    }
-    
-    /// Tests that a `Deck`created with `Card`s does not contain a `Card`.
-    func test_contains_cardWithCards_false() {
-        
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let card4 = Card(named: "Card 4")
-        let cards = [card1, card2, card3]
-        let deck = Deck(of: cards)
-        let expected = card4
-
-        // When/Then
-        XCTAssertFalse(deck.contains(expected))
-    }
-
-    //                    //
-    // With Max and Cards //
-    //                    //
-    
-    /// Tests that a `Deck`created with a max and `Card`s contains an expected `Card`.
-    func test_contains_cardWithMaxAndCards_true() throws {
-        
-        // Given
-        let max = 5
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = try Deck(of: max, cards)
-        let expected = card2
-
-        // When/Then
-        XCTAssert(deck.contains(expected))
-    }
-    
-    /// Tests that a `Deck`created with a max and `Card`s does not contain a `Card`.
-    func test_contains_cardWithMaxAndCards_false() throws {
-        
-        // Given
-        let max = 5
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let card4 = Card(named: "Card 4")
-        let cards = [card1, card2, card3]
-        let deck = try Deck(of: max, cards)
-        let expected = card4
-
-        // When/Then
-        XCTAssertFalse(deck.contains(expected))
-    }
-    
-    //                      //
-    // With Range And Cards //
-    //                      //
-    
-    /// Tests that a `Deck`created with a range and `Card`s contains an expected`Card`.
-    func test_contains_cardWithRangeAndCards_true() throws {
-        
-        // Given
-        let min = 3
-        let max = 5
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = try Deck(of: min, to: max, cards)
-        let expected = card2
-
-        // When/Then
-        XCTAssert(deck.contains(expected))
-    }
-    
-    /// Tests that a `Deck`created with a range and `Card`s does not contain a `Card`.
-    func test_contains_cardWithRangeAndCards_false() throws {
-        
-        // Given
-        let min = 3
-        let max = 5
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let card4 = Card(named: "Card 4")
-        let cards = [card1, card2, card3]
-        let deck = try Deck(of: min, to: max, cards)
-        let expected = card4
-
-        // When/Then
-        XCTAssertFalse(deck.contains(expected))
-    }
-    
-    //             //
-    // Added Cards //
-    //             //
-    
-    /// Tests that a `Deck` contains a `Card` that was added to it.
-    func test_contains_addedCard_true() throws {
-
-        // Given
-        let card = Card()
-        let deck = Deck()
-
-        // When
-        try deck.add(card)
-
-        // Then
-        XCTAssert(deck.contains(card))
-    }
-    
-    /// Tests that a `Deck` contains the `Card`s that were added to it.
-    func test_contains_addedCards_true() throws {
-
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = Deck(of: cards)
-
-        // When
-        try deck.add(cards)
-
-        // Then
-        XCTAssert(deck.contains(cards))
-    }
-    
-    //               //
-    // Removed Cards //
-    //               //
-
-    /// Tests that a `Deck` does not contain a `Card` that was removed from it.
-    func test_contains_removedCard_false() throws {
-        
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = Deck(of: cards)
-        
-        // When
-        let removedCard = try deck.remove(card2)
-        
-        // Then
-        XCTAssertFalse(deck.contains(removedCard))
-    }
-    
-    /// Tests that a `Deck` does not contain the `Card`s that were removed from it.
-    func test_contains_removedCards_false() throws {
-
-        // Given
-        let card1 = Card(named: "Card 1")
-        let card2 = Card(named: "Card 2")
-        let card3 = Card(named: "Card 3")
-        let cards = [card1, card2, card3]
-        let deck = Deck(of: cards)
-
-        // When
-        let removedCards = try deck.remove(cards)
-
-        // Then
-        XCTAssertFalse(deck.contains(removedCards))
-    }
-    
-    //            //
-    // Duplicates //
-    //            //
-    
-    /// Tests that a `Deck` still contains a `Card` after removing a duplicate of it.
-    func test_contains_cardAfterRemovingDuplicate_true() throws {
-        
-        // Given
-        let duplicateCard1 = Card(named: "Card 1")
-        let duplicateCard2 = Card(named: "Card 1")
-        let card3 = Card(named: "Card 2")
-        let cards = [duplicateCard1, duplicateCard2, card3]
-        let deck = Deck(of: cards)
-        
-        // When
-        _ = try deck.remove(duplicateCard2)
-        
-        // Then
-        XCTAssert(deck.contains(duplicateCard2))
-    }
-    
-    /// Tests that a `Deck` does not contain any instance of a `Card` that is a duplicate after removing
-    /// all instances of it.
-    func test_contains_cardAfterRemovingDuplicates_true() throws {
-        
-        // Given
-        let duplicateCard1 = Card(named: "Card 1")
-        let duplicateCard2 = Card(named: "Card 1")
-        let card3 = Card(named: "Card 2")
-        let cards1 = [duplicateCard1, duplicateCard2, card3]
-        let cards2 = [duplicateCard2]
-        let deck = Deck(of: cards1)
-        
-        // When
-        _ = try deck.remove(cards2)
-        
-        // Then
-        XCTAssertFalse(deck.contains(duplicateCard1))
     }
     
     //-------------------------------------------------------------------------//
