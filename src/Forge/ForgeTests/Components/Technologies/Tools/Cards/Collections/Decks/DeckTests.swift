@@ -2061,6 +2061,50 @@ class DeckTests: XCTestCase {
         XCTAssertFalse(deck.hasCapacity(for: cards2))
     }
     
+    //             //
+    // Added Cards //
+    //             //
+    
+    /// Tests that a`Deck` has capacity  for a given collection of `Cards` after adding a `Card` to it.
+    func test_hasCapacity_afterAddingCard_true() throws {
+        
+        // Given
+        let max = 3
+        let card1 = Card()
+        let card2 = Card()
+        let card3 = Card()
+        let cards1 = [card1]
+        let cards2 = [card3]
+        let deck = try Deck(of: max, cards1)
+        
+        // When
+        try deck.add(card2)
+        
+        //Then
+        XCTAssert(deck.hasCapacity(for: cards2))
+    }
+    
+    /// Tests that a`Deck` has capacity  for a given collection of `Cards` after adding `Cards` to it.
+    func test_hasCapacity_afterAddingCards_true() throws {
+        
+        // Given
+        let max = 4
+        let card1 = Card()
+        let card2 = Card()
+        let card3 = Card()
+        let card4 = Card()
+        let cards1 = [card1]
+        let cards2 = [card2, card3]
+        let cards3 = [card4]
+        let deck = try Deck(of: max, cards1)
+        
+        // When
+        try deck.add(cards2)
+        
+        //Then
+        XCTAssert(deck.hasCapacity(for: cards3))
+    }
+    
     //=========================================================================//
     //                                 FILTERS                                 //
     //=========================================================================//
