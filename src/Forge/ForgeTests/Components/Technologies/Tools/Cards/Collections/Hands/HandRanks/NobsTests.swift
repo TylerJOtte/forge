@@ -94,7 +94,7 @@ class NobsTests: XCTestCase {
         
         // Given
         let jack = try Jack(of: .hearts)
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let cards = [jack, joker]
         let expected = DescriptionError.invalidRank
 

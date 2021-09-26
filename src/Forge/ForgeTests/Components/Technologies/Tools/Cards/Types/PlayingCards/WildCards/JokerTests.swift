@@ -30,11 +30,11 @@ class JokerTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that a `Joker`'s `Color` equals a given`Color`.
-    func test_color_ofJoker_equalsGivenColor() throws {
+    func test_color_ofJoker_equalsGivenColor() {
 
         // Given
         let color = Color.red
-        let joker = try Joker(color: color)
+        let joker = Joker(color: color)
         let expected = color
 
         // When
@@ -49,10 +49,10 @@ class JokerTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that the `Suit` of a `Joker` created with a `red Color` equals `null`.
-    func test_suit_withRedColor_equalsNull() throws {
+    func test_suit_withRedColor_equalsNull() {
 
         // Given
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let expected = Suit.null
 
         // When
@@ -63,10 +63,10 @@ class JokerTests: XCTestCase {
     }
     
     /// Tests that the `Suit` of a `Joker` created with a `black Color` equals `null`.
-    func test_suit_withBlackColor_equalsNull() throws {
+    func test_suit_withBlackColor_equalsNull() {
 
         // Given
-        let joker = try Joker(color: .black)
+        let joker = Joker(color: .black)
         let expected = Suit.null
 
         // When
@@ -81,10 +81,10 @@ class JokerTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that a `Joker`'s `Rank` equals `joker`.
-    func test_rank_ofJoker_equalsJoker() throws {
+    func test_rank_ofJoker_equalsJoker() {
 
         // Given
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let expected = Rank.joker
 
         // When
@@ -99,10 +99,10 @@ class JokerTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that a `Joker`'s position equals 0.
-    func test_position_ofJoker_equals0() throws {
+    func test_position_ofJoker_equals0() {
 
         // Given
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let expected = 0
 
         // When
@@ -117,10 +117,10 @@ class JokerTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that a `Joker`'s points equals 0.
-    func test_points_ofJoker_equals0() throws {
+    func test_points_ofJoker_equals0() {
 
         // Given
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let expected = 0
 
         // When
@@ -135,10 +135,10 @@ class JokerTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that the title of a `Joker` created with a `red Color` equals "Red Joker".
-    func test_title_withRedColor_equalsRedJoker() throws {
+    func test_title_withRedColor_equalsRedJoker() {
 
         // Given
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let expected = "Red Joker"
 
         // When
@@ -149,10 +149,10 @@ class JokerTests: XCTestCase {
     }
 
     /// Tests that the title of a `Joker` created with a `black Color` equals "Black Joker".
-    func test_title_withBlackColor_equalsBlackJoker() throws {
+    func test_title_withBlackColor_equalsBlackJoker() {
 
         // Given
-        let joker = try Joker(color: .black)
+        let joker = Joker(color: .black)
         let expected = "Black Joker"
 
         // When
@@ -174,7 +174,7 @@ class JokerTests: XCTestCase {
     func test_joker_isLessThanLowAce_true() throws {
 
         // Given
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let lowAce = try Ace(of: .hearts)
 
         // When/Then
@@ -185,7 +185,7 @@ class JokerTests: XCTestCase {
     func test_joker_isLessThanKingWithOperator_true() throws {
 
         // Given
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let lowAce = try Ace(of: .hearts)
 
         // When/Then
@@ -197,7 +197,7 @@ class JokerTests: XCTestCase {
 
         // Given
         let isHigh = true
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let highAce = try Ace(of: .hearts, and: isHigh)
 
         // When/Then
@@ -209,7 +209,7 @@ class JokerTests: XCTestCase {
 
         // Given
         let isHigh = true
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let ace = try Ace(of: .hearts, and: isHigh)
 
         // When/Then
@@ -221,33 +221,33 @@ class JokerTests: XCTestCase {
     //-------------------------------------------------------------------------//
 
     /// Tests that a `Joker` equals another `Joker` with the same `Color`.
-    func test_joker_equalsJokerWithSameColor_true() throws {
+    func test_joker_equalsJokerWithSameColor_true() {
 
         // Given
-        let card1 = try Joker(color: .red)
-        let card2 = try Joker(color: .red)
+        let card1 = Joker(color: .red)
+        let card2 = Joker(color: .red)
 
         // When/Then
         XCTAssert(card1.equals(card2))
     }
 
     /// Tests that a `Joker` equals another `Joker` with the same `Color`, using the equality operator.
-    func test_joker_equalsJokerWithSameColorUsingOperator_true() throws {
+    func test_joker_equalsJokerWithSameColorUsingOperator_true() {
 
         // Given
-        let card1 = try Joker(color: .red)
-        let card2 = try Joker(color: .red)
+        let card1 = Joker(color: .red)
+        let card2 = Joker(color: .red)
 
         // When/Then
         XCTAssertEqual(card1, card2)
     }
 
     /// Tests that a `Joker` does not equal another `Joker` with a different `Color`.
-    func test_joker_equalsJokerWithDifferentColor_false() throws {
+    func test_joker_equalsJokerWithDifferentColor_false() {
 
         // Given
-        let card1 = try Joker(color: .red)
-        let card2 = try Joker(color: .black)
+        let card1 = Joker(color: .red)
+        let card2 = Joker(color: .black)
 
         // When/Then
         XCTAssertFalse(card1.equals(card2))
@@ -255,11 +255,11 @@ class JokerTests: XCTestCase {
 
     /// Tests that a `Joker` does not equal another `Joker` with a different `Color`, using the equality
     /// operator.
-    func test_joker_equalsJokerWithDifferentColorUsingOperator_false() throws {
+    func test_joker_equalsJokerWithDifferentColorUsingOperator_false() {
 
         // Given
-        let card1 = try Joker(color: .red)
-        let card2 = try Joker(color: .black)
+        let card1 = Joker(color: .red)
+        let card2 = Joker(color: .black)
 
         // When/Then
         XCTAssertNotEqual(card1, card2)
@@ -270,11 +270,11 @@ class JokerTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that a `Joker` `Rank`s another `Joker`.
-    func test_joker_ranksJoker_true() throws {
+    func test_joker_ranksJoker_true() {
      
         // Given
-        let redJoker = try Joker(color: .red)
-        let blackJoker = try Joker(color: .black)
+        let redJoker = Joker(color: .red)
+        let blackJoker = Joker(color: .black)
         
         // When/Then
         XCTAssert(redJoker.ranks(blackJoker))
@@ -284,7 +284,7 @@ class JokerTests: XCTestCase {
     func test_joker_ranksLowhAce_false() throws {
      
         // Given
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let lowAce = try Ace(of: .hearts)
         
         // When/Then

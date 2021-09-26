@@ -175,9 +175,9 @@ class PlayingCards {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: An array of `Joker`s.
-    static func getJokers() throws -> [Joker] {
+    static func getJokers() -> [Joker] {
         
-        return [try Joker(color: .red), try Joker(color: .black)]
+        return [Joker(color: .red), Joker(color: .black)]
     }
     
     //-------------------------------------------------------------------------//
@@ -195,7 +195,7 @@ class PlayingCards {
         
         let numeralCards = try getNumeralCards(with: suit)
         let faceCards = try getFaceCards(with: suit)
-        let jokers = try getJokers()
+        let jokers = getJokers()
         var cards: [PlayingCard] = []
         
         cards.append(contentsOf: numeralCards)
@@ -215,7 +215,7 @@ class PlayingCards {
     static func getAllCards(with suits: [Suit] = suits) throws -> [PlayingCard] {
         
         var cards: [PlayingCard] = []
-        let jokers = try getJokers()
+        let jokers = getJokers()
         
         for suit in suits {
             

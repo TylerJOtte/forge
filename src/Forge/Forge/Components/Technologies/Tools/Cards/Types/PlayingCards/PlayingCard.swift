@@ -30,6 +30,47 @@ public class PlayingCard: RankedCard {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
+    // TODO: Add tests for below constructor
+    
+    /// Creates a `PlayingCard` with the given terms.
+    ///
+    /// - Precondition:
+    ///   - The given `Rank` must be a standard`PlayingCard Rank`.
+    ///   - The given position must be between 0-14.
+    /// - Postcondition:
+    ///   - The `Card`'s `Rank` is set to the given `Rank`.
+    ///   - The `Card`'s `Suit` is set to `null` if  given `Rank` is a `joker`, else `hearts`.
+    ///   - The `Card`'s points are set to the given points.
+    ///   - The `Card`'s position is set to the given position.
+    ///   - The `Card`'s title is set to the given title if not empty, else "`{Rank}` of `{Suit}`".
+    /// - Parameters:
+    ///   - rank: The hierarchical position.
+    ///   - points: The total # of points.
+    ///   - position: The given `Rank`'s order in the hierarchy.
+    init(_ rank: Rank, worth points: Int, at position: Int,
+         with title: String = "") {
+        
+        let suit = rank == .joker ? Suit.null : Suit.hearts
+        let cardTitle = title == "" ? "\(rank) Of \(suit)".capitalized : title
+        
+        assert(rank.isStandard(),
+               "The given Rank is not a standard PlayingCard Rank.")
+        
+        assert(suit.isStandard(),
+               "The given Suit is not a standard PlayingCard Suit.")
+
+        assert((suit == .null && rank == .joker) ||
+               (suit != .null && rank != .joker),
+               "The given Rank & Suit is not a valid combination.")
+        
+        assert(position >= 0 && position <= 14,
+               "The given order must be between 1-14.")
+        
+        self.suit = suit
+
+        super.init(with: rank, at: position, worth: points, named: cardTitle)
+    }
+    
     /// Creates a `PlayingCard` with the given terms.
     ///
     /// - Precondition:
@@ -42,34 +83,32 @@ public class PlayingCard: RankedCard {
     ///   - The `Card`'s `Suit` is set to the given `Suit`.
     ///   - The `Card`'s points are set to the given points.
     ///   - The `Card`'s position is set to the given position.
-    ///   - The `Card`'s title is set to "`{Rank}` of `{Suit}`".
+    ///   - The `Card`'s title is set to the given title if not empty, else "`{Rank}` of `{Suit}`".
     /// - Parameters:
     ///   - rank: The hierarchical position.
     ///   - suit: The symbol grouping.
     ///   - points: The total # of points.
     ///   - position: The given `Rank`'s order in the hierarchy.
     /// - Throws:
-    ///   - `invalidRank`  if the given `Rank` is not a standard `PlayingCard Rank`.
     ///   - `invalidSuit` if:
     ///     - The given `Suit` is not a standard `PlayingCard Suit`, or
     ///     - The given `Suit` is `null` and the specified `Rank` is not a `joker`, or
     ///     - The given `Suit` is not `null` and the specified `Rank` is a `joker`.
-    ///   - `invalidPosition`  if the given position is not between 0-14.
     init(_ rank: Rank, of suit: Suit, worth points: Int,
          at position: Int, with title: String = "") throws {
-        
-        guard (rank.isStandard()) else {
 
-            print("The given Rank is not a standard PlayingCard Rank.")
-            throw DescriptionError.invalidRank
-        }
+        assert(rank.isStandard(),
+               "The given Rank is not a standard PlayingCard Rank.")
+        
+        assert(position >= 0 && position <= 14,
+               "The given order must be between 1-14.")
 
         guard (suit.isStandard()) else {
 
             print("The given Suit is not a standard PlayingCard Suit.")
             throw DepictionError.invalidSuit
         }
-        
+
         guard ((suit == .null && rank == .joker) ||
                (suit != .null && rank != .joker)) else {
 
@@ -77,16 +116,10 @@ public class PlayingCard: RankedCard {
             throw DepictionError.invalidSuit
         }
         
-        guard (position >= 0 && position <= 14) else {
-
-            print("The given order must be between 1-14.")
-            throw RangeError.invalidPosition
-        }
-        
         self.suit = suit
-        
+
         let title = title == "" ? "\(rank) Of \(suit)".capitalized : title
-        
+
         super.init(with: rank, at: position, worth: points, named: title)
     }
     

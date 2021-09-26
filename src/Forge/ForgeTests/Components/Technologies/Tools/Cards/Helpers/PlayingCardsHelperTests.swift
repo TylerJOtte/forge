@@ -2755,13 +2755,13 @@ class PlayingCardsHelperTests: XCTestCase {
     //-------------------------------------------------------------------------//
     
     /// Tests that retrieving all `Joker`s returns two `Joker`s.
-    func test_getJokers_returnsTwoJokers() throws {
+    func test_getJokers_returnsTwoJokers() {
 
         // Given
         let expected = 2
         
         // When
-        let jokers = try PlayingCards.getJokers()
+        let jokers = PlayingCards.getJokers()
         let actual = jokers.count
         
         // Then
@@ -2769,14 +2769,14 @@ class PlayingCardsHelperTests: XCTestCase {
     }
     
     /// Tests that retrieving all`Joker`s returns with only one red `Joker`..
-    func test_getJokers_returnsCardsWithOnlyOneRedJoker_true() throws {
+    func test_getJokers_returnsCardsWithOnlyOneRedJoker_true() {
 
         // Given
-        let redJoker = try Joker(color: .red)
+        let redJoker = Joker(color: .red)
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getJokers()
+        let cards = PlayingCards.getJokers()
         let actual = cards.getCount(of: redJoker)
         
         // Then
@@ -2784,14 +2784,14 @@ class PlayingCardsHelperTests: XCTestCase {
     }
     
     /// Tests that retrieving all`Joker`s returns with only one black `Joker`..
-    func test_getJokers_returnsCardsWithOnlyOneBlackJoker_true() throws {
+    func test_getJokers_returnsCardsWithOnlyOneBlackJoker_true() {
 
         // Given
-        let blackJoker = try Joker(color: .black)
+        let blackJoker = Joker(color: .black)
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getJokers()
+        let cards = PlayingCards.getJokers()
         let actual = cards.getCount(of: blackJoker)
         
         // Then
@@ -3066,7 +3066,7 @@ class PlayingCardsHelperTests: XCTestCase {
 
         // Given
         let suit = Suit.hearts
-        let redJoker = try Joker(color: .red)
+        let redJoker = Joker(color: .red)
         let expected = 1
         
         // When
@@ -3083,7 +3083,7 @@ class PlayingCardsHelperTests: XCTestCase {
 
         // Given
         let suit = Suit.hearts
-        let blackJoker = try Joker(color: .black)
+        let blackJoker = Joker(color: .black)
         let expected = 1
         
         // When

@@ -49,7 +49,7 @@ public class CribbageHand: PlayingCardHand {
     public init(with cards: [PlayingCard], and cutCard: PlayingCard) throws {
         
         let max = 4
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         
         guard (!cards.contains(joker)) else {
 

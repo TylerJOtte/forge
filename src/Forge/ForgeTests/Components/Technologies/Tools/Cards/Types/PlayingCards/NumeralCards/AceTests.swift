@@ -752,7 +752,7 @@ class AceTests: XCTestCase {
      
         // Given
         let lowAce = try Ace(of: .hearts)
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         
         // When/Then
         XCTAssert(lowAce.follows(joker))

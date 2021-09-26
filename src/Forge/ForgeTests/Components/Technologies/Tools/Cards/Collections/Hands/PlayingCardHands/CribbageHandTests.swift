@@ -64,7 +64,7 @@ class CribbageHandTests: XCTestCase {
         let fiveOfDiamonds = try Five(of: .diamonds)
         let fiveOfClubs = try Five(of: .clubs)
         let fiveOfSpades = try Five(of: .spades)
-        let joker = try Joker(color: .red)
+        let joker = Joker(color: .red)
         let cutCard = try Five(of: .hearts)
         let cards = [fiveOfDiamonds, fiveOfClubs, fiveOfSpades, joker]
         let expected = DescriptionError.invalidRank
@@ -87,7 +87,7 @@ class CribbageHandTests: XCTestCase {
         let fiveOfDiamonds = try Five(of: .diamonds)
         let fiveOfClubs = try Five(of: .clubs)
         let fiveOfSpades = try Five(of: .spades)
-        let cutCard = try Joker(color: .red)
+        let cutCard = Joker(color: .red)
         let cards = [jackOfHearts, fiveOfDiamonds, fiveOfClubs, fiveOfSpades]
         let expected = DescriptionError.invalidRank
         

@@ -41,17 +41,16 @@ public class Joker: PlayingCard {
     ///   - The `Card`'s points are set to 0.
     ///   - The `Card`'s title is set to "`{Color}` Joker".
     /// - Parameter color: The primary `Color`.
-    public init(color: Color) throws {
+    public init(color: Color) {
 
         let rank = Rank.joker
-        let suit = Suit.null
         let points = 0
         let position = 0
         let title = "\(color) \(rank)".capitalized
 
         self.color = color
 
-        try super.init(rank, of: suit, worth: points, at: position, with: title)
+        super.init(rank, worth: points, at: position, with: title)
     }
     
     //=========================================================================//
