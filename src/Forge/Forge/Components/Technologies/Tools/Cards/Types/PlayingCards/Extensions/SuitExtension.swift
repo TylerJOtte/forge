@@ -38,7 +38,17 @@ extension Suit {
         
         return self == .clubs || self == .spades
     }
-
+    
+    /// Determines if the `Suit` is a standard French-suited`PlayingCard Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the `Suit` is a standard French-suited`PlayingCard Suit`, else false.
+    func isStandardSymbol() -> Bool {
+       
+        return isRed() || isBlack()
+    }
+    
     /// Determines if the `Suit` is a standard French-suited`PlayingCard Suit`.
     ///
     /// - Precondition: None.
@@ -46,6 +56,6 @@ extension Suit {
     /// - Returns: True if the `Suit` is a standard French-suited`PlayingCard Suit`, else false.
     func isStandard() -> Bool {
        
-        return isRed() || isBlack() || self == .null
+        return isStandardSymbol() || self == .null
     }
 }

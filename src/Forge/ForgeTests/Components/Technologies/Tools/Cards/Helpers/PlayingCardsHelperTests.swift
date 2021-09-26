@@ -20,6 +20,8 @@ import XCTest
 /// Unit tests for a `PlayingCards` helper.
 class PlayingCardsHelperTests: XCTestCase {
     
+    // TODO: Find a way to test assertions for commented out code below
+    
     //=========================================================================//
     //                                  GETTERS                                //
     //=========================================================================//
@@ -32,32 +34,32 @@ class PlayingCardsHelperTests: XCTestCase {
     // With One Suit //
     //               //
     
-    /// Tests that retrieving all `NumeralCard`s with an invalid `Suit` throws an `invalidSuit`
-    /// `Error`.
-    func test_getNumeralCards_withInvalidSuit_throwsInvalidSuitError() throws {
-
-        // Given
-        let suit = Suit.stars
-        let expected = DepictionError.invalidSuit
-        
-        // When
-        XCTAssertThrowsError(try PlayingCards.getNumeralCards(with: suit)) {
-            error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DepictionError)
-        }
-    }
+//    /// Tests that retrieving all `NumeralCard`s with an invalid `Suit` an `invalidSuit`
+//    /// `Error`.
+//    func test_getNumeralCards_withInvalidSuit_throwsInvalidSuitError() {
+//
+//        // Given
+//        let suit = Suit.stars
+//        let expected = DepictionError.invalidSuit
+//
+//        // When
+//        XCTAssertThrowsError(PlayingCards.getNumeralCards(with: suit)) {
+//            error in
+//
+//            // Then
+//            XCTAssertEqual(expected, error as? DepictionError)
+//        }
+//    }
     
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns ten `NumeralCard`s.
-    func test_getNumeralCards_withSuit_returnsTenNumeralCards() throws {
+    func test_getNumeralCards_withSuit_returnsTenNumeralCards() {
 
         // Given
         let suit = Suit.hearts
         let expected = 10
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.count
         
         // Then
@@ -66,7 +68,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with an `ace rank`.
-    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneAceRank() throws {
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneAceRank() {
 
         // Given
         let suit = Suit.hearts
@@ -74,7 +76,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -83,7 +85,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with a `two rank`.
-    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTwoRank() throws {
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTwoRank() {
 
         // Given
         let suit = Suit.hearts
@@ -91,7 +93,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -101,7 +103,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with a `three rank`.
     func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneThreeRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -109,7 +111,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -118,7 +120,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with a `four rank`.
-    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFourRank() throws {
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFourRank() {
 
         // Given
         let suit = Suit.hearts
@@ -126,7 +128,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -135,7 +137,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with a `five rank`.
-    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFiveRank() throws {
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneFiveRank() {
 
         // Given
         let suit = Suit.hearts
@@ -143,7 +145,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -152,7 +154,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with a `six rank`.
-    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSixRank() throws {
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSixRank() {
 
         // Given
         let suit = Suit.hearts
@@ -160,7 +162,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -170,7 +172,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with a `seven rank`.
     func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneSevenRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -178,7 +180,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -188,7 +190,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with an `eight rank`.
     func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneEightRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -196,7 +198,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -205,7 +207,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with a `nine rank`.
-    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneNineRank() throws {
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneNineRank() {
 
         // Given
         let suit = Suit.hearts
@@ -213,7 +215,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -222,7 +224,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain one `NumeralCard` with a `ten rank`.
-    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTenRank() throws {
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyOneTenRank() {
 
         // Given
         let suit = Suit.hearts
@@ -230,7 +232,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
         let actual = numeralCards.getCount(of: rank)
 
         // Then
@@ -239,14 +241,14 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `NumeralCard`s with a `Suit` returns `NumeralCard`s that only
     /// contain the given  `Suit`.
-    func test_getNumeralCards_withSuit_returnsCardsWithOnlyGivenSuit() throws {
+    func test_getNumeralCards_withSuit_returnsCardsWithOnlyGivenSuit() {
 
         // Given
         let suit = Suit.hearts
         let expected = suit
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suit)
+        let numeralCards = PlayingCards.getNumeralCards(with: suit)
 
         // Then
         XCTAssert(numeralCards.contain(only: expected))
@@ -256,30 +258,30 @@ class PlayingCardsHelperTests: XCTestCase {
     // With Multiple Suits //
     //                     //
     
-    /// Tests that retrieving all `NumeralCard`s with `Suit`s that contain an invalid `Suit` throws an
-    /// `invalidSuit Error`.
-    func test_getNumeralCards_withInvalidSuits_throwsInvalidSuitError() throws {
-
-        // Given
-        let suit1 = Suit.hearts
-        let suit2 = Suit.stars
-        let suits = [suit1, suit2]
-        let expected = DepictionError.invalidSuit
-        
-        // When
-        XCTAssertThrowsError(try PlayingCards.getNumeralCards(with: suits)) {
-            error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DepictionError)
-        }
-    }
+//    /// Tests that retrieving all `NumeralCard`s with `Suit`s that contain an invalid `Suit` an
+//    /// `invalidSuit Error`.
+//    func test_getNumeralCards_withInvalidSuits_throwsInvalidSuitError() {
+//
+//        // Given
+//        let suit1 = Suit.hearts
+//        let suit2 = Suit.stars
+//        let suits = [suit1, suit2]
+//        let expected = DepictionError.invalidSuit
+//
+//        // When
+//        XCTAssertThrowsError(PlayingCards.getNumeralCards(with: suits)) {
+//            error in
+//
+//            // Then
+//            XCTAssertEqual(expected, error as? DepictionError)
+//        }
+//    }
     
     // One Suit //
     // ~~~~~~~~ //
     
     /// Tests that retrieving all`NumeralCard`s with one `Suit` returns ten `NumeralCard`s.
-    func test_getNumeralCards_withOneSuit_returnsTenNumeralCards() throws {
+    func test_getNumeralCards_withOneSuit_returnsTenNumeralCards() {
 
         // Given
         let suit = Suit.hearts
@@ -287,7 +289,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 10
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+        let numeralCards = PlayingCards.getNumeralCards(with: suits)
         let actual = numeralCards.count
         
         // Then
@@ -297,7 +299,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all `NumeralCard`s with one `Suit`s returns `NumeralCard`s that
     /// only contain the given  `Suit`.
     func test_getNumeralCards_withOneSuit_returnsCardsWithOnlyGivenSuit()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -305,7 +307,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = suits
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards(with: suits)
+        let numeralCards = PlayingCards.getNumeralCards(with: suits)
 
         // Then
         XCTAssert(numeralCards.contain(only: expected))
@@ -315,13 +317,13 @@ class PlayingCardsHelperTests: XCTestCase {
     // ~~~~~~~~~~~~~ //
     
     /// Tests that retrieving all `NumeralCard`s with the default `Suit`s returns 40 `NumeralCard`s.
-    func test_getNumeralCards_withDefaultSuits_returns40NumeralCards() throws {
+    func test_getNumeralCards_withDefaultSuits_returns40NumeralCards() {
 
         // Given
         let expected = 40
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.count
         
         // Then
@@ -340,7 +342,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: aceOfHearts)
 
         // Then
@@ -357,7 +359,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: aceOfSpades)
 
         // Then
@@ -374,7 +376,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: aceOfDiamonds)
 
         // Then
@@ -391,7 +393,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: aceOfClubs)
 
         // Then
@@ -410,7 +412,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: twoOfHearts)
 
         // Then
@@ -427,7 +429,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: twoOfSpades)
 
         // Then
@@ -444,7 +446,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: twoOfDiamonds)
 
         // Then
@@ -461,7 +463,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: twoOfClubs)
 
         // Then
@@ -480,7 +482,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: threeOfHearts)
 
         // Then
@@ -497,7 +499,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: threeOfSpades)
 
         // Then
@@ -514,7 +516,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: threeOfDiamonds)
 
         // Then
@@ -531,7 +533,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: threeOfClubs)
 
         // Then
@@ -550,7 +552,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: fourOfHearts)
 
         // Then
@@ -567,7 +569,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: fourOfSpades)
 
         // Then
@@ -584,7 +586,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: fourOfDiamonds)
 
         // Then
@@ -601,7 +603,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: fourOfClubs)
 
         // Then
@@ -620,7 +622,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: fiveOfHearts)
 
         // Then
@@ -637,7 +639,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: fiveOfSpades)
 
         // Then
@@ -654,7 +656,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: fiveOfDiamonds)
 
         // Then
@@ -671,7 +673,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: fiveOfClubs)
 
         // Then
@@ -690,7 +692,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: sixOfHearts)
 
         // Then
@@ -707,7 +709,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: sixOfSpades)
 
         // Then
@@ -724,7 +726,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: sixOfDiamonds)
 
         // Then
@@ -741,7 +743,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: sixOfClubs)
 
         // Then
@@ -760,7 +762,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: sevenOfHearts)
 
         // Then
@@ -777,7 +779,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: sevenOfSpades)
 
         // Then
@@ -794,7 +796,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: sevenOfDiamonds)
 
         // Then
@@ -811,7 +813,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: sevenOfClubs)
 
         // Then
@@ -830,7 +832,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: eightOfHearts)
 
         // Then
@@ -847,7 +849,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: eightOfSpades)
 
         // Then
@@ -864,7 +866,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: eightOfDiamonds)
 
         // Then
@@ -881,7 +883,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: eightOfClubs)
 
         // Then
@@ -900,7 +902,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: nineOfHearts)
 
         // Then
@@ -917,7 +919,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: nineOfSpades)
 
         // Then
@@ -934,7 +936,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: nineOfDiamonds)
 
         // Then
@@ -951,7 +953,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: nineOfClubs)
 
         // Then
@@ -970,7 +972,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: tenOfHearts)
 
         // Then
@@ -987,7 +989,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: tenOfSpades)
 
         // Then
@@ -1004,7 +1006,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: tenOfDiamonds)
 
         // Then
@@ -1021,7 +1023,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
         let actual = numeralCards.getCount(of: tenOfClubs)
 
         // Then
@@ -1037,7 +1039,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = PlayingCards.suits
         
         // When
-        let numeralCards = try PlayingCards.getNumeralCards()
+        let numeralCards = PlayingCards.getNumeralCards()
 
         // Then
         XCTAssert(numeralCards.contain(only: expected))
@@ -1051,31 +1053,31 @@ class PlayingCardsHelperTests: XCTestCase {
     // With One Suit //
     //               //
     
-    /// Tests that retrieving all `FaceCard`s with an invalid `Suit` throws an `invalidSuit Error`.
-    func test_getFaceCards_withInvalidSuit_throwsInvalidSuitError() throws {
-
-        // Given
-        let suit = Suit.stars
-        let expected = DepictionError.invalidSuit
-        
-        // When
-        XCTAssertThrowsError(try PlayingCards.getFaceCards(with: suit)) {
-            error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DepictionError)
-        }
-    }
+//    /// Tests that retrieving all `FaceCard`s with an invalid `Suit` an `invalidSuit Error`.
+//    func test_getFaceCards_withInvalidSuit_throwsInvalidSuitError() {
+//
+//        // Given
+//        let suit = Suit.stars
+//        let expected = DepictionError.invalidSuit
+//
+//        // When
+//        XCTAssertThrowsError(PlayingCards.getFaceCards(with: suit)) {
+//            error in
+//
+//            // Then
+//            XCTAssertEqual(expected, error as? DepictionError)
+//        }
+//    }
     
     /// Tests that retrieving all `FaceCard`s with a `Suit` returns three `FaceCard`s.
-    func test_getFaceCards_withSuit_returnsThreeFaceCards() throws {
+    func test_getFaceCards_withSuit_returnsThreeFaceCards() {
 
         // Given
         let suit = Suit.hearts
         let expected = 3
         
         // When
-        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        let faceCards = PlayingCards.getFaceCards(with: suit)
         let actual = faceCards.count
         
         // Then
@@ -1084,7 +1086,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `FaceCard`s with a `Suit` returns `FaceCard`s that only contain one
     /// `FaceCard` with a `jack rank`.
-    func test_getFaceCards_withSuit_returnsCardsWithOnlyOneJackRank() throws {
+    func test_getFaceCards_withSuit_returnsCardsWithOnlyOneJackRank() {
 
         // Given
         let suit = Suit.hearts
@@ -1092,7 +1094,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        let faceCards = PlayingCards.getFaceCards(with: suit)
         let actual = faceCards.getCount(of: rank)
 
         // Then
@@ -1101,7 +1103,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `FaceCard`s with a `Suit` returns `FaceCard`s that only contain one
     /// `FaceCard` with a `queen rank`.
-    func test_getFaceCards_withSuit_returnsCardsWithOnlyOneQueenRank() throws {
+    func test_getFaceCards_withSuit_returnsCardsWithOnlyOneQueenRank() {
 
         // Given
         let suit = Suit.hearts
@@ -1109,7 +1111,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        let faceCards = PlayingCards.getFaceCards(with: suit)
         let actual = faceCards.getCount(of: rank)
 
         // Then
@@ -1118,7 +1120,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `FaceCard`s with a `Suit` returns `FaceCard`s that only contain one
     /// `FaceCard` with a `king rank`.
-    func test_getFaceCards_withSuit_returnsCardsWithOnlyOneKingRank() throws {
+    func test_getFaceCards_withSuit_returnsCardsWithOnlyOneKingRank() {
 
         // Given
         let suit = Suit.hearts
@@ -1126,7 +1128,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        let faceCards = PlayingCards.getFaceCards(with: suit)
         let actual = faceCards.getCount(of: rank)
 
         // Then
@@ -1135,14 +1137,14 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `FaceCard`s with a `Suit` returns `FaceCard`s that only contain the
     /// given  `Suit`.
-    func test_getFaceCards_withSuit_returnsCardsWithOnlyGivenSuit() throws {
+    func test_getFaceCards_withSuit_returnsCardsWithOnlyGivenSuit() {
 
         // Given
         let suit = Suit.hearts
         let expected = suit
         
         // When
-        let faceCards = try PlayingCards.getFaceCards(with: suit)
+        let faceCards = PlayingCards.getFaceCards(with: suit)
 
         // Then
         XCTAssert(faceCards.contain(only: expected))
@@ -1152,30 +1154,30 @@ class PlayingCardsHelperTests: XCTestCase {
     // With Multiple Suits //
     //                     //
     
-    /// Tests that retrieving all`FaceCard`s with `Suit`s that contain an invalid `Suit` throws an
-    /// `invalidSuit Error`.
-    func test_getFaceCards_withInvalidSuits_throwsInvalidSuitError() throws {
-
-        // Given
-        let suit1 = Suit.hearts
-        let suit2 = Suit.stars
-        let suits = [suit1, suit2]
-        let expected = DepictionError.invalidSuit
-        
-        // When
-        XCTAssertThrowsError(try PlayingCards.getFaceCards(with: suits)) {
-            error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DepictionError)
-        }
-    }
+//    /// Tests that retrieving all`FaceCard`s with `Suit`s that contain an invalid `Suit` an
+//    /// `invalidSuit Error`.
+//    func test_getFaceCards_withInvalidSuits_throwsInvalidSuitError() {
+//
+//        // Given
+//        let suit1 = Suit.hearts
+//        let suit2 = Suit.stars
+//        let suits = [suit1, suit2]
+//        let expected = DepictionError.invalidSuit
+//
+//        // When
+//        XCTAssertThrowsError(PlayingCards.getFaceCards(with: suits)) {
+//            error in
+//
+//            // Then
+//            XCTAssertEqual(expected, error as? DepictionError)
+//        }
+//    }
     
     // One Suit //
     // ~~~~~~~~ //
     
     /// Tests that retrieving all`FaceCard`s with one `Suit` returns ten `FaceCard`s.
-    func test_getFaceCards_withOneSuit_returnsTenFaceCards() throws {
+    func test_getFaceCards_withOneSuit_returnsTenFaceCards() {
 
         // Given
         let suit = Suit.hearts
@@ -1183,7 +1185,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 3
         
         // When
-        let faceCards = try PlayingCards.getFaceCards(with: suits)
+        let faceCards = PlayingCards.getFaceCards(with: suits)
         let actual = faceCards.count
         
         // Then
@@ -1193,7 +1195,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all `FaceCard`s with one `Suit`s returns `FaceCard`s that only contain the
     /// given  `Suit`.
     func test_getFaceCards_withOneSuit_returnsCardsWithOnlyGivenSuit()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1201,7 +1203,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = suits
         
         // When
-        let faceCards = try PlayingCards.getFaceCards(with: suits)
+        let faceCards = PlayingCards.getFaceCards(with: suits)
 
         // Then
         XCTAssert(faceCards.contain(only: expected))
@@ -1211,13 +1213,13 @@ class PlayingCardsHelperTests: XCTestCase {
     // ~~~~~~~~~~~~~ //
     
     /// Tests that retrieving all`FaceCard`s with the default `Suit`s returns 12 `FaceCard`s.
-    func test_getFaceCards_withDefaultSuits_returns12FaceCards() throws {
+    func test_getFaceCards_withDefaultSuits_returns12FaceCards() {
 
         // Given
         let expected = 12
         
         // When
-        let faceCards = try PlayingCards.getFaceCards()
+        let faceCards = PlayingCards.getFaceCards()
         let actual = faceCards.count
         
         // Then
@@ -1235,7 +1237,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: jackOfHearts)
 
          // Then
@@ -1252,7 +1254,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: jackOfSpades)
 
          // Then
@@ -1269,7 +1271,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: jackOfDiamonds)
 
          // Then
@@ -1285,7 +1287,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: jackOfClubs)
 
          // Then
@@ -1304,7 +1306,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: queenOfHearts)
 
          // Then
@@ -1321,7 +1323,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: queenOfSpades)
 
          // Then
@@ -1338,7 +1340,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: queenOfDiamonds)
 
          // Then
@@ -1355,7 +1357,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: queenOfClubs)
 
          // Then
@@ -1374,7 +1376,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: kingOfHearts)
 
          // Then
@@ -1391,7 +1393,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: kingOfSpades)
 
          // Then
@@ -1408,7 +1410,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: kingOfDiamonds)
 
          // Then
@@ -1424,7 +1426,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let faceCards = try PlayingCards.getFaceCards()
+         let faceCards = PlayingCards.getFaceCards()
          let actual = faceCards.getCount(of: kingOfClubs)
 
          // Then
@@ -1440,7 +1442,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = PlayingCards.suits
         
         // When
-        let faceCards = try PlayingCards.getFaceCards()
+        let faceCards = PlayingCards.getFaceCards()
 
         // Then
         XCTAssert(faceCards.contain(only: expected))
@@ -1454,32 +1456,32 @@ class PlayingCardsHelperTests: XCTestCase {
     // With One Suit //
     //               //
     
-    /// Tests that retrieving all standard `PlayingCard`s with an invalid `Suit` throws an
-    /// `invalidSuit Error`.
-    func test_getStandardCards_withInvalidSuit_throwsInvalidSuitError() throws {
-
-        // Given
-        let suit = Suit.stars
-        let expected = DepictionError.invalidSuit
-        
-        // When
-        XCTAssertThrowsError(try PlayingCards.getStandardCards(with: suit)) {
-            error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DepictionError)
-        }
-    }
+//    /// Tests that retrieving all standard `PlayingCard`s with an invalid `Suit` an
+//    /// `invalidSuit Error`.
+//    func test_getStandardCards_withInvalidSuit_throwsInvalidSuitError() {
+//
+//        // Given
+//        let suit = Suit.stars
+//        let expected = DepictionError.invalidSuit
+//
+//        // When
+//        XCTAssertThrowsError(PlayingCards.getStandardCards(with: suit)) {
+//            error in
+//
+//            // Then
+//            XCTAssertEqual(expected, error as? DepictionError)
+//        }
+//    }
     
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns 13 `PlayingCard`s.
-    func test_getStandardCards_withSuit_returns13PlayingCards() throws {
+    func test_getStandardCards_withSuit_returns13PlayingCards() {
 
         // Given
         let suit = Suit.hearts
         let expected = 13
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.count
         
         // Then
@@ -1488,7 +1490,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with an `ace rank`.
-    func test_getStandardCards_withSuit_returnsCardsWithOnlyOneAceRank() throws {
+    func test_getStandardCards_withSuit_returnsCardsWithOnlyOneAceRank() {
 
         // Given
         let suit = Suit.hearts
@@ -1496,7 +1498,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1505,7 +1507,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `two rank`.
-    func test_getStandardCards_withSuit_returnsCardsWithOnlyOneTwoRank() throws {
+    func test_getStandardCards_withSuit_returnsCardsWithOnlyOneTwoRank() {
 
         // Given
         let suit = Suit.hearts
@@ -1513,7 +1515,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1523,7 +1525,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `three rank`.
     func test_getStandardCards_withSuit_returnsCardsWithOnlyOneThreeRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1531,7 +1533,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1540,7 +1542,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `four rank`.
-    func test_geStandardCards_withSuit_returnsCardsWithOnlyOneFourRank() throws {
+    func test_geStandardCards_withSuit_returnsCardsWithOnlyOneFourRank() {
 
         // Given
         let suit = Suit.hearts
@@ -1548,7 +1550,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1558,7 +1560,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `five rank`.
     func test_getStandardCards_withSuit_returnsCardsWithOnlyOneFiveRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1566,7 +1568,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1575,7 +1577,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `six rank`.
-    func test_getStandardCards_withSuit_returnsCardsWithOnlyOneSixRank() throws {
+    func test_getStandardCards_withSuit_returnsCardsWithOnlyOneSixRank() {
 
         // Given
         let suit = Suit.hearts
@@ -1583,7 +1585,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1593,7 +1595,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `seven rank`.
     func test_getStandardCards_withSuit_returnsCardsWithOnlyOneSevenRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1601,7 +1603,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1611,7 +1613,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with an `eight rank`.
     func test_getStandardCards_withSuit_returnsCardsWithOnlyOneEightRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1619,7 +1621,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1629,7 +1631,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `nine rank`.
     func test_getStandardCards_withSuit_returnsCardsWithOnlyOneNineRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1637,7 +1639,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1646,7 +1648,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `ten rank`.
-    func test_getStandardCards_withSuit_returnsCardsWithOnlyOneTenRank() throws {
+    func test_getStandardCards_withSuit_returnsCardsWithOnlyOneTenRank() {
 
         // Given
         let suit = Suit.hearts
@@ -1654,7 +1656,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1664,7 +1666,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `jack rank`.
     func test_getStandardCards_withSuit_returnsCardsWithOnlyOneJackRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1672,7 +1674,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1682,7 +1684,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `queen rank`.
     func test_getStandardCards_withSuit_returnsCardsWithOnlyOneQueenRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1690,7 +1692,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1700,7 +1702,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contain one `PlayingCard` with a `king rank`.
     func test_getStandardCards_withSuit_returnsCardsWithOnlyOneKingRank()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1708,7 +1710,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1717,7 +1719,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// contain zero `PlayingCard` with a `joker rank`.
-    func test_getStandardCards_withSuit_returnsCardsWithZeroJokerRanks() throws {
+    func test_getStandardCards_withSuit_returnsCardsWithZeroJokerRanks() {
 
         // Given
         let suit = Suit.hearts
@@ -1725,7 +1727,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 0
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
         let actual = standardCards.getCount(of: rank)
 
         // Then
@@ -1734,14 +1736,14 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with a `Suit` returns `PlayingCard`s that
     /// only contains the given  `Suit`.
-    func test_getStandardCards_withSuit_returnsCardsWithOnlyGivenSuit() throws {
+    func test_getStandardCards_withSuit_returnsCardsWithOnlyGivenSuit() {
 
         // Given
         let suit = Suit.hearts
         let expected = suit
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suit)
+        let standardCards = PlayingCards.getStandardCards(with: suit)
 
         // Then
         XCTAssert(standardCards.contain(only: expected))
@@ -1751,31 +1753,31 @@ class PlayingCardsHelperTests: XCTestCase {
     // With Multiple Suits //
     //                     //
     
-    /// Tests that retrieving all standard`PlayingCard`s with `Suit`s that contain an invalid `Suit`
-    /// throws an `invalidSuit Error`.
-    func test_getStandardCards_withInvalidSuits_throwsInvalidSuitError() throws {
-
-        // Given
-        let suit1 = Suit.hearts
-        let suit2 = Suit.stars
-        let suits = [suit1, suit2]
-        let expected = DepictionError.invalidSuit
-        
-        // When
-        XCTAssertThrowsError(try PlayingCards.getStandardCards(with: suits)) {
-            error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DepictionError)
-        }
-    }
+//    /// Tests that retrieving all standard`PlayingCard`s with `Suit`s that contain an invalid `Suit`
+//    /// an `invalidSuit Error`.
+//    func test_getStandardCards_withInvalidSuits_throwsInvalidSuitError() {
+//
+//        // Given
+//        let suit1 = Suit.hearts
+//        let suit2 = Suit.stars
+//        let suits = [suit1, suit2]
+//        let expected = DepictionError.invalidSuit
+//
+//        // When
+//        XCTAssertThrowsError(PlayingCards.getStandardCards(with: suits)) {
+//            error in
+//
+//            // Then
+//            XCTAssertEqual(expected, error as? DepictionError)
+//        }
+//    }
     
     // One Suit //
     // ~~~~~~~~ //
     
     /// Tests that retrieving all standard `PlayingCard`s with one `Suit` returns 13
     /// `PlayingCard`s.
-    func test_getStandardCards_withOneSuit_returns13PlayingCards() throws {
+    func test_getStandardCards_withOneSuit_returns13PlayingCards() {
 
         // Given
         let suit = Suit.hearts
@@ -1783,7 +1785,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 13
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suits)
+        let standardCards = PlayingCards.getStandardCards(with: suits)
         let actual = standardCards.count
         
         // Then
@@ -1793,7 +1795,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all standard `PlayingCard`s with one `Suit` returns `PlayingCard`s
     /// that only contain the given  `Suit`.
     func test_getStandardCards_withOneSuit_returnsCardsWithOnlyGivenSuit()
-        throws {
+        {
 
         // Given
         let suit = Suit.hearts
@@ -1801,7 +1803,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = suits
         
         // When
-        let standardCards = try PlayingCards.getStandardCards(with: suits)
+        let standardCards = PlayingCards.getStandardCards(with: suits)
 
         // Then
         XCTAssert(standardCards.contain(only: expected))
@@ -1812,13 +1814,13 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all standard `PlayingCard`s with the default `Suit`s returns 52
     /// `PlayingCard`s.
-    func test_getStandardCards_withDefaultSuits_returns52PlayingCards() throws {
+    func test_getStandardCards_withDefaultSuits_returns52PlayingCards() {
 
         // Given
         let expected = 52
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.count
         
         // Then
@@ -1837,7 +1839,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: aceOfHearts)
 
         // Then
@@ -1854,7 +1856,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: aceOfSpades)
 
         // Then
@@ -1871,7 +1873,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: aceOfDiamonds)
 
         // Then
@@ -1888,7 +1890,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: aceOfClubs)
 
         // Then
@@ -1907,7 +1909,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: twoOfHearts)
 
         // Then
@@ -1924,7 +1926,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: twoOfSpades)
 
         // Then
@@ -1941,7 +1943,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: twoOfDiamonds)
 
         // Then
@@ -1958,7 +1960,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: twoOfClubs)
 
         // Then
@@ -1977,7 +1979,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: threeOfHearts)
 
         // Then
@@ -1994,7 +1996,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: threeOfSpades)
 
         // Then
@@ -2011,7 +2013,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: threeOfDiamonds)
 
         // Then
@@ -2028,7 +2030,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: threeOfClubs)
 
         // Then
@@ -2047,7 +2049,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: fourOfHearts)
 
         // Then
@@ -2064,7 +2066,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: fourOfSpades)
 
         // Then
@@ -2081,7 +2083,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: fourOfDiamonds)
 
         // Then
@@ -2098,7 +2100,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: fourOfClubs)
 
         // Then
@@ -2117,7 +2119,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: fiveOfHearts)
 
         // Then
@@ -2134,7 +2136,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: fiveOfSpades)
 
         // Then
@@ -2151,7 +2153,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: fiveOfDiamonds)
 
         // Then
@@ -2168,7 +2170,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: fiveOfClubs)
 
         // Then
@@ -2187,7 +2189,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: sixOfHearts)
 
         // Then
@@ -2204,7 +2206,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: sixOfSpades)
 
         // Then
@@ -2221,7 +2223,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: sixOfDiamonds)
 
         // Then
@@ -2238,7 +2240,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: sixOfClubs)
 
         // Then
@@ -2257,7 +2259,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: sevenOfHearts)
 
         // Then
@@ -2274,7 +2276,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: sevenOfSpades)
 
         // Then
@@ -2291,7 +2293,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: sevenOfDiamonds)
 
         // Then
@@ -2308,7 +2310,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: sevenOfClubs)
 
         // Then
@@ -2327,7 +2329,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: eightOfHearts)
 
         // Then
@@ -2344,7 +2346,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: eightOfSpades)
 
         // Then
@@ -2361,7 +2363,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: eightOfDiamonds)
 
         // Then
@@ -2378,7 +2380,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: eightOfClubs)
 
         // Then
@@ -2397,7 +2399,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: nineOfHearts)
 
         // Then
@@ -2414,7 +2416,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: nineOfSpades)
 
         // Then
@@ -2431,7 +2433,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: nineOfDiamonds)
 
         // Then
@@ -2448,7 +2450,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: nineOfClubs)
 
         // Then
@@ -2467,7 +2469,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: tenOfHearts)
 
         // Then
@@ -2484,7 +2486,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: tenOfSpades)
 
         // Then
@@ -2501,7 +2503,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: tenOfDiamonds)
 
         // Then
@@ -2518,7 +2520,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
         let actual = standardCards.getCount(of: tenOfClubs)
 
         // Then
@@ -2537,7 +2539,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: jackOfHearts)
 
          // Then
@@ -2554,7 +2556,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: jackOfSpades)
 
          // Then
@@ -2571,7 +2573,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: jackOfDiamonds)
 
          // Then
@@ -2588,7 +2590,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: jackOfClubs)
 
          // Then
@@ -2607,7 +2609,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: queenOfHearts)
 
          // Then
@@ -2624,7 +2626,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: queenOfSpades)
 
          // Then
@@ -2641,7 +2643,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: queenOfDiamonds)
 
          // Then
@@ -2658,7 +2660,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: queenOfClubs)
 
          // Then
@@ -2677,7 +2679,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: kingOfHearts)
 
          // Then
@@ -2694,7 +2696,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: kingOfSpades)
 
          // Then
@@ -2711,7 +2713,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: kingOfDiamonds)
 
          // Then
@@ -2728,7 +2730,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let standardCards = try PlayingCards.getStandardCards()
+         let standardCards = PlayingCards.getStandardCards()
          let actual = standardCards.getCount(of: kingOfClubs)
 
          // Then
@@ -2744,7 +2746,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = PlayingCards.suits
         
         // When
-        let standardCards = try PlayingCards.getStandardCards()
+        let standardCards = PlayingCards.getStandardCards()
 
         // Then
         XCTAssert(standardCards.contain(only: expected))
@@ -2806,33 +2808,33 @@ class PlayingCardsHelperTests: XCTestCase {
     // With One Suit //
     //               //
     
-    /// Tests that retrieving all`PlayingCard`s, `Joker`s included, with an invalid `Suit` throws an
-    /// `invalidSuit Error`.
-    func test_getAllCards_withInvalidSuit_throwsInvalidSuitError() throws {
-
-        // Given
-        let suit = Suit.stars
-        let expected = DepictionError.invalidSuit
-        
-        // When
-        XCTAssertThrowsError(try PlayingCards.getAllCards(with: suit)) {
-            error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DepictionError)
-        }
-    }
+//    /// Tests that retrieving all`PlayingCard`s, `Joker`s included, with an invalid `Suit` an
+//    /// `invalidSuit Error`.
+//    func test_getAllCards_withInvalidSuit_throwsInvalidSuitError() {
+//
+//        // Given
+//        let suit = Suit.stars
+//        let expected = DepictionError.invalidSuit
+//
+//        // When
+//        XCTAssertThrowsError(PlayingCards.getAllCards(with: suit)) {
+//            error in
+//
+//            // Then
+//            XCTAssertEqual(expected, error as? DepictionError)
+//        }
+//    }
     
     /// Tests that retrieving all `PlayingCard`s with a `Suit`, `Joker`s included,  returns 15
     /// `PlayingCard`s.
-    func test_getAllCards_withSuit_returns15PlayingCards() throws {
+    func test_getAllCards_withSuit_returns15PlayingCards() {
 
         // Given
         let suit = Suit.hearts
         let expected = 15
         
         // When
-        let standardCards = try PlayingCards.getAllCards(with: suit)
+        let standardCards = PlayingCards.getAllCards(with: suit)
         let actual = standardCards.count
         
         // Then
@@ -2841,7 +2843,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with an `ace rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneAceRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneAceRank() {
 
         // Given
         let suit = Suit.hearts
@@ -2849,7 +2851,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -2858,7 +2860,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `two rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneTwoRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneTwoRank() {
 
         // Given
         let suit = Suit.hearts
@@ -2866,7 +2868,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -2875,7 +2877,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `three rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneThreeRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneThreeRank() {
 
         // Given
         let suit = Suit.hearts
@@ -2883,7 +2885,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -2892,7 +2894,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `four rank`.
-    func test_geAllCards_withSuit_returnsCardsWithOnlyOneFourRank() throws {
+    func test_geAllCards_withSuit_returnsCardsWithOnlyOneFourRank() {
 
         // Given
         let suit = Suit.hearts
@@ -2900,7 +2902,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -2909,7 +2911,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `five rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneFiveRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneFiveRank() {
 
         // Given
         let suit = Suit.hearts
@@ -2917,7 +2919,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -2926,7 +2928,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `six rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneSixRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneSixRank() {
 
         // Given
         let suit = Suit.hearts
@@ -2934,7 +2936,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -2943,7 +2945,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `seven rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneSevenRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneSevenRank() {
 
         // Given
         let suit = Suit.hearts
@@ -2951,7 +2953,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -2960,7 +2962,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with an `eight rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneEightRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneEightRank() {
 
         // Given
         let suit = Suit.hearts
@@ -2968,7 +2970,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -2977,7 +2979,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `nine rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneNineRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneNineRank() {
 
         // Given
         let suit = Suit.hearts
@@ -2985,7 +2987,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -2994,7 +2996,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `ten rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneTenRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneTenRank() {
 
         // Given
         let suit = Suit.hearts
@@ -3002,7 +3004,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -3011,7 +3013,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `jack rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneJackRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneJackRank() {
 
         // Given
         let suit = Suit.hearts
@@ -3019,7 +3021,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -3028,7 +3030,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `queen rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneQueenRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneQueenRank() {
 
         // Given
         let suit = Suit.hearts
@@ -3036,7 +3038,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -3045,7 +3047,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with a `Suit` returns
     /// `PlayingCard`s that only contain one `PlayingCard` with a `king rank`.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneKingRank() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneKingRank() {
 
         // Given
         let suit = Suit.hearts
@@ -3053,7 +3055,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: rank)
 
         // Then
@@ -3062,7 +3064,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all`PlayingCard`s, `Joker`s included, with a `Suit` returns
     /// `PlayingCard`s that only contains one red `Joker`s.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneRedJoker() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneRedJoker() {
 
         // Given
         let suit = Suit.hearts
@@ -3070,7 +3072,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: redJoker)
         
         // Then
@@ -3079,7 +3081,7 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all`PlayingCard`s, `Joker`s included, with a `Suit` returns
     /// `PlayingCard`s that only contains one black `Joker`s.
-    func test_getAllCards_withSuit_returnsCardsWithOnlyOneBlackJoker() throws {
+    func test_getAllCards_withSuit_returnsCardsWithOnlyOneBlackJoker() {
 
         // Given
         let suit = Suit.hearts
@@ -3087,7 +3089,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit)
+        let cards = PlayingCards.getAllCards(with: suit)
         let actual = cards.getCount(of: blackJoker)
         
         // Then
@@ -3097,7 +3099,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all `PlayingCard`s with a `Suit` returns `PlayingCard`s that only
     /// contains the given and `null Suit`s.
     func test_getAllCards_withSuit_returnsCardsWithOnlyGivenAndNullSuit()
-        throws {
+        {
 
         // Given
         let suit1 = Suit.hearts
@@ -3105,7 +3107,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = [suit1, suit2]
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suit1)
+        let cards = PlayingCards.getAllCards(with: suit1)
 
         // Then
         XCTAssert(cards.contain(only: expected))
@@ -3114,32 +3116,32 @@ class PlayingCardsHelperTests: XCTestCase {
     //                     //
     // With Multiple Suits //
     //                     //
-    
-    /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with `Suit`s that contain an
-    /// invalid `Suit` throws an `invalidSuit Error`.
-    func test_getAllCards_withInvalidSuits_throwsInvalidSuitError() throws {
-
-        // Given
-        let suit1 = Suit.hearts
-        let suit2 = Suit.stars
-        let suits = [suit1, suit2]
-        let expected = DepictionError.invalidSuit
-        
-        // When
-        XCTAssertThrowsError(try PlayingCards.getAllCards(with: suits)) {
-            error in
-
-            // Then
-            XCTAssertEqual(expected, error as? DepictionError)
-        }
-    }
+//
+//    /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with `Suit`s that contain an
+//    /// invalid `Suit` an `invalidSuit Error`.
+//    func test_getAllCards_withInvalidSuits_throwsInvalidSuitError() {
+//
+//        // Given
+//        let suit1 = Suit.hearts
+//        let suit2 = Suit.stars
+//        let suits = [suit1, suit2]
+//        let expected = DepictionError.invalidSuit
+//
+//        // When
+//        XCTAssertThrowsError(PlayingCards.getAllCards(with: suits)) {
+//            error in
+//
+//            // Then
+//            XCTAssertEqual(expected, error as? DepictionError)
+//        }
+//    }
     
     // One Suit //
     // ~~~~~~~~ //
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with one `Suit` returns 15
     /// `PlayingCard`s.
-    func test_getAllCards_withOneSuit_returns15PlayingCards() throws {
+    func test_getAllCards_withOneSuit_returns15PlayingCards() {
 
         // Given
         let suit = Suit.hearts
@@ -3147,7 +3149,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 15
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suits)
+        let cards = PlayingCards.getAllCards(with: suits)
         let actual = cards.count
         
         // Then
@@ -3157,7 +3159,7 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included,  with one `Suit`s returns
     /// `PlayingCard`s that only contain the given and `null Suit`s.
     func test_getAllCards_withOneSuit_returnsCardsWithOnlyGivenAndNullSuits()
-        throws {
+        {
 
         // Given
         let suit1 = Suit.hearts
@@ -3166,7 +3168,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = [suit1, suit2]
         
         // When
-        let cards = try PlayingCards.getAllCards(with: suits)
+        let cards = PlayingCards.getAllCards(with: suits)
 
         // Then
         XCTAssert(cards.contain(only: expected))
@@ -3178,13 +3180,13 @@ class PlayingCardsHelperTests: XCTestCase {
     
     /// Tests that retrieving all `PlayingCard`s, `Joker`s included, with the default `Suit`s returns 54
     /// `PlayingCard`s.
-    func test_getAllCards_withDefaultSuits_returns54PlayingCards() throws {
+    func test_getAllCards_withDefaultSuits_returns54PlayingCards() {
 
         // Given
         let expected = 54
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.count
         
         // Then
@@ -3202,7 +3204,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: aceOfHearts)
 
         // Then
@@ -3218,7 +3220,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: aceOfSpades)
 
         // Then
@@ -3234,7 +3236,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: aceOfDiamonds)
 
         // Then
@@ -3250,7 +3252,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: aceOfClubs)
 
         // Then
@@ -3268,7 +3270,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: twoOfHearts)
 
         // Then
@@ -3284,7 +3286,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: twoOfSpades)
 
         // Then
@@ -3300,7 +3302,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: twoOfDiamonds)
 
         // Then
@@ -3316,7 +3318,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: twoOfClubs)
 
         // Then
@@ -3334,7 +3336,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: threeOfHearts)
 
         // Then
@@ -3350,7 +3352,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: threeOfSpades)
 
         // Then
@@ -3367,7 +3369,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: threeOfDiamonds)
 
         // Then
@@ -3383,7 +3385,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: threeOfClubs)
 
         // Then
@@ -3401,7 +3403,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: fourOfHearts)
 
         // Then
@@ -3417,7 +3419,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: fourOfSpades)
 
         // Then
@@ -3434,7 +3436,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: fourOfDiamonds)
 
         // Then
@@ -3450,7 +3452,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: fourOfClubs)
 
         // Then
@@ -3468,7 +3470,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: fiveOfHearts)
 
         // Then
@@ -3484,7 +3486,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: fiveOfSpades)
 
         // Then
@@ -3501,7 +3503,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: fiveOfDiamonds)
 
         // Then
@@ -3517,7 +3519,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: fiveOfClubs)
 
         // Then
@@ -3535,7 +3537,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: sixOfHearts)
 
         // Then
@@ -3551,7 +3553,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: sixOfSpades)
 
         // Then
@@ -3567,7 +3569,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: sixOfDiamonds)
 
         // Then
@@ -3583,7 +3585,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: sixOfClubs)
 
         // Then
@@ -3601,7 +3603,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: sevenOfHearts)
 
         // Then
@@ -3617,7 +3619,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: sevenOfSpades)
 
         // Then
@@ -3634,7 +3636,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: sevenOfDiamonds)
 
         // Then
@@ -3650,7 +3652,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: sevenOfClubs)
 
         // Then
@@ -3668,7 +3670,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: eightOfHearts)
 
         // Then
@@ -3684,7 +3686,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: eightOfSpades)
 
         // Then
@@ -3701,7 +3703,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: eightOfDiamonds)
 
         // Then
@@ -3717,7 +3719,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: eightOfClubs)
 
         // Then
@@ -3735,7 +3737,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: nineOfHearts)
 
         // Then
@@ -3751,7 +3753,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: nineOfSpades)
 
         // Then
@@ -3768,7 +3770,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: nineOfDiamonds)
 
         // Then
@@ -3784,7 +3786,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: nineOfClubs)
 
         // Then
@@ -3802,7 +3804,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: tenOfHearts)
 
         // Then
@@ -3818,7 +3820,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: tenOfSpades)
 
         // Then
@@ -3834,7 +3836,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: tenOfDiamonds)
 
         // Then
@@ -3850,7 +3852,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
         
         // When
-        let cards = try PlayingCards.getAllCards()
+        let cards = PlayingCards.getAllCards()
         let actual = cards.getCount(of: tenOfClubs)
 
         // Then
@@ -3868,7 +3870,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: jackOfHearts)
 
          // Then
@@ -3884,7 +3886,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: jackOfSpades)
 
          // Then
@@ -3901,7 +3903,7 @@ class PlayingCardsHelperTests: XCTestCase {
         let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: jackOfDiamonds)
 
          // Then
@@ -3917,7 +3919,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: jackOfClubs)
 
          // Then
@@ -3936,7 +3938,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: queenOfHearts)
 
          // Then
@@ -3953,7 +3955,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: queenOfSpades)
 
          // Then
@@ -3970,7 +3972,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: queenOfDiamonds)
 
          // Then
@@ -3986,7 +3988,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: queenOfClubs)
 
          // Then
@@ -4004,7 +4006,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: kingOfHearts)
 
          // Then
@@ -4020,7 +4022,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: kingOfSpades)
 
          // Then
@@ -4037,7 +4039,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: kingOfDiamonds)
 
          // Then
@@ -4053,7 +4055,7 @@ class PlayingCardsHelperTests: XCTestCase {
          let expected = 1
          
          // When
-         let cards = try PlayingCards.getAllCards()
+         let cards = PlayingCards.getAllCards()
          let actual = cards.getCount(of: kingOfClubs)
 
          // Then
@@ -4063,13 +4065,13 @@ class PlayingCardsHelperTests: XCTestCase {
     /// Tests that retrieving all `PlayingCard`s with the default `Suit`s returns `PlayingCard`s that
     /// only contain the standard and `null Suit`s.
     func test_getAllCards_withDefaultSuits_returnsCardsWithOnlyStandardAndNullSuits()
-        throws {
+    throws {
 
         // Given
         let expected = PlayingCards.allSuits
         
         // When
-        let standardCards = try PlayingCards.getAllCards()
+        let standardCards = PlayingCards.getAllCards()
 
         // Then
         XCTAssert(standardCards.contain(only: expected))

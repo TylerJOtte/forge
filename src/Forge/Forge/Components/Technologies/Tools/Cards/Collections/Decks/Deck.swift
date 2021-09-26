@@ -124,7 +124,42 @@ public class Deck: Cards {
     ///   - `invalidMin` if the given min is &lt; 0.
     ///   - `invalidMax` if the given max is &lt; 1, or &lt; the specified min.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
-    public init(of min: Int, to max: Int, _ cards: [Card]) throws {
+    init(_ min: Int, _ max: Int, _ cards: [Card]) {
+        
+        assert(min >= 0, "The given min must be >= 0.")
+        assert(max >= 1, "The given max must be >= 1.")
+        assert(max >= min, "The given max must be >= the specified min.")
+        assert(cards.count >= min,
+               "The given Cards must contain at least \(min) Cards.")
+        assert(cards.count <= max,
+               "The given Cards can contain at most \(max) Cards.")
+        
+        self.minCards = min
+        self.maxCards = max
+        self.cards = [:]
+        
+        try! add(cards)
+    }
+    
+    /// Creates a`Deck`with the given terms.
+    ///
+    /// - Precondition:
+    ///   - The given  min must be >= 0.
+    ///   - The given max must be  >= 1 & >= specified min.
+    ///   - The given `Card`s must contain the specified min to max # of `Card`s.
+    /// - Postcondition:
+    ///   - The `Deck` can hold the given min to max # of `Card`s.
+    ///   - The `Deck` contains the given `Card`s.
+    ///   - The `Deck`'s title is set to "Deck".
+    /// - Parameters:
+    ///   - min: The minimum # of `Card`s allowed in the `Deck`.
+    ///   - max: The maximum # of `Card`s allowed in the `Deck`.
+    ///   - cards: The `Card`s to include in the `Deck`.
+    /// - Throws:
+    ///   - `invalidMin` if the given min is &lt; 0.
+    ///   - `invalidMax` if the given max is &lt; 1, or &lt; the specified min.
+    ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
+    public convenience init(of min: Int, to max: Int, _ cards: [Card]) throws {
         
         guard (min >= 0) else {
             
@@ -156,11 +191,13 @@ public class Deck: Cards {
             throw ElementsError.invalidCount
         }
         
-        self.minCards = min
-        self.maxCards = max
-        self.cards = [:]
+//        self.minCards = min
+//        self.maxCards = max
+//        self.cards = [:]
         
-        try! add(cards)
+//        try! add(cards)
+        
+        self.init(min, max, cards)
     }
     
     //=========================================================================//

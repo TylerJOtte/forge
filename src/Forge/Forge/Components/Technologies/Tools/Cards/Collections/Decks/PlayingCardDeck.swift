@@ -31,26 +31,22 @@ public class PlayingCardDeck: Deck {
     //                               CONSTRUCTORS                              //
     //=========================================================================//
     
-    /// Creates a standard French-suited`PlayingCardDeck`with a `PlayingCard` for each
-    /// `PlayingCard Rank` & `Suit`, along with `joker Card`s if specified.
+    /// Creates a standard French-suited`PlayingCardDeck` along with `Joker`s, if allowed.
     ///
     /// - Precondition: None.
     /// - Postcondition:
-    ///   - The `Deck` can hold zero to 54 `PlayingCard`s if `jokers` included, else zero to 52.
+    ///   - The `Deck` can hold 0-54 `PlayingCard`s if `Jokers` allowed, else 0-52.
     ///   - The `Deck` contains a `PlayingCard` for each standard `PlayingCard Rank` &
-    ///    `Suit`, along with `joker Card`s if specified.
+    ///    `Suit` along with `Jokers`s if allowed.
     ///   - The `Deck`'s title is set to "Playing Card Deck".
-    /// - Parameters:
-    ///   - cards: The `Card`s to create `Deck` with.
-    ///   - max: The maximum # of `Card`s allowed in the `Deck.`
-    public init(with jokers: Bool = false) throws {
+    /// - Parameter jokers: True if allow `Jokers`, else false.
+    public init(with jokers: Bool = false) {
         
         let min = 0
         let max = jokers ? 54 : 52
-        let cards = jokers ? try PlayingCards.getAllCards() :
-            try PlayingCards.getStandardCards()
+        let cards = PlayingCards.getCards(with: jokers)
         
         self.includesJokers = jokers
-        try super.init(of: min, to: max, cards)
+        super.init(min, max, cards)
     }
 }
