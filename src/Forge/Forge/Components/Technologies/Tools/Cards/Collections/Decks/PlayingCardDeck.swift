@@ -24,12 +24,14 @@ public class PlayingCardDeck: Deck {
     //                                ATTRIBUTES                               //
     //=========================================================================//
     
-    /// True if incldues `joker PlayingCard`s, else false.
-    public let includesJokers: Bool
+    /// True if `Joker`s allowed, else false.
+    public let jokersAllowed: Bool
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
+    
+    // TODO: Add unit tests for constructor below
     
     /// Creates a standard French-suited`PlayingCardDeck` along with `Joker`s, if allowed.
     ///
@@ -39,6 +41,7 @@ public class PlayingCardDeck: Deck {
     ///   - The `Deck` contains a `PlayingCard` for each standard `PlayingCard Rank` &
     ///    `Suit` along with `Jokers`s if allowed.
     ///   - The `Deck`'s title is set to "Playing Card Deck".
+    ///   - `jokersAllowed` is set to the given `Joker`s status.
     /// - Parameter jokers: True if allow `Jokers`, else false.
     public init(with jokers: Bool = false) {
         
@@ -46,7 +49,7 @@ public class PlayingCardDeck: Deck {
         let max = jokers ? 54 : 52
         let cards = PlayingCards.getCards(with: jokers)
         
-        self.includesJokers = jokers
+        self.jokersAllowed = jokers
         super.init(min, max, cards)
     }
 }
