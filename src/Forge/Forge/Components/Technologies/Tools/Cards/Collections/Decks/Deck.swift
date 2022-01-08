@@ -317,4 +317,40 @@ public class Deck: Cards {
         
         return cards[card.title]!.removeLast()
     }
+    
+    /// Removes the given `Card` from the `Deck`,  and adds it to the specified `Hand`.
+    ///
+    /// - Precondition:
+    ///   - The `Deck` cannot be empty.
+    ///   - The `Deck` must contain the given `Card`.
+    ///   - The given `Hand` cannot be full.
+    /// - Postcondition:
+    ///   - The `Deck` no longer contains the given `Card`.
+    ///   - The given `Hand` contains the specified `Hand`.
+    /// - Parameters:
+    ///   - card: The `Card` to deal to the given `Hand`.
+    ///   - hand: The `Hand` to deal the given `Card` to.
+    /// - Throws:
+    ///   - `ElementsError.isEmpty` if the `Deck` is empty.
+    ///   - `ElementsError.notFound` if the `Deck` doesn't contain the given `Card`.
+    ///   - `ElementsError.isFull` if the given `Hand` is full.
+    public func deal(_ card: Card, to hand: Hand) throws {
+        
+        guard (!isEmpty()) else {
+            
+            throw ElementsError.isEmpty
+        }
+        
+        guard (contains(card)) else {
+            
+            throw ElementsError.notFound
+        }
+        
+        guard (hand.isFull()) else {
+            
+            throw ElementsError.isFull
+        }
+        
+        try hand.add(remove(card))
+    }
 }
