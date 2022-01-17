@@ -35,6 +35,9 @@ public class Deck<T: Card>: Cards {
     /// The total # of `Card`s.
     public var count: Int { cards.count }
     
+    /// The `Card`'s next `Card` position.
+    private var index: Int = 0
+    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
@@ -215,8 +218,34 @@ public class Deck<T: Card>: Cards {
     }
     
     //=========================================================================//
-    //                                 FILTERS                                 //
+    //                                 GETTERS                                 //
     //=========================================================================//
+    
+    /// Retrieves the next `Card` in the `Deck` without removing it.
+    ///
+    /// - Precondition: The `Deck` cannot be empty.
+    /// - Postcondition: None.
+    /// - Returns: The next `Card` in the `Deck`.
+    public func getNextCard() throws -> T {
+        
+        guard (!isEmpty()) else {
+            
+            throw ElementsError.isEmpty
+        }
+        
+        let card = cards[index]
+        
+        if (index == cards.count - 1 && cards.count > 0) {
+            
+            index = 0
+        
+        } else {
+            
+            index += 1
+        }
+        
+        return card
+    }
     
     /// Retrieves all the `Card`s that do not exist in the given `Collection`.
     ///
