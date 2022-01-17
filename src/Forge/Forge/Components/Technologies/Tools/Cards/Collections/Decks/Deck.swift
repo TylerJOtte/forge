@@ -30,10 +30,10 @@ public class Deck<T: Card>: Cards {
     public let maxCards: Int
     
     /// The `Card`s.
-    private var cards: [String : [T]]
+    private var cards: [T]
     
     /// The total # of `Card`s.
-    public var count: Int { return cards.totalCount }
+    public var count: Int { cards.count }
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -50,7 +50,7 @@ public class Deck<T: Card>: Cards {
         
         self.minCards = 0
         self.maxCards = Int.max
-        self.cards = [:]
+        self.cards = []
     }
     
     /// Creates a`Deck`with the given terms.
@@ -65,9 +65,7 @@ public class Deck<T: Card>: Cards {
         
         self.minCards = 0
         self.maxCards = Int.max
-        self.cards = [:]
-        
-        try! add(cards)
+        self.cards = cards
     }
     
     /// Creates a`Deck`with the given terms.
@@ -101,9 +99,7 @@ public class Deck<T: Card>: Cards {
         
         self.minCards = 0
         self.maxCards = max
-        self.cards = [:]
-        
-        try! add(cards)
+        self.cards = cards
     }
     
     /// Creates a`Deck`with the given terms.
@@ -136,9 +132,7 @@ public class Deck<T: Card>: Cards {
         
         self.minCards = min
         self.maxCards = max
-        self.cards = [:]
-        
-        try! add(cards)
+        self.cards = cards
     }
     
     /// Creates a`Deck`with the given terms.
@@ -191,22 +185,12 @@ public class Deck<T: Card>: Cards {
             throw ElementsError.invalidCount
         }
         
-//        self.minCards = min
-//        self.maxCards = max
-//        self.cards = [:]
-        
-//        try! add(cards)
-        
         self.init(min, max, cards)
     }
     
     //=========================================================================//
     //                                 TESTERS                                 //
     //=========================================================================//
-    
-    //-------------------------------------------------------------------------//
-    //                                  =                                      //
-    //-------------------------------------------------------------------------//
     
     /// Determines if the `Deck` equals the given `Deck`.
     ///
@@ -216,25 +200,9 @@ public class Deck<T: Card>: Cards {
     /// - Returns: True if the `Deck` equals the given `Deck`, else false.
     public func equals(_ rhs: Deck) -> Bool {
         
-        return count == rhs.count && cards.allValueElements.sorted() ==
-            rhs.cards.allValueElements.sorted()
+        return count == rhs.count && cards.sorted() == rhs.cards.sorted()
     }
-    
-    //-------------------------------------------------------------------------//
-    //                                 contains()                              //
-    //-------------------------------------------------------------------------//
-    
-    /// Determines if a key exists for the given`Card`.
-    ///
-    /// - Precondition: None.
-    /// - Postcondition: None.
-    /// - Parameter card: The `Card` to find key for.
-    /// - Returns: True if a key exists for the  given `Card`, else false.
-    private func containsKey(_ card: T) -> Bool {
-        
-        return cards.keys.contains(card.title)
-    }
-    
+
     /// Determines if the given `Card` exists.
     ///
     /// - Precondition: None.
@@ -243,7 +211,7 @@ public class Deck<T: Card>: Cards {
     /// - Returns: True if the given `Card` exists, else false.
     public func contains(_ card: T) -> Bool {
         
-        return containsKey(card) && cards[card.title]!.count > 0
+        return cards.contains(card)
     }
     
     //=========================================================================//
@@ -259,14 +227,14 @@ public class Deck<T: Card>: Cards {
     public func except<Cards>(_ cards: Cards) -> [T] where Cards : Collection,
         Cards.Element == T {
         
-        return self.cards.allValueElements.except(cards)
+        return self.cards.except(cards)
     }
     
     //=========================================================================//
     //                                  ADDERS                                 //
     //=========================================================================//
     
-    /// Adds the given `Card`.
+    /// Adds the given `Card` to the `Deck`.
     ///
     /// - Precondition: The `Deck` cannot be full.
     /// - Postcondition: The `Deck` contains the given `Card`.
@@ -279,21 +247,14 @@ public class Deck<T: Card>: Cards {
             throw RangeError.isFull
         }
         
-        if (containsKey(card)) {
-            
-            cards[card.title]!.append(card)
-            
-        } else {
-            
-            cards[card.title] = [card]
-        }
+        cards.append(card)
     }
     
     //=========================================================================//
     //                                 REMOVERS                                //
     //=========================================================================//
     
-    /// Removes the first istance of the given `Card` from the collection.
+    /// Removes the first instance of the given `Card` from the collection.
     ///
     /// - Precondition:
     ///   - The collection cannot be empty.
@@ -315,7 +276,9 @@ public class Deck<T: Card>: Cards {
             throw ElementsError.notFound
         }
         
-        return cards[card.title]!.removeLast()
+        let index = cards.firstIndex(where: {$0 == card})!
+        
+        return cards.remove(at: index)
     }
     
     /// Removes the given `Card` from the `Deck`,  and adds it to the specified `Hand`.
