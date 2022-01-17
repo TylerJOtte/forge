@@ -251,6 +251,21 @@ public class Hand<T: Card>: Cards {
         return self.cards.except(cards)
     }
     
+    // TODO: Add tests for sort method
+    
+    //=========================================================================//
+    //                                 SORTERS                                 //
+    //=========================================================================//
+
+    /// Sorts the `Deck` in ascending `Card` order.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: All the `Card`s in the `Deck` are in ascending order.
+    public func sort() {
+
+        cards.sort(by: <)
+    }
+    
     //=========================================================================//
     //                                  ADDERS                                 //
     //=========================================================================//

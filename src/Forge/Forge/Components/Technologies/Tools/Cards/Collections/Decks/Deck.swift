@@ -259,6 +259,21 @@ public class Deck<T: Card>: Cards {
         return self.cards.except(cards)
     }
     
+    // TODO: Add tests for sort method
+    
+    //=========================================================================//
+    //                                 SORTERS                                 //
+    //=========================================================================//
+
+    /// Sorts the `Deck` in ascending `Card` order.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: All the `Card`s in the `Deck` are in ascending order.
+    public func sort() {
+
+        cards.sort(by: <)
+    }
+    
     //=========================================================================//
     //                                  ADDERS                                 //
     //=========================================================================//
@@ -277,6 +292,44 @@ public class Deck<T: Card>: Cards {
         }
         
         cards.append(card)
+    }
+    
+    // TODO: Add tests for collect method
+    
+    /// Removes the given `Card` from the specified `Hand`,  and adds it to the `Deck`.
+    ///
+    /// - Precondition:
+    ///   - The `Deck` cannot be full.
+    ///   - The given `Hand` cannot be empty.
+    ///   - The given `Hand` must contain the given `Card`.
+    /// - Postcondition:
+    ///   - The given `Hand` no longer contains the specified `Card`.
+    ///   - The `Deck` contains the given `Card`.
+    /// - Parameters:
+    ///   - card: The `Card` to collect from  the given `Hand`.
+    ///   - hand: The `Hand` to collect the given `Card` from.
+    /// - Throws:
+    ///   - `ElementsError.isFull` if the `Deck` is full.
+    ///   - `ElementsError.isEmpty` if the given `Hand` is empty.
+    ///   - `ElementsError.notFound` if the given `Hand` doesn't contain the specified `Card`.
+    public func collect(_ card: T, from hand: Hand<T>) throws {
+        
+        guard (!isFull()) else {
+
+            throw ElementsError.isFull
+        }
+        
+        guard (!hand.isEmpty()) else {
+            
+            throw ElementsError.isEmpty
+        }
+        
+        guard (hand.contains(card)) else {
+            
+            throw ElementsError.notFound
+        }
+        
+        try add(hand.remove(card))
     }
     
     //=========================================================================//
@@ -310,6 +363,8 @@ public class Deck<T: Card>: Cards {
         return cards.remove(at: index)
     }
     
+    // TODO: Add tests for deal method
+    
     /// Removes the given `Card` from the `Deck`,  and adds it to the specified `Hand`.
     ///
     /// - Precondition:
@@ -326,7 +381,7 @@ public class Deck<T: Card>: Cards {
     ///   - `ElementsError.isEmpty` if the `Deck` is empty.
     ///   - `ElementsError.notFound` if the `Deck` doesn't contain the given `Card`.
     ///   - `ElementsError.isFull` if the given `Hand` is full.
-    public func deal(_ card: T, to hand: Hand) throws {
+    public func deal(_ card: T, to hand: Hand<T>) throws {
         
         guard (!isEmpty()) else {
             
