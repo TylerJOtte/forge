@@ -18,21 +18,21 @@ import Foundation
 import SwiftUI
 
 /// A standard French-suited `Deck` of `PlayingCard`s.
-public class PlayingCardDeck: Deck {
-    
+public class PlayingCardDeck: Deck<PlayingCard> {
+
     //=========================================================================//
     //                                ATTRIBUTES                               //
     //=========================================================================//
-    
+
     /// True if `Joker`s allowed, else false.
     public let jokersAllowed: Bool
-    
+
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
-    
+
     // TODO: Add unit tests for constructor below
-    
+
     /// Creates a standard French-suited`PlayingCardDeck` along with `Joker`s, if allowed.
     ///
     /// - Precondition: None.
@@ -44,12 +44,13 @@ public class PlayingCardDeck: Deck {
     ///   - `jokersAllowed` is set to the given `Joker`s status.
     /// - Parameter jokers: True if allow `Jokers`, else false.
     public init(with jokers: Bool = false) {
-        
+
         let min = 0
         let max = jokers ? 54 : 52
         let cards = PlayingCards.getCards(with: jokers)
-        
+
         self.jokersAllowed = jokers
+        
         super.init(min, max, cards)
     }
 }

@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Deck` of `Card`s.
-public class Deck: Cards {
+public class Deck<T: Card>: Cards {
 
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -30,7 +30,7 @@ public class Deck: Cards {
     public let maxCards: Int
     
     /// The `Card`s.
-    private var cards: [String : [Card]]
+    private var cards: [String : [T]]
     
     /// The total # of `Card`s.
     public var count: Int { return cards.totalCount }
@@ -61,7 +61,7 @@ public class Deck: Cards {
     ///   - The `Deck` contains the given `Card`s.
     ///   - The `Deck`'s title is set to "Deck".
     /// - Parameter cards: The `Card`s to include in the `Deck`.
-    public init(of cards: [Card]) {
+    public init(of cards: [T]) {
         
         self.minCards = 0
         self.maxCards = Int.max
@@ -85,7 +85,7 @@ public class Deck: Cards {
     /// - Throws:
     ///   - `invalidMax` if the given max is &lt; 1.
     ///   - `invalidCount` if the given `Card`s contain more than the specified max # of `Card`s.
-    public init(of max: Int,  _ cards: [Card]) throws {
+    public init(of max: Int,  _ cards: [T]) throws {
         
         guard (max >= 1) else {
             
@@ -124,7 +124,7 @@ public class Deck: Cards {
     ///   - `invalidMin` if the given min is &lt; 0.
     ///   - `invalidMax` if the given max is &lt; 1, or &lt; the specified min.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
-    init(_ min: Int, _ max: Int, _ cards: [Card]) {
+    init(_ min: Int, _ max: Int, _ cards: [T]) {
         
         assert(min >= 0, "The given min must be >= 0.")
         assert(max >= 1, "The given max must be >= 1.")
@@ -159,7 +159,7 @@ public class Deck: Cards {
     ///   - `invalidMin` if the given min is &lt; 0.
     ///   - `invalidMax` if the given max is &lt; 1, or &lt; the specified min.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
-    public convenience init(of min: Int, to max: Int, _ cards: [Card]) throws {
+    public convenience init(of min: Int, to max: Int, _ cards: [T]) throws {
         
         guard (min >= 0) else {
             
@@ -241,7 +241,7 @@ public class Deck: Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find.
     /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: Card) -> Bool {
+    public func contains(_ card: T) -> Bool {
         
         return containsKey(card) && cards[card.title]!.count > 0
     }
@@ -256,8 +256,8 @@ public class Deck: Cards {
     /// - Postcondition: None.
     /// - Parameter cards: The `Collection` to filter by.
     /// - Returns: An `Array` of `Card`s that do not exist in the given `Collection`.
-    public func except<Cards>(_ cards: Cards) -> [Card] where Cards : Collection,
-        Cards.Element == Card {
+    public func except<Cards>(_ cards: Cards) -> [T] where Cards : Collection,
+        Cards.Element == T {
         
         return self.cards.allValueElements.except(cards)
     }
@@ -272,7 +272,7 @@ public class Deck: Cards {
     /// - Postcondition: The `Deck` contains the given `Card`.
     /// - Parameter card: The `card` to add to the `Deck`.
     /// - Throws: `RangeError.isFull` if the `Deck` is full.
-    public func add(_ card: Card) throws {
+    public func add(_ card: T) throws {
         
         guard (!isFull()) else {
             
@@ -303,7 +303,7 @@ public class Deck: Cards {
     /// - Throws:
     ///   - `ElementsError.isEmpty` if the collection is empty.
     ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
-    public func remove(_ card: Card) throws -> Card {
+    public func remove(_ card: T) throws -> T {
         
         guard (!isEmpty()) else {
             
@@ -326,7 +326,7 @@ public class Deck: Cards {
     ///   - The given `Hand` cannot be full.
     /// - Postcondition:
     ///   - The `Deck` no longer contains the given `Card`.
-    ///   - The given `Hand` contains the specified `Hand`.
+    ///   - The given `Hand` contains the specified `Card`.
     /// - Parameters:
     ///   - card: The `Card` to deal to the given `Hand`.
     ///   - hand: The `Hand` to deal the given `Card` to.
@@ -334,7 +334,7 @@ public class Deck: Cards {
     ///   - `ElementsError.isEmpty` if the `Deck` is empty.
     ///   - `ElementsError.notFound` if the `Deck` doesn't contain the given `Card`.
     ///   - `ElementsError.isFull` if the given `Hand` is full.
-    public func deal(_ card: Card, to hand: Hand) throws {
+    public func deal(_ card: T, to hand: Hand) throws {
         
         guard (!isEmpty()) else {
             
@@ -345,9 +345,9 @@ public class Deck: Cards {
             
             throw ElementsError.notFound
         }
-        
-        guard (hand.isFull()) else {
-            
+
+        guard (!hand.isFull()) else {
+
             throw ElementsError.isFull
         }
         
