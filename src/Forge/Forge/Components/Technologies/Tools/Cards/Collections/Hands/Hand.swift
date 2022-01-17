@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `Hand` of `Card`s.
-public class Hand: Cards {
+public class Hand<T: Card>: Cards {
 
     //=========================================================================//
     //                                ATTRIBUTES                               //
@@ -30,16 +30,19 @@ public class Hand: Cards {
     public let maxCards: Int
     
     /// The `Card`s.
-    private var cards: [Card]
+    private var cards: [T]
     
     /// The total # of `Card`s.
-    public var count: Int { return cards.count }
+    public var count: Int { cards.count }
     
     /// The `Hand`'s first `Card`.
-    public var first: Card? { return cards.first }
+    public var first: T? { cards.first }
 
     /// The `Hand`'s last `Card`.
-    public var last: Card? { return cards.last }
+    public var last: T? { cards.last }
+    
+    /// The `Card`'s next `Card` position.
+    private var index: Int = 0
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -59,6 +62,23 @@ public class Hand: Cards {
         cards = []
     }
     
+    /// Creates a`Hand`with the given max.
+    ///
+    /// - Precondition: The given max must be  >= 1.
+    /// - Postcondition:
+    ///   - The `Hand` can hold zero to given max # of `Card`s.
+    ///   - The `Hand` is empty.
+    ///   - The `Hand`'s title is set to "Hand".
+    /// - Parameter max: The maximum # of `Card`s allowed in the `Hand`.
+    internal init(of max: Int) {
+        
+        assert(max >= 1, "The given max must be >= 1.")
+        
+        minCards = 0
+        maxCards = max
+        self.cards = []
+    }
+    
     /// Creates a`Hand`with the given terms.
     ///
     /// - Precondition: None.
@@ -67,7 +87,7 @@ public class Hand: Cards {
     ///   - The `Hand` contains the given `Card`s.
     ///   - The `Hand`'s title is set to "Hand".
     /// - Parameter cards: The `Card`s to include in the `Hand`.
-    public init(of cards: [Card]) {
+    public init(of cards: [T]) {
         
         minCards = 0
         maxCards = Int.max
@@ -89,7 +109,7 @@ public class Hand: Cards {
     /// - Throws:
     ///   - `invalidMax` if the given max is &lt; 1.
     ///   - `invalidCount` if the given `Card`s contain more than the specified max # of `Card`s.
-    public init(of max: Int,  _ cards: [Card]) throws {
+    public init(of max: Int,  _ cards: [T]) throws {
         
         guard (max >= 1) else {
             
@@ -126,7 +146,7 @@ public class Hand: Cards {
     ///   - `invalidMin` if the given min is &lt; 0.
     ///   - `invalidMax` if the given max is &lt; 1, or &lt; the specified min.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
-    public init(of min: Int, to max: Int, _ cards: [Card]) throws {
+    public init(of min: Int, to max: Int, _ cards: [T]) throws {
         
         guard (min >= 0) else {
             
@@ -184,14 +204,40 @@ public class Hand: Cards {
     /// - Postcondition: None.
     /// - Parameter card: The `Card` to find.
     /// - Returns: True if the given `Card` exists, else false.
-    public func contains(_ card: Card) -> Bool {
+    public func contains(_ card: T) -> Bool {
         
         return cards.contains(card)
     }
     
     //=========================================================================//
-    //                                 FILTERS                                 //
+    //                                 GETTERS                                 //
     //=========================================================================//
+    
+    /// Retrieves the next `Card` in the `Deck` without removing it.
+    ///
+    /// - Precondition: The `Deck` cannot be empty.
+    /// - Postcondition: None.
+    /// - Returns: The next `Card` in the `Deck`.
+    public func getNextCard() throws -> T {
+        
+        guard (!isEmpty()) else {
+            
+            throw ElementsError.isEmpty
+        }
+        
+        let card = cards[index]
+        
+        if (index == cards.count - 1 && cards.count > 0) {
+            
+            index = 0
+        
+        } else {
+            
+            index += 1
+        }
+        
+        return card
+    }
     
     /// Retrieves all the `Card`s that do not exist in the given `Collection`.
     ///
@@ -199,8 +245,8 @@ public class Hand: Cards {
     /// - Postcondition: None.
     /// - Parameter cards: The `Collection` to filter by.
     /// - Returns: An `Array` of `Card`s that do not exist in the given `Collection`.
-    public func except<Cards>(_ cards: Cards) -> [Card] where Cards : Collection,
-        Cards.Element == Card {
+    public func except<Cards>(_ cards: Cards) -> [T] where Cards : Collection,
+        Cards.Element == T {
         
         return self.cards.except(cards)
     }
@@ -209,13 +255,13 @@ public class Hand: Cards {
     //                                  ADDERS                                 //
     //=========================================================================//
     
-    /// Adds the given `Card`.
+    /// Adds the given `Card` to the `Hand`.
     ///
     /// - Precondition: The `Hand` cannot be full.
     /// - Postcondition: The `Hand` contains the given `Card`.
     /// - Parameter card: The `Card` to add to the `Hand`.
     /// - Throws: `RangeError.isFull` if the `Hand` is full.
-    public func add(_ card: Card) throws {
+    public func add(_ card: T) throws {
         
         guard (!isFull()) else {
             
@@ -239,7 +285,7 @@ public class Hand: Cards {
     /// - Throws:
     ///   - `ElementsError.isEmpty` if the collection is empty.
     ///   - `ElementsError.notFound` if the collection doesn't contain the given `Card`.
-    public func remove(_ card: Card) throws -> Card {
+    public func remove(_ card: T) throws -> T {
         
         guard (!isEmpty()) else {
             

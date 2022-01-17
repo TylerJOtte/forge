@@ -18,49 +18,6 @@ import Foundation
 import SwiftUI
 
 /// A `Hand` of `PlayingCard`s.
-public class PlayingCardHand: Hand {
+public class PlayingCardHand: Hand<PlayingCard> {
     
-    //-------------------------------------------------------------------------//
-    //                                 Getters                                 //
-    //-------------------------------------------------------------------------//
-
-//    /// Retrieves all the `Run`s in the `Hand`.
-//    ///
-//    /// - Precondition: None.
-//    /// - Postcondition: None.
-//    /// - Returns: A collection of `Run`s.
-//    public func getRuns() -> [Run] {
-//        
-//        // TODO: implement stub
-//        
-//        return []
-//    }
-    
-//    /// Retrieves a `Flush` in the `Hand`, if any.
-//    ///
-//    /// - Precondition: None.
-//    /// - Postcondition: None.
-//    /// - Returns: An optional `Flush`.
-//    public func getFlush() -> Flush? {
-//
-//        // TODO: implement stub
-//
-//        return nil
-//    }
-    
-    //-------------------------------------------------------------------------//
-    //                               Calculators                               //
-    //-------------------------------------------------------------------------//
-    
-//    /// Retrieves the `Hand`'s `Score`.
-//    ///
-//    /// - Precondition: None.
-//    /// - Postcondition: None.
-//    /// - Returns: The `Hand`'s `Score`.
-//    public func Count() -> HandScore {
-//
-//        // TODO: implement stub
-//
-//        return HandScore(with: [:])
-//    }
 }
