@@ -94,6 +94,20 @@ extension Collection where Element: PlayingCard  {
         return splitBySuit().allKeys
     }
     
+    /// Retrieves the first `PlayingCard` with the given `Rank` and `Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameters:
+    ///   - rank: The `Rank` to filter by.
+    ///   - suit: The `Suit` to filter by.
+    /// - Returns: The first `PlayingCard` with the given `Rank` and `Suit`, or `nil` if none
+    ///            exists.
+    internal func first(_ rank: Rank, of suit: Suit) -> PlayingCard? {
+        
+        return first{$0.rank == rank && $0.suit == suit}
+    }
+                                 
     //=========================================================================//
     //                                SPLITTERS                                //
     //=========================================================================//
