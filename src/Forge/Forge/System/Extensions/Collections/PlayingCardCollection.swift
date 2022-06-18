@@ -107,7 +107,18 @@ extension Collection where Element: PlayingCard  {
         
         return first{$0.rank == rank && $0.suit == suit}
     }
-                                 
+     
+    /// Retrieves the first `Jack` with the given `Suit`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter suit: The `Suit` to filter by.
+    /// - Returns: The first `Jack` with the given `Suit`, or `nil` if none exists.
+    internal func firstJack(of suit: Suit) -> Jack? {
+        
+        return first(.jack, of: suit) as? Jack
+    }
+    
     //=========================================================================//
     //                                SPLITTERS                                //
     //=========================================================================//

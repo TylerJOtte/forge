@@ -355,6 +355,10 @@ class PlayingCardCollectionTests: XCTestCase {
         XCTAssert(actual.contains(only: expected))
     }
     
+    //-------------------------------------------------------------------------//
+    //                                   first()                               //
+    //-------------------------------------------------------------------------//
+    
     /// Tests that retrieving the first `PlayingCard` with a given `Rank` and `Suit`in a collection that
     /// contains it returns the expected `Card`.
     func test_first_rankOfSuit_returnsExpectedCard() throws {
@@ -385,6 +389,41 @@ class PlayingCardCollectionTests: XCTestCase {
         
         // When
         let actual = cards.first(.king, of: .hearts)
+        
+        // Then
+        XCTAssertNil(actual)
+    }
+    
+    /// Tests that retrieving the first `Jack` with a given `Suit` in a collection that contains it returns the
+    /// expected `Card`.
+    func test_firstJack_ofSuit_returnsExpectedCard() throws {
+        
+        // Given
+        let four = try Four(of: .hearts)
+        let five = try Five(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let cards = [four, five, jack]
+        let expected = jack
+        
+        // When
+        let actual = cards.firstJack(of: .hearts)
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving the first `Jack` with a given `Suit` in a collection that does not contains it
+    /// returns `nil`.
+    func test_firstJack_ofSuit_returnsNil() throws {
+        
+        // Given
+        let four = try Four(of: .hearts)
+        let five = try Five(of: .hearts)
+        let jack = try Jack(of: .hearts)
+        let cards = [four, five, jack]
+        
+        // When
+        let actual = cards.firstJack(of: .diamonds)
         
         // Then
         XCTAssertNil(actual)
