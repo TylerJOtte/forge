@@ -16,59 +16,39 @@
 
 import Foundation
 
-/// A `PlayingCard HandRank`s with a `Jack` and a `Card` of the same `Suit`.
-public class Nobs: HandRank {
+/// A `PlayingCard HandRank` with a `Jack` and a `Card` of the same `Suit`.
+public class Nobs: PlayingCardHandRank {
     
-    //=========================================================================//
-    //                               CONSTRUCTORS                              //
-    //=========================================================================//
-    
-    /// Creates a`Nobs HandRank`with the given `Card`s.
+    /// Creates a`Nobs HandRank`with the given `Jack` and cut `Card`.
     ///
     /// - Precondition:
-    ///   - The given `Card`s must contain two, and only two`Card`s.
-    ///   - The given `Card`s must contain one `Jack`, and one non-`Jack`.
-    ///   - The given `Card`s must both contain the same `Suit`.
+    ///   - The given cut `Card` cannot be a `Jack` or a `Joker`.
+    ///   - The given `Jack` and cut `Card` must contain the same `Suit`.
     /// - Postcondition:
-    ///   - The `HandRank` contains the given `Card`s.
+    ///   - The `HandRank` contains the given `Jack` and cut `Card`.
     ///   - The `HandRank`'s points are set to 1.
     ///   - The `HandRank` can only hold two ` Card`s.
     ///   - The `HandRank`'s title is set to "Nobs".
-    /// - Parameter cards: The `Card`s to include in the `HandRank`.
+    /// - Parameters:
+    ///   - jack: The `Jack` of the cut `Suit`.
+    ///   - cutCard: The `Deck`'s cut `Card`.
     /// - Throws:
-    ///   - `invalidCount` if the given `Card`s do not contain two, and only two `Card`s.
-    ///   - `invalidRank` if the given `Card`s do not contain one `Jack` and one non-`Jack`.
-    ///   - `invalidSuit` if the given `Card`s do not both contain the same `Suit`.
-    public init(of cards: [PlayingCard]) throws {
+    ///   - `invalidRank` if the given cut `Card` is a `Jack` or a `Joker`.
+    ///   - `invalidSuit` if the given `Jack` and cut `Card` do not contain the same `Suit`.
+    public init(with jack: Jack, and cutCard: PlayingCard) throws {
         
-        let min = 2
-        let max = 2
-        let points = 1
-        
-        guard (cards.count == min) else {
+        guard (!(cutCard is Jack) && !(cutCard is Joker)) else {
 
-            print("The collection must contain \(min), and only \(min) Cards.")
-            throw ElementsError.invalidCount
-        }
-        
-        guard (cards.contains(where: {$0 is Jack})) else {
-            
-            print("The given Cards must contain a Jack.")
+            print("The given cut card cannot be a Jack or a Joker.")
             throw DescriptionError.invalidRank
         }
         
-        guard (cards.contains(where: {!($0 is Jack) && !($0 is Joker)})) else {
+        guard (jack.suit == cutCard.suit) else {
             
-            print("The given Cards must contain a non-Jack.")
-            throw DescriptionError.invalidRank
-        }
-        
-        guard (cards.areEquallySuited()) else {
-            
-            print("The given Cards must both contain the same Suit.")
+            print("The given Jack and cut Card must contain the same suit.")
             throw DepictionError.invalidSuit
         }
-        
-        try super.init(of: min, to: max, cards, worth: points)
+
+        try super.init(of: 2, to: 2, [jack, cutCard], worth: 1)
     }
 }

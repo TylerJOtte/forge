@@ -19,52 +19,79 @@ import Foundation
 /// A `PlayingCard Hand` for a game of Cribbage.
 public class CribbageHand: PlayingCardHand {
     
-    /// The `Deck`'s cut `Card`.
-    public let cutCard: PlayingCard
-    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
+
+    /// Creates a default `CribbageHand`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition:
+    ///   - The `Hand` can hold zero to four `Card`s.
+    ///   - The `Hand` is empty.
+    ///   - The `Hand`'s title is set to "Cribbage Hand".
+    override public init() {
+         
+        super.init(maxCards: 4)
+    }
     
-    /// Creates a`CribbageHand`with the given `Card`s and cut `Card`.
+    /// Creates a`CribbageHand`with the given `Card`s.
     ///
     /// - Precondition:
-    ///   - The given `Card`s must contain at zero to four `Card`s.
+    ///   - The given `Card`s must not contain more than  four `Card`s.
     ///   - The given `Card`s must not contain any `Joker`s.
-    ///   - The given cut `Card` must not be a `Joker`.
     /// - Postcondition:
-    ///   - The `Hand` can hold zero to five `Card`s.
+    ///   - The `Hand` can hold zero to four `Card`s.
     ///   - The `Hand` contains the given `Card`s.
-    ///   - The `Hand`'s cut `Card` is set to the given cut `Card`.
-    ///   - title = "Cribbage Hand".
-    /// - Parameters:
-    ///    - cards: The `Card`s to create the `Hand` with.
-    ///    - cutCard: The `Deck`'s cut `Card`.
+    ///   - The `Hand`'s title is set to  "Cribbage Hand".
+    /// - Parameter cards: The `Card`s to create the `Hand` with.
     /// - Throws:
-    ///   - `ElementsError.excessiveElements` if the given `Card`'s contain more than four
-    ///     `Card`s.
-    ///   - `PlayingCardError.jokersNotAllowed` if
-    ///      - The given `Card`s contains a `Joker`, or
-    ///      - The given cut `Card` is a `Joker`.
-    public init(with cards: [PlayingCard], and cutCard: PlayingCard) throws {
+    ///   - `invalidCount` if the given `Card`'s contain more than four `Card`s.
+    ///   - `invalidRank` if the given `Card`s contains any `Joker`s.
+    internal init(with cards: [PlayingCard]) throws {
         
         let max = 4
-        let joker = Joker(color: .red)
         
-        guard (!cards.contains(joker)) else {
+        guard (cards.count <= max) else {
+            
+            print("The given Cards can contain at most \(max) Cards.")
+            throw ElementsError.invalidCount
+        }
+        
+        guard (!cards.containJokers()) else {
 
             print("The given Cards must not contain any Jokers.")
             throw DescriptionError.invalidRank
         }
 
-        guard (cutCard != joker) else {
+        try super.init(of: max, cards)
+    }
+        
+    //=========================================================================//
+    //                                 GETTERS                                 //
+    //=========================================================================//
+    
+    /// Retrieves  a`Nobs HandRank`for the given cut `Card`.
+    ///
+    /// - Precondition: The given cut `Card` cannot be a `Jack` or a `Joker`.
+    /// - Postcondition: None.
+    /// - Parameter cutCard: The `Deck`'s cut `Card`.
+    /// - Throws:`invalidRank` if the given cut `Card` is a `Jack` or a `Joker`.
+    internal func getNobs(with cutCard: PlayingCard) throws -> Nobs? {
 
-            print("The given cut Card must not be a Joker.")
+        var nobs: Nobs?
+
+        guard (!(cutCard is Jack) && !(cutCard is Joker)) else {
+
+            print("The given cut card cannot be a Jack or a Joker.")
             throw DescriptionError.invalidRank
         }
         
-        self.cutCard = cutCard
-        
-        try super.init(of: max, cards)
+        if let jack = cards.firstJack(of: cutCard.suit) {
+
+            nobs = try Nobs(with: jack, and: cutCard)
+        }
+
+        return nobs
     }
 }

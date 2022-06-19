@@ -57,6 +57,66 @@ class PlayingCardCollectionTests: XCTestCase {
     //-------------------------------------------------------------------------//
     //                                contains()                               //
     //-------------------------------------------------------------------------//
+
+    //               //
+    // Contains Rank //
+    //               //
+    
+    /// Tests that a `Collection` of `PlayingCards` contains  a given `Rank`.
+    func test_contains_rank_true() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let ten = try Ten(of: .hearts)
+        let cards = [ace, two, ten]
+        
+        // When/Then
+        XCTAssertTrue(cards.contains(.ten))
+    }
+    
+    /// Tests that a `Collection` of `PlayingCards` does not contain a given `Rank`.
+    func test_contains_rank_false() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let ten = try Ten(of: .hearts)
+        let cards = [ace, two, ten]
+        
+        // When/Then
+        XCTAssertFalse(cards.contains(.jack))
+    }
+    
+    // Jokers //
+    // ~~~~~~ //
+    
+    /// Tests that a `Collection` of `PlayingCards` with a `Joker` contains `Joker`s.
+    func test_containJokers_withHandIncludingJoker_true() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let ten = try Ten(of: .hearts)
+        let joker = Joker(color: .red)
+        let cards = [ace, two, ten, joker]
+        
+        // When/Then
+        XCTAssertTrue(cards.containJokers())
+    }
+    
+    /// Tests that a `Collection` of `PlayingCards` without `Joker`s does not contain `Joker`s.
+    func test_containJokers_withHandNotIncludingJoker_false() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let ten = try Ten(of: .hearts)
+        let cards = [ace, two, ten]
+        
+        // When/Then
+        XCTAssertFalse(cards.containJokers())
+    }
     
     //                     //
     // Contains Other Suit //

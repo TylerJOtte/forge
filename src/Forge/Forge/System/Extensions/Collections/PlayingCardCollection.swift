@@ -22,6 +22,27 @@ extension Collection where Element: PlayingCard  {
     //                                 TESTERS                                 //
     //=========================================================================//
     
+    /// Determines if contains the given `Rank`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Parameter rank: The `Rank` to test.
+    /// - Returns: True if  contains the given `Rank`, else false.
+    internal func contains(_ rank: Rank) -> Bool {
+        
+        return contains(where: {$0.rank == rank})
+    }
+    
+    /// Determines if contains `Joker`s.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if  contains one ore more`Jokers`, else false.
+    internal func containJokers() -> Bool {
+        
+        return contains(.joker)
+    }
+    
     /// Determines if all the `PlayingCard`s contain the same`Suit`.
     ///
     /// - Precondition: None.
