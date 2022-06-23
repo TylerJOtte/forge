@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of equally `Suit`ed `Card`s.
-public class Flush: HandRank {
+public class Flush: PlayingCardHandRank {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -37,14 +37,14 @@ public class Flush: HandRank {
     /// - Throws:
     ///   - `invalidCount` if the given `Card`s do not contain at least four `Card`s.
     ///   - `invalidSuit` if the given `Card`s do not all contain the same `Suit`.
-    public init(of cards: [PlayingCard]) throws {
+    internal init(of cards: [PlayingCard]) throws {
         
         let min = 4
         let max = Int.max
         let points = cards.count
 
-        guard (cards.areEquallySuited()) else {
-            
+        guard (cards.hasOneSuit) else {
+
             print("The given Cards must all contain the same Suit.")
             throw DepictionError.invalidSuit
         }

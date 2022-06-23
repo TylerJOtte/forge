@@ -35,14 +35,14 @@ public class Nobs: PlayingCardHandRank {
     /// - Throws:
     ///   - `invalidRank` if the given cut `Card` is a `Jack` or a `Joker`.
     ///   - `invalidSuit` if the given `Jack` and cut `Card` do not contain the same `Suit`.
-    public init(with jack: Jack, and cutCard: PlayingCard) throws {
+    internal init(with jack: Jack, and cutCard: PlayingCard) throws {
         
         guard (!(cutCard is Jack) && !(cutCard is Joker)) else {
 
             print("The given cut card cannot be a Jack or a Joker.")
             throw DescriptionError.invalidRank
         }
-        
+
         guard (jack.suit == cutCard.suit) else {
             
             print("The given Jack and cut Card must contain the same suit.")

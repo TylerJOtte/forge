@@ -28,9 +28,9 @@ class PlayingCardCollectionTests: XCTestCase {
     //                            areEquallySuited()                           //
     //-------------------------------------------------------------------------//
     
-    /// Tests that a `Collection` of `PlayingCards` that all contain the same `Suit` are equally
-    /// `Suit`ed.
-    func test_areEquallySuited_PlayingCardsThatAllContainSameSuit_true() throws {
+    /// Tests that a `PlayingCard Collection` with all `Card`s of the same `Suit` contains one
+    /// `Suit`.
+    func test_hasOneSuit_withSameSuits_true() throws {
         
         // Given
         let ace = try Ace(of: .hearts)
@@ -38,12 +38,12 @@ class PlayingCardCollectionTests: XCTestCase {
         let cards = [ace, two]
         
         // When/Then
-        XCTAssert(cards.areEquallySuited())
+        XCTAssert(cards.hasOneSuit)
     }
     
-    /// Tests that a `Collection` of `PlayingCards` with varioius `Suit`s are not equally
-    /// `Suit`ed.
-    func test_areEquallySuited_PlayingCardsWithVariousSuits_false() throws {
+    /// Tests that a `PlayingCard Collection` with `Card`s of different `Suit`s does not contain
+    /// one `Suit`.
+    func test_hasOneSuit_withDifferentSuits_false() throws {
         
         // Given
         let ace = try Ace(of: .hearts)
@@ -51,7 +51,64 @@ class PlayingCardCollectionTests: XCTestCase {
         let cards = [ace, two]
         
         // When/Then
-        XCTAssertFalse(cards.areEquallySuited())
+        XCTAssertFalse(cards.hasOneSuit)
+    }
+    
+    /// Tests that a `PlayingCard Collection` with all `Card`s of the same `Suit` and a given
+    /// `PlayingCard` with the same `Suit` contains one `Suit`.
+    func test_hasOneSuit_withSameSuitsAndCardOfSameSuit_true() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let cutCard = try Jack(of: .hearts)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssert(cards.hasOneSuit(with: cutCard))
+    }
+    
+    /// Tests that an empty `PlayingCard Collection` and a given `PlayingCard` contains one
+    /// `Suit`.
+    func test_hasOneSuit_withEmptyCardsAndCard_true() throws {
+        
+        // Given
+        let cutCard = try Jack(of: .hearts)
+        let cards: [PlayingCard] = []
+        
+        // When/Then
+        XCTAssert(cards.hasOneSuit(with: cutCard))
+    }
+    
+    /// Tests that a `PlayingCard Collection` with all`Card`s of the same `Suit` and a given
+    /// `PlayingCard`of a different `Suit` does not contain one `Suit`.
+    func test_hasOneSuit_withSameSuitsAndCardOfDifferentSuit_false()
+        throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let cutCard = try Jack(of: .diamonds)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssertFalse(cards.hasOneSuit(with: cutCard))
+    }
+    
+    
+    /// Tests that a `PlayingCard Collection` with all`Card`s of the different`Suit` and a given
+    /// `PlayingCard`of the same`Suit` as one `Card` in the `Collection` does not contain one
+    /// `Suit`.
+    func test_hasOneSuit_withDifferentSuitsAndCardWithSameSuit_false() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .spades)
+        let cutCard = try Jack(of: .hearts)
+        let cards = [ace, two]
+        
+        // When/Then
+        XCTAssertFalse(cards.hasOneSuit(with: cutCard))
     }
     
     //-------------------------------------------------------------------------//
@@ -409,7 +466,7 @@ class PlayingCardCollectionTests: XCTestCase {
         let expected = [suit1, suit2]
         
         // When
-        let actual = playingCards.getSuits()
+        let actual = playingCards.suits
         
         // Then
         XCTAssert(actual.contains(only: expected))

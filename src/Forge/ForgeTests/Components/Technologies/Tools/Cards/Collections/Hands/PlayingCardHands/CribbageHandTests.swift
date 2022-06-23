@@ -196,8 +196,85 @@ class CribbageHandTests: XCTestCase {
     }
     
     //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
+    
+    /// Tests that a `CribbageHand` with one `Suit` and a cut `Card` of the same `Suit` has a
+    /// `Flush`.
+    func test_hasFlush_withOneSuit_true() throws {
+        
+        // Given
+        let suit: Suit = .hearts
+        let ace = try Ace(of: suit)
+        let two = try Two(of: suit)
+        let six = try Two(of: suit)
+        let ten = try Ten(of: suit)
+        let cards = [ace, two, six, ten]
+        let hand = try CribbageHand(with: cards)
+        let cutCard = try King(of: suit)
+        
+        // When/Then
+        XCTAssert(hand.hasFlush(with: cutCard))
+    }
+    
+    /// Tests that a `CribbageHand` with one `Suit` and a cut `Card` of a different  `Suit`does not
+    /// have a `Flush`.
+    func test_hasFlush_withCutCardOfDifferentSuit_false() throws {
+        
+        // Given
+        let suit: Suit = .hearts
+        let ace = try Ace(of: suit)
+        let two = try Two(of: suit)
+        let six = try Two(of: suit)
+        let ten = try Ten(of: suit)
+        let cards = [ace, two, six, ten]
+        let hand = try CribbageHand(with: cards)
+        let cutCard = try King(of: .spades)
+        
+        // When/Then
+        XCTAssertFalse(hand.hasFlush(with: cutCard))
+    }
+    
+    /// Tests that a `CribbageHand` with multiple `Suit`s does not have a `Flush`.
+    func test_hasFlush_withDifferentSuits_false() throws {
+        
+        // Given
+        let suit: Suit = .hearts
+        let ace = try Ace(of: suit)
+        let two = try Two(of: suit)
+        let six = try Two(of: suit)
+        let ten = try Ten(of: .spades)
+        let cards = [ace, two, six, ten]
+        let hand = try CribbageHand(with: cards)
+        let cutCard = try King(of: suit)
+        
+        // When/Then
+        XCTAssertFalse(hand.hasFlush(with: cutCard))
+    }
+    
+    /// Tests that a non-full `CribbageHand` with one `Suit`does not have a `Flush`.
+    func test_hasFlush_withNonFullHandOfOneSuit_false() throws {
+        
+        // Given
+        let suit: Suit = .hearts
+        let ace = try Ace(of: suit)
+        let two = try Two(of: suit)
+        let six = try Two(of: suit)
+        let cards = [ace, two, six]
+        let hand = try CribbageHand(with: cards)
+        let cutCard = try King(of: suit)
+        
+        // When/Then
+        XCTAssertFalse(hand.hasFlush(with: cutCard))
+    }
+    
+    //=========================================================================//
     //                                 GETTERS                                 //
     //=========================================================================//
+    
+    //-------------------------------------------------------------------------//
+    //                                 Nobs                                    //
+    //-------------------------------------------------------------------------//
 
     /// Tests that retrieving `Nobs` in a `CribbageHand` that contains it returns the expected `Nobs`.
     func test_getNobs_whenExists_returnsExpectedNobs() throws {

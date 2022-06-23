@@ -66,27 +66,59 @@ public class CribbageHand: PlayingCardHand {
 
         try super.init(of: max, cards)
     }
+    
+    //=========================================================================//
+    //                                 TESTERS                                 //
+    //=========================================================================//
         
+    /// Determines if a `Flush HandRank` exists with the given cut `Card`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: A `Flush HandRank`, or `nil` if none exist.
+    internal func hasFlush(with cutCard: PlayingCard) -> Bool {
+        
+        return isFull() && cards.hasOneSuit(with: cutCard)
+    }
+    
     //=========================================================================//
     //                                 GETTERS                                 //
     //=========================================================================//
+    
+    /// Retrieves  a`Flush HandRank` with the given cut `Card`.
+    ///
+    /// - Precondition: The given cut `Card` cannot be a `Joker`.
+    /// - Postcondition: None.
+    /// - Returns: A `Flush HandRank`, or `nil` if none exists.
+    /// - Throws:`invalidRank` if the given cut `Card` is a `Joker`.
+    internal func getFlush(with cutCard: PlayingCard) throws -> Flush? {
+        
+        guard (!(cutCard is Joker)) else {
+
+            print("The given cut card cannot be a Joker.")
+            throw DescriptionError.invalidRank
+        }
+        
+        return hasFlush(with: cutCard) ? try Flush(of: cards) : nil
+    }
     
     /// Retrieves  a`Nobs HandRank`for the given cut `Card`.
     ///
     /// - Precondition: The given cut `Card` cannot be a `Jack` or a `Joker`.
     /// - Postcondition: None.
     /// - Parameter cutCard: The `Deck`'s cut `Card`.
+    /// - Returns: A `Nobs HandRank`, or `nil` if none exist.
     /// - Throws:`invalidRank` if the given cut `Card` is a `Jack` or a `Joker`.
     internal func getNobs(with cutCard: PlayingCard) throws -> Nobs? {
-
-        var nobs: Nobs?
 
         guard (!(cutCard is Jack) && !(cutCard is Joker)) else {
 
             print("The given cut card cannot be a Jack or a Joker.")
             throw DescriptionError.invalidRank
         }
-        
+
+        var nobs: Nobs?
+
         if let jack = cards.firstJack(of: cutCard.suit) {
 
             nobs = try Nobs(with: jack, and: cutCard)

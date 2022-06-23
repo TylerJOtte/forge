@@ -30,7 +30,7 @@ public class Hand<T: Card>: Cards {
     public let maxCards: Int
     
     /// The `Card`s.
-    private var cards: [T]
+    internal var cards: [T]
     
     /// The total # of `Card`s.
     public var count: Int { cards.count }
@@ -62,20 +62,22 @@ public class Hand<T: Card>: Cards {
         cards = []
     }
     
-    /// Creates a`Hand`with the given max.
+    /// Creates a`Hand`with the given max # of `Card`s.
     ///
-    /// - Precondition: The given max must be  >= 1.
+    /// - Precondition: The given max must be  > 0.
     /// - Postcondition:
     ///   - The `Hand` can hold zero to given max # of `Card`s.
     ///   - The `Hand` is empty.
     ///   - The `Hand`'s title is set to "Hand".
-    /// - Parameter max: The maximum # of `Card`s allowed in the `Hand`.
-    internal init(of max: Int) {
+    /// - Parameter maxCards: The maximum # of `Card`s allowed in the `Hand`.
+    internal init(maxCards: Int) {
         
-        assert(max >= 1, "The given max must be >= 1.")
+        let minCards = 0
         
-        minCards = 0
-        maxCards = max
+        assert(maxCards > minCards, "The given max must be > \(minCards).")
+        
+        self.minCards = minCards
+        self.maxCards = maxCards
         self.cards = []
     }
     
@@ -146,34 +148,34 @@ public class Hand<T: Card>: Cards {
     ///   - `invalidMin` if the given min is &lt; 0.
     ///   - `invalidMax` if the given max is &lt; 1, or &lt; the specified min.
     ///   - `invalidCount` if the given `Card`s do not contain the specified min to max # of `Card`s.
-    public init(of min: Int, to max: Int, _ cards: [T]) throws {
+    internal init(of min: Int, to max: Int, _ cards: [T]) throws {
         
         guard (min >= 0) else {
-            
+
             print("The given min must be >= 0.")
             throw RangeError.invalidMin
         }
-        
+
         guard (max >= 1) else {
-            
+
             print("The given max must be >= 1.")
             throw RangeError.invalidMax
         }
-        
+
         guard (max >= min) else {
-            
+
             print("The given max must be >= the specified min.")
             throw RangeError.invalidMax
         }
-        
+
         guard (cards.count >= min) else {
 
             print("The given Cards must contain at least \(min) Cards.")
             throw ElementsError.invalidCount
         }
-        
+
         guard (cards.count <= max) else {
-            
+
             print("The given Cards can contain at most \(max) Cards.")
             throw ElementsError.invalidCount
         }
