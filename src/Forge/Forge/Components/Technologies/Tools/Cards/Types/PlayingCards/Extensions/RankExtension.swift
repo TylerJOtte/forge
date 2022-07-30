@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `PlayingCard Rank` extension.
-extension Rank {
+public extension Rank {
 
     //=========================================================================//
     //                                 TESTERS                                 //
@@ -28,12 +28,9 @@ extension Rank {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: True if the `Rank` is a standard numeral `PlayingCard Rank`, else false.
-    func isNumeral() -> Bool {
+    internal func isNumeralPlayingCardRank() -> Bool {
 
-        let min = 2
-        let max = 10
-        
-        return self == .ace || self.hasRawValue(from: min, to: max)
+        return PlayingCards.numeralRanks.contains(self)
     }
 
     /// Determines if the `Rank` is a standard royal `PlayingCard Rank`.
@@ -41,9 +38,19 @@ extension Rank {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: True if the `Rank` is a standard royal`PlayingCard Rank`, else false.
-    func isRoyal() -> Bool {
+    internal func isRoyalPlayingCardRank() -> Bool {
 
-        return self == .jack || self == .queen || self == .king
+        return PlayingCards.royalRanks.contains(self)
+    }
+    
+    /// Determines if the `Rank` is a standard French-suited`PlayingCard Rank`.
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: True if the `Rank` is a standard French-suited`PlayingCard Rank`, else false.
+    func isStandardPlayingCardRank() -> Bool {
+
+        return isNumeralPlayingCardRank() || isRoyalPlayingCardRank()
     }
 
     /// Determines if the `Rank` is a standard French-suited`PlayingCard Rank`.
@@ -51,8 +58,8 @@ extension Rank {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: True if the `Rank` is a standard French-suited`PlayingCard Rank`, else false.
-    func isStandard() -> Bool {
+    internal func isPlayingCardRank() -> Bool {
 
-        return isNumeral() || isRoyal() || self == .joker
+        return isStandardPlayingCardRank() || self == .joker
     }
 }

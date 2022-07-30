@@ -47,7 +47,7 @@ public class FaceCard: PlayingCard {
     init(_ rank: Rank, of suit: Suit, worth points: Int,
                   at position: Int) throws {
         
-        guard (rank.isRoyal()) else {
+        guard (rank.isRoyalPlayingCardRank()) else {
 
             print("The given Rank is not a standard royal PlayingCard Rank.")
             throw DescriptionError.invalidRank

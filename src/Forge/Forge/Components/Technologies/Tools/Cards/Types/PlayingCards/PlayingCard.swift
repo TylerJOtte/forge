@@ -26,6 +26,13 @@ public class PlayingCard: RankedCard {
     /// The symbol grouping.
     public let suit: Suit
     
+    // The identifying token
+    public var pip: String {
+        
+        rank == .ace || rank.isRoyalPlayingCardRank() ? String(title.first!) :
+            "\(points)"
+    }
+    
     //=========================================================================//
     //                               CONSTRUCTORS                              //
     //=========================================================================//
@@ -53,7 +60,7 @@ public class PlayingCard: RankedCard {
         let suit = rank == .joker ? Suit.null : Suit.hearts
         let cardTitle = title == "" ? "\(rank) Of \(suit)".capitalized : title
         
-        assert(rank.isStandard(),
+        assert(rank.isPlayingCardRank(),
                "The given Rank is not a standard PlayingCard Rank.")
         
         assert(suit.isStandard(),
@@ -97,7 +104,7 @@ public class PlayingCard: RankedCard {
     init(_ rank: Rank, of suit: Suit, worth points: Int,
          at position: Int, with title: String = "") throws {
 
-        assert(rank.isStandard(),
+        assert(rank.isPlayingCardRank(),
                "The given Rank is not a standard PlayingCard Rank.")
         
         assert(position >= 0 && position <= 14,

@@ -47,7 +47,7 @@ public class NumeralCard: PlayingCard {
     init(_ rank: Rank, of suit: Suit, worth points: Int,
                   at position: Int) throws {
 
-        guard (rank.isNumeral()) else {
+        guard (rank.isNumeralPlayingCardRank()) else {
 
             print("The given Rank is not a standard numeral PlayingCard Rank.")
             throw DescriptionError.invalidRank

@@ -39,7 +39,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.ace
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a`two Rank` is a numeral `PlayingCard Rank`.
@@ -49,7 +49,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.two
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a`three Rank` is a numeral `PlayingCard Rank`.
@@ -59,7 +59,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.three
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a`four Rank` is a numeral `PlayingCard Rank`.
@@ -69,7 +69,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.four
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a`five Rank` is a numeral `PlayingCard Rank`.
@@ -79,7 +79,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.five
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a`six Rank` is a numeral `PlayingCard Rank`.
@@ -89,7 +89,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.six
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a`seven Rank` is a numeral `PlayingCard Rank`.
@@ -99,7 +99,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.seven
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that an`eight Rank` is a numeral `PlayingCard Rank`.
@@ -109,7 +109,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.eight
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a`nine Rank` is a numeral `PlayingCard Rank`.
@@ -119,7 +119,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.nine
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a`ten Rank` is a numeral `PlayingCard Rank`.
@@ -129,7 +129,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.ten
         
         // When/Then
-        XCTAssert(rank.isNumeral())
+        XCTAssert(rank.isNumeralPlayingCardRank())
     }
     
     //           //
@@ -143,7 +143,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.jack
         
         // When/Then
-        XCTAssertFalse(rank.isNumeral())
+        XCTAssertFalse(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a `queen Rank` is not a numeral `PlayingCard Rank`.
@@ -153,7 +153,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.queen
         
         // When/Then
-        XCTAssertFalse(rank.isNumeral())
+        XCTAssertFalse(rank.isNumeralPlayingCardRank())
     }
     
     /// Tests that a `king Rank` is not a numeral `PlayingCard Rank`.
@@ -163,7 +163,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.king
         
         // When/Then
-        XCTAssertFalse(rank.isNumeral())
+        XCTAssertFalse(rank.isNumeralPlayingCardRank())
     }
     
     //           //
@@ -177,7 +177,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.joker
         
         // When/Then
-        XCTAssertFalse(rank.isNumeral())
+        XCTAssertFalse(rank.isNumeralPlayingCardRank())
     }
     
     //                 //
@@ -191,7 +191,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.one
         
         // When/Then
-        XCTAssertFalse(rank.isNumeral())
+        XCTAssertFalse(rank.isNumeralPlayingCardRank())
     }
     
     //-------------------------------------------------------------------------//
@@ -209,7 +209,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.ace
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a`two Rank` is not a royal  `PlayingCard Rank`.
@@ -219,7 +219,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.two
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a`three Rank` is not a royal  `PlayingCard Rank`.
@@ -229,7 +229,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.three
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a`four Rank` is not a royal `PlayingCard Rank`.
@@ -239,7 +239,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.four
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a`five Rank` is not a royal  `PlayingCard Rank`.
@@ -249,7 +249,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.five
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a`six Rank` is not a royal  `PlayingCard Rank`.
@@ -259,7 +259,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.six
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a`seven Rank` is not a royal  `PlayingCard Rank`.
@@ -269,7 +269,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.seven
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that an`eight Rank` is not a royal  `PlayingCard Rank`.
@@ -279,7 +279,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.eight
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a`nine Rank` is not a royal  `PlayingCard Rank`.
@@ -289,7 +289,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.nine
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a`ten Rank` is not a royal  `PlayingCard Rank`.
@@ -299,7 +299,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.ten
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     //           //
@@ -313,7 +313,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.jack
         
         // When/Then
-        XCTAssert(rank.isRoyal())
+        XCTAssert(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a `queen Rank` is a royal  `PlayingCard Rank`.
@@ -323,7 +323,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.queen
         
         // When/Then
-        XCTAssert(rank.isRoyal())
+        XCTAssert(rank.isRoyalPlayingCardRank())
     }
     
     /// Tests that a `king Rank` is a royal  `PlayingCard Rank`.
@@ -333,7 +333,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.king
         
         // When/Then
-        XCTAssert(rank.isRoyal())
+        XCTAssert(rank.isRoyalPlayingCardRank())
     }
     
     //           //
@@ -347,7 +347,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.joker
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     //                 //
@@ -361,7 +361,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.knight
         
         // When/Then
-        XCTAssertFalse(rank.isRoyal())
+        XCTAssertFalse(rank.isRoyalPlayingCardRank())
     }
     
     //-------------------------------------------------------------------------//
@@ -379,7 +379,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.ace
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a`two Rank` is a standard `PlayingCard Rank`.
@@ -389,7 +389,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.two
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a`three Rank` is a standard `PlayingCard Rank`.
@@ -399,7 +399,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.three
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a`four Rank` is a standard `PlayingCard Rank`.
@@ -409,7 +409,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.four
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a`five Rank` is a standard `PlayingCard Rank`.
@@ -419,7 +419,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.five
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a`six Rank` is a standard `PlayingCard Rank`.
@@ -429,7 +429,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.six
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a`seven Rank` is a standard `PlayingCard Rank`.
@@ -439,7 +439,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.seven
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that an`eight Rank` is a standard `PlayingCard Rank`.
@@ -449,7 +449,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.eight
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a`nine Rank` is a standard `PlayingCard Rank`.
@@ -459,7 +459,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.nine
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a`ten Rank` is a standard `PlayingCard Rank`.
@@ -469,7 +469,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.ten
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     //           //
@@ -483,7 +483,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.jack
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a `queen Rank` is a standard `PlayingCard Rank`.
@@ -493,7 +493,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.queen
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     /// Tests that a `king Rank` is a standard `PlayingCard Rank`.
@@ -503,7 +503,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.king
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     //           //
@@ -517,7 +517,7 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.joker
         
         // When/Then
-        XCTAssert(rank.isStandard())
+        XCTAssert(rank.isPlayingCardRank())
     }
     
     //                 //
@@ -531,6 +531,6 @@ class RankExtensionTests: XCTestCase {
         let rank = Rank.knight
         
         // When/Then
-        XCTAssertFalse(rank.isStandard())
+        XCTAssertFalse(rank.isPlayingCardRank())
     }
 }
