@@ -14,8 +14,6 @@
 // See https://github.com/TylerJOtte/forge/LICENSE.txt for more details.       //
 //=============================================================================//
 
-import Foundation
-
 /// A game `Element`.
 public protocol Element: Hashable {
 
@@ -28,15 +26,10 @@ extension Element {
     //                                ATTRIBUTES                               //
     //=========================================================================//
     
-    /// The primary name
-    var title: String {
+    /// The primary name.
+    public var title: String {
         
-        let name = isClass() ? getMetatypeName() : getInstanceName()
-        let shortName = getShortname(from: name)! // Okay to force unwrap this as
-                                                  // instance or metatype name
-                                                  // will never be nil.
-        
-        return shortName.splitOnCapitals()
+        return getShortname().firstUppercased.splitOnCapitals()
     }
     
     //=========================================================================//
@@ -57,35 +50,45 @@ extension Element {
     //                                 GETTERS                                 //
     //=========================================================================//
     
-    /// Retrieves the name of the instance, capitalized.
+    /// Retrieves the instance name (e.g., enum case name).
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: A `String` containing the name of the instance, capitalized.
+    /// - Returns: A `String` containing the instance name..
     private func getInstanceName() -> String {
         
-        return String(describing: self).capitalized
+        return String(describing: self)
     }
     
-    /// Retrieves the name of the model.
+    /// Retrieves the moduel name (e.g., class name).
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Returns: A `String` containing the name of the model.
+    /// - Returns: A `String` containing the module name.
     private func getMetatypeName() -> String {
         
         return String(describing: type(of: self))
     }
     
-    /// Retrieves a version of the given name without extra syntax (e.g., generic parameters), if any.
+    /// Retrieves the module or instance name (e.g., class or enum case name).
     ///
     /// - Precondition: None.
     /// - Postcondition: None.
-    /// - Parameter name: The name to get shortname for.
-    /// - Returns: A `String.SubSequence` of the given name without extra syntax, if any.
-    private func getShortname(from name: String) -> String.SubSequence? {
+    /// - Returns: A `String` containing the module or instance name.
+    private func getName() -> String {
         
-        return name.split(separator: "<").first
+        return isClass() ? getMetatypeName() : getInstanceName()
+    }
+    
+    /// Retrieves the module or instance name (e.g., class or enum case name) without extra syntax
+    /// (e.g., generic parameters)..
+    ///
+    /// - Precondition: None.
+    /// - Postcondition: None.
+    /// - Returns: A `String` containing the module or instance name without extra syntax.
+    private func getShortname() -> String {
+        
+        return String(getName().split(separator: "<").first ?? "")
     }
     
     //=========================================================================//
