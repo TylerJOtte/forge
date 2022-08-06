@@ -15,7 +15,7 @@
 //=============================================================================//
 
 /// An extension for common `Scoreable Collection` operations.
-extension Collection where Element: Scoreable  {
+public extension Collection where Element: Scoreable  {
  
     /// The sum total of each `Element`'s points.
     var totalPoints: Int { return map{$0.points}.sum }

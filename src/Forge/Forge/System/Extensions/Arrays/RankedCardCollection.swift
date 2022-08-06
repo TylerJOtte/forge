@@ -85,11 +85,11 @@ extension Collection where Element: RankedCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: An `Array` of all the contained `Pair`s.
-    func getPairs() -> [Pair] {
+    func getPairs() -> [Pair<Element>] {
         
         let count = 1
         let cardsByRank = splitByRank(over: count)
-        var pairs: [Pair] = []
+        var pairs: [Pair<Element>] = []
         
         for rank in cardsByRank {
             
@@ -129,11 +129,11 @@ extension Collection where Element: RankedCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: An `Array` of all the contained `ThreeOfAKind`s.
-    func getThreeOfAKinds() -> [ThreeOfAKind] {
+    func getThreeOfAKinds() -> [ThreeOfAKind<Element>] {
         
         let count = 2
         let cardsByRank = splitByRank(over: count)
-        var threeOfAKinds: [ThreeOfAKind] = []
+        var threeOfAKinds: [ThreeOfAKind<Element>] = []
         
         for rank in cardsByRank {
             
@@ -175,11 +175,11 @@ extension Collection where Element: RankedCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: An `Array` of all the contained `FourOfAKind`s.
-    func getFourOfAKinds() -> [FourOfAKind] {
+    func getFourOfAKinds() -> [FourOfAKind<Element>] {
         
         let count = 3
         let cardsByRank = splitByRank(over: count)
-        var fourOfAKinds: [FourOfAKind] = []
+        var fourOfAKinds: [FourOfAKind<Element>] = []
         
         for rank in cardsByRank {
             
@@ -226,7 +226,7 @@ extension Collection where Element: RankedCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: An `Array` of `RankedCard Array` sequences.
-    func getSequences() -> [[RankedCard]] {
+    func getSequences() -> [[Element]] {
         
         var sequences: [[Element]] = []
         
@@ -268,7 +268,7 @@ extension Collection where Element: RankedCard  {
             sequences = sequences.filter{$0.count > 1}
         }
         
-        return sequences
+        return sequences.map{$0.sorted()}
     }
 
     //            //
@@ -282,7 +282,7 @@ extension Collection where Element: RankedCard  {
     /// - Parameter count: The # of `RankedCards` in a sequence to filter for.
     /// - Throws: `invalidMin` if the given count &lt; 1.
     /// - Returns: An `Array` of sequential `RankedCard Array`s with counts > the given count.
-    func getSequences(over count: Int) throws -> [[RankedCard]] {
+    func getSequences(over count: Int) throws -> [[Element]] {
         
         let min = 1
         
@@ -304,9 +304,9 @@ extension Collection where Element: RankedCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: An `Array` of `Run`s.
-    func getRuns() -> [Run] {
+    func getRuns() -> [Run<Element>] {
         
-        var runs: [Run]
+        var runs: [Run<Element>]
         
         do {
             
@@ -332,7 +332,7 @@ extension Collection where Element: RankedCard  {
     /// - Precondition: None.
     /// - Postcondition: None.
     /// - Returns: A dictionary with `Rank:RankedCard Array` entries.
-    func splitByRank() -> [Rank:[RankedCard]] {
+    func splitByRank() -> [Rank:[Element]] {
         
         return Dictionary(grouping: self, by: {$0.rank})
     }
@@ -343,7 +343,7 @@ extension Collection where Element: RankedCard  {
     /// - Postcondition: None.
     /// - Parameter count: The count a `Rank` must equal to be included in split.
     /// - Returns: A dictionary with `Rank:RankedCard Array` entries.
-    func splitByRank(where count: Int) -> [Rank:[RankedCard]] {
+    func splitByRank(where count: Int) -> [Rank:[Element]] {
         
         return splitByRank().filter{$1.count == count}
     }
@@ -354,7 +354,7 @@ extension Collection where Element: RankedCard  {
     /// - Postcondition: None.
     /// - Parameter count: The count a `Rank` must be over  to be included in split.
     /// - Returns: A dictionary with `Rank:RankedCard Array` entries.
-    func splitByRank(over count: Int) -> [Rank:[RankedCard]] {
+    func splitByRank(over count: Int) -> [Rank:[Element]] {
         
         return splitByRank().filter{$1.count > count}
     }
