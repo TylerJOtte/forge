@@ -17,7 +17,7 @@
 import Foundation
 
 /// A `HandRank` of sequentially `Rank`ed `Card`s.
-public class Run: HandRank {
+public class Run<T: RankedCard>: HandRank<T> {
     
     //=========================================================================//
     //                               CONSTRUCTORS                              //
@@ -37,7 +37,7 @@ public class Run: HandRank {
     /// - Throws:
     ///   - `invalidCount` if the given `Card`s do not contain at least three `Card`s.
     ///   - `invalidRank` if the given `Card`s are not in sequential order.
-    public init(of cards: [RankedCard]) throws {
+    public init(of cards: [T]) throws {
 
         let min = 3
         let max = Int.max
