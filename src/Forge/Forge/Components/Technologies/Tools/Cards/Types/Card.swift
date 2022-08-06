@@ -25,6 +25,9 @@ public class Card: Tool, Relatable {
     
     /// The primary name.
     public let title: String
+    
+    /// True if is cut `Card`, else false.
+    public var isCutCard: Bool = false
 
     //=========================================================================//
     //                               CONSTRUCTORS                              //

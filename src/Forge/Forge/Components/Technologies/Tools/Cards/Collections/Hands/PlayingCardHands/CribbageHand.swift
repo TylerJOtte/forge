@@ -84,6 +84,91 @@ public class CribbageHand: PlayingCardHand {
     //=========================================================================//
     //                                 GETTERS                                 //
     //=========================================================================//
+
+    /// Retrieves  all the`Fifteen HandRank`s with the given cut `Card`.
+    ///
+    /// - Precondition: The given cut `Card` cannot be a `Joker`.
+    /// - Postcondition: None.
+    /// - Returns: A collection of`Fifteen HandRank`s.
+    /// - Throws:`invalidRank` if the given cut `Card` is a `Joker`.
+    internal func getFifteens(with cutCard: PlayingCard) throws -> [Fifteen] {
+        
+        guard (!(cutCard is Joker)) else {
+
+            print("The given cut card cannot be a Joker.")
+            throw DescriptionError.invalidRank
+        }
+        
+        let expected = 15
+        let sum = cards.totalPoints + cutCard.points
+        var fifteens: [Fifteen] = []
+        
+        // The sum of all Card points must at least equal 15, else there are no
+        // Fifteens
+        if (sum >= expected) {
+            
+            var cards = [cutCard]
+            
+            cards.append(contentsOf: self.cards)
+            
+            // If the sum of all card points equals 15, there is only one Fifteen
+            if (sum == expected) {
+        
+                try fifteens.append(Fifteen(of: cards))
+            
+            } else {
+                
+                // For first card to penultimate card
+                for i in 0..<cards.count - 1 {
+
+                    // Compare current card and next card
+                    for j in i + 1..<cards.count {
+                     
+                        var actual = [cards[i], cards[j]]
+                        
+                        if (actual.totalPoints == expected) {
+                            
+                            try fifteens.append(Fifteen(of: actual))
+                        
+                        }
+                        
+                        else {
+                            
+                            // Compare current card and next two cards
+                            for k in j + 1..<cards.count {
+                                
+                                actual = [cards[i], cards[j], cards[k]]
+                                
+                                if (actual.totalPoints == expected) {
+                                    
+                                    try fifteens.append(Fifteen(of: actual))
+                                
+                                } else {
+                                    
+                                    // Compare current card and next three cards
+                                    for l in k + 1..<cards.count {
+                                        
+                                        actual = [cards[i], cards[j], cards[k],
+                                                  cards[l]]
+                                    
+                                        if (actual.totalPoints == expected) {
+                                        
+                                            try fifteens
+                                                .append(Fifteen(of: actual))
+                                    
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        return fifteens
+    }
     
     /// Retrieves  a`Flush HandRank` with the given cut `Card`.
     ///

@@ -271,6 +271,117 @@ class CribbageHandTests: XCTestCase {
     //=========================================================================//
     //                                 GETTERS                                 //
     //=========================================================================//
+
+    //-------------------------------------------------------------------------//
+    //                                 Fifteens                                //
+    //-------------------------------------------------------------------------//
+    
+    /// Tests that retrieving the `Fifteens` in a `CribbageHand` with a`Joker` as the cut `Card`
+    /// throws an `invalidRank Error`.
+    func test_getFifteens_withJokerCutCard_throwsInvalidRankError() throws {
+
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let four = try Four(of: .hearts)
+        let cards = [ace, two, three, four]
+        let hand = try CribbageHand(with: cards)
+        let cutCard = Joker(color: .red)
+        let expected = DescriptionError.invalidRank
+
+        // When
+        XCTAssertThrowsError(try hand.getFifteens(with: cutCard)) { error in
+
+            // Then
+            XCTAssertEqual(expected, error as? DescriptionError)
+        }
+    }
+    
+    /// Tests that retrieving the `Fifteens` in a `CribbageHand` with total `Card` points less than 15
+    /// does not return any `Fifteen`s.
+    func test_getFifteens_withTotalCardPointsGreaterThan15_returnsEmpty()
+        throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let four = try Four(of: .hearts)
+        let cards = [ace, two, three, four]
+        let hand = try CribbageHand(with: cards)
+        let cutCard = try Four(of: .spades)
+        let expected: [Fifteen] = []
+        
+        // When
+        let actual = try hand.getFifteens(with: cutCard)
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving the `Fifteens` in a `CribbageHand` with total `Card` points equal to 15
+    /// returns only one expected `Fifteen`.
+    func test_getFifteens_withTotalCardPointsOf15_returnsOneFifteen() throws {
+        
+        // Given
+        let ace = try Ace(of: .hearts)
+        let two = try Two(of: .hearts)
+        let three = try Three(of: .hearts)
+        let four = try Four(of: .hearts)
+        let cards = [ace, two, three, four]
+        let hand = try CribbageHand(with: cards)
+        let cutCard = try Five(of: .hearts)
+        let fifteenCards = [ace, two, three, four, cutCard]
+        let expected = [try Fifteen(of: fifteenCards)]
+        
+        // When
+        let actual = try hand.getFifteens(with: cutCard)
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving the `Fifteens` in a `CribbageHand` with total four `Five PlayingCard`s
+    /// returns four `Fifteen`s.
+    func test_getFifteens_withFourFivePlayingCards_returnsFourFifteens() throws {
+        
+        // Given
+        let fiveOfHearts = try Five(of: .hearts)
+        let fiveOfDiamonds = try Five(of: .diamonds)
+        let fiveOfSpades = try Five(of: .spades)
+        let fiveOfClubs = try Five(of: .clubs)
+        let cards = [fiveOfHearts, fiveOfDiamonds, fiveOfSpades, fiveOfClubs]
+        let hand = try CribbageHand(with: cards)
+        let cutCard = try Ace(of: .hearts)
+        let expected = 4
+        
+        // When
+        let actual = try hand.getFifteens(with: cutCard).count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
+    
+    /// Tests that retrieving the `Fifteens` in a perfect `CribbageHand` returns eight `Fifteen`s.
+    func test_getFifteens_withPerfectHand_returnsEightFifteens() throws {
+        
+        // Given
+        let fiveOfHearts = try Five(of: .hearts)
+        let fiveOfDiamonds = try Five(of: .diamonds)
+        let fiveOfSpades = try Five(of: .spades)
+        let jackOfClubs = try Jack(of: .clubs)
+        let cards = [fiveOfHearts, fiveOfDiamonds, fiveOfSpades, jackOfClubs]
+        let hand = try CribbageHand(with: cards)
+        let cutCard = try Five(of: .clubs)
+        let expected = 8
+        
+        // When
+        let actual = try hand.getFifteens(with: cutCard).count
+        
+        // Then
+        XCTAssertEqual(expected, actual)
+    }
     
     //-------------------------------------------------------------------------//
     //                                 Nobs                                    //
