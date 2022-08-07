@@ -10,7 +10,7 @@ ecosystem, or manage game interactivity.
 
 ## Topics
 
-### The Essentials
+### Base
 
 - ``Element``
 
