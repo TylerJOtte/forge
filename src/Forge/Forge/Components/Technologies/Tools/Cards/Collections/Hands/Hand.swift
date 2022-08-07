@@ -30,7 +30,7 @@ public class Hand<T: Card>: Cards {
     public let maxCards: Int
     
     /// The `Card`s.
-    internal var cards: [T]
+    internal private(set) var cards: [T]
     
     /// The total # of `Card`s.
     public var count: Int { cards.count }

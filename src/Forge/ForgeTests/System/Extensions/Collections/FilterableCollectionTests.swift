@@ -80,13 +80,13 @@ class FilterableCollectionTests: XCTestCase {
         let subElement4 = try Ace(of: .clubs)
         let subElement5 = try Two(of: .hearts)
         let subElement6 = try Two(of: .clubs)
-        let subElements1 = [subElement1, subElement2]
-        let subElements2 = [subElement3, subElement4]
-        let subElements3 = [subElement5, subElement6]
+        let subElements1: [RankedCard] = [subElement1, subElement2]
+        let subElements2: [RankedCard]  = [subElement3, subElement4]
+        let subElements3: [RankedCard]  = [subElement5, subElement6]
         let element1 = try Pair(of: subElements1)
         let element2 = try Pair(of: subElements2)
         let element3 = try Pair(of: subElements3)
-        let collection = [element1, element2, element3]
+        let collection: [HandRank<RankedCard>] = [element1, element2, element3]
         let expected = [subElement1, subElement2, subElement3, subElement4,
                         subElement5, subElement6]
         

@@ -30,7 +30,7 @@ public class Deck<T: Card>: Cards {
     public let maxCards: Int
     
     /// The `Card`s.
-    private var cards: [T]
+    internal private(set) var cards: [T]
     
     /// The total # of `Card`s.
     public var count: Int { cards.count }
@@ -305,6 +305,7 @@ public class Deck<T: Card>: Cards {
     /// - Postcondition:
     ///   - The given `Hand` no longer contains the specified `Card`.
     ///   - The `Deck` contains the given `Card`.
+    ///   - The `Card`'s "isCutCard" property is set to false.
     /// - Parameters:
     ///   - card: The `Card` to collect from  the given `Hand`.
     ///   - hand: The `Hand` to collect the given `Card` from.
@@ -329,7 +330,49 @@ public class Deck<T: Card>: Cards {
             throw ElementsError.notFound
         }
         
+        card.isCutCard = false
         try add(hand.remove(card))
+    }
+    
+    /// Removes the given `Card` from the specified `Hand`,  and adds it to the `Deck`.
+    ///
+    /// - Precondition:
+    ///   - The `Deck` cannot be full.
+    ///   - The given `Hand` cannot be empty.
+    ///   - The given `Hand` must contain the given `Card`.
+    /// - Postcondition:
+    ///   - The given `Hand` no longer contains the specified `Card`.
+    ///   - The `Deck` contains the given `Card`.
+    ///   - Each `Card`'s "isCutCard" property is set to false.
+    ///   - The `Deck` contains all of the `Hand`'s `Card`s.
+    ///   - The `Hand` is empty.
+    /// - Parameters:
+    ///   - card: The `Card` to collect from  the given `Hand`.
+    ///   - hand: The `Hand` to collect the given `Card` from.
+    /// - Throws:
+    ///   - `ElementsError.isFull` if the `Deck` is full.
+    ///   - `ElementsError.isEmpty` if the given `Hand` is empty.
+    ///   - `ElementsError.notFound` if the given `Hand` doesn't contain the specified `Card`.
+    public func collect(_ hand: Hand<T>) throws {
+        
+        guard (!isFull()) else {
+
+            throw ElementsError.isFull
+        }
+        
+        guard (!hand.isEmpty()) else {
+            
+            throw ElementsError.isEmpty
+        }
+//
+//        guard (deck.contains(hand.)) else {
+//
+//            throw ElementsError.notFound
+//        }
+
+        hand.cards.forEach({$0.isCutCard = false})
+        cards.append(contentsOf: hand.cards)
+//        hand.clear()
     }
     
     //=========================================================================//

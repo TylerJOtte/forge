@@ -74,16 +74,18 @@ class HandRankArrayDictionaryExtensionTests: XCTestCase {
         let queen = try Queen(of: .hearts)
         let king1 = try King(of: .hearts)
         let king2 = try King(of: .spades)
-        let pairCards = [king1, king2]
-        let runCards1 = [jack, queen, king1]
-        let runCards2 = [jack, queen, king2]
+        let pairCards: [RankedCard]  = [king1, king2]
+        let runCards1: [RankedCard]  = [jack, queen, king1]
+        let runCards2: [RankedCard]  = [jack, queen, king2]
         let pair = try Pair(of: pairCards)
         let run1 = try Run(of: runCards1)
         let run2 = try Run(of: runCards2)
         let value1 = [pair]
         let value2: [HandRank] = []
         let value3 = [run1, run2]
-        let dictionary = [key1: value1, key2: value2, key3: value3]
+        let dictionary: [String:[HandRank]] = [
+            key1: value1, key2: value2, key3: value3
+        ]
         let expected = 8
         
         // When

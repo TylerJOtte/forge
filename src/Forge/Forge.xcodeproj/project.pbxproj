@@ -93,8 +93,6 @@
 		B5A50C3D266435CE001717C6 /* CardsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A50C3C266435CE001717C6 /* CardsError.swift */; };
 		B5A50C4526643606001717C6 /* HandError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A50C4426643606001717C6 /* HandError.swift */; };
 		B5A50C492664365F001717C6 /* HandRankError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A50C482664365F001717C6 /* HandRankError.swift */; };
-		B5A5B963272D845500F66C25 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5B962272D845500F66C25 /* Game.swift */; };
-		B5A5B965272D85FF00F66C25 /* CribbageGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5B964272D85FF00F66C25 /* CribbageGame.swift */; };
 		B5B899D12651A51300BBF3C2 /* Orderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B899D02651A51300BBF3C2 /* Orderable.swift */; };
 		B5B899D52651A5CE00BBF3C2 /* Rankable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B899D42651A5CE00BBF3C2 /* Rankable.swift */; };
 		B5B899DD2651ACB200BBF3C2 /* RankedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B899DC2651ACB200BBF3C2 /* RankedCard.swift */; };
@@ -114,7 +112,6 @@
 		B5E115BE265191DE00D78307 /* JokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E115BD265191DE00D78307 /* JokerTests.swift */; };
 		B5E555BB264E03C900E6BB37 /* RankExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E555BA264E03C900E6BB37 /* RankExtension.swift */; };
 		B5E555C9264F4DA800E6BB37 /* Joker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E555C8264F4DA800E6BB37 /* Joker.swift */; };
-		B5E6F4AD2795ACB500C6C892 /* UnoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6F4AC2795ACB500C6C892 /* UnoCard.swift */; };
 		B5ECEAF926684F1D00E478F7 /* PlayingCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAF826684F1D00E478F7 /* PlayingCardCollection.swift */; };
 		B5ECEAFF26684F8E00E478F7 /* PlayingCardCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEAFE26684F8E00E478F7 /* PlayingCardCollectionTests.swift */; };
 		B5ECEB052668571500E478F7 /* RankedCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB042668571500E478F7 /* RankedCardCollection.swift */; };
@@ -265,8 +262,6 @@
 		B5A50C3C266435CE001717C6 /* CardsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsError.swift; sourceTree = "<group>"; };
 		B5A50C4426643606001717C6 /* HandError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandError.swift; sourceTree = "<group>"; };
 		B5A50C482664365F001717C6 /* HandRankError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRankError.swift; sourceTree = "<group>"; };
-		B5A5B962272D845500F66C25 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		B5A5B964272D85FF00F66C25 /* CribbageGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageGame.swift; sourceTree = "<group>"; };
 		B5B899D02651A51300BBF3C2 /* Orderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orderable.swift; sourceTree = "<group>"; };
 		B5B899D42651A5CE00BBF3C2 /* Rankable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rankable.swift; sourceTree = "<group>"; };
 		B5B899DC2651ACB200BBF3C2 /* RankedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedCard.swift; sourceTree = "<group>"; };
@@ -286,7 +281,6 @@
 		B5E115BD265191DE00D78307 /* JokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokerTests.swift; sourceTree = "<group>"; };
 		B5E555BA264E03C900E6BB37 /* RankExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankExtension.swift; sourceTree = "<group>"; };
 		B5E555C8264F4DA800E6BB37 /* Joker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joker.swift; sourceTree = "<group>"; };
-		B5E6F4AC2795ACB500C6C892 /* UnoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoCard.swift; sourceTree = "<group>"; };
 		B5ECEAF826684F1D00E478F7 /* PlayingCardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardCollection.swift; sourceTree = "<group>"; };
 		B5ECEAFE26684F8E00E478F7 /* PlayingCardCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardCollectionTests.swift; sourceTree = "<group>"; };
 		B5ECEB042668571500E478F7 /* RankedCardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RankedCardCollection.swift; path = ../Arrays/RankedCardCollection.swift; sourceTree = "<group>"; };
@@ -795,7 +789,6 @@
 			children = (
 				B597383725FE9D5000367598 /* Card.swift */,
 				B5B899DC2651ACB200BBF3C2 /* RankedCard.swift */,
-				B5E6F4AC2795ACB500C6C892 /* UnoCard.swift */,
 				B5817D4D2618DE180022B805 /* PlayingCards */,
 			);
 			path = Types;
@@ -858,7 +851,6 @@
 				B556683F2623E9B70045AC2B /* Components */,
 				B556686E2625296F0045AC2B /* Environments */,
 				B5817D422618B1150022B805 /* Features */,
-				B5A5B961272D841F00F66C25 /* Games */,
 				B556687926252AC10045AC2B /* Mechanics */,
 				B556688826252C970045AC2B /* System */,
 			);
@@ -935,15 +927,6 @@
 				B5A50C482664365F001717C6 /* HandRankError.swift */,
 			);
 			path = HandRanks;
-			sourceTree = "<group>";
-		};
-		B5A5B961272D841F00F66C25 /* Games */ = {
-			isa = PBXGroup;
-			children = (
-				B5A5B962272D845500F66C25 /* Game.swift */,
-				B5A5B964272D85FF00F66C25 /* CribbageGame.swift */,
-			);
-			path = Games;
 			sourceTree = "<group>";
 		};
 		B5BB5FC126683BC800A88709 /* Arrays */ = {
@@ -1364,15 +1347,12 @@
 				B5B899D12651A51300BBF3C2 /* Orderable.swift in Sources */,
 				B5F2D477262E4FA00089403F /* Jack.swift in Sources */,
 				B521E23A266D7DD700DB4602 /* FilterableCollection.swift in Sources */,
-				B5A5B965272D85FF00F66C25 /* CribbageGame.swift in Sources */,
 				B55668B3262B57470045AC2B /* RangeError.swift in Sources */,
 				B5A50C3D266435CE001717C6 /* CardsError.swift in Sources */,
 				B5A50C3426643569001717C6 /* TechnologyError.swift in Sources */,
 				B55668702625297E0045AC2B /* Environment.swift in Sources */,
 				B5BE90522651C657005E0A37 /* ThreeOfAKind.swift in Sources */,
-				B5A5B963272D845500F66C25 /* Game.swift in Sources */,
 				B5A50C4526643606001717C6 /* HandError.swift in Sources */,
-				B5E6F4AD2795ACB500C6C892 /* UnoCard.swift in Sources */,
 				B5817D79261953CD0022B805 /* PlayingCards.swift in Sources */,
 				B5005F6826762818007E6165 /* HandRankArrayDictionary.swift in Sources */,
 				B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */,
