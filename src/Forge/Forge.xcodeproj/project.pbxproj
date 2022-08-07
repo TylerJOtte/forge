@@ -62,6 +62,7 @@
 		B55668C8262B92A30045AC2B /* TripleRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668C7262B92A30045AC2B /* TripleRunTests.swift */; };
 		B55668D2262C88EC0045AC2B /* KindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668D1262C88EC0045AC2B /* KindTests.swift */; };
 		B55668D6262CB8FC0045AC2B /* ScoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55668D5262CB8FC0045AC2B /* ScoreError.swift */; };
+		B5598ADF28A0259000FFA800 /* Forge.docc in Sources */ = {isa = PBXBuildFile; fileRef = B5598ADE28A0259000FFA800 /* Forge.docc */; };
 		B56ED7A7269B8F47003A4474 /* FilterableCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ED7A6269B8F47003A4474 /* FilterableCollectionTests.swift */; };
 		B5817D2E2617D2E40022B805 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D2D2617D2E40022B805 /* PlayingCard.swift */; };
 		B5817D392617E24B0022B805 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5817D382617E24B0022B805 /* Rank.swift */; };
@@ -228,6 +229,7 @@
 		B55668C7262B92A30045AC2B /* TripleRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleRunTests.swift; sourceTree = "<group>"; };
 		B55668D1262C88EC0045AC2B /* KindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindTests.swift; sourceTree = "<group>"; };
 		B55668D5262CB8FC0045AC2B /* ScoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreError.swift; sourceTree = "<group>"; };
+		B5598ADE28A0259000FFA800 /* Forge.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Forge.docc; sourceTree = "<group>"; };
 		B56ED7A6269B8F47003A4474 /* FilterableCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterableCollectionTests.swift; sourceTree = "<group>"; };
 		B5817D2D2617D2E40022B805 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		B5817D382617E24B0022B805 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
@@ -827,6 +829,7 @@
 		B59A449B25FE934100857EB5 = {
 			isa = PBXGroup;
 			children = (
+				B5598ADE28A0259000FFA800 /* Forge.docc */,
 				B59A44A725FE934100857EB5 /* Forge */,
 				B59A44B225FE934200857EB5 /* ForgeTests */,
 				B59A44A625FE934100857EB5 /* Products */,
@@ -1346,6 +1349,7 @@
 				B5A50C492664365F001717C6 /* HandRankError.swift in Sources */,
 				B5B899D12651A51300BBF3C2 /* Orderable.swift in Sources */,
 				B5F2D477262E4FA00089403F /* Jack.swift in Sources */,
+				B5598ADF28A0259000FFA800 /* Forge.docc in Sources */,
 				B521E23A266D7DD700DB4602 /* FilterableCollection.swift in Sources */,
 				B55668B3262B57470045AC2B /* RangeError.swift in Sources */,
 				B5A50C3D266435CE001717C6 /* CardsError.swift in Sources */,
@@ -1599,6 +1603,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TylerJOtte.Forge;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				RUN_DOCUMENTATION_COMPILER = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1627,6 +1632,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TylerJOtte.Forge;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				RUN_DOCUMENTATION_COMPILER = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
