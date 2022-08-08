@@ -498,7 +498,6 @@
 		B556683A2623D8FF0045AC2B /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				B597383E25FE9E6D00367598 /* Cards.swift */,
 				B5817D6E261947DB0022B805 /* Decks */,
 				B5817D6F261948090022B805 /* Hands */,
 			);
@@ -789,7 +788,6 @@
 		B597383625FE9CF300367598 /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				B597383725FE9D5000367598 /* Card.swift */,
 				B5B899DC2651ACB200BBF3C2 /* RankedCard.swift */,
 				B5817D4D2618DE180022B805 /* PlayingCards */,
 			);
@@ -799,6 +797,8 @@
 		B597383D25FE9E5A00367598 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				B597383725FE9D5000367598 /* Card.swift */,
+				B597383E25FE9E6D00367598 /* Cards.swift */,
 				B5817D77261953990022B805 /* Helpers */,
 				B597383625FE9CF300367598 /* Types */,
 				B556683A2623D8FF0045AC2B /* Collections */,
@@ -1220,7 +1220,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					B59A44A425FE934100857EB5 = {
 						CreatedOnToolsVersion = 12.4;
@@ -1449,12 +1449,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					"arm64,",
-					"armv7,",
-					x86_64,
-				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1521,12 +1515,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					"arm64,",
-					"armv7,",
-					x86_64,
-				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

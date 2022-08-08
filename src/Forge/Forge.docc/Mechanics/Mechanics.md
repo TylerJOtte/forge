@@ -12,6 +12,6 @@
 
 - ``Mechanic``
 
-### Rules
+### Mechanics
 
 - ``Rule``

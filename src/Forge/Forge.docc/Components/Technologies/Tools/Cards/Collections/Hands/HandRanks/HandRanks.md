@@ -1,4 +1,4 @@
-# Features
+# HandRanks
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -10,9 +10,13 @@
 
 ### Base
 
-- ``Feature``
+- ``HandRank``
 
-### Features
+### HandRanks
 
-- <doc:Depictions>
-- <doc:Descriptions>
+- ``PlayingCardHandRank``
+- <doc:Kinds>
+- <doc:Runs>
+- <doc:Flushes>
+- ``Fifteen``
+- ``Nobs``

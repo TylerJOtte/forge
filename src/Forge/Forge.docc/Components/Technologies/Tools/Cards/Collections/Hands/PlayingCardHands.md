@@ -1,4 +1,4 @@
-# Components
+# PlayingCardHands
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -8,6 +8,7 @@
 
 ## Topics
 
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
+### PlayingCardHands
 
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+- ``PlayingCardHand``
+- ``CribbageHand``

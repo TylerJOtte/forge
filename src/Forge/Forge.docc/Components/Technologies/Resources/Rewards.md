@@ -1,4 +1,4 @@
-# Features
+# Rewards
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -10,9 +10,4 @@
 
 ### Base
 
-- ``Feature``
-
-### Features
-
-- <doc:Depictions>
-- <doc:Descriptions>
+- ``Reward``

@@ -1,4 +1,4 @@
-# Features
+# Components
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -10,9 +10,8 @@
 
 ### Base
 
-- ``Feature``
+- ``Component``
 
-### Features
+### Components
 
-- <doc:Depictions>
-- <doc:Descriptions>
+- <doc:Technologies>

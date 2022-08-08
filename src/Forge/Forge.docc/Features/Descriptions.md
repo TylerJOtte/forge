@@ -1,4 +1,4 @@
-# Features
+# Descriptions
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -10,9 +10,8 @@
 
 ### Base
 
-- ``Feature``
+- ``Description``
 
-### Features
+### Descriptions
 
-- <doc:Depictions>
-- <doc:Descriptions>
+- ``Rank``

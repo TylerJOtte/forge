@@ -1,4 +1,4 @@
-# Features
+# Hands
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -8,11 +8,8 @@
 
 ## Topics
 
-### Base
+### Hands
 
-- ``Feature``
-
-### Features
-
-- <doc:Depictions>
-- <doc:Descriptions>
+- ``Hand``
+- <doc:PlayingCardHands>
+- <doc:HandRanks>

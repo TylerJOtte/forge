@@ -1,4 +1,4 @@
-# Features
+# PlayingCards
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -8,11 +8,9 @@
 
 ## Topics
 
-### Base
+### PlayingCards
 
-- ``Feature``
-
-### Features
-
-- <doc:Depictions>
-- <doc:Descriptions>
+- ``PlayingCard``
+- <doc:NumeralCards>
+- <doc:FaceCards>
+- <doc:WildCards>

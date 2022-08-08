@@ -1,4 +1,4 @@
-# Features
+# Technologies
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -10,9 +10,9 @@
 
 ### Base
 
-- ``Feature``
+- ``Technology``
 
-### Features
+### Technologies
 
-- <doc:Depictions>
-- <doc:Descriptions>
+- <doc:Resources>
+- <doc:Tools>

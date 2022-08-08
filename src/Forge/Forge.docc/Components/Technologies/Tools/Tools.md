@@ -1,4 +1,4 @@
-# Features
+# Tools
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -10,9 +10,8 @@
 
 ### Base
 
-- ``Feature``
+- ``Tool``
 
-### Features
+### Tools
 
-- <doc:Depictions>
-- <doc:Descriptions>
+- <doc:CardsDoc>

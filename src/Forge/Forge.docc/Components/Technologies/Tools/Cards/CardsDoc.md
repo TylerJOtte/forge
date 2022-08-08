@@ -1,4 +1,4 @@
-# Features
+# Cards
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -8,11 +8,9 @@
 
 ## Topics
 
-### Base
+### Cards
 
-- ``Feature``
-
-### Features
-
-- <doc:Depictions>
-- <doc:Descriptions>
+- ``Card``
+- ``Cards``
+- <doc:CardCollections>
+- <doc:Types>

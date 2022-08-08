@@ -1,4 +1,4 @@
-# Features
+# Flushes
 
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
@@ -8,11 +8,6 @@
 
 ## Topics
 
-### Base
+### Flushes
 
-- ``Feature``
-
-### Features
-
-- <doc:Depictions>
-- <doc:Descriptions>
+- ``Flush``
