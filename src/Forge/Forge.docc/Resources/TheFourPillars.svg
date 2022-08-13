@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <filter id="Rectangle_1" x="1467" y="663" width="421" height="282" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.565"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1-2" x="989" y="663" width="421" height="282" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.565"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1-3" x="511" y="661" width="421" height="282" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.565"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1-4" x="33" y="661" width="421" height="282" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.565"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1-5" x="750" y="142" width="421" height="282" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.565"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <g id="Group_4" data-name="Group 4" transform="translate(1305 440)">
+      <g transform="matrix(1, 0, 0, 1, -1305, -440)" filter="url(#Rectangle_1)">
+        <g id="Rectangle_1-6" data-name="Rectangle 1" transform="translate(1476 669)" fill="#00202a" stroke="rgba(255,255,255,0.5)" stroke-width="0.25">
+          <rect width="403" height="264" rx="10" stroke="none"/>
+          <rect x="0.125" y="0.125" width="402.75" height="263.75" rx="9.875" fill="none"/>
+        </g>
+      </g>
+      <text id="_Mechanic" data-name=" Mechanic" transform="translate(263 376)" fill="#fff" stroke="rgba(255,255,255,0.49)" stroke-width="0.25" font-size="48" font-family="Avenir-Book, Avenir"><tspan x="0" y="0" xml:space="preserve"> Mechanic</tspan></text>
+    </g>
+    <g id="Group_5" data-name="Group 5" transform="translate(827 440)">
+      <g transform="matrix(1, 0, 0, 1, -827, -440)" filter="url(#Rectangle_1-2)">
+        <g id="Rectangle_1-7" data-name="Rectangle 1" transform="translate(998 669)" fill="#00202a" stroke="rgba(255,255,255,0.5)" stroke-width="0.25">
+          <rect width="403" height="264" rx="10" stroke="none"/>
+          <rect x="0.125" y="0.125" width="402.75" height="263.75" rx="9.875" fill="none"/>
+        </g>
+      </g>
+      <text id="Feature" transform="translate(291 376)" fill="#fff" stroke="rgba(255,255,255,0.25)" stroke-width="1" font-size="48" font-family="Avenir-Book, Avenir"><tspan x="0" y="0">Feature</tspan></text>
+    </g>
+    <g id="Group_6" data-name="Group 6" transform="translate(349 438)">
+      <g transform="matrix(1, 0, 0, 1, -349, -438)" filter="url(#Rectangle_1-3)">
+        <g id="Rectangle_1-8" data-name="Rectangle 1" transform="translate(520 667)" fill="#00202a" stroke="rgba(255,255,255,0.5)" stroke-width="0.25">
+          <rect width="403" height="264" rx="10" stroke="none"/>
+          <rect x="0.125" y="0.125" width="402.75" height="263.75" rx="9.875" fill="none"/>
+        </g>
+      </g>
+      <text id="Environment" transform="translate(238 376)" fill="#fff" stroke="rgba(255,255,255,0.5)" stroke-width="1" font-size="48" font-family="Avenir-Book, Avenir"><tspan x="0" y="0">Environment</tspan></text>
+    </g>
+    <g id="Group_7" data-name="Group 7" transform="translate(-129 438)">
+      <g transform="matrix(1, 0, 0, 1, 129, -438)" filter="url(#Rectangle_1-4)">
+        <g id="Rectangle_1-9" data-name="Rectangle 1" transform="translate(42 667)" fill="#00202a" stroke="rgba(255,255,255,0.5)" stroke-width="0.25">
+          <rect width="403" height="264" rx="10" stroke="none"/>
+          <rect x="0.125" y="0.125" width="402.75" height="263.75" rx="9.875" fill="none"/>
+        </g>
+      </g>
+      <text id="Component" transform="translate(244 376)" fill="#fff" stroke="rgba(255,255,255,0.5)" stroke-width="0.5" font-size="48" font-family="Avenir-Book, Avenir"><tspan x="0" y="0">Component</tspan></text>
+    </g>
+    <g id="Group_9" data-name="Group 9" transform="translate(0 101)">
+      <line id="Line_1" data-name="Line 1" y1="112" transform="translate(243.5 454.5)" fill="none" stroke="#707070" stroke-width="2"/>
+      <line id="Line_2" data-name="Line 2" x2="717" transform="translate(243 454.5)" fill="none" stroke="#707070" stroke-width="2"/>
+      <line id="Line_3" data-name="Line 3" y2="144" transform="translate(960.5 310.5)" fill="none" stroke="#707070" stroke-width="2"/>
+    </g>
+    <g id="Group_10" data-name="Group 10" transform="translate(0 101)">
+      <line id="Line_1-2" data-name="Line 1" y1="112" transform="translate(243.5 454.5)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Line_2-2" data-name="Line 2" x2="717" transform="translate(243 454.5)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Line_3-2" data-name="Line 3" y2="144" transform="translate(960.5 310.5)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Line_4" data-name="Line 4" y1="112" transform="translate(243.5 454.5)" fill="none" stroke="#fff" stroke-width="2"/>
+    </g>
+    <g id="Group_11" data-name="Group 11" transform="translate(960 411)">
+      <line id="Line_1-3" data-name="Line 1" y1="112" transform="translate(717 144)" fill="none" stroke="#707070" stroke-width="2"/>
+      <line id="Line_2-3" data-name="Line 2" x1="717" transform="translate(0.5 144)" fill="none" stroke="#707070" stroke-width="2"/>
+      <line id="Line_3-3" data-name="Line 3" y2="144" transform="translate(0)" fill="none" stroke="#707070" stroke-width="2"/>
+    </g>
+    <g id="Group_12" data-name="Group 12" transform="translate(960 411)">
+      <line id="Line_1-4" data-name="Line 1" y1="112" transform="translate(717 144)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Line_2-4" data-name="Line 2" x1="717" transform="translate(0.5 144)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Line_3-4" data-name="Line 3" y2="144" transform="translate(0)" fill="none" stroke="#fff" stroke-width="2"/>
+    </g>
+    <line id="Line_5" data-name="Line 5" y1="110" transform="translate(721.5 557.5)" fill="none" stroke="#fff" stroke-width="2"/>
+    <line id="Line_6" data-name="Line 6" y1="112" transform="translate(1199.5 557.5)" fill="none" stroke="#fff" stroke-width="2"/>
+    <g id="Group_13" data-name="Group 13" transform="translate(588 -81)">
+      <g transform="matrix(1, 0, 0, 1, -588, 81)" filter="url(#Rectangle_1-5)">
+        <g id="Rectangle_1-10" data-name="Rectangle 1" transform="translate(759 148)" stroke="rgba(255,255,255,0.5)" stroke-width="0.25">
+          <rect width="403" height="264" rx="10" stroke="none"/>
+          <rect x="0.125" y="0.125" width="402.75" height="263.75" rx="9.875" fill="none"/>
+        </g>
+      </g>
+      <text id="Element" transform="translate(284 376)" fill="#fff" stroke="rgba(255,255,255,0.5)" stroke-width="1" font-size="48" font-family="Avenir-Book, Avenir"><tspan x="0" y="0">Element</tspan></text>
+    </g>
+  </g>
+</svg>
