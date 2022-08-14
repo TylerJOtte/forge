@@ -1,6 +1,6 @@
-# Mechanics
+# ``Forge/Mechanic``
 
-Processes for guiding `Elements`.
+<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
 ## Overview
 
@@ -11,16 +11,17 @@ ascribed to it. All rules, directions, procedures, etc. extend from it.
 
 ![Mechanic](Mechanic.svg)
 
-### Example 
+### Example
 
 ```swift
 // Environment
 class CardGame: Game {
     
-    // Components
+    // Component
     let deck: PlayingCardDeck
+    let hand: Hand
 
-    // Mechanics
+    // Regulate Environment
     let rules = [
         PlayingCardRule.aceIsHigh, 
         PlayingCardRule.jokersAllowed
@@ -28,16 +29,8 @@ class CardGame: Game {
 
     init() {
         
+        // Regulate Component
         self.deck = Deck(rules: rules)
     }
 }
 ```
-## Topics
-
-### Pillar
-
-- ``Mechanic``
-
-### Mechanics
-
-- ``Rule``
