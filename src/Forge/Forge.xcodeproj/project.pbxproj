@@ -580,7 +580,6 @@
 			children = (
 				B5817D842619FFA90022B805 /* Errors */,
 				B5817DA0261A27500022B805 /* Extensions */,
-				B5F29B49263D8ED900082A1A /* Traits */,
 				B5F2D4D726386E2C0089403F /* Collections */,
 			);
 			path = System;
@@ -657,6 +656,7 @@
 				B556685C2625268D0045AC2B /* Feature.swift */,
 				B5817D432618B1180022B805 /* Depictions */,
 				B5817D442618B11C0022B805 /* Descriptions */,
+				B5F29B49263D8ED900082A1A /* Traits */,
 			);
 			path = Features;
 			sourceTree = "<group>";

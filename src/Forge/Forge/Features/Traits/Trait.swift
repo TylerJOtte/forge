@@ -18,6 +18,6 @@
 import Foundation
 
 /// A characeristic.
-public protocol Trait: Element {
+public protocol Trait: Feature {
     
 }

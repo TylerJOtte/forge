@@ -16,3 +16,4 @@
 
 - <doc:Depictions>
 - <doc:Descriptions>
+- <doc:Traits>
