@@ -580,7 +580,6 @@
 			children = (
 				B5817D842619FFA90022B805 /* Errors */,
 				B5817DA0261A27500022B805 /* Extensions */,
-				B5F2D4D726386E2C0089403F /* Collections */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -851,6 +850,7 @@
 				B59A44A825FE934200857EB5 /* Forge.h */,
 				B59A44A925FE934200857EB5 /* Info.plist */,
 				B5F29B69263E0EA400082A1A /* Element.swift */,
+				B597383225FE958700367598 /* Elements.swift */,
 				B556683F2623E9B70045AC2B /* Components */,
 				B556686E2625296F0045AC2B /* Environments */,
 				B5817D422618B1150022B805 /* Features */,
@@ -1153,14 +1153,6 @@
 				B5F2D4C92636F4440089403F /* KingTests.swift */,
 			);
 			path = FaceCards;
-			sourceTree = "<group>";
-		};
-		B5F2D4D726386E2C0089403F /* Collections */ = {
-			isa = PBXGroup;
-			children = (
-				B597383225FE958700367598 /* Elements.swift */,
-			);
-			path = Collections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

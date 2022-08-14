@@ -31,7 +31,9 @@ struct Game {
 
 ## Topics
 
-### Essentials
+### Elements
 
 - ``Element``
+- ``Elements``
+- <doc:Errors>
 - <doc:TheFourPillars>
