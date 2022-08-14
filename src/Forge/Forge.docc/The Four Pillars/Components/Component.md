@@ -1,10 +1,8 @@
-# Components
-
-Items for operating `Elements`.
+# ``Forge/Component``
 
 ## Overview
 
-A ``Component`` is one of the <doc:TheFourPillars> that comprise <doc:Forge>'s
+A `Component` is one of the <doc:TheFourPillars> that comprise <doc:Forge>'s
 primary architecture. It is a unit that resides in <doc:Environments>, and 
 operates them or other `Components`. It can be ascribed its own <doc:Features>,
 and apply <doc:Mechanics> to regulate its conditions. All beings, <doc:Tools>, 
@@ -33,13 +31,3 @@ class CardGame: Game {
     }
 }
 ```
-
-## Topics
-
-### Pillar
-
-- ``Component``
-
-### Components
-
-- <doc:Technologies>

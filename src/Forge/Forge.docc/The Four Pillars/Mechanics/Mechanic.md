@@ -1,7 +1,5 @@
 # ``Forge/Mechanic``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
-
 ## Overview
 
 A ``Mechanic`` is one of the <doc:TheFourPillars> that comprise

@@ -1,12 +1,10 @@
 # ``Forge/Environment``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
-
 ## Overview
 
 An `Environment` is one of the <doc:TheFourPillars> that comprise
 <doc:Forge>'s primary architecture. It is an overall structure in which 
-<doc:Components> reside or operate. It can be asribed its own <doc:Features>,
+<doc:Components> reside or operate. It can be ascribed its own <doc:Features>,
 and apply <doc:Mechanics> to regulate its conditions. All ecosystems, worlds,
 locales, etc. extend from it.
 

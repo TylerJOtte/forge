@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// A surrounding for hosting `Components`.
+/// A surrounding for hosting `Element`s.
 public protocol Environment: Element {
     
 }

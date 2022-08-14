@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// A part of a larger whole.
+/// An item for operating `Element`s.
 public protocol Component: Element {
     
 }
