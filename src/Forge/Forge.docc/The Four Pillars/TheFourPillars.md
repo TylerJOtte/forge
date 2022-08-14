@@ -9,12 +9,6 @@ All modules extend from one of these ``Element``s.
 
 ![The Four Pillars](TheFourPillars.svg)
 
-#### Relationships
-
-- <doc:Environments> contain <doc:Components>
-- <doc:Features> ascribe <doc:Environments> and <doc:Components>
-- <doc:Mechanics> guide <doc:Environments> and <doc:Components>
-
 #### Example
 ```swift
 class PlayingCard {
@@ -28,7 +22,7 @@ class PlayingCard {
 
 ## Topics
 
-### Elements
+### Pillars
 
 - <doc:Components>
 - <doc:Environments>
