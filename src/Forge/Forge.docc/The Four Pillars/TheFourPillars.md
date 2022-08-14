@@ -10,6 +10,7 @@ All modules extend from one of these ``Element``s.
 ![The Four Pillars](TheFourPillars.svg)
 
 #### Example
+
 ```swift
 class PlayingCard {
     ...
